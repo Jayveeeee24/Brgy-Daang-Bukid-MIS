@@ -1,0 +1,26 @@
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.vbproj.AssemblyReference.cache
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.vbproj.SuggestedBindingRedirects.cache
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.exe.config
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.Login.resources
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.Resources.resources
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.vbproj.GenerateResource.cache
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.vbproj.CoreCompileInputs.cache
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\bin\Debug\Brgy Daang Bukid MIS.exe.config
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\bin\Debug\Brgy Daang Bukid MIS.exe
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\bin\Debug\Brgy Daang Bukid MIS.pdb
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\bin\Debug\Brgy Daang Bukid MIS.xml
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\bin\Debug\MySql.Data.dll
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\bin\Debug\Google.Protobuf.dll
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\bin\Debug\ZstdNet.dll
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\bin\Debug\BouncyCastle.Crypto.dll
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\bin\Debug\System.Memory.dll
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\bin\Debug\System.Buffers.dll
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\bin\Debug\K4os.Compression.LZ4.dll
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\bin\Debug\K4os.Hash.xxHash.dll
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\bin\Debug\System.Numerics.Vectors.dll
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\bin\Debug\MySql.Data.xml
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.vbproj.CopyComplete
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.exe
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.xml
+D:\Programming\Visual Basic\MIS\Brgy Daang Bukid MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.pdb
