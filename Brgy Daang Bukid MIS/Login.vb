@@ -1,5 +1,60 @@
-﻿Public Class Login
+﻿Imports System.Data
+Imports MySql.Data.MySqlClient
+Imports Mysqlx.XDevAPI.Common
+
+Public Class Login
+
+    Dim account_type As String
+    Public mySqlConn As String = "server=localhost; user id=root; database=mis"
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub txtUsername_Click(sender As Object, e As EventArgs) Handles txtUsername.Click
+        txtUsername.Clear()
+    End Sub
+
+    Private Sub txtPassword_Click(sender As Object, e As EventArgs) Handles txtPassword.Click
+        txtPassword.Clear()
+    End Sub
+
+    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MessageBox.Show("Sever Connection Lost!")
+        End Select
+
+        Dim mySQLCommand As MySqlCommand
+        Dim mySQLReader As MySqlDataReader
+
+        mySQLCommand = mySql.CreateCommand()
+        mySQLCommand.CommandType = CommandType.Text
+        mySQLCommand.CommandText = "SELECT * FROM accounts WHERE username = '" + txtUsername.Text + "' and password = '" + txtPassword.Text + "'"
+        mySQLReader = mySQLCommand.ExecuteReader
+
+        If Len(txtUsername.Text) = 0 Or Len(txtPassword.Text) = 0 Then
+            MsgBox("Please fill out the required fields!", vbCritical, "Warning!")
+        Else
+            If mySQLReader.HasRows Then '
+                MsgBox("Logged in!")
+                While mySQLReader.Read
+                    account_type = mySQLReader!account_type
+                End While
+            Else
+                MsgBox("No account found!")
+            End If
+        End If
+
+        mySQLCommand.Dispose()
+        mySQLReader.Dispose()
+        mySql.Close()
+        mySql.Dispose()
     End Sub
 End Class
