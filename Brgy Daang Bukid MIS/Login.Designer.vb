@@ -22,31 +22,22 @@ Partial Class Login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
-        Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.panelLogo = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.txtPassword = New System.Windows.Forms.TextBox()
-        Me.btnLogin = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
-        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.errorLogin = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.btnLogin = New System.Windows.Forms.Button()
+        Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.panelLogo.SuspendLayout()
+        CType(Me.errorLogin, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'picLogo
-        '
-        Me.picLogo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.picLogo.Image = CType(resources.GetObject("picLogo.Image"), System.Drawing.Image)
-        Me.picLogo.Location = New System.Drawing.Point(86, 70)
-        Me.picLogo.Name = "picLogo"
-        Me.picLogo.Size = New System.Drawing.Size(174, 179)
-        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picLogo.TabIndex = 0
-        Me.picLogo.TabStop = False
         '
         'panelLogo
         '
@@ -92,7 +83,7 @@ Partial Class Login
         '
         'txtUsername
         '
-        Me.txtUsername.BackColor = System.Drawing.Color.White
+        Me.txtUsername.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsername.ForeColor = System.Drawing.Color.Black
@@ -105,8 +96,10 @@ Partial Class Login
         '
         'txtPassword
         '
+        Me.txtPassword.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPassword.ForeColor = System.Drawing.Color.Black
         Me.txtPassword.Location = New System.Drawing.Point(383, 258)
         Me.txtPassword.Multiline = True
         Me.txtPassword.Name = "txtPassword"
@@ -114,6 +107,22 @@ Partial Class Login
         Me.txtPassword.Size = New System.Drawing.Size(259, 27)
         Me.txtPassword.TabIndex = 7
         Me.txtPassword.Text = "hatdog"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(379, 349)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(143, 16)
+        Me.Label4.TabIndex = 9
+        Me.Label4.Text = "I don't have an account"
+        '
+        'errorLogin
+        '
+        Me.errorLogin.ContainerControl = Me
         '
         'btnLogin
         '
@@ -129,16 +138,17 @@ Partial Class Login
         Me.btnLogin.TabIndex = 8
         Me.btnLogin.UseVisualStyleBackColor = False
         '
-        'Label4
+        'picLogo
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(379, 349)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(143, 16)
-        Me.Label4.TabIndex = 9
-        Me.Label4.Text = "I don't have an account"
+        Me.picLogo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picLogo.Image = CType(resources.GetObject("picLogo.Image"), System.Drawing.Image)
+        Me.picLogo.Location = New System.Drawing.Point(86, 70)
+        Me.picLogo.Name = "picLogo"
+        Me.picLogo.Size = New System.Drawing.Size(174, 179)
+        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picLogo.TabIndex = 0
+        Me.picLogo.TabStop = False
         '
         'Login
         '
@@ -159,8 +169,9 @@ Partial Class Login
         Me.Name = "Login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
-        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelLogo.ResumeLayout(False)
+        CType(Me.errorLogin, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -174,4 +185,5 @@ Partial Class Login
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents btnLogin As Button
     Friend WithEvents Label4 As Label
+    Friend WithEvents errorLogin As ErrorProvider
 End Class
