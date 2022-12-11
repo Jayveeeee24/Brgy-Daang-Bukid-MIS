@@ -127,5 +127,8 @@
   <ItemGroup>
     <Content Include="logo_daang_bukid-legitbgremoved.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -1,0 +1,7 @@
+## This lists all the versions and **Debug Notes**
+
+12/12/22 - version 1.12.12
+* Finished the login feature with error trapping and validation
+* Unfinished information form for when "I don't have an account" link is clicked
+
+

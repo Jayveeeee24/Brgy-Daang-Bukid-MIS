@@ -29,6 +29,8 @@ Public Class Login
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
 
+        Me.Enabled = False
+
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
         On Error Resume Next
@@ -50,22 +52,21 @@ Public Class Login
         If Len(txtUsername.Text) = 0 Or Len(txtPassword.Text) = 0 Then
             MsgBox("Please fill out the required fields!", vbCritical, "Warning!")
         Else
-            If mySQLReader.HasRows Then '
-                MsgBox("Logged in!")
+            If mySQLReader.HasRows Then
                 While mySQLReader.Read
                     account_type = mySQLReader!account_type
                 End While
+                MsgBox("Logged in!")
             Else
                 MsgBox("No account found!")
             End If
         End If
 
+        Me.Enabled = True
         mySQLCommand.Dispose()
         mySQLReader.Dispose()
         mySql.Close()
         mySql.Dispose()
-
-
 
     End Sub
 
