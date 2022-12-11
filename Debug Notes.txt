@@ -3,5 +3,7 @@
 12/12/22 - version 1.12.12
 * Finished the login feature with error trapping and validation
 * Unfinished information form for when "I don't have an account" link is clicked
+* added new form [main form] and linked it for log in.
+
 
 

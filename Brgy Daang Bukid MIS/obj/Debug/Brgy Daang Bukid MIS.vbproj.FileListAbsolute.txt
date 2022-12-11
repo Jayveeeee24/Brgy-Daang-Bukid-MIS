@@ -50,3 +50,4 @@ D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\De
 D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.exe
 D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.xml
 D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.pdb
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.Main_Form.resources

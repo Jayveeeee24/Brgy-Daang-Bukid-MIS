@@ -4,7 +4,6 @@ Imports Mysqlx.XDevAPI.Common
 
 Public Class Login
 
-    Dim account_type As String
     Public mySqlConn As String = "server=localhost; user id=root; database=mis"
     Dim isValidated As Boolean = False
     Dim userClick As Integer = 0
@@ -54,9 +53,10 @@ Public Class Login
         Else
             If mySQLReader.HasRows Then
                 While mySQLReader.Read
-                    account_type = mySQLReader!account_type
+                    Main_Form.account_type = mySQLReader!account_type
                 End While
-                MsgBox("Logged in!")
+                Main_Form.Show()
+                Me.Close()
             Else
                 MsgBox("No account found!")
             End If
@@ -70,4 +70,9 @@ Public Class Login
 
     End Sub
 
+    Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Me.btnLogin.PerformClick()
+        End If
+    End Sub
 End Class
