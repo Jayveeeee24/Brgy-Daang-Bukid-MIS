@@ -6,16 +6,25 @@ Public Class Login
 
     Dim account_type As String
     Public mySqlConn As String = "server=localhost; user id=root; database=mis"
+    Dim isValidated As Boolean = False
+    Dim userClick As Integer = 0
+    Dim passClick As Integer = 0
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 
     Private Sub txtUsername_Click(sender As Object, e As EventArgs) Handles txtUsername.Click
-        txtUsername.Clear()
+        If userClick = 0 And txtUsername.Text = "Username*" Then
+            txtUsername.Clear()
+            userClick = 1
+        End If
     End Sub
 
     Private Sub txtPassword_Click(sender As Object, e As EventArgs) Handles txtPassword.Click
-        txtPassword.Clear()
+        If passClick = 0 And txtPassword.Text = "Password*" Then
+            txtPassword.Clear()
+            passClick = 1
+        End If
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
@@ -38,7 +47,6 @@ Public Class Login
         mySQLCommand.CommandType = CommandType.Text
         mySQLCommand.CommandText = "SELECT * FROM accounts WHERE username = '" + txtUsername.Text + "' and password = '" + txtPassword.Text + "'"
         mySQLReader = mySQLCommand.ExecuteReader
-
         If Len(txtUsername.Text) = 0 Or Len(txtPassword.Text) = 0 Then
             MsgBox("Please fill out the required fields!", vbCritical, "Warning!")
         Else
@@ -56,5 +64,9 @@ Public Class Login
         mySQLReader.Dispose()
         mySql.Close()
         mySql.Dispose()
+
+
+
     End Sub
+
 End Class

@@ -22,6 +22,7 @@ Partial Class Login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.panelLogo = New System.Windows.Forms.Panel()
@@ -32,8 +33,10 @@ Partial Class Login
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.errorLogin = New System.Windows.Forms.ErrorProvider(Me.components)
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelLogo.SuspendLayout()
+        CType(Me.errorLogin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'picLogo
@@ -142,6 +145,10 @@ Partial Class Login
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "I don't have an account"
         '
+        'errorLogin
+        '
+        Me.errorLogin.ContainerControl = Me
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -163,6 +170,7 @@ Partial Class Login
         Me.Text = "Login"
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelLogo.ResumeLayout(False)
+        CType(Me.errorLogin, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -176,4 +184,5 @@ Partial Class Login
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents btnLogin As Button
     Friend WithEvents Label4 As Label
+    Friend WithEvents errorLogin As ErrorProvider
 End Class

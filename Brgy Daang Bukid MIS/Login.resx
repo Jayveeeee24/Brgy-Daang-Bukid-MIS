@@ -127,7 +127,7 @@
         EDsdwnYAsZMg7BCwmpAgZyA7A8hOSEdiJyGxoXaBAGsp0LPIDilJrSgB0c7OBgygMICIfg4B+41R7CRC
         LH8BA4PFJwYG5n6EWNI0BobtnQwMErcQYipAdfytDAzbjiSXFpVBrdEC4hqGH4xzmEqZm1lOsvlxCHFJ
         8CTxfRE8L/JNIktGT8FZZY1mll6d8WvLzfbX3MJ9zULKYsRTZHPaSsPqejt0JpnNWb28Z9PtfTNPHb+e
-        +qT848///wFHg2TlEG3tEwAAAAlwSFlzAAAOvgAADr4B6kKxwAAA/i9JREFUeF7sXQVYF8vXvgahYCsd
+        +qT848///wFHg2TlEG3tEwAAAAlwSFlzAAAOvAAADrwBlbxySQAA/i9JREFUeF7sXQVYF8vXvgahYCsd
         SnenpIGKigkWFord3d3d3d3dSoMKBmJhFyUY2B3znXfd4fupqCAY93/3fZ7zbM1O7cx558zMzvwjQYIE
         CRIkSJAgQYIECRIkSJAgQYIECRIkSJAgQYIECRIkSJAgQYIECRIkSJAgQYIECRIkSJAgQULecevmTeUb
         128oX716tdilxMRSF86fL3v+3DmVc2fPqcafPq2TJfHx2qJoJZxJUD979qyqKGqXL10qde3qteI3b94s
@@ -5515,6 +5515,9 @@
         4E0pL586OCBxtvDZAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="errorLogin.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAAAAAAEAIABLkAEAFgAAAIlQTkcNChoKAAAADUlIRFIAAAEAAAABAAgGAAAAXHKoZgAAAAFv
