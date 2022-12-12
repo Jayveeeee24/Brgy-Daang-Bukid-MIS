@@ -5,5 +5,10 @@
 * Unfinished information form for when "I don't have an account" link is clicked
 * added new form [main form] and linked it for log in.
 
+12/13/22 - version 1.12.13
+* created the side navigation ui
+* linked the actual navigation and initial items
+* fixed responsiveness of the main content
+
 
 

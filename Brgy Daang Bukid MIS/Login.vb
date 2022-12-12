@@ -58,11 +58,12 @@ Public Class Login
                 Main_Form.Show()
                 Me.Close()
             Else
+                txtPassword.Clear()
+                Me.Enabled = True
                 MsgBox("No account found!")
             End If
         End If
 
-        Me.Enabled = True
         mySQLCommand.Dispose()
         mySQLReader.Dispose()
         mySql.Close()

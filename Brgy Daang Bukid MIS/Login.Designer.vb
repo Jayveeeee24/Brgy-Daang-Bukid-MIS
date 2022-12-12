@@ -168,7 +168,7 @@ Partial Class Login
         Me.MaximizeBox = False
         Me.Name = "Login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Login"
+        Me.Text = "Management Information System for Brgy Daang Bukid"
         Me.panelLogo.ResumeLayout(False)
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.errorLogin, System.ComponentModel.ISupportInitialize).EndInit()
