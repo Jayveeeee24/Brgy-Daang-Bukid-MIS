@@ -34,22 +34,25 @@ Public Class Login
         Select Case Err.Number
             Case 0
             Case Else
-                MessageBox.Show("Sever Connection Lost!")
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
                 Me.Enabled = True
-                txtPassword.Clear()
+                mySql.Close()
+                mySql.Dispose()
                 Return
         End Select
 
-        Dim mySQLCommand As MySqlCommand
-        Dim mySQLReader As MySqlDataReader
-
-        mySQLCommand = mySql.CreateCommand()
-        mySQLCommand.CommandType = CommandType.Text
-        mySQLCommand.CommandText = "SELECT * FROM accounts WHERE username = '" + txtUsername.Text + "' and password = '" + txtPassword.Text + "'"
-        mySQLReader = mySQLCommand.ExecuteReader
-        If Len(txtUsername.Text) = 0 Or Len(txtPassword.Text) = 0 Then
-            MsgBox("Please fill out the required fields!", vbCritical, "Warning!")
+        If Len(txtUsername.Text.Trim) = 0 Or Len(txtPassword.Text.Trim) = 0 Then
+            MsgBox("Please fill out the required fields!", vbCritical, "Warning")
+            Me.Enabled = True
+            txtUsername.Text = "Username*"
+            txtPassword.Text = "Password*"
         Else
+            Dim mySQLCommand As MySqlCommand
+            Dim mySQLReader As MySqlDataReader
+            mySQLCommand = mySql.CreateCommand()
+            mySQLCommand.CommandType = CommandType.Text
+            mySQLCommand.CommandText = "SELECT * FROM accounts WHERE BINARY username = '" + txtUsername.Text + "' and password = '" + txtPassword.Text + "'"
+            mySQLReader = mySQLCommand.ExecuteReader
             If mySQLReader.HasRows Then
                 While mySQLReader.Read
                     Main_Form.account_type = mySQLReader!account_type
@@ -59,20 +62,21 @@ Public Class Login
             Else
                 txtPassword.Clear()
                 Me.Enabled = True
-                MsgBox("No account found!")
+                MsgBox("No account found!, Please try again", vbCritical, "Warning")
             End If
+            mySQLCommand.Dispose()
+            mySQLReader.Dispose()
+            mySql.Close()
+            mySql.Dispose()
         End If
-
-        mySQLCommand.Dispose()
-        mySQLReader.Dispose()
-        mySql.Close()
-        mySql.Dispose()
 
     End Sub
 
-    'handles the action whenever the user en in the password
+    'handles the action whenever the user 'enter' in the password
     Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
-        If e.KeyCode = Keys.Enter Then
+        If e.KeyCode = Keys.Enter And Len(txtPassword.Text) = 0 Then
+            Me.btnLogin.PerformClick()
+        ElseIf e.KeyCode = Keys.Enter And Len(txtPassword.Text) <> 0 Then
             txtPassword.Text.Remove(txtPassword.Text.Length - 1)
             Me.btnLogin.PerformClick()
         End If

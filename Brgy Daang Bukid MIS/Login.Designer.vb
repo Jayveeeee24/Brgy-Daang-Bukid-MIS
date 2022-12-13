@@ -158,6 +158,7 @@ Partial Class Login
         Me.btnVisibility.Name = "btnVisibility"
         Me.btnVisibility.Size = New System.Drawing.Size(29, 23)
         Me.btnVisibility.TabIndex = 10
+        Me.btnVisibility.TabStop = False
         Me.btnVisibility.UseVisualStyleBackColor = False
         '
         'Login

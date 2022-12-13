@@ -86,20 +86,26 @@ Partial Class Main_Form
         Me.labelDashboardFemale = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.tabLayoutResident = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel10 = New System.Windows.Forms.TableLayoutPanel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.labelDashboardResident = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.TabPage5 = New System.Windows.Forms.TabPage()
-        Me.TabPage6 = New System.Windows.Forms.TabPage()
-        Me.TabPage7 = New System.Windows.Forms.TabPage()
-        Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.pageResident = New System.Windows.Forms.TabPage()
+        Me.pageHousehold = New System.Windows.Forms.TabPage()
+        Me.pageReports = New System.Windows.Forms.TabPage()
+        Me.pageCertificates = New System.Windows.Forms.TabPage()
+        Me.pageMap = New System.Windows.Forms.TabPage()
+        Me.pageAccount = New System.Windows.Forms.TabPage()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Panel17 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.labelSignedIn = New System.Windows.Forms.Label()
+        Me.dataGridBrgyOfficials = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.panelTop.SuspendLayout()
         CType(Me.splitContainerMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainerMain.Panel1.SuspendLayout()
@@ -139,15 +145,17 @@ Partial Class Main_Form
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel10.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.tabLayoutResident.SuspendLayout()
+        Me.TableLayoutPanel10.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel9.SuspendLayout()
         Me.Panel17.SuspendLayout()
+        CType(Me.dataGridBrgyOfficials, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panelTop
         '
         Me.panelTop.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.panelTop.Controls.Add(Me.labelSignedIn)
         Me.panelTop.Controls.Add(Me.Label2)
         Me.panelTop.Controls.Add(Me.btnMenu)
         Me.panelTop.Dock = System.Windows.Forms.DockStyle.Top
@@ -163,6 +171,7 @@ Partial Class Main_Form
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(50, 0)
         Me.Label2.Name = "Label2"
+        Me.Label2.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.Label2.Size = New System.Drawing.Size(497, 42)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Dashboard"
@@ -183,6 +192,7 @@ Partial Class Main_Form
         Me.btnMenu.Name = "btnMenu"
         Me.btnMenu.Size = New System.Drawing.Size(50, 42)
         Me.btnMenu.TabIndex = 0
+        Me.btnMenu.TabStop = False
         Me.btnMenu.UseVisualStyleBackColor = True
         '
         'timerOpen
@@ -320,6 +330,7 @@ Partial Class Main_Form
         Me.btnReports.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnReports.Size = New System.Drawing.Size(249, 40)
         Me.btnReports.TabIndex = 4
+        Me.btnReports.TabStop = False
         Me.btnReports.Text = "     Reports"
         Me.btnReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -369,6 +380,7 @@ Partial Class Main_Form
         '
         'btnDashboard
         '
+        Me.btnDashboard.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnDashboard.FlatAppearance.BorderSize = 0
         Me.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
@@ -386,7 +398,7 @@ Partial Class Main_Form
         Me.btnDashboard.Text = "     Dashboard"
         Me.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnDashboard.UseVisualStyleBackColor = True
+        Me.btnDashboard.UseVisualStyleBackColor = False
         '
         'panelLogo
         '
@@ -412,13 +424,13 @@ Partial Class Main_Form
         'mainTabControl
         '
         Me.mainTabControl.Controls.Add(Me.pageDashboard)
-        Me.mainTabControl.Controls.Add(Me.TabPage2)
-        Me.mainTabControl.Controls.Add(Me.TabPage3)
-        Me.mainTabControl.Controls.Add(Me.TabPage4)
-        Me.mainTabControl.Controls.Add(Me.TabPage5)
-        Me.mainTabControl.Controls.Add(Me.TabPage6)
-        Me.mainTabControl.Controls.Add(Me.TabPage7)
-        Me.mainTabControl.Controls.Add(Me.TabPage8)
+        Me.mainTabControl.Controls.Add(Me.pageResident)
+        Me.mainTabControl.Controls.Add(Me.pageHousehold)
+        Me.mainTabControl.Controls.Add(Me.pageReports)
+        Me.mainTabControl.Controls.Add(Me.pageCertificates)
+        Me.mainTabControl.Controls.Add(Me.pageMap)
+        Me.mainTabControl.Controls.Add(Me.pageAccount)
+        Me.mainTabControl.Controls.Add(Me.TabPage1)
         Me.mainTabControl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.mainTabControl.ItemSize = New System.Drawing.Size(62, 17)
         Me.mainTabControl.Location = New System.Drawing.Point(0, 0)
@@ -610,6 +622,7 @@ Partial Class Main_Form
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(142, Byte), Integer))
+        Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel6.Controls.Add(Me.TableLayoutPanel6)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel6.Location = New System.Drawing.Point(278, 75)
@@ -629,30 +642,29 @@ Partial Class Main_Form
         Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
         Me.TableLayoutPanel6.RowCount = 1
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(269, 66)
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(267, 64)
         Me.TableLayoutPanel6.TabIndex = 1
         '
         'PictureBox6
         '
         Me.PictureBox6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureBox6.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.voter_40
-        Me.PictureBox6.Location = New System.Drawing.Point(204, 3)
+        Me.PictureBox6.Location = New System.Drawing.Point(203, 3)
         Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(62, 60)
+        Me.PictureBox6.Size = New System.Drawing.Size(61, 58)
         Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox6.TabIndex = 1
         Me.PictureBox6.TabStop = False
         '
         'Panel14
         '
-        Me.Panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel14.Controls.Add(Me.labelDashboardVoters)
         Me.Panel14.Controls.Add(Me.Label13)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel14.Location = New System.Drawing.Point(3, 3)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Padding = New System.Windows.Forms.Padding(10)
-        Me.Panel14.Size = New System.Drawing.Size(195, 60)
+        Me.Panel14.Size = New System.Drawing.Size(194, 58)
         Me.Panel14.TabIndex = 0
         '
         'labelDashboardVoters
@@ -971,27 +983,27 @@ Partial Class Main_Form
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.tabLayoutResident)
+        Me.Panel1.Controls.Add(Me.TableLayoutPanel10)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(3, 3)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(269, 66)
         Me.Panel1.TabIndex = 0
         '
-        'tabLayoutResident
+        'TableLayoutPanel10
         '
-        Me.tabLayoutResident.ColumnCount = 2
-        Me.tabLayoutResident.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.0!))
-        Me.tabLayoutResident.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.tabLayoutResident.Controls.Add(Me.PictureBox1, 1, 0)
-        Me.tabLayoutResident.Controls.Add(Me.Panel9, 0, 0)
-        Me.tabLayoutResident.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tabLayoutResident.Location = New System.Drawing.Point(0, 0)
-        Me.tabLayoutResident.Name = "tabLayoutResident"
-        Me.tabLayoutResident.RowCount = 1
-        Me.tabLayoutResident.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tabLayoutResident.Size = New System.Drawing.Size(267, 64)
-        Me.tabLayoutResident.TabIndex = 0
+        Me.TableLayoutPanel10.ColumnCount = 2
+        Me.TableLayoutPanel10.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.0!))
+        Me.TableLayoutPanel10.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel10.Controls.Add(Me.PictureBox1, 1, 0)
+        Me.TableLayoutPanel10.Controls.Add(Me.Panel9, 0, 0)
+        Me.TableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel10.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel10.Name = "TableLayoutPanel10"
+        Me.TableLayoutPanel10.RowCount = 1
+        Me.TableLayoutPanel10.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel10.Size = New System.Drawing.Size(267, 64)
+        Me.TableLayoutPanel10.TabIndex = 0
         '
         'PictureBox1
         '
@@ -1039,78 +1051,79 @@ Partial Class Main_Form
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Total Residents"
         '
-        'TabPage2
+        'pageResident
         '
-        Me.TabPage2.Location = New System.Drawing.Point(4, 21)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1109, 682)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Resident"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.pageResident.Location = New System.Drawing.Point(4, 21)
+        Me.pageResident.Name = "pageResident"
+        Me.pageResident.Padding = New System.Windows.Forms.Padding(3)
+        Me.pageResident.Size = New System.Drawing.Size(1109, 682)
+        Me.pageResident.TabIndex = 1
+        Me.pageResident.Text = "Resident"
+        Me.pageResident.UseVisualStyleBackColor = True
         '
-        'TabPage3
+        'pageHousehold
         '
-        Me.TabPage3.Location = New System.Drawing.Point(4, 21)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(1109, 682)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Household"
-        Me.TabPage3.UseVisualStyleBackColor = True
+        Me.pageHousehold.Location = New System.Drawing.Point(4, 21)
+        Me.pageHousehold.Name = "pageHousehold"
+        Me.pageHousehold.Padding = New System.Windows.Forms.Padding(3)
+        Me.pageHousehold.Size = New System.Drawing.Size(1109, 682)
+        Me.pageHousehold.TabIndex = 2
+        Me.pageHousehold.Text = "Household"
+        Me.pageHousehold.UseVisualStyleBackColor = True
         '
-        'TabPage4
+        'pageReports
         '
-        Me.TabPage4.Location = New System.Drawing.Point(4, 21)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(1109, 682)
-        Me.TabPage4.TabIndex = 3
-        Me.TabPage4.Text = "Reports"
-        Me.TabPage4.UseVisualStyleBackColor = True
+        Me.pageReports.Location = New System.Drawing.Point(4, 21)
+        Me.pageReports.Name = "pageReports"
+        Me.pageReports.Padding = New System.Windows.Forms.Padding(3)
+        Me.pageReports.Size = New System.Drawing.Size(1109, 682)
+        Me.pageReports.TabIndex = 3
+        Me.pageReports.Text = "Reports"
+        Me.pageReports.UseVisualStyleBackColor = True
         '
-        'TabPage5
+        'pageCertificates
         '
-        Me.TabPage5.Location = New System.Drawing.Point(4, 21)
-        Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(1109, 682)
-        Me.TabPage5.TabIndex = 4
-        Me.TabPage5.Text = "Certificates"
-        Me.TabPage5.UseVisualStyleBackColor = True
+        Me.pageCertificates.Location = New System.Drawing.Point(4, 21)
+        Me.pageCertificates.Name = "pageCertificates"
+        Me.pageCertificates.Padding = New System.Windows.Forms.Padding(3)
+        Me.pageCertificates.Size = New System.Drawing.Size(1109, 682)
+        Me.pageCertificates.TabIndex = 4
+        Me.pageCertificates.Text = "Certificates"
+        Me.pageCertificates.UseVisualStyleBackColor = True
         '
-        'TabPage6
+        'pageMap
         '
-        Me.TabPage6.Location = New System.Drawing.Point(4, 21)
-        Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage6.Size = New System.Drawing.Size(1109, 682)
-        Me.TabPage6.TabIndex = 5
-        Me.TabPage6.Text = "Barangay Map"
-        Me.TabPage6.UseVisualStyleBackColor = True
+        Me.pageMap.Location = New System.Drawing.Point(4, 21)
+        Me.pageMap.Name = "pageMap"
+        Me.pageMap.Padding = New System.Windows.Forms.Padding(3)
+        Me.pageMap.Size = New System.Drawing.Size(1109, 682)
+        Me.pageMap.TabIndex = 5
+        Me.pageMap.Text = "Barangay Map"
+        Me.pageMap.UseVisualStyleBackColor = True
         '
-        'TabPage7
+        'pageAccount
         '
-        Me.TabPage7.Location = New System.Drawing.Point(4, 21)
-        Me.TabPage7.Name = "TabPage7"
-        Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage7.Size = New System.Drawing.Size(1109, 682)
-        Me.TabPage7.TabIndex = 6
-        Me.TabPage7.Text = "Account"
-        Me.TabPage7.UseVisualStyleBackColor = True
+        Me.pageAccount.Location = New System.Drawing.Point(4, 21)
+        Me.pageAccount.Name = "pageAccount"
+        Me.pageAccount.Padding = New System.Windows.Forms.Padding(3)
+        Me.pageAccount.Size = New System.Drawing.Size(1109, 682)
+        Me.pageAccount.TabIndex = 6
+        Me.pageAccount.Text = "Account"
+        Me.pageAccount.UseVisualStyleBackColor = True
         '
-        'TabPage8
+        'TabPage1
         '
-        Me.TabPage8.Location = New System.Drawing.Point(4, 21)
-        Me.TabPage8.Name = "TabPage8"
-        Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage8.Size = New System.Drawing.Size(1109, 682)
-        Me.TabPage8.TabIndex = 7
-        Me.TabPage8.Text = "TabPage8"
-        Me.TabPage8.UseVisualStyleBackColor = True
+        Me.TabPage1.Location = New System.Drawing.Point(4, 21)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(1109, 682)
+        Me.TabPage1.TabIndex = 7
+        Me.TabPage1.Text = "TabPage8"
+        Me.TabPage1.UseVisualStyleBackColor = True
         '
         'Panel17
         '
+        Me.Panel17.Controls.Add(Me.dataGridBrgyOfficials)
         Me.Panel17.Controls.Add(Me.Label1)
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel17.Location = New System.Drawing.Point(3, 147)
@@ -1123,12 +1136,58 @@ Partial Class Main_Form
         '
         Me.Label1.AutoSize = True
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label1.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(0, 10)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(295, 23)
+        Me.Label1.Padding = New System.Windows.Forms.Padding(5, 5, 5, 10)
+        Me.Label1.Size = New System.Drawing.Size(250, 33)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Current Barangay Officials"
+        '
+        'labelSignedIn
+        '
+        Me.labelSignedIn.Dock = System.Windows.Forms.DockStyle.Right
+        Me.labelSignedIn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelSignedIn.ForeColor = System.Drawing.Color.White
+        Me.labelSignedIn.Location = New System.Drawing.Point(980, 0)
+        Me.labelSignedIn.Name = "labelSignedIn"
+        Me.labelSignedIn.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.labelSignedIn.Size = New System.Drawing.Size(390, 42)
+        Me.labelSignedIn.TabIndex = 2
+        Me.labelSignedIn.Text = "Signed in as: Jb [Administrator]"
+        Me.labelSignedIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'dataGridBrgyOfficials
+        '
+        Me.dataGridBrgyOfficials.AllowUserToAddRows = False
+        Me.dataGridBrgyOfficials.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dataGridBrgyOfficials.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dataGridBrgyOfficials.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
+        Me.dataGridBrgyOfficials.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dataGridBrgyOfficials.Location = New System.Drawing.Point(0, 43)
+        Me.dataGridBrgyOfficials.Name = "dataGridBrgyOfficials"
+        Me.dataGridBrgyOfficials.Size = New System.Drawing.Size(1103, 489)
+        Me.dataGridBrgyOfficials.TabIndex = 1
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Name"
+        Me.Column1.Name = "Column1"
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Position"
+        Me.Column2.Name = "Column2"
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Other Position/s"
+        Me.Column3.Name = "Column3"
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Contact Number"
+        Me.Column4.Name = "Column4"
         '
         'Main_Form
         '
@@ -1190,12 +1249,13 @@ Partial Class Main_Form
         Me.Panel10.ResumeLayout(False)
         Me.Panel10.PerformLayout()
         Me.Panel1.ResumeLayout(False)
-        Me.tabLayoutResident.ResumeLayout(False)
+        Me.TableLayoutPanel10.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel9.ResumeLayout(False)
         Me.Panel9.PerformLayout()
         Me.Panel17.ResumeLayout(False)
         Me.Panel17.PerformLayout()
+        CType(Me.dataGridBrgyOfficials, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1217,13 +1277,13 @@ Partial Class Main_Form
     Friend WithEvents btnLogout As Button
     Friend WithEvents mainTabControl As TabControl
     Friend WithEvents pageDashboard As TabPage
-    Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents TabPage3 As TabPage
-    Friend WithEvents TabPage4 As TabPage
-    Friend WithEvents TabPage5 As TabPage
-    Friend WithEvents TabPage6 As TabPage
-    Friend WithEvents TabPage7 As TabPage
-    Friend WithEvents TabPage8 As TabPage
+    Friend WithEvents pageResident As TabPage
+    Friend WithEvents pageHousehold As TabPage
+    Friend WithEvents pageReports As TabPage
+    Friend WithEvents pageCertificates As TabPage
+    Friend WithEvents pageMap As TabPage
+    Friend WithEvents pageAccount As TabPage
+    Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Panel7 As Panel
@@ -1233,7 +1293,7 @@ Partial Class Main_Form
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents tabLayoutResident As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel10 As TableLayoutPanel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel9 As Panel
     Friend WithEvents labelDashboardResident As Label
@@ -1275,4 +1335,10 @@ Partial Class Main_Form
     Friend WithEvents Label5 As Label
     Friend WithEvents Panel17 As Panel
     Friend WithEvents Label1 As Label
+    Friend WithEvents labelSignedIn As Label
+    Friend WithEvents dataGridBrgyOfficials As DataGridView
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
 End Class
