@@ -12,19 +12,15 @@ Public Class Login
 
     End Sub
 
-    Private Sub txtUsername_Click(sender As Object, e As EventArgs) Handles txtUsername.Click
-        If userClick = 0 And txtUsername.Text = "Username*" Then
-            txtUsername.Clear()
-            userClick = 1
+    Private visibilityImage As Image
+    Private Function GetVisibilityImage(ByVal imageName As String) As Image
+        If imageName = "visible" Then
+            visibilityImage = My.Resources.visi_off
+        Else
+            visibilityImage = My.Resources.visi
         End If
-    End Sub
-
-    Private Sub txtPassword_Click(sender As Object, e As EventArgs) Handles txtPassword.Click
-        If passClick = 0 And txtPassword.Text = "Password*" Then
-            txtPassword.Clear()
-            passClick = 1
-        End If
-    End Sub
+        Return visibilityImage
+    End Function
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
 
@@ -39,6 +35,9 @@ Public Class Login
             Case 0
             Case Else
                 MessageBox.Show("Sever Connection Lost!")
+                Me.Enabled = True
+                txtPassword.Clear()
+                Return
         End Select
 
         Dim mySQLCommand As MySqlCommand
@@ -71,9 +70,21 @@ Public Class Login
 
     End Sub
 
+    'handles the action whenever the user en in the password
     Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
         If e.KeyCode = Keys.Enter Then
+            txtPassword.Text.Remove(txtPassword.Text.Length - 1)
             Me.btnLogin.PerformClick()
+        End If
+    End Sub
+
+    Private Sub btnVisibility_Click(sender As Object, e As EventArgs) Handles btnVisibility.Click
+        If txtPassword.PasswordChar = "*" Then
+            txtPassword.PasswordChar = ""
+            btnVisibility.Image = GetVisibilityImage("visible")
+        Else
+            txtPassword.PasswordChar = "*"
+            btnVisibility.Image = GetVisibilityImage("invisible")
         End If
     End Sub
 End Class

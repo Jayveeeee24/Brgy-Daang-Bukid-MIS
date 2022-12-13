@@ -5,10 +5,15 @@
 * Unfinished information form for when "I don't have an account" link is clicked
 * added new form [main form] and linked it for log in.
 
-12/13/22 - version 1.12.13
+12/13/22 - version 1.12.13v2
 * created the side navigation ui
 * linked the actual navigation and initial items
 * fixed responsiveness of the main content
+* added all the icons for the side navigation
+* added the analytics ui for the resident, household, female, etc.
+* fixed the side navigation icons not resizing when the navigation is minimized
+* added a show password button in the login
+
 
 
 

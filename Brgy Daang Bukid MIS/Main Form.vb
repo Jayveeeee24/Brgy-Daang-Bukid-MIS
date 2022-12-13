@@ -1,6 +1,5 @@
 ﻿Public Class Main_Form
     Public account_type As String
-    Dim isClicked As Boolean = False
 
     Private Sub Main_Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
     End Sub
@@ -16,8 +15,8 @@
     Private Sub timerOpen_Tick(sender As Object, e As EventArgs) Handles timerOpen.Tick
         If splitContainerMain.SplitterDistance > 60 Then
             splitContainerMain.SplitterDistance = 50
-            panelLogo.Size = New Size(50, 45)
-            panelLogo.Padding = New Padding(2, 5, 2, 5)
+            panelLogo.Size = New Size(43, 37)
+            panelLogo.Padding = New Padding(5, 5, 5, 5)
             picLogo.Size = New Size(40, 35)
         Else
             timerOpen.Enabled = False
@@ -35,7 +34,4 @@
         End If
     End Sub
 
-    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
-
-    End Sub
 End Class

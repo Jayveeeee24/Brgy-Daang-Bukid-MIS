@@ -135,9 +135,45 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_daang_bukid-legitbgremoved.ico" />
+    <None Include="Resources\employment 40.png" />
+    <None Include="Resources\voter 40.png" />
+    <None Include="Resources\pwd 40.png" />
+    <None Include="Resources\unemployed white 401.png" />
+    <None Include="Resources\unemployed white 40.png" />
+    <None Include="Resources\senior 401.png" />
+    <None Include="Resources\senior 40.png" />
+    <None Include="Resources\household 40.png" />
+    <None Include="Resources\minor white.png" />
+    <None Include="Resources\male 40.png" />
+    <None Include="Resources\female 40.png" />
+    <None Include="Resources\resident 40.png" />
+    <None Include="Resources\senior black.png" />
+    <None Include="Resources\residents black.png" />
+    <None Include="Resources\pwd black.png" />
+    <None Include="Resources\male black.png" />
+    <None Include="Resources\household, black.png" />
+    <None Include="Resources\female, black.png" />
+    <None Include="Resources\menu.png" />
+    <None Include="Resources\map.png" />
+    <None Include="Resources\senior.png" />
+    <None Include="Resources\residents.png" />
+    <None Include="Resources\reports.png" />
+    <None Include="Resources\pwd.png" />
+    <None Include="Resources\male.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\household.png" />
+    <None Include="Resources\female.png" />
+    <None Include="Resources\certificate2.png" />
+    <None Include="Resources\certificate.png" />
+    <None Include="Resources\account management.png" />
+    <None Include="Resources\dashboard.png" />
+    <None Include="Resources\menu 24 white.png" />
+    <None Include="Resources\menu 40 white.png" />
+    <None Include="Resources\logo_daang_bukid-legitbgremoved.png" />
+    <None Include="Resources\visi off.png" />
+    <None Include="Resources\visi.png" />
+    <None Include="Resources\Image1.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -22,5 +22,120 @@ Brgy Daang Bukid MIS
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.account_management">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.certificate">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.dashboard">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.employment_40">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.female_40">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.household">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.household_40">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.logo_daang_bukid_legitbgremoved">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.logout">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.male_40">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.map">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.menu_24_white">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.menu_40_white">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.pwd_40">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.reports">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.resident_40">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.residents">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.senior_40">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.senior_401">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.String1">
+<summary>
+  Looks up a localized string similar to fafbh.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.visi">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.visi_off">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.voter_40">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 </members>
 </doc>
