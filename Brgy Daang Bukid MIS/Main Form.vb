@@ -1,8 +1,50 @@
-﻿Public Class Main_Form
+﻿Imports System.Data
+Imports System.Runtime.CompilerServices
+Imports MySql.Data.MySqlClient
+Imports Mysqlx.XDevAPI.Common
+Public Class Main_Form
     Public account_type As String
+    Public mySqlConn As String = "server=localhost; user id=root; database=mis"
 
     Private Sub Main_Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        btnDashboard.PerformClick()
 
+    End Sub
+
+    Private Sub loadBrgyOfficialGrid()
+
+        dataGridBrgyOfficials.Rows.Clear()
+
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim mySQLCommand As MySqlCommand
+        Dim mySQLReader As MySqlDataReader
+        mySQLCommand = mySql.CreateCommand()
+        mySQLCommand.CommandType = CommandType.Text
+        mySQLCommand.CommandText = "Select * From brgyOfficials"
+        mySQLReader = mySQLCommand.ExecuteReader
+
+        If mySQLReader.HasRows Then
+            While mySQLReader.Read
+                dataGridBrgyOfficials.Rows.Add(New String() {mySQLReader!officialName, mySQLReader!officialPosition, mySQLReader!contactNo})
+            End While
+        End If
+
+        mySQLCommand.Dispose()
+        mySQLReader.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+
+        Me.dataGridBrgyOfficials.ClearSelection()
     End Sub
 
     Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
@@ -52,6 +94,8 @@
         btnAccount.BackColor = Color.FromArgb(25, 117, 211)
 
         mainTabControl.SelectedTab = pageDashboard
+
+        loadBrgyOfficialGrid()
     End Sub
 
     Private Sub btnResidentInfo_Click(sender As Object, e As EventArgs) Handles btnResidentInfo.Click
@@ -125,6 +169,5 @@
 
         mainTabControl.SelectedTab = pageAccount
     End Sub
-
 
 End Class

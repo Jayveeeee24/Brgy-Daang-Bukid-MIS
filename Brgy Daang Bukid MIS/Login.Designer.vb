@@ -30,7 +30,7 @@ Partial Class Login
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.txtPassword = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.labelNoAccount = New System.Windows.Forms.Label()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.btnVisibility = New System.Windows.Forms.Button()
         Me.panelLogo.SuspendLayout()
@@ -98,6 +98,7 @@ Partial Class Login
         Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsername.ForeColor = System.Drawing.Color.Black
         Me.txtUsername.Location = New System.Drawing.Point(383, 205)
+        Me.txtUsername.MaxLength = 20
         Me.txtUsername.Multiline = True
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(259, 27)
@@ -119,17 +120,17 @@ Partial Class Login
         Me.txtPassword.TabIndex = 7
         Me.txtPassword.Text = "Password*"
         '
-        'Label4
+        'labelNoAccount
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(379, 349)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(143, 16)
-        Me.Label4.TabIndex = 9
-        Me.Label4.Text = "I don't have an account"
+        Me.labelNoAccount.AutoSize = True
+        Me.labelNoAccount.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.labelNoAccount.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelNoAccount.ForeColor = System.Drawing.Color.White
+        Me.labelNoAccount.Location = New System.Drawing.Point(379, 349)
+        Me.labelNoAccount.Name = "labelNoAccount"
+        Me.labelNoAccount.Size = New System.Drawing.Size(143, 16)
+        Me.labelNoAccount.TabIndex = 9
+        Me.labelNoAccount.Text = "I don't have an account"
         '
         'btnLogin
         '
@@ -168,7 +169,7 @@ Partial Class Login
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(694, 489)
         Me.Controls.Add(Me.btnVisibility)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.labelNoAccount)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.txtUsername)
@@ -195,6 +196,6 @@ Partial Class Login
     Friend WithEvents txtUsername As TextBox
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents btnLogin As Button
-    Friend WithEvents Label4 As Label
+    Friend WithEvents labelNoAccount As Label
     Friend WithEvents btnVisibility As Button
 End Class

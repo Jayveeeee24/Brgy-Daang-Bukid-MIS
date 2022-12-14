@@ -27,6 +27,11 @@ Brgy Daang Bukid MIS
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.add_24">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.certificate">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -103,6 +108,11 @@ Brgy Daang Bukid MIS
 </summary>
 </member>
 <member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.residents">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.search">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

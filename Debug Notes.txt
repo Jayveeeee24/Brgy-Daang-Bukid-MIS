@@ -23,6 +23,11 @@
 * added the brgy official label and datagrid
 * updated the tab control for pages
 
+12/15/22 - version 1.1.8
+* created the datagrid for the brgy officials and modified its ui
+* fed data in mysql for initial brgy officials
+* modified the ui for the resident window [buttons, search bar, datagrid, etc.]
+
 
 
 

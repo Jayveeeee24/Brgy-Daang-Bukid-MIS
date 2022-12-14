@@ -23,8 +23,11 @@ Partial Class Main_Form
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main_Form))
         Me.panelTop = New System.Windows.Forms.Panel()
+        Me.labelSignedIn = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnMenu = New System.Windows.Forms.Button()
         Me.timerOpen = New System.Windows.Forms.Timer(Me.components)
@@ -42,6 +45,12 @@ Partial Class Main_Form
         Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.mainTabControl = New System.Windows.Forms.TabControl()
         Me.pageDashboard = New System.Windows.Forms.TabPage()
+        Me.Panel17 = New System.Windows.Forms.Panel()
+        Me.dataGridBrgyOfficials = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
@@ -92,20 +101,22 @@ Partial Class Main_Form
         Me.labelDashboardResident = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.pageResident = New System.Windows.Forms.TabPage()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.TableLayoutPanel9 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.txtSearchBar = New System.Windows.Forms.TextBox()
         Me.pageHousehold = New System.Windows.Forms.TabPage()
         Me.pageReports = New System.Windows.Forms.TabPage()
         Me.pageCertificates = New System.Windows.Forms.TabPage()
         Me.pageMap = New System.Windows.Forms.TabPage()
         Me.pageAccount = New System.Windows.Forms.TabPage()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.Panel17 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.labelSignedIn = New System.Windows.Forms.Label()
-        Me.dataGridBrgyOfficials = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Panel18 = New System.Windows.Forms.Panel()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.panelTop.SuspendLayout()
         CType(Me.splitContainerMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainerMain.Panel1.SuspendLayout()
@@ -115,6 +126,8 @@ Partial Class Main_Form
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mainTabControl.SuspendLayout()
         Me.pageDashboard.SuspendLayout()
+        Me.Panel17.SuspendLayout()
+        CType(Me.dataGridBrgyOfficials, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.TableLayoutPanel8.SuspendLayout()
@@ -148,8 +161,11 @@ Partial Class Main_Form
         Me.TableLayoutPanel10.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel9.SuspendLayout()
-        Me.Panel17.SuspendLayout()
-        CType(Me.dataGridBrgyOfficials, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pageResident.SuspendLayout()
+        Me.TableLayoutPanel9.SuspendLayout()
+        Me.FlowLayoutPanel1.SuspendLayout()
+        Me.Panel18.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panelTop
@@ -163,6 +179,19 @@ Partial Class Main_Form
         Me.panelTop.Name = "panelTop"
         Me.panelTop.Size = New System.Drawing.Size(1370, 42)
         Me.panelTop.TabIndex = 0
+        '
+        'labelSignedIn
+        '
+        Me.labelSignedIn.Dock = System.Windows.Forms.DockStyle.Right
+        Me.labelSignedIn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelSignedIn.ForeColor = System.Drawing.Color.White
+        Me.labelSignedIn.Location = New System.Drawing.Point(980, 0)
+        Me.labelSignedIn.Name = "labelSignedIn"
+        Me.labelSignedIn.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.labelSignedIn.Size = New System.Drawing.Size(390, 42)
+        Me.labelSignedIn.TabIndex = 2
+        Me.labelSignedIn.Text = "Signed in as: Jb [Administrator]"
+        Me.labelSignedIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label2
         '
@@ -206,6 +235,7 @@ Partial Class Main_Form
         'splitContainerMain
         '
         Me.splitContainerMain.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.splitContainerMain.IsSplitterFixed = True
         Me.splitContainerMain.Location = New System.Drawing.Point(0, 42)
         Me.splitContainerMain.Name = "splitContainerMain"
         '
@@ -288,6 +318,7 @@ Partial Class Main_Form
         Me.btnBrgyMap.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnBrgyMap.Size = New System.Drawing.Size(249, 40)
         Me.btnBrgyMap.TabIndex = 6
+        Me.btnBrgyMap.TabStop = False
         Me.btnBrgyMap.Text = "     Barangay Map"
         Me.btnBrgyMap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnBrgyMap.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -309,6 +340,7 @@ Partial Class Main_Form
         Me.btnCertificates.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnCertificates.Size = New System.Drawing.Size(249, 40)
         Me.btnCertificates.TabIndex = 5
+        Me.btnCertificates.TabStop = False
         Me.btnCertificates.Text = "     Certificates"
         Me.btnCertificates.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCertificates.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -352,6 +384,7 @@ Partial Class Main_Form
         Me.btnHouseholdInfo.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnHouseholdInfo.Size = New System.Drawing.Size(249, 40)
         Me.btnHouseholdInfo.TabIndex = 3
+        Me.btnHouseholdInfo.TabStop = False
         Me.btnHouseholdInfo.Text = "     Household Information"
         Me.btnHouseholdInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnHouseholdInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -373,6 +406,7 @@ Partial Class Main_Form
         Me.btnResidentInfo.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnResidentInfo.Size = New System.Drawing.Size(249, 40)
         Me.btnResidentInfo.TabIndex = 2
+        Me.btnResidentInfo.TabStop = False
         Me.btnResidentInfo.Text = "     Resident's Information"
         Me.btnResidentInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnResidentInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -395,6 +429,7 @@ Partial Class Main_Form
         Me.btnDashboard.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnDashboard.Size = New System.Drawing.Size(249, 40)
         Me.btnDashboard.TabIndex = 1
+        Me.btnDashboard.TabStop = False
         Me.btnDashboard.Text = "     Dashboard"
         Me.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -450,6 +485,90 @@ Partial Class Main_Form
         Me.pageDashboard.Size = New System.Drawing.Size(1109, 682)
         Me.pageDashboard.TabIndex = 0
         Me.pageDashboard.Text = "Dashboard"
+        '
+        'Panel17
+        '
+        Me.Panel17.Controls.Add(Me.dataGridBrgyOfficials)
+        Me.Panel17.Controls.Add(Me.Label1)
+        Me.Panel17.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel17.Location = New System.Drawing.Point(3, 147)
+        Me.Panel17.Name = "Panel17"
+        Me.Panel17.Padding = New System.Windows.Forms.Padding(0, 10, 0, 0)
+        Me.Panel17.Size = New System.Drawing.Size(1103, 532)
+        Me.Panel17.TabIndex = 1
+        '
+        'dataGridBrgyOfficials
+        '
+        Me.dataGridBrgyOfficials.AllowUserToAddRows = False
+        Me.dataGridBrgyOfficials.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dataGridBrgyOfficials.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dataGridBrgyOfficials.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dataGridBrgyOfficials.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dataGridBrgyOfficials.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(3)
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dataGridBrgyOfficials.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dataGridBrgyOfficials.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dataGridBrgyOfficials.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column4})
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.Padding = New System.Windows.Forms.Padding(7)
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridBrgyOfficials.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dataGridBrgyOfficials.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dataGridBrgyOfficials.Location = New System.Drawing.Point(0, 55)
+        Me.dataGridBrgyOfficials.MultiSelect = False
+        Me.dataGridBrgyOfficials.Name = "dataGridBrgyOfficials"
+        Me.dataGridBrgyOfficials.ReadOnly = True
+        Me.dataGridBrgyOfficials.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dataGridBrgyOfficials.Size = New System.Drawing.Size(1103, 477)
+        Me.dataGridBrgyOfficials.TabIndex = 1
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Name"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Position"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Contact Number"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(0, 10)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Padding = New System.Windows.Forms.Padding(5, 10, 5, 10)
+        Me.Label1.Size = New System.Drawing.Size(274, 45)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Current Barangay Officials"
         '
         'TableLayoutPanel1
         '
@@ -1053,13 +1172,89 @@ Partial Class Main_Form
         '
         'pageResident
         '
+        Me.pageResident.BackColor = System.Drawing.SystemColors.Control
+        Me.pageResident.Controls.Add(Me.Panel18)
+        Me.pageResident.Controls.Add(Me.FlowLayoutPanel1)
+        Me.pageResident.Controls.Add(Me.TableLayoutPanel9)
         Me.pageResident.Location = New System.Drawing.Point(4, 21)
         Me.pageResident.Name = "pageResident"
-        Me.pageResident.Padding = New System.Windows.Forms.Padding(3)
+        Me.pageResident.Padding = New System.Windows.Forms.Padding(10)
         Me.pageResident.Size = New System.Drawing.Size(1109, 682)
         Me.pageResident.TabIndex = 1
         Me.pageResident.Text = "Resident"
-        Me.pageResident.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.add_24
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(7, 3)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(7, 3, 5, 3)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(102, 36)
+        Me.Button2.TabIndex = 8
+        Me.Button2.TabStop = False
+        Me.Button2.Text = "  Add New"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'TableLayoutPanel9
+        '
+        Me.TableLayoutPanel9.ColumnCount = 2
+        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 95.0!))
+        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.0!))
+        Me.TableLayoutPanel9.Controls.Add(Me.btnSearch, 1, 0)
+        Me.TableLayoutPanel9.Controls.Add(Me.txtSearchBar, 0, 0)
+        Me.TableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TableLayoutPanel9.Location = New System.Drawing.Point(10, 10)
+        Me.TableLayoutPanel9.Name = "TableLayoutPanel9"
+        Me.TableLayoutPanel9.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
+        Me.TableLayoutPanel9.RowCount = 1
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel9.Size = New System.Drawing.Size(1089, 45)
+        Me.TableLayoutPanel9.TabIndex = 7
+        '
+        'btnSearch
+        '
+        Me.btnSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSearch.FlatAppearance.BorderSize = 0
+        Me.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearch.ForeColor = System.Drawing.Color.White
+        Me.btnSearch.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.search
+        Me.btnSearch.Location = New System.Drawing.Point(1037, 8)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(48, 28)
+        Me.btnSearch.TabIndex = 9
+        Me.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSearch.UseVisualStyleBackColor = False
+        '
+        'txtSearchBar
+        '
+        Me.txtSearchBar.BackColor = System.Drawing.Color.White
+        Me.txtSearchBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtSearchBar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtSearchBar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearchBar.ForeColor = System.Drawing.Color.Black
+        Me.txtSearchBar.Location = New System.Drawing.Point(3, 8)
+        Me.txtSearchBar.MaxLength = 20
+        Me.txtSearchBar.Multiline = True
+        Me.txtSearchBar.Name = "txtSearchBar"
+        Me.txtSearchBar.Size = New System.Drawing.Size(1028, 29)
+        Me.txtSearchBar.TabIndex = 6
+        Me.txtSearchBar.Text = "Type in your search"
         '
         'pageHousehold
         '
@@ -1121,73 +1316,87 @@ Partial Class Main_Form
         Me.TabPage1.Text = "TabPage8"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'Panel17
+        'ContextMenuStrip1
         '
-        Me.Panel17.Controls.Add(Me.dataGridBrgyOfficials)
-        Me.Panel17.Controls.Add(Me.Label1)
-        Me.Panel17.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel17.Location = New System.Drawing.Point(3, 147)
-        Me.Panel17.Name = "Panel17"
-        Me.Panel17.Padding = New System.Windows.Forms.Padding(0, 10, 0, 0)
-        Me.Panel17.Size = New System.Drawing.Size(1103, 532)
-        Me.Panel17.TabIndex = 1
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
-        'Label1
+        'FlowLayoutPanel1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label1.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(0, 10)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Padding = New System.Windows.Forms.Padding(5, 5, 5, 10)
-        Me.Label1.Size = New System.Drawing.Size(250, 33)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Current Barangay Officials"
+        Me.FlowLayoutPanel1.Controls.Add(Me.Button2)
+        Me.FlowLayoutPanel1.Controls.Add(Me.Button1)
+        Me.FlowLayoutPanel1.Controls.Add(Me.Button3)
+        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(10, 55)
+        Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(1089, 41)
+        Me.FlowLayoutPanel1.TabIndex = 11
         '
-        'labelSignedIn
+        'Button1
         '
-        Me.labelSignedIn.Dock = System.Windows.Forms.DockStyle.Right
-        Me.labelSignedIn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelSignedIn.ForeColor = System.Drawing.Color.White
-        Me.labelSignedIn.Location = New System.Drawing.Point(980, 0)
-        Me.labelSignedIn.Name = "labelSignedIn"
-        Me.labelSignedIn.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.labelSignedIn.Size = New System.Drawing.Size(390, 42)
-        Me.labelSignedIn.TabIndex = 2
-        Me.labelSignedIn.Text = "Signed in as: Jb [Administrator]"
-        Me.labelSignedIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.add_24
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(116, 3)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 3, 5, 3)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(102, 36)
+        Me.Button1.TabIndex = 9
+        Me.Button1.TabStop = False
+        Me.Button1.Text = "  Modify"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button1.UseVisualStyleBackColor = False
         '
-        'dataGridBrgyOfficials
+        'Button3
         '
-        Me.dataGridBrgyOfficials.AllowUserToAddRows = False
-        Me.dataGridBrgyOfficials.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dataGridBrgyOfficials.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dataGridBrgyOfficials.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
-        Me.dataGridBrgyOfficials.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dataGridBrgyOfficials.Location = New System.Drawing.Point(0, 43)
-        Me.dataGridBrgyOfficials.Name = "dataGridBrgyOfficials"
-        Me.dataGridBrgyOfficials.Size = New System.Drawing.Size(1103, 489)
-        Me.dataGridBrgyOfficials.TabIndex = 1
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.White
+        Me.Button3.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.add_24
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.Location = New System.Drawing.Point(225, 3)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(2, 3, 5, 3)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(102, 36)
+        Me.Button3.TabIndex = 10
+        Me.Button3.TabStop = False
+        Me.Button3.Text = "  Archive"
+        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button3.UseVisualStyleBackColor = False
         '
-        'Column1
+        'Panel18
         '
-        Me.Column1.HeaderText = "Name"
-        Me.Column1.Name = "Column1"
+        Me.Panel18.Controls.Add(Me.DataGridView1)
+        Me.Panel18.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel18.Location = New System.Drawing.Point(10, 96)
+        Me.Panel18.Name = "Panel18"
+        Me.Panel18.Padding = New System.Windows.Forms.Padding(7, 7, 7, 0)
+        Me.Panel18.Size = New System.Drawing.Size(1089, 576)
+        Me.Panel18.TabIndex = 12
         '
-        'Column2
+        'DataGridView1
         '
-        Me.Column2.HeaderText = "Position"
-        Me.Column2.Name = "Column2"
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Other Position/s"
-        Me.Column3.Name = "Column3"
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Contact Number"
-        Me.Column4.Name = "Column4"
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView1.Location = New System.Drawing.Point(7, 7)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(1075, 569)
+        Me.DataGridView1.TabIndex = 13
         '
         'Main_Form
         '
@@ -1212,6 +1421,9 @@ Partial Class Main_Form
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.mainTabControl.ResumeLayout(False)
         Me.pageDashboard.ResumeLayout(False)
+        Me.Panel17.ResumeLayout(False)
+        Me.Panel17.PerformLayout()
+        CType(Me.dataGridBrgyOfficials, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.Panel8.ResumeLayout(False)
         Me.TableLayoutPanel8.ResumeLayout(False)
@@ -1253,9 +1465,12 @@ Partial Class Main_Form
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel9.ResumeLayout(False)
         Me.Panel9.PerformLayout()
-        Me.Panel17.ResumeLayout(False)
-        Me.Panel17.PerformLayout()
-        CType(Me.dataGridBrgyOfficials, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pageResident.ResumeLayout(False)
+        Me.TableLayoutPanel9.ResumeLayout(False)
+        Me.TableLayoutPanel9.PerformLayout()
+        Me.FlowLayoutPanel1.ResumeLayout(False)
+        Me.Panel18.ResumeLayout(False)
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1339,6 +1554,15 @@ Partial Class Main_Form
     Friend WithEvents dataGridBrgyOfficials As DataGridView
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents TableLayoutPanel9 As TableLayoutPanel
+    Friend WithEvents txtSearchBar As TextBox
+    Friend WithEvents Button2 As Button
+    Friend WithEvents btnSearch As Button
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Panel18 As Panel
+    Friend WithEvents DataGridView1 As DataGridView
 End Class

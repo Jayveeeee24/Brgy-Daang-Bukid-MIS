@@ -91,4 +91,8 @@ Public Class Login
             btnVisibility.Image = GetVisibilityImage("invisible")
         End If
     End Sub
+
+    Private Sub labelNoAccount_Click(sender As Object, e As EventArgs) Handles labelNoAccount.Click
+
+    End Sub
 End Class
