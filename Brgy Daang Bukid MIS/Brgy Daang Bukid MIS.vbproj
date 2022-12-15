@@ -135,6 +135,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_daang_bukid-legitbgremoved.ico" />
+    <None Include="Resources\archive.png" />
+    <None Include="Resources\modify.png" />
     <None Include="Resources\search.png" />
     <None Include="Resources\add 24.png" />
     <None Include="Resources\employment 40.png" />

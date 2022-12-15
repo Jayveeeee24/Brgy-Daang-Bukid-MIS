@@ -22,6 +22,22 @@ Public Class Login
         Return visibilityImage
     End Function
 
+    Private Sub txtUsername_Click(sender As Object, e As EventArgs) Handles txtUsername.Click
+        If txtUsername.Text = "Username*" Then
+            txtUsername.Clear()
+        End If
+    End Sub
+
+    Private Sub txtPassword_Click(sender As Object, e As EventArgs) Handles txtPassword.Click
+        If txtPassword.Text = "Password*" Then
+            txtPassword.Clear()
+        End If
+    End Sub
+
+    Private Sub labelNoAccount_Click(sender As Object, e As EventArgs) Handles labelNoAccount.Click
+
+    End Sub
+
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
 
         Me.Enabled = False
@@ -51,7 +67,10 @@ Public Class Login
             Dim mySQLReader As MySqlDataReader
             mySQLCommand = mySql.CreateCommand()
             mySQLCommand.CommandType = CommandType.Text
-            mySQLCommand.CommandText = "SELECT * FROM accounts WHERE BINARY username = '" + txtUsername.Text + "' and password = '" + txtPassword.Text + "'"
+
+            mySQLCommand.CommandText = "SELECT * FROM accounts WHERE BINARY username=@username AND password=@password"
+            mySQLCommand.Parameters.AddWithValue("@username", txtUsername.Text)
+            mySQLCommand.Parameters.AddWithValue("@password", txtPassword.Text)
             mySQLReader = mySQLCommand.ExecuteReader
             If mySQLReader.HasRows Then
                 While mySQLReader.Read
@@ -72,12 +91,16 @@ Public Class Login
 
     End Sub
 
+    Private Sub txtUsername_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsername.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
+        End If
+    End Sub
+
     'handles the action whenever the user 'enter' in the password
     Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
-        If e.KeyCode = Keys.Enter And Len(txtPassword.Text) = 0 Then
-            Me.btnLogin.PerformClick()
-        ElseIf e.KeyCode = Keys.Enter And Len(txtPassword.Text) <> 0 Then
-            txtPassword.Text.Remove(txtPassword.Text.Length - 1)
+        If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
             Me.btnLogin.PerformClick()
         End If
     End Sub
@@ -92,7 +115,4 @@ Public Class Login
         End If
     End Sub
 
-    Private Sub labelNoAccount_Click(sender As Object, e As EventArgs) Handles labelNoAccount.Click
-
-    End Sub
 End Class

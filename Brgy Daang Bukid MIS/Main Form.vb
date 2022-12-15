@@ -2,6 +2,10 @@
 Imports System.Runtime.CompilerServices
 Imports MySql.Data.MySqlClient
 Imports Mysqlx.XDevAPI.Common
+Imports System.Data.SqlClient
+Imports System.Threading
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar
+
 Public Class Main_Form
     Public account_type As String
     Public mySqlConn As String = "server=localhost; user id=root; database=mis"
@@ -9,11 +13,13 @@ Public Class Main_Form
     Private Sub Main_Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         btnDashboard.PerformClick()
 
+        loadDataGrid(datagridHousehold, "Household")
+        loadDataGrid(dataGridBrgyOfficials, "Barangay Officials")
     End Sub
 
-    Private Sub loadBrgyOfficialGrid()
+    Private Sub loadDataGrid(ByVal datagrid As DataGridView, ByVal choice As String)
 
-        dataGridBrgyOfficials.Rows.Clear()
+        datagrid.Rows.Clear()
 
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
@@ -30,23 +36,50 @@ Public Class Main_Form
         Dim mySQLReader As MySqlDataReader
         mySQLCommand = mySql.CreateCommand()
         mySQLCommand.CommandType = CommandType.Text
-        mySQLCommand.CommandText = "Select * From brgyOfficials"
-        mySQLReader = mySQLCommand.ExecuteReader
 
-        If mySQLReader.HasRows Then
-            While mySQLReader.Read
-                dataGridBrgyOfficials.Rows.Add(New String() {mySQLReader!officialName, mySQLReader!officialPosition, mySQLReader!contactNo})
-            End While
+
+
+        If choice = "Barangay Officials" Then
+            mySQLCommand.CommandText = "Select * From brgyOfficials"
+            mySQLReader = mySQLCommand.ExecuteReader
+            If mySQLReader.HasRows Then
+                While mySQLReader.Read
+                    datagrid.Rows.Add(New String() {mySQLReader!official_name, mySQLReader!official_position, mySQLReader!contact_no})
+
+                End While
+            End If
+
+            mySQLCommand.Dispose()
+            mySQLReader.Dispose()
+
+
+
+        ElseIf choice = "Household" Then
+            Dim count As Integer = 50
+            Dim count2 As Integer = 100
+
+            mySQLCommand.CommandText = "Select * From household ORDER BY household_id LIMIT 800, 855"
+            mySQLReader = mySQLCommand.ExecuteReader
+
+            If mySQLReader.HasRows Then
+                While mySQLReader.Read
+                    datagrid.Rows.Add(New String() {mySQLReader!household_id, "", mySQLReader!bldg_no, mySQLReader!street_name, "", "", ""})
+
+                End While
+            End If
+
+            'txtSearchHousehold.Text = datagrid.RowCount - 1
+            mySQLCommand.Dispose()
+            mySQLReader.Dispose()
         End If
 
-        mySQLCommand.Dispose()
-        mySQLReader.Dispose()
         mySql.Close()
         mySql.Dispose()
 
-        Me.dataGridBrgyOfficials.ClearSelection()
+        datagrid.ClearSelection()
     End Sub
 
+    'this triggers the timer clocks whenever the user clicks on the menu [ie. minimizing and maximizing side navigation]
     Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
         If splitContainerMain.SplitterDistance > 60 Then
             timerOpen.Enabled = True
@@ -94,8 +127,8 @@ Public Class Main_Form
         btnAccount.BackColor = Color.FromArgb(25, 117, 211)
 
         mainTabControl.SelectedTab = pageDashboard
+        labelTitle.Text = "Dashboard"
 
-        loadBrgyOfficialGrid()
     End Sub
 
     Private Sub btnResidentInfo_Click(sender As Object, e As EventArgs) Handles btnResidentInfo.Click
@@ -108,6 +141,7 @@ Public Class Main_Form
         btnAccount.BackColor = Color.FromArgb(25, 117, 211)
 
         mainTabControl.SelectedTab = pageResident
+        labelTitle.Text = "Resident's Information"
     End Sub
 
     Private Sub btnHouseholdInfo_Click(sender As Object, e As EventArgs) Handles btnHouseholdInfo.Click
@@ -120,6 +154,8 @@ Public Class Main_Form
         btnAccount.BackColor = Color.FromArgb(25, 117, 211)
 
         mainTabControl.SelectedTab = pageHousehold
+        labelTitle.Text = "Household Information"
+
     End Sub
 
     Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
@@ -132,6 +168,7 @@ Public Class Main_Form
         btnAccount.BackColor = Color.FromArgb(25, 117, 211)
 
         mainTabControl.SelectedTab = pageReports
+        labelTitle.Text = "Reports"
     End Sub
 
     Private Sub btnCertificates_Click(sender As Object, e As EventArgs) Handles btnCertificates.Click
@@ -144,6 +181,7 @@ Public Class Main_Form
         btnAccount.BackColor = Color.FromArgb(25, 117, 211)
 
         mainTabControl.SelectedTab = pageCertificates
+        labelTitle.Text = "Certificates"
     End Sub
 
     Private Sub btnBrgyMap_Click(sender As Object, e As EventArgs) Handles btnBrgyMap.Click
@@ -156,6 +194,7 @@ Public Class Main_Form
         btnAccount.BackColor = Color.FromArgb(25, 117, 211)
 
         mainTabControl.SelectedTab = pageMap
+        labelTitle.Text = "Barangay Map"
     End Sub
 
     Private Sub btnAccount_Click(sender As Object, e As EventArgs) Handles btnAccount.Click
@@ -168,6 +207,14 @@ Public Class Main_Form
         btnAccount.BackColor = Color.FromArgb(52, 152, 219)
 
         mainTabControl.SelectedTab = pageAccount
+        labelTitle.Text = "Account Settings"
     End Sub
+
+    Private Sub txtSearchResident_Click(sender As Object, e As EventArgs) Handles txtSearchResident.Click
+        If txtSearchResident.Text = "Type in your search" Then
+            txtSearchResident.Clear()
+        End If
+    End Sub
+
 
 End Class
