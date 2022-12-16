@@ -515,6 +515,7 @@ Partial Class Main_Form
         Me.mainTabControl.Name = "mainTabControl"
         Me.mainTabControl.SelectedIndex = 0
         Me.mainTabControl.Size = New System.Drawing.Size(1117, 707)
+        Me.mainTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.mainTabControl.TabIndex = 0
         '
         'pageDashboard

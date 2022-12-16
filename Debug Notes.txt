@@ -1,5 +1,10 @@
 ## This lists all the versions and **Debug Notes**
 
+12/17/22 - version 1.1.11
+* moved the implementation of loading datagrid of household from main load to household side button
+* added the total household[dashboard] fetching in database
+* removed the tab selector dynamically in main load
+
 12/16/22 - version 1.1.10v2
 * reimplement the limit query for sql in datagrid
 * added a toolstrip for paging

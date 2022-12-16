@@ -8,11 +8,11 @@ Public Class Main_Form
     Dim totalPage As Integer
 
     Private Sub Main_Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        mainTabControl.ItemSize = New Size(0, 1)
         btnDashboard.PerformClick()
 
         countHousehold()
         loadDataGrid(dataGridBrgyOfficials, "Barangay Officials")
-        loadDataGrid(datagridHousehold, "Household")
     End Sub
 
     Private Sub countHousehold()
@@ -36,6 +36,7 @@ Public Class Main_Form
         labelTotalPageHousehold.Text = totalPage
         labelTotalHousehold.Text = totalRows
         btnBackHousehold.Enabled = False
+        labelDashboardHouseholds.Text = totalRows
 
         cmd.Dispose()
 
@@ -222,6 +223,7 @@ Public Class Main_Form
 
         mainTabControl.SelectedTab = pageResident
         labelTitle.Text = "Resident's Information"
+
     End Sub
 
     Private Sub btnHouseholdInfo_Click(sender As Object, e As EventArgs) Handles btnHouseholdInfo.Click
@@ -235,6 +237,9 @@ Public Class Main_Form
 
         mainTabControl.SelectedTab = pageHousehold
         labelTitle.Text = "Household Information"
+
+        txtPageNoHousehold.Text = 1
+        loadDataGrid(datagridHousehold, "Household")
 
     End Sub
 
