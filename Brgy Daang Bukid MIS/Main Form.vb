@@ -13,8 +13,8 @@ Public Class Main_Form
     Private Sub Main_Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         btnDashboard.PerformClick()
 
-        loadDataGrid(datagridHousehold, "Household")
         loadDataGrid(dataGridBrgyOfficials, "Barangay Officials")
+        loadDataGrid(datagridHousehold, "Household")
     End Sub
 
     Private Sub loadDataGrid(ByVal datagrid As DataGridView, ByVal choice As String)
@@ -38,7 +38,6 @@ Public Class Main_Form
         mySQLCommand.CommandType = CommandType.Text
 
 
-
         If choice = "Barangay Officials" Then
             mySQLCommand.CommandText = "Select * From brgyOfficials"
             mySQLReader = mySQLCommand.ExecuteReader
@@ -52,13 +51,8 @@ Public Class Main_Form
             mySQLCommand.Dispose()
             mySQLReader.Dispose()
 
-
-
         ElseIf choice = "Household" Then
-            Dim count As Integer = 50
-            Dim count2 As Integer = 100
-
-            mySQLCommand.CommandText = "Select * From household ORDER BY household_id LIMIT 800, 855"
+            mySQLCommand.CommandText = "Select * From household order by household_id asc limit 50"
             mySQLReader = mySQLCommand.ExecuteReader
 
             If mySQLReader.HasRows Then
@@ -78,6 +72,7 @@ Public Class Main_Form
 
         datagrid.ClearSelection()
     End Sub
+
 
     'this triggers the timer clocks whenever the user clicks on the menu [ie. minimizing and maximizing side navigation]
     Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
