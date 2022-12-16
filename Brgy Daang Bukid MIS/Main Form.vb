@@ -1,20 +1,88 @@
 ﻿Imports System.Data
-Imports System.Runtime.CompilerServices
 Imports MySql.Data.MySqlClient
-Imports Mysqlx.XDevAPI.Common
-Imports System.Data.SqlClient
-Imports System.Threading
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar
 
 Public Class Main_Form
     Public account_type As String
     Public mySqlConn As String = "server=localhost; user id=root; database=mis"
+    Dim totalRows As Integer
+    Dim totalPage As Integer
 
     Private Sub Main_Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         btnDashboard.PerformClick()
 
+        countHousehold()
         loadDataGrid(dataGridBrgyOfficials, "Barangay Officials")
         loadDataGrid(datagridHousehold, "Household")
+    End Sub
+
+    Private Sub countHousehold()
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = "Select count(*) from household"
+        totalRows = Convert.ToString(cmd.ExecuteScalar())
+        totalPage = Math.Ceiling(totalRows / 30)
+        labelTotalPageHousehold.Text = totalPage
+        labelTotalHousehold.Text = totalRows
+        btnBackHousehold.Enabled = False
+
+        cmd.Dispose()
+
+        mySql.Close()
+        mySql.Dispose()
+    End Sub
+
+    Private Sub txtPageNoHousehold_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPageNoHousehold.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            If txtPageNoHousehold.Text > totalPage Then
+                MsgBox("Please enter a valid number", vbCritical, "Warning")
+                txtPageNoHousehold.Text = 1
+            Else
+                If txtPageNoHousehold.Text = 0 Or Len(txtPageNoHousehold.Text.Trim) <> 0 Or Not (String.IsNullOrEmpty(txtPageNoHousehold.Text.Trim)) Or txtPageNoHousehold.Text <= totalPage Then
+                    loadDataGrid(datagridHousehold, "Household")
+                End If
+            End If
+
+            e.SuppressKeyPress = True
+        End If
+    End Sub
+
+
+    Private Sub btnBackHousehold_Click(sender As Object, e As EventArgs) Handles btnBackHousehold.Click
+        If txtPageNoHousehold.Text <> 1 And txtPageNoHousehold.Text <= totalPage Then
+            txtPageNoHousehold.Text -= 1
+            loadDataGrid(datagridHousehold, "Household")
+        End If
+    End Sub
+
+    Private Sub btnForwardHousehold_Click(sender As Object, e As EventArgs) Handles btnForwardHousehold.Click
+        If txtPageNoHousehold.Text < totalPage Then
+            txtPageNoHousehold.Text += 1
+            loadDataGrid(datagridHousehold, "Household")
+        End If
+    End Sub
+
+    Private Sub txtPageNoHousehold_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPageNoHousehold.KeyPress
+        '97 - 122 = Ascii codes for simple letters
+        '65 - 90  = Ascii codes for capital letters
+        '48 - 57  = Ascii codes for numbers
+
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
     End Sub
 
     Private Sub loadDataGrid(ByVal datagrid As DataGridView, ByVal choice As String)
@@ -52,7 +120,8 @@ Public Class Main_Form
             mySQLReader.Dispose()
 
         ElseIf choice = "Household" Then
-            mySQLCommand.CommandText = "Select * From household order by household_id asc limit 50"
+
+            mySQLCommand.CommandText = "Select * From household order by household_id asc limit 30 OFFSET " & ((IIf(Me.txtPageNoHousehold.Text = "", 1, CInt(Me.txtPageNoHousehold.Text)) - 1) * 30)
             mySQLReader = mySQLCommand.ExecuteReader
 
             If mySQLReader.HasRows Then
@@ -62,12 +131,28 @@ Public Class Main_Form
                 End While
             End If
 
-            'txtSearchHousehold.Text = datagrid.RowCount - 1
             mySQLCommand.Dispose()
             mySQLReader.Dispose()
+
+
+            If txtPageNoHousehold.Text = 1 Then
+                    btnBackHousehold.Enabled = False
+                End If
+            If txtPageNoHousehold.Text < totalPage And txtPageNoHousehold.Text <> 1 Then
+                btnForwardHousehold.Enabled = True
+            End If
+            If txtPageNoHousehold.Text > 1 Then
+                    btnBackHousehold.Enabled = True
+                End If
+            If txtPageNoHousehold.Text = totalPage Then
+                btnForwardHousehold.Enabled = False
+                labelShownHousehold.Text = totalPage
+            ElseIf txtPageNoHousehold.Text < totalPage Then
+                labelShownHousehold.Text = txtPageNoHousehold.Text * 30
+            End If
         End If
 
-        mySql.Close()
+            mySql.Close()
         mySql.Dispose()
 
         datagrid.ClearSelection()

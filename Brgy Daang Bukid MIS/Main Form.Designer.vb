@@ -134,15 +134,15 @@ Partial Class Main_Form
         Me.Panel21 = New System.Windows.Forms.Panel()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel5 = New System.Windows.Forms.ToolStripLabel()
-        Me.PageNo = New System.Windows.Forms.ToolStripTextBox()
+        Me.txtPageNoHousehold = New System.Windows.Forms.ToolStripTextBox()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
-        Me.ToolStripLabel7 = New System.Windows.Forms.ToolStripLabel()
-        Me.btnPageBackResident = New System.Windows.Forms.ToolStripButton()
-        Me.btnForwardPageResident = New System.Windows.Forms.ToolStripButton()
+        Me.labelTotalPageHousehold = New System.Windows.Forms.ToolStripLabel()
+        Me.btnBackHousehold = New System.Windows.Forms.ToolStripButton()
+        Me.btnForwardHousehold = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
-        Me.ToolStripLabel6 = New System.Windows.Forms.ToolStripLabel()
+        Me.labelShownHousehold = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
-        Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
+        Me.labelTotalHousehold = New System.Windows.Forms.ToolStripLabel()
         Me.TableLayoutPanel11 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnSearchHousehold = New System.Windows.Forms.Button()
         Me.txtSearchHousehold = New System.Windows.Forms.TextBox()
@@ -1624,7 +1624,7 @@ Partial Class Main_Form
         '
         Me.ToolStrip1.CanOverflow = False
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel5, Me.PageNo, Me.ToolStripLabel1, Me.ToolStripLabel7, Me.btnPageBackResident, Me.btnForwardPageResident, Me.ToolStripLabel2, Me.ToolStripLabel6, Me.ToolStripLabel3, Me.ToolStripLabel4})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel5, Me.txtPageNoHousehold, Me.ToolStripLabel1, Me.labelTotalPageHousehold, Me.btnBackHousehold, Me.btnForwardHousehold, Me.ToolStripLabel2, Me.labelShownHousehold, Me.ToolStripLabel3, Me.labelTotalHousehold})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(401, 36)
@@ -1637,14 +1637,14 @@ Partial Class Main_Form
         Me.ToolStripLabel5.Size = New System.Drawing.Size(33, 33)
         Me.ToolStripLabel5.Text = "Page"
         '
-        'PageNo
+        'txtPageNoHousehold
         '
-        Me.PageNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PageNo.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PageNo.Name = "PageNo"
-        Me.PageNo.Size = New System.Drawing.Size(25, 36)
-        Me.PageNo.Text = "1"
-        Me.PageNo.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtPageNoHousehold.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPageNoHousehold.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPageNoHousehold.Name = "txtPageNoHousehold"
+        Me.txtPageNoHousehold.Size = New System.Drawing.Size(25, 36)
+        Me.txtPageNoHousehold.Text = "1"
+        Me.txtPageNoHousehold.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ToolStripLabel1
         '
@@ -1652,27 +1652,27 @@ Partial Class Main_Form
         Me.ToolStripLabel1.Size = New System.Drawing.Size(18, 33)
         Me.ToolStripLabel1.Text = "of"
         '
-        'ToolStripLabel7
+        'labelTotalPageHousehold
         '
-        Me.ToolStripLabel7.Name = "ToolStripLabel7"
-        Me.ToolStripLabel7.Size = New System.Drawing.Size(19, 33)
-        Me.ToolStripLabel7.Text = "xx"
+        Me.labelTotalPageHousehold.Name = "labelTotalPageHousehold"
+        Me.labelTotalPageHousehold.Size = New System.Drawing.Size(19, 33)
+        Me.labelTotalPageHousehold.Text = "xx"
         '
-        'btnPageBackResident
+        'btnBackHousehold
         '
-        Me.btnPageBackResident.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnPageBackResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_back
-        Me.btnPageBackResident.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnPageBackResident.Name = "btnPageBackResident"
-        Me.btnPageBackResident.Size = New System.Drawing.Size(23, 33)
+        Me.btnBackHousehold.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnBackHousehold.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_back
+        Me.btnBackHousehold.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnBackHousehold.Name = "btnBackHousehold"
+        Me.btnBackHousehold.Size = New System.Drawing.Size(23, 33)
         '
-        'btnForwardPageResident
+        'btnForwardHousehold
         '
-        Me.btnForwardPageResident.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnForwardPageResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_forward
-        Me.btnForwardPageResident.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnForwardPageResident.Name = "btnForwardPageResident"
-        Me.btnForwardPageResident.Size = New System.Drawing.Size(23, 33)
+        Me.btnForwardHousehold.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnForwardHousehold.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_forward
+        Me.btnForwardHousehold.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnForwardHousehold.Name = "btnForwardHousehold"
+        Me.btnForwardHousehold.Size = New System.Drawing.Size(23, 33)
         '
         'ToolStripLabel2
         '
@@ -1680,11 +1680,11 @@ Partial Class Main_Form
         Me.ToolStripLabel2.Size = New System.Drawing.Size(70, 33)
         Me.ToolStripLabel2.Text = "Total shown"
         '
-        'ToolStripLabel6
+        'labelShownHousehold
         '
-        Me.ToolStripLabel6.Name = "ToolStripLabel6"
-        Me.ToolStripLabel6.Size = New System.Drawing.Size(19, 33)
-        Me.ToolStripLabel6.Text = "xx"
+        Me.labelShownHousehold.Name = "labelShownHousehold"
+        Me.labelShownHousehold.Size = New System.Drawing.Size(19, 33)
+        Me.labelShownHousehold.Text = "xx"
         '
         'ToolStripLabel3
         '
@@ -1692,11 +1692,11 @@ Partial Class Main_Form
         Me.ToolStripLabel3.Size = New System.Drawing.Size(81, 33)
         Me.ToolStripLabel3.Text = "records out of"
         '
-        'ToolStripLabel4
+        'labelTotalHousehold
         '
-        Me.ToolStripLabel4.Name = "ToolStripLabel4"
-        Me.ToolStripLabel4.Size = New System.Drawing.Size(25, 33)
-        Me.ToolStripLabel4.Text = "xxx"
+        Me.labelTotalHousehold.Name = "labelTotalHousehold"
+        Me.labelTotalHousehold.Size = New System.Drawing.Size(25, 33)
+        Me.labelTotalHousehold.Text = "xxx"
         '
         'TableLayoutPanel11
         '
@@ -2000,15 +2000,15 @@ Partial Class Main_Form
     Friend WithEvents backgroundWorkerDatabase As System.ComponentModel.BackgroundWorker
     Friend WithEvents Panel20 As Panel
     Friend WithEvents ToolStrip1 As ToolStrip
-    Friend WithEvents PageNo As ToolStripTextBox
+    Friend WithEvents txtPageNoHousehold As ToolStripTextBox
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
-    Friend WithEvents btnPageBackResident As ToolStripButton
-    Friend WithEvents btnForwardPageResident As ToolStripButton
+    Friend WithEvents btnBackHousehold As ToolStripButton
+    Friend WithEvents btnForwardHousehold As ToolStripButton
     Friend WithEvents ToolStripLabel2 As ToolStripLabel
     Friend WithEvents ToolStripLabel3 As ToolStripLabel
     Friend WithEvents Panel21 As Panel
     Friend WithEvents ToolStripLabel5 As ToolStripLabel
-    Friend WithEvents ToolStripLabel7 As ToolStripLabel
-    Friend WithEvents ToolStripLabel6 As ToolStripLabel
-    Friend WithEvents ToolStripLabel4 As ToolStripLabel
+    Friend WithEvents labelTotalPageHousehold As ToolStripLabel
+    Friend WithEvents labelShownHousehold As ToolStripLabel
+    Friend WithEvents labelTotalHousehold As ToolStripLabel
 End Class
