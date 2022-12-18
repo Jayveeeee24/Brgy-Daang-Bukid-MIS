@@ -37,6 +37,7 @@ Partial Class Main_Form
         Me.timerOpen = New System.Windows.Forms.Timer(Me.components)
         Me.timerClose = New System.Windows.Forms.Timer(Me.components)
         Me.splitContainerMain = New System.Windows.Forms.SplitContainer()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.btnAccount = New System.Windows.Forms.Button()
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.btnBrgyMap = New System.Windows.Forms.Button()
@@ -107,11 +108,6 @@ Partial Class Main_Form
         Me.pageResident = New System.Windows.Forms.TabPage()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.dataGridResidents = New System.Windows.Forms.DataGridView()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.btnAddResident = New System.Windows.Forms.Button()
         Me.btnModifyResident = New System.Windows.Forms.Button()
@@ -130,8 +126,6 @@ Partial Class Main_Form
         Me.btnAddHousehold = New System.Windows.Forms.Button()
         Me.btnModifyHousehold = New System.Windows.Forms.Button()
         Me.btnArchiveHousehold = New System.Windows.Forms.Button()
-        Me.Panel20 = New System.Windows.Forms.Panel()
-        Me.Panel21 = New System.Windows.Forms.Panel()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel5 = New System.Windows.Forms.ToolStripLabel()
         Me.txtPageNoHousehold = New System.Windows.Forms.ToolStripTextBox()
@@ -144,14 +138,20 @@ Partial Class Main_Form
         Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
         Me.labelTotalHousehold = New System.Windows.Forms.ToolStripLabel()
         Me.TableLayoutPanel11 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnSearchHousehold = New System.Windows.Forms.Button()
         Me.txtSearchHousehold = New System.Windows.Forms.TextBox()
+        Me.btnSearchHousehold = New System.Windows.Forms.Button()
+        Me.Panel20 = New System.Windows.Forms.Panel()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.pageReports = New System.Windows.Forms.TabPage()
         Me.pageCertificates = New System.Windows.Forms.TabPage()
         Me.pageMap = New System.Windows.Forms.TabPage()
         Me.pageAccount = New System.Windows.Forms.TabPage()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.backgroundWorkerDatabase = New System.ComponentModel.BackgroundWorker()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.panelTop.SuspendLayout()
         CType(Me.splitContainerMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainerMain.Panel1.SuspendLayout()
@@ -205,10 +205,9 @@ Partial Class Main_Form
         Me.Panel19.SuspendLayout()
         CType(Me.datagridHousehold, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel2.SuspendLayout()
-        Me.Panel20.SuspendLayout()
-        Me.Panel21.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.TableLayoutPanel11.SuspendLayout()
+        Me.Panel20.SuspendLayout()
         Me.SuspendLayout()
         '
         'panelTop
@@ -228,12 +227,12 @@ Partial Class Main_Form
         Me.labelSignedIn.Dock = System.Windows.Forms.DockStyle.Right
         Me.labelSignedIn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelSignedIn.ForeColor = System.Drawing.Color.White
-        Me.labelSignedIn.Location = New System.Drawing.Point(980, 0)
+        Me.labelSignedIn.Location = New System.Drawing.Point(907, 0)
         Me.labelSignedIn.Name = "labelSignedIn"
         Me.labelSignedIn.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.labelSignedIn.Size = New System.Drawing.Size(390, 42)
+        Me.labelSignedIn.Size = New System.Drawing.Size(463, 42)
         Me.labelSignedIn.TabIndex = 2
-        Me.labelSignedIn.Text = "Signed in as: Jb [Administrator]"
+        Me.labelSignedIn.Text = "Logged in as: John Bernard Tinio  [Administrator]"
         Me.labelSignedIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'labelTitle
@@ -285,6 +284,7 @@ Partial Class Main_Form
         'splitContainerMain.Panel1
         '
         Me.splitContainerMain.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.splitContainerMain.Panel1.Controls.Add(Me.Button1)
         Me.splitContainerMain.Panel1.Controls.Add(Me.btnAccount)
         Me.splitContainerMain.Panel1.Controls.Add(Me.btnLogout)
         Me.splitContainerMain.Panel1.Controls.Add(Me.btnBrgyMap)
@@ -302,6 +302,28 @@ Partial Class Main_Form
         Me.splitContainerMain.Size = New System.Drawing.Size(1370, 707)
         Me.splitContainerMain.SplitterDistance = 249
         Me.splitContainerMain.TabIndex = 3
+        '
+        'Button1
+        '
+        Me.Button1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.inventory
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.Button1.Location = New System.Drawing.Point(0, 408)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
+        Me.Button1.Size = New System.Drawing.Size(249, 40)
+        Me.Button1.TabIndex = 9
+        Me.Button1.TabStop = False
+        Me.Button1.Text = "     Inventory Management"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'btnAccount
         '
@@ -1272,36 +1294,6 @@ Partial Class Main_Form
         Me.dataGridResidents.Size = New System.Drawing.Size(1075, 569)
         Me.dataGridResidents.TabIndex = 13
         '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Full Name"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column8
-        '
-        Me.Column8.HeaderText = "Date of Birth"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
-        '
-        'Column9
-        '
-        Me.Column9.HeaderText = "Civil Status"
-        Me.Column9.Name = "Column9"
-        Me.Column9.ReadOnly = True
-        '
-        'Column10
-        '
-        Me.Column10.HeaderText = "Sex"
-        Me.Column10.Name = "Column10"
-        Me.Column10.ReadOnly = True
-        '
-        'Column11
-        '
-        Me.Column11.HeaderText = "Registered Voter"
-        Me.Column11.Name = "Column11"
-        Me.Column11.ReadOnly = True
-        '
         'FlowLayoutPanel1
         '
         Me.FlowLayoutPanel1.Controls.Add(Me.btnAddResident)
@@ -1444,7 +1436,7 @@ Partial Class Main_Form
         Me.pageHousehold.Controls.Add(Me.TableLayoutPanel11)
         Me.pageHousehold.Location = New System.Drawing.Point(4, 21)
         Me.pageHousehold.Name = "pageHousehold"
-        Me.pageHousehold.Padding = New System.Windows.Forms.Padding(10)
+        Me.pageHousehold.Padding = New System.Windows.Forms.Padding(5)
         Me.pageHousehold.Size = New System.Drawing.Size(1109, 682)
         Me.pageHousehold.TabIndex = 2
         Me.pageHousehold.Text = "Household"
@@ -1453,10 +1445,10 @@ Partial Class Main_Form
         '
         Me.Panel19.Controls.Add(Me.datagridHousehold)
         Me.Panel19.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel19.Location = New System.Drawing.Point(10, 96)
+        Me.Panel19.Location = New System.Drawing.Point(5, 91)
         Me.Panel19.Name = "Panel19"
         Me.Panel19.Padding = New System.Windows.Forms.Padding(7, 7, 7, 0)
-        Me.Panel19.Size = New System.Drawing.Size(1089, 576)
+        Me.Panel19.Size = New System.Drawing.Size(1099, 586)
         Me.Panel19.TabIndex = 13
         '
         'datagridHousehold
@@ -1491,7 +1483,7 @@ Partial Class Main_Form
         Me.datagridHousehold.Name = "datagridHousehold"
         Me.datagridHousehold.ReadOnly = True
         Me.datagridHousehold.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datagridHousehold.Size = New System.Drawing.Size(1075, 569)
+        Me.datagridHousehold.Size = New System.Drawing.Size(1085, 579)
         Me.datagridHousehold.TabIndex = 13
         '
         'Column5
@@ -1523,12 +1515,12 @@ Partial Class Main_Form
         Me.FlowLayoutPanel2.Controls.Add(Me.btnAddHousehold)
         Me.FlowLayoutPanel2.Controls.Add(Me.btnModifyHousehold)
         Me.FlowLayoutPanel2.Controls.Add(Me.btnArchiveHousehold)
-        Me.FlowLayoutPanel2.Controls.Add(Me.Panel20)
+        Me.FlowLayoutPanel2.Controls.Add(Me.ToolStrip1)
         Me.FlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(10, 55)
+        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(5, 50)
         Me.FlowLayoutPanel2.Margin = New System.Windows.Forms.Padding(0)
         Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
-        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(1089, 41)
+        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(1099, 41)
         Me.FlowLayoutPanel2.TabIndex = 12
         '
         'btnAddHousehold
@@ -1593,7 +1585,7 @@ Partial Class Main_Form
         Me.btnArchiveHousehold.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.archive
         Me.btnArchiveHousehold.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnArchiveHousehold.Location = New System.Drawing.Point(225, 3)
-        Me.btnArchiveHousehold.Margin = New System.Windows.Forms.Padding(2, 3, 5, 3)
+        Me.btnArchiveHousehold.Margin = New System.Windows.Forms.Padding(2, 3, 15, 3)
         Me.btnArchiveHousehold.Name = "btnArchiveHousehold"
         Me.btnArchiveHousehold.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.btnArchiveHousehold.Size = New System.Drawing.Size(102, 36)
@@ -1603,39 +1595,21 @@ Partial Class Main_Form
         Me.btnArchiveHousehold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnArchiveHousehold.UseVisualStyleBackColor = False
         '
-        'Panel20
-        '
-        Me.Panel20.Controls.Add(Me.Panel21)
-        Me.Panel20.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel20.Location = New System.Drawing.Point(335, 3)
-        Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(747, 36)
-        Me.Panel20.TabIndex = 11
-        '
-        'Panel21
-        '
-        Me.Panel21.Controls.Add(Me.ToolStrip1)
-        Me.Panel21.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel21.Location = New System.Drawing.Point(346, 0)
-        Me.Panel21.Name = "Panel21"
-        Me.Panel21.Size = New System.Drawing.Size(401, 36)
-        Me.Panel21.TabIndex = 0
-        '
         'ToolStrip1
         '
         Me.ToolStrip1.CanOverflow = False
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel5, Me.txtPageNoHousehold, Me.ToolStripLabel1, Me.labelTotalPageHousehold, Me.btnBackHousehold, Me.btnForwardHousehold, Me.ToolStripLabel2, Me.labelShownHousehold, Me.ToolStripLabel3, Me.labelTotalHousehold})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.ToolStrip1.Location = New System.Drawing.Point(342, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(401, 36)
+        Me.ToolStrip1.Size = New System.Drawing.Size(285, 42)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'ToolStripLabel5
         '
         Me.ToolStripLabel5.Name = "ToolStripLabel5"
-        Me.ToolStripLabel5.Size = New System.Drawing.Size(33, 33)
+        Me.ToolStripLabel5.Size = New System.Drawing.Size(33, 39)
         Me.ToolStripLabel5.Text = "Page"
         '
         'txtPageNoHousehold
@@ -1643,20 +1617,20 @@ Partial Class Main_Form
         Me.txtPageNoHousehold.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPageNoHousehold.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPageNoHousehold.Name = "txtPageNoHousehold"
-        Me.txtPageNoHousehold.Size = New System.Drawing.Size(25, 36)
+        Me.txtPageNoHousehold.Size = New System.Drawing.Size(25, 42)
         Me.txtPageNoHousehold.Text = "1"
         Me.txtPageNoHousehold.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ToolStripLabel1
         '
         Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(18, 33)
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(18, 39)
         Me.ToolStripLabel1.Text = "of"
         '
         'labelTotalPageHousehold
         '
         Me.labelTotalPageHousehold.Name = "labelTotalPageHousehold"
-        Me.labelTotalPageHousehold.Size = New System.Drawing.Size(19, 33)
+        Me.labelTotalPageHousehold.Size = New System.Drawing.Size(19, 39)
         Me.labelTotalPageHousehold.Text = "xx"
         '
         'btnBackHousehold
@@ -1665,7 +1639,8 @@ Partial Class Main_Form
         Me.btnBackHousehold.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_back
         Me.btnBackHousehold.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnBackHousehold.Name = "btnBackHousehold"
-        Me.btnBackHousehold.Size = New System.Drawing.Size(23, 33)
+        Me.btnBackHousehold.Size = New System.Drawing.Size(23, 39)
+        Me.btnBackHousehold.ToolTipText = "Previous Page"
         '
         'btnForwardHousehold
         '
@@ -1673,66 +1648,51 @@ Partial Class Main_Form
         Me.btnForwardHousehold.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_forward
         Me.btnForwardHousehold.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnForwardHousehold.Name = "btnForwardHousehold"
-        Me.btnForwardHousehold.Size = New System.Drawing.Size(23, 33)
+        Me.btnForwardHousehold.Size = New System.Drawing.Size(23, 39)
+        Me.btnForwardHousehold.ToolTipText = "Next Page"
         '
         'ToolStripLabel2
         '
         Me.ToolStripLabel2.Name = "ToolStripLabel2"
-        Me.ToolStripLabel2.Size = New System.Drawing.Size(70, 33)
-        Me.ToolStripLabel2.Text = "Total shown"
+        Me.ToolStripLabel2.Size = New System.Drawing.Size(47, 39)
+        Me.ToolStripLabel2.Text = "Record:"
         '
         'labelShownHousehold
         '
         Me.labelShownHousehold.Name = "labelShownHousehold"
-        Me.labelShownHousehold.Size = New System.Drawing.Size(19, 33)
+        Me.labelShownHousehold.Size = New System.Drawing.Size(19, 39)
         Me.labelShownHousehold.Text = "xx"
         '
         'ToolStripLabel3
         '
         Me.ToolStripLabel3.Name = "ToolStripLabel3"
-        Me.ToolStripLabel3.Size = New System.Drawing.Size(81, 33)
-        Me.ToolStripLabel3.Text = "records out of"
+        Me.ToolStripLabel3.Size = New System.Drawing.Size(39, 39)
+        Me.ToolStripLabel3.Text = "out of"
         '
         'labelTotalHousehold
         '
         Me.labelTotalHousehold.Name = "labelTotalHousehold"
-        Me.labelTotalHousehold.Size = New System.Drawing.Size(25, 33)
+        Me.labelTotalHousehold.Size = New System.Drawing.Size(25, 39)
         Me.labelTotalHousehold.Text = "xxx"
         '
         'TableLayoutPanel11
         '
-        Me.TableLayoutPanel11.ColumnCount = 2
-        Me.TableLayoutPanel11.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 95.0!))
-        Me.TableLayoutPanel11.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.0!))
-        Me.TableLayoutPanel11.Controls.Add(Me.btnSearchHousehold, 1, 0)
+        Me.TableLayoutPanel11.ColumnCount = 3
+        Me.TableLayoutPanel11.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.25712!))
+        Me.TableLayoutPanel11.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.77411!))
+        Me.TableLayoutPanel11.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.914468!))
         Me.TableLayoutPanel11.Controls.Add(Me.txtSearchHousehold, 0, 0)
+        Me.TableLayoutPanel11.Controls.Add(Me.btnSearchHousehold, 2, 0)
+        Me.TableLayoutPanel11.Controls.Add(Me.Panel20, 1, 0)
         Me.TableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TableLayoutPanel11.Location = New System.Drawing.Point(10, 10)
+        Me.TableLayoutPanel11.Location = New System.Drawing.Point(5, 5)
         Me.TableLayoutPanel11.Name = "TableLayoutPanel11"
-        Me.TableLayoutPanel11.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
+        Me.TableLayoutPanel11.Padding = New System.Windows.Forms.Padding(5)
         Me.TableLayoutPanel11.RowCount = 1
         Me.TableLayoutPanel11.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel11.Size = New System.Drawing.Size(1089, 45)
+        Me.TableLayoutPanel11.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
+        Me.TableLayoutPanel11.Size = New System.Drawing.Size(1099, 45)
         Me.TableLayoutPanel11.TabIndex = 8
-        '
-        'btnSearchHousehold
-        '
-        Me.btnSearchHousehold.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
-        Me.btnSearchHousehold.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnSearchHousehold.FlatAppearance.BorderSize = 0
-        Me.btnSearchHousehold.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchHousehold.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchHousehold.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearchHousehold.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearchHousehold.ForeColor = System.Drawing.Color.White
-        Me.btnSearchHousehold.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.search
-        Me.btnSearchHousehold.Location = New System.Drawing.Point(1037, 8)
-        Me.btnSearchHousehold.Name = "btnSearchHousehold"
-        Me.btnSearchHousehold.Size = New System.Drawing.Size(48, 28)
-        Me.btnSearchHousehold.TabIndex = 9
-        Me.btnSearchHousehold.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSearchHousehold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSearchHousehold.UseVisualStyleBackColor = False
         '
         'txtSearchHousehold
         '
@@ -1741,13 +1701,59 @@ Partial Class Main_Form
         Me.txtSearchHousehold.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtSearchHousehold.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSearchHousehold.ForeColor = System.Drawing.Color.Black
-        Me.txtSearchHousehold.Location = New System.Drawing.Point(3, 8)
+        Me.txtSearchHousehold.Location = New System.Drawing.Point(8, 8)
         Me.txtSearchHousehold.MaxLength = 20
         Me.txtSearchHousehold.Multiline = True
         Me.txtSearchHousehold.Name = "txtSearchHousehold"
-        Me.txtSearchHousehold.Size = New System.Drawing.Size(1028, 29)
+        Me.txtSearchHousehold.Size = New System.Drawing.Size(868, 29)
         Me.txtSearchHousehold.TabIndex = 6
         Me.txtSearchHousehold.Text = "Type in your search"
+        '
+        'btnSearchHousehold
+        '
+        Me.btnSearchHousehold.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.btnSearchHousehold.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnSearchHousehold.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSearchHousehold.FlatAppearance.BorderSize = 0
+        Me.btnSearchHousehold.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchHousehold.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchHousehold.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchHousehold.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchHousehold.ForeColor = System.Drawing.Color.White
+        Me.btnSearchHousehold.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.search
+        Me.btnSearchHousehold.Location = New System.Drawing.Point(1032, 8)
+        Me.btnSearchHousehold.Name = "btnSearchHousehold"
+        Me.btnSearchHousehold.Size = New System.Drawing.Size(59, 29)
+        Me.btnSearchHousehold.TabIndex = 9
+        Me.btnSearchHousehold.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSearchHousehold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSearchHousehold.UseVisualStyleBackColor = False
+        '
+        'Panel20
+        '
+        Me.Panel20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel20.Controls.Add(Me.ComboBox1)
+        Me.Panel20.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel20.Location = New System.Drawing.Point(882, 8)
+        Me.Panel20.Name = "Panel20"
+        Me.Panel20.Size = New System.Drawing.Size(144, 29)
+        Me.Panel20.TabIndex = 10
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox1.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.ItemHeight = 18
+        Me.ComboBox1.Items.AddRange(New Object() {"hahahaa", "gajgfga", "bfgajjfa", "hfjajfa", "bfjkasbjkfa", "bgfjhasjfga"})
+        Me.ComboBox1.Location = New System.Drawing.Point(0, 0)
+        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(7, 4, 7, 4)
+        Me.ComboBox1.MaxDropDownItems = 100
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(142, 26)
+        Me.ComboBox1.TabIndex = 11
         '
         'pageReports
         '
@@ -1799,9 +1805,35 @@ Partial Class Main_Form
         Me.TabPage1.Text = "TabPage8"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'backgroundWorkerDatabase
+        'Column3
         '
-        Me.backgroundWorkerDatabase.WorkerReportsProgress = True
+        Me.Column3.HeaderText = "Full Name"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "Date of Birth"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        '
+        'Column9
+        '
+        Me.Column9.HeaderText = "Sex"
+        Me.Column9.Name = "Column9"
+        Me.Column9.ReadOnly = True
+        '
+        'Column10
+        '
+        Me.Column10.HeaderText = "Member Type"
+        Me.Column10.Name = "Column10"
+        Me.Column10.ReadOnly = True
+        '
+        'Column11
+        '
+        Me.Column11.HeaderText = "Registered Voter"
+        Me.Column11.Name = "Column11"
+        Me.Column11.ReadOnly = True
         '
         'Main_Form
         '
@@ -1880,13 +1912,12 @@ Partial Class Main_Form
         Me.Panel19.ResumeLayout(False)
         CType(Me.datagridHousehold, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FlowLayoutPanel2.ResumeLayout(False)
-        Me.Panel20.ResumeLayout(False)
-        Me.Panel21.ResumeLayout(False)
-        Me.Panel21.PerformLayout()
+        Me.FlowLayoutPanel2.PerformLayout()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.TableLayoutPanel11.ResumeLayout(False)
         Me.TableLayoutPanel11.PerformLayout()
+        Me.Panel20.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1980,11 +2011,6 @@ Partial Class Main_Form
     Friend WithEvents btnArchiveResident As Button
     Friend WithEvents Panel18 As Panel
     Friend WithEvents dataGridResidents As DataGridView
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
-    Friend WithEvents Column9 As DataGridViewTextBoxColumn
-    Friend WithEvents Column10 As DataGridViewTextBoxColumn
-    Friend WithEvents Column11 As DataGridViewTextBoxColumn
     Friend WithEvents Panel19 As Panel
     Friend WithEvents datagridHousehold As DataGridView
     Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
@@ -1998,8 +2024,6 @@ Partial Class Main_Form
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column12 As DataGridViewTextBoxColumn
-    Friend WithEvents backgroundWorkerDatabase As System.ComponentModel.BackgroundWorker
-    Friend WithEvents Panel20 As Panel
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents txtPageNoHousehold As ToolStripTextBox
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
@@ -2007,9 +2031,16 @@ Partial Class Main_Form
     Friend WithEvents btnForwardHousehold As ToolStripButton
     Friend WithEvents ToolStripLabel2 As ToolStripLabel
     Friend WithEvents ToolStripLabel3 As ToolStripLabel
-    Friend WithEvents Panel21 As Panel
     Friend WithEvents ToolStripLabel5 As ToolStripLabel
     Friend WithEvents labelTotalPageHousehold As ToolStripLabel
     Friend WithEvents labelShownHousehold As ToolStripLabel
     Friend WithEvents labelTotalHousehold As ToolStripLabel
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Panel20 As Panel
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents Column10 As DataGridViewTextBoxColumn
+    Friend WithEvents Column11 As DataGridViewTextBoxColumn
 End Class

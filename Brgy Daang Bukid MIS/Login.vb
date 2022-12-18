@@ -54,6 +54,7 @@ Public Class Login
                 Me.Enabled = True
                 mySql.Close()
                 mySql.Dispose()
+                txtPassword.Clear()
                 Return
         End Select
 

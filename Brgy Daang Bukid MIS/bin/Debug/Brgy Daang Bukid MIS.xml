@@ -77,6 +77,11 @@ Brgy Daang Bukid MIS
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.inventory">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.logo_daang_bukid_legitbgremoved">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -145,11 +150,6 @@ Brgy Daang Bukid MIS
 <member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.senior_401">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.String1">
-<summary>
-  Looks up a localized string similar to fafbh.
 </summary>
 </member>
 <member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.visi">
