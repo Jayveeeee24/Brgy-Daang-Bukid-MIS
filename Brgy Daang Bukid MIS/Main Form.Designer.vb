@@ -37,7 +37,7 @@ Partial Class Main_Form
         Me.timerOpen = New System.Windows.Forms.Timer(Me.components)
         Me.timerClose = New System.Windows.Forms.Timer(Me.components)
         Me.splitContainerMain = New System.Windows.Forms.SplitContainer()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnInventory = New System.Windows.Forms.Button()
         Me.btnAccount = New System.Windows.Forms.Button()
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.btnBrgyMap = New System.Windows.Forms.Button()
@@ -106,15 +106,32 @@ Partial Class Main_Form
         Me.labelDashboardResident = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.pageResident = New System.Windows.Forms.TabPage()
-        Me.Panel18 = New System.Windows.Forms.Panel()
-        Me.dataGridResidents = New System.Windows.Forms.DataGridView()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Panel21 = New System.Windows.Forms.Panel()
+        Me.datagridResident = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
         Me.btnAddResident = New System.Windows.Forms.Button()
         Me.btnModifyResident = New System.Windows.Forms.Button()
         Me.btnArchiveResident = New System.Windows.Forms.Button()
-        Me.TableLayoutPanel9 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnSearchResident = New System.Windows.Forms.Button()
+        Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
+        Me.txtPageNoResident = New System.Windows.Forms.ToolStripTextBox()
+        Me.ToolStripLabel6 = New System.Windows.Forms.ToolStripLabel()
+        Me.labelTotalPageResident = New System.Windows.Forms.ToolStripLabel()
+        Me.btnBackResident = New System.Windows.Forms.ToolStripButton()
+        Me.btnForwardResident = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripLabel8 = New System.Windows.Forms.ToolStripLabel()
+        Me.labelShownResident = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripLabel10 = New System.Windows.Forms.ToolStripLabel()
+        Me.labelTotalResident = New System.Windows.Forms.ToolStripLabel()
+        Me.TableLayoutPanel12 = New System.Windows.Forms.TableLayoutPanel()
         Me.txtSearchResident = New System.Windows.Forms.TextBox()
+        Me.btnSearchResident = New System.Windows.Forms.Button()
+        Me.Panel22 = New System.Windows.Forms.Panel()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.pageHousehold = New System.Windows.Forms.TabPage()
         Me.Panel19 = New System.Windows.Forms.Panel()
         Me.datagridHousehold = New System.Windows.Forms.DataGridView()
@@ -146,12 +163,7 @@ Partial Class Main_Form
         Me.pageCertificates = New System.Windows.Forms.TabPage()
         Me.pageMap = New System.Windows.Forms.TabPage()
         Me.pageAccount = New System.Windows.Forms.TabPage()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pageInventory = New System.Windows.Forms.TabPage()
         Me.panelTop.SuspendLayout()
         CType(Me.splitContainerMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainerMain.Panel1.SuspendLayout()
@@ -197,10 +209,12 @@ Partial Class Main_Form
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel9.SuspendLayout()
         Me.pageResident.SuspendLayout()
-        Me.Panel18.SuspendLayout()
-        CType(Me.dataGridResidents, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.FlowLayoutPanel1.SuspendLayout()
-        Me.TableLayoutPanel9.SuspendLayout()
+        Me.Panel21.SuspendLayout()
+        CType(Me.datagridResident, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel3.SuspendLayout()
+        Me.ToolStrip2.SuspendLayout()
+        Me.TableLayoutPanel12.SuspendLayout()
+        Me.Panel22.SuspendLayout()
         Me.pageHousehold.SuspendLayout()
         Me.Panel19.SuspendLayout()
         CType(Me.datagridHousehold, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -284,7 +298,7 @@ Partial Class Main_Form
         'splitContainerMain.Panel1
         '
         Me.splitContainerMain.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
-        Me.splitContainerMain.Panel1.Controls.Add(Me.Button1)
+        Me.splitContainerMain.Panel1.Controls.Add(Me.btnInventory)
         Me.splitContainerMain.Panel1.Controls.Add(Me.btnAccount)
         Me.splitContainerMain.Panel1.Controls.Add(Me.btnLogout)
         Me.splitContainerMain.Panel1.Controls.Add(Me.btnBrgyMap)
@@ -303,27 +317,27 @@ Partial Class Main_Form
         Me.splitContainerMain.SplitterDistance = 249
         Me.splitContainerMain.TabIndex = 3
         '
-        'Button1
+        'btnInventory
         '
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.inventory
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.Button1.Location = New System.Drawing.Point(0, 408)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
-        Me.Button1.Size = New System.Drawing.Size(249, 40)
-        Me.Button1.TabIndex = 9
-        Me.Button1.TabStop = False
-        Me.Button1.Text = "     Inventory Management"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnInventory.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnInventory.FlatAppearance.BorderSize = 0
+        Me.btnInventory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnInventory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnInventory.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInventory.ForeColor = System.Drawing.Color.White
+        Me.btnInventory.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.inventory
+        Me.btnInventory.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnInventory.Location = New System.Drawing.Point(0, 408)
+        Me.btnInventory.Name = "btnInventory"
+        Me.btnInventory.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
+        Me.btnInventory.Size = New System.Drawing.Size(249, 40)
+        Me.btnInventory.TabIndex = 9
+        Me.btnInventory.TabStop = False
+        Me.btnInventory.Text = "     Inventory Management"
+        Me.btnInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnInventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnInventory.UseVisualStyleBackColor = True
         '
         'btnAccount
         '
@@ -530,7 +544,7 @@ Partial Class Main_Form
         Me.mainTabControl.Controls.Add(Me.pageCertificates)
         Me.mainTabControl.Controls.Add(Me.pageMap)
         Me.mainTabControl.Controls.Add(Me.pageAccount)
-        Me.mainTabControl.Controls.Add(Me.TabPage1)
+        Me.mainTabControl.Controls.Add(Me.pageInventory)
         Me.mainTabControl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.mainTabControl.ItemSize = New System.Drawing.Size(62, 17)
         Me.mainTabControl.Location = New System.Drawing.Point(0, 0)
@@ -1239,33 +1253,33 @@ Partial Class Main_Form
         'pageResident
         '
         Me.pageResident.BackColor = System.Drawing.SystemColors.Control
-        Me.pageResident.Controls.Add(Me.Panel18)
-        Me.pageResident.Controls.Add(Me.FlowLayoutPanel1)
-        Me.pageResident.Controls.Add(Me.TableLayoutPanel9)
+        Me.pageResident.Controls.Add(Me.Panel21)
+        Me.pageResident.Controls.Add(Me.FlowLayoutPanel3)
+        Me.pageResident.Controls.Add(Me.TableLayoutPanel12)
         Me.pageResident.Location = New System.Drawing.Point(4, 21)
         Me.pageResident.Name = "pageResident"
-        Me.pageResident.Padding = New System.Windows.Forms.Padding(10)
+        Me.pageResident.Padding = New System.Windows.Forms.Padding(5)
         Me.pageResident.Size = New System.Drawing.Size(1109, 682)
-        Me.pageResident.TabIndex = 1
+        Me.pageResident.TabIndex = 8
         Me.pageResident.Text = "Resident"
         '
-        'Panel18
+        'Panel21
         '
-        Me.Panel18.Controls.Add(Me.dataGridResidents)
-        Me.Panel18.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel18.Location = New System.Drawing.Point(10, 96)
-        Me.Panel18.Name = "Panel18"
-        Me.Panel18.Padding = New System.Windows.Forms.Padding(7, 7, 7, 0)
-        Me.Panel18.Size = New System.Drawing.Size(1089, 576)
-        Me.Panel18.TabIndex = 12
+        Me.Panel21.Controls.Add(Me.datagridResident)
+        Me.Panel21.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel21.Location = New System.Drawing.Point(5, 91)
+        Me.Panel21.Name = "Panel21"
+        Me.Panel21.Padding = New System.Windows.Forms.Padding(7, 7, 7, 0)
+        Me.Panel21.Size = New System.Drawing.Size(1099, 586)
+        Me.Panel21.TabIndex = 13
         '
-        'dataGridResidents
+        'datagridResident
         '
-        Me.dataGridResidents.AllowUserToDeleteRows = False
-        Me.dataGridResidents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dataGridResidents.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.dataGridResidents.BackgroundColor = System.Drawing.SystemColors.Control
-        Me.dataGridResidents.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.datagridResident.AllowUserToDeleteRows = False
+        Me.datagridResident.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.datagridResident.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.datagridResident.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.datagridResident.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1274,9 +1288,9 @@ Partial Class Main_Form
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dataGridResidents.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.dataGridResidents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dataGridResidents.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column8, Me.Column9, Me.Column10, Me.Column11})
+        Me.datagridResident.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.datagridResident.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.datagridResident.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1285,26 +1299,51 @@ Partial Class Main_Form
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dataGridResidents.DefaultCellStyle = DataGridViewCellStyle4
-        Me.dataGridResidents.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dataGridResidents.Location = New System.Drawing.Point(7, 7)
-        Me.dataGridResidents.Name = "dataGridResidents"
-        Me.dataGridResidents.ReadOnly = True
-        Me.dataGridResidents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataGridResidents.Size = New System.Drawing.Size(1075, 569)
-        Me.dataGridResidents.TabIndex = 13
+        Me.datagridResident.DefaultCellStyle = DataGridViewCellStyle4
+        Me.datagridResident.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.datagridResident.Location = New System.Drawing.Point(7, 7)
+        Me.datagridResident.Name = "datagridResident"
+        Me.datagridResident.ReadOnly = True
+        Me.datagridResident.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.datagridResident.Size = New System.Drawing.Size(1085, 579)
+        Me.datagridResident.TabIndex = 13
         '
-        'FlowLayoutPanel1
+        'DataGridViewTextBoxColumn1
         '
-        Me.FlowLayoutPanel1.Controls.Add(Me.btnAddResident)
-        Me.FlowLayoutPanel1.Controls.Add(Me.btnModifyResident)
-        Me.FlowLayoutPanel1.Controls.Add(Me.btnArchiveResident)
-        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(10, 55)
-        Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(1089, 41)
-        Me.FlowLayoutPanel1.TabIndex = 11
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Full Name"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Sex"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Registered Voter"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Contact Number"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        '
+        'FlowLayoutPanel3
+        '
+        Me.FlowLayoutPanel3.Controls.Add(Me.btnAddResident)
+        Me.FlowLayoutPanel3.Controls.Add(Me.btnModifyResident)
+        Me.FlowLayoutPanel3.Controls.Add(Me.btnArchiveResident)
+        Me.FlowLayoutPanel3.Controls.Add(Me.ToolStrip2)
+        Me.FlowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.FlowLayoutPanel3.Location = New System.Drawing.Point(5, 50)
+        Me.FlowLayoutPanel3.Margin = New System.Windows.Forms.Padding(0)
+        Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
+        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(1099, 41)
+        Me.FlowLayoutPanel3.TabIndex = 12
         '
         'btnAddResident
         '
@@ -1368,7 +1407,7 @@ Partial Class Main_Form
         Me.btnArchiveResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.archive
         Me.btnArchiveResident.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnArchiveResident.Location = New System.Drawing.Point(225, 3)
-        Me.btnArchiveResident.Margin = New System.Windows.Forms.Padding(2, 3, 5, 3)
+        Me.btnArchiveResident.Margin = New System.Windows.Forms.Padding(2, 3, 15, 3)
         Me.btnArchiveResident.Name = "btnArchiveResident"
         Me.btnArchiveResident.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.btnArchiveResident.Size = New System.Drawing.Size(102, 36)
@@ -1378,40 +1417,104 @@ Partial Class Main_Form
         Me.btnArchiveResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnArchiveResident.UseVisualStyleBackColor = False
         '
-        'TableLayoutPanel9
+        'ToolStrip2
         '
-        Me.TableLayoutPanel9.ColumnCount = 2
-        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 95.0!))
-        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.0!))
-        Me.TableLayoutPanel9.Controls.Add(Me.btnSearchResident, 1, 0)
-        Me.TableLayoutPanel9.Controls.Add(Me.txtSearchResident, 0, 0)
-        Me.TableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TableLayoutPanel9.Location = New System.Drawing.Point(10, 10)
-        Me.TableLayoutPanel9.Name = "TableLayoutPanel9"
-        Me.TableLayoutPanel9.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        Me.TableLayoutPanel9.RowCount = 1
-        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel9.Size = New System.Drawing.Size(1089, 45)
-        Me.TableLayoutPanel9.TabIndex = 7
+        Me.ToolStrip2.CanOverflow = False
+        Me.ToolStrip2.Dock = System.Windows.Forms.DockStyle.None
+        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel4, Me.txtPageNoResident, Me.ToolStripLabel6, Me.labelTotalPageResident, Me.btnBackResident, Me.btnForwardResident, Me.ToolStripLabel8, Me.labelShownResident, Me.ToolStripLabel10, Me.labelTotalResident})
+        Me.ToolStrip2.Location = New System.Drawing.Point(342, 0)
+        Me.ToolStrip2.Name = "ToolStrip2"
+        Me.ToolStrip2.Size = New System.Drawing.Size(285, 25)
+        Me.ToolStrip2.TabIndex = 0
+        Me.ToolStrip2.Text = "ToolStrip2"
         '
-        'btnSearchResident
+        'ToolStripLabel4
         '
-        Me.btnSearchResident.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
-        Me.btnSearchResident.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnSearchResident.FlatAppearance.BorderSize = 0
-        Me.btnSearchResident.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchResident.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearchResident.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearchResident.ForeColor = System.Drawing.Color.White
-        Me.btnSearchResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.search
-        Me.btnSearchResident.Location = New System.Drawing.Point(1037, 8)
-        Me.btnSearchResident.Name = "btnSearchResident"
-        Me.btnSearchResident.Size = New System.Drawing.Size(48, 28)
-        Me.btnSearchResident.TabIndex = 9
-        Me.btnSearchResident.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSearchResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSearchResident.UseVisualStyleBackColor = False
+        Me.ToolStripLabel4.Name = "ToolStripLabel4"
+        Me.ToolStripLabel4.Size = New System.Drawing.Size(33, 22)
+        Me.ToolStripLabel4.Text = "Page"
+        '
+        'txtPageNoResident
+        '
+        Me.txtPageNoResident.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPageNoResident.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPageNoResident.Name = "txtPageNoResident"
+        Me.txtPageNoResident.Size = New System.Drawing.Size(25, 25)
+        Me.txtPageNoResident.Text = "1"
+        Me.txtPageNoResident.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'ToolStripLabel6
+        '
+        Me.ToolStripLabel6.Name = "ToolStripLabel6"
+        Me.ToolStripLabel6.Size = New System.Drawing.Size(18, 22)
+        Me.ToolStripLabel6.Text = "of"
+        '
+        'labelTotalPageResident
+        '
+        Me.labelTotalPageResident.Name = "labelTotalPageResident"
+        Me.labelTotalPageResident.Size = New System.Drawing.Size(19, 22)
+        Me.labelTotalPageResident.Text = "xx"
+        '
+        'btnBackResident
+        '
+        Me.btnBackResident.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnBackResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_back
+        Me.btnBackResident.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnBackResident.Name = "btnBackResident"
+        Me.btnBackResident.Size = New System.Drawing.Size(23, 22)
+        Me.btnBackResident.ToolTipText = "Previous Page"
+        '
+        'btnForwardResident
+        '
+        Me.btnForwardResident.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnForwardResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_forward
+        Me.btnForwardResident.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnForwardResident.Name = "btnForwardResident"
+        Me.btnForwardResident.Size = New System.Drawing.Size(23, 22)
+        Me.btnForwardResident.ToolTipText = "Next Page"
+        '
+        'ToolStripLabel8
+        '
+        Me.ToolStripLabel8.Name = "ToolStripLabel8"
+        Me.ToolStripLabel8.Size = New System.Drawing.Size(47, 22)
+        Me.ToolStripLabel8.Text = "Record:"
+        '
+        'labelShownResident
+        '
+        Me.labelShownResident.Name = "labelShownResident"
+        Me.labelShownResident.Size = New System.Drawing.Size(19, 22)
+        Me.labelShownResident.Text = "xx"
+        '
+        'ToolStripLabel10
+        '
+        Me.ToolStripLabel10.Name = "ToolStripLabel10"
+        Me.ToolStripLabel10.Size = New System.Drawing.Size(39, 22)
+        Me.ToolStripLabel10.Text = "out of"
+        '
+        'labelTotalResident
+        '
+        Me.labelTotalResident.Name = "labelTotalResident"
+        Me.labelTotalResident.Size = New System.Drawing.Size(25, 22)
+        Me.labelTotalResident.Text = "xxx"
+        '
+        'TableLayoutPanel12
+        '
+        Me.TableLayoutPanel12.ColumnCount = 3
+        Me.TableLayoutPanel12.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.25712!))
+        Me.TableLayoutPanel12.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.77411!))
+        Me.TableLayoutPanel12.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.914468!))
+        Me.TableLayoutPanel12.Controls.Add(Me.txtSearchResident, 0, 0)
+        Me.TableLayoutPanel12.Controls.Add(Me.btnSearchResident, 2, 0)
+        Me.TableLayoutPanel12.Controls.Add(Me.Panel22, 1, 0)
+        Me.TableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TableLayoutPanel12.Location = New System.Drawing.Point(5, 5)
+        Me.TableLayoutPanel12.Name = "TableLayoutPanel12"
+        Me.TableLayoutPanel12.Padding = New System.Windows.Forms.Padding(5)
+        Me.TableLayoutPanel12.RowCount = 1
+        Me.TableLayoutPanel12.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel12.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
+        Me.TableLayoutPanel12.Size = New System.Drawing.Size(1099, 45)
+        Me.TableLayoutPanel12.TabIndex = 8
         '
         'txtSearchResident
         '
@@ -1420,13 +1523,59 @@ Partial Class Main_Form
         Me.txtSearchResident.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtSearchResident.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSearchResident.ForeColor = System.Drawing.Color.Black
-        Me.txtSearchResident.Location = New System.Drawing.Point(3, 8)
+        Me.txtSearchResident.Location = New System.Drawing.Point(8, 8)
         Me.txtSearchResident.MaxLength = 20
         Me.txtSearchResident.Multiline = True
         Me.txtSearchResident.Name = "txtSearchResident"
-        Me.txtSearchResident.Size = New System.Drawing.Size(1028, 29)
+        Me.txtSearchResident.Size = New System.Drawing.Size(868, 29)
         Me.txtSearchResident.TabIndex = 6
         Me.txtSearchResident.Text = "Type in your search"
+        '
+        'btnSearchResident
+        '
+        Me.btnSearchResident.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.btnSearchResident.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnSearchResident.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSearchResident.FlatAppearance.BorderSize = 0
+        Me.btnSearchResident.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchResident.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchResident.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchResident.ForeColor = System.Drawing.Color.White
+        Me.btnSearchResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.search
+        Me.btnSearchResident.Location = New System.Drawing.Point(1032, 8)
+        Me.btnSearchResident.Name = "btnSearchResident"
+        Me.btnSearchResident.Size = New System.Drawing.Size(59, 29)
+        Me.btnSearchResident.TabIndex = 9
+        Me.btnSearchResident.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSearchResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSearchResident.UseVisualStyleBackColor = False
+        '
+        'Panel22
+        '
+        Me.Panel22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel22.Controls.Add(Me.ComboBox2)
+        Me.Panel22.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel22.Location = New System.Drawing.Point(882, 8)
+        Me.Panel22.Name = "Panel22"
+        Me.Panel22.Size = New System.Drawing.Size(144, 29)
+        Me.Panel22.TabIndex = 10
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox2.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.ItemHeight = 18
+        Me.ComboBox2.Items.AddRange(New Object() {"hahahaa", "gajgfga", "bfgajjfa", "hfjajfa", "bfjkasbjkfa", "bgfjhasjfga"})
+        Me.ComboBox2.Location = New System.Drawing.Point(0, 0)
+        Me.ComboBox2.Margin = New System.Windows.Forms.Padding(7, 4, 7, 4)
+        Me.ComboBox2.MaxDropDownItems = 100
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(142, 26)
+        Me.ComboBox2.TabIndex = 11
         '
         'pageHousehold
         '
@@ -1795,45 +1944,15 @@ Partial Class Main_Form
         Me.pageAccount.Text = "Account"
         Me.pageAccount.UseVisualStyleBackColor = True
         '
-        'TabPage1
+        'pageInventory
         '
-        Me.TabPage1.Location = New System.Drawing.Point(4, 21)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1109, 682)
-        Me.TabPage1.TabIndex = 7
-        Me.TabPage1.Text = "TabPage8"
-        Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Full Name"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column8
-        '
-        Me.Column8.HeaderText = "Date of Birth"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
-        '
-        'Column9
-        '
-        Me.Column9.HeaderText = "Sex"
-        Me.Column9.Name = "Column9"
-        Me.Column9.ReadOnly = True
-        '
-        'Column10
-        '
-        Me.Column10.HeaderText = "Member Type"
-        Me.Column10.Name = "Column10"
-        Me.Column10.ReadOnly = True
-        '
-        'Column11
-        '
-        Me.Column11.HeaderText = "Registered Voter"
-        Me.Column11.Name = "Column11"
-        Me.Column11.ReadOnly = True
+        Me.pageInventory.Location = New System.Drawing.Point(4, 21)
+        Me.pageInventory.Name = "pageInventory"
+        Me.pageInventory.Padding = New System.Windows.Forms.Padding(3)
+        Me.pageInventory.Size = New System.Drawing.Size(1109, 682)
+        Me.pageInventory.TabIndex = 7
+        Me.pageInventory.Text = "Inventory"
+        Me.pageInventory.UseVisualStyleBackColor = True
         '
         'Main_Form
         '
@@ -1903,11 +2022,15 @@ Partial Class Main_Form
         Me.Panel9.ResumeLayout(False)
         Me.Panel9.PerformLayout()
         Me.pageResident.ResumeLayout(False)
-        Me.Panel18.ResumeLayout(False)
-        CType(Me.dataGridResidents, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.FlowLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel9.ResumeLayout(False)
-        Me.TableLayoutPanel9.PerformLayout()
+        Me.Panel21.ResumeLayout(False)
+        CType(Me.datagridResident, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel3.ResumeLayout(False)
+        Me.FlowLayoutPanel3.PerformLayout()
+        Me.ToolStrip2.ResumeLayout(False)
+        Me.ToolStrip2.PerformLayout()
+        Me.TableLayoutPanel12.ResumeLayout(False)
+        Me.TableLayoutPanel12.PerformLayout()
+        Me.Panel22.ResumeLayout(False)
         Me.pageHousehold.ResumeLayout(False)
         Me.Panel19.ResumeLayout(False)
         CType(Me.datagridHousehold, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1939,13 +2062,12 @@ Partial Class Main_Form
     Friend WithEvents btnLogout As Button
     Friend WithEvents mainTabControl As TabControl
     Friend WithEvents pageDashboard As TabPage
-    Friend WithEvents pageResident As TabPage
     Friend WithEvents pageHousehold As TabPage
     Friend WithEvents pageReports As TabPage
     Friend WithEvents pageCertificates As TabPage
     Friend WithEvents pageMap As TabPage
     Friend WithEvents pageAccount As TabPage
-    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents pageInventory As TabPage
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Panel7 As Panel
@@ -2002,15 +2124,6 @@ Partial Class Main_Form
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents TableLayoutPanel9 As TableLayoutPanel
-    Friend WithEvents txtSearchResident As TextBox
-    Friend WithEvents btnAddResident As Button
-    Friend WithEvents btnSearchResident As Button
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents btnModifyResident As Button
-    Friend WithEvents btnArchiveResident As Button
-    Friend WithEvents Panel18 As Panel
-    Friend WithEvents dataGridResidents As DataGridView
     Friend WithEvents Panel19 As Panel
     Friend WithEvents datagridHousehold As DataGridView
     Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
@@ -2037,10 +2150,32 @@ Partial Class Main_Form
     Friend WithEvents labelTotalHousehold As ToolStripLabel
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Panel20 As Panel
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
-    Friend WithEvents Column9 As DataGridViewTextBoxColumn
-    Friend WithEvents Column10 As DataGridViewTextBoxColumn
-    Friend WithEvents Column11 As DataGridViewTextBoxColumn
+    Friend WithEvents btnInventory As Button
+    Friend WithEvents pageResident As TabPage
+    Friend WithEvents Panel21 As Panel
+    Friend WithEvents datagridResident As DataGridView
+    Friend WithEvents FlowLayoutPanel3 As FlowLayoutPanel
+    Friend WithEvents btnAddResident As Button
+    Friend WithEvents btnModifyResident As Button
+    Friend WithEvents btnArchiveResident As Button
+    Friend WithEvents ToolStrip2 As ToolStrip
+    Friend WithEvents ToolStripLabel4 As ToolStripLabel
+    Friend WithEvents txtPageNoResident As ToolStripTextBox
+    Friend WithEvents ToolStripLabel6 As ToolStripLabel
+    Friend WithEvents labelTotalPageResident As ToolStripLabel
+    Friend WithEvents btnBackResident As ToolStripButton
+    Friend WithEvents btnForwardResident As ToolStripButton
+    Friend WithEvents ToolStripLabel8 As ToolStripLabel
+    Friend WithEvents labelShownResident As ToolStripLabel
+    Friend WithEvents ToolStripLabel10 As ToolStripLabel
+    Friend WithEvents labelTotalResident As ToolStripLabel
+    Friend WithEvents TableLayoutPanel12 As TableLayoutPanel
+    Friend WithEvents txtSearchResident As TextBox
+    Friend WithEvents btnSearchResident As Button
+    Friend WithEvents Panel22 As Panel
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
 End Class
