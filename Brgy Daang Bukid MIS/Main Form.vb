@@ -20,9 +20,13 @@ Public Class Main_Form
     End Enum
 
     Private Sub Main_Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        mainTabControl.ItemSize = New Size(0, 1)
+        'mainTabControl.ItemSize = New Size(0, 1)
         btnDashboard.PerformClick()
-        countRows()
+
+
+        'TabPage1.Controls.SetChildIndex(Panel18, 0)
+        'TabPage1.Controls.SetChildIndex(TableLayoutPanel9, 2)
+        'TabPage1.Controls.SetChildIndex(Panel24, 1)
 
         EnableDoubleBuffered(dataGridBrgyOfficials)
         EnableDoubleBuffered(datagridResident)
@@ -32,13 +36,13 @@ Public Class Main_Form
 
     '' ''''''''''''''''''''''RESIDENT UI DEFINITIONS''''''''''''''''''''''''
     Private Sub txtPageNoResident_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPageNoResident.KeyDown
-        enterTextPageNo(e, txtPageNoResident, datagridResident, Modules.Residents)
+        enterTextPageNo(e, txtPageNoResident, datagridResident, Modules.Residents, totalPageResident)
     End Sub
     Private Sub btnBackResident_Click(sender As Object, e As EventArgs) Handles btnBackResident.Click
         toolStripButtonBack(txtPageNoResident, datagridResident, Modules.Residents, totalPageResident)
     End Sub
     Private Sub btnForwardResident_Click(sender As Object, e As EventArgs) Handles btnForwardResident.Click
-        toolStripButtonForward(txtPageNoResident, datagridResident, totalPageResident)
+        toolStripButtonForward(txtPageNoResident, datagridResident, Modules.Residents, totalPageResident)
     End Sub
     Private Sub txtPageNoResident_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPageNoResident.KeyPress
         checkInputNumbersOnly(e)
@@ -52,25 +56,21 @@ Public Class Main_Form
     '    loadDataGrid(datagridResident, Modules.Residents)
     'End Sub
     Private Sub txtSearchResident_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchResident.KeyDown
-        enterTextSearch(e, datagridResident, Modules.Residents)
+        enterTextSearch(e, datagridResident, Modules.Residents, txtPageNoResident)
     End Sub
-
     Private Sub datagridResident_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridResident.CellContentClick
 
     End Sub
 
-
-
-
     '' ''''''''''''''''''''''HOUSEHOLD UI DEFINITIONS''''''''''''''''''''''''
     Private Sub txtPageNoHousehold_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPageNoHousehold.KeyDown
-        enterTextPageNo(e, txtPageNoHousehold, datagridHousehold, Modules.Household)
+        enterTextPageNo(e, txtPageNoHousehold, datagridHousehold, Modules.Household, totalPageHousehold)
     End Sub
     Private Sub btnBackHousehold_Click(sender As Object, e As EventArgs) Handles btnBackHousehold.Click
         toolStripButtonBack(txtPageNoHousehold, datagridHousehold, Modules.Household, totalPageHousehold)
     End Sub
     Private Sub btnForwardHousehold_Click(sender As Object, e As EventArgs) Handles btnForwardHousehold.Click
-        toolStripButtonForward(txtPageNoHousehold, datagridHousehold, totalPageHousehold)
+        toolStripButtonForward(txtPageNoHousehold, datagridHousehold, Modules.Household, totalPageHousehold)
     End Sub
     Private Sub txtPageNoHousehold_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPageNoHousehold.KeyPress
         checkInputNumbersOnly(e)
@@ -81,7 +81,7 @@ Public Class Main_Form
         End If
     End Sub
     Private Sub txtSearchHousehold_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchHousehold.KeyDown
-        enterTextSearch(e, datagridHousehold, Modules.Household)
+        enterTextSearch(e, datagridHousehold, Modules.Household, txtPageNoHousehold)
     End Sub
     'Private Sub txtSearchHousehold_TextChanged(sender As Object, e As EventArgs) Handles txtSearchHousehold.TextChanged
     '    loadDataGrid(datagridHousehold, Modules.Household)
@@ -137,7 +137,9 @@ Public Class Main_Form
         mainTabControl.SelectedTab = pageDashboard
         labelTitle.Text = "Dashboard"
 
+        countRows("")
         loadDataGrid(dataGridBrgyOfficials, Modules.BrgyOfficials)
+
     End Sub
     Private Sub btnResidentInfo_Click(sender As Object, e As EventArgs) Handles btnResidentInfo.Click
         btnDashboard.BackColor = Color.FromArgb(25, 117, 211)
@@ -249,7 +251,7 @@ Public Class Main_Form
 
 
     '''''''''''''''''''''''''''''''''''''''' METHODS FOR ACCESS'''''''''''''''''''''''''''''''''''''
-    Private Sub countRows()
+    Private Sub countRows(ByVal choice As String)
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
         On Error Resume Next
@@ -266,7 +268,20 @@ Public Class Main_Form
         cmd.CommandType = CommandType.Text
 
         'RESIDENTS
-        cmd.CommandText = "Select count(*) from residents"
+        totalRowsResident = 0
+        totalPageResident = 0
+        labelTotalPageResident.Text = 0
+        labelTotalResident.Text = totalRowsResident
+        btnBackResident.Enabled = False
+        labelDashboardResident.Text = totalRowsResident
+
+        If choice = "Search Resident" Then
+            cmd.CommandText = "Select count(*) From residents" & (If(txtSearchResident.Text.Trim = "" Or txtSearchResident.Text = "Type in your search", " ", " WHERE first_name LIKE @resident_name OR middle_name LIKE @resident_name OR last_name LIKE @resident_name")) & " order by first_name asc "
+            cmd.Parameters.AddWithValue("@resident_name", "%" & txtSearchResident.Text & "%")
+        Else
+            cmd.CommandText = "Select count(*) from residents"
+        End If
+
         totalRowsResident = Convert.ToString(cmd.ExecuteScalar())
         totalPageResident = Math.Ceiling(totalRowsResident / 30)
         labelTotalPageResident.Text = totalPageResident
@@ -275,7 +290,20 @@ Public Class Main_Form
         labelDashboardResident.Text = totalRowsResident
 
         'HOUSEHOLD  
-        cmd.CommandText = "Select count(*) from household"
+        totalRowsHousehold = 0
+        totalPageHousehold = 0
+        labelTotalPageHousehold.Text = totalPageHousehold
+        labelTotalHousehold.Text = totalRowsHousehold
+        btnBackHousehold.Enabled = False
+        labelDashboardHouseholds.Text = totalRowsHousehold
+
+        If choice = "Search Household" Then
+            cmd.CommandText = "Select count(*) From household " & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " WHERE household_id LIKE @householdID")) & " order by household_id asc "
+            cmd.Parameters.AddWithValue("@householdID", txtSearchHousehold.Text & "%")
+        Else
+            cmd.CommandText = "Select count(*) from household"
+        End If
+
         totalRowsHousehold = Convert.ToString(cmd.ExecuteScalar())
         totalPageHousehold = Math.Ceiling(totalRowsHousehold / 30)
         labelTotalPageHousehold.Text = totalPageHousehold
@@ -290,7 +318,6 @@ Public Class Main_Form
 
     Private Sub loadDataGrid(ByVal datagrid As DataGridView, ByVal moduleSelected As Modules)
 
-        countRows()
         datagrid.Rows.Clear()
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
@@ -325,16 +352,21 @@ Public Class Main_Form
 
             Case Modules.Residents ''''''''''''''Resident
 
-                'mySQLCommand.CommandText = "Select From residents " & (IIf(txtSearchResident.Text.Trim = "" Or txtSearchResident.Text = "Type in your search", " ", " WHERE @resident_name = residents_name")) & " order by first_name asc limit 30 OFFSET " & (((CInt(Me.txtPageNoResident.Text)) - 1) * 30)
-                mySQLCommand.CommandText = "Select * From residents" & (IIf(txtSearchResident.Text.Trim = "" Or txtSearchResident.Text = "Type in your search", " ", " WHERE first_name LIKE @resident_name OR middle_name LIKE @resident_name OR last_name LIKE @resident_name")) & " order by first_name asc limit 30 OFFSET " & (((CInt(Me.txtPageNoResident.Text)) - 1) * 30)
-                mySQLCommand.Parameters.AddWithValue("@resident_name", "%" & txtSearchResident.Text & "%")
+                mySQLCommand.CommandText = "Select * From residents" & (If(txtSearchResident.Text.Trim = "" Or txtSearchResident.Text = "Type in your search", " ", " WHERE first_name LIKE @resident_name OR middle_name LIKE @resident_name OR last_name LIKE @resident_name")) & " order by first_name asc limit 30 OFFSET " & (((CInt(Me.txtPageNoResident.Text)) - 1) * 30)
+                mySQLCommand.Parameters.AddWithValue("@resident_name", txtSearchResident.Text & "%")
                 mySQLReader = mySQLCommand.ExecuteReader
+
+                If txtSearchResident.Text.Trim <> "" Or txtSearchResident.Text <> "Type in your search" Then
+                    countRows("Search Resident")
+                Else
+                    countRows("")
+                End If
 
                 If mySQLReader.HasRows Then
                     If txtPageNoResident.Text = 1 Then
                         btnBackResident.Enabled = False
                     End If
-                    If txtPageNoResident.Text < totalPageResident And txtPageNoResident.Text <> 1 Then
+                    If txtPageNoResident.Text < totalPageResident Then
                         btnForwardResident.Enabled = True
                     End If
                     If txtPageNoResident.Text > 1 Then
@@ -349,19 +381,13 @@ Public Class Main_Form
 
                     While mySQLReader.Read
                         Dim middle, ext As String
-                        If mySQLReader!middle_name <> DBNull.Value Then
-                            middle = mySQLReader!middle_name + " "
-                        Else
+                        If mySQLReader!middle_name = Nothing Then
                             middle = ""
-                        End If
-
-                        If mySQLReader!ext_name <> DBNull.Value Then
-                            ext = mySQLReader!ext_name
                         Else
-                            ext = ""
+                            middle = mySQLReader!middle_name + " "
                         End If
 
-                        datagrid.Rows.Add(New String() {(mySQLReader!first_name + " " + middle + mySQLReader!last_name + " " + ext), mySQLReader!sex, mySQLReader!is_voter, mySQLReader!contact_no})
+                        datagrid.Rows.Add(New String() {(mySQLReader!first_name + " " + middle + mySQLReader!last_name + " " + mySQLReader!ext_name), mySQLReader!sex, mySQLReader!is_voter, mySQLReader!contact_no})
 
                     End While
                 End If
@@ -371,15 +397,21 @@ Public Class Main_Form
 
             Case Modules.Household ''''''''''''''Household
 
-                mySQLCommand.CommandText = "Select * From household " & (IIf(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " WHERE household_id LIKE @householdID")) & " order by household_id asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30)
+                mySQLCommand.CommandText = "Select * From household " & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " WHERE household_id LIKE @householdID")) & " order by household_id asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30)
                 mySQLCommand.Parameters.AddWithValue("@householdID", txtSearchHousehold.Text & "%")
                 mySQLReader = mySQLCommand.ExecuteReader
+
+                If txtSearchHousehold.Text.Trim <> "" Or txtSearchHousehold.Text <> "Type in your search" Then
+                    countRows("Search Household")
+                Else
+                    countRows("")
+                End If
 
                 If mySQLReader.HasRows Then
                     If txtPageNoHousehold.Text = 1 Then
                         btnBackHousehold.Enabled = False
                     End If
-                    If txtPageNoHousehold.Text < totalPageHousehold And txtPageNoHousehold.Text <> 1 Then
+                    If txtPageNoHousehold.Text < totalPageHousehold Then
                         btnForwardHousehold.Enabled = True
                     End If
                     If txtPageNoHousehold.Text > 1 Then
@@ -413,24 +445,24 @@ Public Class Main_Form
         datagrid.ClearSelection()
     End Sub
 
-    Private Sub enterTextPageNo(e As KeyEventArgs, txtPageNo As ToolStripTextBox, datagrid As DataGridView, modules As Modules)
+    Private Sub enterTextPageNo(e As KeyEventArgs, txtPageNo As ToolStripTextBox, datagrid As DataGridView, modules As Modules, ByVal totalPage As Integer)
         If e.KeyCode = Keys.Enter Then
             If txtPageNo.Text.Trim = "" Then
                 MsgBox("Please enter a valid number", vbCritical, "Warning")
                 txtPageNo.Text = 1
-            ElseIf txtPageNo.Text > totalPageHousehold Or txtPageNo.Text = 0 Then
+            ElseIf txtPageNo.Text > totalPage Or txtPageNo.Text = 0 Then
                 MsgBox("Please enter a valid number", vbCritical, "Warning")
                 txtPageNo.Text = 1
             Else
                 loadDataGrid(datagrid, modules)
             End If
-
             e.SuppressKeyPress = True
         End If
     End Sub
 
-    Private Sub enterTextSearch(e As KeyEventArgs, datagrid As DataGridView, modules As Modules)
+    Private Sub enterTextSearch(e As KeyEventArgs, datagrid As DataGridView, modules As Modules, txtPageNo As ToolStripTextBox)
         If e.KeyCode = Keys.Enter Then
+            txtPageNo.Text = 1
             loadDataGrid(datagrid, modules)
             e.SuppressKeyPress = True
         End If
@@ -444,10 +476,10 @@ Public Class Main_Form
             loadDataGrid(datagrid, modules)
         End If
     End Sub
-    Private Sub toolStripButtonForward(txtPageNo As ToolStripTextBox, dataGrid As DataGridView, ByVal totalPage As Integer)
+    Private Sub toolStripButtonForward(txtPageNo As ToolStripTextBox, dataGrid As DataGridView, modules As Modules, ByVal totalPage As Integer)
         If txtPageNo.Text < totalPage Then
             txtPageNo.Text += 1
-            loadDataGrid(dataGrid, Modules.Household)
+            loadDataGrid(dataGrid, modules)
         End If
     End Sub
     Private Sub checkInputNumbersOnly(e As KeyPressEventArgs)
@@ -475,4 +507,5 @@ Public Class Main_Form
     Private Sub btnSearchResident_Click(sender As Object, e As EventArgs) Handles btnSearchResident.Click
         loadDataGrid(datagridResident, Modules.Residents)
     End Sub
+
 End Class

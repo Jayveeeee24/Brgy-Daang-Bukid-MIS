@@ -29,6 +29,8 @@ Partial Class Main_Form
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main_Form))
         Me.panelTop = New System.Windows.Forms.Panel()
         Me.labelSignedIn = New System.Windows.Forms.Label()
@@ -164,6 +166,35 @@ Partial Class Main_Form
         Me.pageMap = New System.Windows.Forms.TabPage()
         Me.pageAccount = New System.Windows.Forms.TabPage()
         Me.pageInventory = New System.Windows.Forms.TabPage()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Panel24 = New System.Windows.Forms.Panel()
+        Me.TableLayoutPanel13 = New System.Windows.Forms.TableLayoutPanel()
+        Me.FlowLayoutPanel4 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.ToolStrip3 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripLabel7 = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
+        Me.ToolStripLabel9 = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripLabel11 = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripLabel12 = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripLabel13 = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripLabel14 = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripLabel15 = New System.Windows.Forms.ToolStripLabel()
+        Me.Panel18 = New System.Windows.Forms.Panel()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TableLayoutPanel9 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Panel23 = New System.Windows.Forms.Panel()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.panelTop.SuspendLayout()
         CType(Me.splitContainerMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainerMain.Panel1.SuspendLayout()
@@ -222,6 +253,15 @@ Partial Class Main_Form
         Me.ToolStrip1.SuspendLayout()
         Me.TableLayoutPanel11.SuspendLayout()
         Me.Panel20.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.Panel24.SuspendLayout()
+        Me.TableLayoutPanel13.SuspendLayout()
+        Me.FlowLayoutPanel4.SuspendLayout()
+        Me.ToolStrip3.SuspendLayout()
+        Me.Panel18.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel9.SuspendLayout()
+        Me.Panel23.SuspendLayout()
         Me.SuspendLayout()
         '
         'panelTop
@@ -545,6 +585,7 @@ Partial Class Main_Form
         Me.mainTabControl.Controls.Add(Me.pageMap)
         Me.mainTabControl.Controls.Add(Me.pageAccount)
         Me.mainTabControl.Controls.Add(Me.pageInventory)
+        Me.mainTabControl.Controls.Add(Me.TabPage1)
         Me.mainTabControl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.mainTabControl.ItemSize = New System.Drawing.Size(62, 17)
         Me.mainTabControl.Location = New System.Drawing.Point(0, 0)
@@ -1420,18 +1461,18 @@ Partial Class Main_Form
         'ToolStrip2
         '
         Me.ToolStrip2.CanOverflow = False
-        Me.ToolStrip2.Dock = System.Windows.Forms.DockStyle.None
+        Me.ToolStrip2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel4, Me.txtPageNoResident, Me.ToolStripLabel6, Me.labelTotalPageResident, Me.btnBackResident, Me.btnForwardResident, Me.ToolStripLabel8, Me.labelShownResident, Me.ToolStripLabel10, Me.labelTotalResident})
         Me.ToolStrip2.Location = New System.Drawing.Point(342, 0)
         Me.ToolStrip2.Name = "ToolStrip2"
-        Me.ToolStrip2.Size = New System.Drawing.Size(285, 25)
+        Me.ToolStrip2.Size = New System.Drawing.Size(285, 42)
         Me.ToolStrip2.TabIndex = 0
         Me.ToolStrip2.Text = "ToolStrip2"
         '
         'ToolStripLabel4
         '
         Me.ToolStripLabel4.Name = "ToolStripLabel4"
-        Me.ToolStripLabel4.Size = New System.Drawing.Size(33, 22)
+        Me.ToolStripLabel4.Size = New System.Drawing.Size(33, 39)
         Me.ToolStripLabel4.Text = "Page"
         '
         'txtPageNoResident
@@ -1439,20 +1480,20 @@ Partial Class Main_Form
         Me.txtPageNoResident.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPageNoResident.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPageNoResident.Name = "txtPageNoResident"
-        Me.txtPageNoResident.Size = New System.Drawing.Size(25, 25)
+        Me.txtPageNoResident.Size = New System.Drawing.Size(25, 42)
         Me.txtPageNoResident.Text = "1"
         Me.txtPageNoResident.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ToolStripLabel6
         '
         Me.ToolStripLabel6.Name = "ToolStripLabel6"
-        Me.ToolStripLabel6.Size = New System.Drawing.Size(18, 22)
+        Me.ToolStripLabel6.Size = New System.Drawing.Size(18, 39)
         Me.ToolStripLabel6.Text = "of"
         '
         'labelTotalPageResident
         '
         Me.labelTotalPageResident.Name = "labelTotalPageResident"
-        Me.labelTotalPageResident.Size = New System.Drawing.Size(19, 22)
+        Me.labelTotalPageResident.Size = New System.Drawing.Size(19, 39)
         Me.labelTotalPageResident.Text = "xx"
         '
         'btnBackResident
@@ -1461,7 +1502,7 @@ Partial Class Main_Form
         Me.btnBackResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_back
         Me.btnBackResident.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnBackResident.Name = "btnBackResident"
-        Me.btnBackResident.Size = New System.Drawing.Size(23, 22)
+        Me.btnBackResident.Size = New System.Drawing.Size(23, 39)
         Me.btnBackResident.ToolTipText = "Previous Page"
         '
         'btnForwardResident
@@ -1470,31 +1511,31 @@ Partial Class Main_Form
         Me.btnForwardResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_forward
         Me.btnForwardResident.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnForwardResident.Name = "btnForwardResident"
-        Me.btnForwardResident.Size = New System.Drawing.Size(23, 22)
+        Me.btnForwardResident.Size = New System.Drawing.Size(23, 39)
         Me.btnForwardResident.ToolTipText = "Next Page"
         '
         'ToolStripLabel8
         '
         Me.ToolStripLabel8.Name = "ToolStripLabel8"
-        Me.ToolStripLabel8.Size = New System.Drawing.Size(47, 22)
+        Me.ToolStripLabel8.Size = New System.Drawing.Size(47, 39)
         Me.ToolStripLabel8.Text = "Record:"
         '
         'labelShownResident
         '
         Me.labelShownResident.Name = "labelShownResident"
-        Me.labelShownResident.Size = New System.Drawing.Size(19, 22)
+        Me.labelShownResident.Size = New System.Drawing.Size(19, 39)
         Me.labelShownResident.Text = "xx"
         '
         'ToolStripLabel10
         '
         Me.ToolStripLabel10.Name = "ToolStripLabel10"
-        Me.ToolStripLabel10.Size = New System.Drawing.Size(39, 22)
+        Me.ToolStripLabel10.Size = New System.Drawing.Size(39, 39)
         Me.ToolStripLabel10.Text = "out of"
         '
         'labelTotalResident
         '
         Me.labelTotalResident.Name = "labelTotalResident"
-        Me.labelTotalResident.Size = New System.Drawing.Size(25, 22)
+        Me.labelTotalResident.Size = New System.Drawing.Size(25, 39)
         Me.labelTotalResident.Text = "xxx"
         '
         'TableLayoutPanel12
@@ -1954,6 +1995,359 @@ Partial Class Main_Form
         Me.pageInventory.Text = "Inventory"
         Me.pageInventory.UseVisualStyleBackColor = True
         '
+        'TabPage1
+        '
+        Me.TabPage1.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage1.Controls.Add(Me.Panel24)
+        Me.TabPage1.Controls.Add(Me.Panel18)
+        Me.TabPage1.Controls.Add(Me.TableLayoutPanel9)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 21)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(5)
+        Me.TabPage1.Size = New System.Drawing.Size(1109, 682)
+        Me.TabPage1.TabIndex = 9
+        Me.TabPage1.Text = "Resident"
+        '
+        'Panel24
+        '
+        Me.Panel24.Controls.Add(Me.TableLayoutPanel13)
+        Me.Panel24.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel24.Location = New System.Drawing.Point(5, 50)
+        Me.Panel24.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel24.Name = "Panel24"
+        Me.Panel24.Size = New System.Drawing.Size(1099, 41)
+        Me.Panel24.TabIndex = 15
+        '
+        'TableLayoutPanel13
+        '
+        Me.TableLayoutPanel13.ColumnCount = 3
+        Me.TableLayoutPanel13.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel13.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.12739!))
+        Me.TableLayoutPanel13.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.56961!))
+        Me.TableLayoutPanel13.Controls.Add(Me.FlowLayoutPanel4, 0, 0)
+        Me.TableLayoutPanel13.Controls.Add(Me.ToolStrip3, 2, 0)
+        Me.TableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel13.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel13.Margin = New System.Windows.Forms.Padding(0)
+        Me.TableLayoutPanel13.Name = "TableLayoutPanel13"
+        Me.TableLayoutPanel13.RowCount = 1
+        Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel13.Size = New System.Drawing.Size(1099, 41)
+        Me.TableLayoutPanel13.TabIndex = 14
+        '
+        'FlowLayoutPanel4
+        '
+        Me.FlowLayoutPanel4.Controls.Add(Me.Button1)
+        Me.FlowLayoutPanel4.Controls.Add(Me.Button2)
+        Me.FlowLayoutPanel4.Controls.Add(Me.Button3)
+        Me.FlowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel4.Location = New System.Drawing.Point(0, 0)
+        Me.FlowLayoutPanel4.Margin = New System.Windows.Forms.Padding(0)
+        Me.FlowLayoutPanel4.Name = "FlowLayoutPanel4"
+        Me.FlowLayoutPanel4.Size = New System.Drawing.Size(366, 41)
+        Me.FlowLayoutPanel4.TabIndex = 0
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.add_24
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(7, 3)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(7, 3, 5, 3)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.Button1.Size = New System.Drawing.Size(102, 36)
+        Me.Button1.TabIndex = 8
+        Me.Button1.TabStop = False
+        Me.Button1.Text = "  Add New"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.Button2.Enabled = False
+        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.modify
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(116, 3)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 3, 5, 3)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.Button2.Size = New System.Drawing.Size(102, 36)
+        Me.Button2.TabIndex = 9
+        Me.Button2.TabStop = False
+        Me.Button2.Text = "  Modify"
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.Button3.Enabled = False
+        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.White
+        Me.Button3.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.archive
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.Location = New System.Drawing.Point(225, 3)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(2, 3, 15, 3)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.Button3.Size = New System.Drawing.Size(102, 36)
+        Me.Button3.TabIndex = 10
+        Me.Button3.TabStop = False
+        Me.Button3.Text = "  Archive"
+        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'ToolStrip3
+        '
+        Me.ToolStrip3.CanOverflow = False
+        Me.ToolStrip3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ToolStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel7, Me.ToolStripTextBox1, Me.ToolStripLabel9, Me.ToolStripLabel11, Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripLabel12, Me.ToolStripLabel13, Me.ToolStripLabel14, Me.ToolStripLabel15})
+        Me.ToolStrip3.Location = New System.Drawing.Point(806, 0)
+        Me.ToolStrip3.Name = "ToolStrip3"
+        Me.ToolStrip3.Size = New System.Drawing.Size(293, 41)
+        Me.ToolStrip3.TabIndex = 0
+        Me.ToolStrip3.Text = "ToolStrip3"
+        '
+        'ToolStripLabel7
+        '
+        Me.ToolStripLabel7.Name = "ToolStripLabel7"
+        Me.ToolStripLabel7.Size = New System.Drawing.Size(33, 38)
+        Me.ToolStripLabel7.Text = "Page"
+        '
+        'ToolStripTextBox1
+        '
+        Me.ToolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ToolStripTextBox1.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
+        Me.ToolStripTextBox1.Size = New System.Drawing.Size(25, 41)
+        Me.ToolStripTextBox1.Text = "1"
+        Me.ToolStripTextBox1.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'ToolStripLabel9
+        '
+        Me.ToolStripLabel9.Name = "ToolStripLabel9"
+        Me.ToolStripLabel9.Size = New System.Drawing.Size(18, 38)
+        Me.ToolStripLabel9.Text = "of"
+        '
+        'ToolStripLabel11
+        '
+        Me.ToolStripLabel11.Name = "ToolStripLabel11"
+        Me.ToolStripLabel11.Size = New System.Drawing.Size(19, 38)
+        Me.ToolStripLabel11.Text = "xx"
+        '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton1.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_back
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(23, 38)
+        Me.ToolStripButton1.ToolTipText = "Previous Page"
+        '
+        'ToolStripButton2
+        '
+        Me.ToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton2.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_forward
+        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(23, 38)
+        Me.ToolStripButton2.ToolTipText = "Next Page"
+        '
+        'ToolStripLabel12
+        '
+        Me.ToolStripLabel12.Name = "ToolStripLabel12"
+        Me.ToolStripLabel12.Size = New System.Drawing.Size(47, 38)
+        Me.ToolStripLabel12.Text = "Record:"
+        '
+        'ToolStripLabel13
+        '
+        Me.ToolStripLabel13.Name = "ToolStripLabel13"
+        Me.ToolStripLabel13.Size = New System.Drawing.Size(19, 38)
+        Me.ToolStripLabel13.Text = "xx"
+        '
+        'ToolStripLabel14
+        '
+        Me.ToolStripLabel14.Name = "ToolStripLabel14"
+        Me.ToolStripLabel14.Size = New System.Drawing.Size(39, 38)
+        Me.ToolStripLabel14.Text = "out of"
+        '
+        'ToolStripLabel15
+        '
+        Me.ToolStripLabel15.Name = "ToolStripLabel15"
+        Me.ToolStripLabel15.Size = New System.Drawing.Size(25, 38)
+        Me.ToolStripLabel15.Text = "xxx"
+        '
+        'Panel18
+        '
+        Me.Panel18.Controls.Add(Me.DataGridView1)
+        Me.Panel18.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel18.Location = New System.Drawing.Point(5, 50)
+        Me.Panel18.Name = "Panel18"
+        Me.Panel18.Padding = New System.Windows.Forms.Padding(7, 7, 7, 0)
+        Me.Panel18.Size = New System.Drawing.Size(1099, 627)
+        Me.Panel18.TabIndex = 13
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.Padding = New System.Windows.Forms.Padding(3)
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.Padding = New System.Windows.Forms.Padding(5)
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle8
+        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView1.Location = New System.Drawing.Point(7, 7)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1.Size = New System.Drawing.Size(1085, 620)
+        Me.DataGridView1.TabIndex = 13
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Full Name"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Sex"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Registered Voter"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Contact Number"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.ReadOnly = True
+        '
+        'TableLayoutPanel9
+        '
+        Me.TableLayoutPanel9.ColumnCount = 3
+        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.25712!))
+        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.77411!))
+        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.914468!))
+        Me.TableLayoutPanel9.Controls.Add(Me.TextBox1, 0, 0)
+        Me.TableLayoutPanel9.Controls.Add(Me.Button4, 2, 0)
+        Me.TableLayoutPanel9.Controls.Add(Me.Panel23, 1, 0)
+        Me.TableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TableLayoutPanel9.Location = New System.Drawing.Point(5, 5)
+        Me.TableLayoutPanel9.Name = "TableLayoutPanel9"
+        Me.TableLayoutPanel9.Padding = New System.Windows.Forms.Padding(5)
+        Me.TableLayoutPanel9.RowCount = 1
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
+        Me.TableLayoutPanel9.Size = New System.Drawing.Size(1099, 45)
+        Me.TableLayoutPanel9.TabIndex = 8
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.White
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.ForeColor = System.Drawing.Color.Black
+        Me.TextBox1.Location = New System.Drawing.Point(8, 8)
+        Me.TextBox1.MaxLength = 20
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(868, 29)
+        Me.TextBox1.TabIndex = 6
+        Me.TextBox1.Text = "Type in your search"
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.Button4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.Button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.ForeColor = System.Drawing.Color.White
+        Me.Button4.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.search
+        Me.Button4.Location = New System.Drawing.Point(1032, 8)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(59, 29)
+        Me.Button4.TabIndex = 9
+        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'Panel23
+        '
+        Me.Panel23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel23.Controls.Add(Me.ComboBox3)
+        Me.Panel23.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel23.Location = New System.Drawing.Point(882, 8)
+        Me.Panel23.Name = "Panel23"
+        Me.Panel23.Size = New System.Drawing.Size(144, 29)
+        Me.Panel23.TabIndex = 10
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox3.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.ItemHeight = 18
+        Me.ComboBox3.Items.AddRange(New Object() {"hahahaa", "gajgfga", "bfgajjfa", "hfjajfa", "bfjkasbjkfa", "bgfjhasjfga"})
+        Me.ComboBox3.Location = New System.Drawing.Point(0, 0)
+        Me.ComboBox3.Margin = New System.Windows.Forms.Padding(7, 4, 7, 4)
+        Me.ComboBox3.MaxDropDownItems = 100
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(142, 26)
+        Me.ComboBox3.TabIndex = 11
+        '
         'Main_Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2041,6 +2435,18 @@ Partial Class Main_Form
         Me.TableLayoutPanel11.ResumeLayout(False)
         Me.TableLayoutPanel11.PerformLayout()
         Me.Panel20.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.Panel24.ResumeLayout(False)
+        Me.TableLayoutPanel13.ResumeLayout(False)
+        Me.TableLayoutPanel13.PerformLayout()
+        Me.FlowLayoutPanel4.ResumeLayout(False)
+        Me.ToolStrip3.ResumeLayout(False)
+        Me.ToolStrip3.PerformLayout()
+        Me.Panel18.ResumeLayout(False)
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel9.ResumeLayout(False)
+        Me.TableLayoutPanel9.PerformLayout()
+        Me.Panel23.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -2178,4 +2584,33 @@ Partial Class Main_Form
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TableLayoutPanel13 As TableLayoutPanel
+    Friend WithEvents Panel18 As Panel
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents ToolStrip3 As ToolStrip
+    Friend WithEvents ToolStripLabel7 As ToolStripLabel
+    Friend WithEvents ToolStripTextBox1 As ToolStripTextBox
+    Friend WithEvents ToolStripLabel9 As ToolStripLabel
+    Friend WithEvents ToolStripLabel11 As ToolStripLabel
+    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents ToolStripButton2 As ToolStripButton
+    Friend WithEvents ToolStripLabel12 As ToolStripLabel
+    Friend WithEvents ToolStripLabel13 As ToolStripLabel
+    Friend WithEvents ToolStripLabel14 As ToolStripLabel
+    Friend WithEvents ToolStripLabel15 As ToolStripLabel
+    Friend WithEvents TableLayoutPanel9 As TableLayoutPanel
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Panel23 As Panel
+    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents Panel24 As Panel
+    Friend WithEvents FlowLayoutPanel4 As FlowLayoutPanel
 End Class
