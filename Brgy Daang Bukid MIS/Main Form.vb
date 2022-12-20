@@ -20,13 +20,8 @@ Public Class Main_Form
     End Enum
 
     Private Sub Main_Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'mainTabControl.ItemSize = New Size(0, 1)
+        mainTabControl.ItemSize = New Size(0, 1)
         btnDashboard.PerformClick()
-
-
-        'TabPage1.Controls.SetChildIndex(Panel18, 0)
-        'TabPage1.Controls.SetChildIndex(TableLayoutPanel9, 2)
-        'TabPage1.Controls.SetChildIndex(Panel24, 1)
 
         EnableDoubleBuffered(dataGridBrgyOfficials)
         EnableDoubleBuffered(datagridResident)
@@ -52,11 +47,11 @@ Public Class Main_Form
             txtSearchResident.Clear()
         End If
     End Sub
-    'Private Sub txtSearchResident_TextChanged(sender As Object, e As EventArgs) Handles txtSearchResident.TextChanged
-    '    loadDataGrid(datagridResident, Modules.Residents)
-    'End Sub
     Private Sub txtSearchResident_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchResident.KeyDown
         enterTextSearch(e, datagridResident, Modules.Residents, txtPageNoResident)
+    End Sub
+    Private Sub btnSearchResident_Click(sender As Object, e As EventArgs) Handles btnSearchResident.Click
+        loadDataGrid(datagridResident, Modules.Residents)
     End Sub
     Private Sub datagridResident_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridResident.CellContentClick
 
@@ -83,9 +78,9 @@ Public Class Main_Form
     Private Sub txtSearchHousehold_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchHousehold.KeyDown
         enterTextSearch(e, datagridHousehold, Modules.Household, txtPageNoHousehold)
     End Sub
-    'Private Sub txtSearchHousehold_TextChanged(sender As Object, e As EventArgs) Handles txtSearchHousehold.TextChanged
-    '    loadDataGrid(datagridHousehold, Modules.Household)
-    'End Sub
+    Private Sub btnSearchHousehold_Click(sender As Object, e As EventArgs) Handles btnSearchHousehold.Click
+        loadDataGrid(datagridHousehold, Modules.Household)
+    End Sub
     Private Sub datagridHousehold_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridHousehold.CellContentClick
 
     End Sub
@@ -498,14 +493,6 @@ Public Class Main_Form
         Dim pi As PropertyInfo = dgvType.GetProperty("DoubleBuffered",
                                                  BindingFlags.Instance Or BindingFlags.NonPublic)
         pi.SetValue(datagrid, True, Nothing)
-    End Sub
-
-    Private Sub btnSearchHousehold_Click(sender As Object, e As EventArgs) Handles btnSearchHousehold.Click
-        loadDataGrid(datagridHousehold, Modules.Household)
-    End Sub
-
-    Private Sub btnSearchResident_Click(sender As Object, e As EventArgs) Handles btnSearchResident.Click
-        loadDataGrid(datagridResident, Modules.Residents)
     End Sub
 
 End Class

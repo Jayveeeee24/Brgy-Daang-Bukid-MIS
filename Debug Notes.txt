@@ -3,6 +3,7 @@
 12/19/22 - version 1.1.13
 * resetted the page no to 1 when using the search function in [Resident/Household]
 * revised countrows method to update count when searching an item on both Resident/Household
+* fixed ui for toolstrip when collapsing the side navigation when using table layout as parent
 
 12/19/22 - version 1.1.12
 * refactored the codebase in main form for easy readability [added features in functions such as buttons, labels, countRows, loadDataGrid]
