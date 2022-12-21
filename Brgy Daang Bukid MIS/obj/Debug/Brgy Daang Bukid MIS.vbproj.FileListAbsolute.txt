@@ -51,3 +51,32 @@ D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\De
 D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.exe
 D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.xml
 D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.pdb
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\Brgy Daang Bukid MIS.exe.config
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\Brgy Daang Bukid MIS.exe
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\Brgy Daang Bukid MIS.pdb
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\Brgy Daang Bukid MIS.xml
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\MySql.Data.dll
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\Google.Protobuf.dll
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\ZstdNet.dll
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\BouncyCastle.Crypto.dll
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\System.Memory.dll
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\System.Buffers.dll
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\K4os.Compression.LZ4.dll
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\K4os.Hash.xxHash.dll
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\System.Numerics.Vectors.dll
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\MySql.Data.xml
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.vbproj.AssemblyReference.cache
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.vbproj.SuggestedBindingRedirects.cache
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.exe.config
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.Filter.resources
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.Login.resources
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.Main_Form.resources
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.Resources.resources
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.vbproj.GenerateResource.cache
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.vbproj.CoreCompileInputs.cache
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.vbproj.CopyComplete
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.exe
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.xml
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.pdb
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ViewResident.resources

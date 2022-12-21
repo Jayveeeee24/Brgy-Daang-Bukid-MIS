@@ -33,6 +33,8 @@ Partial Class Login
         Me.labelNoAccount = New System.Windows.Forms.Label()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.btnVisibility = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.panelLogo.SuspendLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -74,7 +76,7 @@ Partial Class Login
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(376, 71)
+        Me.Label1.Location = New System.Drawing.Point(377, 68)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(110, 42)
         Me.Label1.TabIndex = 3
@@ -85,7 +87,7 @@ Partial Class Login
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(379, 130)
+        Me.Label2.Location = New System.Drawing.Point(380, 127)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(214, 20)
         Me.Label2.TabIndex = 4
@@ -97,13 +99,12 @@ Partial Class Login
         Me.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsername.ForeColor = System.Drawing.Color.Black
-        Me.txtUsername.Location = New System.Drawing.Point(383, 205)
+        Me.txtUsername.Location = New System.Drawing.Point(382, 199)
         Me.txtUsername.MaxLength = 20
         Me.txtUsername.Multiline = True
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(259, 27)
         Me.txtUsername.TabIndex = 5
-        Me.txtUsername.Text = "Username*"
         '
         'txtPassword
         '
@@ -111,14 +112,13 @@ Partial Class Login
         Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.ForeColor = System.Drawing.Color.Black
-        Me.txtPassword.Location = New System.Drawing.Point(383, 258)
+        Me.txtPassword.Location = New System.Drawing.Point(384, 268)
         Me.txtPassword.MaxLength = 20
         Me.txtPassword.Multiline = True
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(259, 27)
         Me.txtPassword.TabIndex = 7
-        Me.txtPassword.Text = "Password*"
         '
         'labelNoAccount
         '
@@ -126,7 +126,7 @@ Partial Class Login
         Me.labelNoAccount.Cursor = System.Windows.Forms.Cursors.Hand
         Me.labelNoAccount.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelNoAccount.ForeColor = System.Drawing.Color.White
-        Me.labelNoAccount.Location = New System.Drawing.Point(379, 349)
+        Me.labelNoAccount.Location = New System.Drawing.Point(385, 356)
         Me.labelNoAccount.Name = "labelNoAccount"
         Me.labelNoAccount.Size = New System.Drawing.Size(143, 16)
         Me.labelNoAccount.TabIndex = 9
@@ -140,7 +140,7 @@ Partial Class Login
         Me.btnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
         Me.btnLogin.Image = CType(resources.GetObject("btnLogin.Image"), System.Drawing.Image)
-        Me.btnLogin.Location = New System.Drawing.Point(586, 337)
+        Me.btnLogin.Location = New System.Drawing.Point(592, 344)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(66, 45)
         Me.btnLogin.TabIndex = 8
@@ -155,12 +155,34 @@ Partial Class Login
         Me.btnVisibility.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.btnVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnVisibility.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.visi
-        Me.btnVisibility.Location = New System.Drawing.Point(612, 260)
+        Me.btnVisibility.Location = New System.Drawing.Point(613, 270)
         Me.btnVisibility.Name = "btnVisibility"
         Me.btnVisibility.Size = New System.Drawing.Size(29, 23)
         Me.btnVisibility.TabIndex = 10
         Me.btnVisibility.TabStop = False
         Me.btnVisibility.UseVisualStyleBackColor = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(381, 180)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(70, 16)
+        Me.Label4.TabIndex = 11
+        Me.Label4.Text = "Username"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(381, 247)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(67, 16)
+        Me.Label5.TabIndex = 12
+        Me.Label5.Text = "Password"
         '
         'Login
         '
@@ -168,6 +190,8 @@ Partial Class Login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(694, 489)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnVisibility)
         Me.Controls.Add(Me.labelNoAccount)
         Me.Controls.Add(Me.btnLogin)
@@ -198,4 +222,6 @@ Partial Class Login
     Friend WithEvents btnLogin As Button
     Friend WithEvents labelNoAccount As Label
     Friend WithEvents btnVisibility As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
 End Class

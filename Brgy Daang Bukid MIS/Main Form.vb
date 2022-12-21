@@ -4,6 +4,7 @@ Imports MySql.Data.MySqlClient
 
 Public Class Main_Form
     Public account_type As String
+    Public filterModule As String
     Public mySqlConn As String = "server=localhost; user id=root; database=mis"
     Dim totalRowsResident As Integer
     Dim totalPageResident As Integer
@@ -53,8 +54,13 @@ Public Class Main_Form
     Private Sub btnSearchResident_Click(sender As Object, e As EventArgs) Handles btnSearchResident.Click
         loadDataGrid(datagridResident, Modules.Residents)
     End Sub
-    Private Sub datagridResident_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridResident.CellContentClick
-
+    Private Sub datagridResident_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridResident.CellClick
+        ViewResident.resident_id = datagridResident.Rows(e.RowIndex).Cells(0).Value
+        ViewResident.ShowDialog()
+    End Sub
+    Private Sub btnFilterResident_Click(sender As Object, e As EventArgs) Handles btnFilterResident.Click
+        Filter.filterModule = "Resident"
+        Filter.ShowDialog()
     End Sub
 
     '' ''''''''''''''''''''''HOUSEHOLD UI DEFINITIONS''''''''''''''''''''''''
@@ -81,10 +87,13 @@ Public Class Main_Form
     Private Sub btnSearchHousehold_Click(sender As Object, e As EventArgs) Handles btnSearchHousehold.Click
         loadDataGrid(datagridHousehold, Modules.Household)
     End Sub
-    Private Sub datagridHousehold_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridHousehold.CellContentClick
+    Private Sub datagridHousehold_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridHousehold.CellClick
 
     End Sub
-
+    Private Sub btnFilterHousehold_Click(sender As Object, e As EventArgs) Handles btnFilterHousehold.Click
+        Filter.filterModule = "Household"
+        Filter.ShowDialog()
+    End Sub
 
 
     ''' '''''''''''''' FOR SIDE NAVIGATION MENU
@@ -278,7 +287,7 @@ Public Class Main_Form
         End If
 
         totalRowsResident = Convert.ToString(cmd.ExecuteScalar())
-        totalPageResident = Math.Ceiling(totalRowsResident / 30)
+        totalPageResident = Math.Ceiling(totalRowsResident / 20)
         labelTotalPageResident.Text = totalPageResident
         labelTotalResident.Text = totalRowsResident
         btnBackResident.Enabled = False
@@ -347,7 +356,7 @@ Public Class Main_Form
 
             Case Modules.Residents ''''''''''''''Resident
 
-                mySQLCommand.CommandText = "Select * From residents" & (If(txtSearchResident.Text.Trim = "" Or txtSearchResident.Text = "Type in your search", " ", " WHERE first_name LIKE @resident_name OR middle_name LIKE @resident_name OR last_name LIKE @resident_name")) & " order by first_name asc limit 30 OFFSET " & (((CInt(Me.txtPageNoResident.Text)) - 1) * 30)
+                mySQLCommand.CommandText = "Select * From residents" & (If(txtSearchResident.Text.Trim = "" Or txtSearchResident.Text = "Type in your search", " ", " WHERE (first_name LIKE @resident_name OR middle_name LIKE @resident_name OR last_name LIKE @resident_name)")) & " order by first_name asc limit 20 OFFSET " & (((CInt(Me.txtPageNoResident.Text)) - 1) * 20)
                 mySQLCommand.Parameters.AddWithValue("@resident_name", txtSearchResident.Text & "%")
                 mySQLReader = mySQLCommand.ExecuteReader
 
@@ -371,7 +380,7 @@ Public Class Main_Form
                         btnForwardResident.Enabled = False
                         labelShownResident.Text = totalRowsResident
                     ElseIf txtPageNoResident.Text < totalPageResident Then
-                        labelShownResident.Text = txtPageNoResident.Text * 30
+                        labelShownResident.Text = txtPageNoResident.Text * 20
                     End If
 
                     While mySQLReader.Read
@@ -382,7 +391,7 @@ Public Class Main_Form
                             middle = mySQLReader!middle_name + " "
                         End If
 
-                        datagrid.Rows.Add(New String() {(mySQLReader!first_name + " " + middle + mySQLReader!last_name + " " + mySQLReader!ext_name), mySQLReader!sex, mySQLReader!is_voter, mySQLReader!contact_no})
+                        datagrid.Rows.Add(New String() {mySQLReader!resident_id, (mySQLReader!first_name + " " + middle + mySQLReader!last_name + " " + mySQLReader!ext_name), mySQLReader!sex, mySQLReader!is_voter, mySQLReader!contact_no})
 
                     End While
                 End If
@@ -494,5 +503,8 @@ Public Class Main_Form
                                                  BindingFlags.Instance Or BindingFlags.NonPublic)
         pi.SetValue(datagrid, True, Nothing)
     End Sub
+
+
+
 
 End Class
