@@ -95,7 +95,7 @@ Partial Class Login
         '
         'txtUsername
         '
-        Me.txtUsername.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.txtUsername.BackColor = System.Drawing.Color.White
         Me.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsername.ForeColor = System.Drawing.Color.Black
@@ -108,7 +108,7 @@ Partial Class Login
         '
         'txtPassword
         '
-        Me.txtPassword.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.txtPassword.BackColor = System.Drawing.Color.White
         Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.ForeColor = System.Drawing.Color.Black
@@ -148,7 +148,7 @@ Partial Class Login
         '
         'btnVisibility
         '
-        Me.btnVisibility.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnVisibility.BackColor = System.Drawing.Color.White
         Me.btnVisibility.FlatAppearance.BorderColor = System.Drawing.Color.Silver
         Me.btnVisibility.FlatAppearance.BorderSize = 0
         Me.btnVisibility.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver

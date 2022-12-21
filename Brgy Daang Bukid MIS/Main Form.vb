@@ -55,8 +55,11 @@ Public Class Main_Form
         loadDataGrid(datagridResident, Modules.Residents)
     End Sub
     Private Sub datagridResident_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridResident.CellClick
-        ViewResident.resident_id = datagridResident.Rows(e.RowIndex).Cells(0).Value
-        ViewResident.ShowDialog()
+        If e.RowIndex >= 0 Then
+            ViewResident.resident_id = datagridResident.Rows(e.RowIndex).Cells(0).Value
+            ViewResident.viewChoice = "Normal"
+            ViewResident.ShowDialog()
+        End If
     End Sub
     Private Sub btnFilterResident_Click(sender As Object, e As EventArgs) Handles btnFilterResident.Click
         Filter.filterModule = "Resident"

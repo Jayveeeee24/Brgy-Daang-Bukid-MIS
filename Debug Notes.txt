@@ -5,6 +5,9 @@
 * updated query for residents information to include only 20 data
 * created a form filter and revised the layout of search bar in the main form to include filter function
 * created a new form viewResident for the viewing/adding/modifying of resident information and added a cell click in mainform
+* revised the tab page for modifying resident and for viewing [ui]
+* added the retrieving information in viewResident [database and value assigning]
+
 
 12/19/22 - version 1.1.13
 * resetted the page no to 1 when using the search function in [Resident/Household]

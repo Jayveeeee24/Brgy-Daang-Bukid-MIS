@@ -1827,13 +1827,13 @@ Partial Class Main_Form
         '
         'Column3
         '
-        Me.Column3.HeaderText = "ID"
+        Me.Column3.HeaderText = "ID Number"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
         '
         'DataGridViewTextBoxColumn1
         '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Full Name"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Name"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         Me.DataGridViewTextBoxColumn1.ReadOnly = True
         '
