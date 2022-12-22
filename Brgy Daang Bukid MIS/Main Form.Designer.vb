@@ -108,6 +108,11 @@ Partial Class Main_Form
         Me.pageResident = New System.Windows.Forms.TabPage()
         Me.datagridResidentParent = New System.Windows.Forms.Panel()
         Me.datagridResident = New System.Windows.Forms.DataGridView()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.toolStripResidentParent = New System.Windows.Forms.TableLayoutPanel()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
@@ -154,11 +159,6 @@ Partial Class Main_Form
         Me.pageMap = New System.Windows.Forms.TabPage()
         Me.pageAccount = New System.Windows.Forms.TabPage()
         Me.pageInventory = New System.Windows.Forms.TabPage()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.panelTop.SuspendLayout()
         CType(Me.splitContainerMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainerMain.Panel1.SuspendLayout()
@@ -321,7 +321,7 @@ Partial Class Main_Form
         Me.btnInventory.ForeColor = System.Drawing.Color.White
         Me.btnInventory.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.inventory
         Me.btnInventory.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnInventory.Location = New System.Drawing.Point(0, 408)
+        Me.btnInventory.Location = New System.Drawing.Point(0, 485)
         Me.btnInventory.Name = "btnInventory"
         Me.btnInventory.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnInventory.Size = New System.Drawing.Size(249, 40)
@@ -385,7 +385,7 @@ Partial Class Main_Form
         Me.btnBrgyMap.ForeColor = System.Drawing.Color.White
         Me.btnBrgyMap.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.map
         Me.btnBrgyMap.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnBrgyMap.Location = New System.Drawing.Point(0, 368)
+        Me.btnBrgyMap.Location = New System.Drawing.Point(0, 445)
         Me.btnBrgyMap.Name = "btnBrgyMap"
         Me.btnBrgyMap.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnBrgyMap.Size = New System.Drawing.Size(249, 40)
@@ -407,7 +407,7 @@ Partial Class Main_Form
         Me.btnCertificates.ForeColor = System.Drawing.Color.White
         Me.btnCertificates.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.certificate
         Me.btnCertificates.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnCertificates.Location = New System.Drawing.Point(0, 328)
+        Me.btnCertificates.Location = New System.Drawing.Point(0, 405)
         Me.btnCertificates.Name = "btnCertificates"
         Me.btnCertificates.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnCertificates.Size = New System.Drawing.Size(249, 40)
@@ -429,7 +429,7 @@ Partial Class Main_Form
         Me.btnReports.ForeColor = System.Drawing.Color.White
         Me.btnReports.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.reports
         Me.btnReports.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnReports.Location = New System.Drawing.Point(0, 288)
+        Me.btnReports.Location = New System.Drawing.Point(0, 365)
         Me.btnReports.Name = "btnReports"
         Me.btnReports.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnReports.Size = New System.Drawing.Size(249, 40)
@@ -451,7 +451,7 @@ Partial Class Main_Form
         Me.btnHouseholdInfo.ForeColor = System.Drawing.Color.White
         Me.btnHouseholdInfo.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.household
         Me.btnHouseholdInfo.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnHouseholdInfo.Location = New System.Drawing.Point(0, 248)
+        Me.btnHouseholdInfo.Location = New System.Drawing.Point(0, 325)
         Me.btnHouseholdInfo.Name = "btnHouseholdInfo"
         Me.btnHouseholdInfo.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnHouseholdInfo.Size = New System.Drawing.Size(249, 40)
@@ -473,7 +473,7 @@ Partial Class Main_Form
         Me.btnResidentInfo.ForeColor = System.Drawing.Color.White
         Me.btnResidentInfo.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.residents
         Me.btnResidentInfo.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnResidentInfo.Location = New System.Drawing.Point(0, 208)
+        Me.btnResidentInfo.Location = New System.Drawing.Point(0, 285)
         Me.btnResidentInfo.Name = "btnResidentInfo"
         Me.btnResidentInfo.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnResidentInfo.Size = New System.Drawing.Size(249, 40)
@@ -496,7 +496,7 @@ Partial Class Main_Form
         Me.btnDashboard.ForeColor = System.Drawing.Color.White
         Me.btnDashboard.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.dashboard
         Me.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnDashboard.Location = New System.Drawing.Point(0, 168)
+        Me.btnDashboard.Location = New System.Drawing.Point(0, 245)
         Me.btnDashboard.Name = "btnDashboard"
         Me.btnDashboard.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnDashboard.Size = New System.Drawing.Size(249, 40)
@@ -514,7 +514,7 @@ Partial Class Main_Form
         Me.panelLogo.Location = New System.Drawing.Point(0, 0)
         Me.panelLogo.Name = "panelLogo"
         Me.panelLogo.Padding = New System.Windows.Forms.Padding(20)
-        Me.panelLogo.Size = New System.Drawing.Size(249, 168)
+        Me.panelLogo.Size = New System.Drawing.Size(249, 245)
         Me.panelLogo.TabIndex = 0
         '
         'picLogo
@@ -523,7 +523,7 @@ Partial Class Main_Form
         Me.picLogo.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.logo_daang_bukid_legitbgremoved
         Me.picLogo.Location = New System.Drawing.Point(20, 20)
         Me.picLogo.Name = "picLogo"
-        Me.picLogo.Size = New System.Drawing.Size(209, 128)
+        Me.picLogo.Size = New System.Drawing.Size(209, 205)
         Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picLogo.TabIndex = 0
         Me.picLogo.TabStop = False
@@ -1301,6 +1301,36 @@ Partial Class Main_Form
         Me.datagridResident.Size = New System.Drawing.Size(1085, 579)
         Me.datagridResident.TabIndex = 13
         '
+        'Column3
+        '
+        Me.Column3.HeaderText = "ID Number"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Name"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Sex"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Registered Voter"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Contact Number"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        '
         'toolStripResidentParent
         '
         Me.toolStripResidentParent.ColumnCount = 3
@@ -1824,36 +1854,6 @@ Partial Class Main_Form
         Me.pageInventory.TabIndex = 7
         Me.pageInventory.Text = "Inventory"
         Me.pageInventory.UseVisualStyleBackColor = True
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "ID Number"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Name"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Sex"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Registered Voter"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Contact Number"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
         '
         'Main_Form
         '

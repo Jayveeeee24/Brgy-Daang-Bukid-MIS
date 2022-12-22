@@ -1,5 +1,10 @@
 ## This lists all the versions and **Debug Notes**
 
+12/23/22 - version 1.1.15
+* revised the retrieving of information in viewResident to include with the modification
+* added a button router for main form to viewresidents and add residents
+* added a household view form
+
 12/21/22 - version 1.1.14
 * added the id number for the resident in datagridview
 * updated query for residents information to include only 20 data

@@ -58,6 +58,7 @@ Public Class Main_Form
         If e.RowIndex >= 0 Then
             ViewResident.resident_id = datagridResident.Rows(e.RowIndex).Cells(0).Value
             ViewResident.viewChoice = "Normal"
+            ViewResident.mainTabControl.SelectedIndex = 0
             ViewResident.ShowDialog()
         End If
     End Sub
@@ -65,6 +66,12 @@ Public Class Main_Form
         Filter.filterModule = "Resident"
         Filter.ShowDialog()
     End Sub
+    Private Sub btnAddResident_Click(sender As Object, e As EventArgs) Handles btnAddResident.Click
+        ViewResident.mainTabControl.SelectedIndex = 1
+        ViewResident.ShowDialog()
+    End Sub
+
+
 
     '' ''''''''''''''''''''''HOUSEHOLD UI DEFINITIONS''''''''''''''''''''''''
     Private Sub txtPageNoHousehold_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPageNoHousehold.KeyDown
@@ -474,9 +481,6 @@ Public Class Main_Form
             e.SuppressKeyPress = True
         End If
     End Sub
-
-
-
     Private Sub toolStripButtonBack(txtPageNo As ToolStripTextBox, datagrid As DataGridView, modules As Modules, ByVal totalPage As Integer)
         If txtPageNo.Text <> 1 And txtPageNo.Text <= totalPage Then
             txtPageNo.Text -= 1
@@ -506,8 +510,5 @@ Public Class Main_Form
                                                  BindingFlags.Instance Or BindingFlags.NonPublic)
         pi.SetValue(datagrid, True, Nothing)
     End Sub
-
-
-
 
 End Class

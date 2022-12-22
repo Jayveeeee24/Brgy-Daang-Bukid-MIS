@@ -54,6 +54,7 @@ Public Class Login
                 Me.Enabled = True
                 mySql.Close()
                 mySql.Dispose()
+                txtUsername.Clear()
                 txtPassword.Clear()
                 Return
         End Select
@@ -80,6 +81,7 @@ Public Class Login
                 Main_Form.Show()
                 Me.Close()
             Else
+                txtUsername.Clear()
                 txtPassword.Clear()
                 Me.Enabled = True
                 MsgBox("No account found!, Please try again", vbCritical, "Warning")
