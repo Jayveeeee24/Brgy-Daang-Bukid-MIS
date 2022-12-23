@@ -84,12 +84,14 @@ Partial Class ViewResident
         Me.pageAddModify = New System.Windows.Forms.TabPage()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnSaveResident = New System.Windows.Forms.Button()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Label64 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.txtExtName = New System.Windows.Forms.TextBox()
         Me.txtAge = New System.Windows.Forms.TextBox()
-        Me.labelDisability = New System.Windows.Forms.Label()
         Me.comboHouseholdId = New System.Windows.Forms.ComboBox()
-        Me.txtDisability = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtReligion = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -121,12 +123,10 @@ Partial Class ViewResident
         Me.Label60 = New System.Windows.Forms.Label()
         Me.txtFirstName = New System.Windows.Forms.TextBox()
         Me.txtMiddleName = New System.Windows.Forms.TextBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.labelHousehold = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnSaveResident = New System.Windows.Forms.Button()
-        Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.Label64 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtDisability = New System.Windows.Forms.TextBox()
+        Me.labelDisability = New System.Windows.Forms.Label()
         Me.mainTabControl.SuspendLayout()
         Me.pageView.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -137,9 +137,9 @@ Partial Class ViewResident
         Me.pageAddModify.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
-        Me.Panel6.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.Panel10.SuspendLayout()
+        Me.Panel6.SuspendLayout()
         Me.SuspendLayout()
         '
         'mainTabControl
@@ -838,9 +838,9 @@ Partial Class ViewResident
         '
         Me.TableLayoutPanel3.ColumnCount = 1
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.Controls.Add(Me.Panel6, 0, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel4, 0, 2)
         Me.TableLayoutPanel3.Controls.Add(Me.Panel10, 0, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.Panel6, 0, 1)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(10, 5)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
@@ -851,16 +851,74 @@ Partial Class ViewResident
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(649, 548)
         Me.TableLayoutPanel3.TabIndex = 39
         '
+        'TableLayoutPanel4
+        '
+        Me.TableLayoutPanel4.ColumnCount = 3
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.0!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel4.Controls.Add(Me.btnSaveResident, 2, 0)
+        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 494)
+        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
+        Me.TableLayoutPanel4.Padding = New System.Windows.Forms.Padding(0, 10, 0, 0)
+        Me.TableLayoutPanel4.RowCount = 1
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(643, 51)
+        Me.TableLayoutPanel4.TabIndex = 37
+        '
+        'btnSaveResident
+        '
+        Me.btnSaveResident.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.btnSaveResident.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnSaveResident.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSaveResident.FlatAppearance.BorderSize = 0
+        Me.btnSaveResident.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnSaveResident.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnSaveResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSaveResident.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSaveResident.ForeColor = System.Drawing.Color.White
+        Me.btnSaveResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.modify
+        Me.btnSaveResident.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSaveResident.Location = New System.Drawing.Point(513, 10)
+        Me.btnSaveResident.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnSaveResident.Name = "btnSaveResident"
+        Me.btnSaveResident.Size = New System.Drawing.Size(130, 41)
+        Me.btnSaveResident.TabIndex = 34
+        Me.btnSaveResident.TabStop = False
+        Me.btnSaveResident.Text = "  Save Resident"
+        Me.btnSaveResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSaveResident.UseVisualStyleBackColor = False
+        '
+        'Panel10
+        '
+        Me.Panel10.Controls.Add(Me.Label64)
+        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel10.Location = New System.Drawing.Point(3, 3)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(643, 40)
+        Me.Panel10.TabIndex = 78
+        '
+        'Label64
+        '
+        Me.Label64.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label64.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label64.Location = New System.Drawing.Point(0, 0)
+        Me.Label64.Name = "Label64"
+        Me.Label64.Size = New System.Drawing.Size(643, 40)
+        Me.Label64.TabIndex = 71
+        Me.Label64.Text = "PERSONAL INFORMATION"
+        Me.Label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Panel6
         '
         Me.Panel6.AutoScroll = True
         Me.Panel6.BackColor = System.Drawing.Color.White
-        Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel6.Controls.Add(Me.labelDisability)
+        Me.Panel6.Controls.Add(Me.txtDisability)
         Me.Panel6.Controls.Add(Me.txtExtName)
         Me.Panel6.Controls.Add(Me.txtAge)
-        Me.Panel6.Controls.Add(Me.labelDisability)
         Me.Panel6.Controls.Add(Me.comboHouseholdId)
-        Me.Panel6.Controls.Add(Me.txtDisability)
         Me.Panel6.Controls.Add(Me.Label7)
         Me.Panel6.Controls.Add(Me.txtReligion)
         Me.Panel6.Controls.Add(Me.Label1)
@@ -892,9 +950,8 @@ Partial Class ViewResident
         Me.Panel6.Controls.Add(Me.Label60)
         Me.Panel6.Controls.Add(Me.txtFirstName)
         Me.Panel6.Controls.Add(Me.txtMiddleName)
-        Me.Panel6.Controls.Add(Me.Panel1)
         Me.Panel6.Controls.Add(Me.labelHousehold)
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel6.Controls.Add(Me.Panel1)
         Me.Panel6.Location = New System.Drawing.Point(3, 49)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(643, 439)
@@ -928,38 +985,16 @@ Partial Class ViewResident
         Me.txtAge.TabIndex = 99
         Me.txtAge.Tag = ""
         '
-        'labelDisability
-        '
-        Me.labelDisability.AutoSize = True
-        Me.labelDisability.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelDisability.Location = New System.Drawing.Point(452, 608)
-        Me.labelDisability.Name = "labelDisability"
-        Me.labelDisability.Size = New System.Drawing.Size(78, 14)
-        Me.labelDisability.TabIndex = 98
-        Me.labelDisability.Text = "Disability*"
-        '
         'comboHouseholdId
         '
+        Me.comboHouseholdId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.comboHouseholdId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.comboHouseholdId.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboHouseholdId.FormattingEnabled = True
         Me.comboHouseholdId.Location = New System.Drawing.Point(271, 65)
         Me.comboHouseholdId.Name = "comboHouseholdId"
         Me.comboHouseholdId.Size = New System.Drawing.Size(293, 28)
         Me.comboHouseholdId.TabIndex = 96
-        '
-        'txtDisability
-        '
-        Me.txtDisability.BackColor = System.Drawing.Color.White
-        Me.txtDisability.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtDisability.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDisability.ForeColor = System.Drawing.Color.Black
-        Me.txtDisability.Location = New System.Drawing.Point(406, 625)
-        Me.txtDisability.MaxLength = 11
-        Me.txtDisability.Multiline = True
-        Me.txtDisability.Name = "txtDisability"
-        Me.txtDisability.Size = New System.Drawing.Size(169, 27)
-        Me.txtDisability.TabIndex = 95
-        Me.txtDisability.Tag = ""
         '
         'Label7
         '
@@ -978,7 +1013,7 @@ Partial Class ViewResident
         Me.txtReligion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtReligion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtReligion.ForeColor = System.Drawing.Color.Black
-        Me.txtReligion.Location = New System.Drawing.Point(271, 692)
+        Me.txtReligion.Location = New System.Drawing.Point(271, 661)
         Me.txtReligion.MaxLength = 11
         Me.txtReligion.Multiline = True
         Me.txtReligion.Name = "txtReligion"
@@ -990,7 +1025,7 @@ Partial Class ViewResident
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(43, 695)
+        Me.Label1.Location = New System.Drawing.Point(41, 661)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(78, 18)
         Me.Label1.TabIndex = 90
@@ -1002,7 +1037,7 @@ Partial Class ViewResident
         Me.txtOccupation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtOccupation.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtOccupation.ForeColor = System.Drawing.Color.Black
-        Me.txtOccupation.Location = New System.Drawing.Point(271, 659)
+        Me.txtOccupation.Location = New System.Drawing.Point(271, 628)
         Me.txtOccupation.MaxLength = 11
         Me.txtOccupation.Multiline = True
         Me.txtOccupation.Name = "txtOccupation"
@@ -1015,7 +1050,7 @@ Partial Class ViewResident
         Me.comboPwd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboPwd.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboPwd.FormattingEnabled = True
-        Me.comboPwd.Location = New System.Drawing.Point(271, 625)
+        Me.comboPwd.Location = New System.Drawing.Point(271, 694)
         Me.comboPwd.Name = "comboPwd"
         Me.comboPwd.Size = New System.Drawing.Size(128, 28)
         Me.comboPwd.TabIndex = 88
@@ -1167,7 +1202,7 @@ Partial Class ViewResident
         '
         Me.Label35.AutoSize = True
         Me.Label35.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label35.Location = New System.Drawing.Point(43, 662)
+        Me.Label35.Location = New System.Drawing.Point(41, 628)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(104, 18)
         Me.Label35.TabIndex = 65
@@ -1177,7 +1212,7 @@ Partial Class ViewResident
         '
         Me.Label38.AutoSize = True
         Me.Label38.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label38.Location = New System.Drawing.Point(42, 629)
+        Me.Label38.Location = New System.Drawing.Point(44, 698)
         Me.Label38.Name = "Label38"
         Me.Label38.Size = New System.Drawing.Size(53, 18)
         Me.Label38.TabIndex = 63
@@ -1187,41 +1222,41 @@ Partial Class ViewResident
         '
         Me.Label40.AutoSize = True
         Me.Label40.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label40.Location = New System.Drawing.Point(41, 595)
+        Me.Label40.Location = New System.Drawing.Point(39, 595)
         Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(164, 18)
+        Me.Label40.Size = New System.Drawing.Size(169, 18)
         Me.Label40.TabIndex = 61
-        Me.Label40.Text = "Registered Voter*:"
+        Me.Label40.Text = "Registered Voter *:"
         '
         'Label42
         '
         Me.Label42.AutoSize = True
         Me.Label42.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label42.Location = New System.Drawing.Point(41, 561)
+        Me.Label42.Location = New System.Drawing.Point(39, 561)
         Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(113, 18)
+        Me.Label42.Size = New System.Drawing.Size(118, 18)
         Me.Label42.TabIndex = 59
-        Me.Label42.Text = "Citizenship*:"
+        Me.Label42.Text = "Citizenship *:"
         '
         'Label44
         '
         Me.Label44.AutoSize = True
         Me.Label44.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.Location = New System.Drawing.Point(40, 497)
+        Me.Label44.Location = New System.Drawing.Point(38, 497)
         Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(115, 18)
+        Me.Label44.Size = New System.Drawing.Size(120, 18)
         Me.Label44.TabIndex = 57
-        Me.Label44.Text = "Contact No*:"
+        Me.Label44.Text = "Contact No *:"
         '
         'Label46
         '
         Me.Label46.AutoSize = True
         Me.Label46.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label46.Location = New System.Drawing.Point(43, 462)
+        Me.Label46.Location = New System.Drawing.Point(41, 462)
         Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(56, 18)
+        Me.Label46.Size = New System.Drawing.Size(61, 18)
         Me.Label46.TabIndex = 55
-        Me.Label46.Text = "Sex*:"
+        Me.Label46.Text = "Sex *:"
         '
         'Label48
         '
@@ -1237,11 +1272,11 @@ Partial Class ViewResident
         '
         Me.Label50.AutoSize = True
         Me.Label50.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label50.Location = New System.Drawing.Point(40, 393)
+        Me.Label50.Location = New System.Drawing.Point(41, 391)
         Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(133, 18)
+        Me.Label50.Size = New System.Drawing.Size(138, 18)
         Me.Label50.TabIndex = 51
-        Me.Label50.Text = "Place of Birth*:"
+        Me.Label50.Text = "Place of Birth *:"
         '
         'Label52
         '
@@ -1299,13 +1334,6 @@ Partial Class ViewResident
         Me.txtMiddleName.Size = New System.Drawing.Size(293, 27)
         Me.txtMiddleName.TabIndex = 77
         '
-        'Panel1
-        '
-        Me.Panel1.Location = New System.Drawing.Point(592, 650)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(18, 100)
-        Me.Panel1.TabIndex = 68
-        '
         'labelHousehold
         '
         Me.labelHousehold.AutoSize = True
@@ -1316,64 +1344,34 @@ Partial Class ViewResident
         Me.labelHousehold.TabIndex = 93
         Me.labelHousehold.Text = "Household Id*: "
         '
-        'TableLayoutPanel4
+        'Panel1
         '
-        Me.TableLayoutPanel4.ColumnCount = 3
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.0!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel4.Controls.Add(Me.btnSaveResident, 2, 0)
-        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 494)
-        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
-        Me.TableLayoutPanel4.Padding = New System.Windows.Forms.Padding(0, 10, 0, 0)
-        Me.TableLayoutPanel4.RowCount = 1
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(643, 51)
-        Me.TableLayoutPanel4.TabIndex = 37
+        Me.Panel1.Location = New System.Drawing.Point(611, 692)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(10, 100)
+        Me.Panel1.TabIndex = 68
         '
-        'btnSaveResident
+        'txtDisability
         '
-        Me.btnSaveResident.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.btnSaveResident.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnSaveResident.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnSaveResident.FlatAppearance.BorderSize = 0
-        Me.btnSaveResident.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.btnSaveResident.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.btnSaveResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSaveResident.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSaveResident.ForeColor = System.Drawing.Color.White
-        Me.btnSaveResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.modify
-        Me.btnSaveResident.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSaveResident.Location = New System.Drawing.Point(513, 10)
-        Me.btnSaveResident.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnSaveResident.Name = "btnSaveResident"
-        Me.btnSaveResident.Size = New System.Drawing.Size(130, 41)
-        Me.btnSaveResident.TabIndex = 34
-        Me.btnSaveResident.TabStop = False
-        Me.btnSaveResident.Text = "  Save Resident"
-        Me.btnSaveResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSaveResident.UseVisualStyleBackColor = False
+        Me.txtDisability.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtDisability.Enabled = False
+        Me.txtDisability.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txtDisability.ForeColor = System.Drawing.Color.Black
+        Me.txtDisability.Location = New System.Drawing.Point(271, 728)
+        Me.txtDisability.Multiline = True
+        Me.txtDisability.Name = "txtDisability"
+        Me.txtDisability.Size = New System.Drawing.Size(303, 26)
+        Me.txtDisability.TabIndex = 101
         '
-        'Panel10
+        'labelDisability
         '
-        Me.Panel10.Controls.Add(Me.Label64)
-        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel10.Location = New System.Drawing.Point(3, 3)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(643, 40)
-        Me.Panel10.TabIndex = 78
-        '
-        'Label64
-        '
-        Me.Label64.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label64.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label64.Location = New System.Drawing.Point(0, 0)
-        Me.Label64.Name = "Label64"
-        Me.Label64.Size = New System.Drawing.Size(643, 40)
-        Me.Label64.TabIndex = 71
-        Me.Label64.Text = "PERSONAL INFORMATION"
-        Me.Label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.labelDisability.AutoSize = True
+        Me.labelDisability.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelDisability.Location = New System.Drawing.Point(41, 731)
+        Me.labelDisability.Name = "labelDisability"
+        Me.labelDisability.Size = New System.Drawing.Size(88, 18)
+        Me.labelDisability.TabIndex = 102
+        Me.labelDisability.Text = "Disability:"
         '
         'ViewResident
         '
@@ -1398,10 +1396,10 @@ Partial Class ViewResident
         Me.pageAddModify.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.Panel10.ResumeLayout(False)
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1410,17 +1408,6 @@ Partial Class ViewResident
     Friend WithEvents pageAddModify As TabPage
     Friend WithEvents Panel5 As Panel
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents Label35 As Label
-    Friend WithEvents Label38 As Label
-    Friend WithEvents Label40 As Label
-    Friend WithEvents Label42 As Label
-    Friend WithEvents Label44 As Label
-    Friend WithEvents Label46 As Label
-    Friend WithEvents Label48 As Label
-    Friend WithEvents Label50 As Label
-    Friend WithEvents Label52 As Label
-    Friend WithEvents Label55 As Label
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents btnSaveResident As Button
     Friend WithEvents Panel10 As Panel
@@ -1474,7 +1461,21 @@ Partial Class ViewResident
     Friend WithEvents Panel16 As Panel
     Friend WithEvents Label104 As Label
     Friend WithEvents Button1 As Button
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents labelAddress As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents labelCitizenship As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents labelReasonArchived As Label
+    Friend WithEvents labelArchive2 As Label
+    Friend WithEvents labelSeniorCitizen As Label
+    Friend WithEvents label12 As Label
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents txtExtName As TextBox
+    Friend WithEvents txtAge As TextBox
+    Friend WithEvents comboHouseholdId As ComboBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtReligion As TextBox
+    Friend WithEvents Label1 As Label
     Friend WithEvents txtOccupation As TextBox
     Friend WithEvents comboPwd As ComboBox
     Friend WithEvents comboVoter As ComboBox
@@ -1490,24 +1491,21 @@ Partial Class ViewResident
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label18 As Label
+    Friend WithEvents Label35 As Label
+    Friend WithEvents Label38 As Label
+    Friend WithEvents Label40 As Label
+    Friend WithEvents Label42 As Label
+    Friend WithEvents Label44 As Label
+    Friend WithEvents Label46 As Label
+    Friend WithEvents Label48 As Label
+    Friend WithEvents Label50 As Label
+    Friend WithEvents Label52 As Label
+    Friend WithEvents Label55 As Label
     Friend WithEvents Label60 As Label
     Friend WithEvents txtFirstName As TextBox
     Friend WithEvents txtMiddleName As TextBox
-    Friend WithEvents labelAddress As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents txtReligion As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents labelCitizenship As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label7 As Label
     Friend WithEvents labelHousehold As Label
-    Friend WithEvents comboHouseholdId As ComboBox
+    Friend WithEvents Panel1 As Panel
     Friend WithEvents txtDisability As TextBox
-    Friend WithEvents labelReasonArchived As Label
-    Friend WithEvents labelArchive2 As Label
     Friend WithEvents labelDisability As Label
-    Friend WithEvents txtAge As TextBox
-    Friend WithEvents txtExtName As TextBox
-    Friend WithEvents labelSeniorCitizen As Label
-    Friend WithEvents label12 As Label
 End Class

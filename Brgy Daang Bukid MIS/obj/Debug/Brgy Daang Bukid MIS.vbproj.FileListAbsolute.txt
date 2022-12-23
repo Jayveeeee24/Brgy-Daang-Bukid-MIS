@@ -69,6 +69,7 @@ C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\MySql.Data.xml
 C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.vbproj.AssemblyReference.cache
 C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.vbproj.SuggestedBindingRedirects.cache
 C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.exe.config
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ViewResident.resources
 C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.Filter.resources
 C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.Login.resources
 C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.Main_Form.resources
@@ -79,4 +80,3 @@ C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.
 C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.exe
 C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.xml
 C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.pdb
-C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ViewResident.resources

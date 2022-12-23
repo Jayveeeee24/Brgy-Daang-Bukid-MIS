@@ -58,7 +58,7 @@ Public Class Main_Form
         If e.RowIndex >= 0 Then
             ViewResident.resident_id = datagridResident.Rows(e.RowIndex).Cells(0).Value
             ViewResident.viewChoice = "Normal"
-            ViewResident.mainTabControl.SelectedIndex = 0
+            ViewResident.action = "view"
             ViewResident.ShowDialog()
         End If
     End Sub
@@ -67,7 +67,7 @@ Public Class Main_Form
         Filter.ShowDialog()
     End Sub
     Private Sub btnAddResident_Click(sender As Object, e As EventArgs) Handles btnAddResident.Click
-        ViewResident.mainTabControl.SelectedIndex = 1
+        ViewResident.action = "add"
         ViewResident.ShowDialog()
     End Sub
 
@@ -457,6 +457,10 @@ Public Class Main_Form
         mySql.Dispose()
 
         datagrid.ClearSelection()
+    End Sub
+
+    Private Sub colorText(text As TextBox)
+
     End Sub
 
     Private Sub enterTextPageNo(e As KeyEventArgs, txtPageNo As ToolStripTextBox, datagrid As DataGridView, modules As Modules, ByVal totalPage As Integer)
