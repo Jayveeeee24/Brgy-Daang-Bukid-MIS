@@ -88,7 +88,9 @@ Partial Class ViewResident
         Me.btnSaveResident = New System.Windows.Forms.Button()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Label64 = New System.Windows.Forms.Label()
-        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.panelParent = New System.Windows.Forms.Panel()
+        Me.labelDisability = New System.Windows.Forms.Label()
+        Me.txtDisability = New System.Windows.Forms.TextBox()
         Me.txtExtName = New System.Windows.Forms.TextBox()
         Me.txtAge = New System.Windows.Forms.TextBox()
         Me.comboHouseholdId = New System.Windows.Forms.ComboBox()
@@ -125,8 +127,6 @@ Partial Class ViewResident
         Me.txtMiddleName = New System.Windows.Forms.TextBox()
         Me.labelHousehold = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.txtDisability = New System.Windows.Forms.TextBox()
-        Me.labelDisability = New System.Windows.Forms.Label()
         Me.mainTabControl.SuspendLayout()
         Me.pageView.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -139,7 +139,7 @@ Partial Class ViewResident
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.Panel10.SuspendLayout()
-        Me.Panel6.SuspendLayout()
+        Me.panelParent.SuspendLayout()
         Me.SuspendLayout()
         '
         'mainTabControl
@@ -269,9 +269,9 @@ Partial Class ViewResident
         Me.label12.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label12.Location = New System.Drawing.Point(36, 361)
         Me.label12.Name = "label12"
-        Me.label12.Size = New System.Drawing.Size(66, 18)
+        Me.label12.Size = New System.Drawing.Size(126, 18)
         Me.label12.TabIndex = 88
-        Me.label12.Text = "Senior:"
+        Me.label12.Text = "Senior Citizen:"
         '
         'labelReasonArchived
         '
@@ -379,9 +379,9 @@ Partial Class ViewResident
         Me.labelAddress.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelAddress.Location = New System.Drawing.Point(264, 139)
         Me.labelAddress.Name = "labelAddress"
-        Me.labelAddress.Size = New System.Drawing.Size(175, 18)
+        Me.labelAddress.Size = New System.Drawing.Size(123, 18)
         Me.labelAddress.TabIndex = 79
-        Me.labelAddress.Text = "083 Capt. J Luna St."
+        Me.labelAddress.Text = "Pekeng Steet."
         '
         'Label3
         '
@@ -406,9 +406,9 @@ Partial Class ViewResident
         Me.labelRegisteredBy.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelRegisteredBy.Location = New System.Drawing.Point(264, 628)
         Me.labelRegisteredBy.Name = "labelRegisteredBy"
-        Me.labelRegisteredBy.Size = New System.Drawing.Size(325, 18)
+        Me.labelRegisteredBy.Size = New System.Drawing.Size(215, 18)
         Me.labelRegisteredBy.TabIndex = 74
-        Me.labelRegisteredBy.Text = "John Bernard Tinio [Barangay Captain]"
+        Me.labelRegisteredBy.Text = "Joker [Barangay Captain]"
         '
         'Label72
         '
@@ -526,9 +526,9 @@ Partial Class ViewResident
         Me.labelContactNo.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelContactNo.Location = New System.Drawing.Point(264, 226)
         Me.labelContactNo.Name = "labelContactNo"
-        Me.labelContactNo.Size = New System.Drawing.Size(118, 18)
+        Me.labelContactNo.Size = New System.Drawing.Size(28, 18)
         Me.labelContactNo.TabIndex = 58
-        Me.labelContactNo.Text = "09069141416"
+        Me.labelContactNo.Text = "16"
         '
         'Label84
         '
@@ -626,9 +626,9 @@ Partial Class ViewResident
         Me.labelBirthdate.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelBirthdate.Location = New System.Drawing.Point(264, 253)
         Me.labelBirthdate.Name = "labelBirthdate"
-        Me.labelBirthdate.Size = New System.Drawing.Size(156, 18)
+        Me.labelBirthdate.Size = New System.Drawing.Size(148, 18)
         Me.labelBirthdate.TabIndex = 46
-        Me.labelBirthdate.Text = "February 24, 2000"
+        Me.labelBirthdate.Text = "January 21, 2000"
         '
         'Label94
         '
@@ -665,9 +665,9 @@ Partial Class ViewResident
         Me.labelLast.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelLast.Location = New System.Drawing.Point(264, 85)
         Me.labelLast.Name = "labelLast"
-        Me.labelLast.Size = New System.Drawing.Size(48, 18)
+        Me.labelLast.Size = New System.Drawing.Size(137, 18)
         Me.labelLast.TabIndex = 42
-        Me.labelLast.Text = "Tinio"
+        Me.labelLast.Text = "Kamusta ka na "
         '
         'labelMiddle
         '
@@ -675,9 +675,9 @@ Partial Class ViewResident
         Me.labelMiddle.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelMiddle.Location = New System.Drawing.Point(264, 56)
         Me.labelMiddle.Name = "labelMiddle"
-        Me.labelMiddle.Size = New System.Drawing.Size(74, 18)
+        Me.labelMiddle.Size = New System.Drawing.Size(215, 18)
         Me.labelMiddle.TabIndex = 41
-        Me.labelMiddle.Text = "Jimenez"
+        Me.labelMiddle.Text = "Wala syang middle name"
         '
         'labelFirst
         '
@@ -685,9 +685,9 @@ Partial Class ViewResident
         Me.labelFirst.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelFirst.Location = New System.Drawing.Point(264, 27)
         Me.labelFirst.Name = "labelFirst"
-        Me.labelFirst.Size = New System.Drawing.Size(114, 18)
+        Me.labelFirst.Size = New System.Drawing.Size(54, 18)
         Me.labelFirst.TabIndex = 40
-        Me.labelFirst.Text = "John Bernard"
+        Me.labelFirst.Text = "Jopay"
         '
         'Label100
         '
@@ -752,8 +752,8 @@ Partial Class ViewResident
         Me.Button1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
@@ -840,7 +840,7 @@ Partial Class ViewResident
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel4, 0, 2)
         Me.TableLayoutPanel3.Controls.Add(Me.Panel10, 0, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.Panel6, 0, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.panelParent, 0, 1)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(10, 5)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
@@ -910,57 +910,83 @@ Partial Class ViewResident
         Me.Label64.Text = "PERSONAL INFORMATION"
         Me.Label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Panel6
+        'panelParent
         '
-        Me.Panel6.AutoScroll = True
-        Me.Panel6.BackColor = System.Drawing.Color.White
-        Me.Panel6.Controls.Add(Me.labelDisability)
-        Me.Panel6.Controls.Add(Me.txtDisability)
-        Me.Panel6.Controls.Add(Me.txtExtName)
-        Me.Panel6.Controls.Add(Me.txtAge)
-        Me.Panel6.Controls.Add(Me.comboHouseholdId)
-        Me.Panel6.Controls.Add(Me.Label7)
-        Me.Panel6.Controls.Add(Me.txtReligion)
-        Me.Panel6.Controls.Add(Me.Label1)
-        Me.Panel6.Controls.Add(Me.txtOccupation)
-        Me.Panel6.Controls.Add(Me.comboPwd)
-        Me.Panel6.Controls.Add(Me.comboVoter)
-        Me.Panel6.Controls.Add(Me.txtCitizenship)
-        Me.Panel6.Controls.Add(Me.txtContactNo)
-        Me.Panel6.Controls.Add(Me.comboSex)
-        Me.Panel6.Controls.Add(Me.comboCivilStatus)
-        Me.Panel6.Controls.Add(Me.txtBirthPlace)
-        Me.Panel6.Controls.Add(Me.pickerBirthDate)
-        Me.Panel6.Controls.Add(Me.comboHouseholdRole)
-        Me.Panel6.Controls.Add(Me.txtLastName)
-        Me.Panel6.Controls.Add(Me.Label4)
-        Me.Panel6.Controls.Add(Me.Label5)
-        Me.Panel6.Controls.Add(Me.Label6)
-        Me.Panel6.Controls.Add(Me.Label18)
-        Me.Panel6.Controls.Add(Me.Label35)
-        Me.Panel6.Controls.Add(Me.Label38)
-        Me.Panel6.Controls.Add(Me.Label40)
-        Me.Panel6.Controls.Add(Me.Label42)
-        Me.Panel6.Controls.Add(Me.Label44)
-        Me.Panel6.Controls.Add(Me.Label46)
-        Me.Panel6.Controls.Add(Me.Label48)
-        Me.Panel6.Controls.Add(Me.Label50)
-        Me.Panel6.Controls.Add(Me.Label52)
-        Me.Panel6.Controls.Add(Me.Label55)
-        Me.Panel6.Controls.Add(Me.Label60)
-        Me.Panel6.Controls.Add(Me.txtFirstName)
-        Me.Panel6.Controls.Add(Me.txtMiddleName)
-        Me.Panel6.Controls.Add(Me.labelHousehold)
-        Me.Panel6.Controls.Add(Me.Panel1)
-        Me.Panel6.Location = New System.Drawing.Point(3, 49)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(643, 439)
-        Me.Panel6.TabIndex = 38
+        Me.panelParent.AutoScroll = True
+        Me.panelParent.BackColor = System.Drawing.Color.White
+        Me.panelParent.Controls.Add(Me.labelDisability)
+        Me.panelParent.Controls.Add(Me.txtDisability)
+        Me.panelParent.Controls.Add(Me.txtExtName)
+        Me.panelParent.Controls.Add(Me.txtAge)
+        Me.panelParent.Controls.Add(Me.comboHouseholdId)
+        Me.panelParent.Controls.Add(Me.Label7)
+        Me.panelParent.Controls.Add(Me.txtReligion)
+        Me.panelParent.Controls.Add(Me.Label1)
+        Me.panelParent.Controls.Add(Me.txtOccupation)
+        Me.panelParent.Controls.Add(Me.comboPwd)
+        Me.panelParent.Controls.Add(Me.comboVoter)
+        Me.panelParent.Controls.Add(Me.txtCitizenship)
+        Me.panelParent.Controls.Add(Me.txtContactNo)
+        Me.panelParent.Controls.Add(Me.comboSex)
+        Me.panelParent.Controls.Add(Me.comboCivilStatus)
+        Me.panelParent.Controls.Add(Me.txtBirthPlace)
+        Me.panelParent.Controls.Add(Me.pickerBirthDate)
+        Me.panelParent.Controls.Add(Me.comboHouseholdRole)
+        Me.panelParent.Controls.Add(Me.txtLastName)
+        Me.panelParent.Controls.Add(Me.Label4)
+        Me.panelParent.Controls.Add(Me.Label5)
+        Me.panelParent.Controls.Add(Me.Label6)
+        Me.panelParent.Controls.Add(Me.Label18)
+        Me.panelParent.Controls.Add(Me.Label35)
+        Me.panelParent.Controls.Add(Me.Label38)
+        Me.panelParent.Controls.Add(Me.Label40)
+        Me.panelParent.Controls.Add(Me.Label42)
+        Me.panelParent.Controls.Add(Me.Label44)
+        Me.panelParent.Controls.Add(Me.Label46)
+        Me.panelParent.Controls.Add(Me.Label48)
+        Me.panelParent.Controls.Add(Me.Label50)
+        Me.panelParent.Controls.Add(Me.Label52)
+        Me.panelParent.Controls.Add(Me.Label55)
+        Me.panelParent.Controls.Add(Me.Label60)
+        Me.panelParent.Controls.Add(Me.txtFirstName)
+        Me.panelParent.Controls.Add(Me.txtMiddleName)
+        Me.panelParent.Controls.Add(Me.labelHousehold)
+        Me.panelParent.Controls.Add(Me.Panel1)
+        Me.panelParent.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.panelParent.Location = New System.Drawing.Point(3, 49)
+        Me.panelParent.Name = "panelParent"
+        Me.panelParent.Size = New System.Drawing.Size(643, 439)
+        Me.panelParent.TabIndex = 38
+        '
+        'labelDisability
+        '
+        Me.labelDisability.AutoSize = True
+        Me.labelDisability.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelDisability.Location = New System.Drawing.Point(41, 731)
+        Me.labelDisability.Name = "labelDisability"
+        Me.labelDisability.Size = New System.Drawing.Size(88, 18)
+        Me.labelDisability.TabIndex = 102
+        Me.labelDisability.Text = "Disability:"
+        Me.labelDisability.Visible = False
+        '
+        'txtDisability
+        '
+        Me.txtDisability.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtDisability.Enabled = False
+        Me.txtDisability.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txtDisability.ForeColor = System.Drawing.Color.Black
+        Me.txtDisability.Location = New System.Drawing.Point(271, 728)
+        Me.txtDisability.MaxLength = 50
+        Me.txtDisability.Multiline = True
+        Me.txtDisability.Name = "txtDisability"
+        Me.txtDisability.Size = New System.Drawing.Size(303, 26)
+        Me.txtDisability.TabIndex = 101
+        Me.txtDisability.Visible = False
         '
         'txtExtName
         '
         Me.txtExtName.BackColor = System.Drawing.Color.White
-        Me.txtExtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtExtName.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtExtName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtExtName.ForeColor = System.Drawing.Color.Black
         Me.txtExtName.Location = New System.Drawing.Point(274, 261)
@@ -973,12 +999,12 @@ Partial Class ViewResident
         'txtAge
         '
         Me.txtAge.BackColor = System.Drawing.Color.White
-        Me.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtAge.Enabled = False
         Me.txtAge.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAge.ForeColor = System.Drawing.Color.Black
         Me.txtAge.Location = New System.Drawing.Point(271, 357)
-        Me.txtAge.MaxLength = 11
+        Me.txtAge.MaxLength = 150
         Me.txtAge.Multiline = True
         Me.txtAge.Name = "txtAge"
         Me.txtAge.Size = New System.Drawing.Size(130, 27)
@@ -987,8 +1013,9 @@ Partial Class ViewResident
         '
         'comboHouseholdId
         '
-        Me.comboHouseholdId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.comboHouseholdId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
         Me.comboHouseholdId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.comboHouseholdId.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboHouseholdId.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboHouseholdId.FormattingEnabled = True
         Me.comboHouseholdId.Location = New System.Drawing.Point(271, 65)
@@ -1010,11 +1037,11 @@ Partial Class ViewResident
         'txtReligion
         '
         Me.txtReligion.BackColor = System.Drawing.Color.White
-        Me.txtReligion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtReligion.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtReligion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtReligion.ForeColor = System.Drawing.Color.Black
         Me.txtReligion.Location = New System.Drawing.Point(271, 661)
-        Me.txtReligion.MaxLength = 11
+        Me.txtReligion.MaxLength = 100
         Me.txtReligion.Multiline = True
         Me.txtReligion.Name = "txtReligion"
         Me.txtReligion.Size = New System.Drawing.Size(303, 27)
@@ -1034,11 +1061,11 @@ Partial Class ViewResident
         'txtOccupation
         '
         Me.txtOccupation.BackColor = System.Drawing.Color.White
-        Me.txtOccupation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtOccupation.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtOccupation.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtOccupation.ForeColor = System.Drawing.Color.Black
         Me.txtOccupation.Location = New System.Drawing.Point(271, 628)
-        Me.txtOccupation.MaxLength = 11
+        Me.txtOccupation.MaxLength = 100
         Me.txtOccupation.Multiline = True
         Me.txtOccupation.Name = "txtOccupation"
         Me.txtOccupation.Size = New System.Drawing.Size(303, 27)
@@ -1048,6 +1075,7 @@ Partial Class ViewResident
         'comboPwd
         '
         Me.comboPwd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboPwd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboPwd.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboPwd.FormattingEnabled = True
         Me.comboPwd.Location = New System.Drawing.Point(271, 694)
@@ -1058,6 +1086,7 @@ Partial Class ViewResident
         'comboVoter
         '
         Me.comboVoter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboVoter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboVoter.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboVoter.FormattingEnabled = True
         Me.comboVoter.Location = New System.Drawing.Point(271, 591)
@@ -1068,11 +1097,11 @@ Partial Class ViewResident
         'txtCitizenship
         '
         Me.txtCitizenship.BackColor = System.Drawing.Color.White
-        Me.txtCitizenship.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCitizenship.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtCitizenship.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCitizenship.ForeColor = System.Drawing.Color.Black
         Me.txtCitizenship.Location = New System.Drawing.Point(271, 558)
-        Me.txtCitizenship.MaxLength = 11
+        Me.txtCitizenship.MaxLength = 100
         Me.txtCitizenship.Multiline = True
         Me.txtCitizenship.Name = "txtCitizenship"
         Me.txtCitizenship.Size = New System.Drawing.Size(303, 27)
@@ -1082,11 +1111,11 @@ Partial Class ViewResident
         'txtContactNo
         '
         Me.txtContactNo.BackColor = System.Drawing.Color.White
-        Me.txtContactNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtContactNo.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtContactNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContactNo.ForeColor = System.Drawing.Color.Black
         Me.txtContactNo.Location = New System.Drawing.Point(271, 492)
-        Me.txtContactNo.MaxLength = 11
+        Me.txtContactNo.MaxLength = 100
         Me.txtContactNo.Multiline = True
         Me.txtContactNo.Name = "txtContactNo"
         Me.txtContactNo.Size = New System.Drawing.Size(303, 27)
@@ -1096,6 +1125,7 @@ Partial Class ViewResident
         'comboSex
         '
         Me.comboSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboSex.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboSex.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboSex.FormattingEnabled = True
         Me.comboSex.Location = New System.Drawing.Point(271, 458)
@@ -1106,6 +1136,7 @@ Partial Class ViewResident
         'comboCivilStatus
         '
         Me.comboCivilStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboCivilStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboCivilStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboCivilStatus.FormattingEnabled = True
         Me.comboCivilStatus.Location = New System.Drawing.Point(271, 424)
@@ -1116,11 +1147,11 @@ Partial Class ViewResident
         'txtBirthPlace
         '
         Me.txtBirthPlace.BackColor = System.Drawing.Color.White
-        Me.txtBirthPlace.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtBirthPlace.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtBirthPlace.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBirthPlace.ForeColor = System.Drawing.Color.Black
         Me.txtBirthPlace.Location = New System.Drawing.Point(271, 390)
-        Me.txtBirthPlace.MaxLength = 11
+        Me.txtBirthPlace.MaxLength = 100
         Me.txtBirthPlace.Multiline = True
         Me.txtBirthPlace.Name = "txtBirthPlace"
         Me.txtBirthPlace.Size = New System.Drawing.Size(303, 27)
@@ -1138,6 +1169,7 @@ Partial Class ViewResident
         'comboHouseholdRole
         '
         Me.comboHouseholdRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboHouseholdRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboHouseholdRole.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboHouseholdRole.FormattingEnabled = True
         Me.comboHouseholdRole.Location = New System.Drawing.Point(271, 99)
@@ -1148,11 +1180,11 @@ Partial Class ViewResident
         'txtLastName
         '
         Me.txtLastName.BackColor = System.Drawing.Color.White
-        Me.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtLastName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLastName.ForeColor = System.Drawing.Color.Black
         Me.txtLastName.Location = New System.Drawing.Point(273, 228)
-        Me.txtLastName.MaxLength = 11
+        Me.txtLastName.MaxLength = 100
         Me.txtLastName.Multiline = True
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.Size = New System.Drawing.Size(293, 27)
@@ -1311,11 +1343,11 @@ Partial Class ViewResident
         'txtFirstName
         '
         Me.txtFirstName.BackColor = System.Drawing.Color.White
-        Me.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtFirstName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFirstName.ForeColor = System.Drawing.Color.Black
         Me.txtFirstName.Location = New System.Drawing.Point(273, 162)
-        Me.txtFirstName.MaxLength = 11
+        Me.txtFirstName.MaxLength = 100
         Me.txtFirstName.Multiline = True
         Me.txtFirstName.Name = "txtFirstName"
         Me.txtFirstName.Size = New System.Drawing.Size(293, 27)
@@ -1324,11 +1356,11 @@ Partial Class ViewResident
         'txtMiddleName
         '
         Me.txtMiddleName.BackColor = System.Drawing.Color.White
-        Me.txtMiddleName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtMiddleName.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtMiddleName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMiddleName.ForeColor = System.Drawing.Color.Black
         Me.txtMiddleName.Location = New System.Drawing.Point(273, 195)
-        Me.txtMiddleName.MaxLength = 11
+        Me.txtMiddleName.MaxLength = 100
         Me.txtMiddleName.Multiline = True
         Me.txtMiddleName.Name = "txtMiddleName"
         Me.txtMiddleName.Size = New System.Drawing.Size(293, 27)
@@ -1346,32 +1378,10 @@ Partial Class ViewResident
         '
         'Panel1
         '
-        Me.Panel1.Location = New System.Drawing.Point(611, 692)
+        Me.Panel1.Location = New System.Drawing.Point(253, 774)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(10, 100)
+        Me.Panel1.Size = New System.Drawing.Size(10, 23)
         Me.Panel1.TabIndex = 68
-        '
-        'txtDisability
-        '
-        Me.txtDisability.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtDisability.Enabled = False
-        Me.txtDisability.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.txtDisability.ForeColor = System.Drawing.Color.Black
-        Me.txtDisability.Location = New System.Drawing.Point(271, 728)
-        Me.txtDisability.Multiline = True
-        Me.txtDisability.Name = "txtDisability"
-        Me.txtDisability.Size = New System.Drawing.Size(303, 26)
-        Me.txtDisability.TabIndex = 101
-        '
-        'labelDisability
-        '
-        Me.labelDisability.AutoSize = True
-        Me.labelDisability.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelDisability.Location = New System.Drawing.Point(41, 731)
-        Me.labelDisability.Name = "labelDisability"
-        Me.labelDisability.Size = New System.Drawing.Size(88, 18)
-        Me.labelDisability.TabIndex = 102
-        Me.labelDisability.Text = "Disability:"
         '
         'ViewResident
         '
@@ -1398,8 +1408,8 @@ Partial Class ViewResident
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.Panel10.ResumeLayout(False)
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
+        Me.panelParent.ResumeLayout(False)
+        Me.panelParent.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1469,7 +1479,7 @@ Partial Class ViewResident
     Friend WithEvents labelArchive2 As Label
     Friend WithEvents labelSeniorCitizen As Label
     Friend WithEvents label12 As Label
-    Friend WithEvents Panel6 As Panel
+    Friend WithEvents panelParent As Panel
     Friend WithEvents txtExtName As TextBox
     Friend WithEvents txtAge As TextBox
     Friend WithEvents comboHouseholdId As ComboBox

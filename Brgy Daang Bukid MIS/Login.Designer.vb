@@ -96,7 +96,7 @@ Partial Class Login
         'txtUsername
         '
         Me.txtUsername.BackColor = System.Drawing.Color.White
-        Me.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsername.ForeColor = System.Drawing.Color.Black
         Me.txtUsername.Location = New System.Drawing.Point(382, 199)
@@ -109,7 +109,7 @@ Partial Class Login
         'txtPassword
         '
         Me.txtPassword.BackColor = System.Drawing.Color.White
-        Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.ForeColor = System.Drawing.Color.Black
         Me.txtPassword.Location = New System.Drawing.Point(384, 268)

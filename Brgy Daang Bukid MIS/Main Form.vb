@@ -4,6 +4,8 @@ Imports MySql.Data.MySqlClient
 
 Public Class Main_Form
     Public account_type As String
+    Public account_id As Integer
+    Public account_name As String
     Public filterModule As String
     Public mySqlConn As String = "server=localhost; user id=root; database=mis"
     Dim totalRowsResident As Integer
@@ -23,11 +25,47 @@ Public Class Main_Form
     Private Sub Main_Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         mainTabControl.ItemSize = New Size(0, 1)
         btnDashboard.PerformClick()
+        getAccountDetails()
 
         EnableDoubleBuffered(dataGridBrgyOfficials)
         EnableDoubleBuffered(datagridResident)
         EnableDoubleBuffered(datagridHousehold)
 
+    End Sub
+
+    Private Sub getAccountDetails()
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+                mySql.Close()
+                mySql.Dispose()
+                Exit Sub
+        End Select
+
+        Dim mySQLCommand As MySqlCommand
+        Dim mySQLReader As MySqlDataReader
+        mySQLCommand = MySql.CreateCommand()
+        mySQLCommand.CommandType = CommandType.Text
+
+        mySQLCommand.CommandText = "SELECT * FROM brgyofficials WHERE id = @account_id"
+        mySQLCommand.Parameters.AddWithValue("@account_id", account_id)
+        mySQLReader = mySQLCommand.ExecuteReader
+        If mySQLReader.HasRows Then
+            While mySQLReader.Read
+                account_name = mySQLReader!official_name + " [" + mySQLReader!official_position + "]"
+                labelSignedIn.Text = "Logged in as: " + account_name
+            End While
+        End If
+        mySQLCommand.Dispose()
+        mySQLReader.Dispose()
+        MySql.Close()
+        MySql.Dispose()
     End Sub
 
     '' ''''''''''''''''''''''RESIDENT UI DEFINITIONS''''''''''''''''''''''''
@@ -58,7 +96,6 @@ Public Class Main_Form
         If e.RowIndex >= 0 Then
             ViewResident.resident_id = datagridResident.Rows(e.RowIndex).Cells(0).Value
             ViewResident.viewChoice = "Normal"
-            ViewResident.action = "view"
             ViewResident.ShowDialog()
         End If
     End Sub

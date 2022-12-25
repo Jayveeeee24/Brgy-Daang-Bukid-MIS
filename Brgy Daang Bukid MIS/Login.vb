@@ -77,6 +77,7 @@ Public Class Login
             If mySQLReader.HasRows Then
                 While mySQLReader.Read
                     Main_Form.account_type = mySQLReader!account_type
+                    Main_Form.account_id = mySQLReader!account_id
                 End While
                 Main_Form.Show()
                 Me.Close()

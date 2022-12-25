@@ -14,18 +14,130 @@ Public Class ViewResident
     Dim birthPlace, civilStatus, sex, religion,
         contactNo, pwd, disability, voter, occupation, citizenship,
         householdRole, registeredBy, dateRegistered, reasonArchived, archivedBy As String
-
     Private Sub ViewResident_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToParent()
         mainTabControl.ItemSize = New Size(0, 1)
+
+        loadInitialData()
+    End Sub
+    Private Sub ViewResident_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If txtFirstName.Text.Trim <> "" Or txtLastName.Text.Trim <> "" Or txtBirthPlace.Text.Trim <> "" Or txtContactNo.Text.Trim <> "" Or txtDisability.Text.Trim <> "" Or comboHouseholdId.Text.Trim <> "" Then
+            If MsgBox("Your current progress will not be saved!", MsgBoxStyle.OkCancel, "Are you sure to exit?") = MsgBoxResult.Cancel Then
+                e.Cancel = True
+            End If
+        End If
+    End Sub
+    Private Sub ViewResident_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        clearEverything()
+    End Sub
+    Private Sub comboPwd_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboPwd.SelectedIndexChanged
+        If comboPwd.SelectedIndex = 0 Then
+            txtDisability.Visible = True
+            labelDisability.Visible = True
+            txtDisability.Enabled = True
+        Else
+            txtDisability.Visible = False
+            labelDisability.Visible = False
+            txtDisability.Enabled = False
+            txtDisability.Clear()
+        End If
+    End Sub
+    Private Sub pickerBirthDate_ValueChanged(sender As Object, e As EventArgs) Handles pickerBirthDate.ValueChanged
+        Dim date1, date2 As Date
+        date1 = pickerBirthDate.Value.ToShortDateString
+        date2 = Date.Now.ToShortDateString
+        Dim timeSpan As TimeSpan = date2 - date1
+        Dim diff As Integer = If(Int(timeSpan.Days / 365) = -1, 0, Int(timeSpan.Days / 365))
+
+        txtAge.Text = Str(diff)
+    End Sub
+    Private Sub panelParent_Paint(sender As Object, e As PaintEventArgs) Handles panelParent.Paint
+        setComboBoxColor(comboCivilStatus)
+        setComboBoxColor(comboSex)
+        setComboBoxColor(comboVoter)
+        setComboBoxColor(comboPwd)
+        setComboBoxColor(comboHouseholdRole)
+        setComboBoxColor(comboHouseholdId)
+
+        setTextBoxColor(txtFirstName)
+        setTextBoxColor(txtMiddleName)
+        setTextBoxColor(txtLastName)
+        setTextBoxColor(txtExtName)
+        setTextBoxColor(txtAge)
+        setTextBoxColor(txtBirthPlace)
+        setTextBoxColor(txtContactNo)
+        setTextBoxColor(txtCitizenship)
+        setTextBoxColor(txtDisability)
+        setTextBoxColor(txtOccupation)
+        setTextBoxColor(txtReligion)
+    End Sub
+    Private Sub btnModifyResident_Click(sender As Object, e As EventArgs) Handles btnModifyResident.Click
+        mainTabControl.SelectedTab = pageAddModify
+        action = "modify"
+
+        txtFirstName.Text = firstName
+        txtMiddleName.Text = middleName
+        txtLastName.Text = lastName
+        txtExtName.Text = extName
+        txtAge.Text = age
+        txtBirthPlace.Text = birthPlace
+        txtContactNo.Text = contactNo
+        txtCitizenship.Text = citizenship
+        txtDisability.Text = disability
+        txtOccupation.Text = occupation
+        txtReligion.Text = religion
+
+        pickerBirthDate.Value = birthDate
+
+        comboCivilStatus.SelectedIndex = comboCivilStatus.FindStringExact(civilStatus)
+        comboSex.SelectedIndex = comboSex.FindStringExact(sex)
+        comboVoter.SelectedIndex = comboVoter.FindStringExact(voter)
+        comboPwd.SelectedIndex = comboPwd.FindStringExact(pwd)
+        If comboPwd.SelectedIndex = 0 Then
+            txtDisability.Visible = True
+            labelDisability.Visible = True
+            txtDisability.Enabled = True
+            txtDisability.Text = disability
+        End If
+        comboHouseholdRole.SelectedIndex = comboHouseholdRole.FindStringExact(householdRole)
+        comboHouseholdId.SelectedIndex = comboHouseholdId.FindStringExact(householdId)
+
+    End Sub
+    Private Sub btnSaveResident_Click(sender As Object, e As EventArgs) Handles btnSaveResident.Click
+        If comboHouseholdId.Text.Trim = "" Or comboHouseholdId.FindStringExact(comboHouseholdId.Text) = -1 Then
+            MsgBox("Please Fill out a valid Household Id", vbCritical, "Warning")
+            checkComboHouseholdId()
+        Else
+            If txtFirstName.Text.Trim = "" Or txtLastName.Text.Trim = "" Or txtBirthPlace.Text.Trim = "" Or txtContactNo.Text.Trim = "" Or (comboPwd.SelectedItem = "Yes" AndAlso txtDisability.Text.Trim = "") Or pickerBirthDate.Value = Date.Now Then
+                MsgBox("Please Fill out all the required fields!", vbCritical, "Warning")
+                checkTextBox(txtFirstName)
+                checkTextBox(txtLastName)
+                checkTextBox(txtBirthPlace)
+                checkTextBox(txtContactNo)
+                checkTextBox(txtCitizenship)
+                checkTextBox(txtDisability)
+            Else
+                saveResident()
+                MsgBox("Resident Saved!", vbInformation, "Information")
+                If action = "add" Then
+                    clearEverything()
+                    If MsgBox("Add another resident?", MsgBoxStyle.YesNo, "Confirmation") = MsgBoxResult.No Then
+                        Me.Close()
+                        Main_Form.btnResidentInfo.PerformClick()
+                    End If
+                End If
+            End If
+        End If
+    End Sub
+
+
+    '' '''''''''''''FUNCTION HELPERS'''''''''''''''''''''''''''
+    Private Sub loadInitialData()
         comboHouseholdId.Select()
+        mainTabControl.SelectedIndex = 0
 
-
-
-        If action = "view" Then
-            mainTabControl.SelectedTab = pageView
-        ElseIf action = "add" Then
-            mainTabControl.SelectedTab = pageAddModify
+        If action = "add" Then
+            mainTabControl.SelectedIndex = 1
         End If
 
         If mainTabControl.SelectedIndex = 0 Then
@@ -115,12 +227,14 @@ Public Class ViewResident
 
             retrieveAddress(householdId)
 
-                cmd.Dispose()
-                mySql.Close()
-                mySql.Dispose()
-            End If
+            cmd.Dispose()
+            mySql.Close()
+            mySql.Dispose()
+        End If
 
-            Dim civilStatusArray() As String = {"Single", "Married", "Divorced", "Separated", "Widowed"}
+
+
+        Dim civilStatusArray() As String = {"Single", "Married", "Divorced", "Separated", "Widowed"}
         Dim sexArray() As String = {"Male", "Female"}
         Dim yesNo() As String = {"Yes", "No"}
         Dim householdRoleArray() As String = {"Head", "Member"}
@@ -154,61 +268,7 @@ Public Class ViewResident
         setComboHouseholdID()
 
     End Sub
-
-    Private Sub ViewResident_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If txtFirstName.Text.Trim <> "" Or txtLastName.Text.Trim <> "" Or txtBirthPlace.Text.Trim <> "" Or txtContactNo.Text.Trim <> "" Or txtDisability.Text.Trim <> "" Or comboHouseholdId.Text.Trim <> "" Then
-            If MsgBox("Your current progress will not be saved!", MsgBoxStyle.OkCancel, "Are you sure to exit?") = MsgBoxResult.Cancel Then
-                e.Cancel = True
-            End If
-        End If
-    End Sub
-    Private Sub comboPwd_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboPwd.SelectedIndexChanged
-        If comboPwd.SelectedIndex = 0 Then
-            txtDisability.Enabled = True
-        Else
-            txtDisability.Enabled = False
-            txtDisability.Clear()
-        End If
-    End Sub
-    Private Sub setComboHouseholdID()
-        Dim mySql As MySqlConnection
-        mySql = New MySqlConnection(mySqlConn)
-        On Error Resume Next
-        mySql.Open()
-
-        Select Case Err.Number
-            Case 0
-            Case Else
-                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
-        End Select
-
-        Dim cmd As MySqlCommand
-        Dim mySQLReader As MySqlDataReader
-        cmd = mySql.CreateCommand()
-        cmd.CommandType = CommandType.Text
-
-        cmd.CommandText = "SELECT household_id from household"
-        mySQLReader = cmd.ExecuteReader
-        If mySQLReader.HasRows Then
-            While mySQLReader.Read
-                comboHouseholdId.Items.Add(mySQLReader!household_id)
-            End While
-        End If
-
-        cmd.Dispose()
-        mySql.Close()
-        mySql.Dispose()
-    End Sub
-    Private Sub pickerBirthDate_ValueChanged(sender As Object, e As EventArgs) Handles pickerBirthDate.ValueChanged
-        Dim date1, date2 As Date
-        date1 = pickerBirthDate.Value.ToShortDateString
-        date2 = Date.Now.ToShortDateString
-        Dim timeSpan As TimeSpan = date2 - date1
-        Dim diff As Integer = If(Int(timeSpan.Days / 365) = -1, 0, Int(timeSpan.Days / 365))
-
-        txtAge.Text = Str(diff)
-    End Sub
-    Private Sub ViewResident_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+    Private Sub clearEverything()
         labelFirst.Text = ""
         labelMiddle.Text = ""
         labelLast.Text = ""
@@ -268,6 +328,41 @@ Public Class ViewResident
         householdRole = ""
         registeredBy = ""
         dateRegistered = ""
+        resident_id = 0
+
+        action = ""
+
+        panelParent.VerticalScroll.Value = 0
+        Panel12.VerticalScroll.Value = 0
+    End Sub
+    Private Sub setComboHouseholdID()
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        Dim mySQLReader As MySqlDataReader
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "SELECT household_id from household"
+        mySQLReader = cmd.ExecuteReader
+        If mySQLReader.HasRows Then
+            While mySQLReader.Read
+                comboHouseholdId.Items.Add(mySQLReader!household_id)
+            End While
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
     End Sub
     Private Sub retrieveAddress(ByVal householdID As Integer)
         Dim MySql As MySqlConnection
@@ -302,100 +397,109 @@ Public Class ViewResident
     Private Function dateFormatter(ByVal month As String, ByVal day As String, ByVal year As String) As String
         Return month + " " + day + ", " + year
     End Function
-    Private Sub btnModifyResident_Click(sender As Object, e As EventArgs) Handles btnModifyResident.Click
-        mainTabControl.SelectedTab = pageAddModify
-        action = "modify"
+    Private Sub saveResident()
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
 
-        txtFirstName.Text = firstName
-        txtMiddleName.Text = middleName
-        txtLastName.Text = lastName
-        txtExtName.Text = extName
-        txtAge.Text = age
-        txtBirthPlace.Text = birthPlace
-        txtContactNo.Text = contactNo
-        txtCitizenship.Text = citizenship
-        txtDisability.Text = disability
-        txtOccupation.Text = occupation
-        txtReligion.Text = religion
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
 
-        pickerBirthDate.Value = birthDate
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
 
-        comboCivilStatus.SelectedIndex = comboCivilStatus.FindStringExact(civilStatus)
-        comboSex.SelectedIndex = comboSex.FindStringExact(sex)
-        comboVoter.SelectedIndex = comboVoter.FindStringExact(voter)
-        comboPwd.SelectedIndex = comboPwd.FindStringExact(pwd)
-        If comboPwd.SelectedIndex = 0 Then
-            txtDisability.Enabled = True
-            txtDisability.Text = disability
+        If action = "modify" Then
+            cmd.CommandText = "UPDATE residents SET household_id = @householdid" & If(txtFirstName.Text = firstName, "", ", first_name = @firstname") & If(txtMiddleName.Text = middleName, "", ", middle_name = @middlename") & If(txtLastName.Text = lastName, "", ", last_name = @lastname") & If(txtExtName.Text = extName, "", ", ext_name = @extname") & If(birthDate.ToString("MMMM dd, yyyy") = pickerBirthDate.Value.ToString("MMMM dd, yyyy"), "", ", birthdate = @birthdate") & If(txtAge.Text = age, "", ", age = @age") & If(txtBirthPlace.Text = birthPlace, "", ", birthplace = @birthplace") & If(comboCivilStatus.Text = civilStatus, "", ", civil_status = @civilstatus ") & If(txtCitizenship.Text = citizenship, "", ", citizenship = @citizenship") & If(comboSex.Text = sex, "", ", sex = @sex") & If(txtReligion.Text = religion, "", ", religion = @religion") & If(txtContactNo.Text = contactNo, "", ", contact_no = @contactno ") & If(comboPwd.Text = pwd, "", ", is_pwd = @pwd") & If(txtDisability.Text = disability, "", ", disability = @disability") & If(comboVoter.Text = voter, "", ", is_voter = @voter") & If(txtOccupation.Text = occupation, "", ", occupation = @occupation") & If(comboHouseholdRole.Text = householdRole, "", ", household_role = @householdrole") & " WHERE resident_id = @residentid"
+
+            cmd.Parameters.AddWithValue("@householdid", comboHouseholdId.Text)
+            cmd.Parameters.AddWithValue("@firstname", txtFirstName.Text)
+            cmd.Parameters.AddWithValue("@middlename", txtMiddleName.Text)
+            cmd.Parameters.AddWithValue("@lastname", txtLastName.Text)
+            cmd.Parameters.AddWithValue("@extname", txtExtName.Text)
+            cmd.Parameters.AddWithValue("@birthdate", pickerBirthDate.Value)
+            cmd.Parameters.AddWithValue("@age", txtAge.Text)
+            cmd.Parameters.AddWithValue("@birthplace", txtBirthPlace.Text)
+            cmd.Parameters.AddWithValue("@civilstatus", comboCivilStatus.Text)
+            cmd.Parameters.AddWithValue("@citizenship", txtCitizenship.Text)
+            cmd.Parameters.AddWithValue("@sex", comboSex.Text)
+            cmd.Parameters.AddWithValue("@religion", txtReligion.Text)
+            cmd.Parameters.AddWithValue("@contactno", txtContactNo.Text)
+            cmd.Parameters.AddWithValue("@pwd", comboPwd.Text)
+            cmd.Parameters.AddWithValue("@disability", txtDisability.Text)
+            cmd.Parameters.AddWithValue("@voter", comboVoter.Text)
+            cmd.Parameters.AddWithValue("@occupation", txtOccupation.Text)
+            cmd.Parameters.AddWithValue("@householdrole", comboHouseholdRole.Text)
+            cmd.Parameters.AddWithValue("@residentid", resident_id)
+
+            cmd.ExecuteNonQuery()
+
+        ElseIf action = "add" Then
+            cmd.CommandText = "INSERT INTO residents (household_id, first_name, middle_name, last_name, ext_name, birthdate, age, birthplace, civil_status, citizenship, sex, religion, contact_no, is_pwd, disability, is_voter, occupation, household_role, month_registered, day_registered, year_registered, registered_by) VALUES (@householdid, @firstname, @middlename, @lastname, @extname, @birthdate, @age, @birthplace, @civilstatus, @citizenship, @sex, @religion, @contactno, @pwd, @disability, @voter, @occupation, @householdrole, @month, @day, @year, @registered_by)"
+
+            cmd.Parameters.AddWithValue("@householdid", comboHouseholdId.Text)
+            cmd.Parameters.AddWithValue("@firstname", txtFirstName.Text)
+            cmd.Parameters.AddWithValue("@middlename", txtMiddleName.Text)
+            cmd.Parameters.AddWithValue("@lastname", txtLastName.Text)
+            cmd.Parameters.AddWithValue("@extname", txtExtName.Text)
+            cmd.Parameters.AddWithValue("@birthdate", pickerBirthDate.Value)
+            cmd.Parameters.AddWithValue("@age", txtAge.Text)
+            cmd.Parameters.AddWithValue("@birthplace", txtBirthPlace.Text)
+            cmd.Parameters.AddWithValue("@civilstatus", comboCivilStatus.Text)
+            cmd.Parameters.AddWithValue("@citizenship", txtCitizenship.Text)
+            cmd.Parameters.AddWithValue("@sex", comboSex.Text)
+            cmd.Parameters.AddWithValue("@religion", txtReligion.Text)
+            cmd.Parameters.AddWithValue("@contactno", txtContactNo.Text)
+            cmd.Parameters.AddWithValue("@pwd", comboPwd.Text)
+            cmd.Parameters.AddWithValue("@disability", txtDisability.Text)
+            cmd.Parameters.AddWithValue("@voter", comboVoter.Text)
+            cmd.Parameters.AddWithValue("@occupation", txtOccupation.Text)
+            cmd.Parameters.AddWithValue("@householdrole", comboHouseholdRole.Text)
+
+            Dim months() As String = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}
+            Dim dateToday As Date = Date.Now
+            Dim monthNo As Integer = Int(dateToday.Month.ToString) - 1
+            Dim monthNow As String = months(monthNo)
+            Dim dayNow As String = dateToday.Day.ToString
+            Dim yearNow As String = dateToday.Year.ToString
+
+            cmd.Parameters.AddWithValue("@month", monthNow)
+            cmd.Parameters.AddWithValue("@day", dayNow)
+            cmd.Parameters.AddWithValue("@year", yearNow)
+            cmd.Parameters.AddWithValue("@registered_by", Main_Form.account_name)
+
+            cmd.ExecuteNonQuery()
         End If
-        comboHouseholdRole.SelectedIndex = comboHouseholdRole.FindStringExact(householdRole)
-        comboHouseholdId.SelectedIndex = comboHouseholdId.FindStringExact(householdId)
 
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
     End Sub
-
-    Private Sub btnSaveResident_Click(sender As Object, e As EventArgs) Handles btnSaveResident.Click
-        If comboHouseholdId.Text.Trim = "" Or comboHouseholdId.FindStringExact(comboHouseholdId.Text) = -1 Then
-            MsgBox("Please Fill out a valid Household Id", vbCritical, "Warning")
-
+    Private Sub checkTextBox(txtView As TextBox)
+        If txtView.Text.Trim = "" Then
+            panelParent.CreateGraphics.DrawRectangle(Pens.Red, txtView.Left - 1, txtView.Top - 1, txtView.Width + 1, txtView.Height + 1)
         Else
-            If txtFirstName.Text.Trim = "" Or txtLastName.Text.Trim = "" Or txtBirthPlace.Text.Trim = "" Or txtContactNo.Text.Trim = "" Or (comboPwd.SelectedItem = "Yes" AndAlso txtDisability.Text.Trim = "") Then
-                MsgBox("Please Fill out all the required fields!", vbCritical, "Warning")
-
-            Else
-
-                Dim mySql As MySqlConnection
-                mySql = New MySqlConnection(mySqlConn)
-                On Error Resume Next
-                mySql.Open()
-
-                Select Case Err.Number
-                    Case 0
-                    Case Else
-                        MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
-                End Select
-
-                Dim cmd As MySqlCommand
-                cmd = mySql.CreateCommand()
-                cmd.CommandType = CommandType.Text
-
-                If action = "modify" Then
-                    cmd.CommandText = "UPDATE residents SET household_id = @householdid" & If(txtFirstName.Text = firstName, "", ", first_name = @firsname") & If(txtMiddleName.Text = middleName, "", ", middle_name = @middlename") & If(txtLastName.Text = lastName, "", ", last_name = @lastname") & If(txtExtName.Text = extName, "", ", ext_name = @extname") & If(birthDate.ToString("MMMM dd, yyyy") = pickerBirthDate.Value.ToString("MMMM dd, yyyy"), "", ", birthdate = @birthdate") & If(txtAge.Text = age, "", ", age = @age") & If(txtBirthPlace.Text = birthPlace, "", ", birthplace = @birthplace") & If(comboCivilStatus.Text = civilStatus, "", ", civil_status = civilstatus") & If(txtCitizenship.Text = citizenship, "", ", citizenship = @citizenship") & If(comboSex.Text = sex, "", ", sex = @sex") & If(txtReligion.Text = religion, "", ", religion = @religion") & If(txtContactNo.Text = contactNo, "", ", contact_no = @contactno") & If(comboPwd.Text = pwd, "", ", is_pwd = @pwd") & If(txtDisability.Text = disability, "", ", disability = @disability") & If(comboVoter.Text = voter, "", ", is_voter = @voter") & If(txtOccupation.Text = occupation, "", ", occupation = @occupation") & If(comboHouseholdRole.Text = householdRole, "", ", household_role = @householdrole") & " WHERE resident_id = @residentid"
-
-                    cmd.Parameters.Add("@householdid", MySqlDbType.Int64).Value = comboHouseholdId
-                    cmd.Parameters.Add("@firstname", MySqlDbType.VarChar).Value = txtFirstName.Text
-                    cmd.Parameters.Add("@middlename", MySqlDbType.VarChar).Value = txtMiddleName.Text
-                    cmd.Parameters.Add("@lastname", MySqlDbType.VarChar).Value = txtLastName.Text
-                    cmd.Parameters.Add("@extname", MySqlDbType.VarChar).Value = txtExtName.Text
-                    cmd.Parameters.Add("@birthdate", MySqlDbType.Date).Value = pickerBirthDate.Value
-                    cmd.Parameters.Add("@age", MySqlDbType.Int64).Value = txtAge.Text
-                    cmd.Parameters.Add("@birthplace", MySqlDbType.VarChar).Value = txtBirthPlace.Text
-                    cmd.Parameters.Add("@civilstatus", MySqlDbType.VarChar).Value = comboCivilStatus.Text
-                    cmd.Parameters.Add("@citizenship", MySqlDbType.VarChar).Value = txtCitizenship.Text
-                    cmd.Parameters.Add("@sex", MySqlDbType.VarChar).Value = comboSex.Text
-                    cmd.Parameters.Add("@religion", MySqlDbType.VarChar).Value = txtReligion.Text
-                    cmd.Parameters.Add("@contactno", MySqlDbType.VarChar).Value = txtContactNo.Text
-                    cmd.Parameters.Add("@pwd", MySqlDbType.VarChar).Value = comboPwd.Text
-                    cmd.Parameters.Add("@disability", MySqlDbType.VarChar).Value = txtDisability.Text
-                    cmd.Parameters.Add("@voter", MySqlDbType.VarChar).Value = comboVoter.Text
-                    cmd.Parameters.Add("@religion", MySqlDbType.VarChar).Value = txtReligion.Text
-                    cmd.Parameters.Add("@occupation", MySqlDbType.VarChar).Value = txtOccupation.Text
-                    cmd.Parameters.Add("@householdrole", MySqlDbType.VarChar).Value = comboHouseholdRole.Text
-                    cmd.Parameters.Add("@residentid", MySqlDbType.VarChar).Value = resident_id
-                    MsgBox(cmd.CommandText)
-                ElseIf action = "add" Then
-
-                End If
-
-                cmd.ExecuteNonQuery()
-
-                cmd.Dispose()
-                mySql.Close()
-                mySql.Dispose()
-
-                MsgBox("Resident Saved!", vbInformation, "Information")
-            End If
+            panelParent.CreateGraphics.DrawRectangle(Pens.Black, txtView.Left - 1, txtView.Top - 1, txtView.Width + 1, txtView.Height + 1)
         End If
-
     End Sub
+    Private Sub setTextBoxColor(txtView As TextBox)
+        panelParent.CreateGraphics.DrawRectangle(Pens.Black, txtView.Left - 1, txtView.Top - 1, txtView.Width + 1, txtView.Height + 1)
+    End Sub
+    Private Sub checkComboHouseholdId()
+        If comboHouseholdId.Text.Trim = "" Or comboHouseholdId.FindStringExact(comboHouseholdId.Text) = -1 Then
+            panelParent.CreateGraphics.DrawRectangle(Pens.Red, comboHouseholdId.Left - 1, comboHouseholdId.Top - 1, comboHouseholdId.Width + 1, comboHouseholdId.Height + 1)
+        Else
+            panelParent.CreateGraphics.DrawRectangle(Pens.Black, comboHouseholdId.Left - 1, comboHouseholdId.Top - 1, comboHouseholdId.Width + 1, comboHouseholdId.Height + 1)
+        End If
+    End Sub
+    Private Sub setComboBoxColor(comboView As ComboBox)
+        panelParent.CreateGraphics.DrawRectangle(Pens.Black, comboView.Left - 1, comboView.Top - 1, comboView.Width + 1, comboView.Height + 1)
+    End Sub
+
 
 End Class
