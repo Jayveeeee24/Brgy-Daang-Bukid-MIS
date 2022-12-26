@@ -14,12 +14,15 @@ Public Class ViewResident
     Dim birthPlace, civilStatus, sex, religion,
         contactNo, pwd, disability, voter, occupation, citizenship,
         householdRole, registeredBy, dateRegistered, reasonArchived, archivedBy As String
+
     Private Sub ViewResident_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToParent()
         mainTabControl.ItemSize = New Size(0, 1)
 
         loadInitialData()
     End Sub
+
+
     Private Sub ViewResident_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If txtFirstName.Text.Trim <> "" Or txtLastName.Text.Trim <> "" Or txtBirthPlace.Text.Trim <> "" Or txtContactNo.Text.Trim <> "" Or txtDisability.Text.Trim <> "" Or comboHouseholdId.Text.Trim <> "" Then
             If MsgBox("Your current progress will not be saved!", MsgBoxStyle.OkCancel, "Are you sure to exit?") = MsgBoxResult.Cancel Then
@@ -29,6 +32,39 @@ Public Class ViewResident
     End Sub
     Private Sub ViewResident_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         clearEverything()
+    End Sub
+
+    '' '''''''''''SYSTEM CALLS''''''''''''''''''''''
+    Private Sub comboHouseholdId_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboHouseholdId.SelectedIndexChanged
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "SELECT COUNT(*) from residents WHERE household_id = @householdid AND household_role = 'HEAD'"
+        cmd.Parameters.AddWithValue("@householdid", comboHouseholdId.Text)
+        Dim count As Integer = Int(Convert.ToString(cmd.ExecuteScalar()))
+
+        If count > 0 Then
+            comboHouseholdRole.SelectedIndex = 1
+            comboHouseholdRole.Enabled = False
+        Else
+            comboHouseholdRole.Enabled = True
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
     End Sub
     Private Sub comboPwd_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboPwd.SelectedIndexChanged
         If comboPwd.SelectedIndex = 0 Then
@@ -108,7 +144,7 @@ Public Class ViewResident
             MsgBox("Please Fill out a valid Household Id", vbCritical, "Warning")
             checkComboHouseholdId()
         Else
-            If txtFirstName.Text.Trim = "" Or txtLastName.Text.Trim = "" Or txtBirthPlace.Text.Trim = "" Or txtContactNo.Text.Trim = "" Or (comboPwd.SelectedItem = "Yes" AndAlso txtDisability.Text.Trim = "") Or pickerBirthDate.Value = Date.Now Then
+            If txtFirstName.Text.Trim = "" Or txtLastName.Text.Trim = "" Or txtBirthPlace.Text.Trim = "" Or txtContactNo.Text.Trim = "" Or (comboPwd.SelectedItem = "Yes" AndAlso txtDisability.Text.Trim = "") Or pickerBirthDate.Value >= Date.Now Then
                 MsgBox("Please Fill out all the required fields!", vbCritical, "Warning")
                 checkTextBox(txtFirstName)
                 checkTextBox(txtLastName)
@@ -125,8 +161,17 @@ Public Class ViewResident
                         Me.Close()
                         Main_Form.btnResidentInfo.PerformClick()
                     End If
+                Else
+                    clearEverything()
+                    Me.Close()
+                    Main_Form.btnResidentInfo.PerformClick()
                 End If
             End If
+        End If
+    End Sub
+    Private Sub txtViewKeydown(sender As Object, e As KeyEventArgs) Handles txtReligion.KeyDown, txtOccupation.KeyDown, txtMiddleName.KeyDown, txtLastName.KeyDown, txtFirstName.KeyDown, txtExtName.KeyDown, txtDisability.KeyDown, txtContactNo.KeyDown, txtCitizenship.KeyDown, txtBirthPlace.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
         End If
     End Sub
 

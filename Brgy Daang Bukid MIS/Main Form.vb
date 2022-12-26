@@ -14,6 +14,11 @@ Public Class Main_Form
     Dim totalRowsHousehold As Integer
     Dim totalPageHousehold As Integer
 
+
+    ''variables for filtering residents
+    Public filterHouseholdId, filterMinAge, filterMaxAge, filterDay, filterYear As Integer
+    Public filterSex, filterCivilStatus, filterPwd, filterHouseholdRole, filterMonth As String
+
     Enum Modules
         BrgyOfficials
         Residents
@@ -190,6 +195,7 @@ Public Class Main_Form
 
         countRows("")
         loadDataGrid(dataGridBrgyOfficials, Modules.BrgyOfficials)
+        statisticChecker()
 
     End Sub
     Private Sub btnResidentInfo_Click(sender As Object, e As EventArgs) Handles btnResidentInfo.Click
@@ -208,6 +214,7 @@ Public Class Main_Form
         txtPageNoResident.Text = 1
         loadDataGrid(datagridResident, Modules.Residents)
 
+        Filter.clearEverything()
     End Sub
     Private Sub btnHouseholdInfo_Click(sender As Object, e As EventArgs) Handles btnHouseholdInfo.Click
         btnDashboard.BackColor = Color.FromArgb(25, 117, 211)
@@ -367,7 +374,7 @@ Public Class Main_Form
         mySql.Dispose()
     End Sub
 
-    Private Sub loadDataGrid(ByVal datagrid As DataGridView, ByVal moduleSelected As Modules)
+    Public Sub loadDataGrid(ByVal datagrid As DataGridView, ByVal moduleSelected As Modules)
 
         datagrid.Rows.Clear()
         Dim mySql As MySqlConnection
@@ -403,8 +410,20 @@ Public Class Main_Form
 
             Case Modules.Residents ''''''''''''''Resident
 
-                mySQLCommand.CommandText = "Select * From residents" & (If(txtSearchResident.Text.Trim = "" Or txtSearchResident.Text = "Type in your search", " ", " WHERE (first_name LIKE @resident_name OR middle_name LIKE @resident_name OR last_name LIKE @resident_name)")) & " order by first_name asc limit 20 OFFSET " & (((CInt(Me.txtPageNoResident.Text)) - 1) * 20)
+                mySQLCommand.CommandText = "SELECT * FROM residents WHERE resident_id > 0 " & (If(filterHouseholdId = 0, "", " AND household_id = @householdid ")) & (If(filterMinAge = 0 Or filterMaxAge = 0, "", " AND age BETWEEN @minAge and @maxAge ")) & (If(filterDay = 0, "", " AND day_registered = @day ")) & (If(filterYear = 0, "", " AND year_registered = @year ")) & (If(filterSex = "", "", " AND sex = @sex ")) & (If(filterCivilStatus = "", "", " AND civil_status = @civilstatus ")) & (If(filterPwd = "", "", " AND is_pwd = @pwd ")) & (If(filterHouseholdRole = "", "", " AND household_role = @householdrole ")) & (If(filterMonth = "", "", " AND month_registered = @month ")) & (If(txtSearchResident.Text.Trim = "" Or txtSearchResident.Text = "Type in your search", " ", " AND (first_name LIKE @resident_name OR middle_name LIKE @resident_name OR last_name LIKE @resident_name)")) & " order by first_name asc limit 20 OFFSET " & (((CInt(Me.txtPageNoResident.Text)) - 1) * 20)
                 mySQLCommand.Parameters.AddWithValue("@resident_name", txtSearchResident.Text & "%")
+                mySQLCommand.Parameters.AddWithValue("@householdid", filterHouseholdId)
+                mySQLCommand.Parameters.AddWithValue("@minAge", filterMinAge)
+                mySQLCommand.Parameters.AddWithValue("@maxAge", filterMaxAge)
+                mySQLCommand.Parameters.AddWithValue("@day", filterDay)
+                mySQLCommand.Parameters.AddWithValue("@year", filterYear)
+                mySQLCommand.Parameters.AddWithValue("@sex", filterSex)
+                mySQLCommand.Parameters.AddWithValue("@civilstatus", filterCivilStatus)
+                mySQLCommand.Parameters.AddWithValue("@pwd", filterPwd)
+                mySQLCommand.Parameters.AddWithValue("@householdrole", filterHouseholdRole)
+                mySQLCommand.Parameters.AddWithValue("@month", filterMonth)
+                MsgBox(mySQLCommand.CommandText)
+
                 mySQLReader = mySQLCommand.ExecuteReader
 
                 If txtSearchResident.Text.Trim <> "" Or txtSearchResident.Text <> "Type in your search" Then
@@ -438,7 +457,7 @@ Public Class Main_Form
                             middle = mySQLReader!middle_name + " "
                         End If
 
-                        datagrid.Rows.Add(New String() {mySQLReader!resident_id, (mySQLReader!first_name + " " + middle + mySQLReader!last_name + " " + mySQLReader!ext_name), mySQLReader!sex, mySQLReader!is_voter, mySQLReader!contact_no})
+                        datagrid.Rows.Add(New String() {mySQLReader!resident_id, (mySQLReader!first_name + " " + middle + mySQLReader!last_name + " " + mySQLReader!ext_name), mySQLReader!sex, mySQLReader!contact_no})
 
                     End While
                 End If
@@ -550,6 +569,46 @@ Public Class Main_Form
         Dim pi As PropertyInfo = dgvType.GetProperty("DoubleBuffered",
                                                  BindingFlags.Instance Or BindingFlags.NonPublic)
         pi.SetValue(datagrid, True, Nothing)
+    End Sub
+
+    Private Sub statisticChecker()
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "SELECT COUNT(*) from residents WHERE sex LIKE 'Female'"
+        labelDashboardFemale.Text = Convert.ToString(cmd.ExecuteScalar())
+
+        cmd.CommandText = "SELECT COUNT(*) from residents WHERE sex LIKE 'Male'"
+        labelDashboardMale.Text = Convert.ToString(cmd.ExecuteScalar())
+
+        cmd.CommandText = "SELECT COUNT(*) from residents WHERE age > 60"
+        labelDashboardSeniors.Text = Convert.ToString(cmd.ExecuteScalar())
+
+        cmd.CommandText = "SELECT COUNT(*) from residents WHERE is_voter LIKE 'Yes'"
+        labelDashboardVoters.Text = Convert.ToString(cmd.ExecuteScalar())
+
+        cmd.CommandText = "SELECT COUNT(*) from residents WHERE is_pwd LIKE 'Yes'"
+        labelDashboardPwd.Text = Convert.ToString(cmd.ExecuteScalar())
+
+        cmd.CommandText = "SELECT COUNT(*) from residents WHERE occupation LIKE 'Student' or occupation LIKE 'N/A' or occupation LIKE '' or occupation LIKE 'NA' or occupation LIKE 'No Work'"
+        labelDashboardUnemployed.Text = Convert.ToString(cmd.ExecuteScalar())
+
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
     End Sub
 
 End Class

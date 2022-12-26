@@ -1,5 +1,11 @@
 ## This lists all the versions and **Debug Notes**
 
+12/26/22 - version 1.1.17
+* implemented the filter for residents in Filter class and in the main form class [added the query in main form]
+* added the statistics checker for the dashboard panel
+* revised view resident class to include a checker for household id to disable the household role if there is already a head in the database for that particular household
+* added the implementation in view resident to actual save and close the form 
+
 12/25/22 - version 1.1.16
 * fully implemented the add and update resident including error trapping, bugs and ui design
 * revised the label in mainform to include the name of account holder
