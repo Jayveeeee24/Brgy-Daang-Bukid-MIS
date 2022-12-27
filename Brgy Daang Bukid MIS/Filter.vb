@@ -39,6 +39,8 @@ Public Class Filter
         cmd = mySql.CreateCommand()
         cmd.CommandType = CommandType.Text
 
+        comboHouseholdId.Items.Add("Any")
+
         cmd.CommandText = "SELECT household_id from household"
         mySQLReader = cmd.ExecuteReader
         If mySQLReader.HasRows Then
@@ -51,7 +53,7 @@ Public Class Filter
         mySql.Close()
         mySql.Dispose()
 
-        comboHouseholdId.SelectedIndex = comboHouseholdId.FindStringExact(Main_Form.filterHouseholdId)
+        comboHouseholdId.SelectedIndex = If(comboHouseholdId.FindStringExact(Main_Form.filterHouseholdId) = 0 Or comboHouseholdId.FindStringExact(Main_Form.filterHouseholdId) = -1, 0, comboHouseholdId.FindStringExact(Main_Form.filterHouseholdId))
         comboSex.SelectedIndex = If(Main_Form.filterSex = "", 0, comboSex.FindStringExact(Main_Form.filterSex))
         comboCivilStatus.SelectedIndex = If(Main_Form.filterCivilStatus = "", 0, comboCivilStatus.FindStringExact(Main_Form.filterCivilStatus))
         comboPwd.SelectedIndex = If(Main_Form.filterPwd = "", 0, comboPwd.FindStringExact(Main_Form.filterPwd))
@@ -66,8 +68,6 @@ Public Class Filter
 
     Public Sub clearEverything()
 
-        comboHouseholdId.Items.Add("Any")
-        comboHouseholdId.SelectedIndex = 0
         'comboHouseholdId.Text = ""
         comboSex.SelectedIndex = 0
         comboCivilStatus.SelectedIndex = 0
@@ -75,6 +75,7 @@ Public Class Filter
         comboHouseholdRole.SelectedIndex = 0
         comboMonthRegistered.SelectedIndex = 0
         comboHouseholdId.Items.Clear()
+        comboHouseholdId.Text = ""
 
 
         txtAgeMin.Text = ""
@@ -117,7 +118,6 @@ Public Class Filter
     Private Sub btnClearSelectionResidents_Click(sender As Object, e As EventArgs) Handles btnClearSelectionResidents.Click
         clearEverything()
         setUpInitialData()
-        MsgBox(Main_Form.filterMonth)
     End Sub
 
     Private Sub btnApplyFiltersResidents_Click(sender As Object, e As EventArgs) Handles btnApplyFiltersResidents.Click
@@ -161,6 +161,7 @@ Public Class Filter
 
         Main_Form.txtPageNoResident.Text = 1
         Main_Form.loadDataGrid(Main_Form.datagridResident, Main_Form.Modules.Residents)
+        Main_Form.countRows()
 
         Me.Close()
 

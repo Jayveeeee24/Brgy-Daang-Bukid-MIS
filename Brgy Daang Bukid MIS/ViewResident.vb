@@ -7,13 +7,14 @@ Public Class ViewResident
     Public resident_id As Integer
     Public viewChoice As String
     Public action As String
+    Public grantAccess As Boolean
 
     Dim firstName, middleName, lastName, extName As String
     Dim birthDate As Date
-    Dim age, householdId As Integer
+    Dim age, householdId, dayRegistered, yearRegistered As Integer
     Dim birthPlace, civilStatus, sex, religion,
         contactNo, pwd, disability, voter, occupation, citizenship,
-        householdRole, registeredBy, dateRegistered, reasonArchived, archivedBy As String
+        householdRole, registeredBy, dateRegistered, reasonArchived, archivedBy, monthRegistered As String
 
     Private Sub ViewResident_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToParent()
@@ -24,12 +25,15 @@ Public Class ViewResident
 
 
     Private Sub ViewResident_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If txtFirstName.Text.Trim <> "" Or txtLastName.Text.Trim <> "" Or txtBirthPlace.Text.Trim <> "" Or txtContactNo.Text.Trim <> "" Or txtDisability.Text.Trim <> "" Or comboHouseholdId.Text.Trim <> "" Then
-            If MsgBox("Your current progress will not be saved!", MsgBoxStyle.OkCancel, "Are you sure to exit?") = MsgBoxResult.Cancel Then
-                e.Cancel = True
+        If txtFirstName.Text.Trim <> "" Or txtLastName.Text.Trim <> "" Or txtBirthPlace.Text.Trim <> "" Or txtContactNo.Text.Trim <> "" Or txtDisability.Text.Trim <> "" Then
+            If mainTabControl.SelectedIndex = 1 Then
+                If MsgBox("Your current progress will not be saved!", MsgBoxStyle.OkCancel, "Are you sure to exit?") = MsgBoxResult.Cancel Then
+                    e.Cancel = True
+                End If
             End If
         End If
     End Sub
+
     Private Sub ViewResident_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         clearEverything()
     End Sub
@@ -174,6 +178,74 @@ Public Class ViewResident
             e.SuppressKeyPress = True
         End If
     End Sub
+    Private Sub btnArchiveResident_Click(sender As Object, e As EventArgs) Handles btnArchiveResident.Click
+        ConfirmAccess.txtPassword.Clear()
+        ConfirmAccess.originForm = "Archive"
+        ConfirmAccess.ShowDialog()
+    End Sub
+
+    Public Sub archiveResident()
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        '' '''''''''adding into archived residents
+        cmd.CommandText = "INSERT INTO archived_residents (resident_id, household_id, first_name, middle_name, last_name, ext_name, birthdate, age, birthplace, civil_status, citizenship, sex, religion, contact_no, is_pwd, disability, is_voter, occupation, household_role, month_registered, day_registered, year_registered, registered_by, date_archived, archived_by, reason_archived) VALUES (@residentid, @householdid, @firstname, @middlename, @lastname, @extname, @birthdate, @age, @birthplace, @civilstatus, @citizenship, @sex, @religion, @contactno, @pwd, @disability, @voter, @occupation, @householdrole, @month, @day, @year, @registered_by, @datearchived, @archivedby, @reasonarchived)"
+
+        cmd.Parameters.AddWithValue("@residentid", resident_id)
+        cmd.Parameters.AddWithValue("@householdid", householdId)
+        cmd.Parameters.AddWithValue("@firstname", firstName)
+        cmd.Parameters.AddWithValue("@middlename", middleName)
+        cmd.Parameters.AddWithValue("@lastname", lastName)
+        cmd.Parameters.AddWithValue("@extname", extName)
+        cmd.Parameters.AddWithValue("@birthdate", birthDate)
+        cmd.Parameters.AddWithValue("@age", age)
+        cmd.Parameters.AddWithValue("@birthplace", birthPlace)
+        cmd.Parameters.AddWithValue("@civilstatus", civilStatus)
+        cmd.Parameters.AddWithValue("@citizenship", citizenship)
+        cmd.Parameters.AddWithValue("@sex", sex)
+        cmd.Parameters.AddWithValue("@religion", religion)
+        cmd.Parameters.AddWithValue("@contactno", contactNo)
+        cmd.Parameters.AddWithValue("@pwd", pwd)
+        cmd.Parameters.AddWithValue("@disability", disability)
+        cmd.Parameters.AddWithValue("@voter", voter)
+        cmd.Parameters.AddWithValue("@occupation", occupation)
+        cmd.Parameters.AddWithValue("@householdrole", householdRole)
+
+        cmd.Parameters.AddWithValue("@month", monthRegistered)
+        cmd.Parameters.AddWithValue("@day", dayRegistered)
+        cmd.Parameters.AddWithValue("@year", yearRegistered)
+        cmd.Parameters.AddWithValue("@registered_by", registeredBy)
+        cmd.Parameters.AddWithValue("@datearchived", Date.Now)
+        cmd.Parameters.AddWithValue("@archivedby", Main_Form.account_name)
+        cmd.Parameters.AddWithValue("@reasonarchived", ConfirmAccess.reasonForArchived)
+
+        cmd.ExecuteNonQuery()
+
+        cmd.CommandText = "DELETE FROM residents WHERE resident_id = @residentid "
+        cmd.Parameters.AddWithValue("@residentid", resident_id)
+
+        cmd.ExecuteNonQuery()
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+
+        MsgBox("Resident Archived Successfully!", vbInformation, "Information")
+        Me.Close()
+        Main_Form.btnResidentInfo.PerformClick()
+    End Sub
 
 
     '' '''''''''''''FUNCTION HELPERS'''''''''''''''''''''''''''
@@ -237,7 +309,10 @@ Public Class ViewResident
                     voter = mySQLReader!is_voter
                     occupation = mySQLReader!occupation
                     householdRole = mySQLReader!household_role
-                    dateRegistered = dateFormatter(mySQLReader!month_registered, mySQLReader!day_registered, mySQLReader!year_registered)
+                    dayRegistered = mySQLReader!day_registered
+                    monthRegistered = mySQLReader!month_registered
+                    yearRegistered = mySQLReader!year_registered
+                    dateRegistered = dateFormatter(monthRegistered, dayRegistered, yearRegistered)
 
                     registeredBy = mySQLReader!registered_by
                     householdId = mySQLReader!household_id
@@ -397,6 +472,9 @@ Public Class ViewResident
         cmd = mySql.CreateCommand()
         cmd.CommandType = CommandType.Text
 
+        comboHouseholdId.Items.Add("Any")
+        comboHouseholdId.SelectedIndex = 0
+
         cmd.CommandText = "SELECT household_id from household"
         mySQLReader = cmd.ExecuteReader
         If mySQLReader.HasRows Then
@@ -461,10 +539,13 @@ Public Class ViewResident
         If action = "modify" Then
             cmd.CommandText = "UPDATE residents SET household_id = @householdid" & If(txtFirstName.Text = firstName, "", ", first_name = @firstname") & If(txtMiddleName.Text = middleName, "", ", middle_name = @middlename") & If(txtLastName.Text = lastName, "", ", last_name = @lastname") & If(txtExtName.Text = extName, "", ", ext_name = @extname") & If(birthDate.ToString("MMMM dd, yyyy") = pickerBirthDate.Value.ToString("MMMM dd, yyyy"), "", ", birthdate = @birthdate") & If(txtAge.Text = age, "", ", age = @age") & If(txtBirthPlace.Text = birthPlace, "", ", birthplace = @birthplace") & If(comboCivilStatus.Text = civilStatus, "", ", civil_status = @civilstatus ") & If(txtCitizenship.Text = citizenship, "", ", citizenship = @citizenship") & If(comboSex.Text = sex, "", ", sex = @sex") & If(txtReligion.Text = religion, "", ", religion = @religion") & If(txtContactNo.Text = contactNo, "", ", contact_no = @contactno ") & If(comboPwd.Text = pwd, "", ", is_pwd = @pwd") & If(txtDisability.Text = disability, "", ", disability = @disability") & If(comboVoter.Text = voter, "", ", is_voter = @voter") & If(txtOccupation.Text = occupation, "", ", occupation = @occupation") & If(comboHouseholdRole.Text = householdRole, "", ", household_role = @householdrole") & " WHERE resident_id = @residentid"
 
+            'cmd.Parameters.AddWithValue("@extname", If(txtExtName.Text = "", Nothing, txtExtName.Text))
+
             cmd.Parameters.AddWithValue("@householdid", comboHouseholdId.Text)
             cmd.Parameters.AddWithValue("@firstname", txtFirstName.Text)
             cmd.Parameters.AddWithValue("@middlename", txtMiddleName.Text)
             cmd.Parameters.AddWithValue("@lastname", txtLastName.Text)
+            cmd.Parameters.AddWithValue("@middlename", txtMiddleName.Text)
             cmd.Parameters.AddWithValue("@extname", txtExtName.Text)
             cmd.Parameters.AddWithValue("@birthdate", pickerBirthDate.Value)
             cmd.Parameters.AddWithValue("@age", txtAge.Text)
@@ -485,6 +566,8 @@ Public Class ViewResident
 
         ElseIf action = "add" Then
             cmd.CommandText = "INSERT INTO residents (household_id, first_name, middle_name, last_name, ext_name, birthdate, age, birthplace, civil_status, citizenship, sex, religion, contact_no, is_pwd, disability, is_voter, occupation, household_role, month_registered, day_registered, year_registered, registered_by) VALUES (@householdid, @firstname, @middlename, @lastname, @extname, @birthdate, @age, @birthplace, @civilstatus, @citizenship, @sex, @religion, @contactno, @pwd, @disability, @voter, @occupation, @householdrole, @month, @day, @year, @registered_by)"
+
+            'cmd.Parameters.AddWithValue("@middlename", If(txtMiddleName.Text = "", Nothing, txtMiddleName.Text))
 
             cmd.Parameters.AddWithValue("@householdid", comboHouseholdId.Text)
             cmd.Parameters.AddWithValue("@firstname", txtFirstName.Text)

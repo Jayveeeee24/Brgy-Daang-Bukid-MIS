@@ -77,6 +77,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfirmAccess.Designer.vb">
+      <DependentUpon>ConfirmAccess.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmAccess.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ViewHousehold.Designer.vb">
       <DependentUpon>ViewHousehold.vb</DependentUpon>
     </Compile>
@@ -126,6 +132,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ConfirmAccess.resx">
+      <DependentUpon>ConfirmAccess.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewHousehold.resx">
+      <DependentUpon>ViewHousehold.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewResident.resx">
       <DependentUpon>ViewResident.vb</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_daang_bukid-legitbgremoved.ico" />
+    <None Include="Resources\arrow forward white.png" />
     <None Include="Resources\clear.png" />
     <None Include="Resources\filter.png" />
     <None Include="Resources\inventory.png" />

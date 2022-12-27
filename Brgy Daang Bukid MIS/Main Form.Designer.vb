@@ -133,7 +133,6 @@ Partial Class Main_Form
         Me.datagridHouseholdParent = New System.Windows.Forms.Panel()
         Me.datagridHousehold = New System.Windows.Forms.DataGridView()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TableLayoutPanel9 = New System.Windows.Forms.TableLayoutPanel()
@@ -1560,7 +1559,7 @@ Partial Class Main_Form
         DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.datagridHousehold.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.datagridHousehold.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.datagridHousehold.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column5, Me.Column6, Me.Column7, Me.Column12})
+        Me.datagridHousehold.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column5, Me.Column7, Me.Column12})
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle6.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1583,12 +1582,6 @@ Partial Class Main_Form
         Me.Column5.HeaderText = "Household ID"
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Household Head Name"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
         '
         'Column7
         '
@@ -2049,10 +2042,6 @@ Partial Class Main_Form
     Friend WithEvents txtSearchHousehold As TextBox
     Friend WithEvents btnSearchHousehold As Button
     Friend WithEvents datagridHousehold As DataGridView
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column12 As DataGridViewTextBoxColumn
     Friend WithEvents pageReports As TabPage
     Friend WithEvents pageCertificates As TabPage
     Friend WithEvents pageMap As TabPage
@@ -2064,4 +2053,7 @@ Partial Class Main_Form
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents Column12 As DataGridViewTextBoxColumn
 End Class

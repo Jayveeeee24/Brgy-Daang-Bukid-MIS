@@ -77,15 +77,12 @@ Partial Class ViewResident
         Me.Label102 = New System.Windows.Forms.Label()
         Me.Label103 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.btnModifyResident = New System.Windows.Forms.Button()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.Label104 = New System.Windows.Forms.Label()
         Me.pageAddModify = New System.Windows.Forms.TabPage()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnSaveResident = New System.Windows.Forms.Button()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Label64 = New System.Windows.Forms.Label()
         Me.panelParent = New System.Windows.Forms.Panel()
@@ -127,6 +124,9 @@ Partial Class ViewResident
         Me.txtMiddleName = New System.Windows.Forms.TextBox()
         Me.labelHousehold = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnArchiveResident = New System.Windows.Forms.Button()
+        Me.btnModifyResident = New System.Windows.Forms.Button()
+        Me.btnSaveResident = New System.Windows.Forms.Button()
         Me.mainTabControl.SuspendLayout()
         Me.pageView.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -732,10 +732,10 @@ Partial Class ViewResident
         'TableLayoutPanel6
         '
         Me.TableLayoutPanel6.ColumnCount = 3
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.0!))
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel6.Controls.Add(Me.Button1, 0, 0)
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.0!))
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.0!))
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.0!))
+        Me.TableLayoutPanel6.Controls.Add(Me.btnArchiveResident, 0, 0)
         Me.TableLayoutPanel6.Controls.Add(Me.btnModifyResident, 2, 0)
         Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel6.Location = New System.Drawing.Point(3, 494)
@@ -745,52 +745,6 @@ Partial Class ViewResident
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel6.Size = New System.Drawing.Size(643, 51)
         Me.TableLayoutPanel6.TabIndex = 37
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.archive
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(0, 10)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(0)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(128, 41)
-        Me.Button1.TabIndex = 35
-        Me.Button1.TabStop = False
-        Me.Button1.Text = "  Archive Resident"
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'btnModifyResident
-        '
-        Me.btnModifyResident.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
-        Me.btnModifyResident.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnModifyResident.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnModifyResident.FlatAppearance.BorderSize = 0
-        Me.btnModifyResident.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnModifyResident.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnModifyResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModifyResident.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnModifyResident.ForeColor = System.Drawing.Color.White
-        Me.btnModifyResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.modify
-        Me.btnModifyResident.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnModifyResident.Location = New System.Drawing.Point(513, 10)
-        Me.btnModifyResident.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnModifyResident.Name = "btnModifyResident"
-        Me.btnModifyResident.Size = New System.Drawing.Size(130, 41)
-        Me.btnModifyResident.TabIndex = 34
-        Me.btnModifyResident.TabStop = False
-        Me.btnModifyResident.Text = "  Modify Resident"
-        Me.btnModifyResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnModifyResident.UseVisualStyleBackColor = False
         '
         'Panel16
         '
@@ -804,7 +758,7 @@ Partial Class ViewResident
         'Label104
         '
         Me.Label104.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label104.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label104.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label104.Location = New System.Drawing.Point(0, 0)
         Me.Label104.Name = "Label104"
         Me.Label104.Size = New System.Drawing.Size(643, 40)
@@ -855,8 +809,8 @@ Partial Class ViewResident
         '
         Me.TableLayoutPanel4.ColumnCount = 3
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.0!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.47589!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.61742!))
         Me.TableLayoutPanel4.Controls.Add(Me.btnSaveResident, 2, 0)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 494)
@@ -866,29 +820,6 @@ Partial Class ViewResident
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(643, 51)
         Me.TableLayoutPanel4.TabIndex = 37
-        '
-        'btnSaveResident
-        '
-        Me.btnSaveResident.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.btnSaveResident.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnSaveResident.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnSaveResident.FlatAppearance.BorderSize = 0
-        Me.btnSaveResident.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.btnSaveResident.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.btnSaveResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSaveResident.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSaveResident.ForeColor = System.Drawing.Color.White
-        Me.btnSaveResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.modify
-        Me.btnSaveResident.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSaveResident.Location = New System.Drawing.Point(513, 10)
-        Me.btnSaveResident.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnSaveResident.Name = "btnSaveResident"
-        Me.btnSaveResident.Size = New System.Drawing.Size(130, 41)
-        Me.btnSaveResident.TabIndex = 34
-        Me.btnSaveResident.TabStop = False
-        Me.btnSaveResident.Text = "  Save Resident"
-        Me.btnSaveResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSaveResident.UseVisualStyleBackColor = False
         '
         'Panel10
         '
@@ -902,7 +833,7 @@ Partial Class ViewResident
         'Label64
         '
         Me.Label64.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label64.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label64.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label64.Location = New System.Drawing.Point(0, 0)
         Me.Label64.Name = "Label64"
         Me.Label64.Size = New System.Drawing.Size(643, 40)
@@ -1383,6 +1314,75 @@ Partial Class ViewResident
         Me.Panel1.Size = New System.Drawing.Size(10, 23)
         Me.Panel1.TabIndex = 68
         '
+        'btnArchiveResident
+        '
+        Me.btnArchiveResident.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.btnArchiveResident.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnArchiveResident.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnArchiveResident.FlatAppearance.BorderSize = 0
+        Me.btnArchiveResident.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.btnArchiveResident.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.btnArchiveResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnArchiveResident.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnArchiveResident.ForeColor = System.Drawing.Color.White
+        Me.btnArchiveResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.archive
+        Me.btnArchiveResident.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnArchiveResident.Location = New System.Drawing.Point(0, 10)
+        Me.btnArchiveResident.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnArchiveResident.Name = "btnArchiveResident"
+        Me.btnArchiveResident.Size = New System.Drawing.Size(147, 41)
+        Me.btnArchiveResident.TabIndex = 35
+        Me.btnArchiveResident.TabStop = False
+        Me.btnArchiveResident.Text = "  Archive Resident"
+        Me.btnArchiveResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnArchiveResident.UseVisualStyleBackColor = False
+        '
+        'btnModifyResident
+        '
+        Me.btnModifyResident.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.btnModifyResident.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnModifyResident.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnModifyResident.FlatAppearance.BorderSize = 0
+        Me.btnModifyResident.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnModifyResident.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnModifyResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModifyResident.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModifyResident.ForeColor = System.Drawing.Color.White
+        Me.btnModifyResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.modify
+        Me.btnModifyResident.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnModifyResident.Location = New System.Drawing.Point(494, 10)
+        Me.btnModifyResident.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnModifyResident.Name = "btnModifyResident"
+        Me.btnModifyResident.Size = New System.Drawing.Size(149, 41)
+        Me.btnModifyResident.TabIndex = 34
+        Me.btnModifyResident.TabStop = False
+        Me.btnModifyResident.Text = "  Modify Resident"
+        Me.btnModifyResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnModifyResident.UseVisualStyleBackColor = False
+        '
+        'btnSaveResident
+        '
+        Me.btnSaveResident.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.btnSaveResident.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnSaveResident.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSaveResident.FlatAppearance.BorderSize = 0
+        Me.btnSaveResident.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnSaveResident.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnSaveResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSaveResident.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSaveResident.ForeColor = System.Drawing.Color.White
+        Me.btnSaveResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.modify
+        Me.btnSaveResident.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSaveResident.Location = New System.Drawing.Point(503, 10)
+        Me.btnSaveResident.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnSaveResident.Name = "btnSaveResident"
+        Me.btnSaveResident.Size = New System.Drawing.Size(140, 41)
+        Me.btnSaveResident.TabIndex = 34
+        Me.btnSaveResident.TabStop = False
+        Me.btnSaveResident.Text = "  Save Resident"
+        Me.btnSaveResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSaveResident.UseVisualStyleBackColor = False
+        '
         'ViewResident
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1470,7 +1470,7 @@ Partial Class ViewResident
     Friend WithEvents btnModifyResident As Button
     Friend WithEvents Panel16 As Panel
     Friend WithEvents Label104 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnArchiveResident As Button
     Friend WithEvents labelAddress As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents labelCitizenship As Label

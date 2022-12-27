@@ -63,6 +63,7 @@ Public Class Main_Form
         mySQLReader = mySQLCommand.ExecuteReader
         If mySQLReader.HasRows Then
             While mySQLReader.Read
+
                 account_name = mySQLReader!official_name + " [" + mySQLReader!official_position + "]"
                 labelSignedIn.Text = "Logged in as: " + account_name
             End While
@@ -193,7 +194,7 @@ Public Class Main_Form
         mainTabControl.SelectedTab = pageDashboard
         labelTitle.Text = "Dashboard"
 
-        countRows("")
+        countRows()
         loadDataGrid(dataGridBrgyOfficials, Modules.BrgyOfficials)
         statisticChecker()
 
@@ -212,8 +213,8 @@ Public Class Main_Form
         labelTitle.Text = "Resident's Information"
 
         txtPageNoResident.Text = 1
+        txtSearchResident.Text = ""
         loadDataGrid(datagridResident, Modules.Residents)
-
         Filter.clearEverything()
     End Sub
     Private Sub btnHouseholdInfo_Click(sender As Object, e As EventArgs) Handles btnHouseholdInfo.Click
@@ -309,7 +310,7 @@ Public Class Main_Form
 
 
     '''''''''''''''''''''''''''''''''''''''' METHODS FOR ACCESS'''''''''''''''''''''''''''''''''''''
-    Private Sub countRows(ByVal choice As String)
+    Public Sub countRows()
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
         On Error Resume Next
@@ -333,12 +334,19 @@ Public Class Main_Form
         btnBackResident.Enabled = False
         labelDashboardResident.Text = totalRowsResident
 
-        If choice = "Search Resident" Then
-            cmd.CommandText = "Select count(*) From residents" & (If(txtSearchResident.Text.Trim = "" Or txtSearchResident.Text = "Type in your search", " ", " WHERE first_name LIKE @resident_name OR middle_name LIKE @resident_name OR last_name LIKE @resident_name")) & " order by first_name asc "
-            cmd.Parameters.AddWithValue("@resident_name", "%" & txtSearchResident.Text & "%")
-        Else
-            cmd.CommandText = "Select count(*) from residents"
-        End If
+        cmd.CommandText = "Select count(*) From residents WHERE resident_id > 0 " & (If(filterHouseholdId = 0, "", " AND household_id = @householdid ")) & (If(filterMinAge = 0 Or filterMaxAge = 0, "", " AND age BETWEEN @minAge and @maxAge ")) & (If(filterDay = 0, "", " AND day_registered = @day ")) & (If(filterYear = 0, "", " AND year_registered = @year ")) & (If(filterSex = "", "", " AND sex = @sex ")) & (If(filterCivilStatus = "", "", " AND civil_status = @civilstatus ")) & (If(filterPwd = "", "", " AND is_pwd = @pwd ")) & (If(filterHouseholdRole = "", "", " AND household_role = @householdrole ")) & (If(filterMonth = "", "", " AND month_registered = @month ")) & (If(txtSearchResident.Text.Trim = "" Or txtSearchResident.Text = "Type in your search", " ", " AND first_name LIKE @resident_name OR middle_name LIKE @resident_name OR last_name LIKE @resident_name")) & " order by first_name asc "
+
+        cmd.Parameters.AddWithValue("@resident_name", txtSearchResident.Text & "%")
+        cmd.Parameters.AddWithValue("@householdid", filterHouseholdId)
+        cmd.Parameters.AddWithValue("@minAge", filterMinAge)
+        cmd.Parameters.AddWithValue("@maxAge", filterMaxAge)
+        cmd.Parameters.AddWithValue("@day", filterDay)
+        cmd.Parameters.AddWithValue("@year", filterYear)
+        cmd.Parameters.AddWithValue("@sex", filterSex)
+        cmd.Parameters.AddWithValue("@civilstatus", filterCivilStatus)
+        cmd.Parameters.AddWithValue("@pwd", filterPwd)
+        cmd.Parameters.AddWithValue("@householdrole", filterHouseholdRole)
+        cmd.Parameters.AddWithValue("@month", filterMonth)
 
         totalRowsResident = Convert.ToString(cmd.ExecuteScalar())
         totalPageResident = Math.Ceiling(totalRowsResident / 20)
@@ -355,12 +363,9 @@ Public Class Main_Form
         btnBackHousehold.Enabled = False
         labelDashboardHouseholds.Text = totalRowsHousehold
 
-        If choice = "Search Household" Then
-            cmd.CommandText = "Select count(*) From household " & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " WHERE household_id LIKE @householdID")) & " order by household_id asc "
-            cmd.Parameters.AddWithValue("@householdID", txtSearchHousehold.Text & "%")
-        Else
-            cmd.CommandText = "Select count(*) from household"
-        End If
+        cmd.CommandText = "Select count(*) From household " & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " WHERE household_id LIKE @householdID")) & " order by household_id asc "
+        cmd.Parameters.AddWithValue("@householdID", txtSearchHousehold.Text & "%")
+
 
         totalRowsHousehold = Convert.ToString(cmd.ExecuteScalar())
         totalPageHousehold = Math.Ceiling(totalRowsHousehold / 30)
@@ -410,8 +415,8 @@ Public Class Main_Form
 
             Case Modules.Residents ''''''''''''''Resident
 
-                mySQLCommand.CommandText = "SELECT * FROM residents WHERE resident_id > 0 " & (If(filterHouseholdId = 0, "", " AND household_id = @householdid ")) & (If(filterMinAge = 0 Or filterMaxAge = 0, "", " AND age BETWEEN @minAge and @maxAge ")) & (If(filterDay = 0, "", " AND day_registered = @day ")) & (If(filterYear = 0, "", " AND year_registered = @year ")) & (If(filterSex = "", "", " AND sex = @sex ")) & (If(filterCivilStatus = "", "", " AND civil_status = @civilstatus ")) & (If(filterPwd = "", "", " AND is_pwd = @pwd ")) & (If(filterHouseholdRole = "", "", " AND household_role = @householdrole ")) & (If(filterMonth = "", "", " AND month_registered = @month ")) & (If(txtSearchResident.Text.Trim = "" Or txtSearchResident.Text = "Type in your search", " ", " AND (first_name LIKE @resident_name OR middle_name LIKE @resident_name OR last_name LIKE @resident_name)")) & " order by first_name asc limit 20 OFFSET " & (((CInt(Me.txtPageNoResident.Text)) - 1) * 20)
-                mySQLCommand.Parameters.AddWithValue("@resident_name", txtSearchResident.Text & "%")
+                mySQLCommand.CommandText = "SELECT resident_id, first_name, middle_name, last_name, ext_name, sex, contact_no FROM residents WHERE resident_id > 0 " & (If(filterHouseholdId = 0, "", " AND household_id = @householdid ")) & (If(filterMinAge = 0 Or filterMaxAge = 0, "", " AND age BETWEEN @minAge and @maxAge ")) & (If(filterDay = 0, "", " AND day_registered = @day ")) & (If(filterYear = 0, "", " AND year_registered = @year ")) & (If(filterSex = "", "", " AND sex = @sex ")) & (If(filterCivilStatus = "", "", " AND civil_status = @civilstatus ")) & (If(filterPwd = "", "", " AND is_pwd = @pwd ")) & (If(filterHouseholdRole = "", "", " AND household_role = @householdrole ")) & (If(filterMonth = "", "", " AND month_registered = @month ")) & (If(txtSearchResident.Text.Trim = "" Or txtSearchResident.Text = "Type in your search", " ", " AND (first_name LIKE @resident_name OR middle_name LIKE @resident_name OR last_name LIKE @resident_name)")) & " order by first_name asc limit 20 OFFSET " & (((CInt(Me.txtPageNoResident.Text)) - 1) * 20)
+                mySQLCommand.Parameters.AddWithValue("@resident_name", "%" & txtSearchResident.Text & "%")
                 mySQLCommand.Parameters.AddWithValue("@householdid", filterHouseholdId)
                 mySQLCommand.Parameters.AddWithValue("@minAge", filterMinAge)
                 mySQLCommand.Parameters.AddWithValue("@maxAge", filterMaxAge)
@@ -422,15 +427,10 @@ Public Class Main_Form
                 mySQLCommand.Parameters.AddWithValue("@pwd", filterPwd)
                 mySQLCommand.Parameters.AddWithValue("@householdrole", filterHouseholdRole)
                 mySQLCommand.Parameters.AddWithValue("@month", filterMonth)
-                MsgBox(mySQLCommand.CommandText)
 
                 mySQLReader = mySQLCommand.ExecuteReader
 
-                If txtSearchResident.Text.Trim <> "" Or txtSearchResident.Text <> "Type in your search" Then
-                    countRows("Search Resident")
-                Else
-                    countRows("")
-                End If
+                countRows()
 
                 If mySQLReader.HasRows Then
                     If txtPageNoResident.Text = 1 Then
@@ -466,16 +466,17 @@ Public Class Main_Form
                 mySQLReader.Dispose()
 
             Case Modules.Household ''''''''''''''Household
+                'mySQLCommand.CommandText = "SELECT household_id, (SELECT CONCAT_WS(' ', first_name, middle_name, last_name, ext_name) FROM residents WHERE household_id = household_id AND household_role = 'Head') AS household_head, bldg_no, street_name FROM household " & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " WHERE household_id LIKE @householdID")) & " order by household_id asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30)
+                '& (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " WHERE household_id LIKE @householdID")) & " order by household_id asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30)
+                'mySQLCommand.CommandText = "SELECT household.household_id as household_id, CONCAT(residents.first_name, residents.middle_name, residents.last_name, residents.ext_name) AS household_head, bldg_no, street_name FROM household RIGHT JOIN residents ON residents.household_id = household.household_id AND residents.household_role = 'Head' " & " order by household_id asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30)
+                'mySQLCommand.CommandText = "Select * From household " & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " WHERE household_id LIKE @householdID")) & " order by household_id asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30) & " order by household_id asc "
 
-                mySQLCommand.CommandText = "Select * From household " & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " WHERE household_id LIKE @householdID")) & " order by household_id asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30)
+
+                mySQLCommand.CommandText = "Select household_id, bldg_no, street_name From household " & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " WHERE household_id LIKE @householdID")) & " order by household_id asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30)
                 mySQLCommand.Parameters.AddWithValue("@householdID", txtSearchHousehold.Text & "%")
                 mySQLReader = mySQLCommand.ExecuteReader
 
-                If txtSearchHousehold.Text.Trim <> "" Or txtSearchHousehold.Text <> "Type in your search" Then
-                    countRows("Search Household")
-                Else
-                    countRows("")
-                End If
+                countRows()
 
                 If mySQLReader.HasRows Then
                     If txtPageNoHousehold.Text = 1 Then
@@ -495,7 +496,7 @@ Public Class Main_Form
                     End If
 
                     While mySQLReader.Read
-                        datagrid.Rows.Add(New String() {mySQLReader!household_id, "", mySQLReader!bldg_no, mySQLReader!street_name, "", "", ""})
+                        datagrid.Rows.Add(New String() {mySQLReader!household_id, mySQLReader!bldg_no, mySQLReader!street_name, "", "", ""})
 
                     End While
                 End If

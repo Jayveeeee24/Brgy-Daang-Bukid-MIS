@@ -70,7 +70,7 @@ Public Class Login
             mySQLCommand = mySql.CreateCommand()
             mySQLCommand.CommandType = CommandType.Text
 
-            mySQLCommand.CommandText = "SELECT * FROM accounts WHERE BINARY username=@username AND BINARY password=@password"
+            mySQLCommand.CommandText = "SELECT * FROM accounts WHERE BINARY account_name=@username AND BINARY account_password=@password"
             mySQLCommand.Parameters.AddWithValue("@username", txtUsername.Text)
             mySQLCommand.Parameters.AddWithValue("@password", txtPassword.Text)
             mySQLReader = mySQLCommand.ExecuteReader
