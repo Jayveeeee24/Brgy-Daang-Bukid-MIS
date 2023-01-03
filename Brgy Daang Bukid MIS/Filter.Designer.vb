@@ -57,20 +57,31 @@ Partial Class Filter
         Me.Label1 = New System.Windows.Forms.Label()
         Me.pageFilterHousehold = New System.Windows.Forms.TabPage()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.ComboBox7 = New System.Windows.Forms.ComboBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.txtStreetName = New System.Windows.Forms.TextBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.txtBldgNo = New System.Windows.Forms.TextBox()
+        Me.txtElectricitySource = New System.Windows.Forms.TextBox()
+        Me.txtWaterSource = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
+        Me.comboResidenceType = New System.Windows.Forms.ComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.ComboBox6 = New System.Windows.Forms.ComboBox()
+        Me.comboHouseType = New System.Windows.Forms.ComboBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnClearSelectionHousehold = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnApplyFilterHousehold = New System.Windows.Forms.Button()
+        Me.txtYearAdded = New System.Windows.Forms.TextBox()
+        Me.txtDayAdded = New System.Windows.Forms.TextBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.comboMonthAdded = New System.Windows.Forms.ComboBox()
+        Me.Label25 = New System.Windows.Forms.Label()
         Me.mainTabControl.SuspendLayout()
         Me.pageFilterResident.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -222,6 +233,8 @@ Partial Class Filter
         '
         'comboHouseholdId
         '
+        Me.comboHouseholdId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.comboHouseholdId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.comboHouseholdId.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboHouseholdId.FormattingEnabled = True
         Me.comboHouseholdId.Items.AddRange(New Object() {"Any"})
@@ -493,13 +506,24 @@ Partial Class Filter
         'Panel6
         '
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel6.Controls.Add(Me.ComboBox7)
-        Me.Panel6.Controls.Add(Me.TextBox4)
+        Me.Panel6.Controls.Add(Me.txtYearAdded)
+        Me.Panel6.Controls.Add(Me.txtDayAdded)
+        Me.Panel6.Controls.Add(Me.Label22)
+        Me.Panel6.Controls.Add(Me.Label23)
+        Me.Panel6.Controls.Add(Me.Label24)
+        Me.Panel6.Controls.Add(Me.comboMonthAdded)
+        Me.Panel6.Controls.Add(Me.Label25)
+        Me.Panel6.Controls.Add(Me.txtStreetName)
+        Me.Panel6.Controls.Add(Me.Label21)
+        Me.Panel6.Controls.Add(Me.txtBldgNo)
+        Me.Panel6.Controls.Add(Me.txtElectricitySource)
+        Me.Panel6.Controls.Add(Me.txtWaterSource)
         Me.Panel6.Controls.Add(Me.Label15)
-        Me.Panel6.Controls.Add(Me.ComboBox5)
+        Me.Panel6.Controls.Add(Me.comboResidenceType)
+        Me.Panel6.Controls.Add(Me.Label11)
         Me.Panel6.Controls.Add(Me.Label12)
         Me.Panel6.Controls.Add(Me.Label13)
-        Me.Panel6.Controls.Add(Me.ComboBox6)
+        Me.Panel6.Controls.Add(Me.comboHouseType)
         Me.Panel6.Controls.Add(Me.Label14)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel6.Location = New System.Drawing.Point(5, 99)
@@ -508,52 +532,103 @@ Partial Class Filter
         Me.Panel6.Size = New System.Drawing.Size(318, 380)
         Me.Panel6.TabIndex = 15
         '
-        'ComboBox7
+        'txtStreetName
         '
-        Me.ComboBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox7.FormattingEnabled = True
-        Me.ComboBox7.Location = New System.Drawing.Point(131, 177)
-        Me.ComboBox7.Name = "ComboBox7"
-        Me.ComboBox7.Size = New System.Drawing.Size(167, 28)
-        Me.ComboBox7.TabIndex = 30
+        Me.txtStreetName.BackColor = System.Drawing.Color.White
+        Me.txtStreetName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtStreetName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtStreetName.ForeColor = System.Drawing.Color.Black
+        Me.txtStreetName.Location = New System.Drawing.Point(153, 54)
+        Me.txtStreetName.MaxLength = 100
+        Me.txtStreetName.Multiline = True
+        Me.txtStreetName.Name = "txtStreetName"
+        Me.txtStreetName.Size = New System.Drawing.Size(154, 27)
+        Me.txtStreetName.TabIndex = 40
         '
-        'TextBox4
+        'Label21
         '
-        Me.TextBox4.BackColor = System.Drawing.Color.White
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.ForeColor = System.Drawing.Color.Black
-        Me.TextBox4.Location = New System.Drawing.Point(131, 74)
-        Me.TextBox4.MaxLength = 11
-        Me.TextBox4.Multiline = True
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(167, 27)
-        Me.TextBox4.TabIndex = 29
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(13, 57)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(110, 18)
+        Me.Label21.TabIndex = 39
+        Me.Label21.Text = "Street Name:"
+        '
+        'txtBldgNo
+        '
+        Me.txtBldgNo.BackColor = System.Drawing.Color.White
+        Me.txtBldgNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtBldgNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBldgNo.ForeColor = System.Drawing.Color.Black
+        Me.txtBldgNo.Location = New System.Drawing.Point(153, 21)
+        Me.txtBldgNo.MaxLength = 100
+        Me.txtBldgNo.Multiline = True
+        Me.txtBldgNo.Name = "txtBldgNo"
+        Me.txtBldgNo.Size = New System.Drawing.Size(154, 27)
+        Me.txtBldgNo.TabIndex = 38
+        '
+        'txtElectricitySource
+        '
+        Me.txtElectricitySource.BackColor = System.Drawing.Color.White
+        Me.txtElectricitySource.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtElectricitySource.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtElectricitySource.ForeColor = System.Drawing.Color.Black
+        Me.txtElectricitySource.Location = New System.Drawing.Point(167, 188)
+        Me.txtElectricitySource.MaxLength = 100
+        Me.txtElectricitySource.Multiline = True
+        Me.txtElectricitySource.Name = "txtElectricitySource"
+        Me.txtElectricitySource.Size = New System.Drawing.Size(140, 27)
+        Me.txtElectricitySource.TabIndex = 37
+        '
+        'txtWaterSource
+        '
+        Me.txtWaterSource.BackColor = System.Drawing.Color.White
+        Me.txtWaterSource.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtWaterSource.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtWaterSource.ForeColor = System.Drawing.Color.Black
+        Me.txtWaterSource.Location = New System.Drawing.Point(153, 155)
+        Me.txtWaterSource.MaxLength = 100
+        Me.txtWaterSource.Multiline = True
+        Me.txtWaterSource.Name = "txtWaterSource"
+        Me.txtWaterSource.Size = New System.Drawing.Size(154, 27)
+        Me.txtWaterSource.TabIndex = 36
         '
         'Label15
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(19, 77)
+        Me.Label15.Location = New System.Drawing.Point(13, 191)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(102, 18)
-        Me.Label15.TabIndex = 28
-        Me.Label15.Text = "Head Name:"
+        Me.Label15.Size = New System.Drawing.Size(147, 18)
+        Me.Label15.TabIndex = 33
+        Me.Label15.Text = "Electricity Source: "
         '
-        'ComboBox5
+        'comboResidenceType
         '
-        Me.ComboBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Location = New System.Drawing.Point(146, 231)
-        Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(152, 28)
-        Me.ComboBox5.TabIndex = 25
+        Me.comboResidenceType.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.comboResidenceType.FormattingEnabled = True
+        Me.comboResidenceType.Items.AddRange(New Object() {"Any", "Owned", "Rent", "Informal Settler", "Tenancy", "Co Owned"})
+        Me.comboResidenceType.Location = New System.Drawing.Point(153, 87)
+        Me.comboResidenceType.Name = "comboResidenceType"
+        Me.comboResidenceType.Size = New System.Drawing.Size(154, 28)
+        Me.comboResidenceType.TabIndex = 32
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(13, 91)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(134, 18)
+        Me.Label11.TabIndex = 31
+        Me.Label11.Text = "Residence Type: "
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(19, 235)
+        Me.Label12.Location = New System.Drawing.Point(13, 158)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(121, 18)
         Me.Label12.TabIndex = 24
@@ -563,34 +638,35 @@ Partial Class Filter
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(19, 181)
+        Me.Label13.Location = New System.Drawing.Point(13, 24)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(110, 18)
+        Me.Label13.Size = New System.Drawing.Size(88, 18)
         Me.Label13.TabIndex = 22
-        Me.Label13.Text = "Street Name:"
+        Me.Label13.Text = "House No:"
         '
-        'ComboBox6
+        'comboHouseType
         '
-        Me.ComboBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox6.FormattingEnabled = True
-        Me.ComboBox6.Location = New System.Drawing.Point(159, 125)
-        Me.ComboBox6.Name = "ComboBox6"
-        Me.ComboBox6.Size = New System.Drawing.Size(139, 28)
-        Me.ComboBox6.TabIndex = 21
+        Me.comboHouseType.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.comboHouseType.FormattingEnabled = True
+        Me.comboHouseType.Items.AddRange(New Object() {"Any", "Wood", "Concrete", "Bricks", "Metal"})
+        Me.comboHouseType.Location = New System.Drawing.Point(153, 121)
+        Me.comboHouseType.Name = "comboHouseType"
+        Me.comboHouseType.Size = New System.Drawing.Size(154, 28)
+        Me.comboHouseType.TabIndex = 21
         '
         'Label14
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(19, 129)
+        Me.Label14.Location = New System.Drawing.Point(13, 125)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(134, 18)
+        Me.Label14.Size = New System.Drawing.Size(107, 18)
         Me.Label14.TabIndex = 20
-        Me.Label14.Text = "Residence Type: "
+        Me.Label14.Text = "House Type: "
         '
         'Panel7
         '
-        Me.Panel7.Controls.Add(Me.Button3)
+        Me.Panel7.Controls.Add(Me.btnClearSelectionHousehold)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel7.Location = New System.Drawing.Point(5, 53)
         Me.Panel7.Margin = New System.Windows.Forms.Padding(0)
@@ -599,27 +675,27 @@ Partial Class Filter
         Me.Panel7.Size = New System.Drawing.Size(318, 46)
         Me.Panel7.TabIndex = 17
         '
-        'Button3
+        'btnClearSelectionHousehold
         '
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.Button3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
-        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.clear
-        Me.Button3.Location = New System.Drawing.Point(174, 15)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(0)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(144, 31)
-        Me.Button3.TabIndex = 12
-        Me.Button3.Text = " Clear Selection"
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.btnClearSelectionHousehold.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.btnClearSelectionHousehold.Dock = System.Windows.Forms.DockStyle.Right
+        Me.btnClearSelectionHousehold.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnClearSelectionHousehold.FlatAppearance.BorderSize = 0
+        Me.btnClearSelectionHousehold.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
+        Me.btnClearSelectionHousehold.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.btnClearSelectionHousehold.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClearSelectionHousehold.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClearSelectionHousehold.ForeColor = System.Drawing.Color.White
+        Me.btnClearSelectionHousehold.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.clear
+        Me.btnClearSelectionHousehold.Location = New System.Drawing.Point(174, 15)
+        Me.btnClearSelectionHousehold.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnClearSelectionHousehold.Name = "btnClearSelectionHousehold"
+        Me.btnClearSelectionHousehold.Size = New System.Drawing.Size(144, 31)
+        Me.btnClearSelectionHousehold.TabIndex = 12
+        Me.btnClearSelectionHousehold.Text = " Clear Selection"
+        Me.btnClearSelectionHousehold.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnClearSelectionHousehold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnClearSelectionHousehold.UseVisualStyleBackColor = False
         '
         'Panel5
         '
@@ -646,7 +722,7 @@ Partial Class Filter
         '
         'Panel8
         '
-        Me.Panel8.Controls.Add(Me.Button4)
+        Me.Panel8.Controls.Add(Me.btnApplyFilterHousehold)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel8.Location = New System.Drawing.Point(5, 479)
         Me.Panel8.Name = "Panel8"
@@ -654,25 +730,102 @@ Partial Class Filter
         Me.Panel8.Size = New System.Drawing.Size(318, 41)
         Me.Panel8.TabIndex = 18
         '
-        'Button4
+        'btnApplyFilterHousehold
         '
-        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
-        Me.Button4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.Button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.Color.White
-        Me.Button4.Location = New System.Drawing.Point(25, 3)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(0)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(268, 35)
-        Me.Button4.TabIndex = 13
-        Me.Button4.Text = "Apply Filters"
-        Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.btnApplyFilterHousehold.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.btnApplyFilterHousehold.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnApplyFilterHousehold.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnApplyFilterHousehold.FlatAppearance.BorderSize = 0
+        Me.btnApplyFilterHousehold.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnApplyFilterHousehold.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnApplyFilterHousehold.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnApplyFilterHousehold.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnApplyFilterHousehold.ForeColor = System.Drawing.Color.White
+        Me.btnApplyFilterHousehold.Location = New System.Drawing.Point(25, 3)
+        Me.btnApplyFilterHousehold.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnApplyFilterHousehold.Name = "btnApplyFilterHousehold"
+        Me.btnApplyFilterHousehold.Size = New System.Drawing.Size(268, 35)
+        Me.btnApplyFilterHousehold.TabIndex = 13
+        Me.btnApplyFilterHousehold.Text = "Apply Filters"
+        Me.btnApplyFilterHousehold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnApplyFilterHousehold.UseVisualStyleBackColor = False
+        '
+        'txtYearAdded
+        '
+        Me.txtYearAdded.BackColor = System.Drawing.Color.White
+        Me.txtYearAdded.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtYearAdded.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtYearAdded.ForeColor = System.Drawing.Color.Black
+        Me.txtYearAdded.Location = New System.Drawing.Point(130, 331)
+        Me.txtYearAdded.MaxLength = 4
+        Me.txtYearAdded.Multiline = True
+        Me.txtYearAdded.Name = "txtYearAdded"
+        Me.txtYearAdded.Size = New System.Drawing.Size(177, 27)
+        Me.txtYearAdded.TabIndex = 47
+        '
+        'txtDayAdded
+        '
+        Me.txtDayAdded.BackColor = System.Drawing.Color.White
+        Me.txtDayAdded.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtDayAdded.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDayAdded.ForeColor = System.Drawing.Color.Black
+        Me.txtDayAdded.Location = New System.Drawing.Point(130, 298)
+        Me.txtDayAdded.MaxLength = 2
+        Me.txtDayAdded.Multiline = True
+        Me.txtDayAdded.Name = "txtDayAdded"
+        Me.txtDayAdded.Size = New System.Drawing.Size(177, 27)
+        Me.txtDayAdded.TabIndex = 46
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(97, 234)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(94, 18)
+        Me.Label22.TabIndex = 45
+        Me.Label22.Text = "Date Added"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.Location = New System.Drawing.Point(18, 336)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(52, 18)
+        Me.Label23.TabIndex = 44
+        Me.Label23.Text = "Year: "
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Location = New System.Drawing.Point(18, 302)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(49, 18)
+        Me.Label24.TabIndex = 43
+        Me.Label24.Text = "Day: "
+        '
+        'comboMonthAdded
+        '
+        Me.comboMonthAdded.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboMonthAdded.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.comboMonthAdded.FormattingEnabled = True
+        Me.comboMonthAdded.Items.AddRange(New Object() {"Any", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"})
+        Me.comboMonthAdded.Location = New System.Drawing.Point(130, 264)
+        Me.comboMonthAdded.Name = "comboMonthAdded"
+        Me.comboMonthAdded.Size = New System.Drawing.Size(177, 28)
+        Me.comboMonthAdded.TabIndex = 42
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.Location = New System.Drawing.Point(18, 268)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(67, 18)
+        Me.Label25.TabIndex = 41
+        Me.Label25.Text = "Month: "
         '
         'Filter
         '
@@ -725,19 +878,15 @@ Partial Class Filter
     Friend WithEvents btnApplyFiltersResidents As Button
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Panel7 As Panel
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btnClearSelectionHousehold As Button
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Label10 As Label
     Friend WithEvents Panel8 As Panel
-    Friend WithEvents Button4 As Button
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents Label15 As Label
-    Friend WithEvents ComboBox5 As ComboBox
+    Friend WithEvents btnApplyFilterHousehold As Button
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label
-    Friend WithEvents ComboBox6 As ComboBox
+    Friend WithEvents comboHouseType As ComboBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents ComboBox7 As ComboBox
     Friend WithEvents comboHouseholdRole As ComboBox
     Friend WithEvents Label9 As Label
     Friend WithEvents txtYearRegistered As TextBox
@@ -750,4 +899,19 @@ Partial Class Filter
     Friend WithEvents comboHouseholdId As ComboBox
     Friend WithEvents comboCivilStatus As ComboBox
     Friend WithEvents Label16 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents comboResidenceType As ComboBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents txtElectricitySource As TextBox
+    Friend WithEvents txtWaterSource As TextBox
+    Friend WithEvents txtBldgNo As TextBox
+    Friend WithEvents txtStreetName As TextBox
+    Friend WithEvents Label21 As Label
+    Friend WithEvents txtYearAdded As TextBox
+    Friend WithEvents txtDayAdded As TextBox
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Label23 As Label
+    Friend WithEvents Label24 As Label
+    Friend WithEvents comboMonthAdded As ComboBox
+    Friend WithEvents Label25 As Label
 End Class

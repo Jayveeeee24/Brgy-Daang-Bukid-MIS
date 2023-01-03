@@ -77,12 +77,15 @@ Partial Class ViewResident
         Me.Label102 = New System.Windows.Forms.Label()
         Me.Label103 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnArchiveResident = New System.Windows.Forms.Button()
+        Me.btnModifyResident = New System.Windows.Forms.Button()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.Label104 = New System.Windows.Forms.Label()
         Me.pageAddModify = New System.Windows.Forms.TabPage()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnSaveResident = New System.Windows.Forms.Button()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Label64 = New System.Windows.Forms.Label()
         Me.panelParent = New System.Windows.Forms.Panel()
@@ -124,9 +127,6 @@ Partial Class ViewResident
         Me.txtMiddleName = New System.Windows.Forms.TextBox()
         Me.labelHousehold = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnArchiveResident = New System.Windows.Forms.Button()
-        Me.btnModifyResident = New System.Windows.Forms.Button()
-        Me.btnSaveResident = New System.Windows.Forms.Button()
         Me.mainTabControl.SuspendLayout()
         Me.pageView.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -257,7 +257,7 @@ Partial Class ViewResident
         '
         Me.labelSeniorCitizen.AutoSize = True
         Me.labelSeniorCitizen.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelSeniorCitizen.Location = New System.Drawing.Point(264, 361)
+        Me.labelSeniorCitizen.Location = New System.Drawing.Point(278, 392)
         Me.labelSeniorCitizen.Name = "labelSeniorCitizen"
         Me.labelSeniorCitizen.Size = New System.Drawing.Size(30, 18)
         Me.labelSeniorCitizen.TabIndex = 89
@@ -267,7 +267,7 @@ Partial Class ViewResident
         '
         Me.label12.AutoSize = True
         Me.label12.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label12.Location = New System.Drawing.Point(36, 361)
+        Me.label12.Location = New System.Drawing.Point(50, 392)
         Me.label12.Name = "label12"
         Me.label12.Size = New System.Drawing.Size(126, 18)
         Me.label12.TabIndex = 88
@@ -277,7 +277,7 @@ Partial Class ViewResident
         '
         Me.labelReasonArchived.AutoSize = True
         Me.labelReasonArchived.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelReasonArchived.Location = New System.Drawing.Point(264, 682)
+        Me.labelReasonArchived.Location = New System.Drawing.Point(278, 689)
         Me.labelReasonArchived.Name = "labelReasonArchived"
         Me.labelReasonArchived.Size = New System.Drawing.Size(38, 18)
         Me.labelReasonArchived.TabIndex = 87
@@ -287,7 +287,7 @@ Partial Class ViewResident
         '
         Me.labelArchive2.AutoSize = True
         Me.labelArchive2.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelArchive2.Location = New System.Drawing.Point(36, 682)
+        Me.labelArchive2.Location = New System.Drawing.Point(50, 689)
         Me.labelArchive2.Name = "labelArchive2"
         Me.labelArchive2.Size = New System.Drawing.Size(169, 18)
         Me.labelArchive2.TabIndex = 86
@@ -297,7 +297,7 @@ Partial Class ViewResident
         '
         Me.labelCitizenship.AutoSize = True
         Me.labelCitizenship.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelCitizenship.Location = New System.Drawing.Point(265, 415)
+        Me.labelCitizenship.Location = New System.Drawing.Point(278, 447)
         Me.labelCitizenship.Name = "labelCitizenship"
         Me.labelCitizenship.Size = New System.Drawing.Size(67, 18)
         Me.labelCitizenship.TabIndex = 85
@@ -307,7 +307,7 @@ Partial Class ViewResident
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(37, 415)
+        Me.Label9.Location = New System.Drawing.Point(50, 447)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(102, 18)
         Me.Label9.TabIndex = 84
@@ -317,7 +317,7 @@ Partial Class ViewResident
         '
         Me.labelArchivedBy.AutoSize = True
         Me.labelArchivedBy.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelArchivedBy.Location = New System.Drawing.Point(264, 709)
+        Me.labelArchivedBy.Location = New System.Drawing.Point(278, 716)
         Me.labelArchivedBy.Name = "labelArchivedBy"
         Me.labelArchivedBy.Size = New System.Drawing.Size(38, 18)
         Me.labelArchivedBy.TabIndex = 83
@@ -327,7 +327,7 @@ Partial Class ViewResident
         '
         Me.labelHouseholdRole.AutoSize = True
         Me.labelHouseholdRole.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelHouseholdRole.Location = New System.Drawing.Point(264, 167)
+        Me.labelHouseholdRole.Location = New System.Drawing.Point(278, 207)
         Me.labelHouseholdRole.Name = "labelHouseholdRole"
         Me.labelHouseholdRole.Size = New System.Drawing.Size(50, 18)
         Me.labelHouseholdRole.TabIndex = 68
@@ -337,7 +337,7 @@ Partial Class ViewResident
         '
         Me.labelArchive3.AutoSize = True
         Me.labelArchive3.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelArchive3.Location = New System.Drawing.Point(36, 709)
+        Me.labelArchive3.Location = New System.Drawing.Point(50, 716)
         Me.labelArchive3.Name = "labelArchive3"
         Me.labelArchive3.Size = New System.Drawing.Size(111, 18)
         Me.labelArchive3.TabIndex = 82
@@ -347,7 +347,7 @@ Partial Class ViewResident
         '
         Me.Label69.AutoSize = True
         Me.Label69.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label69.Location = New System.Drawing.Point(36, 167)
+        Me.Label69.Location = New System.Drawing.Point(50, 207)
         Me.Label69.Name = "Label69"
         Me.Label69.Size = New System.Drawing.Size(140, 18)
         Me.Label69.TabIndex = 67
@@ -357,7 +357,7 @@ Partial Class ViewResident
         '
         Me.labelDateArchived.AutoSize = True
         Me.labelDateArchived.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelDateArchived.Location = New System.Drawing.Point(264, 655)
+        Me.labelDateArchived.Location = New System.Drawing.Point(278, 662)
         Me.labelDateArchived.Name = "labelDateArchived"
         Me.labelDateArchived.Size = New System.Drawing.Size(38, 18)
         Me.labelDateArchived.TabIndex = 81
@@ -367,7 +367,7 @@ Partial Class ViewResident
         '
         Me.labelArchive1.AutoSize = True
         Me.labelArchive1.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelArchive1.Location = New System.Drawing.Point(36, 655)
+        Me.labelArchive1.Location = New System.Drawing.Point(50, 662)
         Me.labelArchive1.Name = "labelArchive1"
         Me.labelArchive1.Size = New System.Drawing.Size(129, 18)
         Me.labelArchive1.TabIndex = 80
@@ -377,7 +377,7 @@ Partial Class ViewResident
         '
         Me.labelAddress.AutoSize = True
         Me.labelAddress.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelAddress.Location = New System.Drawing.Point(264, 139)
+        Me.labelAddress.Location = New System.Drawing.Point(278, 179)
         Me.labelAddress.Name = "labelAddress"
         Me.labelAddress.Size = New System.Drawing.Size(123, 18)
         Me.labelAddress.TabIndex = 79
@@ -387,7 +387,7 @@ Partial Class ViewResident
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(36, 139)
+        Me.Label3.Location = New System.Drawing.Point(50, 179)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(86, 18)
         Me.Label3.TabIndex = 78
@@ -395,7 +395,7 @@ Partial Class ViewResident
         '
         'Panel13
         '
-        Me.Panel13.Location = New System.Drawing.Point(595, 599)
+        Me.Panel13.Location = New System.Drawing.Point(583, 589)
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(10, 161)
         Me.Panel13.TabIndex = 77
@@ -404,7 +404,7 @@ Partial Class ViewResident
         '
         Me.labelRegisteredBy.AutoSize = True
         Me.labelRegisteredBy.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelRegisteredBy.Location = New System.Drawing.Point(264, 628)
+        Me.labelRegisteredBy.Location = New System.Drawing.Point(278, 635)
         Me.labelRegisteredBy.Name = "labelRegisteredBy"
         Me.labelRegisteredBy.Size = New System.Drawing.Size(215, 18)
         Me.labelRegisteredBy.TabIndex = 74
@@ -414,7 +414,7 @@ Partial Class ViewResident
         '
         Me.Label72.AutoSize = True
         Me.Label72.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label72.Location = New System.Drawing.Point(36, 628)
+        Me.Label72.Location = New System.Drawing.Point(50, 635)
         Me.Label72.Name = "Label72"
         Me.Label72.Size = New System.Drawing.Size(128, 18)
         Me.Label72.TabIndex = 73
@@ -424,7 +424,7 @@ Partial Class ViewResident
         '
         Me.labelDateRegistered.AutoSize = True
         Me.labelDateRegistered.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelDateRegistered.Location = New System.Drawing.Point(264, 599)
+        Me.labelDateRegistered.Location = New System.Drawing.Point(278, 606)
         Me.labelDateRegistered.Name = "labelDateRegistered"
         Me.labelDateRegistered.Size = New System.Drawing.Size(167, 18)
         Me.labelDateRegistered.TabIndex = 72
@@ -434,7 +434,7 @@ Partial Class ViewResident
         '
         Me.Label74.AutoSize = True
         Me.Label74.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label74.Location = New System.Drawing.Point(36, 599)
+        Me.Label74.Location = New System.Drawing.Point(50, 606)
         Me.Label74.Name = "Label74"
         Me.Label74.Size = New System.Drawing.Size(147, 18)
         Me.Label74.TabIndex = 71
@@ -444,7 +444,7 @@ Partial Class ViewResident
         '
         Me.labelReligion.AutoSize = True
         Me.labelReligion.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelReligion.Location = New System.Drawing.Point(265, 524)
+        Me.labelReligion.Location = New System.Drawing.Point(278, 556)
         Me.labelReligion.Name = "labelReligion"
         Me.labelReligion.Size = New System.Drawing.Size(136, 18)
         Me.labelReligion.TabIndex = 66
@@ -454,7 +454,7 @@ Partial Class ViewResident
         '
         Me.Label76.AutoSize = True
         Me.Label76.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label76.Location = New System.Drawing.Point(37, 524)
+        Me.Label76.Location = New System.Drawing.Point(50, 556)
         Me.Label76.Name = "Label76"
         Me.Label76.Size = New System.Drawing.Size(78, 18)
         Me.Label76.TabIndex = 65
@@ -464,7 +464,7 @@ Partial Class ViewResident
         '
         Me.labelPwd.AutoSize = True
         Me.labelPwd.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelPwd.Location = New System.Drawing.Point(265, 470)
+        Me.labelPwd.Location = New System.Drawing.Point(278, 502)
         Me.labelPwd.Name = "labelPwd"
         Me.labelPwd.Size = New System.Drawing.Size(30, 18)
         Me.labelPwd.TabIndex = 64
@@ -474,7 +474,7 @@ Partial Class ViewResident
         '
         Me.Label78.AutoSize = True
         Me.Label78.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label78.Location = New System.Drawing.Point(37, 470)
+        Me.Label78.Location = New System.Drawing.Point(50, 502)
         Me.Label78.Name = "Label78"
         Me.Label78.Size = New System.Drawing.Size(53, 18)
         Me.Label78.TabIndex = 63
@@ -484,7 +484,7 @@ Partial Class ViewResident
         '
         Me.labelVoter.AutoSize = True
         Me.labelVoter.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelVoter.Location = New System.Drawing.Point(265, 442)
+        Me.labelVoter.Location = New System.Drawing.Point(278, 474)
         Me.labelVoter.Name = "labelVoter"
         Me.labelVoter.Size = New System.Drawing.Size(37, 18)
         Me.labelVoter.TabIndex = 62
@@ -494,7 +494,7 @@ Partial Class ViewResident
         '
         Me.Label80.AutoSize = True
         Me.Label80.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label80.Location = New System.Drawing.Point(37, 442)
+        Me.Label80.Location = New System.Drawing.Point(50, 474)
         Me.Label80.Name = "Label80"
         Me.Label80.Size = New System.Drawing.Size(153, 18)
         Me.Label80.TabIndex = 61
@@ -504,7 +504,7 @@ Partial Class ViewResident
         '
         Me.labelOccupation.AutoSize = True
         Me.labelOccupation.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelOccupation.Location = New System.Drawing.Point(265, 497)
+        Me.labelOccupation.Location = New System.Drawing.Point(278, 529)
         Me.labelOccupation.Name = "labelOccupation"
         Me.labelOccupation.Size = New System.Drawing.Size(92, 18)
         Me.labelOccupation.TabIndex = 60
@@ -514,7 +514,7 @@ Partial Class ViewResident
         '
         Me.Label82.AutoSize = True
         Me.Label82.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label82.Location = New System.Drawing.Point(37, 497)
+        Me.Label82.Location = New System.Drawing.Point(50, 529)
         Me.Label82.Name = "Label82"
         Me.Label82.Size = New System.Drawing.Size(104, 18)
         Me.Label82.TabIndex = 59
@@ -524,7 +524,7 @@ Partial Class ViewResident
         '
         Me.labelContactNo.AutoSize = True
         Me.labelContactNo.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelContactNo.Location = New System.Drawing.Point(264, 226)
+        Me.labelContactNo.Location = New System.Drawing.Point(278, 257)
         Me.labelContactNo.Name = "labelContactNo"
         Me.labelContactNo.Size = New System.Drawing.Size(28, 18)
         Me.labelContactNo.TabIndex = 58
@@ -534,7 +534,7 @@ Partial Class ViewResident
         '
         Me.Label84.AutoSize = True
         Me.Label84.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label84.Location = New System.Drawing.Point(36, 226)
+        Me.Label84.Location = New System.Drawing.Point(50, 257)
         Me.Label84.Name = "Label84"
         Me.Label84.Size = New System.Drawing.Size(104, 18)
         Me.Label84.TabIndex = 57
@@ -544,7 +544,7 @@ Partial Class ViewResident
         '
         Me.labelSex.AutoSize = True
         Me.labelSex.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelSex.Location = New System.Drawing.Point(265, 388)
+        Me.labelSex.Location = New System.Drawing.Point(278, 420)
         Me.labelSex.Name = "labelSex"
         Me.labelSex.Size = New System.Drawing.Size(46, 18)
         Me.labelSex.TabIndex = 56
@@ -554,7 +554,7 @@ Partial Class ViewResident
         '
         Me.Label86.AutoSize = True
         Me.Label86.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label86.Location = New System.Drawing.Point(37, 388)
+        Me.Label86.Location = New System.Drawing.Point(50, 420)
         Me.Label86.Name = "Label86"
         Me.Label86.Size = New System.Drawing.Size(45, 18)
         Me.Label86.TabIndex = 55
@@ -564,7 +564,7 @@ Partial Class ViewResident
         '
         Me.labelCivilStatus.AutoSize = True
         Me.labelCivilStatus.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelCivilStatus.Location = New System.Drawing.Point(264, 334)
+        Me.labelCivilStatus.Location = New System.Drawing.Point(278, 365)
         Me.labelCivilStatus.Name = "labelCivilStatus"
         Me.labelCivilStatus.Size = New System.Drawing.Size(58, 18)
         Me.labelCivilStatus.TabIndex = 54
@@ -574,7 +574,7 @@ Partial Class ViewResident
         '
         Me.Label88.AutoSize = True
         Me.Label88.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label88.Location = New System.Drawing.Point(36, 334)
+        Me.Label88.Location = New System.Drawing.Point(50, 365)
         Me.Label88.Name = "Label88"
         Me.Label88.Size = New System.Drawing.Size(106, 18)
         Me.Label88.TabIndex = 53
@@ -584,7 +584,7 @@ Partial Class ViewResident
         '
         Me.labelBirthPlace.AutoSize = True
         Me.labelBirthPlace.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelBirthPlace.Location = New System.Drawing.Point(264, 307)
+        Me.labelBirthPlace.Location = New System.Drawing.Point(278, 338)
         Me.labelBirthPlace.Name = "labelBirthPlace"
         Me.labelBirthPlace.Size = New System.Drawing.Size(98, 18)
         Me.labelBirthPlace.TabIndex = 52
@@ -594,7 +594,7 @@ Partial Class ViewResident
         '
         Me.Label90.AutoSize = True
         Me.Label90.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label90.Location = New System.Drawing.Point(36, 307)
+        Me.Label90.Location = New System.Drawing.Point(50, 338)
         Me.Label90.Name = "Label90"
         Me.Label90.Size = New System.Drawing.Size(122, 18)
         Me.Label90.TabIndex = 51
@@ -604,7 +604,7 @@ Partial Class ViewResident
         '
         Me.labelAge.AutoSize = True
         Me.labelAge.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelAge.Location = New System.Drawing.Point(264, 280)
+        Me.labelAge.Location = New System.Drawing.Point(278, 311)
         Me.labelAge.Name = "labelAge"
         Me.labelAge.Size = New System.Drawing.Size(28, 18)
         Me.labelAge.TabIndex = 50
@@ -614,7 +614,7 @@ Partial Class ViewResident
         '
         Me.Label92.AutoSize = True
         Me.Label92.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label92.Location = New System.Drawing.Point(36, 280)
+        Me.Label92.Location = New System.Drawing.Point(50, 311)
         Me.Label92.Name = "Label92"
         Me.Label92.Size = New System.Drawing.Size(46, 18)
         Me.Label92.TabIndex = 49
@@ -624,7 +624,7 @@ Partial Class ViewResident
         '
         Me.labelBirthdate.AutoSize = True
         Me.labelBirthdate.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelBirthdate.Location = New System.Drawing.Point(264, 253)
+        Me.labelBirthdate.Location = New System.Drawing.Point(278, 284)
         Me.labelBirthdate.Name = "labelBirthdate"
         Me.labelBirthdate.Size = New System.Drawing.Size(148, 18)
         Me.labelBirthdate.TabIndex = 46
@@ -634,7 +634,7 @@ Partial Class ViewResident
         '
         Me.Label94.AutoSize = True
         Me.Label94.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label94.Location = New System.Drawing.Point(487, 236)
+        Me.Label94.Location = New System.Drawing.Point(487, 530)
         Me.Label94.Name = "Label94"
         Me.Label94.Size = New System.Drawing.Size(0, 18)
         Me.Label94.TabIndex = 45
@@ -643,7 +643,7 @@ Partial Class ViewResident
         '
         Me.Label95.AutoSize = True
         Me.Label95.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label95.Location = New System.Drawing.Point(36, 253)
+        Me.Label95.Location = New System.Drawing.Point(50, 284)
         Me.Label95.Name = "Label95"
         Me.Label95.Size = New System.Drawing.Size(123, 18)
         Me.Label95.TabIndex = 44
@@ -653,7 +653,7 @@ Partial Class ViewResident
         '
         Me.labelExtension.AutoSize = True
         Me.labelExtension.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelExtension.Location = New System.Drawing.Point(264, 113)
+        Me.labelExtension.Location = New System.Drawing.Point(278, 134)
         Me.labelExtension.Name = "labelExtension"
         Me.labelExtension.Size = New System.Drawing.Size(25, 18)
         Me.labelExtension.TabIndex = 43
@@ -663,7 +663,7 @@ Partial Class ViewResident
         '
         Me.labelLast.AutoSize = True
         Me.labelLast.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelLast.Location = New System.Drawing.Point(264, 85)
+        Me.labelLast.Location = New System.Drawing.Point(278, 106)
         Me.labelLast.Name = "labelLast"
         Me.labelLast.Size = New System.Drawing.Size(137, 18)
         Me.labelLast.TabIndex = 42
@@ -673,7 +673,7 @@ Partial Class ViewResident
         '
         Me.labelMiddle.AutoSize = True
         Me.labelMiddle.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelMiddle.Location = New System.Drawing.Point(264, 56)
+        Me.labelMiddle.Location = New System.Drawing.Point(278, 77)
         Me.labelMiddle.Name = "labelMiddle"
         Me.labelMiddle.Size = New System.Drawing.Size(215, 18)
         Me.labelMiddle.TabIndex = 41
@@ -683,7 +683,7 @@ Partial Class ViewResident
         '
         Me.labelFirst.AutoSize = True
         Me.labelFirst.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelFirst.Location = New System.Drawing.Point(264, 27)
+        Me.labelFirst.Location = New System.Drawing.Point(278, 48)
         Me.labelFirst.Name = "labelFirst"
         Me.labelFirst.Size = New System.Drawing.Size(54, 18)
         Me.labelFirst.TabIndex = 40
@@ -693,7 +693,7 @@ Partial Class ViewResident
         '
         Me.Label100.AutoSize = True
         Me.Label100.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label100.Location = New System.Drawing.Point(36, 113)
+        Me.Label100.Location = New System.Drawing.Point(50, 134)
         Me.Label100.Name = "Label100"
         Me.Label100.Size = New System.Drawing.Size(152, 18)
         Me.Label100.TabIndex = 39
@@ -703,7 +703,7 @@ Partial Class ViewResident
         '
         Me.Label101.AutoSize = True
         Me.Label101.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label101.Location = New System.Drawing.Point(36, 85)
+        Me.Label101.Location = New System.Drawing.Point(50, 106)
         Me.Label101.Name = "Label101"
         Me.Label101.Size = New System.Drawing.Size(108, 18)
         Me.Label101.TabIndex = 38
@@ -713,7 +713,7 @@ Partial Class ViewResident
         '
         Me.Label102.AutoSize = True
         Me.Label102.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label102.Location = New System.Drawing.Point(36, 56)
+        Me.Label102.Location = New System.Drawing.Point(50, 77)
         Me.Label102.Name = "Label102"
         Me.Label102.Size = New System.Drawing.Size(124, 18)
         Me.Label102.TabIndex = 37
@@ -723,7 +723,7 @@ Partial Class ViewResident
         '
         Me.Label103.AutoSize = True
         Me.Label103.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label103.Location = New System.Drawing.Point(36, 27)
+        Me.Label103.Location = New System.Drawing.Point(50, 48)
         Me.Label103.Name = "Label103"
         Me.Label103.Size = New System.Drawing.Size(109, 18)
         Me.Label103.TabIndex = 36
@@ -745,6 +745,52 @@ Partial Class ViewResident
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel6.Size = New System.Drawing.Size(643, 51)
         Me.TableLayoutPanel6.TabIndex = 37
+        '
+        'btnArchiveResident
+        '
+        Me.btnArchiveResident.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.btnArchiveResident.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnArchiveResident.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnArchiveResident.FlatAppearance.BorderSize = 0
+        Me.btnArchiveResident.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.btnArchiveResident.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.btnArchiveResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnArchiveResident.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnArchiveResident.ForeColor = System.Drawing.Color.White
+        Me.btnArchiveResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.archive
+        Me.btnArchiveResident.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnArchiveResident.Location = New System.Drawing.Point(0, 10)
+        Me.btnArchiveResident.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnArchiveResident.Name = "btnArchiveResident"
+        Me.btnArchiveResident.Size = New System.Drawing.Size(147, 41)
+        Me.btnArchiveResident.TabIndex = 35
+        Me.btnArchiveResident.TabStop = False
+        Me.btnArchiveResident.Text = "  Archive Resident"
+        Me.btnArchiveResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnArchiveResident.UseVisualStyleBackColor = False
+        '
+        'btnModifyResident
+        '
+        Me.btnModifyResident.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.btnModifyResident.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnModifyResident.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnModifyResident.FlatAppearance.BorderSize = 0
+        Me.btnModifyResident.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnModifyResident.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnModifyResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModifyResident.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModifyResident.ForeColor = System.Drawing.Color.White
+        Me.btnModifyResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.modify
+        Me.btnModifyResident.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnModifyResident.Location = New System.Drawing.Point(494, 10)
+        Me.btnModifyResident.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnModifyResident.Name = "btnModifyResident"
+        Me.btnModifyResident.Size = New System.Drawing.Size(149, 41)
+        Me.btnModifyResident.TabIndex = 34
+        Me.btnModifyResident.TabStop = False
+        Me.btnModifyResident.Text = "  Modify Resident"
+        Me.btnModifyResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnModifyResident.UseVisualStyleBackColor = False
         '
         'Panel16
         '
@@ -820,6 +866,29 @@ Partial Class ViewResident
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(643, 51)
         Me.TableLayoutPanel4.TabIndex = 37
+        '
+        'btnSaveResident
+        '
+        Me.btnSaveResident.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.btnSaveResident.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnSaveResident.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSaveResident.FlatAppearance.BorderSize = 0
+        Me.btnSaveResident.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnSaveResident.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnSaveResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSaveResident.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSaveResident.ForeColor = System.Drawing.Color.White
+        Me.btnSaveResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.save
+        Me.btnSaveResident.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSaveResident.Location = New System.Drawing.Point(503, 10)
+        Me.btnSaveResident.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnSaveResident.Name = "btnSaveResident"
+        Me.btnSaveResident.Size = New System.Drawing.Size(140, 41)
+        Me.btnSaveResident.TabIndex = 34
+        Me.btnSaveResident.TabStop = False
+        Me.btnSaveResident.Text = "  Save Resident"
+        Me.btnSaveResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSaveResident.UseVisualStyleBackColor = False
         '
         'Panel10
         '
@@ -906,7 +975,7 @@ Partial Class ViewResident
         Me.txtDisability.Enabled = False
         Me.txtDisability.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.txtDisability.ForeColor = System.Drawing.Color.Black
-        Me.txtDisability.Location = New System.Drawing.Point(271, 728)
+        Me.txtDisability.Location = New System.Drawing.Point(271, 730)
         Me.txtDisability.MaxLength = 50
         Me.txtDisability.Multiline = True
         Me.txtDisability.Name = "txtDisability"
@@ -944,7 +1013,7 @@ Partial Class ViewResident
         '
         'comboHouseholdId
         '
-        Me.comboHouseholdId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.comboHouseholdId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.comboHouseholdId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.comboHouseholdId.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboHouseholdId.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1009,6 +1078,7 @@ Partial Class ViewResident
         Me.comboPwd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboPwd.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboPwd.FormattingEnabled = True
+        Me.comboPwd.Items.AddRange(New Object() {"Yes", "No"})
         Me.comboPwd.Location = New System.Drawing.Point(271, 694)
         Me.comboPwd.Name = "comboPwd"
         Me.comboPwd.Size = New System.Drawing.Size(128, 28)
@@ -1020,6 +1090,7 @@ Partial Class ViewResident
         Me.comboVoter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboVoter.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboVoter.FormattingEnabled = True
+        Me.comboVoter.Items.AddRange(New Object() {"Yes", "No"})
         Me.comboVoter.Location = New System.Drawing.Point(271, 591)
         Me.comboVoter.Name = "comboVoter"
         Me.comboVoter.Size = New System.Drawing.Size(128, 28)
@@ -1059,6 +1130,7 @@ Partial Class ViewResident
         Me.comboSex.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboSex.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboSex.FormattingEnabled = True
+        Me.comboSex.Items.AddRange(New Object() {"Male", "Female"})
         Me.comboSex.Location = New System.Drawing.Point(271, 458)
         Me.comboSex.Name = "comboSex"
         Me.comboSex.Size = New System.Drawing.Size(128, 28)
@@ -1070,6 +1142,7 @@ Partial Class ViewResident
         Me.comboCivilStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboCivilStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboCivilStatus.FormattingEnabled = True
+        Me.comboCivilStatus.Items.AddRange(New Object() {"Single", "Married", "Divorced", "Separated", "Widowed"})
         Me.comboCivilStatus.Location = New System.Drawing.Point(271, 424)
         Me.comboCivilStatus.Name = "comboCivilStatus"
         Me.comboCivilStatus.Size = New System.Drawing.Size(128, 28)
@@ -1103,6 +1176,7 @@ Partial Class ViewResident
         Me.comboHouseholdRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboHouseholdRole.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboHouseholdRole.FormattingEnabled = True
+        Me.comboHouseholdRole.Items.AddRange(New Object() {"Head", "Member"})
         Me.comboHouseholdRole.Location = New System.Drawing.Point(271, 99)
         Me.comboHouseholdRole.Name = "comboHouseholdRole"
         Me.comboHouseholdRole.Size = New System.Drawing.Size(130, 28)
@@ -1309,79 +1383,10 @@ Partial Class ViewResident
         '
         'Panel1
         '
-        Me.Panel1.Location = New System.Drawing.Point(253, 774)
+        Me.Panel1.Location = New System.Drawing.Point(595, 759)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(10, 23)
         Me.Panel1.TabIndex = 68
-        '
-        'btnArchiveResident
-        '
-        Me.btnArchiveResident.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
-        Me.btnArchiveResident.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnArchiveResident.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnArchiveResident.FlatAppearance.BorderSize = 0
-        Me.btnArchiveResident.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.btnArchiveResident.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.btnArchiveResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnArchiveResident.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnArchiveResident.ForeColor = System.Drawing.Color.White
-        Me.btnArchiveResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.archive
-        Me.btnArchiveResident.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnArchiveResident.Location = New System.Drawing.Point(0, 10)
-        Me.btnArchiveResident.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnArchiveResident.Name = "btnArchiveResident"
-        Me.btnArchiveResident.Size = New System.Drawing.Size(147, 41)
-        Me.btnArchiveResident.TabIndex = 35
-        Me.btnArchiveResident.TabStop = False
-        Me.btnArchiveResident.Text = "  Archive Resident"
-        Me.btnArchiveResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnArchiveResident.UseVisualStyleBackColor = False
-        '
-        'btnModifyResident
-        '
-        Me.btnModifyResident.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
-        Me.btnModifyResident.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnModifyResident.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnModifyResident.FlatAppearance.BorderSize = 0
-        Me.btnModifyResident.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnModifyResident.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnModifyResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModifyResident.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnModifyResident.ForeColor = System.Drawing.Color.White
-        Me.btnModifyResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.modify
-        Me.btnModifyResident.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnModifyResident.Location = New System.Drawing.Point(494, 10)
-        Me.btnModifyResident.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnModifyResident.Name = "btnModifyResident"
-        Me.btnModifyResident.Size = New System.Drawing.Size(149, 41)
-        Me.btnModifyResident.TabIndex = 34
-        Me.btnModifyResident.TabStop = False
-        Me.btnModifyResident.Text = "  Modify Resident"
-        Me.btnModifyResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnModifyResident.UseVisualStyleBackColor = False
-        '
-        'btnSaveResident
-        '
-        Me.btnSaveResident.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.btnSaveResident.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnSaveResident.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnSaveResident.FlatAppearance.BorderSize = 0
-        Me.btnSaveResident.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.btnSaveResident.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.btnSaveResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSaveResident.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSaveResident.ForeColor = System.Drawing.Color.White
-        Me.btnSaveResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.modify
-        Me.btnSaveResident.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSaveResident.Location = New System.Drawing.Point(503, 10)
-        Me.btnSaveResident.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnSaveResident.Name = "btnSaveResident"
-        Me.btnSaveResident.Size = New System.Drawing.Size(140, 41)
-        Me.btnSaveResident.TabIndex = 34
-        Me.btnSaveResident.TabStop = False
-        Me.btnSaveResident.Text = "  Save Resident"
-        Me.btnSaveResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSaveResident.UseVisualStyleBackColor = False
         '
         'ViewResident
         '

@@ -87,7 +87,5 @@ Public Class ConfirmAccess
         mySQLReader.Dispose()
         mySql.Close()
         mySql.Dispose()
-
-        originForm = ""
     End Sub
 End Class

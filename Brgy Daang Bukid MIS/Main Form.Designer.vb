@@ -232,10 +232,10 @@ Partial Class Main_Form
         Me.labelSignedIn.Dock = System.Windows.Forms.DockStyle.Right
         Me.labelSignedIn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelSignedIn.ForeColor = System.Drawing.Color.White
-        Me.labelSignedIn.Location = New System.Drawing.Point(907, 0)
+        Me.labelSignedIn.Location = New System.Drawing.Point(635, 0)
         Me.labelSignedIn.Name = "labelSignedIn"
         Me.labelSignedIn.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.labelSignedIn.Size = New System.Drawing.Size(463, 42)
+        Me.labelSignedIn.Size = New System.Drawing.Size(735, 42)
         Me.labelSignedIn.TabIndex = 2
         Me.labelSignedIn.Text = "Logged in as: John Bernard Tinio  [Administrator]"
         Me.labelSignedIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1266,6 +1266,7 @@ Partial Class Main_Form
         '
         'datagridResident
         '
+        Me.datagridResident.AllowUserToAddRows = False
         Me.datagridResident.AllowUserToDeleteRows = False
         Me.datagridResident.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.datagridResident.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
@@ -1544,6 +1545,7 @@ Partial Class Main_Form
         '
         'datagridHousehold
         '
+        Me.datagridHousehold.AllowUserToAddRows = False
         Me.datagridHousehold.AllowUserToDeleteRows = False
         Me.datagridHousehold.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.datagridHousehold.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells

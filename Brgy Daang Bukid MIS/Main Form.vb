@@ -19,6 +19,11 @@ Public Class Main_Form
     Public filterHouseholdId, filterMinAge, filterMaxAge, filterDay, filterYear As Integer
     Public filterSex, filterCivilStatus, filterPwd, filterHouseholdRole, filterMonth As String
 
+    ''variables for filtering household
+    Public filterResidenceType, filterHouseType, filterStreetName, filterBldgNo, filterWaterSource, filterElectricitySource, filterMonthAdded As String
+    Public filterDayAdded, filterYearAdded As Integer
+
+
     Enum Modules
         BrgyOfficials
         Residents
@@ -141,11 +146,18 @@ Public Class Main_Form
         loadDataGrid(datagridHousehold, Modules.Household)
     End Sub
     Private Sub datagridHousehold_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridHousehold.CellClick
-
+        If e.RowIndex >= 0 Then
+            ViewHousehold.householdId = datagridHousehold.Rows(e.RowIndex).Cells(0).Value
+            ViewHousehold.ShowDialog()
+        End If
     End Sub
     Private Sub btnFilterHousehold_Click(sender As Object, e As EventArgs) Handles btnFilterHousehold.Click
         Filter.filterModule = "Household"
         Filter.ShowDialog()
+    End Sub
+    Private Sub btnAddHousehold_Click(sender As Object, e As EventArgs) Handles btnAddHousehold.Click
+        ViewHousehold.action = "add"
+        ViewHousehold.ShowDialog()
     End Sub
 
 
@@ -213,9 +225,9 @@ Public Class Main_Form
         labelTitle.Text = "Resident's Information"
 
         txtPageNoResident.Text = 1
-        txtSearchResident.Text = ""
+        txtSearchResident.Text = "Type in your search"
         loadDataGrid(datagridResident, Modules.Residents)
-        Filter.clearEverything()
+        Filter.clearEverythingResident()
     End Sub
     Private Sub btnHouseholdInfo_Click(sender As Object, e As EventArgs) Handles btnHouseholdInfo.Click
         btnDashboard.BackColor = Color.FromArgb(25, 117, 211)
@@ -231,7 +243,9 @@ Public Class Main_Form
         labelTitle.Text = "Household Information"
 
         txtPageNoHousehold.Text = 1
+        txtSearchHousehold.Text = "Type in your search"
         loadDataGrid(datagridHousehold, Modules.Household)
+        Filter.clearEverythingHousehold()
 
     End Sub
     Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
@@ -358,17 +372,38 @@ Public Class Main_Form
         'HOUSEHOLD  
         totalRowsHousehold = 0
         totalPageHousehold = 0
-        labelTotalPageHousehold.Text = totalPageHousehold
-        labelTotalHousehold.Text = totalRowsHousehold
+        labelTotalPageHousehold.Text = 0
+        labelTotalHousehold.Text = ""
         btnBackHousehold.Enabled = False
-        labelDashboardHouseholds.Text = totalRowsHousehold
+        labelDashboardHouseholds.Text = ""
 
-        cmd.CommandText = "Select count(*) From household " & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " WHERE household_id LIKE @householdID")) & " order by household_id asc "
-        cmd.Parameters.AddWithValue("@householdID", txtSearchHousehold.Text & "%")
+        'cmd.CommandText = "Select count(*) From household " & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " WHERE household_id LIKE @householdID")) & " order by household_id asc "
+        'cmd.Parameters.AddWithValue("@householdID", txtSearchHousehold.Text & "%")
 
+        'cmd.CommandText = "Select count(*) From household WHERE household_id > 0 " & If(filterBldgNo = "", "", " AND bldg_no LIKE @bldgno ") & If(filterStreetName = "", "", " AND street_name LIKE @streetname ") & If(filterResidenceType = "", "", " AND residence_type LIKE @residencetype ") & If(filterHouseType = "", "", " AND house_type LIKE @housetype ") & If(filterWaterSource = "", "", " AND water_source LIKE @watersource ") & If(filterElectricitySource = "", "", " AND electricity_source LIKE @electricitysource ") & If(filterMonthAdded = "", "", " AND month_added = @monthadded ") & If(filterDayAdded = 0, "", " AND day_added = @dayadded ") & If(filterYearAdded = 0, "", " AND year_added = @yearadded ") & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " AND CAST(household_id as VARCHAR(100)) LIKE @householdid")) & " order by household_id asc "
+
+        'cmd.CommandText = "Select COUNT(*) FROM household WHERE household_id > 0 " & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " AND CONVERT(household_id, CHAR(16) LIKE @householdid "))
+
+        'cmd.CommandText = "Select COUNT(*) From household WHERE household_id > 0 " & If(filterBldgNo = "", "", " AND bldg_no LIKE @bldgno ") & If(filterStreetName = "", "", " AND street_name LIKE @streetname ") & If(filterResidenceType = "", "", " AND residence_type LIKE @residencetype ") & If(filterHouseType = "", "", " AND house_type LIKE @housetype ") & If(filterWaterSource = "", "", " AND water_source LIKE @watersource ") & If(filterElectricitySource = "", "", " AND electricity_source LIKE @electricitysource ") & If(filterMonthAdded = "", "", " AND month_added = @monthadded ") & If(filterDayAdded = 0, "", " AND day_added = @dayadded ") & If(filterYearAdded = 0, "", " AND year_added = @yearadded ") & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " AND household_id LIKE @householdid"))
+        cmd.CommandText = "SELECT COUNT(*) FROM household WHERE household_id > 0 AND CONVERT(household_id, VARCHAR(100)) LIKE @householdid"
+
+
+        cmd.Parameters.AddWithValue("@householdid", txtSearchHousehold.Text.Trim & "%")
+        cmd.Parameters.AddWithValue("@bldgno", "%" & filterBldgNo & "%")
+        cmd.Parameters.AddWithValue("@streetname", "%" & filterStreetName & "%")
+        cmd.Parameters.AddWithValue("@residencetype", "%" & filterResidenceType & "%")
+        cmd.Parameters.AddWithValue("@housetype", "%" & filterHouseType & "%")
+        cmd.Parameters.AddWithValue("@watersource", "%" & filterWaterSource & "%")
+        cmd.Parameters.AddWithValue("@electricitysource", "%" & filterElectricitySource & "%")
+        cmd.Parameters.AddWithValue("@monthadded", filterMonthAdded)
+        cmd.Parameters.AddWithValue("@dayadded", filterDayAdded)
+        cmd.Parameters.AddWithValue("@yearadded", filterYearAdded)
 
         totalRowsHousehold = Convert.ToString(cmd.ExecuteScalar())
+        MsgBox(totalRowsHousehold)
+
         totalPageHousehold = Math.Ceiling(totalRowsHousehold / 30)
+        MsgBox(totalPageHousehold)
         labelTotalPageHousehold.Text = totalPageHousehold
         labelTotalHousehold.Text = totalRowsHousehold
         btnBackHousehold.Enabled = False
@@ -416,7 +451,7 @@ Public Class Main_Form
             Case Modules.Residents ''''''''''''''Resident
 
                 mySQLCommand.CommandText = "SELECT resident_id, first_name, middle_name, last_name, ext_name, sex, contact_no FROM residents WHERE resident_id > 0 " & (If(filterHouseholdId = 0, "", " AND household_id = @householdid ")) & (If(filterMinAge = 0 Or filterMaxAge = 0, "", " AND age BETWEEN @minAge and @maxAge ")) & (If(filterDay = 0, "", " AND day_registered = @day ")) & (If(filterYear = 0, "", " AND year_registered = @year ")) & (If(filterSex = "", "", " AND sex = @sex ")) & (If(filterCivilStatus = "", "", " AND civil_status = @civilstatus ")) & (If(filterPwd = "", "", " AND is_pwd = @pwd ")) & (If(filterHouseholdRole = "", "", " AND household_role = @householdrole ")) & (If(filterMonth = "", "", " AND month_registered = @month ")) & (If(txtSearchResident.Text.Trim = "" Or txtSearchResident.Text = "Type in your search", " ", " AND (first_name LIKE @resident_name OR middle_name LIKE @resident_name OR last_name LIKE @resident_name)")) & " order by first_name asc limit 20 OFFSET " & (((CInt(Me.txtPageNoResident.Text)) - 1) * 20)
-                mySQLCommand.Parameters.AddWithValue("@resident_name", "%" & txtSearchResident.Text & "%")
+                mySQLCommand.Parameters.AddWithValue("@resident_name", txtSearchResident.Text & "%")
                 mySQLCommand.Parameters.AddWithValue("@householdid", filterHouseholdId)
                 mySQLCommand.Parameters.AddWithValue("@minAge", filterMinAge)
                 mySQLCommand.Parameters.AddWithValue("@maxAge", filterMaxAge)
@@ -466,14 +501,19 @@ Public Class Main_Form
                 mySQLReader.Dispose()
 
             Case Modules.Household ''''''''''''''Household
-                'mySQLCommand.CommandText = "SELECT household_id, (SELECT CONCAT_WS(' ', first_name, middle_name, last_name, ext_name) FROM residents WHERE household_id = household_id AND household_role = 'Head') AS household_head, bldg_no, street_name FROM household " & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " WHERE household_id LIKE @householdID")) & " order by household_id asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30)
-                '& (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " WHERE household_id LIKE @householdID")) & " order by household_id asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30)
-                'mySQLCommand.CommandText = "SELECT household.household_id as household_id, CONCAT(residents.first_name, residents.middle_name, residents.last_name, residents.ext_name) AS household_head, bldg_no, street_name FROM household RIGHT JOIN residents ON residents.household_id = household.household_id AND residents.household_role = 'Head' " & " order by household_id asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30)
-                'mySQLCommand.CommandText = "Select * From household " & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " WHERE household_id LIKE @householdID")) & " order by household_id asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30) & " order by household_id asc "
 
-
-                mySQLCommand.CommandText = "Select household_id, bldg_no, street_name From household " & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " WHERE household_id LIKE @householdID")) & " order by household_id asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30)
+                mySQLCommand.CommandText = "Select household_id, bldg_no, street_name From household WHERE household_id > 0 " & If(filterBldgNo = "", "", " AND bldg_no LIKE @bldgno ") & If(filterStreetName = "", "", " AND street_name LIKE @streetname ") & If(filterResidenceType = "", "", " AND residence_type LIKE @residencetype ") & If(filterHouseType = "", "", " AND house_type LIKE @housetype ") & If(filterWaterSource = "", "", " AND water_source LIKE @watersource ") & If(filterElectricitySource = "", "", " AND electricity_source LIKE @electricitysource ") & If(filterMonthAdded = "", "", " AND month_added = @monthadded ") & If(filterDayAdded = 0, "", " AND day_added = @dayadded ") & If(filterYearAdded = 0, "", " AND year_added = @yearadded ") & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " AND household_id LIKE @householdID")) & " order by household_id asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30)
                 mySQLCommand.Parameters.AddWithValue("@householdID", txtSearchHousehold.Text & "%")
+                mySQLCommand.Parameters.AddWithValue("@bldgno", "%" & filterBldgNo & "%")
+                mySQLCommand.Parameters.AddWithValue("@streetname", "%" & filterStreetName & "%")
+                mySQLCommand.Parameters.AddWithValue("@residencetype", "%" & filterResidenceType & "%")
+                mySQLCommand.Parameters.AddWithValue("@housetype", "%" & filterHouseType & "%")
+                mySQLCommand.Parameters.AddWithValue("@watersource", "%" & filterWaterSource & "%")
+                mySQLCommand.Parameters.AddWithValue("@electricitysource", "%" & filterElectricitySource & "%")
+                mySQLCommand.Parameters.AddWithValue("@monthadded", filterMonthAdded)
+                mySQLCommand.Parameters.AddWithValue("@dayadded", filterDayAdded)
+                mySQLCommand.Parameters.AddWithValue("@yearadded", filterYearAdded)
+
                 mySQLReader = mySQLCommand.ExecuteReader
 
                 countRows()
@@ -514,10 +554,6 @@ Public Class Main_Form
         mySql.Dispose()
 
         datagrid.ClearSelection()
-    End Sub
-
-    Private Sub colorText(text As TextBox)
-
     End Sub
 
     Private Sub enterTextPageNo(e As KeyEventArgs, txtPageNo As ToolStripTextBox, datagrid As DataGridView, modules As Modules, ByVal totalPage As Integer)
@@ -571,7 +607,6 @@ Public Class Main_Form
                                                  BindingFlags.Instance Or BindingFlags.NonPublic)
         pi.SetValue(datagrid, True, Nothing)
     End Sub
-
     Private Sub statisticChecker()
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)

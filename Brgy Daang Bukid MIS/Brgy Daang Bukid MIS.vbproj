@@ -171,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_daang_bukid-legitbgremoved.ico" />
+    <None Include="Resources\save.png" />
     <None Include="Resources\arrow forward white.png" />
     <None Include="Resources\clear.png" />
     <None Include="Resources\filter.png" />
