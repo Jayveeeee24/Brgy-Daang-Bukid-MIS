@@ -159,6 +159,9 @@ Public Class Main_Form
         ViewHousehold.action = "add"
         ViewHousehold.ShowDialog()
     End Sub
+    Private Sub txtSearchHousehold_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSearchHousehold.KeyPress
+        checkInputNumbersOnly(e)
+    End Sub
 
 
     ''' '''''''''''''' FOR SIDE NAVIGATION MENU
@@ -248,6 +251,9 @@ Public Class Main_Form
         Filter.clearEverythingHousehold()
 
     End Sub
+
+
+
     Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
         btnDashboard.BackColor = Color.FromArgb(25, 117, 211)
         btnResidentInfo.BackColor = Color.FromArgb(25, 117, 211)
@@ -377,16 +383,9 @@ Public Class Main_Form
         btnBackHousehold.Enabled = False
         labelDashboardHouseholds.Text = ""
 
-        'cmd.CommandText = "Select count(*) From household " & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " WHERE household_id LIKE @householdID")) & " order by household_id asc "
-        'cmd.Parameters.AddWithValue("@householdID", txtSearchHousehold.Text & "%")
 
-        'cmd.CommandText = "Select count(*) From household WHERE household_id > 0 " & If(filterBldgNo = "", "", " AND bldg_no LIKE @bldgno ") & If(filterStreetName = "", "", " AND street_name LIKE @streetname ") & If(filterResidenceType = "", "", " AND residence_type LIKE @residencetype ") & If(filterHouseType = "", "", " AND house_type LIKE @housetype ") & If(filterWaterSource = "", "", " AND water_source LIKE @watersource ") & If(filterElectricitySource = "", "", " AND electricity_source LIKE @electricitysource ") & If(filterMonthAdded = "", "", " AND month_added = @monthadded ") & If(filterDayAdded = 0, "", " AND day_added = @dayadded ") & If(filterYearAdded = 0, "", " AND year_added = @yearadded ") & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " AND CAST(household_id as VARCHAR(100)) LIKE @householdid")) & " order by household_id asc "
-
-        'cmd.CommandText = "Select COUNT(*) FROM household WHERE household_id > 0 " & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " AND CONVERT(household_id, CHAR(16) LIKE @householdid "))
-
-        'cmd.CommandText = "Select COUNT(*) From household WHERE household_id > 0 " & If(filterBldgNo = "", "", " AND bldg_no LIKE @bldgno ") & If(filterStreetName = "", "", " AND street_name LIKE @streetname ") & If(filterResidenceType = "", "", " AND residence_type LIKE @residencetype ") & If(filterHouseType = "", "", " AND house_type LIKE @housetype ") & If(filterWaterSource = "", "", " AND water_source LIKE @watersource ") & If(filterElectricitySource = "", "", " AND electricity_source LIKE @electricitysource ") & If(filterMonthAdded = "", "", " AND month_added = @monthadded ") & If(filterDayAdded = 0, "", " AND day_added = @dayadded ") & If(filterYearAdded = 0, "", " AND year_added = @yearadded ") & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " AND household_id LIKE @householdid"))
-        cmd.CommandText = "SELECT COUNT(*) FROM household WHERE household_id > 0 AND CONVERT(household_id, VARCHAR(100)) LIKE @householdid"
-
+        'cmd.CommandText = "Select count(*) From household WHERE CAST(household_id AS UNSIGNED) > 0 AND household_id like = @householdid "
+        cmd.CommandText = "Select count(*) From household WHERE CAST(household_id AS UNSIGNED) > 0 " & If(filterBldgNo = "", "", " AND bldg_no LIKE @bldgno ") & If(filterStreetName = "", "", " AND street_name LIKE @streetname ") & If(filterResidenceType = "", "", " AND residence_type LIKE @residencetype ") & If(filterHouseType = "", "", " AND house_type LIKE @housetype ") & If(filterWaterSource = "", "", " AND water_source LIKE @watersource ") & If(filterElectricitySource = "", "", " AND electricity_source LIKE @electricitysource ") & If(filterMonthAdded = "", "", " AND month_added = @monthadded ") & If(filterDayAdded = 0, "", " AND day_added = @dayadded ") & If(filterYearAdded = 0, "", " AND year_added = @yearadded ") & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " AND household_id LIKE '" & txtSearchHousehold.Text.Trim & "%'"))
 
         cmd.Parameters.AddWithValue("@householdid", txtSearchHousehold.Text.Trim & "%")
         cmd.Parameters.AddWithValue("@bldgno", "%" & filterBldgNo & "%")
@@ -400,10 +399,8 @@ Public Class Main_Form
         cmd.Parameters.AddWithValue("@yearadded", filterYearAdded)
 
         totalRowsHousehold = Convert.ToString(cmd.ExecuteScalar())
-        MsgBox(totalRowsHousehold)
 
         totalPageHousehold = Math.Ceiling(totalRowsHousehold / 30)
-        MsgBox(totalPageHousehold)
         labelTotalPageHousehold.Text = totalPageHousehold
         labelTotalHousehold.Text = totalRowsHousehold
         btnBackHousehold.Enabled = False
@@ -502,7 +499,7 @@ Public Class Main_Form
 
             Case Modules.Household ''''''''''''''Household
 
-                mySQLCommand.CommandText = "Select household_id, bldg_no, street_name From household WHERE household_id > 0 " & If(filterBldgNo = "", "", " AND bldg_no LIKE @bldgno ") & If(filterStreetName = "", "", " AND street_name LIKE @streetname ") & If(filterResidenceType = "", "", " AND residence_type LIKE @residencetype ") & If(filterHouseType = "", "", " AND house_type LIKE @housetype ") & If(filterWaterSource = "", "", " AND water_source LIKE @watersource ") & If(filterElectricitySource = "", "", " AND electricity_source LIKE @electricitysource ") & If(filterMonthAdded = "", "", " AND month_added = @monthadded ") & If(filterDayAdded = 0, "", " AND day_added = @dayadded ") & If(filterYearAdded = 0, "", " AND year_added = @yearadded ") & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " AND household_id LIKE @householdID")) & " order by household_id asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30)
+                mySQLCommand.CommandText = "Select household_id, bldg_no, street_name From household WHERE household_id > 0 " & If(filterBldgNo = "", "", " AND bldg_no LIKE @bldgno ") & If(filterStreetName = "", "", " AND street_name LIKE @streetname ") & If(filterResidenceType = "", "", " AND residence_type LIKE @residencetype ") & If(filterHouseType = "", "", " AND house_type LIKE @housetype ") & If(filterWaterSource = "", "", " AND water_source LIKE @watersource ") & If(filterElectricitySource = "", "", " AND electricity_source LIKE @electricitysource ") & If(filterMonthAdded = "", "", " AND month_added = @monthadded ") & If(filterDayAdded = 0, "", " AND day_added = @dayadded ") & If(filterYearAdded = 0, "", " AND year_added = @yearadded ") & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " AND household_id LIKE @householdID")) & " order by  CAST(household_id AS UNSIGNED) asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30)
                 mySQLCommand.Parameters.AddWithValue("@householdID", txtSearchHousehold.Text & "%")
                 mySQLCommand.Parameters.AddWithValue("@bldgno", "%" & filterBldgNo & "%")
                 mySQLCommand.Parameters.AddWithValue("@streetname", "%" & filterStreetName & "%")
