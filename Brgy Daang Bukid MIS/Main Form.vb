@@ -387,7 +387,7 @@ Public Class Main_Form
         'cmd.CommandText = "Select count(*) From household WHERE CAST(household_id AS UNSIGNED) > 0 AND household_id like = @householdid "
         cmd.CommandText = "Select count(*) From household WHERE CAST(household_id AS UNSIGNED) > 0 " & If(filterBldgNo = "", "", " AND bldg_no LIKE @bldgno ") & If(filterStreetName = "", "", " AND street_name LIKE @streetname ") & If(filterResidenceType = "", "", " AND residence_type LIKE @residencetype ") & If(filterHouseType = "", "", " AND house_type LIKE @housetype ") & If(filterWaterSource = "", "", " AND water_source LIKE @watersource ") & If(filterElectricitySource = "", "", " AND electricity_source LIKE @electricitysource ") & If(filterMonthAdded = "", "", " AND month_added = @monthadded ") & If(filterDayAdded = 0, "", " AND day_added = @dayadded ") & If(filterYearAdded = 0, "", " AND year_added = @yearadded ") & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " AND household_id LIKE '" & txtSearchHousehold.Text.Trim & "%'"))
 
-        cmd.Parameters.AddWithValue("@householdid", txtSearchHousehold.Text.Trim & "%")
+        'cmd.Parameters.AddWithValue("@householdid", txtSearchHousehold.Text.Trim & "%")
         cmd.Parameters.AddWithValue("@bldgno", "%" & filterBldgNo & "%")
         cmd.Parameters.AddWithValue("@streetname", "%" & filterStreetName & "%")
         cmd.Parameters.AddWithValue("@residencetype", "%" & filterResidenceType & "%")
