@@ -89,6 +89,12 @@
     <Compile Include="ViewHousehold.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ViewIncidents.Designer.vb">
+      <DependentUpon>ViewIncidents.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ViewIncidents.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ViewResident.Designer.vb">
       <DependentUpon>ViewResident.vb</DependentUpon>
     </Compile>
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewHousehold.resx">
       <DependentUpon>ViewHousehold.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewIncidents.resx">
+      <DependentUpon>ViewIncidents.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewResident.resx">
       <DependentUpon>ViewResident.vb</DependentUpon>

@@ -1,5 +1,7 @@
 ﻿Imports System.Data
+Imports System.IO
 Imports System.Reflection
+Imports Microsoft.VisualBasic.FileIO
 Imports MySql.Data.MySqlClient
 
 Public Class Main_Form
@@ -60,7 +62,7 @@ Public Class Main_Form
 
         Dim mySQLCommand As MySqlCommand
         Dim mySQLReader As MySqlDataReader
-        mySQLCommand = MySql.CreateCommand()
+        mySQLCommand = mySql.CreateCommand()
         mySQLCommand.CommandType = CommandType.Text
 
         mySQLCommand.CommandText = "SELECT * FROM brgyofficials WHERE id = @account_id"
@@ -75,8 +77,8 @@ Public Class Main_Form
         End If
         mySQLCommand.Dispose()
         mySQLReader.Dispose()
-        MySql.Close()
-        MySql.Dispose()
+        mySql.Close()
+        mySql.Dispose()
     End Sub
 
     '' ''''''''''''''''''''''RESIDENT UI DEFINITIONS''''''''''''''''''''''''
@@ -251,9 +253,6 @@ Public Class Main_Form
         Filter.clearEverythingHousehold()
 
     End Sub
-
-
-
     Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
         btnDashboard.BackColor = Color.FromArgb(25, 117, 211)
         btnResidentInfo.BackColor = Color.FromArgb(25, 117, 211)
@@ -265,6 +264,8 @@ Public Class Main_Form
         btnInventory.BackColor = Color.FromArgb(25, 117, 211)
 
         mainTabControl.SelectedTab = pageReports
+        reportTabControl.ItemSize = New Size(0, 1)
+        btnIncidents.PerformClick()
         labelTitle.Text = "Reports"
     End Sub
     Private Sub btnCertificates_Click(sender As Object, e As EventArgs) Handles btnCertificates.Click
@@ -319,6 +320,8 @@ Public Class Main_Form
         mainTabControl.SelectedTab = pageInventory
         labelTitle.Text = "Inventory Management"
     End Sub
+
+
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         Dim ans As Integer = MsgBox("Are you sure you want to log out?", MsgBoxStyle.YesNo, "Attention!")
         If ans = MsgBoxResult.Yes Then
@@ -326,6 +329,7 @@ Public Class Main_Form
             Me.Close()
         End If
     End Sub
+
 
 
 
@@ -410,7 +414,6 @@ Public Class Main_Form
         mySql.Close()
         mySql.Dispose()
     End Sub
-
     Public Sub loadDataGrid(ByVal datagrid As DataGridView, ByVal moduleSelected As Modules)
 
         datagrid.Rows.Clear()
@@ -553,6 +556,7 @@ Public Class Main_Form
         datagrid.ClearSelection()
     End Sub
 
+
     Private Sub enterTextPageNo(e As KeyEventArgs, txtPageNo As ToolStripTextBox, datagrid As DataGridView, modules As Modules, ByVal totalPage As Integer)
         If e.KeyCode = Keys.Enter Then
             If txtPageNo.Text.Trim = "" Then
@@ -567,7 +571,6 @@ Public Class Main_Form
             e.SuppressKeyPress = True
         End If
     End Sub
-
     Private Sub enterTextSearch(e As KeyEventArgs, datagrid As DataGridView, modules As Modules, txtPageNo As ToolStripTextBox)
         If e.KeyCode = Keys.Enter Then
             txtPageNo.Text = 1
@@ -643,5 +646,264 @@ Public Class Main_Form
         mySql.Close()
         mySql.Dispose()
     End Sub
+
+    '' ''''''''''''''''''''''FOR REPORTS'''''''''''''''''''''''''''''''''''''''''''''''
+
+    '' '''''''''''''''''REPORTS UI DEFINITIONS '''''''''''''''''''''''''''''''
+    Private Sub btnIncidents_Click(sender As Object, e As EventArgs) Handles btnIncidents.Click
+        btnIncidents.BackColor = Color.FromArgb(39, 174, 96)
+        btnComplaints.BackColor = Color.FromArgb(46, 204, 113)
+        btnBlotters.BackColor = Color.FromArgb(46, 204, 113)
+        btnVawc.BackColor = Color.FromArgb(46, 204, 113)
+
+        reportTabControl.SelectedIndex = 0
+        comboTimeIncidents.SelectedIndex = 0
+        txtSearchIncidents.Text = "Search by incident id or name"
+        datePickerIncidents.Format = DateTimePickerFormat.Custom
+        datePickerIncidents.CustomFormat = "MMMM d, yyyy"
+        loadDatagridIncidents(False)
+    End Sub
+    Private Sub btnComplaints_Click(sender As Object, e As EventArgs) Handles btnComplaints.Click
+        btnIncidents.BackColor = Color.FromArgb(46, 204, 113)
+        btnComplaints.BackColor = Color.FromArgb(39, 174, 96)
+        btnBlotters.BackColor = Color.FromArgb(46, 204, 113)
+        btnVawc.BackColor = Color.FromArgb(46, 204, 113)
+
+        reportTabControl.SelectedIndex = 1
+        txtSearchComplaints.Text = "Search by complaint, complainant or defendant"
+        datePickerComplaints.Format = DateTimePickerFormat.Custom
+        datePickerComplaints.CustomFormat = "MMMM d, yyyy"
+        loadDatagridComplaints(False)
+    End Sub
+    Private Sub btnBlotters_Click(sender As Object, e As EventArgs) Handles btnBlotters.Click
+        btnIncidents.BackColor = Color.FromArgb(46, 204, 113)
+        btnComplaints.BackColor = Color.FromArgb(46, 204, 113)
+        btnBlotters.BackColor = Color.FromArgb(39, 174, 96)
+        btnVawc.BackColor = Color.FromArgb(46, 204, 113)
+
+        reportTabControl.SelectedIndex = 2
+    End Sub
+    Private Sub btnVawc_Click(sender As Object, e As EventArgs) Handles btnVawc.Click
+        btnIncidents.BackColor = Color.FromArgb(46, 204, 113)
+        btnComplaints.BackColor = Color.FromArgb(46, 204, 113)
+        btnBlotters.BackColor = Color.FromArgb(46, 204, 113)
+        btnVawc.BackColor = Color.FromArgb(39, 174, 96)
+
+        reportTabControl.SelectedIndex = 3
+    End Sub
+
+
+    '' '''''''''''''''''''''''INCIDENTS METHODS'''''''''''''''''''''''''''''''''
+    Private Sub loadDatagridIncidents(ByVal filtersApplied As Boolean)
+        datagridIncidents.Rows.Clear()
+
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        Dim mySQLReader As MySqlDataReader
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+        Dim dateTemp As Date = datePickerIncidents.Value
+
+        cmd.CommandText = "SELECT incident_id, incident_name, incident_date, incident_time from incidents WHERE incident_id > 0 " & If(txtSearchIncidents.Text.Trim = "" Or txtSearchIncidents.Text = "Search by incident id or name", "", " AND (incident_id = @searchvalue or incident_name = @searchvalue) ") & If(filtersApplied = True And comboTimeIncidents.SelectedIndex <> 0, " AND incident_time = @time ", "") & If(filtersApplied = True, " AND incident_date = @date ", "") & " ORDER BY incident_name ASC "
+        cmd.Parameters.AddWithValue("@searchvalue", txtSearchIncidents.Text.Trim)
+        cmd.Parameters.AddWithValue("@date", datePickerIncidents.Text)
+
+        cmd.Parameters.AddWithValue("@time", comboTimeIncidents.Text)
+        Dim totalincidents As Integer = 0
+        mySQLReader = cmd.ExecuteReader
+        If mySQLReader.HasRows Then
+            While mySQLReader.Read
+                totalincidents += 1
+                datagridIncidents.Rows.Add(New String() {mySQLReader!incident_id, mySQLReader!incident_name, mySQLReader!incident_date, mySQLReader!incident_time})
+            End While
+        End If
+        labelTotalIncidents.Text = "Total Incidents: " + totalincidents
+        datagridIncidents.ClearSelection()
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+    End Sub
+    Private Sub btnFilterIncidents_Click(sender As Object, e As EventArgs) Handles btnFilterIncidents.Click
+        loadDatagridIncidents(True)
+    End Sub
+    Private Sub btnSearchIncidents_Click(sender As Object, e As EventArgs) Handles btnSearchIncidents.Click
+        loadDatagridIncidents(False)
+    End Sub
+    Private Sub txtSearchIncidents_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchIncidents.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnSearchIncidents.PerformClick()
+            e.SuppressKeyPress = True
+        End If
+    End Sub
+    Private Sub txtSearchIncidents_Click(sender As Object, e As EventArgs) Handles txtSearchIncidents.Click
+        If txtSearchIncidents.Text = "Search by incident id or name" Then
+            txtSearchIncidents.Clear()
+        End If
+    End Sub
+    Private Sub datagridIncidents_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridIncidents.CellClick
+        If e.RowIndex >= 0 Then
+            ViewIncidents.incidentId = datagridIncidents.Rows(e.RowIndex).Cells(0).Value
+            ViewIncidents.action = "modify"
+            ViewIncidents.ShowDialog()
+        End If
+    End Sub
+    Private Sub btnAddIncidents_Click(sender As Object, e As EventArgs) Handles btnAddIncidents.Click
+        ViewIncidents.action = "add"
+        ViewIncidents.ShowDialog()
+    End Sub
+
+
+    '''''' ''''''''''''''''''''''''''''COMPLAINTS METHODS''''''''''''''''''''''''
+    Private Sub loadDatagridComplaints(ByVal filtersApplied As Boolean)
+        datagridComplaints.Rows.Clear()
+
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        Dim mySQLReader As MySqlDataReader
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        MsgBox(getIdByName(txtSearchComplaints.Text.Trim))
+        cmd.CommandText = "SELECT complaint_id, complaint, complainant, defendant, status from complaints where complaint_id > 0 " & If(filtersApplied = True, " AND date_filed = @date ", "") & If(txtSearchComplaints.Text.Trim = "" Or txtSearchComplaints.Text = "Search by complaint, complainant or defendant", "", " AND (complaint LIKE @searchvalue or complainant LIKE @searchvalue or defendant LIKE @searchvalue or complaint LIKE '" & getIdByName(txtSearchComplaints.Text.Trim) & "%'" & " or complainant LIKE '" & getIdByName(txtSearchComplaints.Text.Trim) & "%'" & " or defendant LIKE '" & getIdByName(txtSearchComplaints.Text.Trim) & "%'" & " ) ") & " ORDER BY complaint ASC "
+        cmd.Parameters.AddWithValue("@convertedsearchvalue", getIdByName(txtSearchComplaints.Text.Trim) & "%")
+        cmd.Parameters.AddWithValue("@searchvalue", txtSearchComplaints.Text.Trim & "%")
+        cmd.Parameters.AddWithValue("@date", datePickerComplaints.Text)
+
+        Dim totalComplaints As Integer = 0
+        mySQLReader = cmd.ExecuteReader
+        If mySQLReader.HasRows Then
+            While mySQLReader.Read
+                totalComplaints += 1
+                Dim complainant As String
+                Dim defendant As String
+                If IsNumeric(mySQLReader!complainant) Then
+                    complainant = getResidentNameById(mySQLReader!complainant)
+                Else
+                    complainant = mySQLReader!complainant
+                End If
+                If IsNumeric(mySQLReader!defendant) Then
+                    defendant = getResidentNameById(mySQLReader!defendant)
+                Else
+                    defendant = mySQLReader!defendant
+                End If
+
+                datagridComplaints.Rows.Add(New String() {mySQLReader!complaint_id, mySQLReader!complaint, complainant, defendant, mySQLReader!status})
+            End While
+        End If
+        labelTotalComplaints.Text = "Total Complaints: " + totalComplaints
+        datagridComplaints.ClearSelection()
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+    End Sub
+    Private Function getResidentNameById(ByVal id As Integer) As String
+
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        Dim mySQLReader As MySqlDataReader
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "SELECT first_name, middle_name, last_name, ext_name from residents WHERE resident_id = @residentid "
+        cmd.Parameters.AddWithValue("@residentid", id)
+
+        Dim name As String = ""
+        mySQLReader = cmd.ExecuteReader
+        If mySQLReader.HasRows Then
+            While mySQLReader.Read
+                name = mySQLReader!first_name + " " + If(mySQLReader!middle_name = "", "", mySQLReader!middle_name + " ") + mySQLReader!last_name + " " + mySQLReader!ext_name
+            End While
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+        Return name
+    End Function
+    Public Function getIdByName(ByVal name As String) As Integer
+
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        Dim mySQLReader As MySqlDataReader
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "SELECT resident_id from residents WHERE first_name like @name or last_name like @name "
+        cmd.Parameters.AddWithValue("@name", name & "%")
+
+        Dim id As Integer
+        mySQLReader = cmd.ExecuteReader
+        If mySQLReader.HasRows Then
+            id = mySQLReader!resident_id
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+        Return name
+    End Function
+    Private Sub txtSearchComplaints_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchComplaints.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnSearchComplaints.PerformClick()
+            e.SuppressKeyPress = True
+        End If
+    End Sub
+    Private Sub txtSearchComplaints_Click(sender As Object, e As EventArgs) Handles txtSearchComplaints.Click
+        If txtSearchComplaints.Text = "Search by complaint, complainant or defendant" Then
+            txtSearchComplaints.Clear()
+        End If
+    End Sub
+    Private Sub btnFilterComplaints_Click(sender As Object, e As EventArgs) Handles btnFilterComplaints.Click
+        loadDatagridComplaints(True)
+    End Sub
+    Private Sub btnSearchComplaints_Click(sender As Object, e As EventArgs) Handles btnSearchComplaints.Click
+        loadDatagridComplaints(False)
+    End Sub
+
+
+    '' ''''''''''''''''''''''''''''''BLOTTERS UI DEFINITIONS'''''''''''''''''''''''''''''
+
 
 End Class

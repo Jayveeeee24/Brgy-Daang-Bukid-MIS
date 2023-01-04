@@ -283,7 +283,7 @@ Public Class ViewResident
             labelHouseholdRole.Text = householdRole
             labelDateRegistered.Text = dateRegistered
             labelRegisteredBy.Text = registeredBy
-            labelBirthdate.Text = birthDate.ToString("MMMM dd, yyyy")
+            labelBirthdate.Text = birthDate.ToString("MMMM d, yyyy")
 
             retrieveAddress(householdId)
 
@@ -298,7 +298,7 @@ Public Class ViewResident
         comboPwd.SelectedIndex = comboPwd.FindStringExact("No")
 
         pickerBirthDate.Format = DateTimePickerFormat.Custom
-        pickerBirthDate.CustomFormat = "MMMM dd, yyyy"
+        pickerBirthDate.CustomFormat = "MMMM d, yyyy"
         comboHouseholdRole.SelectedIndex = comboHouseholdRole.FindStringExact("Member")
 
         setComboHouseholdID()
