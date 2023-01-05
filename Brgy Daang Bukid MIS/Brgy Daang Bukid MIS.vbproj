@@ -180,6 +180,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_daang_bukid-legitbgremoved.ico" />
+    <None Include="Resources\brgyoff.png" />
+    <None Include="Resources\SUMMON_page-0001.jpg" />
+    <None Include="Resources\INDIGENCY_page-0001.jpg" />
+    <None Include="Resources\Clearance_page-0001.jpg" />
+    <None Include="Resources\Residency_page-0001.jpg" />
     <None Include="Resources\save.png" />
     <None Include="Resources\arrow forward white.png" />
     <None Include="Resources\clear.png" />

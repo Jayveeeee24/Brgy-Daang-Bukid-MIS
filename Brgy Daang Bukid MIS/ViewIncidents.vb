@@ -53,7 +53,8 @@ Public Class ViewIncidents
                 While mySQLReader.Read
                     labelIncidentId.Text = mySQLReader!incident_id
                     labelIncidentName.Text = mySQLReader!incident_name
-                    labelIncidentDate.Text = mySQLReader!incident_date
+                    Dim date1 As Date = mySQLReader!incident_date
+                    labelIncidentDate.Text = date1.ToString("MMMM d, yyyy")
                     labelIncidentTime.Text = mySQLReader!incident_time
                     labelIncidentDetails.Text = mySQLReader!incident_details
                 End While
@@ -141,7 +142,7 @@ Public Class ViewIncidents
                 cmd.CommandText = "UPDATE incidents SET incident_details = @incidentdetails, incident_date = @incidentdate, incident_time = @incidenttime WHERE incident_id = @incidentid"
                 cmd.Parameters.AddWithValue("@incidentid", incidentId)
                 cmd.Parameters.AddWithValue("@incidentdetails", txtIncidentDetails.Text.Trim)
-                cmd.Parameters.AddWithValue("@incidentdate", datePickerIncidentDate.Text)
+                cmd.Parameters.AddWithValue("@incidentdate", datePickerIncidentDate.Value.Date)
                 cmd.Parameters.AddWithValue("@incidenttime", comboIncidentTime.Text)
 
 
@@ -151,7 +152,7 @@ Public Class ViewIncidents
                 cmd.CommandText = "INSERT INTO incidents (incident_name, incident_details, incident_date, incident_time) values (@incidentname, @incidentdetails, @incidentdate, @incidenttime)"
                 cmd.Parameters.AddWithValue("@incidentname", txtIncidentName.Text.Trim)
                 cmd.Parameters.AddWithValue("@incidentdetails", txtIncidentDetails.Text.Trim)
-                cmd.Parameters.AddWithValue("@incidentdate", datePickerIncidentDate.Text)
+                cmd.Parameters.AddWithValue("@incidentdate", datePickerIncidentDate.Value.Date)
                 cmd.Parameters.AddWithValue("@incidenttime", comboIncidentTime.Text.Trim)
 
                 cmd.ExecuteNonQuery()
