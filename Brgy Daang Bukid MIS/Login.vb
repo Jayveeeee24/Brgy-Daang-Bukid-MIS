@@ -56,6 +56,7 @@ Public Class Login
                 mySql.Dispose()
                 txtUsername.Clear()
                 txtPassword.Clear()
+                txtUsername.Select()
                 Return
         End Select
 
@@ -63,6 +64,7 @@ Public Class Login
             MsgBox("Please fill out the required fields!", vbCritical, "Warning")
             Me.Enabled = True
             txtUsername.Text = "Username*"
+            txtUsername.Select()
             txtPassword.Text = "Password*"
         Else
             Dim mySQLCommand As MySqlCommand
@@ -86,6 +88,7 @@ Public Class Login
                 txtPassword.Clear()
                 Me.Enabled = True
                 MsgBox("No account found!, Please try again", vbCritical, "Warning")
+                txtUsername.Select()
             End If
             mySQLCommand.Dispose()
             mySQLReader.Dispose()

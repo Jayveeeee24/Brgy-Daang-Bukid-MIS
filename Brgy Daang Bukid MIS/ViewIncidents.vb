@@ -47,8 +47,6 @@ Public Class ViewIncidents
             cmd.Parameters.AddWithValue("@incidentid", incidentId)
             mySQLReader = cmd.ExecuteReader
 
-
-
             If mySQLReader.HasRows Then
                 While mySQLReader.Read
                     labelIncidentId.Text = mySQLReader!incident_id
@@ -145,9 +143,7 @@ Public Class ViewIncidents
                 cmd.Parameters.AddWithValue("@incidentdate", datePickerIncidentDate.Value.Date)
                 cmd.Parameters.AddWithValue("@incidenttime", comboIncidentTime.Text)
 
-
                 cmd.ExecuteNonQuery()
-
             ElseIf action = "add" Then
                 cmd.CommandText = "INSERT INTO incidents (incident_name, incident_details, incident_date, incident_time) values (@incidentname, @incidentdetails, @incidentdate, @incidenttime)"
                 cmd.Parameters.AddWithValue("@incidentname", txtIncidentName.Text.Trim)
@@ -163,10 +159,10 @@ Public Class ViewIncidents
             mySql.Close()
             mySql.Dispose()
 
-            MsgBox("Incident Saved!", vbInformation, "Information")
+            MsgBox("Incident Filed!", vbInformation, "Information")
             clearEverything()
             Me.Close()
-            Main_Form.txtSearchIncidents.Text = "Search by incident id or name"
+            Main_Form.txtSearchComplaints.Text = "Search by incident id or name"
             Main_Form.btnIncidents.PerformClick()
         End If
 

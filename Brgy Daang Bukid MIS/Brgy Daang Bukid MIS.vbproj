@@ -83,6 +83,24 @@
     <Compile Include="ConfirmAccess.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SearchResidents.Designer.vb">
+      <DependentUpon>SearchResidents.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SearchResidents.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewBlotters.Designer.vb">
+      <DependentUpon>ViewBlotters.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBlotters.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewComplaints.Designer.vb">
+      <DependentUpon>ViewComplaints.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComplaints.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ViewHousehold.Designer.vb">
       <DependentUpon>ViewHousehold.vb</DependentUpon>
     </Compile>
@@ -140,6 +158,15 @@
   <ItemGroup>
     <EmbeddedResource Include="ConfirmAccess.resx">
       <DependentUpon>ConfirmAccess.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchResidents.resx">
+      <DependentUpon>SearchResidents.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewBlotters.resx">
+      <DependentUpon>ViewBlotters.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComplaints.resx">
+      <DependentUpon>ViewComplaints.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewHousehold.resx">
       <DependentUpon>ViewHousehold.vb</DependentUpon>

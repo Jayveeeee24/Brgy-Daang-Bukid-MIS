@@ -152,7 +152,6 @@ Partial Class ViewIncidents
         '
         'labelIncidentDetails
         '
-        Me.labelIncidentDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.labelIncidentDetails.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelIncidentDetails.Location = New System.Drawing.Point(282, 223)
         Me.labelIncidentDetails.Name = "labelIncidentDetails"
@@ -285,7 +284,7 @@ Partial Class ViewIncidents
         Me.btnModifyResident.Size = New System.Drawing.Size(152, 37)
         Me.btnModifyResident.TabIndex = 34
         Me.btnModifyResident.TabStop = False
-        Me.btnModifyResident.Text = "  Modify Incident"
+        Me.btnModifyResident.Text = "  Update Incident"
         Me.btnModifyResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnModifyResident.UseVisualStyleBackColor = False
         '
@@ -306,7 +305,7 @@ Partial Class ViewIncidents
         Me.Label104.Name = "Label104"
         Me.Label104.Size = New System.Drawing.Size(669, 37)
         Me.Label104.TabIndex = 71
-        Me.Label104.Text = "INCIDENT INFORMATION"
+        Me.Label104.Text = "INCIDENT REPORT"
         Me.Label104.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pageAddModify
@@ -404,13 +403,14 @@ Partial Class ViewIncidents
         Me.Label64.Name = "Label64"
         Me.Label64.Size = New System.Drawing.Size(669, 37)
         Me.Label64.TabIndex = 71
-        Me.Label64.Text = "INCIDENT INFORMATION"
+        Me.Label64.Text = "INCIDENT REPORT"
         Me.Label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'panelParent
         '
         Me.panelParent.AutoScroll = True
         Me.panelParent.BackColor = System.Drawing.Color.White
+        Me.panelParent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panelParent.Controls.Add(Me.comboIncidentTime)
         Me.panelParent.Controls.Add(Me.datePickerIncidentDate)
         Me.panelParent.Controls.Add(Me.txtIncidentDetails)

@@ -23,6 +23,7 @@ Partial Class Main_Form
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main_Form))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -39,7 +40,6 @@ Partial Class Main_Form
         Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main_Form))
         Me.panelTop = New System.Windows.Forms.Panel()
         Me.labelSignedIn = New System.Windows.Forms.Label()
         Me.labelTitle = New System.Windows.Forms.Label()
@@ -430,7 +430,7 @@ Partial Class Main_Form
         Me.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
         Me.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMenu.ForeColor = System.Drawing.Color.White
-        Me.btnMenu.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.menu_24_white
+        Me.btnMenu.Image = CType(resources.GetObject("btnMenu.Image"), System.Drawing.Image)
         Me.btnMenu.Location = New System.Drawing.Point(0, 0)
         Me.btnMenu.Margin = New System.Windows.Forms.Padding(10)
         Me.btnMenu.Name = "btnMenu"
@@ -485,7 +485,7 @@ Partial Class Main_Form
         Me.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnInventory.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnInventory.ForeColor = System.Drawing.Color.White
-        Me.btnInventory.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.inventory
+        Me.btnInventory.Image = CType(resources.GetObject("btnInventory.Image"), System.Drawing.Image)
         Me.btnInventory.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.btnInventory.Location = New System.Drawing.Point(0, 485)
         Me.btnInventory.Name = "btnInventory"
@@ -507,7 +507,7 @@ Partial Class Main_Form
         Me.btnSystemManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSystemManagement.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSystemManagement.ForeColor = System.Drawing.Color.White
-        Me.btnSystemManagement.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.account_management
+        Me.btnSystemManagement.Image = CType(resources.GetObject("btnSystemManagement.Image"), System.Drawing.Image)
         Me.btnSystemManagement.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.btnSystemManagement.Location = New System.Drawing.Point(0, 627)
         Me.btnSystemManagement.Name = "btnSystemManagement"
@@ -528,7 +528,7 @@ Partial Class Main_Form
         Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogout.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogout.ForeColor = System.Drawing.Color.White
-        Me.btnLogout.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.logout
+        Me.btnLogout.Image = CType(resources.GetObject("btnLogout.Image"), System.Drawing.Image)
         Me.btnLogout.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.btnLogout.Location = New System.Drawing.Point(0, 667)
         Me.btnLogout.Name = "btnLogout"
@@ -549,7 +549,7 @@ Partial Class Main_Form
         Me.btnBrgyMap.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBrgyMap.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBrgyMap.ForeColor = System.Drawing.Color.White
-        Me.btnBrgyMap.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.map
+        Me.btnBrgyMap.Image = CType(resources.GetObject("btnBrgyMap.Image"), System.Drawing.Image)
         Me.btnBrgyMap.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.btnBrgyMap.Location = New System.Drawing.Point(0, 445)
         Me.btnBrgyMap.Name = "btnBrgyMap"
@@ -571,7 +571,7 @@ Partial Class Main_Form
         Me.btnCertificates.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCertificates.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCertificates.ForeColor = System.Drawing.Color.White
-        Me.btnCertificates.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.certificate
+        Me.btnCertificates.Image = CType(resources.GetObject("btnCertificates.Image"), System.Drawing.Image)
         Me.btnCertificates.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.btnCertificates.Location = New System.Drawing.Point(0, 405)
         Me.btnCertificates.Name = "btnCertificates"
@@ -593,7 +593,7 @@ Partial Class Main_Form
         Me.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReports.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReports.ForeColor = System.Drawing.Color.White
-        Me.btnReports.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.reports
+        Me.btnReports.Image = CType(resources.GetObject("btnReports.Image"), System.Drawing.Image)
         Me.btnReports.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.btnReports.Location = New System.Drawing.Point(0, 365)
         Me.btnReports.Name = "btnReports"
@@ -615,7 +615,7 @@ Partial Class Main_Form
         Me.btnHouseholdInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnHouseholdInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnHouseholdInfo.ForeColor = System.Drawing.Color.White
-        Me.btnHouseholdInfo.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.household
+        Me.btnHouseholdInfo.Image = CType(resources.GetObject("btnHouseholdInfo.Image"), System.Drawing.Image)
         Me.btnHouseholdInfo.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.btnHouseholdInfo.Location = New System.Drawing.Point(0, 325)
         Me.btnHouseholdInfo.Name = "btnHouseholdInfo"
@@ -637,7 +637,7 @@ Partial Class Main_Form
         Me.btnResidentInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnResidentInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnResidentInfo.ForeColor = System.Drawing.Color.White
-        Me.btnResidentInfo.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.residents
+        Me.btnResidentInfo.Image = CType(resources.GetObject("btnResidentInfo.Image"), System.Drawing.Image)
         Me.btnResidentInfo.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.btnResidentInfo.Location = New System.Drawing.Point(0, 285)
         Me.btnResidentInfo.Name = "btnResidentInfo"
@@ -660,7 +660,7 @@ Partial Class Main_Form
         Me.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDashboard.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDashboard.ForeColor = System.Drawing.Color.White
-        Me.btnDashboard.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.dashboard
+        Me.btnDashboard.Image = CType(resources.GetObject("btnDashboard.Image"), System.Drawing.Image)
         Me.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.btnDashboard.Location = New System.Drawing.Point(0, 245)
         Me.btnDashboard.Name = "btnDashboard"
@@ -686,7 +686,7 @@ Partial Class Main_Form
         'picLogo
         '
         Me.picLogo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.picLogo.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.logo_daang_bukid_legitbgremoved
+        Me.picLogo.Image = CType(resources.GetObject("picLogo.Image"), System.Drawing.Image)
         Me.picLogo.Location = New System.Drawing.Point(20, 20)
         Me.picLogo.Name = "picLogo"
         Me.picLogo.Size = New System.Drawing.Size(209, 205)
@@ -862,7 +862,7 @@ Partial Class Main_Form
         'PictureBox8
         '
         Me.PictureBox8.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox8.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.employment_40
+        Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
         Me.PictureBox8.Location = New System.Drawing.Point(205, 3)
         Me.PictureBox8.Name = "PictureBox8"
         Me.PictureBox8.Size = New System.Drawing.Size(62, 58)
@@ -934,7 +934,7 @@ Partial Class Main_Form
         'PictureBox7
         '
         Me.PictureBox7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox7.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.pwd_40
+        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
         Me.PictureBox7.Location = New System.Drawing.Point(203, 3)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(61, 58)
@@ -1006,7 +1006,7 @@ Partial Class Main_Form
         'PictureBox6
         '
         Me.PictureBox6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox6.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.voter_40
+        Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
         Me.PictureBox6.Location = New System.Drawing.Point(203, 3)
         Me.PictureBox6.Name = "PictureBox6"
         Me.PictureBox6.Size = New System.Drawing.Size(61, 58)
@@ -1078,7 +1078,7 @@ Partial Class Main_Form
         'PictureBox5
         '
         Me.PictureBox5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox5.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.household_40
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
         Me.PictureBox5.Location = New System.Drawing.Point(203, 3)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(61, 58)
@@ -1150,7 +1150,7 @@ Partial Class Main_Form
         'PictureBox4
         '
         Me.PictureBox4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox4.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.senior_401
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
         Me.PictureBox4.Location = New System.Drawing.Point(205, 3)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(62, 58)
@@ -1222,7 +1222,7 @@ Partial Class Main_Form
         'PictureBox3
         '
         Me.PictureBox3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox3.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.male_40
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
         Me.PictureBox3.Location = New System.Drawing.Point(203, 3)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(61, 58)
@@ -1294,7 +1294,7 @@ Partial Class Main_Form
         'PictureBox2
         '
         Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox2.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.female_40
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
         Me.PictureBox2.Location = New System.Drawing.Point(203, 3)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(61, 58)
@@ -1366,7 +1366,7 @@ Partial Class Main_Form
         'PictureBox1
         '
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox1.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.resident_40
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(203, 3)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(61, 58)
@@ -1552,7 +1552,7 @@ Partial Class Main_Form
         'btnBackResident
         '
         Me.btnBackResident.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnBackResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_back
+        Me.btnBackResident.Image = CType(resources.GetObject("btnBackResident.Image"), System.Drawing.Image)
         Me.btnBackResident.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnBackResident.Name = "btnBackResident"
         Me.btnBackResident.Size = New System.Drawing.Size(23, 38)
@@ -1561,7 +1561,7 @@ Partial Class Main_Form
         'btnForwardResident
         '
         Me.btnForwardResident.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnForwardResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_forward
+        Me.btnForwardResident.Image = CType(resources.GetObject("btnForwardResident.Image"), System.Drawing.Image)
         Me.btnForwardResident.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnForwardResident.Name = "btnForwardResident"
         Me.btnForwardResident.Size = New System.Drawing.Size(23, 38)
@@ -1601,7 +1601,7 @@ Partial Class Main_Form
         Me.btnAddResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddResident.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddResident.ForeColor = System.Drawing.Color.White
-        Me.btnAddResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.add_24
+        Me.btnAddResident.Image = CType(resources.GetObject("btnAddResident.Image"), System.Drawing.Image)
         Me.btnAddResident.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAddResident.Location = New System.Drawing.Point(7, 3)
         Me.btnAddResident.Margin = New System.Windows.Forms.Padding(7, 3, 5, 3)
@@ -1644,7 +1644,7 @@ Partial Class Main_Form
         Me.btnFilterResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnFilterResident.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFilterResident.ForeColor = System.Drawing.Color.White
-        Me.btnFilterResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.filter
+        Me.btnFilterResident.Image = CType(resources.GetObject("btnFilterResident.Image"), System.Drawing.Image)
         Me.btnFilterResident.Location = New System.Drawing.Point(975, 8)
         Me.btnFilterResident.Name = "btnFilterResident"
         Me.btnFilterResident.Size = New System.Drawing.Size(116, 29)
@@ -1680,7 +1680,7 @@ Partial Class Main_Form
         Me.btnSearchResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSearchResident.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchResident.ForeColor = System.Drawing.Color.White
-        Me.btnSearchResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.search
+        Me.btnSearchResident.Image = CType(resources.GetObject("btnSearchResident.Image"), System.Drawing.Image)
         Me.btnSearchResident.Location = New System.Drawing.Point(910, 8)
         Me.btnSearchResident.Name = "btnSearchResident"
         Me.btnSearchResident.Size = New System.Drawing.Size(59, 29)
@@ -1825,7 +1825,7 @@ Partial Class Main_Form
         'btnBackHousehold
         '
         Me.btnBackHousehold.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnBackHousehold.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_back
+        Me.btnBackHousehold.Image = CType(resources.GetObject("btnBackHousehold.Image"), System.Drawing.Image)
         Me.btnBackHousehold.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnBackHousehold.Name = "btnBackHousehold"
         Me.btnBackHousehold.Size = New System.Drawing.Size(23, 38)
@@ -1834,7 +1834,7 @@ Partial Class Main_Form
         'btnForwardHousehold
         '
         Me.btnForwardHousehold.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnForwardHousehold.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_forward
+        Me.btnForwardHousehold.Image = CType(resources.GetObject("btnForwardHousehold.Image"), System.Drawing.Image)
         Me.btnForwardHousehold.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnForwardHousehold.Name = "btnForwardHousehold"
         Me.btnForwardHousehold.Size = New System.Drawing.Size(23, 38)
@@ -1874,7 +1874,7 @@ Partial Class Main_Form
         Me.btnAddHousehold.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddHousehold.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddHousehold.ForeColor = System.Drawing.Color.White
-        Me.btnAddHousehold.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.add_24
+        Me.btnAddHousehold.Image = CType(resources.GetObject("btnAddHousehold.Image"), System.Drawing.Image)
         Me.btnAddHousehold.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAddHousehold.Location = New System.Drawing.Point(7, 3)
         Me.btnAddHousehold.Margin = New System.Windows.Forms.Padding(7, 3, 5, 3)
@@ -1917,7 +1917,7 @@ Partial Class Main_Form
         Me.btnSearchHousehold.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSearchHousehold.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchHousehold.ForeColor = System.Drawing.Color.White
-        Me.btnSearchHousehold.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.search
+        Me.btnSearchHousehold.Image = CType(resources.GetObject("btnSearchHousehold.Image"), System.Drawing.Image)
         Me.btnSearchHousehold.Location = New System.Drawing.Point(910, 8)
         Me.btnSearchHousehold.Name = "btnSearchHousehold"
         Me.btnSearchHousehold.Size = New System.Drawing.Size(59, 29)
@@ -1937,7 +1937,7 @@ Partial Class Main_Form
         Me.btnFilterHousehold.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnFilterHousehold.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFilterHousehold.ForeColor = System.Drawing.Color.White
-        Me.btnFilterHousehold.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.filter
+        Me.btnFilterHousehold.Image = CType(resources.GetObject("btnFilterHousehold.Image"), System.Drawing.Image)
         Me.btnFilterHousehold.Location = New System.Drawing.Point(975, 8)
         Me.btnFilterHousehold.Name = "btnFilterHousehold"
         Me.btnFilterHousehold.Size = New System.Drawing.Size(116, 29)
@@ -2019,7 +2019,7 @@ Partial Class Main_Form
         Me.pageIncident.Controls.Add(Me.TableLayoutPanel12)
         Me.pageIncident.Location = New System.Drawing.Point(4, 22)
         Me.pageIncident.Name = "pageIncident"
-        Me.pageIncident.Padding = New System.Windows.Forms.Padding(3)
+        Me.pageIncident.Padding = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.pageIncident.Size = New System.Drawing.Size(1087, 591)
         Me.pageIncident.TabIndex = 0
         Me.pageIncident.Text = "Incident"
@@ -2039,7 +2039,7 @@ Partial Class Main_Form
         Me.TableLayoutPanel12.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.5!))
         Me.TableLayoutPanel12.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.5!))
         Me.TableLayoutPanel12.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.0!))
-        Me.TableLayoutPanel12.Size = New System.Drawing.Size(1081, 585)
+        Me.TableLayoutPanel12.Size = New System.Drawing.Size(1081, 588)
         Me.TableLayoutPanel12.TabIndex = 0
         '
         'Panel21
@@ -2050,7 +2050,7 @@ Partial Class Main_Form
         Me.Panel21.Location = New System.Drawing.Point(4, 92)
         Me.Panel21.Name = "Panel21"
         Me.Panel21.Padding = New System.Windows.Forms.Padding(7, 0, 7, 0)
-        Me.Panel21.Size = New System.Drawing.Size(1073, 489)
+        Me.Panel21.Size = New System.Drawing.Size(1073, 492)
         Me.Panel21.TabIndex = 14
         '
         'datagridIncidents
@@ -2086,7 +2086,7 @@ Partial Class Main_Form
         Me.datagridIncidents.Name = "datagridIncidents"
         Me.datagridIncidents.ReadOnly = True
         Me.datagridIncidents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datagridIncidents.Size = New System.Drawing.Size(1059, 513)
+        Me.datagridIncidents.Size = New System.Drawing.Size(1059, 455)
         Me.datagridIncidents.TabIndex = 13
         '
         'Column6
@@ -2154,7 +2154,7 @@ Partial Class Main_Form
         Me.btnSearchIncidents.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSearchIncidents.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchIncidents.ForeColor = System.Drawing.Color.White
-        Me.btnSearchIncidents.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.search
+        Me.btnSearchIncidents.Image = CType(resources.GetObject("btnSearchIncidents.Image"), System.Drawing.Image)
         Me.btnSearchIncidents.Location = New System.Drawing.Point(1002, 8)
         Me.btnSearchIncidents.Name = "btnSearchIncidents"
         Me.btnSearchIncidents.Size = New System.Drawing.Size(69, 27)
@@ -2211,7 +2211,7 @@ Partial Class Main_Form
         Me.btnAddIncidents.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddIncidents.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddIncidents.ForeColor = System.Drawing.Color.White
-        Me.btnAddIncidents.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.add_24
+        Me.btnAddIncidents.Image = CType(resources.GetObject("btnAddIncidents.Image"), System.Drawing.Image)
         Me.btnAddIncidents.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAddIncidents.Location = New System.Drawing.Point(9, 5)
         Me.btnAddIncidents.Margin = New System.Windows.Forms.Padding(7, 3, 5, 3)
@@ -2280,7 +2280,7 @@ Partial Class Main_Form
         Me.btnFilterIncidents.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnFilterIncidents.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFilterIncidents.ForeColor = System.Drawing.Color.White
-        Me.btnFilterIncidents.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.filter
+        Me.btnFilterIncidents.Image = CType(resources.GetObject("btnFilterIncidents.Image"), System.Drawing.Image)
         Me.btnFilterIncidents.Location = New System.Drawing.Point(932, 5)
         Me.btnFilterIncidents.Name = "btnFilterIncidents"
         Me.btnFilterIncidents.Size = New System.Drawing.Size(139, 33)
@@ -2296,7 +2296,7 @@ Partial Class Main_Form
         Me.pageComplaints.Controls.Add(Me.TableLayoutPanel15)
         Me.pageComplaints.Location = New System.Drawing.Point(4, 22)
         Me.pageComplaints.Name = "pageComplaints"
-        Me.pageComplaints.Padding = New System.Windows.Forms.Padding(3)
+        Me.pageComplaints.Padding = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.pageComplaints.Size = New System.Drawing.Size(1087, 591)
         Me.pageComplaints.TabIndex = 1
         Me.pageComplaints.Text = "Complaints"
@@ -2316,7 +2316,7 @@ Partial Class Main_Form
         Me.TableLayoutPanel15.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.5!))
         Me.TableLayoutPanel15.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.5!))
         Me.TableLayoutPanel15.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.0!))
-        Me.TableLayoutPanel15.Size = New System.Drawing.Size(1081, 585)
+        Me.TableLayoutPanel15.Size = New System.Drawing.Size(1081, 588)
         Me.TableLayoutPanel15.TabIndex = 1
         '
         'Panel22
@@ -2327,7 +2327,7 @@ Partial Class Main_Form
         Me.Panel22.Location = New System.Drawing.Point(4, 92)
         Me.Panel22.Name = "Panel22"
         Me.Panel22.Padding = New System.Windows.Forms.Padding(7, 0, 7, 0)
-        Me.Panel22.Size = New System.Drawing.Size(1073, 489)
+        Me.Panel22.Size = New System.Drawing.Size(1073, 492)
         Me.Panel22.TabIndex = 14
         '
         'datagridComplaints
@@ -2363,7 +2363,7 @@ Partial Class Main_Form
         Me.datagridComplaints.Name = "datagridComplaints"
         Me.datagridComplaints.ReadOnly = True
         Me.datagridComplaints.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datagridComplaints.Size = New System.Drawing.Size(1059, 513)
+        Me.datagridComplaints.Size = New System.Drawing.Size(1059, 455)
         Me.datagridComplaints.TabIndex = 13
         '
         'DataGridViewTextBoxColumn7
@@ -2437,7 +2437,7 @@ Partial Class Main_Form
         Me.btnSearchComplaints.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSearchComplaints.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchComplaints.ForeColor = System.Drawing.Color.White
-        Me.btnSearchComplaints.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.search
+        Me.btnSearchComplaints.Image = CType(resources.GetObject("btnSearchComplaints.Image"), System.Drawing.Image)
         Me.btnSearchComplaints.Location = New System.Drawing.Point(1002, 8)
         Me.btnSearchComplaints.Name = "btnSearchComplaints"
         Me.btnSearchComplaints.Size = New System.Drawing.Size(69, 27)
@@ -2494,7 +2494,7 @@ Partial Class Main_Form
         Me.btnAddComplaint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddComplaint.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddComplaint.ForeColor = System.Drawing.Color.White
-        Me.btnAddComplaint.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.add_24
+        Me.btnAddComplaint.Image = CType(resources.GetObject("btnAddComplaint.Image"), System.Drawing.Image)
         Me.btnAddComplaint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAddComplaint.Location = New System.Drawing.Point(9, 5)
         Me.btnAddComplaint.Margin = New System.Windows.Forms.Padding(7, 3, 5, 3)
@@ -2519,7 +2519,7 @@ Partial Class Main_Form
         Me.btnFilterComplaints.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnFilterComplaints.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFilterComplaints.ForeColor = System.Drawing.Color.White
-        Me.btnFilterComplaints.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.filter
+        Me.btnFilterComplaints.Image = CType(resources.GetObject("btnFilterComplaints.Image"), System.Drawing.Image)
         Me.btnFilterComplaints.Location = New System.Drawing.Point(933, 5)
         Me.btnFilterComplaints.Name = "btnFilterComplaints"
         Me.btnFilterComplaints.Size = New System.Drawing.Size(138, 33)
@@ -2579,7 +2579,7 @@ Partial Class Main_Form
         Me.pageBlotter.Controls.Add(Me.TableLayoutPanel18)
         Me.pageBlotter.Location = New System.Drawing.Point(4, 22)
         Me.pageBlotter.Name = "pageBlotter"
-        Me.pageBlotter.Padding = New System.Windows.Forms.Padding(3)
+        Me.pageBlotter.Padding = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.pageBlotter.Size = New System.Drawing.Size(1087, 591)
         Me.pageBlotter.TabIndex = 3
         Me.pageBlotter.Text = "Blotter"
@@ -2599,7 +2599,7 @@ Partial Class Main_Form
         Me.TableLayoutPanel18.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.5!))
         Me.TableLayoutPanel18.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.5!))
         Me.TableLayoutPanel18.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.0!))
-        Me.TableLayoutPanel18.Size = New System.Drawing.Size(1081, 585)
+        Me.TableLayoutPanel18.Size = New System.Drawing.Size(1081, 588)
         Me.TableLayoutPanel18.TabIndex = 2
         '
         'Panel25
@@ -2610,7 +2610,7 @@ Partial Class Main_Form
         Me.Panel25.Location = New System.Drawing.Point(4, 92)
         Me.Panel25.Name = "Panel25"
         Me.Panel25.Padding = New System.Windows.Forms.Padding(7, 0, 7, 0)
-        Me.Panel25.Size = New System.Drawing.Size(1073, 489)
+        Me.Panel25.Size = New System.Drawing.Size(1073, 492)
         Me.Panel25.TabIndex = 14
         '
         'datagridBlotters
@@ -2646,7 +2646,7 @@ Partial Class Main_Form
         Me.datagridBlotters.Name = "datagridBlotters"
         Me.datagridBlotters.ReadOnly = True
         Me.datagridBlotters.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datagridBlotters.Size = New System.Drawing.Size(1059, 513)
+        Me.datagridBlotters.Size = New System.Drawing.Size(1059, 455)
         Me.datagridBlotters.TabIndex = 13
         '
         'DataGridViewTextBoxColumn11
@@ -2714,7 +2714,7 @@ Partial Class Main_Form
         Me.btnSearchBlotters.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSearchBlotters.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchBlotters.ForeColor = System.Drawing.Color.White
-        Me.btnSearchBlotters.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.search
+        Me.btnSearchBlotters.Image = CType(resources.GetObject("btnSearchBlotters.Image"), System.Drawing.Image)
         Me.btnSearchBlotters.Location = New System.Drawing.Point(1002, 8)
         Me.btnSearchBlotters.Name = "btnSearchBlotters"
         Me.btnSearchBlotters.Size = New System.Drawing.Size(69, 27)
@@ -2784,7 +2784,7 @@ Partial Class Main_Form
         Me.btnAddBlotters.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddBlotters.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddBlotters.ForeColor = System.Drawing.Color.White
-        Me.btnAddBlotters.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.add_24
+        Me.btnAddBlotters.Image = CType(resources.GetObject("btnAddBlotters.Image"), System.Drawing.Image)
         Me.btnAddBlotters.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAddBlotters.Location = New System.Drawing.Point(9, 5)
         Me.btnAddBlotters.Margin = New System.Windows.Forms.Padding(7, 3, 5, 3)
@@ -2809,7 +2809,7 @@ Partial Class Main_Form
         Me.btnFilterBlotters.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnFilterBlotters.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFilterBlotters.ForeColor = System.Drawing.Color.White
-        Me.btnFilterBlotters.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.filter
+        Me.btnFilterBlotters.Image = CType(resources.GetObject("btnFilterBlotters.Image"), System.Drawing.Image)
         Me.btnFilterBlotters.Location = New System.Drawing.Point(932, 5)
         Me.btnFilterBlotters.Name = "btnFilterBlotters"
         Me.btnFilterBlotters.Size = New System.Drawing.Size(139, 33)
@@ -2846,7 +2846,7 @@ Partial Class Main_Form
         Me.pageVawc.Controls.Add(Me.TableLayoutPanel21)
         Me.pageVawc.Location = New System.Drawing.Point(4, 22)
         Me.pageVawc.Name = "pageVawc"
-        Me.pageVawc.Padding = New System.Windows.Forms.Padding(3)
+        Me.pageVawc.Padding = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.pageVawc.Size = New System.Drawing.Size(1087, 591)
         Me.pageVawc.TabIndex = 2
         Me.pageVawc.Text = "Vawc"
@@ -2866,7 +2866,7 @@ Partial Class Main_Form
         Me.TableLayoutPanel21.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.5!))
         Me.TableLayoutPanel21.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.5!))
         Me.TableLayoutPanel21.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.0!))
-        Me.TableLayoutPanel21.Size = New System.Drawing.Size(1081, 585)
+        Me.TableLayoutPanel21.Size = New System.Drawing.Size(1081, 588)
         Me.TableLayoutPanel21.TabIndex = 3
         '
         'Panel27
@@ -2877,7 +2877,7 @@ Partial Class Main_Form
         Me.Panel27.Location = New System.Drawing.Point(4, 92)
         Me.Panel27.Name = "Panel27"
         Me.Panel27.Padding = New System.Windows.Forms.Padding(7, 0, 7, 0)
-        Me.Panel27.Size = New System.Drawing.Size(1073, 489)
+        Me.Panel27.Size = New System.Drawing.Size(1073, 492)
         Me.Panel27.TabIndex = 14
         '
         'datagridVawc
@@ -2913,7 +2913,7 @@ Partial Class Main_Form
         Me.datagridVawc.Name = "datagridVawc"
         Me.datagridVawc.ReadOnly = True
         Me.datagridVawc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datagridVawc.Size = New System.Drawing.Size(1059, 513)
+        Me.datagridVawc.Size = New System.Drawing.Size(1059, 455)
         Me.datagridVawc.TabIndex = 13
         '
         'DataGridViewTextBoxColumn15
@@ -2987,7 +2987,7 @@ Partial Class Main_Form
         Me.btnSearchVawc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSearchVawc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchVawc.ForeColor = System.Drawing.Color.White
-        Me.btnSearchVawc.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.search
+        Me.btnSearchVawc.Image = CType(resources.GetObject("btnSearchVawc.Image"), System.Drawing.Image)
         Me.btnSearchVawc.Location = New System.Drawing.Point(1002, 8)
         Me.btnSearchVawc.Name = "btnSearchVawc"
         Me.btnSearchVawc.Size = New System.Drawing.Size(69, 27)
@@ -3057,7 +3057,7 @@ Partial Class Main_Form
         Me.btnAddVawc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddVawc.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddVawc.ForeColor = System.Drawing.Color.White
-        Me.btnAddVawc.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.add_24
+        Me.btnAddVawc.Image = CType(resources.GetObject("btnAddVawc.Image"), System.Drawing.Image)
         Me.btnAddVawc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAddVawc.Location = New System.Drawing.Point(9, 5)
         Me.btnAddVawc.Margin = New System.Windows.Forms.Padding(7, 3, 5, 3)
@@ -3082,7 +3082,7 @@ Partial Class Main_Form
         Me.btnFilterVawc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnFilterVawc.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFilterVawc.ForeColor = System.Drawing.Color.White
-        Me.btnFilterVawc.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.filter
+        Me.btnFilterVawc.Image = CType(resources.GetObject("btnFilterVawc.Image"), System.Drawing.Image)
         Me.btnFilterVawc.Location = New System.Drawing.Point(932, 5)
         Me.btnFilterVawc.Name = "btnFilterVawc"
         Me.btnFilterVawc.Size = New System.Drawing.Size(139, 33)
@@ -3317,7 +3317,7 @@ Partial Class Main_Form
         '
         Me.pictureboxSummons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pictureboxSummons.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pictureboxSummons.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.SUMMON_page_0001
+        Me.pictureboxSummons.Image = CType(resources.GetObject("pictureboxSummons.Image"), System.Drawing.Image)
         Me.pictureboxSummons.Location = New System.Drawing.Point(61, 501)
         Me.pictureboxSummons.Name = "pictureboxSummons"
         Me.pictureboxSummons.Size = New System.Drawing.Size(263, 344)
@@ -3329,7 +3329,7 @@ Partial Class Main_Form
         '
         Me.pictureboxIndigency.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pictureboxIndigency.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pictureboxIndigency.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.INDIGENCY_page_0001
+        Me.pictureboxIndigency.Image = CType(resources.GetObject("pictureboxIndigency.Image"), System.Drawing.Image)
         Me.pictureboxIndigency.Location = New System.Drawing.Point(742, 83)
         Me.pictureboxIndigency.Name = "pictureboxIndigency"
         Me.pictureboxIndigency.Size = New System.Drawing.Size(263, 344)
@@ -3341,7 +3341,7 @@ Partial Class Main_Form
         '
         Me.pictureboxClearamce.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pictureboxClearamce.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pictureboxClearamce.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.Clearance_page_0001
+        Me.pictureboxClearamce.Image = CType(resources.GetObject("pictureboxClearamce.Image"), System.Drawing.Image)
         Me.pictureboxClearamce.Location = New System.Drawing.Point(401, 83)
         Me.pictureboxClearamce.Name = "pictureboxClearamce"
         Me.pictureboxClearamce.Size = New System.Drawing.Size(263, 344)
@@ -3353,7 +3353,7 @@ Partial Class Main_Form
         '
         Me.pictureboxResidency.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pictureboxResidency.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pictureboxResidency.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.Residency_page_0001
+        Me.pictureboxResidency.Image = CType(resources.GetObject("pictureboxResidency.Image"), System.Drawing.Image)
         Me.pictureboxResidency.Location = New System.Drawing.Point(61, 83)
         Me.pictureboxResidency.Name = "pictureboxResidency"
         Me.pictureboxResidency.Size = New System.Drawing.Size(263, 344)
@@ -3394,7 +3394,7 @@ Partial Class Main_Form
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.ForeColor = System.Drawing.Color.White
-        Me.Button4.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.certificate
+        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button4.Location = New System.Drawing.Point(805, 24)
         Me.Button4.Name = "Button4"
@@ -3416,7 +3416,7 @@ Partial Class Main_Form
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.brgyoff
+        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button3.Location = New System.Drawing.Point(553, 24)
         Me.Button3.Name = "Button3"
@@ -3438,7 +3438,7 @@ Partial Class Main_Form
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.archive
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button2.Location = New System.Drawing.Point(300, 24)
         Me.Button2.Name = "Button2"
@@ -3460,7 +3460,7 @@ Partial Class Main_Form
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.account_management
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button1.Location = New System.Drawing.Point(41, 24)
         Me.Button1.Name = "Button1"
@@ -3588,7 +3588,7 @@ Partial Class Main_Form
         Me.btnAddInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddInventory.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddInventory.ForeColor = System.Drawing.Color.White
-        Me.btnAddInventory.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.add_24
+        Me.btnAddInventory.Image = CType(resources.GetObject("btnAddInventory.Image"), System.Drawing.Image)
         Me.btnAddInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAddInventory.Location = New System.Drawing.Point(7, 3)
         Me.btnAddInventory.Margin = New System.Windows.Forms.Padding(7, 3, 5, 3)
@@ -3630,7 +3630,7 @@ Partial Class Main_Form
         Me.btnSearchInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSearchInventory.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchInventory.ForeColor = System.Drawing.Color.White
-        Me.btnSearchInventory.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.search
+        Me.btnSearchInventory.Image = CType(resources.GetObject("btnSearchInventory.Image"), System.Drawing.Image)
         Me.btnSearchInventory.Location = New System.Drawing.Point(1030, 8)
         Me.btnSearchInventory.Name = "btnSearchInventory"
         Me.btnSearchInventory.Size = New System.Drawing.Size(61, 29)
