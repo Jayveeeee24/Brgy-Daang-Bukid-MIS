@@ -59,20 +59,16 @@ Partial Class ViewComplaints
         Me.Label103 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnModifyComplaint = New System.Windows.Forms.Button()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.Label104 = New System.Windows.Forms.Label()
         Me.pageAddModify = New System.Windows.Forms.TabPage()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnSaveComplaint = New System.Windows.Forms.Button()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Label64 = New System.Windows.Forms.Label()
         Me.panelParent = New System.Windows.Forms.Panel()
         Me.panelSearchParent = New System.Windows.Forms.Panel()
-        Me.btnSearchComplainant = New System.Windows.Forms.Button()
-        Me.btnSearchDefendant = New System.Windows.Forms.Button()
         Me.panelHearingParent = New System.Windows.Forms.Panel()
         Me.comboFirstResult = New System.Windows.Forms.ComboBox()
         Me.Label33 = New System.Windows.Forms.Label()
@@ -99,6 +95,10 @@ Partial Class ViewComplaints
         Me.labelId = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnModifyComplaint = New System.Windows.Forms.Button()
+        Me.btnSaveComplaint = New System.Windows.Forms.Button()
+        Me.btnSearchComplainant = New System.Windows.Forms.Button()
+        Me.btnSearchDefendant = New System.Windows.Forms.Button()
         Me.mainTabControl.SuspendLayout()
         Me.pageView.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -522,29 +522,6 @@ Partial Class ViewComplaints
         Me.TableLayoutPanel6.Size = New System.Drawing.Size(663, 47)
         Me.TableLayoutPanel6.TabIndex = 37
         '
-        'btnModifyComplaint
-        '
-        Me.btnModifyComplaint.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
-        Me.btnModifyComplaint.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnModifyComplaint.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnModifyComplaint.FlatAppearance.BorderSize = 0
-        Me.btnModifyComplaint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnModifyComplaint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnModifyComplaint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModifyComplaint.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnModifyComplaint.ForeColor = System.Drawing.Color.White
-        Me.btnModifyComplaint.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.modify
-        Me.btnModifyComplaint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnModifyComplaint.Location = New System.Drawing.Point(497, 10)
-        Me.btnModifyComplaint.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnModifyComplaint.Name = "btnModifyComplaint"
-        Me.btnModifyComplaint.Size = New System.Drawing.Size(166, 37)
-        Me.btnModifyComplaint.TabIndex = 34
-        Me.btnModifyComplaint.TabStop = False
-        Me.btnModifyComplaint.Text = "  Update Complaint"
-        Me.btnModifyComplaint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnModifyComplaint.UseVisualStyleBackColor = False
-        '
         'Panel16
         '
         Me.Panel16.Controls.Add(Me.Label104)
@@ -620,29 +597,6 @@ Partial Class ViewComplaints
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(663, 47)
         Me.TableLayoutPanel4.TabIndex = 37
         '
-        'btnSaveComplaint
-        '
-        Me.btnSaveComplaint.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.btnSaveComplaint.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnSaveComplaint.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnSaveComplaint.FlatAppearance.BorderSize = 0
-        Me.btnSaveComplaint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.btnSaveComplaint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.btnSaveComplaint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSaveComplaint.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSaveComplaint.ForeColor = System.Drawing.Color.White
-        Me.btnSaveComplaint.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.save
-        Me.btnSaveComplaint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSaveComplaint.Location = New System.Drawing.Point(519, 10)
-        Me.btnSaveComplaint.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnSaveComplaint.Name = "btnSaveComplaint"
-        Me.btnSaveComplaint.Size = New System.Drawing.Size(144, 37)
-        Me.btnSaveComplaint.TabIndex = 34
-        Me.btnSaveComplaint.TabStop = False
-        Me.btnSaveComplaint.Text = "  Save Incident"
-        Me.btnSaveComplaint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSaveComplaint.UseVisualStyleBackColor = False
-        '
         'Panel10
         '
         Me.Panel10.Controls.Add(Me.Label64)
@@ -700,44 +654,6 @@ Partial Class ViewComplaints
         Me.panelSearchParent.Name = "panelSearchParent"
         Me.panelSearchParent.Size = New System.Drawing.Size(55, 100)
         Me.panelSearchParent.TabIndex = 130
-        '
-        'btnSearchComplainant
-        '
-        Me.btnSearchComplainant.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
-        Me.btnSearchComplainant.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnSearchComplainant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchComplainant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchComplainant.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearchComplainant.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearchComplainant.ForeColor = System.Drawing.Color.White
-        Me.btnSearchComplainant.Image = CType(resources.GetObject("btnSearchComplainant.Image"), System.Drawing.Image)
-        Me.btnSearchComplainant.Location = New System.Drawing.Point(9, 18)
-        Me.btnSearchComplainant.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnSearchComplainant.Name = "btnSearchComplainant"
-        Me.btnSearchComplainant.Size = New System.Drawing.Size(36, 28)
-        Me.btnSearchComplainant.TabIndex = 128
-        Me.btnSearchComplainant.TabStop = False
-        Me.btnSearchComplainant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSearchComplainant.UseVisualStyleBackColor = False
-        '
-        'btnSearchDefendant
-        '
-        Me.btnSearchDefendant.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
-        Me.btnSearchDefendant.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnSearchDefendant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchDefendant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchDefendant.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearchDefendant.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearchDefendant.ForeColor = System.Drawing.Color.White
-        Me.btnSearchDefendant.Image = CType(resources.GetObject("btnSearchDefendant.Image"), System.Drawing.Image)
-        Me.btnSearchDefendant.Location = New System.Drawing.Point(9, 51)
-        Me.btnSearchDefendant.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnSearchDefendant.Name = "btnSearchDefendant"
-        Me.btnSearchDefendant.Size = New System.Drawing.Size(36, 28)
-        Me.btnSearchDefendant.TabIndex = 129
-        Me.btnSearchDefendant.TabStop = False
-        Me.btnSearchDefendant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSearchDefendant.UseVisualStyleBackColor = False
         '
         'panelHearingParent
         '
@@ -1033,6 +949,90 @@ Partial Class ViewComplaints
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(10, 74)
         Me.Panel1.TabIndex = 68
+        '
+        'btnModifyComplaint
+        '
+        Me.btnModifyComplaint.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.btnModifyComplaint.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnModifyComplaint.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnModifyComplaint.FlatAppearance.BorderSize = 0
+        Me.btnModifyComplaint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnModifyComplaint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnModifyComplaint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModifyComplaint.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModifyComplaint.ForeColor = System.Drawing.Color.White
+        Me.btnModifyComplaint.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.modify
+        Me.btnModifyComplaint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnModifyComplaint.Location = New System.Drawing.Point(497, 10)
+        Me.btnModifyComplaint.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnModifyComplaint.Name = "btnModifyComplaint"
+        Me.btnModifyComplaint.Size = New System.Drawing.Size(166, 37)
+        Me.btnModifyComplaint.TabIndex = 34
+        Me.btnModifyComplaint.TabStop = False
+        Me.btnModifyComplaint.Text = "  Update Complaint"
+        Me.btnModifyComplaint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnModifyComplaint.UseVisualStyleBackColor = False
+        '
+        'btnSaveComplaint
+        '
+        Me.btnSaveComplaint.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.btnSaveComplaint.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnSaveComplaint.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSaveComplaint.FlatAppearance.BorderSize = 0
+        Me.btnSaveComplaint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnSaveComplaint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnSaveComplaint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSaveComplaint.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSaveComplaint.ForeColor = System.Drawing.Color.White
+        Me.btnSaveComplaint.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.save
+        Me.btnSaveComplaint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSaveComplaint.Location = New System.Drawing.Point(519, 10)
+        Me.btnSaveComplaint.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnSaveComplaint.Name = "btnSaveComplaint"
+        Me.btnSaveComplaint.Size = New System.Drawing.Size(144, 37)
+        Me.btnSaveComplaint.TabIndex = 34
+        Me.btnSaveComplaint.TabStop = False
+        Me.btnSaveComplaint.Text = "  Save Complaint"
+        Me.btnSaveComplaint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSaveComplaint.UseVisualStyleBackColor = False
+        '
+        'btnSearchComplainant
+        '
+        Me.btnSearchComplainant.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.btnSearchComplainant.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSearchComplainant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchComplainant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchComplainant.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchComplainant.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchComplainant.ForeColor = System.Drawing.Color.White
+        Me.btnSearchComplainant.Image = CType(resources.GetObject("btnSearchComplainant.Image"), System.Drawing.Image)
+        Me.btnSearchComplainant.Location = New System.Drawing.Point(9, 18)
+        Me.btnSearchComplainant.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnSearchComplainant.Name = "btnSearchComplainant"
+        Me.btnSearchComplainant.Size = New System.Drawing.Size(36, 28)
+        Me.btnSearchComplainant.TabIndex = 128
+        Me.btnSearchComplainant.TabStop = False
+        Me.btnSearchComplainant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSearchComplainant.UseVisualStyleBackColor = False
+        '
+        'btnSearchDefendant
+        '
+        Me.btnSearchDefendant.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.btnSearchDefendant.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSearchDefendant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchDefendant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchDefendant.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchDefendant.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchDefendant.ForeColor = System.Drawing.Color.White
+        Me.btnSearchDefendant.Image = CType(resources.GetObject("btnSearchDefendant.Image"), System.Drawing.Image)
+        Me.btnSearchDefendant.Location = New System.Drawing.Point(9, 51)
+        Me.btnSearchDefendant.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnSearchDefendant.Name = "btnSearchDefendant"
+        Me.btnSearchDefendant.Size = New System.Drawing.Size(36, 28)
+        Me.btnSearchDefendant.TabIndex = 129
+        Me.btnSearchDefendant.TabStop = False
+        Me.btnSearchDefendant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSearchDefendant.UseVisualStyleBackColor = False
         '
         'ViewComplaints
         '

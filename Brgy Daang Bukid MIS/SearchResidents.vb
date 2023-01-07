@@ -103,6 +103,26 @@ Public Class Search_Residents
                 ViewBlotters.submittedById = datagridResident.Rows(e.RowIndex).Cells(0).Value
                 ViewBlotters.submittedBy = datagridResident.Rows(e.RowIndex).Cells(2).Value
                 ViewBlotters.txtSubmittedBy.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
+            ElseIf origin = "VawcVictim" Then
+                If ViewVawc.suspectId = datagridResident.Rows(e.RowIndex).Cells(0).Value Then
+                    MsgBox("Victim and Suspect cannot be the same!", vbCritical, "Warning")
+                    Exit Sub
+                End If
+                ViewVawc.victimId = datagridResident.Rows(e.RowIndex).Cells(0).Value
+                ViewVawc.victim = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                ViewVawc.txtVictim.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
+            ElseIf origin = "VawcSuspect" Then
+                If ViewVawc.victimId = datagridResident.Rows(e.RowIndex).Cells(0).Value Then
+                    MsgBox("Victim and Suspect cannot be the same!", vbCritical, "Warning")
+                    Exit Sub
+                End If
+                ViewVawc.suspectId = datagridResident.Rows(e.RowIndex).Cells(0).Value
+                ViewVawc.suspect = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                ViewVawc.txtSuspect.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
+            ElseIf origin = "VawcSubmittedBy" Then
+                ViewVawc.submittedById = datagridResident.Rows(e.RowIndex).Cells(0).Value
+                ViewVawc.submittedBy = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                ViewVawc.txtSubmittedBy.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
             End If
         End If
         Me.Close()

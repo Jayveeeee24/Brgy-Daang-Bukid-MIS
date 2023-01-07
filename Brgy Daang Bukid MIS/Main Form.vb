@@ -1072,7 +1072,7 @@ Public Class Main_Form
         cmd = mySql.CreateCommand()
         cmd.CommandType = CommandType.Text
 
-        cmd.CommandText = "SELECT case_id, case_name, victim, suspect, submitted_on from vawc where case_id > 0 " & If(filtersApplied = True, " AND submitted_on = @date ", "") & If(txtSearchVawc.Text.Trim = "" Or txtSearchVawc.Text = "Search by case name or id", "", " AND (case_id LIKE @searchvalue or case_name LIKE @searchvalue or victim LIKE '" & getIdByName(txtSearchVawc.Text.Trim) & "%' or suspect LIKE '" & getIdByName(txtSearchVawc.Text.Trim) & "%'" & " or victim like @searchvalue or suspect = @searchvalue ) ") & " ORDER BY submitted_on DESC "
+        cmd.CommandText = "SELECT case_id, case_name, victim, suspect, submitted_on, case_status from vawc where case_id > 0 " & If(filtersApplied = True, " AND submitted_on = @date ", "") & If(txtSearchVawc.Text.Trim = "" Or txtSearchVawc.Text = "Search by case name or id", "", " AND (case_id LIKE @searchvalue or case_name LIKE @searchvalue or victim LIKE '" & getIdByName(txtSearchVawc.Text.Trim) & "%' or suspect LIKE '" & getIdByName(txtSearchVawc.Text.Trim) & "%'" & " or victim like @searchvalue or suspect = @searchvalue ) ") & " ORDER BY submitted_on DESC "
         cmd.Parameters.AddWithValue("@searchvalue", txtSearchVawc.Text.Trim & "%")
         cmd.Parameters.AddWithValue("@date", datePickerVawc.Value.Date)
 
@@ -1091,8 +1091,8 @@ Public Class Main_Form
                 Else
                     suspect = mySQLReader!suspect
                 End If
-
-                datagridVawc.Rows.Add(New String() {mySQLReader!case_id, mySQLReader!case_name, victim, suspect, mySQLReader!submitted_on})
+                Dim date1 As Date = mySQLReader!submitted_on
+                datagridVawc.Rows.Add(New String() {mySQLReader!case_id, mySQLReader!case_name, victim, suspect, date1.ToString("MMMM d, yyyy"), mySQLReader!case_status})
             End While
         End If
         datagridVawc.ClearSelection()
@@ -1119,10 +1119,15 @@ Public Class Main_Form
         loadDataGridVawc(True)
     End Sub
     Private Sub datagridVawc_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridVawc.CellClick
-
+        If e.RowIndex >= 0 Then
+            ViewVawc.caseId = datagridVawc.Rows(e.RowIndex).Cells(0).Value
+            ViewVawc.action = "modify"
+            ViewVawc.ShowDialog()
+        End If
     End Sub
     Private Sub btnAddVawc_Click(sender As Object, e As EventArgs) Handles btnAddVawc.Click
-
+        ViewVawc.action = "add"
+        ViewVawc.ShowDialog()
     End Sub
 
 End Class

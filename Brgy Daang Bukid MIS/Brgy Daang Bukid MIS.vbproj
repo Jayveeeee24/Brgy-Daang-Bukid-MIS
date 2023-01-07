@@ -154,6 +154,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ViewVawc.Designer.vb">
+      <DependentUpon>ViewVawc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ViewVawc.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ConfirmAccess.resx">
@@ -191,6 +197,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewVawc.resx">
+      <DependentUpon>ViewVawc.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

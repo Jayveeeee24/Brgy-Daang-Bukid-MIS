@@ -13,6 +13,8 @@ Public Class ViewComplaints
 
     Public complainant As String = ""
     Public defendant As String = ""
+
+
     Private Sub ViewComplaints_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToParent()
         mainTabControl.ItemSize = New Size(0, 1)
@@ -23,11 +25,9 @@ Public Class ViewComplaints
 
         loadInitialData()
     End Sub
-
     Private Sub ViewComplaints_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         clearEverything()
     End Sub
-
     Private Sub ViewComplaints_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If action = "add" Then
             If txtComplaint.Text.Trim <> "" Or txtComplainant.Text.Trim <> "" Or txtDefendant.Text.Trim <> "" Or txtDetails.Text.Trim <> "" Then

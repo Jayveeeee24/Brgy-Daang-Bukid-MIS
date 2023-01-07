@@ -386,7 +386,7 @@ Partial Class ViewBlotters
         Me.btnSaveComplaint.Size = New System.Drawing.Size(144, 37)
         Me.btnSaveComplaint.TabIndex = 34
         Me.btnSaveComplaint.TabStop = False
-        Me.btnSaveComplaint.Text = "  Save Incident"
+        Me.btnSaveComplaint.Text = "  Save Blotter"
         Me.btnSaveComplaint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSaveComplaint.UseVisualStyleBackColor = False
         '
