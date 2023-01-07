@@ -259,7 +259,7 @@ Public Class ViewResident
 
                     If viewChoice = "Archived" Then
                         Dim dateArchived As Date = mySQLReader!date_archived
-                        labelDateArchived.Text = If(viewChoice = "Archived", dateArchived.ToString("MMMM dd, yyyy"), "")
+                        labelDateArchived.Text = If(viewChoice = "Archived", dateArchived.ToString("MMMM d, yyyy"), "")
                         labelReasonArchived.Text = mySQLReader!reason_archived
                         labelArchivedBy.Text = mySQLReader!archived_by
                     End If

@@ -213,10 +213,10 @@ Public Class ViewHousehold
         If mySQLReader.HasRows Then
             While mySQLReader.Read
                 If mySQLReader!household_role = "Head" Then
-                    headFirstName = mySQLReader!first_name
+                    headFirstName = mySQLReader!first_name + " "
                     headMiddleName = If(mySQLReader!middle_name = Nothing Or mySQLReader!middle_name = "", "N/A", mySQLReader!middle_name)
                     headLastName = mySQLReader!last_name
-                    headExtName = If(mySQLReader!ext_name = Nothing Or mySQLReader!ext_name = "", "N/A", mySQLReader!ext_name)
+                    headExtName = If(mySQLReader!ext_name = Nothing Or mySQLReader!ext_name = "", "N/A", " " + mySQLReader!ext_name)
                     headResidentId = mySQLReader!resident_id
                 End If
                 comboResidentId.Items.Add(mySQLReader!resident_id)

@@ -150,7 +150,7 @@ Partial Class ViewResident
         Me.mainTabControl.Location = New System.Drawing.Point(0, 0)
         Me.mainTabControl.Name = "mainTabControl"
         Me.mainTabControl.SelectedIndex = 0
-        Me.mainTabControl.Size = New System.Drawing.Size(677, 584)
+        Me.mainTabControl.Size = New System.Drawing.Size(696, 584)
         Me.mainTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.mainTabControl.TabIndex = 0
         '
@@ -161,7 +161,7 @@ Partial Class ViewResident
         Me.pageView.Location = New System.Drawing.Point(4, 22)
         Me.pageView.Margin = New System.Windows.Forms.Padding(0)
         Me.pageView.Name = "pageView"
-        Me.pageView.Size = New System.Drawing.Size(669, 558)
+        Me.pageView.Size = New System.Drawing.Size(688, 558)
         Me.pageView.TabIndex = 2
         Me.pageView.Text = "View"
         '
@@ -173,7 +173,7 @@ Partial Class ViewResident
         Me.Panel11.Margin = New System.Windows.Forms.Padding(5)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Padding = New System.Windows.Forms.Padding(10, 5, 10, 5)
-        Me.Panel11.Size = New System.Drawing.Size(669, 558)
+        Me.Panel11.Size = New System.Drawing.Size(688, 558)
         Me.Panel11.TabIndex = 2
         '
         'TableLayoutPanel5
@@ -190,7 +190,7 @@ Partial Class ViewResident
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.487085!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.36531!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.1476!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(649, 548)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(668, 548)
         Me.TableLayoutPanel5.TabIndex = 39
         '
         'Panel12
@@ -250,7 +250,7 @@ Partial Class ViewResident
         Me.Panel12.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel12.Location = New System.Drawing.Point(3, 49)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(643, 439)
+        Me.Panel12.Size = New System.Drawing.Size(662, 439)
         Me.Panel12.TabIndex = 38
         '
         'labelSeniorCitizen
@@ -395,7 +395,7 @@ Partial Class ViewResident
         '
         'Panel13
         '
-        Me.Panel13.Location = New System.Drawing.Point(583, 589)
+        Me.Panel13.Location = New System.Drawing.Point(630, 590)
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(10, 161)
         Me.Panel13.TabIndex = 77
@@ -743,7 +743,7 @@ Partial Class ViewResident
         Me.TableLayoutPanel6.Padding = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.TableLayoutPanel6.RowCount = 1
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(643, 51)
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(662, 51)
         Me.TableLayoutPanel6.TabIndex = 37
         '
         'btnArchiveResident
@@ -762,7 +762,7 @@ Partial Class ViewResident
         Me.btnArchiveResident.Location = New System.Drawing.Point(0, 10)
         Me.btnArchiveResident.Margin = New System.Windows.Forms.Padding(0)
         Me.btnArchiveResident.Name = "btnArchiveResident"
-        Me.btnArchiveResident.Size = New System.Drawing.Size(147, 41)
+        Me.btnArchiveResident.Size = New System.Drawing.Size(152, 41)
         Me.btnArchiveResident.TabIndex = 35
         Me.btnArchiveResident.TabStop = False
         Me.btnArchiveResident.Text = "  Archive Resident"
@@ -782,10 +782,10 @@ Partial Class ViewResident
         Me.btnModifyResident.ForeColor = System.Drawing.Color.White
         Me.btnModifyResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.modify
         Me.btnModifyResident.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnModifyResident.Location = New System.Drawing.Point(494, 10)
+        Me.btnModifyResident.Location = New System.Drawing.Point(509, 10)
         Me.btnModifyResident.Margin = New System.Windows.Forms.Padding(0)
         Me.btnModifyResident.Name = "btnModifyResident"
-        Me.btnModifyResident.Size = New System.Drawing.Size(149, 41)
+        Me.btnModifyResident.Size = New System.Drawing.Size(153, 41)
         Me.btnModifyResident.TabIndex = 34
         Me.btnModifyResident.TabStop = False
         Me.btnModifyResident.Text = "  Modify Resident"
@@ -798,7 +798,7 @@ Partial Class ViewResident
         Me.Panel16.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel16.Location = New System.Drawing.Point(3, 3)
         Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(643, 40)
+        Me.Panel16.Size = New System.Drawing.Size(662, 40)
         Me.Panel16.TabIndex = 78
         '
         'Label104
@@ -807,7 +807,7 @@ Partial Class ViewResident
         Me.Label104.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label104.Location = New System.Drawing.Point(0, 0)
         Me.Label104.Name = "Label104"
-        Me.Label104.Size = New System.Drawing.Size(643, 40)
+        Me.Label104.Size = New System.Drawing.Size(662, 40)
         Me.Label104.TabIndex = 71
         Me.Label104.Text = "PERSONAL INFORMATION"
         Me.Label104.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -819,7 +819,7 @@ Partial Class ViewResident
         Me.pageAddModify.Location = New System.Drawing.Point(4, 22)
         Me.pageAddModify.Margin = New System.Windows.Forms.Padding(0)
         Me.pageAddModify.Name = "pageAddModify"
-        Me.pageAddModify.Size = New System.Drawing.Size(669, 558)
+        Me.pageAddModify.Size = New System.Drawing.Size(688, 558)
         Me.pageAddModify.TabIndex = 1
         Me.pageAddModify.Text = "Modify"
         '
@@ -831,7 +831,7 @@ Partial Class ViewResident
         Me.Panel5.Margin = New System.Windows.Forms.Padding(5)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Padding = New System.Windows.Forms.Padding(10, 5, 10, 5)
-        Me.Panel5.Size = New System.Drawing.Size(669, 558)
+        Me.Panel5.Size = New System.Drawing.Size(688, 558)
         Me.Panel5.TabIndex = 2
         '
         'TableLayoutPanel3
@@ -848,7 +848,7 @@ Partial Class ViewResident
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.487085!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.36531!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.1476!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(649, 548)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(668, 548)
         Me.TableLayoutPanel3.TabIndex = 39
         '
         'TableLayoutPanel4
@@ -864,7 +864,7 @@ Partial Class ViewResident
         Me.TableLayoutPanel4.Padding = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.TableLayoutPanel4.RowCount = 1
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(643, 51)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(662, 51)
         Me.TableLayoutPanel4.TabIndex = 37
         '
         'btnSaveResident
@@ -880,10 +880,10 @@ Partial Class ViewResident
         Me.btnSaveResident.ForeColor = System.Drawing.Color.White
         Me.btnSaveResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.save
         Me.btnSaveResident.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSaveResident.Location = New System.Drawing.Point(503, 10)
+        Me.btnSaveResident.Location = New System.Drawing.Point(518, 10)
         Me.btnSaveResident.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSaveResident.Name = "btnSaveResident"
-        Me.btnSaveResident.Size = New System.Drawing.Size(140, 41)
+        Me.btnSaveResident.Size = New System.Drawing.Size(144, 41)
         Me.btnSaveResident.TabIndex = 34
         Me.btnSaveResident.TabStop = False
         Me.btnSaveResident.Text = "  Save Resident"
@@ -896,7 +896,7 @@ Partial Class ViewResident
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel10.Location = New System.Drawing.Point(3, 3)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(643, 40)
+        Me.Panel10.Size = New System.Drawing.Size(662, 40)
         Me.Panel10.TabIndex = 78
         '
         'Label64
@@ -905,7 +905,7 @@ Partial Class ViewResident
         Me.Label64.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label64.Location = New System.Drawing.Point(0, 0)
         Me.Label64.Name = "Label64"
-        Me.Label64.Size = New System.Drawing.Size(643, 40)
+        Me.Label64.Size = New System.Drawing.Size(662, 40)
         Me.Label64.TabIndex = 71
         Me.Label64.Text = "PERSONAL INFORMATION"
         Me.Label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -914,6 +914,7 @@ Partial Class ViewResident
         '
         Me.panelParent.AutoScroll = True
         Me.panelParent.BackColor = System.Drawing.Color.White
+        Me.panelParent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panelParent.Controls.Add(Me.labelDisability)
         Me.panelParent.Controls.Add(Me.txtDisability)
         Me.panelParent.Controls.Add(Me.txtExtName)
@@ -955,7 +956,7 @@ Partial Class ViewResident
         Me.panelParent.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelParent.Location = New System.Drawing.Point(3, 49)
         Me.panelParent.Name = "panelParent"
-        Me.panelParent.Size = New System.Drawing.Size(643, 439)
+        Me.panelParent.Size = New System.Drawing.Size(662, 439)
         Me.panelParent.TabIndex = 38
         '
         'labelDisability
@@ -1392,7 +1393,7 @@ Partial Class ViewResident
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(677, 584)
+        Me.ClientSize = New System.Drawing.Size(696, 584)
         Me.Controls.Add(Me.mainTabControl)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
