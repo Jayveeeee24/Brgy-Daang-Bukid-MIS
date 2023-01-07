@@ -340,7 +340,7 @@ Public Class ViewHousehold
             cmd.Parameters.AddWithValue("@month", monthNow)
             cmd.Parameters.AddWithValue("@day", dayNow)
             cmd.Parameters.AddWithValue("@year", yearNow)
-            cmd.Parameters.AddWithValue("@added_by", Main_Form.account_name)
+            cmd.Parameters.AddWithValue("@added_by", Main_Form.account_credentials)
             cmd.ExecuteNonQuery()
         End If
 

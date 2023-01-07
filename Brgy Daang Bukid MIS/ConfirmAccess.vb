@@ -18,7 +18,7 @@ Public Class ConfirmAccess
             mainTabControl.SelectedIndex = 1
         End If
 
-        txtAccountName.Text = Main_Form.account_name
+        txtAccountName.Text = Main_Form.account_credentials
         Me.CreateGraphics.DrawRectangle(Pens.Black, txtPassword.Left - 1, txtPassword.Top - 1, txtPassword.Width + 1, txtPassword.Height + 1)
     End Sub
 

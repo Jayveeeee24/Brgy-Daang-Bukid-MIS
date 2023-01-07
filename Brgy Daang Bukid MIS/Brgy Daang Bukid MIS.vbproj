@@ -83,6 +83,12 @@
     <Compile Include="ConfirmAccess.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NoAccount.Designer.vb">
+      <DependentUpon>NoAccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NoAccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SearchResidents.Designer.vb">
       <DependentUpon>SearchResidents.vb</DependentUpon>
     </Compile>
@@ -111,6 +117,12 @@
       <DependentUpon>ViewIncidents.vb</DependentUpon>
     </Compile>
     <Compile Include="ViewIncidents.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewInventory.Designer.vb">
+      <DependentUpon>ViewInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ViewInventory.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewResident.Designer.vb">
@@ -165,6 +177,9 @@
     <EmbeddedResource Include="ConfirmAccess.resx">
       <DependentUpon>ConfirmAccess.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NoAccount.resx">
+      <DependentUpon>NoAccount.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SearchResidents.resx">
       <DependentUpon>SearchResidents.vb</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +195,9 @@
     <EmbeddedResource Include="ViewIncidents.resx">
       <DependentUpon>ViewIncidents.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewInventory.resx">
+      <DependentUpon>ViewInventory.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewResident.resx">
       <DependentUpon>ViewResident.vb</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +209,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main Form.resx">
       <DependentUpon>Main Form.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -216,6 +235,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_daang_bukid-legitbgremoved.ico" />
+    <None Include="Resources\out.png" />
+    <None Include="Resources\in.png" />
     <None Include="Resources\brgyoff.png" />
     <None Include="Resources\SUMMON_page-0001.jpg" />
     <None Include="Resources\INDIGENCY_page-0001.jpg" />

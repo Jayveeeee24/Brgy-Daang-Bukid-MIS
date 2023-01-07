@@ -188,6 +188,7 @@ Partial Class ConfirmAccess
         Me.txtPassword.MaxLength = 100
         Me.txtPassword.Multiline = True
         Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(268, 27)
         Me.txtPassword.TabIndex = 103
         '

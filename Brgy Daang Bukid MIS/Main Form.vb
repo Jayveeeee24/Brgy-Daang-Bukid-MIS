@@ -5,9 +5,11 @@ Imports Microsoft.VisualBasic.FileIO
 Imports MySql.Data.MySqlClient
 
 Public Class Main_Form
-    Public account_type As String
     Public account_id As Integer
+    Public account_credentials As String
+    Public account_position As String
     Public account_name As String
+
     Public filterModule As String
     Public mySqlConn As String = "server=localhost; user id=root; database=mis"
     Dim totalRowsResident As Integer
@@ -36,6 +38,7 @@ Public Class Main_Form
         Complaints
         Blotters
         Vawc
+        Inventory
     End Enum
 
     Private Sub Main_Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -46,43 +49,96 @@ Public Class Main_Form
         EnableDoubleBuffered(dataGridBrgyOfficials)
         EnableDoubleBuffered(datagridResident)
         EnableDoubleBuffered(datagridHousehold)
+        EnableDoubleBuffered(datagridIncidents)
+        EnableDoubleBuffered(datagridComplaints)
+        EnableDoubleBuffered(datagridBlotters)
+        EnableDoubleBuffered(datagridVawc)
+
+
 
     End Sub
 
     Private Sub getAccountDetails()
-        Dim mySql As MySqlConnection
-        mySql = New MySqlConnection(mySqlConn)
-        On Error Resume Next
-        mySql.Open()
 
-        Select Case Err.Number
-            Case 0
-            Case Else
-                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
-                mySql.Close()
-                mySql.Dispose()
-                Exit Sub
-        End Select
+        btnCertificates.Show()
+        btnSystemManagement.Show()
+        btnInventory.Show()
+        btnAddResident.Show()
+        btnAddHousehold.Show()
+        btnAddIncidents.Show()
+        btnAddComplaint.Show()
+        btnAddBlotters.Show()
+        btnAddVawc.Show()
+        btnAccountSettings.Show()
+        btnArchivedResidents.Show()
+        btnUpdateBrgyOfficials.Show()
+        btnAuditLogs.Show()
 
-        Dim mySQLCommand As MySqlCommand
-        Dim mySQLReader As MySqlDataReader
-        mySQLCommand = mySql.CreateCommand()
-        mySQLCommand.CommandType = CommandType.Text
-
-        mySQLCommand.CommandText = "SELECT * FROM brgyofficials WHERE id = @account_id"
-        mySQLCommand.Parameters.AddWithValue("@account_id", account_id)
-        mySQLReader = mySQLCommand.ExecuteReader
-        If mySQLReader.HasRows Then
-            While mySQLReader.Read
-
-                account_name = mySQLReader!official_name + " [" + mySQLReader!official_position + "]"
-                labelSignedIn.Text = "Logged in as: " + account_name
-            End While
+        If account_id = 2 Then
+            btnArchivedResidents.Hide()
+            btnUpdateBrgyOfficials.Hide()
+            btnAuditLogs.Hide()
+        ElseIf account_id = 3 Then
+            btnCertificates.Hide()
+            btnSystemManagement.Hide()
+            btnInventory.Hide()
+            btnAddResident.Hide()
+            btnAddHousehold.Hide()
+            btnAddIncidents.Hide()
+            btnAddComplaint.Hide()
+            btnAddBlotters.Hide()
+            btnAddVawc.Hide()
+            btnAccountSettings.Hide()
+            btnArchivedResidents.Hide()
+            btnUpdateBrgyOfficials.Hide()
         End If
-        mySQLCommand.Dispose()
-        mySQLReader.Dispose()
-        mySql.Close()
-        mySql.Dispose()
+
+        If account_id = 3 Then
+            labelSignedIn.Text = "Logged in as: Guest"
+        Else
+            Dim mySql As MySqlConnection
+            mySql = New MySqlConnection(mySqlConn)
+            On Error Resume Next
+            mySql.Open()
+
+            Select Case Err.Number
+                Case 0
+                Case Else
+                    MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+                    mySql.Close()
+                    mySql.Dispose()
+                    Exit Sub
+            End Select
+
+            Dim mySQLCommand As MySqlCommand
+            Dim mySQLReader As MySqlDataReader
+            mySQLCommand = mySql.CreateCommand()
+            mySQLCommand.CommandType = CommandType.Text
+
+            mySQLCommand.CommandText = "SELECT * FROM brgyofficials WHERE id = @account_id"
+            mySQLCommand.Parameters.AddWithValue("@account_id", account_id)
+            mySQLReader = mySQLCommand.ExecuteReader
+            If mySQLReader.HasRows Then
+                While mySQLReader.Read
+                    account_name = getResidentNameById(mySQLReader!official_name)
+                    account_credentials = account_name + " [" + mySQLReader!official_position + "]"
+                    labelSignedIn.Text = "Logged in as: " + account_credentials
+                End While
+            End If
+            mySQLCommand.Dispose()
+            mySQLReader.Dispose()
+            mySql.Close()
+            mySql.Dispose()
+        End If
+
+    End Sub
+
+    Private Sub dataGridBrgyOfficials_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridBrgyOfficials.CellClick
+        If e.RowIndex >= 0 Then
+            ViewResident.resident_id = dataGridBrgyOfficials.Rows(e.RowIndex).Cells(0).Value
+            ViewResident.viewChoice = "Normal"
+            ViewResident.ShowDialog()
+        End If
     End Sub
 
     '' ''''''''''''''''''''''RESIDENT UI DEFINITIONS''''''''''''''''''''''''
@@ -299,7 +355,7 @@ Public Class Main_Form
         mainTabControl.SelectedTab = pageMap
         labelTitle.Text = "Barangay Map"
     End Sub
-    Private Sub btnAccount_Click(sender As Object, e As EventArgs) Handles btnSystemManagement.Click
+    Private Sub btnSystemManagement_Click(sender As Object, e As EventArgs) Handles btnSystemManagement.Click
         btnDashboard.BackColor = Color.FromArgb(25, 117, 211)
         btnResidentInfo.BackColor = Color.FromArgb(25, 117, 211)
         btnHouseholdInfo.BackColor = Color.FromArgb(25, 117, 211)
@@ -324,6 +380,10 @@ Public Class Main_Form
 
         mainTabControl.SelectedTab = pageInventory
         labelTitle.Text = "Inventory Management"
+
+        txtSearchInventory.Text = "Search by Item Name or ID"
+        loadDataGridInventory()
+        countReports(Modules.Inventory)
     End Sub
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         Dim ans As Integer = MsgBox("Are you sure you want to log out?", MsgBoxStyle.YesNo, "Attention!")
@@ -439,12 +499,11 @@ Public Class Main_Form
         Select Case moduleSelected
             Case Modules.BrgyOfficials ''''''''''''''Barangay Officials
 
-                mySQLCommand.CommandText = "Select * From brgyOfficials"
+                mySQLCommand.CommandText = "SELECT brgyOfficials.official_position, brgyOfficials.official_name, residents.contact_no FROM brgyOfficials INNER JOIN residents on brgyOfficials.official_name = residents.resident_id"
                 mySQLReader = mySQLCommand.ExecuteReader
                 If mySQLReader.HasRows Then
                     While mySQLReader.Read
-                        datagrid.Rows.Add(New String() {mySQLReader!official_name, mySQLReader!official_position, mySQLReader!contact_no})
-
+                        datagrid.Rows.Add(New String() {mySQLReader!official_name, getResidentNameById(mySQLReader!official_name), mySQLReader!official_position, mySQLReader!contact_no})
                     End While
                 End If
 
@@ -660,6 +719,8 @@ Public Class Main_Form
         mySql.Dispose()
     End Sub
 
+
+
     '' ''''''''''''''''''''''FOR REPORTS'''''''''''''''''''''''''''''''''''''''''''''''
 
     '' '''''''''''''''''REPORTS UI DEFINITIONS '''''''''''''''''''''''''''''''
@@ -691,6 +752,9 @@ Public Class Main_Form
         ElseIf reportModule = Modules.Vawc Then
             cmd.CommandText = "Select count(*) from vawc"
             labelTotalVawc.Text = "Total VAWC Cases: " & Convert.ToString(cmd.ExecuteScalar)
+        ElseIf reportModule = Modules.Inventory Then
+            cmd.CommandText = "Select count(*) from item_list"
+            labelTotalItems.Text = "Total Items: " & Convert.ToString(cmd.ExecuteScalar)
         End If
 
         cmd.Dispose()
@@ -973,6 +1037,8 @@ Public Class Main_Form
 
 
 
+
+
     '' ''''''''''''''''''''''''''''''BLOTTERS METHODS'''''''''''''''''''''''''''''
     Private Sub loadDataGridBlotters(ByVal filtersApplied As Boolean)
         datagridBlotters.Rows.Clear()
@@ -1129,5 +1195,68 @@ Public Class Main_Form
         ViewVawc.action = "add"
         ViewVawc.ShowDialog()
     End Sub
+
+
+    '' '''''''''''''''''''''''''''''INVENTORY METHODS ''''''''''''''''''''''''''''''
+    Private Sub loadDataGridInventory()
+        datagridInventory.Rows.Clear()
+
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        Dim mySQLReader As MySqlDataReader
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "SELECT item_id, item_name, item_status, item_stock, added_on from item_list where item_id > 0 " & If(txtSearchInventory.Text.Trim = "" Or txtSearchInventory.Text = "Search by Item Name or ID", "", " AND (item_id LIKE @searchvalue or item_name LIKE @searchvalue) ") & " ORDER BY added_on DESC "
+        cmd.Parameters.AddWithValue("@searchvalue", txtSearchInventory.Text.Trim & "%")
+
+        mySQLReader = cmd.ExecuteReader
+        If mySQLReader.HasRows Then
+            While mySQLReader.Read
+                Dim date1 As Date = mySQLReader!added_on
+                datagridInventory.Rows.Add(New String() {mySQLReader!item_id, mySQLReader!item_name, mySQLReader!item_status, mySQLReader!item_stock, date1.ToString("MMMM d, yyyy")})
+            End While
+        End If
+        datagridInventory.ClearSelection()
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+    End Sub
+    Private Sub txtSearchInventory_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchInventory.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnSearchInventory.PerformClick()
+            e.SuppressKeyPress = True
+        End If
+    End Sub
+    Private Sub txtSearchInventory_Click(sender As Object, e As EventArgs) Handles txtSearchInventory.Click
+        If txtSearchInventory.Text = "Search by Item Name or ID" Then
+            txtSearchInventory.Clear()
+        End If
+    End Sub
+    Private Sub btnSearchInventory_Click(sender As Object, e As EventArgs) Handles btnSearchInventory.Click
+        loadDataGridInventory()
+    End Sub
+    Private Sub datagridInventory_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridInventory.CellClick
+
+    End Sub
+    Private Sub btnAddInventory_Click(sender As Object, e As EventArgs) Handles btnAddInventory.Click
+
+    End Sub
+    Private Sub btnUpdateStock_Click(sender As Object, e As EventArgs) Handles btnUpdateStock.Click
+
+    End Sub
+
+
 
 End Class

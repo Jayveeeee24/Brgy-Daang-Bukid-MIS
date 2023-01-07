@@ -281,9 +281,9 @@ Public Class ViewResident
             labelVoter.Text = voter
             labelOccupation.Text = occupation
             labelHouseholdRole.Text = householdRole
-            labelDateRegistered.Text = dateRegistered
+            labelDateRegistered.Text = If(dateRegistered = " 0, 0", "", dateRegistered)
             labelRegisteredBy.Text = registeredBy
-            labelBirthdate.Text = birthDate.ToString("MMMM d, yyyy")
+            labelBirthdate.Text = If(birthDate.ToString("MMMM d, yyyy") = "January 1, 0001", "", birthDate.ToString("MMMM d, yyyy"))
 
             retrieveAddress(householdId)
 
@@ -503,7 +503,7 @@ Public Class ViewResident
             cmd.Parameters.AddWithValue("@month", monthNow)
             cmd.Parameters.AddWithValue("@day", dayNow)
             cmd.Parameters.AddWithValue("@year", yearNow)
-            cmd.Parameters.AddWithValue("@registered_by", Main_Form.account_name)
+            cmd.Parameters.AddWithValue("@registered_by", Main_Form.account_credentials)
 
             cmd.ExecuteNonQuery()
         End If
@@ -560,7 +560,7 @@ Public Class ViewResident
         cmd.Parameters.AddWithValue("@year", yearRegistered)
         cmd.Parameters.AddWithValue("@registered_by", registeredBy)
         cmd.Parameters.AddWithValue("@datearchived", Date.Now)
-        cmd.Parameters.AddWithValue("@archivedby", Main_Form.account_name)
+        cmd.Parameters.AddWithValue("@archivedby", Main_Form.account_credentials)
         cmd.Parameters.AddWithValue("@reasonarchived", ConfirmAccess.reasonForArchived)
 
         cmd.ExecuteNonQuery()
