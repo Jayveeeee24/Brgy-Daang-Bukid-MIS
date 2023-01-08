@@ -315,11 +315,10 @@ Partial Class ViewResident
         '
         'labelArchivedBy
         '
-        Me.labelArchivedBy.AutoSize = True
         Me.labelArchivedBy.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelArchivedBy.Location = New System.Drawing.Point(278, 716)
         Me.labelArchivedBy.Name = "labelArchivedBy"
-        Me.labelArchivedBy.Size = New System.Drawing.Size(38, 18)
+        Me.labelArchivedBy.Size = New System.Drawing.Size(359, 18)
         Me.labelArchivedBy.TabIndex = 83
         Me.labelArchivedBy.Text = "N/A"
         '
@@ -395,18 +394,17 @@ Partial Class ViewResident
         '
         'Panel13
         '
-        Me.Panel13.Location = New System.Drawing.Point(630, 590)
+        Me.Panel13.Location = New System.Drawing.Point(630, 729)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(10, 161)
+        Me.Panel13.Size = New System.Drawing.Size(10, 32)
         Me.Panel13.TabIndex = 77
         '
         'labelRegisteredBy
         '
-        Me.labelRegisteredBy.AutoSize = True
         Me.labelRegisteredBy.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelRegisteredBy.Location = New System.Drawing.Point(278, 635)
         Me.labelRegisteredBy.Name = "labelRegisteredBy"
-        Me.labelRegisteredBy.Size = New System.Drawing.Size(215, 18)
+        Me.labelRegisteredBy.Size = New System.Drawing.Size(362, 18)
         Me.labelRegisteredBy.TabIndex = 74
         Me.labelRegisteredBy.Text = "Joker [Barangay Captain]"
         '

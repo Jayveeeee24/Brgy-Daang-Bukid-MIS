@@ -267,7 +267,7 @@ Public Class ViewVawc
             clearEverything()
             Me.Close()
             Main_Form.txtSearchVawc.Text = "Search by case name or id"
-            Main_Form.btnSearchVawc.PerformClick()
+            Main_Form.btnVawc.PerformClick()
         End If
     End Sub
 

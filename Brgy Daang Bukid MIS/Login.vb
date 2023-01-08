@@ -35,7 +35,7 @@ Public Class Login
     End Sub
 
     Private Sub labelNoAccount_Click(sender As Object, e As EventArgs) Handles labelNoAccount.Click
-
+        NoAccount.ShowDialog()
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
@@ -67,18 +67,26 @@ Public Class Login
             txtUsername.Select()
             txtPassword.Text = "Password*"
         Else
+
             Dim mySQLCommand As MySqlCommand
             Dim mySQLReader As MySqlDataReader
             mySQLCommand = mySql.CreateCommand()
             mySQLCommand.CommandType = CommandType.Text
 
-            mySQLCommand.CommandText = "SELECT * FROM accounts WHERE BINARY account_name=@username AND BINARY account_password=@password"
-            mySQLCommand.Parameters.AddWithValue("@username", txtUsername.Text)
-            mySQLCommand.Parameters.AddWithValue("@password", txtPassword.Text)
+
+            If txtUsername.Text.Trim = "guest" Then
+                mySQLCommand.CommandText = "SELECT * FROM accounts WHERE BINARY account_name= 'guest' and account_password=@password"
+                mySQLCommand.Parameters.AddWithValue("@password", txtPassword.Text)
+            Else
+                mySQLCommand.CommandText = "SELECT * FROM accounts WHERE BINARY account_name=@username AND BINARY account_password=@password"
+                mySQLCommand.Parameters.AddWithValue("@username", txtUsername.Text)
+                mySQLCommand.Parameters.AddWithValue("@password", txtPassword.Text)
+            End If
+
+
             mySQLReader = mySQLCommand.ExecuteReader
             If mySQLReader.HasRows Then
                 While mySQLReader.Read
-                    Main_Form.account_type = mySQLReader!account_type
                     Main_Form.account_id = mySQLReader!account_id
                 End While
                 Main_Form.Show()
