@@ -57,7 +57,6 @@ Public Class Main_Form
 
 
     End Sub
-
     Private Sub getAccountDetails()
 
         btnCertificates.Show()
@@ -1111,6 +1110,8 @@ Public Class Main_Form
             ViewBlotters.ShowDialog()
         End If
     End Sub
+
+
     Private Sub btnAddBlotters_Click(sender As Object, e As EventArgs) Handles btnAddBlotters.Click
         ViewBlotters.action = "add"
         ViewBlotters.ShowDialog()
@@ -1248,15 +1249,24 @@ Public Class Main_Form
         loadDataGridInventory()
     End Sub
     Private Sub datagridInventory_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridInventory.CellClick
-
+        If e.RowIndex >= 0 Then
+            ViewInventory.itemId = datagridInventory.Rows(e.RowIndex).Cells(0).Value
+            ViewInventory.action = "modify"
+            ViewInventory.ShowDialog()
+        End If
     End Sub
     Private Sub btnAddInventory_Click(sender As Object, e As EventArgs) Handles btnAddInventory.Click
-
+        ViewInventory.action = "add"
+        ViewInventory.ShowDialog()
     End Sub
     Private Sub btnUpdateStock_Click(sender As Object, e As EventArgs) Handles btnUpdateStock.Click
-
+        ViewInventory.action = "stock"
+        ViewInventory.ShowDialog()
     End Sub
 
-
+    '' '''''''''''''''''''''''''SYSTEM MANAGEMENT ''''''''''''''''''''''''''''''''''''''''''''
+    Private Sub btnArchivedResidents_Click(sender As Object, e As EventArgs) Handles btnArchivedResidents.Click
+        ArchivedResidents.ShowDialog()
+    End Sub
 
 End Class

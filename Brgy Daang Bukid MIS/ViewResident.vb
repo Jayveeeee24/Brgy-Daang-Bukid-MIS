@@ -216,7 +216,18 @@ Public Class ViewResident
 
             If viewChoice = "Archived" Then
                 cmd.CommandText = "SELECT * FROM archived_residents WHERE resident_id = @residentId"
+                btnModifyResident.Hide()
+                btnArchiveResident.Hide()
+
+                labelArchive1.Show()
+                labelArchive2.Show()
+                labelArchive3.Show()
+                labelDateArchived.Show()
+                labelReasonArchived.Show()
+                labelArchivedBy.Show()
             Else
+                btnModifyResident.Show()
+                btnArchiveResident.Show()
                 labelArchive1.Hide()
                 labelArchive2.Hide()
                 labelArchive3.Hide()
