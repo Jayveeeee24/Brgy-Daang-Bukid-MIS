@@ -1114,8 +1114,6 @@ Public Class Main_Form
             ViewBlotters.ShowDialog()
         End If
     End Sub
-
-
     Private Sub btnAddBlotters_Click(sender As Object, e As EventArgs) Handles btnAddBlotters.Click
         ViewBlotters.action = "add"
         ViewBlotters.ShowDialog()
@@ -1189,8 +1187,6 @@ Public Class Main_Form
     Private Sub btnFilterVawc_Click(sender As Object, e As EventArgs) Handles btnFilterVawc.Click
         loadDataGridVawc(True)
     End Sub
-
-
     Private Sub datagridVawc_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridVawc.CellClick
         If e.RowIndex >= 0 Then
             ViewVawc.caseId = datagridVawc.Rows(e.RowIndex).Cells(0).Value
@@ -1303,7 +1299,86 @@ Public Class Main_Form
             tabMap.SelectedIndex = 1
         End If
     End Sub
-
+    Private Sub btnPound_Click(sender As Object, e As EventArgs) Handles btnPound.Click
+        ViewStreet.streetName = "Pound, Westbay"
+        ViewStreet.ShowDialog()
+    End Sub
+    Private Sub btnRiyal_Click(sender As Object, e As EventArgs) Handles btnRiyal.Click
+        ViewStreet.streetName = "Riyal, Westbay"
+        ViewStreet.ShowDialog()
+    End Sub
+    Private Sub btnDinar_Click(sender As Object, e As EventArgs) Handles btnDinar.Click
+        ViewStreet.streetName = "Dinar, Westbay"
+        ViewStreet.ShowDialog()
+    End Sub
+    Private Sub btnEuro_Click(sender As Object, e As EventArgs) Handles btnEuro.Click
+        ViewStreet.streetName = "Euro, Westbay"
+        ViewStreet.ShowDialog()
+    End Sub
+    Private Sub btnYen_Click(sender As Object, e As EventArgs) Handles btnYen.Click
+        ViewStreet.streetName = "Yen, Westbay"
+        ViewStreet.ShowDialog()
+    End Sub
+    Private Sub btnDirham_Click(sender As Object, e As EventArgs) Handles btnDirham.Click
+        ViewStreet.streetName = "Dirham, Westbay"
+        ViewStreet.ShowDialog()
+    End Sub
+    Private Sub btnFranc_Click(sender As Object, e As EventArgs) Handles btnFranc.Click
+        ViewStreet.streetName = "Franc, Westbay"
+        ViewStreet.ShowDialog()
+    End Sub
+    Private Sub btnShekel_Click(sender As Object, e As EventArgs) Handles btnShekel.Click
+        ViewStreet.streetName = "Shekel, Westbay"
+        ViewStreet.ShowDialog()
+    End Sub
+    Private Sub btnCasimiroAve_Click(sender As Object, e As EventArgs) Handles btnCasimiroAve.Click
+        ViewStreet.streetName = "Casmiro Ave, Westbay"
+        ViewStreet.ShowDialog()
+    End Sub
+    Private Sub btnWon_Click(sender As Object, e As EventArgs) Handles btnWon.Click
+        ViewStreet.streetName = "Won, Westbay"
+        ViewStreet.ShowDialog()
+    End Sub
+    Private Sub btnPeso_Click(sender As Object, e As EventArgs) Handles btnPeso.Click
+        ViewStreet.streetName = "Peso, Westbay"
+        ViewStreet.ShowDialog()
+    End Sub
+    Private Sub btnLira_Click(sender As Object, e As EventArgs) Handles btnLira.Click
+        ViewStreet.streetName = "Lira, Westbay"
+        ViewStreet.ShowDialog()
+    End Sub
+    Private Sub btnBaht_Click(sender As Object, e As EventArgs) Handles btnBaht.Click
+        ViewStreet.streetName = "Baht, Westbay"
+        ViewStreet.ShowDialog()
+    End Sub
+    Private Sub btnYuan_Click(sender As Object, e As EventArgs) Handles btnYuan.Click
+        ViewStreet.streetName = "Yuan, Westbay"
+        ViewStreet.ShowDialog()
+    End Sub
+    Private Sub btnRinggit_Click(sender As Object, e As EventArgs) Handles btnRinggit.Click
+        ViewStreet.streetName = "Ringgit, Westbay"
+        ViewStreet.ShowDialog()
+    End Sub
+    Private Sub btnRuble_Click(sender As Object, e As EventArgs) Handles btnRuble.Click
+        ViewStreet.streetName = "Ruble, Westbay"
+        ViewStreet.ShowDialog()
+    End Sub
+    Private Sub btnEGomez_Click(sender As Object, e As EventArgs) Handles btnEGomez.Click
+        ViewStreet.streetName = "E. Gomez"
+        ViewStreet.ShowDialog()
+    End Sub
+    Private Sub btnFGaudier_Click(sender As Object, e As EventArgs) Handles btnFGaudier.Click
+        ViewStreet.streetName = "F. Gaudier"
+        ViewStreet.ShowDialog()
+    End Sub
+    Private Sub btnAAragon_Click(sender As Object, e As EventArgs) Handles btnAAragon.Click
+        ViewStreet.streetName = "A. Aragon"
+        ViewStreet.ShowDialog()
+    End Sub
+    Private Sub btnEvangelista_Click(sender As Object, e As EventArgs) Handles btnEvangelista.Click
+        ViewStreet.streetName = "Evangelista"
+        ViewStreet.ShowDialog()
+    End Sub
 
 
 
