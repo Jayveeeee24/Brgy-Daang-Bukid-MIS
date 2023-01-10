@@ -231,17 +231,17 @@ Public Class Certificate_Setup
     End Sub
 
     Private Sub btnConfirmSummon_Click(sender As Object, e As EventArgs) Handles btnConfirmSummon.Click
-        If complainantId1 = 0 Or respondentId1 = 0 Then
+        If txtCaseNo.Text.Trim = "" Then
+            MsgBox("Please fill a valid case no!", vbCritical, "Warning")
+            Exit Sub
+        ElseIf complainantId1 = 0 Or respondentId1 = 0 Then
             MsgBox("Please select a valid main complainant and respondent!", vbCritical, "Warning")
             Exit Sub
         ElseIf complainantId2 = 0 And txtComplainant2.Text.Trim <> "" Then
             MsgBox("Please select a valid second complainant!", vbCritical, "Warning")
             Exit Sub
-        ElseIf respondentid2 = 0 And txtRespondent2.Text.Trim <> "" Then
+        ElseIf respondentId2 = 0 And txtRespondent2.Text.Trim <> "" Then
             MsgBox("Please select a valid second respondent!", vbCritical, "Warning")
-            Exit Sub
-        ElseIf txtCaseNo.Text.Trim = "" Then
-            MsgBox("Please fill a valid case no!", vbCritical, "Warning")
             Exit Sub
         ElseIf datePickerSummon.Value < Date.Now Then
             MsgBox("Please select a valid date!", vbCritical, "Warning")
@@ -284,7 +284,7 @@ Public Class Certificate_Setup
         'Dim oDoc As Word.Document
         'oWord = CreateObject("Word.Application")
         'oWord.Visible = True
-        'oDoc = oWord.Documents.Add("C:\wordfile.docx")
+        'oDoc = oWord.Documents.Add(filePath)
     End Sub
 
     Public Sub convertDocToImage(ByVal filePath As String)

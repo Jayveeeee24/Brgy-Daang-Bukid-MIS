@@ -29,7 +29,7 @@ Public Class CertificateChooseAction
     Private Sub CertificateChooseAction_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Dim s As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\Barangay Documents"
         If Directory.Exists(s) Then
-            My.Computer.FileSystem.DeleteFile(s)
+            System.IO.Directory.Delete(s, True)
         End If
     End Sub
 End Class
