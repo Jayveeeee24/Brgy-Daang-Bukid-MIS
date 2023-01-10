@@ -1189,6 +1189,8 @@ Public Class Main_Form
     Private Sub btnFilterVawc_Click(sender As Object, e As EventArgs) Handles btnFilterVawc.Click
         loadDataGridVawc(True)
     End Sub
+
+
     Private Sub datagridVawc_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridVawc.CellClick
         If e.RowIndex >= 0 Then
             ViewVawc.caseId = datagridVawc.Rows(e.RowIndex).Cells(0).Value
