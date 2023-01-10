@@ -249,7 +249,7 @@ Public Class ViewComplaints
                 cmd.CommandText = "UPDATE complaints SET complaint = @complaint " & If(comboFirstResult.Text = "", "", ", first_date = @datenow, first_result = @firstresult ") & If(comboSecondResult.Text = "", "", " ,second_date = @datenow, second_result = @secondresult ") & If(comboThirdResult.Text = "", "", " ,third_date = @datenow, third_result = @thirdresult ") & If(comboFirstResult.Text = "Settled" Or comboSecondResult.Text = "Settled" Or comboThirdResult.Text = "Filed for Action" Or comboThirdResult.Text = "Settled", " ,complaint_status = 'Closed' ", "") & " where complaint_id = @complaintid"
                 cmd.Parameters.AddWithValue("@complaintid", complaintId)
                 cmd.Parameters.AddWithValue("@complaint", txtComplaint.Text)
-                cmd.Parameters.AddWithValue("@datenow", Date.now)
+                cmd.Parameters.AddWithValue("@datenow", Date.Now)
                 cmd.Parameters.AddWithValue("@firstresult", comboFirstResult.Text)
                 cmd.Parameters.AddWithValue("@secondresult", comboSecondResult.Text)
                 cmd.Parameters.AddWithValue("@thirdresult", comboThirdResult.Text)

@@ -58,8 +58,7 @@ Public Class Search_Residents
                 Else
                     middle = mySQLReader!middle_name + " "
                 End If
-                datagridResident.Rows.Add(New String() {mySQLReader!resident_id, mySQLReader!household_id, mySQLReader!first_name + " " + middle + mySQLReader!last_name + " " + mySQLReader!ext_name})
-
+                datagridResident.Rows.Add(New String() {mySQLReader!resident_id, mySQLReader!household_id, mySQLReader!first_name + " " + middle + mySQLReader!last_name + If(mySQLReader!ext_name = "", "", " " + mySQLReader!ext_name), getAddressByHouseholdId(mySQLReader!household_id)})
             End While
         End If
         datagridResident.ClearSelection()
@@ -68,6 +67,39 @@ Public Class Search_Residents
         mySql.Close()
         mySql.Dispose()
     End Sub
+    Private Function getAddressByHouseholdId(ByVal householdid As Integer) As String
+
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        Dim mySQLReader As MySqlDataReader
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        Dim address As String
+        cmd.CommandText = "SELECT bldg_no, street_name from household where household_id  = @householdid"
+        cmd.Parameters.AddWithValue("@householdid", householdid)
+        mySQLReader = cmd.ExecuteReader
+        If mySQLReader.HasRows Then
+            While mySQLReader.Read
+                address = mySQLReader!bldg_no + " " + mySQLReader!street_name
+            End While
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+        Return address
+    End Function
 
     Private Sub datagridResident_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridResident.CellClick
         If e.RowIndex >= 0 Then
@@ -123,6 +155,27 @@ Public Class Search_Residents
                 ViewVawc.submittedById = datagridResident.Rows(e.RowIndex).Cells(0).Value
                 ViewVawc.submittedBy = datagridResident.Rows(e.RowIndex).Cells(2).Value
                 ViewVawc.txtSubmittedBy.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
+            ElseIf origin = "certificates" Then
+                Certificate_Setup.residentid = datagridResident.Rows(e.RowIndex).Cells(0).Value
+                Certificate_Setup.txtResidentName.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                Certificate_Setup.residentName = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                Certificate_Setup.residentAddress = datagridResident.Rows(e.RowIndex).Cells(3).Value
+            ElseIf origin = "complainant1" Then
+                Certificate_Setup.complainantId1 = datagridResident.Rows(e.RowIndex).Cells(0).Value
+                Certificate_Setup.txtComplainant1.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                Certificate_Setup.complainant1 = datagridResident.Rows(e.RowIndex).Cells(2).Value
+            ElseIf origin = "complainant2" Then
+                Certificate_Setup.complainantId2 = datagridResident.Rows(e.RowIndex).Cells(0).Value
+                Certificate_Setup.txtComplainant2.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                Certificate_Setup.complainant2 = datagridResident.Rows(e.RowIndex).Cells(2).Value
+            ElseIf origin = "respondent1" Then
+                Certificate_Setup.respondentId1 = datagridResident.Rows(e.RowIndex).Cells(0).Value
+                Certificate_Setup.txtRespondent1.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                Certificate_Setup.respondent1 = datagridResident.Rows(e.RowIndex).Cells(2).Value
+            ElseIf origin = "respondent2" Then
+                Certificate_Setup.respondentId2 = datagridResident.Rows(e.RowIndex).Cells(0).Value
+                Certificate_Setup.txtRespondent2.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                Certificate_Setup.respondent2 = datagridResident.Rows(e.RowIndex).Cells(2).Value
             End If
         End If
         Me.Close()

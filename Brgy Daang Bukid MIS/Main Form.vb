@@ -1264,6 +1264,25 @@ Public Class Main_Form
         ViewInventory.ShowDialog()
     End Sub
 
+    '' '''''''''''''''''''''''''CERTIFICATES METHODS '''''''''''''''''''''''''''''''''''''''''
+    Private Sub pictureboxResidency_Click(sender As Object, e As EventArgs) Handles pictureboxResidency.Click
+        Certificate_Setup.action = "residency"
+        Certificate_Setup.ShowDialog()
+    End Sub
+    Private Sub pictureboxClearamce_Click(sender As Object, e As EventArgs) Handles pictureboxClearamce.Click
+        Certificate_Setup.action = "clearance"
+        Certificate_Setup.ShowDialog()
+    End Sub
+    Private Sub pictureboxIndigency_Click(sender As Object, e As EventArgs) Handles pictureboxIndigency.Click
+        Certificate_Setup.action = "indigency"
+        Certificate_Setup.ShowDialog()
+    End Sub
+    Private Sub pictureboxSummons_Click(sender As Object, e As EventArgs) Handles pictureboxSummons.Click
+        Certificate_Setup.action = "summon"
+        Certificate_Setup.ShowDialog()
+    End Sub
+
+
     '' '''''''''''''''''''''''''SYSTEM MANAGEMENT ''''''''''''''''''''''''''''''''''''''''''''
     Private Sub btnArchivedResidents_Click(sender As Object, e As EventArgs) Handles btnArchivedResidents.Click
         ArchivedResidents.ShowDialog()
