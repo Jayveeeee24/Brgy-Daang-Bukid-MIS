@@ -71,7 +71,7 @@ Partial Class CertificateChooseAction
         Me.labelFileName.Size = New System.Drawing.Size(424, 62)
         Me.labelFileName.TabIndex = 77
         Me.labelFileName.Text = "File Name:"
-        Me.labelFileName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.labelFileName.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'btnOpenFile
         '

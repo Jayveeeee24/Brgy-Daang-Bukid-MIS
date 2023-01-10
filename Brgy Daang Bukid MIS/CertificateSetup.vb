@@ -105,18 +105,18 @@ Public Class Certificate_Setup
                 MsgBox("Please fill out the required fields!", vbCritical, "Warning")
                 Exit Sub
             End If
-            fileName = "Residency Certificate.docx"
-            Dim documentFinal As New WordDocument("Residency.docx")
+            fileName = "Residency.docx"
+            Dim documentFinal As New WordDocument(fileName)
             document = documentFinal
             document.Replace("[YEARS]", txtYearsResidency.Text, False, True)
         ElseIf action = "clearance" Then
-            Dim documentFinal As New WordDocument("Clearance.docx")
+            fileName = "Clearance.docx"
+            Dim documentFinal As New WordDocument(fileName)
             document = documentFinal
-            fileName = "Clearance Certificate.docx"
         ElseIf action = "indigency" Then
-            Dim documentFinal As New WordDocument("Indigency.docx")
+            fileName = "Indigency.docx"
+            Dim documentFinal As New WordDocument(fileName)
             document = documentFinal
-            fileName = "Indigency Certificate.docx"
         End If
         Dim monthNames() As String = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}
         Dim month As Integer = Date.Now.Month
@@ -246,7 +246,7 @@ Public Class Certificate_Setup
         ElseIf respondentId2 = 0 And txtRespondent2.Text.Trim <> "" Then
             MsgBox("Please select a valid second respondent!", vbCritical, "Warning")
             Exit Sub
-        ElseIf datePickerSummon.Value < Date.Now Then
+        ElseIf datePickerSummon.Value < Date.Now.Date Then
             MsgBox("Please select a valid date!", vbCritical, "Warning")
             Exit Sub
         End If
