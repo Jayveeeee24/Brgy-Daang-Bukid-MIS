@@ -98,6 +98,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account Settings.Designer.vb">
+      <DependentUpon>Account Settings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Account Settings.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ArchivedResidents.Designer.vb">
       <DependentUpon>ArchivedResidents.vb</DependentUpon>
     </Compile>
@@ -138,6 +144,12 @@
       <DependentUpon>SearchResidents.vb</DependentUpon>
     </Compile>
     <Compile Include="SearchResidents.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateBrgyOfficials.Designer.vb">
+      <DependentUpon>UpdateBrgyOfficials.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateBrgyOfficials.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewBlotters.Designer.vb">
@@ -225,6 +237,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Account Settings.resx">
+      <DependentUpon>Account Settings.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ArchivedResidents.resx">
       <DependentUpon>ArchivedResidents.vb</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SearchResidents.resx">
       <DependentUpon>SearchResidents.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateBrgyOfficials.resx">
+      <DependentUpon>UpdateBrgyOfficials.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewBlotters.resx">
       <DependentUpon>ViewBlotters.vb</DependentUpon>

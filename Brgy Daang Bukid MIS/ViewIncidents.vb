@@ -15,8 +15,17 @@ Public Class ViewIncidents
         datePickerIncidentDate.CustomFormat = "MMMM d, yyyy"
 
         loadInitialData()
+        checkPriveledges()
     End Sub
+    Private Sub checkPriveledges()
+        Dim id = Main_Form.account_id
 
+        btnModifyIncident.Show()
+        If id = 3 Then
+            btnModifyIncident.Hide()
+        End If
+
+    End Sub
     Private Sub loadInitialData()
         txtIncidentId.Select()
         comboIncidentTime.SelectedIndex = 0
@@ -72,7 +81,7 @@ Public Class ViewIncidents
 
     End Sub
 
-    Private Sub btnModifyResident_Click(sender As Object, e As EventArgs) Handles btnModifyResident.Click
+    Private Sub btnModifyIncident_Click(sender As Object, e As EventArgs) Handles btnModifyIncident.Click
         mainTabControl.SelectedIndex = 1
         action = "modify"
         txtIncidentName.Enabled = False

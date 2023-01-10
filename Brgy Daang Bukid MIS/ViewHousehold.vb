@@ -16,6 +16,15 @@ Public Class ViewHousehold
         loadInitialData()
 
     End Sub
+    Private Sub checkPriveledges()
+        Dim id = Main_Form.account_id
+
+        btnModifyHousehold.Show()
+        If id = 3 Then
+            btnModifyHousehold.Hide()
+        End If
+
+    End Sub
     Private Sub ViewHousehold_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         clearEverything()
     End Sub

@@ -90,6 +90,7 @@ Public Class Main_Form
             btnAccountSettings.Hide()
             btnArchivedResidents.Hide()
             btnUpdateBrgyOfficials.Hide()
+            btnAuditLogs.Hide()
         End If
 
         If account_id = 3 Then
@@ -1289,7 +1290,9 @@ Public Class Main_Form
     Private Sub btnArchivedResidents_Click(sender As Object, e As EventArgs) Handles btnArchivedResidents.Click
         ArchivedResidents.ShowDialog()
     End Sub
-
+    Private Sub btnAccountSettings_Click(sender As Object, e As EventArgs) Handles btnAccountSettings.Click
+        Account_Settings.ShowDialog()
+    End Sub
 
     '' '''''''''''''''''''''''''MAPS METHODS''''''''''''''''''''''''''''''''''''''''
     Private Sub comboChooseMap_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboChooseMap.SelectedIndexChanged
@@ -1319,6 +1322,15 @@ Public Class Main_Form
         ViewStreet.streetName = "Yen, Westbay"
         ViewStreet.ShowDialog()
     End Sub
+
+    Private Sub btnUpdateBrgyOfficials_Click(sender As Object, e As EventArgs) Handles btnUpdateBrgyOfficials.Click
+
+    End Sub
+
+    Private Sub btnAuditLogs_Click(sender As Object, e As EventArgs) Handles btnAuditLogs.Click
+
+    End Sub
+
     Private Sub btnDirham_Click(sender As Object, e As EventArgs) Handles btnDirham.Click
         ViewStreet.streetName = "Dirham, Westbay"
         ViewStreet.ShowDialog()

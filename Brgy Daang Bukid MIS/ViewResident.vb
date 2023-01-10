@@ -22,6 +22,21 @@ Public Class ViewResident
         mainTabControl.ItemSize = New Size(0, 1)
 
         loadInitialData()
+        checkPriveledges()
+    End Sub
+
+    Private Sub checkPriveledges()
+        Dim id = Main_Form.account_id
+
+        btnModifyResident.Show()
+        btnArchiveResident.Show()
+        If id = 2 Then
+            btnArchiveResident.Hide()
+        ElseIf id = 3 Then
+            btnModifyResident.Hide()
+            btnArchiveResident.Hide()
+        End If
+
     End Sub
 
 

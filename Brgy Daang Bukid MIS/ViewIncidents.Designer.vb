@@ -39,7 +39,7 @@ Partial Class ViewIncidents
         Me.Label102 = New System.Windows.Forms.Label()
         Me.Label103 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnModifyResident = New System.Windows.Forms.Button()
+        Me.btnModifyIncident = New System.Windows.Forms.Button()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.Label104 = New System.Windows.Forms.Label()
         Me.pageAddModify = New System.Windows.Forms.TabPage()
@@ -255,7 +255,7 @@ Partial Class ViewIncidents
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.0!))
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.55904!))
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.571!))
-        Me.TableLayoutPanel6.Controls.Add(Me.btnModifyResident, 2, 0)
+        Me.TableLayoutPanel6.Controls.Add(Me.btnModifyIncident, 2, 0)
         Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel6.Location = New System.Drawing.Point(3, 465)
         Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
@@ -265,28 +265,28 @@ Partial Class ViewIncidents
         Me.TableLayoutPanel6.Size = New System.Drawing.Size(669, 47)
         Me.TableLayoutPanel6.TabIndex = 37
         '
-        'btnModifyResident
+        'btnModifyIncident
         '
-        Me.btnModifyResident.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
-        Me.btnModifyResident.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnModifyResident.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnModifyResident.FlatAppearance.BorderSize = 0
-        Me.btnModifyResident.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnModifyResident.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnModifyResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModifyResident.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnModifyResident.ForeColor = System.Drawing.Color.White
-        Me.btnModifyResident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.modify
-        Me.btnModifyResident.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnModifyResident.Location = New System.Drawing.Point(517, 10)
-        Me.btnModifyResident.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnModifyResident.Name = "btnModifyResident"
-        Me.btnModifyResident.Size = New System.Drawing.Size(152, 37)
-        Me.btnModifyResident.TabIndex = 34
-        Me.btnModifyResident.TabStop = False
-        Me.btnModifyResident.Text = "  Update Incident"
-        Me.btnModifyResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnModifyResident.UseVisualStyleBackColor = False
+        Me.btnModifyIncident.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.btnModifyIncident.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnModifyIncident.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnModifyIncident.FlatAppearance.BorderSize = 0
+        Me.btnModifyIncident.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnModifyIncident.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnModifyIncident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModifyIncident.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModifyIncident.ForeColor = System.Drawing.Color.White
+        Me.btnModifyIncident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.modify
+        Me.btnModifyIncident.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnModifyIncident.Location = New System.Drawing.Point(517, 10)
+        Me.btnModifyIncident.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnModifyIncident.Name = "btnModifyIncident"
+        Me.btnModifyIncident.Size = New System.Drawing.Size(152, 37)
+        Me.btnModifyIncident.TabIndex = 34
+        Me.btnModifyIncident.TabStop = False
+        Me.btnModifyIncident.Text = "  Update Incident"
+        Me.btnModifyIncident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnModifyIncident.UseVisualStyleBackColor = False
         '
         'Panel16
         '
@@ -604,7 +604,7 @@ Partial Class ViewIncidents
     Friend WithEvents Label102 As Label
     Friend WithEvents Label103 As Label
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
-    Friend WithEvents btnModifyResident As Button
+    Friend WithEvents btnModifyIncident As Button
     Friend WithEvents Panel16 As Panel
     Friend WithEvents Label104 As Label
     Friend WithEvents pageAddModify As TabPage

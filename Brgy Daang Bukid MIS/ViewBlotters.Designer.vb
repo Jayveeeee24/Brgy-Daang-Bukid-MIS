@@ -47,7 +47,7 @@ Partial Class ViewBlotters
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnSaveComplaint = New System.Windows.Forms.Button()
+        Me.btnSaveBlotter = New System.Windows.Forms.Button()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Label64 = New System.Windows.Forms.Label()
         Me.panelParent = New System.Windows.Forms.Panel()
@@ -357,7 +357,7 @@ Partial Class ViewBlotters
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.47589!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.61742!))
-        Me.TableLayoutPanel4.Controls.Add(Me.btnSaveComplaint, 2, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.btnSaveBlotter, 2, 0)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 465)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
@@ -367,28 +367,28 @@ Partial Class ViewBlotters
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(663, 47)
         Me.TableLayoutPanel4.TabIndex = 37
         '
-        'btnSaveComplaint
+        'btnSaveBlotter
         '
-        Me.btnSaveComplaint.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.btnSaveComplaint.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnSaveComplaint.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnSaveComplaint.FlatAppearance.BorderSize = 0
-        Me.btnSaveComplaint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.btnSaveComplaint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.btnSaveComplaint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSaveComplaint.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSaveComplaint.ForeColor = System.Drawing.Color.White
-        Me.btnSaveComplaint.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.save
-        Me.btnSaveComplaint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSaveComplaint.Location = New System.Drawing.Point(519, 10)
-        Me.btnSaveComplaint.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnSaveComplaint.Name = "btnSaveComplaint"
-        Me.btnSaveComplaint.Size = New System.Drawing.Size(144, 37)
-        Me.btnSaveComplaint.TabIndex = 34
-        Me.btnSaveComplaint.TabStop = False
-        Me.btnSaveComplaint.Text = "  Save Blotter"
-        Me.btnSaveComplaint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSaveComplaint.UseVisualStyleBackColor = False
+        Me.btnSaveBlotter.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.btnSaveBlotter.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnSaveBlotter.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSaveBlotter.FlatAppearance.BorderSize = 0
+        Me.btnSaveBlotter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnSaveBlotter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnSaveBlotter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSaveBlotter.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSaveBlotter.ForeColor = System.Drawing.Color.White
+        Me.btnSaveBlotter.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.save
+        Me.btnSaveBlotter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSaveBlotter.Location = New System.Drawing.Point(519, 10)
+        Me.btnSaveBlotter.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnSaveBlotter.Name = "btnSaveBlotter"
+        Me.btnSaveBlotter.Size = New System.Drawing.Size(144, 37)
+        Me.btnSaveBlotter.TabIndex = 34
+        Me.btnSaveBlotter.TabStop = False
+        Me.btnSaveBlotter.Text = "  Save Blotter"
+        Me.btnSaveBlotter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSaveBlotter.UseVisualStyleBackColor = False
         '
         'Panel10
         '
@@ -688,7 +688,7 @@ Partial Class ViewBlotters
     Friend WithEvents Panel5 As Panel
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
-    Friend WithEvents btnSaveComplaint As Button
+    Friend WithEvents btnSaveBlotter As Button
     Friend WithEvents Panel10 As Panel
     Friend WithEvents Label64 As Label
     Friend WithEvents panelParent As Panel

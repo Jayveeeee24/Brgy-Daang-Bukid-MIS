@@ -24,6 +24,17 @@ Public Class ViewVawc
         datePickerSubmittedOn.CustomFormat = "MMMM d, yyyy"
 
         loadInitialData()
+        checkPriveledges()
+    End Sub
+
+    Private Sub checkPriveledges()
+        Dim id = Main_Form.account_id
+
+        btnModifyVawc.Show()
+        If id = 3 Then
+            btnModifyVawc.Hide()
+        End If
+
     End Sub
     Private Sub ViewVawc_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         clearEverything()

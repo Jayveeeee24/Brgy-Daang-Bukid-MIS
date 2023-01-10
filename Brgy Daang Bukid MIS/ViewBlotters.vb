@@ -29,8 +29,15 @@ Public Class ViewBlotters
         clearEverything()
     End Sub
     Private Sub ViewBlotters_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-
+        If action = "add" Then
+            If txtBlotter.Text.Trim <> "" Or txtSuspect.Text.Trim <> "" Or txtSubmittedBy.Text.Trim <> "" Or txtBlotterDetails.Text.Trim <> "" Then
+                If MsgBox("Your current progress will not be saved!", MsgBoxStyle.OkCancel, "Are you sure to exit?") = MsgBoxResult.Cancel Then
+                    e.Cancel = True
+                End If
+            End If
+        End If
     End Sub
+
 
     Private Sub loadInitialData()
         txtBlotter.Select()
@@ -114,7 +121,7 @@ Public Class ViewBlotters
         panelSearchParent.Show()
 
     End Sub
-    Private Sub btnSaveComplaint_Click(sender As Object, e As EventArgs) Handles btnSaveComplaint.Click
+    Private Sub btnSaveBlotter_Click(sender As Object, e As EventArgs) Handles btnSaveBlotter.Click
         If txtBlotter.Text.Trim = "" Or txtSuspect.Text.Trim = "" Or txtSubmittedBy.Text.Trim = "" Then
             MsgBox("Please Fill out the required fields!", vbCritical, "Warning")
             Exit Sub

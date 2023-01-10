@@ -105,3 +105,5 @@ C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\Syncfusion.DocIO.Base
 C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\Syncfusion.OfficeChart.Base.xml
 C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.CertificateChooseAction.resources
 C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ViewStreet.resources
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.Account_Settings.resources
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.UpdateBrgyOfficials.resources
