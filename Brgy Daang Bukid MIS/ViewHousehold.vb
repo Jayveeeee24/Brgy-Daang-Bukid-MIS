@@ -20,7 +20,7 @@ Public Class ViewHousehold
         clearEverything()
     End Sub
 
-    Private Sub txtView_KeyDown(sender As Object, e As KeyEventArgs) Handles txtWaterSource.KeyDown, txtStreetName.KeyDown, txtElectricitySource.KeyDown, txtBldgNo.KeyDown, txtHouseholdId.KeyDown
+    Private Sub txtView_KeyDown(sender As Object, e As KeyEventArgs) Handles txtWaterSource.KeyDown, txtElectricitySource.KeyDown, txtBldgNo.KeyDown, txtHouseholdId.KeyDown
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
         End If
@@ -34,10 +34,10 @@ Public Class ViewHousehold
                 MsgBox("Household Id already exists!", vbCritical, "Warning")
             End If
             Exit Sub
-        ElseIf txtBldgNo.Text.Trim = "" Or txtStreetName.Text.Trim = "" Or comboHouseType.Text.Trim = "" Or comboResidenceType.Text.Trim = "" Then
+        ElseIf txtBldgNo.Text.Trim = "" Or comboStreetName.Text.Trim = "" Or comboHouseType.Text.Trim = "" Or comboResidenceType.Text.Trim = "" Then
             MsgBox("Please Fill out all the required fields!", vbCritical, "Warning")
             checkTextBox(txtBldgNo)
-            checkTextBox(txtStreetName)
+            checkComboBox(comboStreetName)
 
             checkComboBox(comboResidenceType)
             checkComboBox(comboHouseType)
@@ -57,7 +57,7 @@ Public Class ViewHousehold
         setComboBoxColor(comboHouseType)
 
         setTextBoxColor(txtBldgNo)
-        setTextBoxColor(txtStreetName)
+        setComboBoxColor(comboStreetName)
         setTextBoxColor(txtWaterSource)
         setTextBoxColor(txtElectricitySource)
     End Sub
@@ -70,7 +70,7 @@ Public Class ViewHousehold
         comboHouseType.SelectedIndex = comboHouseType.FindStringExact(houseType)
         comboResidenceType.SelectedIndex = comboResidenceType.FindStringExact(residenceType)
         txtBldgNo.Text = bldgNo
-        txtStreetName.Text = streetName
+        comboStreetName.SelectedIndex = If(comboStreetName.FindStringExact(streetName) = -1, comboStreetName.Text = "", comboStreetName.FindStringExact(streetName))
         txtWaterSource.Text = waterSource
         txtElectricitySource.Text = electricitySource
         comboHouseholdHead.SelectedIndex = comboHouseholdHead.FindStringExact(headFirstName + " " + If(headMiddleName = Nothing Or headMiddleName = "N/A", "", headMiddleName + " ") + headLastName + If(headExtName = Nothing Or headExtName = "N/A", "", headExtName))
@@ -279,7 +279,7 @@ Public Class ViewHousehold
         comboResidenceType.SelectedIndex = 0
         comboHouseType.SelectedIndex = 0
         txtBldgNo.Clear()
-        txtStreetName.Clear()
+        comboStreetName.SelectedIndex = 0
         txtWaterSource.Clear()
         txtElectricitySource.Clear()
         comboHouseholdHead.Items.Clear()
@@ -309,7 +309,7 @@ Public Class ViewHousehold
             cmd.CommandText = "UPDATE household SET bldg_no = @bldgno, street_name = @streetname, residence_type = @residencetype, house_type = @housetype, water_source = @watersource, electricity_source = @electricitysource WHERE household_id = @householdid"
             cmd.Parameters.AddWithValue("@householdid", txtHouseholdId.Text.Trim)
             cmd.Parameters.AddWithValue("@bldgno", txtBldgNo.Text.Trim)
-            cmd.Parameters.AddWithValue("@streetname", txtStreetName.Text.Trim)
+            cmd.Parameters.AddWithValue("@streetname", comboStreetName.Text.Trim)
             cmd.Parameters.AddWithValue("@residencetype", comboResidenceType.Text.Trim)
             cmd.Parameters.AddWithValue("@housetype", comboHouseType.Text.Trim)
             cmd.Parameters.AddWithValue("@electricitysource", txtElectricitySource.Text.Trim)
@@ -319,12 +319,11 @@ Public Class ViewHousehold
 
             setHouseholdHead()
             setHouseholdMember()
-
         ElseIf action = "add" Then
             cmd.CommandText = "INSERT INTO household (household_id, bldg_no, street_name, residence_type, house_type, water_source, electricity_source, month_added, day_added, year_added, added_by) values (@householdid, @bldgno, @streetname, @residencetype, @housetype, @watersource, @electricitysource, @month, @day, @year, @addedby)"
             cmd.Parameters.AddWithValue("@householdid", txtHouseholdId.Text.Trim)
             cmd.Parameters.AddWithValue("@bldgno", txtBldgNo.Text.Trim)
-            cmd.Parameters.AddWithValue("@streetname", txtStreetName.Text.Trim)
+            cmd.Parameters.AddWithValue("@streetname", comboStreetName.Text.Trim)
             cmd.Parameters.AddWithValue("@residencetype", comboResidenceType.Text.Trim)
             cmd.Parameters.AddWithValue("@housetype", comboHouseType.Text.Trim)
             cmd.Parameters.AddWithValue("@electricitysource", txtElectricitySource.Text.Trim)
@@ -340,7 +339,7 @@ Public Class ViewHousehold
             cmd.Parameters.AddWithValue("@month", monthNow)
             cmd.Parameters.AddWithValue("@day", dayNow)
             cmd.Parameters.AddWithValue("@year", yearNow)
-            cmd.Parameters.AddWithValue("@added_by", Main_Form.account_credentials)
+            cmd.Parameters.AddWithValue("@addedby", Main_Form.account_credentials)
             cmd.ExecuteNonQuery()
         End If
 

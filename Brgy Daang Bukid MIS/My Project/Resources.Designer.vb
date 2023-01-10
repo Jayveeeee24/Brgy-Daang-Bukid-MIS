@@ -133,6 +133,26 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property brgy_map_proper() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("brgy map proper", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property brgy_map_westbay() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("brgy map westbay", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property brgyoff() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("brgyoff", resourceCulture)

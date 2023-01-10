@@ -350,9 +350,13 @@ Public Class Main_Form
         btnBrgyMap.BackColor = Color.FromArgb(52, 152, 219)
         btnSystemManagement.BackColor = Color.FromArgb(25, 117, 211)
         btnInventory.BackColor = Color.FromArgb(25, 117, 211)
+        tabMap.ItemSize = New Size(0, 1)
 
         mainTabControl.SelectedTab = pageMap
         labelTitle.Text = "Barangay Map"
+        timerOpen.Start()
+        comboChooseMap.SelectedIndex = 0
+        tabMap.SelectedIndex = 0
     End Sub
     Private Sub btnSystemManagement_Click(sender As Object, e As EventArgs) Handles btnSystemManagement.Click
         btnDashboard.BackColor = Color.FromArgb(25, 117, 211)
@@ -1287,5 +1291,18 @@ Public Class Main_Form
     Private Sub btnArchivedResidents_Click(sender As Object, e As EventArgs) Handles btnArchivedResidents.Click
         ArchivedResidents.ShowDialog()
     End Sub
+
+
+    '' '''''''''''''''''''''''''MAPS METHODS''''''''''''''''''''''''''''''''''''''''
+    Private Sub comboChooseMap_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboChooseMap.SelectedIndexChanged
+        If comboChooseMap.SelectedIndex = 0 Then
+            tabMap.SelectedIndex = 0
+        Else
+            tabMap.SelectedIndex = 1
+        End If
+    End Sub
+
+
+
 
 End Class

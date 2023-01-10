@@ -82,12 +82,12 @@ Partial Class ViewHousehold
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.txtStreetName = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtBldgNo = New System.Windows.Forms.TextBox()
         Me.comboResidenceType = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.labelHousehold = New System.Windows.Forms.Label()
+        Me.comboStreetName = New System.Windows.Forms.ComboBox()
         Me.mainTabControl.SuspendLayout()
         Me.pageViewHousehold.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -623,6 +623,7 @@ Partial Class ViewHousehold
         Me.panelParent.AutoScroll = True
         Me.panelParent.BackColor = System.Drawing.Color.White
         Me.panelParent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.panelParent.Controls.Add(Me.comboStreetName)
         Me.panelParent.Controls.Add(Me.comboResidentId)
         Me.panelParent.Controls.Add(Me.txtHouseholdId)
         Me.panelParent.Controls.Add(Me.comboHouseholdHead)
@@ -636,7 +637,6 @@ Partial Class ViewHousehold
         Me.panelParent.Controls.Add(Me.Label16)
         Me.panelParent.Controls.Add(Me.Label14)
         Me.panelParent.Controls.Add(Me.Label12)
-        Me.panelParent.Controls.Add(Me.txtStreetName)
         Me.panelParent.Controls.Add(Me.Label9)
         Me.panelParent.Controls.Add(Me.txtBldgNo)
         Me.panelParent.Controls.Add(Me.comboResidenceType)
@@ -794,19 +794,6 @@ Partial Class ViewHousehold
         Me.Label12.TabIndex = 126
         Me.Label12.Text = "Street Name*: "
         '
-        'txtStreetName
-        '
-        Me.txtStreetName.BackColor = System.Drawing.Color.White
-        Me.txtStreetName.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtStreetName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtStreetName.ForeColor = System.Drawing.Color.Black
-        Me.txtStreetName.Location = New System.Drawing.Point(305, 218)
-        Me.txtStreetName.MaxLength = 100
-        Me.txtStreetName.Multiline = True
-        Me.txtStreetName.Name = "txtStreetName"
-        Me.txtStreetName.Size = New System.Drawing.Size(293, 27)
-        Me.txtStreetName.TabIndex = 125
-        '
         'Label9
         '
         Me.Label9.AutoSize = True
@@ -862,6 +849,20 @@ Partial Class ViewHousehold
         Me.labelHousehold.Size = New System.Drawing.Size(138, 18)
         Me.labelHousehold.TabIndex = 119
         Me.labelHousehold.Text = "Household Id*: "
+        '
+        'comboStreetName
+        '
+        Me.comboStreetName.AutoCompleteCustomSource.AddRange(New String() {"A. Aragon", "Evangelista", "E. Gomez", "F. Gaudier", "Casimiro Ave, Westbay", "Baht, Westbay", "Dinar, Westbay", "Dirham,Westbay", "Dollar, Westbay", "Euro, Westbay", "Franc, Westbay", "Lira, Westbay", "Peso, Westbay", "Pound, Westbay", "Ringgit, Westbay", "Riyal, Westbay", "Ruble, Westbay", "Rupee, Westbay", "Shekel, Westbay", "Won, Westbay", "Yen, Westbay", "Yuan, Westbay"})
+        Me.comboStreetName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.comboStreetName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.comboStreetName.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.comboStreetName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.comboStreetName.FormattingEnabled = True
+        Me.comboStreetName.Items.AddRange(New Object() {"A. Aragon", "Evangelista", "E. Gomez", "F. Gaudier", "Casimiro Ave, Westbay", "Baht, Westbay", "Dinar, Westbay", "Dirham, Westbay", "Dollar, Westbay", "Euro, Westbay", "Franc, Westbay", "Lira, Westbay", "Peso, Westbay", "Pound, Westbay", "Ringgit, Westbay", "Riyal, Westbay", "Ruble, Westbay", "Rupee, Westbay", "Shekel, Westbay", "Won, Westbay", "Yen, Westbay", "Yuan, Westbay"})
+        Me.comboStreetName.Location = New System.Drawing.Point(303, 217)
+        Me.comboStreetName.Name = "comboStreetName"
+        Me.comboStreetName.Size = New System.Drawing.Size(295, 28)
+        Me.comboStreetName.TabIndex = 140
         '
         'ViewHousehold
         '
@@ -934,7 +935,6 @@ Partial Class ViewHousehold
     Friend WithEvents comboResidenceType As ComboBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label12 As Label
-    Friend WithEvents txtStreetName As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents txtBldgNo As TextBox
     Friend WithEvents Label18 As Label
@@ -953,4 +953,5 @@ Partial Class ViewHousehold
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents comboStreetName As ComboBox
 End Class
