@@ -4183,6 +4183,7 @@ Partial Class Main_Form
         Me.btnAuditLogs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAuditLogs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAuditLogs.UseVisualStyleBackColor = False
+        Me.btnAuditLogs.Visible = False
         '
         'btnUpdateBrgyOfficials
         '
@@ -4205,6 +4206,7 @@ Partial Class Main_Form
         Me.btnUpdateBrgyOfficials.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnUpdateBrgyOfficials.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnUpdateBrgyOfficials.UseVisualStyleBackColor = False
+        Me.btnUpdateBrgyOfficials.Visible = False
         '
         'btnArchivedResidents
         '

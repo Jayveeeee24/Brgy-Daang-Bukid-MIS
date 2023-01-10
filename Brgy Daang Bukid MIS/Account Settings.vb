@@ -8,7 +8,8 @@ Public Class Account_Settings
     Public mySqlConn As String = "server=localhost; user id=root; database=mis"
 
     Private Sub Account_Settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txtAccountName.Text = Main_Form.account_name
+        txtAccountName.Text = Main_Form.account_position
+        txtUsername.Text = Main_Form.user_name
         If Main_Form.account_id = 2 Then
             panelGuestAccount.Hide()
         Else
@@ -32,12 +33,13 @@ Public Class Account_Settings
     Private Sub Account_Settings_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         txtPassword.Clear()
         txtPasswordGuest.Clear()
+        txtUsername.Clear()
     End Sub
 
     Private Sub btnChangePassword_Click(sender As Object, e As EventArgs) Handles btnChangePassword.Click
         Me.Enabled = False
 
-        If txtPassword.Text.Trim = "" Then
+        If txtPassword.Text.Trim = "" Or txtUsername.Text.Trim = "" Then
             MsgBox("Please fill out the required fields!", vbCritical, "Warning")
             Me.Enabled = True
             Exit Sub
@@ -62,9 +64,10 @@ Public Class Account_Settings
         mySQLCommand = mySql.CreateCommand()
         mySQLCommand.CommandType = CommandType.Text
 
-        mySQLCommand.CommandText = "UPDATE accounts SET account_password = @accountpassword WHERE account_id = @accountid"
+        mySQLCommand.CommandText = "UPDATE accounts SET account_password = @accountpassword, account_name = @accountname WHERE account_id = @accountid"
         mySQLCommand.Parameters.AddWithValue("@accountid", Main_Form.account_id)
         mySQLCommand.Parameters.AddWithValue("@accountpassword", txtPassword.Text.Trim)
+        mySQLCommand.Parameters.AddWithValue("@accountname", txtUsername.Text.Trim)
         mySQLCommand.ExecuteNonQuery()
 
         Me.Enabled = True
@@ -117,5 +120,11 @@ Public Class Account_Settings
 
         Me.Close()
 
+    End Sub
+
+    Private Sub txtUsername_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsername.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
+        End If
     End Sub
 End Class

@@ -9,6 +9,7 @@ Public Class Main_Form
     Public account_credentials As String
     Public account_position As String
     Public account_name As String
+    Public user_name As String
 
     Public filterModule As String
     Public mySqlConn As String = "server=localhost; user id=root; database=mis"
@@ -68,16 +69,12 @@ Public Class Main_Form
         btnAddComplaint.Show()
         btnAddBlotters.Show()
         btnAddVawc.Show()
-        btnAccountSettings.Show()
-        btnArchivedResidents.Show()
-        btnUpdateBrgyOfficials.Show()
-        btnAuditLogs.Show()
-
         If account_id = 2 Then
-            btnArchivedResidents.Hide()
-            btnUpdateBrgyOfficials.Hide()
-            btnAuditLogs.Hide()
-        ElseIf account_id = 3 Then
+            btnSystemManagement.Text = "     Account Settings"
+        Else
+            btnSystemManagement.Text = "     System Management"
+        End If
+        If account_id = 3 Then
             btnCertificates.Hide()
             btnSystemManagement.Hide()
             btnInventory.Hide()
@@ -87,10 +84,6 @@ Public Class Main_Form
             btnAddComplaint.Hide()
             btnAddBlotters.Hide()
             btnAddVawc.Hide()
-            btnAccountSettings.Hide()
-            btnArchivedResidents.Hide()
-            btnUpdateBrgyOfficials.Hide()
-            btnAuditLogs.Hide()
         End If
 
         If account_id = 3 Then
@@ -121,7 +114,8 @@ Public Class Main_Form
             If mySQLReader.HasRows Then
                 While mySQLReader.Read
                     account_name = getResidentNameById(mySQLReader!official_name)
-                    account_credentials = account_name + " [" + mySQLReader!official_position + "]"
+                    account_position = mySQLReader!official_position
+                    account_credentials = account_name + " [" + account_position + "]"
                     labelSignedIn.Text = "Logged in as: " + account_credentials
                 End While
             End If
@@ -369,8 +363,15 @@ Public Class Main_Form
         btnSystemManagement.BackColor = Color.FromArgb(52, 152, 219)
         btnInventory.BackColor = Color.FromArgb(25, 117, 211)
 
-        mainTabControl.SelectedTab = pageSystemManagement
-        labelTitle.Text = "Account Settings"
+
+        If account_id = 2 Then
+            btnAccountSettings.PerformClick()
+            labelTitle.Text = "Account Settings"
+        Else
+            labelTitle.Text = "System Management"
+            mainTabControl.SelectedTab = pageSystemManagement
+        End If
+
     End Sub
     Private Sub btnInventory_Click(sender As Object, e As EventArgs) Handles btnInventory.Click
         btnDashboard.BackColor = Color.FromArgb(25, 117, 211)
@@ -609,11 +610,6 @@ Public Class Main_Form
 
                 mySQLCommand.Dispose()
                 mySQLReader.Dispose()
-
-            Case Modules.Report
-
-            Case Modules.Certificates
-
         End Select
 
         mySql.Close()
@@ -1291,8 +1287,19 @@ Public Class Main_Form
         ArchivedResidents.ShowDialog()
     End Sub
     Private Sub btnAccountSettings_Click(sender As Object, e As EventArgs) Handles btnAccountSettings.Click
-        Account_Settings.ShowDialog()
+        ConfirmAccess.originForm = "Accounts"
+        ConfirmAccess.ShowDialog()
     End Sub
+
+    Private Sub btnUpdateBrgyOfficials_Click(sender As Object, e As EventArgs) Handles btnUpdateBrgyOfficials.Click
+        ConfirmAccess.originForm = "BrgyOfficials"
+        ConfirmAccess.ShowDialog()
+    End Sub
+
+    Private Sub btnAuditLogs_Click(sender As Object, e As EventArgs) Handles btnAuditLogs.Click
+
+    End Sub
+
 
     '' '''''''''''''''''''''''''MAPS METHODS''''''''''''''''''''''''''''''''''''''''
     Private Sub comboChooseMap_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboChooseMap.SelectedIndexChanged
@@ -1301,6 +1308,11 @@ Public Class Main_Form
         Else
             tabMap.SelectedIndex = 1
         End If
+    End Sub
+
+    Private Sub btnDirham_Click(sender As Object, e As EventArgs) Handles btnDirham.Click
+        ViewStreet.streetName = "Dirham, Westbay"
+        ViewStreet.ShowDialog()
     End Sub
     Private Sub btnPound_Click(sender As Object, e As EventArgs) Handles btnPound.Click
         ViewStreet.streetName = "Pound, Westbay"
@@ -1318,23 +1330,19 @@ Public Class Main_Form
         ViewStreet.streetName = "Euro, Westbay"
         ViewStreet.ShowDialog()
     End Sub
+    Private Sub btnDollar_Click(sender As Object, e As EventArgs) Handles btnDollar.Click
+        ViewStreet.streetName = "Dollar, Westbay"
+        ViewStreet.ShowDialog()
+    End Sub
+    Private Sub btnRupee_Click(sender As Object, e As EventArgs) Handles btnRupee.Click
+        ViewStreet.streetName = "Rupee, Westbay"
+        ViewStreet.ShowDialog()
+    End Sub
     Private Sub btnYen_Click(sender As Object, e As EventArgs) Handles btnYen.Click
         ViewStreet.streetName = "Yen, Westbay"
         ViewStreet.ShowDialog()
     End Sub
 
-    Private Sub btnUpdateBrgyOfficials_Click(sender As Object, e As EventArgs) Handles btnUpdateBrgyOfficials.Click
-
-    End Sub
-
-    Private Sub btnAuditLogs_Click(sender As Object, e As EventArgs) Handles btnAuditLogs.Click
-
-    End Sub
-
-    Private Sub btnDirham_Click(sender As Object, e As EventArgs) Handles btnDirham.Click
-        ViewStreet.streetName = "Dirham, Westbay"
-        ViewStreet.ShowDialog()
-    End Sub
     Private Sub btnFranc_Click(sender As Object, e As EventArgs) Handles btnFranc.Click
         ViewStreet.streetName = "Franc, Westbay"
         ViewStreet.ShowDialog()

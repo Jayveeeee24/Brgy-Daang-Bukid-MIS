@@ -40,6 +40,8 @@ Partial Class Account_Settings
         Me.Label5 = New System.Windows.Forms.Label()
         Me.labelUsernameGuest = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtUsername = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelGuestAccount.SuspendLayout()
         Me.SuspendLayout()
@@ -71,7 +73,7 @@ Partial Class Account_Settings
         Me.txtAccountName.BackColor = System.Drawing.Color.White
         Me.txtAccountName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtAccountName.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAccountName.Location = New System.Drawing.Point(194, 161)
+        Me.txtAccountName.Location = New System.Drawing.Point(194, 151)
         Me.txtAccountName.Name = "txtAccountName"
         Me.txtAccountName.Size = New System.Drawing.Size(311, 29)
         Me.txtAccountName.TabIndex = 109
@@ -81,7 +83,7 @@ Partial Class Account_Settings
         '
         Me.labelHousehold.AutoSize = True
         Me.labelHousehold.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelHousehold.Location = New System.Drawing.Point(44, 166)
+        Me.labelHousehold.Location = New System.Drawing.Point(44, 156)
         Me.labelHousehold.Name = "labelHousehold"
         Me.labelHousehold.Size = New System.Drawing.Size(133, 18)
         Me.labelHousehold.TabIndex = 108
@@ -91,7 +93,7 @@ Partial Class Account_Settings
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(44, 214)
+        Me.Label3.Location = New System.Drawing.Point(44, 238)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(151, 18)
         Me.Label3.TabIndex = 110
@@ -103,7 +105,7 @@ Partial Class Account_Settings
         Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.ForeColor = System.Drawing.Color.Black
-        Me.txtPassword.Location = New System.Drawing.Point(194, 208)
+        Me.txtPassword.Location = New System.Drawing.Point(194, 232)
         Me.txtPassword.MaxLength = 100
         Me.txtPassword.Multiline = True
         Me.txtPassword.Name = "txtPassword"
@@ -120,7 +122,7 @@ Partial Class Account_Settings
         Me.btnVisibilityNewPass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.btnVisibilityNewPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnVisibilityNewPass.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.visi
-        Me.btnVisibilityNewPass.Location = New System.Drawing.Point(473, 210)
+        Me.btnVisibilityNewPass.Location = New System.Drawing.Point(473, 234)
         Me.btnVisibilityNewPass.Name = "btnVisibilityNewPass"
         Me.btnVisibilityNewPass.Size = New System.Drawing.Size(29, 23)
         Me.btnVisibilityNewPass.TabIndex = 112
@@ -139,7 +141,7 @@ Partial Class Account_Settings
         Me.btnChangePassword.ForeColor = System.Drawing.Color.White
         Me.btnChangePassword.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_forward_white
         Me.btnChangePassword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnChangePassword.Location = New System.Drawing.Point(206, 250)
+        Me.btnChangePassword.Location = New System.Drawing.Point(206, 274)
         Me.btnChangePassword.Margin = New System.Windows.Forms.Padding(0)
         Me.btnChangePassword.Name = "btnChangePassword"
         Me.btnChangePassword.Size = New System.Drawing.Size(158, 41)
@@ -168,7 +170,7 @@ Partial Class Account_Settings
         Me.panelGuestAccount.Controls.Add(Me.Label5)
         Me.panelGuestAccount.Controls.Add(Me.labelUsernameGuest)
         Me.panelGuestAccount.Controls.Add(Me.Label7)
-        Me.panelGuestAccount.Location = New System.Drawing.Point(12, 308)
+        Me.panelGuestAccount.Location = New System.Drawing.Point(12, 325)
         Me.panelGuestAccount.Name = "panelGuestAccount"
         Me.panelGuestAccount.Size = New System.Drawing.Size(511, 203)
         Me.panelGuestAccount.TabIndex = 118
@@ -267,11 +269,36 @@ Partial Class Account_Settings
         Me.Label7.TabIndex = 124
         Me.Label7.Text = "Username*:"
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(44, 196)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(114, 18)
+        Me.Label8.TabIndex = 119
+        Me.Label8.Text = "Username*: "
+        '
+        'txtUsername
+        '
+        Me.txtUsername.BackColor = System.Drawing.Color.White
+        Me.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsername.ForeColor = System.Drawing.Color.Black
+        Me.txtUsername.Location = New System.Drawing.Point(194, 193)
+        Me.txtUsername.MaxLength = 100
+        Me.txtUsername.Multiline = True
+        Me.txtUsername.Name = "txtUsername"
+        Me.txtUsername.Size = New System.Drawing.Size(311, 27)
+        Me.txtUsername.TabIndex = 121
+        '
         'Account_Settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(548, 523)
+        Me.ClientSize = New System.Drawing.Size(548, 540)
+        Me.Controls.Add(Me.txtUsername)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.panelGuestAccount)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnChangePassword)
@@ -313,4 +340,6 @@ Partial Class Account_Settings
     Friend WithEvents Label5 As Label
     Friend WithEvents labelUsernameGuest As Label
     Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents txtUsername As TextBox
 End Class

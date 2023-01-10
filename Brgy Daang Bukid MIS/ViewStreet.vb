@@ -6,7 +6,7 @@ Public Class ViewStreet
     Dim total As Integer = 0
 
     Private Sub ViewStreet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        labelStreetName.Select()
         Panel1.VerticalScroll.Value = 0
         loadInitialData()
     End Sub

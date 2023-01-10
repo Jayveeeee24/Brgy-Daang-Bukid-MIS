@@ -76,6 +76,10 @@ Public Class ConfirmAccess
             Me.Enabled = True
             If originForm = "Archive" Then
                 ViewResident.archiveResident()
+            ElseIf originForm = "Accounts" Then
+                Account_Settings.ShowDialog()
+            ElseIf originForm = "BrgyOfficials" Then
+                UpdateBrgyOfficials.ShowDialog()
             End If
             Me.Close()
         Else
