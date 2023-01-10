@@ -12,8 +12,7 @@ Imports Microsoft.Office.Interop.Word
 Public Class CertificateChooseAction
 
     Private Sub CertificateChooseAction_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        labelFilePath.Text = Certificate_Setup.filePath
-        labelFileName.Text = Certificate_Setup.fileName
+        labelFileName.Text = "File Name: " & Certificate_Setup.fileName
     End Sub
 
     Private Sub btnOpenFile_Click(sender As Object, e As EventArgs) Handles btnOpenFile.Click
@@ -23,13 +22,6 @@ Public Class CertificateChooseAction
 
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         Certificate_Setup.convertDocToImage(Certificate_Setup.filePath)
-        Me.Close()
     End Sub
 
-    Private Sub CertificateChooseAction_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        Dim s As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\Barangay Documents"
-        If Directory.Exists(s) Then
-            System.IO.Directory.Delete(s, True)
-        End If
-    End Sub
 End Class

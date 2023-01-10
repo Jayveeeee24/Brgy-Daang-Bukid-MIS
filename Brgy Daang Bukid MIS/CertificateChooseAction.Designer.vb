@@ -27,7 +27,6 @@ Partial Class CertificateChooseAction
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.labelFileName = New System.Windows.Forms.Label()
-        Me.labelFilePath = New System.Windows.Forms.Label()
         Me.btnOpenFile = New System.Windows.Forms.Button()
         Me.btnPrint = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -40,7 +39,7 @@ Partial Class CertificateChooseAction
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(365, 43)
         Me.Label5.TabIndex = 72
-        Me.Label5.Text = "Done creating the document"
+        Me.Label5.Text = "Finished creating the document"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label1
@@ -67,30 +66,20 @@ Partial Class CertificateChooseAction
         'labelFileName
         '
         Me.labelFileName.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelFileName.Location = New System.Drawing.Point(93, 160)
+        Me.labelFileName.Location = New System.Drawing.Point(5, 131)
         Me.labelFileName.Name = "labelFileName"
-        Me.labelFileName.Size = New System.Drawing.Size(258, 28)
+        Me.labelFileName.Size = New System.Drawing.Size(424, 62)
         Me.labelFileName.TabIndex = 77
         Me.labelFileName.Text = "File Name:"
         Me.labelFileName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'labelFilePath
-        '
-        Me.labelFilePath.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelFilePath.Location = New System.Drawing.Point(12, 131)
-        Me.labelFilePath.Name = "labelFilePath"
-        Me.labelFilePath.Size = New System.Drawing.Size(417, 28)
-        Me.labelFilePath.TabIndex = 78
-        Me.labelFilePath.Text = "File Path:"
-        Me.labelFilePath.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'btnOpenFile
         '
-        Me.btnOpenFile.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.btnOpenFile.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
         Me.btnOpenFile.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.btnOpenFile.FlatAppearance.BorderSize = 0
-        Me.btnOpenFile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.btnOpenFile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnOpenFile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.btnOpenFile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.btnOpenFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnOpenFile.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnOpenFile.ForeColor = System.Drawing.Color.White
@@ -108,11 +97,11 @@ Partial Class CertificateChooseAction
         '
         'btnPrint
         '
-        Me.btnPrint.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.btnPrint.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.btnPrint.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.btnPrint.FlatAppearance.BorderSize = 0
-        Me.btnPrint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnPrint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnPrint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.btnPrint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
         Me.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPrint.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPrint.ForeColor = System.Drawing.Color.White
@@ -144,14 +133,15 @@ Partial Class CertificateChooseAction
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(441, 417)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.labelFilePath)
         Me.Controls.Add(Me.labelFileName)
         Me.Controls.Add(Me.btnOpenFile)
         Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label5)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "CertificateChooseAction"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Choose Action"
@@ -165,6 +155,5 @@ Partial Class CertificateChooseAction
     Friend WithEvents btnPrint As Button
     Friend WithEvents btnOpenFile As Button
     Friend WithEvents labelFileName As Label
-    Friend WithEvents labelFilePath As Label
     Friend WithEvents Label3 As Label
 End Class

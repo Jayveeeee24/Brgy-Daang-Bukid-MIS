@@ -32,11 +32,9 @@ Partial Class Certificate_Setup
         Me.labelYears = New System.Windows.Forms.Label()
         Me.txtResidentPurpose = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnSearchResident = New System.Windows.Forms.Button()
         Me.txtResidentName = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnConfirmProcess = New System.Windows.Forms.Button()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.labelCertificateType = New System.Windows.Forms.Label()
         Me.pageSummon = New System.Windows.Forms.TabPage()
@@ -45,26 +43,28 @@ Partial Class Certificate_Setup
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.datePickerSummon = New System.Windows.Forms.DateTimePicker()
-        Me.btnSearchRespondent2 = New System.Windows.Forms.Button()
         Me.txtRespondent2 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.btnSearchRespondent1 = New System.Windows.Forms.Button()
         Me.txtRespondent1 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.btnSearchComplainant2 = New System.Windows.Forms.Button()
         Me.txtComplainant2 = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtCaseNo = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.btnSearchComplainant1 = New System.Windows.Forms.Button()
         Me.txtComplainant1 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnConfirmSummon = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.comboTime = New System.Windows.Forms.ComboBox()
+        Me.btnSearchResident = New System.Windows.Forms.Button()
+        Me.btnConfirmProcess = New System.Windows.Forms.Button()
+        Me.btnSearchRespondent2 = New System.Windows.Forms.Button()
+        Me.btnSearchRespondent1 = New System.Windows.Forms.Button()
+        Me.btnSearchComplainant2 = New System.Windows.Forms.Button()
+        Me.btnSearchComplainant1 = New System.Windows.Forms.Button()
+        Me.btnConfirmSummon = New System.Windows.Forms.Button()
         Me.mainTabControl.SuspendLayout()
         Me.pageCertificates.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -198,25 +198,6 @@ Partial Class Certificate_Setup
         Me.Label2.TabIndex = 146
         Me.Label2.Text = "Purpose*: "
         '
-        'btnSearchResident
-        '
-        Me.btnSearchResident.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
-        Me.btnSearchResident.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnSearchResident.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchResident.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearchResident.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearchResident.ForeColor = System.Drawing.Color.White
-        Me.btnSearchResident.Image = CType(resources.GetObject("btnSearchResident.Image"), System.Drawing.Image)
-        Me.btnSearchResident.Location = New System.Drawing.Point(437, 67)
-        Me.btnSearchResident.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnSearchResident.Name = "btnSearchResident"
-        Me.btnSearchResident.Size = New System.Drawing.Size(36, 27)
-        Me.btnSearchResident.TabIndex = 145
-        Me.btnSearchResident.TabStop = False
-        Me.btnSearchResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSearchResident.UseVisualStyleBackColor = False
-        '
         'txtResidentName
         '
         Me.txtResidentName.BackColor = System.Drawing.Color.White
@@ -255,29 +236,6 @@ Partial Class Certificate_Setup
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel6.Size = New System.Drawing.Size(494, 39)
         Me.TableLayoutPanel6.TabIndex = 37
-        '
-        'btnConfirmProcess
-        '
-        Me.btnConfirmProcess.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
-        Me.btnConfirmProcess.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnConfirmProcess.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnConfirmProcess.FlatAppearance.BorderSize = 0
-        Me.btnConfirmProcess.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnConfirmProcess.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnConfirmProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnConfirmProcess.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnConfirmProcess.ForeColor = System.Drawing.Color.White
-        Me.btnConfirmProcess.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_forward_white
-        Me.btnConfirmProcess.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnConfirmProcess.Location = New System.Drawing.Point(379, 0)
-        Me.btnConfirmProcess.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnConfirmProcess.Name = "btnConfirmProcess"
-        Me.btnConfirmProcess.Size = New System.Drawing.Size(115, 39)
-        Me.btnConfirmProcess.TabIndex = 34
-        Me.btnConfirmProcess.TabStop = False
-        Me.btnConfirmProcess.Text = "  Confirm"
-        Me.btnConfirmProcess.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnConfirmProcess.UseVisualStyleBackColor = False
         '
         'Panel16
         '
@@ -386,25 +344,6 @@ Partial Class Certificate_Setup
         Me.datePickerSummon.Size = New System.Drawing.Size(264, 26)
         Me.datePickerSummon.TabIndex = 159
         '
-        'btnSearchRespondent2
-        '
-        Me.btnSearchRespondent2.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
-        Me.btnSearchRespondent2.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnSearchRespondent2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchRespondent2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchRespondent2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearchRespondent2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearchRespondent2.ForeColor = System.Drawing.Color.White
-        Me.btnSearchRespondent2.Image = CType(resources.GetObject("btnSearchRespondent2.Image"), System.Drawing.Image)
-        Me.btnSearchRespondent2.Location = New System.Drawing.Point(449, 160)
-        Me.btnSearchRespondent2.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnSearchRespondent2.Name = "btnSearchRespondent2"
-        Me.btnSearchRespondent2.Size = New System.Drawing.Size(36, 27)
-        Me.btnSearchRespondent2.TabIndex = 158
-        Me.btnSearchRespondent2.TabStop = False
-        Me.btnSearchRespondent2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSearchRespondent2.UseVisualStyleBackColor = False
-        '
         'txtRespondent2
         '
         Me.txtRespondent2.BackColor = System.Drawing.Color.White
@@ -429,25 +368,6 @@ Partial Class Certificate_Setup
         Me.Label7.TabIndex = 156
         Me.Label7.Text = "Respondent 2: "
         '
-        'btnSearchRespondent1
-        '
-        Me.btnSearchRespondent1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
-        Me.btnSearchRespondent1.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnSearchRespondent1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchRespondent1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchRespondent1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearchRespondent1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearchRespondent1.ForeColor = System.Drawing.Color.White
-        Me.btnSearchRespondent1.Image = CType(resources.GetObject("btnSearchRespondent1.Image"), System.Drawing.Image)
-        Me.btnSearchRespondent1.Location = New System.Drawing.Point(449, 127)
-        Me.btnSearchRespondent1.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnSearchRespondent1.Name = "btnSearchRespondent1"
-        Me.btnSearchRespondent1.Size = New System.Drawing.Size(36, 27)
-        Me.btnSearchRespondent1.TabIndex = 155
-        Me.btnSearchRespondent1.TabStop = False
-        Me.btnSearchRespondent1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSearchRespondent1.UseVisualStyleBackColor = False
-        '
         'txtRespondent1
         '
         Me.txtRespondent1.BackColor = System.Drawing.Color.White
@@ -471,25 +391,6 @@ Partial Class Certificate_Setup
         Me.Label8.Size = New System.Drawing.Size(144, 18)
         Me.Label8.TabIndex = 153
         Me.Label8.Text = "Respondent 1*: "
-        '
-        'btnSearchComplainant2
-        '
-        Me.btnSearchComplainant2.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
-        Me.btnSearchComplainant2.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnSearchComplainant2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchComplainant2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchComplainant2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearchComplainant2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearchComplainant2.ForeColor = System.Drawing.Color.White
-        Me.btnSearchComplainant2.Image = CType(resources.GetObject("btnSearchComplainant2.Image"), System.Drawing.Image)
-        Me.btnSearchComplainant2.Location = New System.Drawing.Point(449, 94)
-        Me.btnSearchComplainant2.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnSearchComplainant2.Name = "btnSearchComplainant2"
-        Me.btnSearchComplainant2.Size = New System.Drawing.Size(36, 27)
-        Me.btnSearchComplainant2.TabIndex = 152
-        Me.btnSearchComplainant2.TabStop = False
-        Me.btnSearchComplainant2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSearchComplainant2.UseVisualStyleBackColor = False
         '
         'txtComplainant2
         '
@@ -539,25 +440,6 @@ Partial Class Certificate_Setup
         Me.Label3.TabIndex = 146
         Me.Label3.Text = "Case No*: "
         '
-        'btnSearchComplainant1
-        '
-        Me.btnSearchComplainant1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
-        Me.btnSearchComplainant1.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnSearchComplainant1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchComplainant1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchComplainant1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearchComplainant1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearchComplainant1.ForeColor = System.Drawing.Color.White
-        Me.btnSearchComplainant1.Image = CType(resources.GetObject("btnSearchComplainant1.Image"), System.Drawing.Image)
-        Me.btnSearchComplainant1.Location = New System.Drawing.Point(449, 61)
-        Me.btnSearchComplainant1.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnSearchComplainant1.Name = "btnSearchComplainant1"
-        Me.btnSearchComplainant1.Size = New System.Drawing.Size(36, 27)
-        Me.btnSearchComplainant1.TabIndex = 145
-        Me.btnSearchComplainant1.TabStop = False
-        Me.btnSearchComplainant1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSearchComplainant1.UseVisualStyleBackColor = False
-        '
         'txtComplainant1
         '
         Me.txtComplainant1.BackColor = System.Drawing.Color.White
@@ -596,29 +478,6 @@ Partial Class Certificate_Setup
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(494, 45)
         Me.TableLayoutPanel2.TabIndex = 37
-        '
-        'btnConfirmSummon
-        '
-        Me.btnConfirmSummon.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
-        Me.btnConfirmSummon.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnConfirmSummon.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnConfirmSummon.FlatAppearance.BorderSize = 0
-        Me.btnConfirmSummon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnConfirmSummon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnConfirmSummon.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnConfirmSummon.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnConfirmSummon.ForeColor = System.Drawing.Color.White
-        Me.btnConfirmSummon.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_forward_white
-        Me.btnConfirmSummon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnConfirmSummon.Location = New System.Drawing.Point(379, 0)
-        Me.btnConfirmSummon.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnConfirmSummon.Name = "btnConfirmSummon"
-        Me.btnConfirmSummon.Size = New System.Drawing.Size(115, 45)
-        Me.btnConfirmSummon.TabIndex = 34
-        Me.btnConfirmSummon.TabStop = False
-        Me.btnConfirmSummon.Text = "  Confirm"
-        Me.btnConfirmSummon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnConfirmSummon.UseVisualStyleBackColor = False
         '
         'Panel3
         '
@@ -661,12 +520,154 @@ Partial Class Certificate_Setup
         Me.comboTime.Size = New System.Drawing.Size(264, 28)
         Me.comboTime.TabIndex = 162
         '
+        'btnSearchResident
+        '
+        Me.btnSearchResident.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.btnSearchResident.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSearchResident.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchResident.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchResident.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchResident.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchResident.ForeColor = System.Drawing.Color.White
+        Me.btnSearchResident.Image = CType(resources.GetObject("btnSearchResident.Image"), System.Drawing.Image)
+        Me.btnSearchResident.Location = New System.Drawing.Point(437, 67)
+        Me.btnSearchResident.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnSearchResident.Name = "btnSearchResident"
+        Me.btnSearchResident.Size = New System.Drawing.Size(36, 27)
+        Me.btnSearchResident.TabIndex = 145
+        Me.btnSearchResident.TabStop = False
+        Me.btnSearchResident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSearchResident.UseVisualStyleBackColor = False
+        '
+        'btnConfirmProcess
+        '
+        Me.btnConfirmProcess.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.btnConfirmProcess.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnConfirmProcess.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnConfirmProcess.FlatAppearance.BorderSize = 0
+        Me.btnConfirmProcess.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnConfirmProcess.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnConfirmProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnConfirmProcess.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnConfirmProcess.ForeColor = System.Drawing.Color.White
+        Me.btnConfirmProcess.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_forward_white
+        Me.btnConfirmProcess.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnConfirmProcess.Location = New System.Drawing.Point(379, 0)
+        Me.btnConfirmProcess.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnConfirmProcess.Name = "btnConfirmProcess"
+        Me.btnConfirmProcess.Size = New System.Drawing.Size(115, 39)
+        Me.btnConfirmProcess.TabIndex = 34
+        Me.btnConfirmProcess.TabStop = False
+        Me.btnConfirmProcess.Text = "  Confirm"
+        Me.btnConfirmProcess.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnConfirmProcess.UseVisualStyleBackColor = False
+        '
+        'btnSearchRespondent2
+        '
+        Me.btnSearchRespondent2.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.btnSearchRespondent2.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSearchRespondent2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchRespondent2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchRespondent2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchRespondent2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchRespondent2.ForeColor = System.Drawing.Color.White
+        Me.btnSearchRespondent2.Image = CType(resources.GetObject("btnSearchRespondent2.Image"), System.Drawing.Image)
+        Me.btnSearchRespondent2.Location = New System.Drawing.Point(449, 160)
+        Me.btnSearchRespondent2.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnSearchRespondent2.Name = "btnSearchRespondent2"
+        Me.btnSearchRespondent2.Size = New System.Drawing.Size(36, 27)
+        Me.btnSearchRespondent2.TabIndex = 158
+        Me.btnSearchRespondent2.TabStop = False
+        Me.btnSearchRespondent2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSearchRespondent2.UseVisualStyleBackColor = False
+        '
+        'btnSearchRespondent1
+        '
+        Me.btnSearchRespondent1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.btnSearchRespondent1.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSearchRespondent1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchRespondent1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchRespondent1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchRespondent1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchRespondent1.ForeColor = System.Drawing.Color.White
+        Me.btnSearchRespondent1.Image = CType(resources.GetObject("btnSearchRespondent1.Image"), System.Drawing.Image)
+        Me.btnSearchRespondent1.Location = New System.Drawing.Point(449, 127)
+        Me.btnSearchRespondent1.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnSearchRespondent1.Name = "btnSearchRespondent1"
+        Me.btnSearchRespondent1.Size = New System.Drawing.Size(36, 27)
+        Me.btnSearchRespondent1.TabIndex = 155
+        Me.btnSearchRespondent1.TabStop = False
+        Me.btnSearchRespondent1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSearchRespondent1.UseVisualStyleBackColor = False
+        '
+        'btnSearchComplainant2
+        '
+        Me.btnSearchComplainant2.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.btnSearchComplainant2.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSearchComplainant2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchComplainant2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchComplainant2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchComplainant2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchComplainant2.ForeColor = System.Drawing.Color.White
+        Me.btnSearchComplainant2.Image = CType(resources.GetObject("btnSearchComplainant2.Image"), System.Drawing.Image)
+        Me.btnSearchComplainant2.Location = New System.Drawing.Point(449, 94)
+        Me.btnSearchComplainant2.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnSearchComplainant2.Name = "btnSearchComplainant2"
+        Me.btnSearchComplainant2.Size = New System.Drawing.Size(36, 27)
+        Me.btnSearchComplainant2.TabIndex = 152
+        Me.btnSearchComplainant2.TabStop = False
+        Me.btnSearchComplainant2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSearchComplainant2.UseVisualStyleBackColor = False
+        '
+        'btnSearchComplainant1
+        '
+        Me.btnSearchComplainant1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.btnSearchComplainant1.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSearchComplainant1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchComplainant1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchComplainant1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchComplainant1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchComplainant1.ForeColor = System.Drawing.Color.White
+        Me.btnSearchComplainant1.Image = CType(resources.GetObject("btnSearchComplainant1.Image"), System.Drawing.Image)
+        Me.btnSearchComplainant1.Location = New System.Drawing.Point(449, 61)
+        Me.btnSearchComplainant1.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnSearchComplainant1.Name = "btnSearchComplainant1"
+        Me.btnSearchComplainant1.Size = New System.Drawing.Size(36, 27)
+        Me.btnSearchComplainant1.TabIndex = 145
+        Me.btnSearchComplainant1.TabStop = False
+        Me.btnSearchComplainant1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSearchComplainant1.UseVisualStyleBackColor = False
+        '
+        'btnConfirmSummon
+        '
+        Me.btnConfirmSummon.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.btnConfirmSummon.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnConfirmSummon.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnConfirmSummon.FlatAppearance.BorderSize = 0
+        Me.btnConfirmSummon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnConfirmSummon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnConfirmSummon.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnConfirmSummon.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnConfirmSummon.ForeColor = System.Drawing.Color.White
+        Me.btnConfirmSummon.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_forward_white
+        Me.btnConfirmSummon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnConfirmSummon.Location = New System.Drawing.Point(379, 0)
+        Me.btnConfirmSummon.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnConfirmSummon.Name = "btnConfirmSummon"
+        Me.btnConfirmSummon.Size = New System.Drawing.Size(115, 45)
+        Me.btnConfirmSummon.TabIndex = 34
+        Me.btnConfirmSummon.TabStop = False
+        Me.btnConfirmSummon.Text = "  Confirm"
+        Me.btnConfirmSummon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnConfirmSummon.UseVisualStyleBackColor = False
+        '
         'Certificate_Setup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(528, 420)
         Me.Controls.Add(Me.mainTabControl)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Certificate_Setup"

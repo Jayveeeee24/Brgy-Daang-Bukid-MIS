@@ -8,6 +8,7 @@ Imports System.Reflection
 Imports MySql.Data.MySqlClient
 Imports Mysqlx.XDevAPI.Common
 Imports Microsoft.Office.Interop.Word
+Imports Microsoft.Office.Interop
 
 Public Class Certificate_Setup
 
@@ -81,7 +82,10 @@ Public Class Certificate_Setup
         comboTime.SelectedIndex = 12
         filePath = ""
         fileName = ""
-
+        Dim s As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\Barangay Documents"
+        If Directory.Exists(s) Then
+            System.IO.Directory.Delete(s, True)
+        End If
     End Sub
     Private Sub btnSearchResident_Click(sender As Object, e As EventArgs) Handles btnSearchResident.Click
         Search_Residents.origin = "certificates"
@@ -93,7 +97,6 @@ Public Class Certificate_Setup
             Exit Sub
         End If
         Dim document As WordDocument
-        Dim fileName As String = ""
         If action = "residency" Then
             If CInt(If(txtYearsResidency.Text = "", 0, txtYearsResidency.Text)) > 120 Then
                 MsgBox("Please fill a valid year of residency!", vbCritical, "Warning")
@@ -271,7 +274,7 @@ Public Class Certificate_Setup
         If Not Directory.Exists(s) Then
             Directory.CreateDirectory(s)
         End If
-        fileName = "Case No. " & txtCaseNo.Text & "Barangay Summon.docx"
+        fileName = "Case No. " & txtCaseNo.Text & " Summon.docx"
         filePath = s & "\" & fileName
         document.Save(filePath)
         document.Close()
@@ -280,11 +283,11 @@ Public Class Certificate_Setup
     End Sub
 
     Public Sub openingWordDocument(ByVal filePath As String)
-        'Dim oWord As Word.Application
-        'Dim oDoc As Word.Document
-        'oWord = CreateObject("Word.Application")
-        'oWord.Visible = True
-        'oDoc = oWord.Documents.Add(filePath)
+        Dim oWord As Application
+        Dim oDoc As Document
+        oWord = CreateObject("Word.Application")
+        oWord.Visible = True
+        oDoc = oWord.Documents.Add(filePath)
     End Sub
 
     Public Sub convertDocToImage(ByVal filePath As String)
