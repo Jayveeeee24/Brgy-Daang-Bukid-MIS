@@ -11,12 +11,40 @@ Public Class Login
 
     Private visibilityImage As Image
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        If isAccountAvailable() = False Then
+            Create_Account.Show()
+            Me.Close()
+        End If
     End Sub
 
-    Private Function isAccountsAvailable() As Boolean
 
+    Private Function isAccountAvailable() As Boolean
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = "SELECT count(*) FROM accounts"
+        If cmd.ExecuteScalar() = 0 Then
+            Return False
+        Else
+            Return True
+        End If
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+        MsgBox("hatdog")
     End Function
+
 
     Private Function GetVisibilityImage(ByVal imageName As String) As Image
         If imageName = "visible" Then
@@ -137,4 +165,7 @@ Public Class Login
         End If
     End Sub
 
+    Private Sub labelForgotPassword_Click(sender As Object, e As EventArgs) Handles labelForgotPassword.Click
+        ForgotPassword.ShowDialog()
+    End Sub
 End Class

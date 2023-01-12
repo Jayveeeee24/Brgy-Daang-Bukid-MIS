@@ -161,18 +161,34 @@ Public Class Search_Residents
                 Certificate_Setup.residentName = datagridResident.Rows(e.RowIndex).Cells(2).Value
                 Certificate_Setup.residentAddress = datagridResident.Rows(e.RowIndex).Cells(3).Value
             ElseIf origin = "complainant1" Then
+                If Certificate_Setup.complainantId2 = datagridResident.Rows(e.RowIndex).Cells(0).Value Or Certificate_Setup.respondentId1 = datagridResident.Rows(e.RowIndex).Cells(0).Value Or Certificate_Setup.respondentId2 = datagridResident.Rows(e.RowIndex).Cells(0).Value Then
+                    MsgBox("You cannot choose the same person for each field!", vbCritical, "Warning")
+                    Exit Sub
+                End If
                 Certificate_Setup.complainantId1 = datagridResident.Rows(e.RowIndex).Cells(0).Value
                 Certificate_Setup.txtComplainant1.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
                 Certificate_Setup.complainant1 = datagridResident.Rows(e.RowIndex).Cells(2).Value
             ElseIf origin = "complainant2" Then
+                If Certificate_Setup.complainantId1 = datagridResident.Rows(e.RowIndex).Cells(0).Value Or Certificate_Setup.respondentId1 = datagridResident.Rows(e.RowIndex).Cells(0).Value Or Certificate_Setup.respondentId2 = datagridResident.Rows(e.RowIndex).Cells(0).Value Then
+                    MsgBox("You cannot choose the same person for each field!", vbCritical, "Warning")
+                    Exit Sub
+                End If
                 Certificate_Setup.complainantId2 = datagridResident.Rows(e.RowIndex).Cells(0).Value
                 Certificate_Setup.txtComplainant2.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
                 Certificate_Setup.complainant2 = datagridResident.Rows(e.RowIndex).Cells(2).Value
             ElseIf origin = "respondent1" Then
+                If Certificate_Setup.complainantId1 = datagridResident.Rows(e.RowIndex).Cells(0).Value Or Certificate_Setup.complainantId2 = datagridResident.Rows(e.RowIndex).Cells(0).Value Or Certificate_Setup.respondentId2 = datagridResident.Rows(e.RowIndex).Cells(0).Value Then
+                    MsgBox("You cannot choose the same person for each field!", vbCritical, "Warning")
+                    Exit Sub
+                End If
                 Certificate_Setup.respondentId1 = datagridResident.Rows(e.RowIndex).Cells(0).Value
                 Certificate_Setup.txtRespondent1.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
                 Certificate_Setup.respondent1 = datagridResident.Rows(e.RowIndex).Cells(2).Value
             ElseIf origin = "respondent2" Then
+                If Certificate_Setup.complainantId1 = datagridResident.Rows(e.RowIndex).Cells(0).Value Or Certificate_Setup.complainantId2 = datagridResident.Rows(e.RowIndex).Cells(0).Value Or Certificate_Setup.respondentId1 = datagridResident.Rows(e.RowIndex).Cells(0).Value Then
+                    MsgBox("You cannot choose the same person for each field!", vbCritical, "Warning")
+                    Exit Sub
+                End If
                 Certificate_Setup.respondentId2 = datagridResident.Rows(e.RowIndex).Cells(0).Value
                 Certificate_Setup.txtRespondent2.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
                 Certificate_Setup.respondent2 = datagridResident.Rows(e.RowIndex).Cells(2).Value

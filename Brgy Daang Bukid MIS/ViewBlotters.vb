@@ -31,7 +31,7 @@ Public Class ViewBlotters
     Private Sub ViewBlotters_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If action = "add" Then
             If txtBlotter.Text.Trim <> "" Or txtSuspect.Text.Trim <> "" Or txtSubmittedBy.Text.Trim <> "" Or txtBlotterDetails.Text.Trim <> "" Then
-                If MsgBox("Your current progress will not be saved!", MsgBoxStyle.OkCancel, "Are you sure to exit?") = MsgBoxResult.Cancel Then
+                If MsgBox("Your current progress will not be saved!", MsgBoxStyle.YesNo, "Are you sure to exit?") = MsgBoxResult.No Then
                     e.Cancel = True
                 End If
             End If
@@ -127,6 +127,9 @@ Public Class ViewBlotters
             Exit Sub
         ElseIf datePickerSubmittedOn.Value > Date.Now Then
             MsgBox("Please Fill out valid date filed!", vbCritical, "Warning")
+            Exit Sub
+        ElseIf suspectId = 0 Or txtSuspect.Text <> suspect Then
+            MsgBox("Suspect must be a resident in the barangay!", vbCritical, "Warning")
             Exit Sub
         Else
             Dim mySql As MySqlConnection

@@ -153,7 +153,7 @@ Partial Class ViewIncidents
         'labelIncidentDetails
         '
         Me.labelIncidentDetails.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIncidentDetails.Location = New System.Drawing.Point(282, 223)
+        Me.labelIncidentDetails.Location = New System.Drawing.Point(284, 238)
         Me.labelIncidentDetails.Name = "labelIncidentDetails"
         Me.labelIncidentDetails.Size = New System.Drawing.Size(293, 120)
         Me.labelIncidentDetails.TabIndex = 79
@@ -163,7 +163,7 @@ Partial Class ViewIncidents
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(54, 223)
+        Me.Label3.Location = New System.Drawing.Point(56, 238)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(147, 18)
         Me.Label3.TabIndex = 78
@@ -173,7 +173,7 @@ Partial Class ViewIncidents
         '
         Me.labelIncidentTime.AutoSize = True
         Me.labelIncidentTime.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIncidentTime.Location = New System.Drawing.Point(282, 182)
+        Me.labelIncidentTime.Location = New System.Drawing.Point(284, 197)
         Me.labelIncidentTime.Name = "labelIncidentTime"
         Me.labelIncidentTime.Size = New System.Drawing.Size(25, 18)
         Me.labelIncidentTime.TabIndex = 43
@@ -183,7 +183,7 @@ Partial Class ViewIncidents
         '
         Me.labelIncidentDate.AutoSize = True
         Me.labelIncidentDate.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIncidentDate.Location = New System.Drawing.Point(282, 139)
+        Me.labelIncidentDate.Location = New System.Drawing.Point(284, 154)
         Me.labelIncidentDate.Name = "labelIncidentDate"
         Me.labelIncidentDate.Size = New System.Drawing.Size(137, 18)
         Me.labelIncidentDate.TabIndex = 42
@@ -193,7 +193,7 @@ Partial Class ViewIncidents
         '
         Me.labelIncidentName.AutoSize = True
         Me.labelIncidentName.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIncidentName.Location = New System.Drawing.Point(282, 101)
+        Me.labelIncidentName.Location = New System.Drawing.Point(284, 116)
         Me.labelIncidentName.Name = "labelIncidentName"
         Me.labelIncidentName.Size = New System.Drawing.Size(215, 18)
         Me.labelIncidentName.TabIndex = 41
@@ -203,7 +203,7 @@ Partial Class ViewIncidents
         '
         Me.labelIncidentId.AutoSize = True
         Me.labelIncidentId.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIncidentId.Location = New System.Drawing.Point(282, 60)
+        Me.labelIncidentId.Location = New System.Drawing.Point(284, 75)
         Me.labelIncidentId.Name = "labelIncidentId"
         Me.labelIncidentId.Size = New System.Drawing.Size(54, 18)
         Me.labelIncidentId.TabIndex = 40
@@ -213,7 +213,7 @@ Partial Class ViewIncidents
         '
         Me.Label100.AutoSize = True
         Me.Label100.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label100.Location = New System.Drawing.Point(54, 182)
+        Me.Label100.Location = New System.Drawing.Point(56, 197)
         Me.Label100.Name = "Label100"
         Me.Label100.Size = New System.Drawing.Size(59, 18)
         Me.Label100.TabIndex = 39
@@ -223,7 +223,7 @@ Partial Class ViewIncidents
         '
         Me.Label101.AutoSize = True
         Me.Label101.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label101.Location = New System.Drawing.Point(54, 139)
+        Me.Label101.Location = New System.Drawing.Point(56, 154)
         Me.Label101.Name = "Label101"
         Me.Label101.Size = New System.Drawing.Size(58, 18)
         Me.Label101.TabIndex = 38
@@ -233,7 +233,7 @@ Partial Class ViewIncidents
         '
         Me.Label102.AutoSize = True
         Me.Label102.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label102.Location = New System.Drawing.Point(54, 101)
+        Me.Label102.Location = New System.Drawing.Point(56, 116)
         Me.Label102.Name = "Label102"
         Me.Label102.Size = New System.Drawing.Size(139, 18)
         Me.Label102.TabIndex = 37
@@ -243,7 +243,7 @@ Partial Class ViewIncidents
         '
         Me.Label103.AutoSize = True
         Me.Label103.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label103.Location = New System.Drawing.Point(54, 60)
+        Me.Label103.Location = New System.Drawing.Point(56, 75)
         Me.Label103.Name = "Label103"
         Me.Label103.Size = New System.Drawing.Size(111, 18)
         Me.Label103.TabIndex = 36
@@ -456,7 +456,7 @@ Partial Class ViewIncidents
         Me.txtIncidentDetails.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIncidentDetails.ForeColor = System.Drawing.Color.Black
         Me.txtIncidentDetails.Location = New System.Drawing.Point(270, 244)
-        Me.txtIncidentDetails.MaxLength = 100
+        Me.txtIncidentDetails.MaxLength = 150
         Me.txtIncidentDetails.Multiline = True
         Me.txtIncidentDetails.Name = "txtIncidentDetails"
         Me.txtIncidentDetails.Size = New System.Drawing.Size(293, 120)
@@ -469,7 +469,7 @@ Partial Class ViewIncidents
         Me.txtIncidentName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIncidentName.ForeColor = System.Drawing.Color.Black
         Me.txtIncidentName.Location = New System.Drawing.Point(270, 116)
-        Me.txtIncidentName.MaxLength = 100
+        Me.txtIncidentName.MaxLength = 20
         Me.txtIncidentName.Multiline = True
         Me.txtIncidentName.Name = "txtIncidentName"
         Me.txtIncidentName.Size = New System.Drawing.Size(293, 27)

@@ -1,6 +1,7 @@
 ﻿Imports System.Globalization
 Imports Microsoft.SqlServer.Server
 Imports MySql.Data.MySqlClient
+Imports Syncfusion.Windows.Forms.Tools
 
 Public Class ViewComplaints
 
@@ -42,7 +43,7 @@ Public Class ViewComplaints
     Private Sub ViewComplaints_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If action = "add" Then
             If txtComplaint.Text.Trim <> "" Or txtComplainant.Text.Trim <> "" Or txtDefendant.Text.Trim <> "" Or txtDetails.Text.Trim <> "" Then
-                If MsgBox("Your current progress will not be saved!", MsgBoxStyle.OkCancel, "Are you sure to exit?") = MsgBoxResult.Cancel Then
+                If MsgBox("Your current progress will not be saved!", MsgBoxStyle.YesNo, "Are you sure to exit?") = MsgBoxResult.No Then
                     e.Cancel = True
                 End If
             End If
@@ -142,6 +143,13 @@ Public Class ViewComplaints
         datePickerDateComplaint.Enabled = True
         panelHearingParent.Hide()
         panelSearchParent.Show()
+        If labelStatus.Text = "Closed" Then
+            btnModifyComplaint.Text = "  Closed"
+            btnModifyComplaint.Enabled = False
+        Else
+            btnModifyComplaint.Text = "  Update Complaint"
+            btnModifyComplaint.Enabled = True
+        End If
 
     End Sub
     Private Sub clearEverything()
@@ -188,10 +196,7 @@ Public Class ViewComplaints
     End Sub
 
     Private Sub btnModifyComplaint_Click(sender As Object, e As EventArgs) Handles btnModifyComplaint.Click
-        If labelStatus.Text = "Closed" Then
-            MsgBox("Case has been closed!")
-            Exit Sub
-        End If
+
 
         mainTabControl.SelectedIndex = 1
         action = "modify"
@@ -239,6 +244,9 @@ Public Class ViewComplaints
             Exit Sub
         ElseIf datePickerDateComplaint.Value > Date.Now Then
             MsgBox("Please Fill out valid date filed!", vbCritical, "Warning")
+            Exit Sub
+        ElseIf complainantId = 0 And defendantId = 0 Then
+            MsgBox("There must be at least one resident residing in the barangay!", vbCritical, "Warning")
             Exit Sub
         Else
             Dim mySql As MySqlConnection

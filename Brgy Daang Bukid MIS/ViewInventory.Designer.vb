@@ -22,8 +22,8 @@ Partial Class ViewInventory
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ViewInventory))
         Me.mainTabControl = New System.Windows.Forms.TabControl()
         Me.pageView = New System.Windows.Forms.TabPage()
@@ -54,12 +54,14 @@ Partial Class ViewInventory
         Me.Label102 = New System.Windows.Forms.Label()
         Me.Label103 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnModifyItem = New System.Windows.Forms.Button()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.Label104 = New System.Windows.Forms.Label()
         Me.pageAddModify = New System.Windows.Forms.TabPage()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnSaveItem = New System.Windows.Forms.Button()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Label64 = New System.Windows.Forms.Label()
         Me.panel123 = New System.Windows.Forms.Panel()
@@ -78,9 +80,12 @@ Partial Class ViewInventory
         Me.pageInOut = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnUpdateStock = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnSearchItem = New System.Windows.Forms.Button()
         Me.txtQuantity = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.comboTransactionType = New System.Windows.Forms.ComboBox()
@@ -93,10 +98,6 @@ Partial Class ViewInventory
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.btnModifyItem = New System.Windows.Forms.Button()
-        Me.btnSaveItem = New System.Windows.Forms.Button()
-        Me.btnUpdateStock = New System.Windows.Forms.Button()
-        Me.btnSearchItem = New System.Windows.Forms.Button()
         Me.mainTabControl.SuspendLayout()
         Me.pageView.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -224,26 +225,26 @@ Partial Class ViewInventory
         Me.dataGridItemHistory.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dataGridItemHistory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dataGridItemHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(3)
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dataGridItemHistory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(3)
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dataGridItemHistory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dataGridItemHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dataGridItemHistory.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column14, Me.Column1, Me.Column2, Me.Column4, Me.Column3, Me.Column5})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.Padding = New System.Windows.Forms.Padding(7)
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dataGridItemHistory.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.Padding = New System.Windows.Forms.Padding(7)
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridItemHistory.DefaultCellStyle = DataGridViewCellStyle4
         Me.dataGridItemHistory.Location = New System.Drawing.Point(25, 405)
         Me.dataGridItemHistory.MultiSelect = False
         Me.dataGridItemHistory.Name = "dataGridItemHistory"
@@ -452,6 +453,29 @@ Partial Class ViewInventory
         Me.TableLayoutPanel6.Size = New System.Drawing.Size(921, 47)
         Me.TableLayoutPanel6.TabIndex = 37
         '
+        'btnModifyItem
+        '
+        Me.btnModifyItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.btnModifyItem.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnModifyItem.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnModifyItem.FlatAppearance.BorderSize = 0
+        Me.btnModifyItem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnModifyItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnModifyItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModifyItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModifyItem.ForeColor = System.Drawing.Color.White
+        Me.btnModifyItem.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.modify
+        Me.btnModifyItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnModifyItem.Location = New System.Drawing.Point(785, 10)
+        Me.btnModifyItem.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnModifyItem.Name = "btnModifyItem"
+        Me.btnModifyItem.Size = New System.Drawing.Size(136, 37)
+        Me.btnModifyItem.TabIndex = 34
+        Me.btnModifyItem.TabStop = False
+        Me.btnModifyItem.Text = "  Modify Item"
+        Me.btnModifyItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnModifyItem.UseVisualStyleBackColor = False
+        '
         'Panel16
         '
         Me.Panel16.Controls.Add(Me.Label104)
@@ -527,6 +551,29 @@ Partial Class ViewInventory
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(921, 47)
         Me.TableLayoutPanel4.TabIndex = 37
         '
+        'btnSaveItem
+        '
+        Me.btnSaveItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.btnSaveItem.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnSaveItem.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSaveItem.FlatAppearance.BorderSize = 0
+        Me.btnSaveItem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnSaveItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnSaveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSaveItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSaveItem.ForeColor = System.Drawing.Color.White
+        Me.btnSaveItem.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.save
+        Me.btnSaveItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSaveItem.Location = New System.Drawing.Point(788, 10)
+        Me.btnSaveItem.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnSaveItem.Name = "btnSaveItem"
+        Me.btnSaveItem.Size = New System.Drawing.Size(133, 37)
+        Me.btnSaveItem.TabIndex = 34
+        Me.btnSaveItem.TabStop = False
+        Me.btnSaveItem.Text = "  Save Item"
+        Me.btnSaveItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSaveItem.UseVisualStyleBackColor = False
+        '
         'Panel10
         '
         Me.Panel10.Controls.Add(Me.Label64)
@@ -577,7 +624,7 @@ Partial Class ViewInventory
         Me.txtItemId.Enabled = False
         Me.txtItemId.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtItemId.ForeColor = System.Drawing.Color.Black
-        Me.txtItemId.Location = New System.Drawing.Point(349, 91)
+        Me.txtItemId.Location = New System.Drawing.Point(346, 68)
         Me.txtItemId.MaxLength = 100
         Me.txtItemId.Multiline = True
         Me.txtItemId.Name = "txtItemId"
@@ -589,7 +636,7 @@ Partial Class ViewInventory
         '
         Me.labelId.AutoSize = True
         Me.labelId.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelId.Location = New System.Drawing.Point(114, 96)
+        Me.labelId.Location = New System.Drawing.Point(111, 73)
         Me.labelId.Name = "labelId"
         Me.labelId.Size = New System.Drawing.Size(96, 18)
         Me.labelId.TabIndex = 136
@@ -600,8 +647,8 @@ Partial Class ViewInventory
         Me.comboItemStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboItemStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboItemStatus.FormattingEnabled = True
-        Me.comboItemStatus.Items.AddRange(New Object() {"Available", "Unavailable"})
-        Me.comboItemStatus.Location = New System.Drawing.Point(349, 182)
+        Me.comboItemStatus.Items.AddRange(New Object() {"Unavailable", "Available"})
+        Me.comboItemStatus.Location = New System.Drawing.Point(346, 159)
         Me.comboItemStatus.Name = "comboItemStatus"
         Me.comboItemStatus.Size = New System.Drawing.Size(303, 28)
         Me.comboItemStatus.TabIndex = 135
@@ -612,11 +659,11 @@ Partial Class ViewInventory
         Me.txtRemarks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtRemarks.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRemarks.ForeColor = System.Drawing.Color.Black
-        Me.txtRemarks.Location = New System.Drawing.Point(349, 276)
-        Me.txtRemarks.MaxLength = 100
+        Me.txtRemarks.Location = New System.Drawing.Point(346, 253)
+        Me.txtRemarks.MaxLength = 150
         Me.txtRemarks.Multiline = True
         Me.txtRemarks.Name = "txtRemarks"
-        Me.txtRemarks.Size = New System.Drawing.Size(303, 69)
+        Me.txtRemarks.Size = New System.Drawing.Size(303, 111)
         Me.txtRemarks.TabIndex = 119
         Me.txtRemarks.Tag = ""
         '
@@ -624,15 +671,17 @@ Partial Class ViewInventory
         '
         Me.txtItemStock.BackColor = System.Drawing.Color.White
         Me.txtItemStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtItemStock.Enabled = False
         Me.txtItemStock.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtItemStock.ForeColor = System.Drawing.Color.Black
-        Me.txtItemStock.Location = New System.Drawing.Point(349, 228)
-        Me.txtItemStock.MaxLength = 100
+        Me.txtItemStock.Location = New System.Drawing.Point(346, 205)
+        Me.txtItemStock.MaxLength = 10
         Me.txtItemStock.Multiline = True
         Me.txtItemStock.Name = "txtItemStock"
         Me.txtItemStock.Size = New System.Drawing.Size(303, 27)
         Me.txtItemStock.TabIndex = 118
         Me.txtItemStock.Tag = ""
+        Me.txtItemStock.Text = "0"
         '
         'txtItemName
         '
@@ -640,7 +689,7 @@ Partial Class ViewInventory
         Me.txtItemName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtItemName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtItemName.ForeColor = System.Drawing.Color.Black
-        Me.txtItemName.Location = New System.Drawing.Point(349, 138)
+        Me.txtItemName.Location = New System.Drawing.Point(346, 115)
         Me.txtItemName.MaxLength = 100
         Me.txtItemName.Multiline = True
         Me.txtItemName.Name = "txtItemName"
@@ -652,7 +701,7 @@ Partial Class ViewInventory
         '
         Me.Label32.AutoSize = True
         Me.Label32.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label32.Location = New System.Drawing.Point(114, 279)
+        Me.Label32.Location = New System.Drawing.Point(111, 256)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(93, 18)
         Me.Label32.TabIndex = 114
@@ -662,7 +711,7 @@ Partial Class ViewInventory
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(114, 233)
+        Me.Label15.Location = New System.Drawing.Point(111, 210)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(122, 18)
         Me.Label15.TabIndex = 96
@@ -672,7 +721,7 @@ Partial Class ViewInventory
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(114, 189)
+        Me.Label18.Location = New System.Drawing.Point(111, 166)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(130, 18)
         Me.Label18.TabIndex = 95
@@ -682,7 +731,7 @@ Partial Class ViewInventory
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(114, 143)
+        Me.Label20.Location = New System.Drawing.Point(111, 120)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(124, 18)
         Me.Label20.TabIndex = 94
@@ -752,6 +801,29 @@ Partial Class ViewInventory
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(921, 47)
         Me.TableLayoutPanel2.TabIndex = 37
         '
+        'btnUpdateStock
+        '
+        Me.btnUpdateStock.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.btnUpdateStock.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnUpdateStock.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnUpdateStock.FlatAppearance.BorderSize = 0
+        Me.btnUpdateStock.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnUpdateStock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnUpdateStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUpdateStock.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdateStock.ForeColor = System.Drawing.Color.White
+        Me.btnUpdateStock.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.save
+        Me.btnUpdateStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnUpdateStock.Location = New System.Drawing.Point(783, 10)
+        Me.btnUpdateStock.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnUpdateStock.Name = "btnUpdateStock"
+        Me.btnUpdateStock.Size = New System.Drawing.Size(138, 37)
+        Me.btnUpdateStock.TabIndex = 34
+        Me.btnUpdateStock.TabStop = False
+        Me.btnUpdateStock.Text = "  Update Stock"
+        Me.btnUpdateStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnUpdateStock.UseVisualStyleBackColor = False
+        '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.Label1)
@@ -777,6 +849,7 @@ Partial Class ViewInventory
         Me.Panel3.AutoScroll = True
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Controls.Add(Me.btnSearchItem)
         Me.Panel3.Controls.Add(Me.txtQuantity)
         Me.Panel3.Controls.Add(Me.Label12)
@@ -795,6 +868,35 @@ Partial Class ViewInventory
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(921, 413)
         Me.Panel3.TabIndex = 38
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(29, 13)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(531, 16)
+        Me.Label4.TabIndex = 143
+        Me.Label4.Text = "Note: You can use the search button to search for a resident in the barangay "
+        '
+        'btnSearchItem
+        '
+        Me.btnSearchItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.btnSearchItem.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSearchItem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchItem.ForeColor = System.Drawing.Color.White
+        Me.btnSearchItem.Image = CType(resources.GetObject("btnSearchItem.Image"), System.Drawing.Image)
+        Me.btnSearchItem.Location = New System.Drawing.Point(639, 82)
+        Me.btnSearchItem.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnSearchItem.Name = "btnSearchItem"
+        Me.btnSearchItem.Size = New System.Drawing.Size(36, 27)
+        Me.btnSearchItem.TabIndex = 142
+        Me.btnSearchItem.TabStop = False
+        Me.btnSearchItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSearchItem.UseVisualStyleBackColor = False
         '
         'txtQuantity
         '
@@ -931,94 +1033,6 @@ Partial Class ViewInventory
         Me.Panel4.Size = New System.Drawing.Size(10, 74)
         Me.Panel4.TabIndex = 68
         '
-        'btnModifyItem
-        '
-        Me.btnModifyItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
-        Me.btnModifyItem.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnModifyItem.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnModifyItem.FlatAppearance.BorderSize = 0
-        Me.btnModifyItem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnModifyItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnModifyItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModifyItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnModifyItem.ForeColor = System.Drawing.Color.White
-        Me.btnModifyItem.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.modify
-        Me.btnModifyItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnModifyItem.Location = New System.Drawing.Point(785, 10)
-        Me.btnModifyItem.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnModifyItem.Name = "btnModifyItem"
-        Me.btnModifyItem.Size = New System.Drawing.Size(136, 37)
-        Me.btnModifyItem.TabIndex = 34
-        Me.btnModifyItem.TabStop = False
-        Me.btnModifyItem.Text = "  Modify Item"
-        Me.btnModifyItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnModifyItem.UseVisualStyleBackColor = False
-        '
-        'btnSaveItem
-        '
-        Me.btnSaveItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.btnSaveItem.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnSaveItem.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnSaveItem.FlatAppearance.BorderSize = 0
-        Me.btnSaveItem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.btnSaveItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.btnSaveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSaveItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSaveItem.ForeColor = System.Drawing.Color.White
-        Me.btnSaveItem.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.save
-        Me.btnSaveItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSaveItem.Location = New System.Drawing.Point(788, 10)
-        Me.btnSaveItem.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnSaveItem.Name = "btnSaveItem"
-        Me.btnSaveItem.Size = New System.Drawing.Size(133, 37)
-        Me.btnSaveItem.TabIndex = 34
-        Me.btnSaveItem.TabStop = False
-        Me.btnSaveItem.Text = "  Save Item"
-        Me.btnSaveItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSaveItem.UseVisualStyleBackColor = False
-        '
-        'btnUpdateStock
-        '
-        Me.btnUpdateStock.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.btnUpdateStock.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnUpdateStock.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnUpdateStock.FlatAppearance.BorderSize = 0
-        Me.btnUpdateStock.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.btnUpdateStock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.btnUpdateStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUpdateStock.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdateStock.ForeColor = System.Drawing.Color.White
-        Me.btnUpdateStock.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.save
-        Me.btnUpdateStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnUpdateStock.Location = New System.Drawing.Point(783, 10)
-        Me.btnUpdateStock.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnUpdateStock.Name = "btnUpdateStock"
-        Me.btnUpdateStock.Size = New System.Drawing.Size(138, 37)
-        Me.btnUpdateStock.TabIndex = 34
-        Me.btnUpdateStock.TabStop = False
-        Me.btnUpdateStock.Text = "  Update Stock"
-        Me.btnUpdateStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnUpdateStock.UseVisualStyleBackColor = False
-        '
-        'btnSearchItem
-        '
-        Me.btnSearchItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
-        Me.btnSearchItem.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnSearchItem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearchItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearchItem.ForeColor = System.Drawing.Color.White
-        Me.btnSearchItem.Image = CType(resources.GetObject("btnSearchItem.Image"), System.Drawing.Image)
-        Me.btnSearchItem.Location = New System.Drawing.Point(639, 82)
-        Me.btnSearchItem.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnSearchItem.Name = "btnSearchItem"
-        Me.btnSearchItem.Size = New System.Drawing.Size(36, 27)
-        Me.btnSearchItem.TabIndex = 142
-        Me.btnSearchItem.TabStop = False
-        Me.btnSearchItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSearchItem.UseVisualStyleBackColor = False
-        '
         'ViewInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1129,4 +1143,5 @@ Partial Class ViewInventory
     Friend WithEvents txtItemId As TextBox
     Friend WithEvents labelId As Label
     Friend WithEvents Label13 As Label
+    Friend WithEvents Label4 As Label
 End Class

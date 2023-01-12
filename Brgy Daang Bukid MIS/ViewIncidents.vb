@@ -34,6 +34,10 @@ Public Class ViewIncidents
             mainTabControl.SelectedIndex = 1
             txtIncidentId.Hide()
             labelId.Hide()
+
+            txtIncidentName.Enabled = True
+            datePickerIncidentDate.Enabled = True
+            comboIncidentTime.Enabled = True
         End If
 
         If mainTabControl.SelectedIndex = 0 Then
@@ -77,6 +81,7 @@ Public Class ViewIncidents
         datePickerIncidentDate.Value = tempdate
 
         txtIncidentName.Enabled = True
+        comboIncidentTime.SelectedIndex = 12
 
 
     End Sub
@@ -87,6 +92,9 @@ Public Class ViewIncidents
         txtIncidentName.Enabled = False
         txtIncidentId.Show()
         labelId.Show()
+        txtIncidentName.Enabled = False
+        datePickerIncidentDate.Enabled = False
+        comboIncidentTime.Enabled = False
 
         txtIncidentId.Text = labelIncidentId.Text
         txtIncidentName.Text = labelIncidentName.Text
@@ -146,11 +154,9 @@ Public Class ViewIncidents
             cmd.CommandType = CommandType.Text
 
             If action = "modify" Then
-                cmd.CommandText = "UPDATE incidents SET incident_details = @incidentdetails, incident_date = @incidentdate, incident_time = @incidenttime WHERE incident_id = @incidentid"
+                cmd.CommandText = "UPDATE incidents SET incident_details = @incidentdetails WHERE incident_id = @incidentid"
                 cmd.Parameters.AddWithValue("@incidentid", incidentId)
                 cmd.Parameters.AddWithValue("@incidentdetails", txtIncidentDetails.Text.Trim)
-                cmd.Parameters.AddWithValue("@incidentdate", datePickerIncidentDate.Value.Date)
-                cmd.Parameters.AddWithValue("@incidenttime", comboIncidentTime.Text)
 
                 cmd.ExecuteNonQuery()
             ElseIf action = "add" Then
@@ -175,5 +181,15 @@ Public Class ViewIncidents
             Main_Form.btnIncidents.PerformClick()
         End If
 
+    End Sub
+
+    Private Sub ViewIncidents_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If action = "add" Then
+            If txtIncidentName.Text.Trim <> "" Or txtIncidentDetails.Text.Trim <> "" Then
+                If MsgBox("Your current progress will not be saved!", MsgBoxStyle.YesNo, "Are you sure to exit?") = MsgBoxResult.No Then
+                    e.Cancel = True
+                End If
+            End If
+        End If
     End Sub
 End Class

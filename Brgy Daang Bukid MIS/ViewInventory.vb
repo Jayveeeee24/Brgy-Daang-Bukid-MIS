@@ -74,7 +74,7 @@ Public Class ViewInventory
                     labelItemId.Text = itemId
                     labelItemName.Text = mySQLReader!item_name
                     labelItemStatus.Text = mySQLReader!item_status
-                    labelItemStock.Text = mySQLReader!item_stock
+                    labelItemStock.Text = If(mySQLReader!item_stock = "", 0, mySQLReader!item_stock)
                     labelAddedBy.Text = mySQLReader!added_by
                     Dim date1 As Date = mySQLReader!added_on
                     labelAddedOn.Text = date1.ToString("MMMM d, yyyy")
@@ -90,7 +90,6 @@ Public Class ViewInventory
         comboItemStatus.SelectedIndex = 0
         comboItemStatus.Enabled = False
         txtItemName.Enabled = True
-        txtItemStock.Enabled = True
         getItemHistory()
 
 
@@ -166,7 +165,6 @@ Public Class ViewInventory
         labelId.Show()
 
         txtItemName.Enabled = True
-        txtItemStock.Enabled = False
 
         comboItemStatus.Enabled = True
         comboItemStatus.SelectedIndex = comboItemStatus.FindStringExact(labelItemStatus.Text)

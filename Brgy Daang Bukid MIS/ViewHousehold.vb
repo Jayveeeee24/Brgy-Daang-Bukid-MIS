@@ -14,7 +14,7 @@ Public Class ViewHousehold
         mainTabControl.ItemSize = New Size(0, 1)
 
         loadInitialData()
-
+        checkPriveledges()
     End Sub
     Private Sub checkPriveledges()
         Dim id = Main_Form.account_id
@@ -29,7 +29,7 @@ Public Class ViewHousehold
         clearEverything()
     End Sub
 
-    Private Sub txtView_KeyDown(sender As Object, e As KeyEventArgs) Handles txtWaterSource.KeyDown, txtElectricitySource.KeyDown, txtBldgNo.KeyDown, txtHouseholdId.KeyDown
+    Private Sub txtView_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBldgNo.KeyDown, txtHouseholdId.KeyDown
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
         End If
@@ -67,8 +67,6 @@ Public Class ViewHousehold
 
         setTextBoxColor(txtBldgNo)
         setComboBoxColor(comboStreetName)
-        setTextBoxColor(txtWaterSource)
-        setTextBoxColor(txtElectricitySource)
     End Sub
     Private Sub btnModifyHousehold_Click(sender As Object, e As EventArgs) Handles btnModifyHousehold.Click
         mainTabControl.SelectedIndex = 1
@@ -80,8 +78,17 @@ Public Class ViewHousehold
         comboResidenceType.SelectedIndex = comboResidenceType.FindStringExact(residenceType)
         txtBldgNo.Text = bldgNo
         comboStreetName.SelectedIndex = If(comboStreetName.FindStringExact(streetName) = -1, comboStreetName.Text = "", comboStreetName.FindStringExact(streetName))
-        txtWaterSource.Text = waterSource
-        txtElectricitySource.Text = electricitySource
+        If comboWaterSource.FindStringExact(waterSource) >= 0 Then
+            comboWaterSource.SelectedIndex = comboWaterSource.FindStringExact(waterSource)
+        Else
+            comboWaterSource.Text = waterSource
+        End If
+
+        If comboElectricitySource.FindStringExact(waterSource) >= 0 Then
+            comboWaterSource.SelectedIndex = comboElectricitySource.FindStringExact(waterSource)
+        Else
+            comboElectricitySource.Text = electricitySource
+        End If
         comboHouseholdHead.SelectedIndex = comboHouseholdHead.FindStringExact(headFirstName + " " + If(headMiddleName = Nothing Or headMiddleName = "N/A", "", headMiddleName + " ") + headLastName + If(headExtName = Nothing Or headExtName = "N/A", "", headExtName))
         If comboHouseholdHead.Items.Count = 0 Then
             comboHouseholdHead.Visible = False
@@ -289,8 +296,8 @@ Public Class ViewHousehold
         comboHouseType.SelectedIndex = 0
         txtBldgNo.Clear()
         comboStreetName.SelectedIndex = 0
-        txtWaterSource.Clear()
-        txtElectricitySource.Clear()
+        comboWaterSource.SelectedIndex = -1
+        comboElectricitySource.SelectedIndex = -1
         comboHouseholdHead.Items.Clear()
         comboResidentId.Items.Clear()
 
@@ -321,8 +328,8 @@ Public Class ViewHousehold
             cmd.Parameters.AddWithValue("@streetname", comboStreetName.Text.Trim)
             cmd.Parameters.AddWithValue("@residencetype", comboResidenceType.Text.Trim)
             cmd.Parameters.AddWithValue("@housetype", comboHouseType.Text.Trim)
-            cmd.Parameters.AddWithValue("@electricitysource", txtElectricitySource.Text.Trim)
-            cmd.Parameters.AddWithValue("@watersource", txtWaterSource.Text.Trim)
+            cmd.Parameters.AddWithValue("@electricitysource", comboElectricitySource.Text.Trim)
+            cmd.Parameters.AddWithValue("@watersource", comboWaterSource.Text.Trim)
 
             cmd.ExecuteNonQuery()
 
@@ -335,8 +342,8 @@ Public Class ViewHousehold
             cmd.Parameters.AddWithValue("@streetname", comboStreetName.Text.Trim)
             cmd.Parameters.AddWithValue("@residencetype", comboResidenceType.Text.Trim)
             cmd.Parameters.AddWithValue("@housetype", comboHouseType.Text.Trim)
-            cmd.Parameters.AddWithValue("@electricitysource", txtElectricitySource.Text.Trim)
-            cmd.Parameters.AddWithValue("@watersource", txtWaterSource.Text.Trim)
+            cmd.Parameters.AddWithValue("@electricitysource", comboElectricitySource.Text.Trim)
+            cmd.Parameters.AddWithValue("@watersource", comboWaterSource.Text.Trim)
 
             Dim months() As String = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}
             Dim dateToday As Date = Date.Now

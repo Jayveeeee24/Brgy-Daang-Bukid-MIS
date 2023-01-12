@@ -67,6 +67,7 @@ Partial Class ViewBlotters
         Me.Label20 = New System.Windows.Forms.Label()
         Me.labelId = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.mainTabControl.SuspendLayout()
         Me.pageView.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -415,6 +416,7 @@ Partial Class ViewBlotters
         Me.panelParent.AutoScroll = True
         Me.panelParent.BackColor = System.Drawing.Color.White
         Me.panelParent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.panelParent.Controls.Add(Me.Label1)
         Me.panelParent.Controls.Add(Me.panelSearchParent)
         Me.panelParent.Controls.Add(Me.datePickerSubmittedOn)
         Me.panelParent.Controls.Add(Me.txtBlotterDetails)
@@ -439,7 +441,7 @@ Partial Class ViewBlotters
         '
         Me.panelSearchParent.Controls.Add(Me.btnSearchSuspect)
         Me.panelSearchParent.Controls.Add(Me.btnSearchSubmittedBy)
-        Me.panelSearchParent.Location = New System.Drawing.Point(572, 132)
+        Me.panelSearchParent.Location = New System.Drawing.Point(570, 172)
         Me.panelSearchParent.Name = "panelSearchParent"
         Me.panelSearchParent.Size = New System.Drawing.Size(47, 100)
         Me.panelSearchParent.TabIndex = 130
@@ -486,7 +488,7 @@ Partial Class ViewBlotters
         '
         Me.datePickerSubmittedOn.CustomFormat = ""
         Me.datePickerSubmittedOn.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.datePickerSubmittedOn.Location = New System.Drawing.Point(263, 239)
+        Me.datePickerSubmittedOn.Location = New System.Drawing.Point(261, 279)
         Me.datePickerSubmittedOn.Name = "datePickerSubmittedOn"
         Me.datePickerSubmittedOn.Size = New System.Drawing.Size(303, 26)
         Me.datePickerSubmittedOn.TabIndex = 121
@@ -497,11 +499,11 @@ Partial Class ViewBlotters
         Me.txtBlotterDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtBlotterDetails.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBlotterDetails.ForeColor = System.Drawing.Color.Black
-        Me.txtBlotterDetails.Location = New System.Drawing.Point(263, 281)
-        Me.txtBlotterDetails.MaxLength = 1000
+        Me.txtBlotterDetails.Location = New System.Drawing.Point(261, 321)
+        Me.txtBlotterDetails.MaxLength = 150
         Me.txtBlotterDetails.Multiline = True
         Me.txtBlotterDetails.Name = "txtBlotterDetails"
-        Me.txtBlotterDetails.Size = New System.Drawing.Size(303, 69)
+        Me.txtBlotterDetails.Size = New System.Drawing.Size(303, 105)
         Me.txtBlotterDetails.TabIndex = 119
         Me.txtBlotterDetails.Tag = ""
         '
@@ -511,8 +513,8 @@ Partial Class ViewBlotters
         Me.txtSubmittedBy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtSubmittedBy.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSubmittedBy.ForeColor = System.Drawing.Color.Black
-        Me.txtSubmittedBy.Location = New System.Drawing.Point(263, 194)
-        Me.txtSubmittedBy.MaxLength = 100
+        Me.txtSubmittedBy.Location = New System.Drawing.Point(261, 234)
+        Me.txtSubmittedBy.MaxLength = 50
         Me.txtSubmittedBy.Multiline = True
         Me.txtSubmittedBy.Name = "txtSubmittedBy"
         Me.txtSubmittedBy.Size = New System.Drawing.Size(303, 27)
@@ -525,8 +527,8 @@ Partial Class ViewBlotters
         Me.txtSuspect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtSuspect.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSuspect.ForeColor = System.Drawing.Color.Black
-        Me.txtSuspect.Location = New System.Drawing.Point(263, 152)
-        Me.txtSuspect.MaxLength = 100
+        Me.txtSuspect.Location = New System.Drawing.Point(261, 192)
+        Me.txtSuspect.MaxLength = 50
         Me.txtSuspect.Multiline = True
         Me.txtSuspect.Name = "txtSuspect"
         Me.txtSuspect.Size = New System.Drawing.Size(303, 27)
@@ -540,7 +542,7 @@ Partial Class ViewBlotters
         Me.txtBlotterId.Enabled = False
         Me.txtBlotterId.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBlotterId.ForeColor = System.Drawing.Color.Black
-        Me.txtBlotterId.Location = New System.Drawing.Point(263, 69)
+        Me.txtBlotterId.Location = New System.Drawing.Point(261, 109)
         Me.txtBlotterId.MaxLength = 100
         Me.txtBlotterId.Multiline = True
         Me.txtBlotterId.Name = "txtBlotterId"
@@ -554,8 +556,8 @@ Partial Class ViewBlotters
         Me.txtBlotter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtBlotter.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBlotter.ForeColor = System.Drawing.Color.Black
-        Me.txtBlotter.Location = New System.Drawing.Point(263, 112)
-        Me.txtBlotter.MaxLength = 100
+        Me.txtBlotter.Location = New System.Drawing.Point(261, 152)
+        Me.txtBlotter.MaxLength = 20
         Me.txtBlotter.Multiline = True
         Me.txtBlotter.Name = "txtBlotter"
         Me.txtBlotter.Size = New System.Drawing.Size(303, 27)
@@ -566,7 +568,7 @@ Partial Class ViewBlotters
         '
         Me.Label32.AutoSize = True
         Me.Label32.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label32.Location = New System.Drawing.Point(55, 284)
+        Me.Label32.Location = New System.Drawing.Point(53, 324)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(75, 18)
         Me.Label32.TabIndex = 114
@@ -576,7 +578,7 @@ Partial Class ViewBlotters
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(55, 245)
+        Me.Label2.Location = New System.Drawing.Point(53, 285)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(140, 18)
         Me.Label2.TabIndex = 103
@@ -586,7 +588,7 @@ Partial Class ViewBlotters
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(55, 199)
+        Me.Label15.Location = New System.Drawing.Point(53, 239)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(140, 18)
         Me.Label15.TabIndex = 96
@@ -596,7 +598,7 @@ Partial Class ViewBlotters
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(55, 158)
+        Me.Label18.Location = New System.Drawing.Point(53, 198)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(95, 18)
         Me.Label18.TabIndex = 95
@@ -606,7 +608,7 @@ Partial Class ViewBlotters
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(55, 117)
+        Me.Label20.Location = New System.Drawing.Point(53, 157)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(134, 18)
         Me.Label20.TabIndex = 94
@@ -616,7 +618,7 @@ Partial Class ViewBlotters
         '
         Me.labelId.AutoSize = True
         Me.labelId.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelId.Location = New System.Drawing.Point(55, 72)
+        Me.labelId.Location = New System.Drawing.Point(53, 112)
         Me.labelId.Name = "labelId"
         Me.labelId.Size = New System.Drawing.Size(100, 18)
         Me.labelId.TabIndex = 93
@@ -627,11 +629,21 @@ Partial Class ViewBlotters
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(458, 26)
+        Me.Label7.Location = New System.Drawing.Point(456, 66)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(152, 18)
         Me.Label7.TabIndex = 92
         Me.Label7.Text = "Note: * Required "
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(33, 12)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(531, 16)
+        Me.Label1.TabIndex = 145
+        Me.Label1.Text = "Note: You can use the search button to search for a resident in the barangay "
         '
         'ViewBlotters
         '
@@ -708,4 +720,5 @@ Partial Class ViewBlotters
     Friend WithEvents Label20 As Label
     Friend WithEvents labelId As Label
     Friend WithEvents Label7 As Label
+    Friend WithEvents Label1 As Label
 End Class

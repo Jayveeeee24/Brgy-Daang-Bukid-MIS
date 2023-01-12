@@ -150,7 +150,13 @@ Public Class ViewVawc
         panelSearchParent.Show()
         btnSearchSubmittedBy.Show()
 
-
+        If labelCaseStatus.Text = "Closed" Or labelCaseStatus.Text = "Filed for Action" Then
+            btnModifyVawc.Text = "  Case Closed"
+            btnModifyVawc.Enabled = False
+        Else
+            btnModifyVawc.Text = "  Update Case"
+            btnModifyVawc.Enabled = True
+        End If
     End Sub
     Private Sub clearEverything()
         txtCaseId.Clear()
@@ -190,10 +196,7 @@ Public Class ViewVawc
 
     End Sub
     Private Sub btnModifyVawc_Click(sender As Object, e As EventArgs) Handles btnModifyVawc.Click
-        If labelCaseStatus.Text = "Closed" Or labelCaseStatus.Text = "Filed for Action" Then
-            MsgBox("Case has been closed!")
-            Exit Sub
-        End If
+
         mainTabControl.SelectedIndex = 1
         action = "modify"
 

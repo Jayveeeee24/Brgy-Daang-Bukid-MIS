@@ -18,15 +18,15 @@ Public Class Account_Settings
         End If
     End Sub
 
-    Private Sub txtView_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPasswordGuest.KeyDown
+    Private Sub txtViewGuest_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPasswordGuest.KeyDown
         If e.KeyCode = Keys.Enter Then
-            btnChangePassword.PerformClick()
+            btnChangePasswordGuest.PerformClick()
             e.SuppressKeyPress = True
         End If
     End Sub
-    Private Sub txtViewGuestKeydown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
+    Private Sub txtViewtKeydown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
         If e.KeyCode = Keys.Enter Then
-            btnChangePasswordGuest.PerformClick()
+            btnChangePassword.PerformClick()
             e.SuppressKeyPress = True
         End If
     End Sub
@@ -154,7 +154,7 @@ Public Class Account_Settings
             btnVisibilityGuest.Image = GetVisibilityImage("visible")
         Else
             txtPasswordGuest.PasswordChar = "*"
-            btnChangePasswordGuest.Image = GetVisibilityImage("invisible")
+            btnVisibilityGuest.Image = GetVisibilityImage("invisible")
         End If
     End Sub
 End Class

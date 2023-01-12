@@ -37,7 +37,7 @@ Partial Class AppointOfficial
         Me.comboOfficialPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboOfficialPosition.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboOfficialPosition.FormattingEnabled = True
-        Me.comboOfficialPosition.Items.AddRange(New Object() {"Barangay Captain", "Barangay Secretary", "Barangay Treasurer", "Barangay Kagawad", "SK Chairperson", "SK Secretary", "SK Treasurer"})
+        Me.comboOfficialPosition.Items.AddRange(New Object() {"Barangay Captain", "Barangay Secretary", "Barangay Treasurer", "SK Chairperson", "SK Secretary", "SK Treasurer", "Barangay Kagawad", "SK Kagawad"})
         Me.comboOfficialPosition.Location = New System.Drawing.Point(113, 92)
         Me.comboOfficialPosition.Name = "comboOfficialPosition"
         Me.comboOfficialPosition.Size = New System.Drawing.Size(259, 28)

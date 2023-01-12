@@ -25,16 +25,17 @@ Partial Class Login
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.panelLogo = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.labelNoAccount = New System.Windows.Forms.Label()
-        Me.btnLogin = New System.Windows.Forms.Button()
-        Me.btnVisibility = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.btnVisibility = New System.Windows.Forms.Button()
+        Me.btnLogin = New System.Windows.Forms.Button()
+        Me.picLogo = New System.Windows.Forms.PictureBox()
+        Me.labelForgotPassword = New System.Windows.Forms.Label()
         Me.panelLogo.SuspendLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -58,18 +59,6 @@ Partial Class Login
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Management Information System for Brgy Daang Bukid"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'picLogo
-        '
-        Me.picLogo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.picLogo.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.logo_daang_bukid_legitbgremoved
-        Me.picLogo.Location = New System.Drawing.Point(86, 70)
-        Me.picLogo.Name = "picLogo"
-        Me.picLogo.Size = New System.Drawing.Size(174, 179)
-        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picLogo.TabIndex = 0
-        Me.picLogo.TabStop = False
         '
         'Label1
         '
@@ -113,7 +102,7 @@ Partial Class Login
         Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.ForeColor = System.Drawing.Color.Black
         Me.txtPassword.Location = New System.Drawing.Point(384, 268)
-        Me.txtPassword.MaxLength = 20
+        Me.txtPassword.MaxLength = 17
         Me.txtPassword.Multiline = True
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -131,36 +120,6 @@ Partial Class Login
         Me.labelNoAccount.Size = New System.Drawing.Size(143, 16)
         Me.labelNoAccount.TabIndex = 9
         Me.labelNoAccount.Text = "I don't have an account"
-        '
-        'btnLogin
-        '
-        Me.btnLogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
-        Me.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
-        Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
-        Me.btnLogin.Image = CType(resources.GetObject("btnLogin.Image"), System.Drawing.Image)
-        Me.btnLogin.Location = New System.Drawing.Point(592, 344)
-        Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(66, 45)
-        Me.btnLogin.TabIndex = 8
-        Me.btnLogin.UseVisualStyleBackColor = False
-        '
-        'btnVisibility
-        '
-        Me.btnVisibility.BackColor = System.Drawing.Color.White
-        Me.btnVisibility.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.btnVisibility.FlatAppearance.BorderSize = 0
-        Me.btnVisibility.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
-        Me.btnVisibility.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.btnVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnVisibility.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.visi
-        Me.btnVisibility.Location = New System.Drawing.Point(613, 270)
-        Me.btnVisibility.Name = "btnVisibility"
-        Me.btnVisibility.Size = New System.Drawing.Size(29, 23)
-        Me.btnVisibility.TabIndex = 10
-        Me.btnVisibility.TabStop = False
-        Me.btnVisibility.UseVisualStyleBackColor = False
         '
         'Label4
         '
@@ -184,12 +143,67 @@ Partial Class Login
         Me.Label5.TabIndex = 12
         Me.Label5.Text = "Password"
         '
+        'btnVisibility
+        '
+        Me.btnVisibility.BackColor = System.Drawing.Color.White
+        Me.btnVisibility.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnVisibility.FlatAppearance.BorderSize = 0
+        Me.btnVisibility.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
+        Me.btnVisibility.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.btnVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVisibility.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.visi
+        Me.btnVisibility.Location = New System.Drawing.Point(613, 270)
+        Me.btnVisibility.Name = "btnVisibility"
+        Me.btnVisibility.Size = New System.Drawing.Size(29, 23)
+        Me.btnVisibility.TabIndex = 10
+        Me.btnVisibility.TabStop = False
+        Me.btnVisibility.UseVisualStyleBackColor = False
+        '
+        'btnLogin
+        '
+        Me.btnLogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.btnLogin.Image = CType(resources.GetObject("btnLogin.Image"), System.Drawing.Image)
+        Me.btnLogin.Location = New System.Drawing.Point(592, 344)
+        Me.btnLogin.Name = "btnLogin"
+        Me.btnLogin.Size = New System.Drawing.Size(66, 45)
+        Me.btnLogin.TabIndex = 8
+        Me.btnLogin.UseVisualStyleBackColor = False
+        '
+        'picLogo
+        '
+        Me.picLogo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picLogo.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.logo_daang_bukid_legitbgremoved
+        Me.picLogo.Location = New System.Drawing.Point(86, 70)
+        Me.picLogo.Name = "picLogo"
+        Me.picLogo.Size = New System.Drawing.Size(174, 179)
+        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picLogo.TabIndex = 0
+        Me.picLogo.TabStop = False
+        '
+        'labelForgotPassword
+        '
+        Me.labelForgotPassword.AutoSize = True
+        Me.labelForgotPassword.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.labelForgotPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelForgotPassword.ForeColor = System.Drawing.Color.White
+        Me.labelForgotPassword.Location = New System.Drawing.Point(526, 298)
+        Me.labelForgotPassword.Name = "labelForgotPassword"
+        Me.labelForgotPassword.Size = New System.Drawing.Size(115, 16)
+        Me.labelForgotPassword.TabIndex = 13
+        Me.labelForgotPassword.Text = "Forgot password?"
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(694, 489)
+        Me.Controls.Add(Me.labelForgotPassword)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnVisibility)
@@ -224,4 +238,5 @@ Partial Class Login
     Friend WithEvents btnVisibility As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents labelForgotPassword As Label
 End Class

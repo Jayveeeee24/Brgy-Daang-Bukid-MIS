@@ -37,8 +37,8 @@ Partial Class NoAccount
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(437, 56)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "     Unfortunately, only the Barangay Captain and Barangay Secretary has accounts" &
-    ". If you are a Barangay Official, ask for the account details."
+        Me.Label1.Text = "     Unfortunately, only 3 accounts are allowed in the system (Administrator, Sta" &
+    "ff and Guest) . If you are a Barangay Official, ask for the account details."
         '
         'Label2
         '
@@ -48,7 +48,7 @@ Partial Class NoAccount
         Me.Label2.Size = New System.Drawing.Size(440, 53)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "If you are not a Barangay Official,  you can ask the management for the guest acc" &
-    "ount that has limted features of searching and viewing."
+    "ount that is strictly limited to searching and viewing"
         '
         'Label3
         '

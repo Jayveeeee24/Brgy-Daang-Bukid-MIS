@@ -83,6 +83,7 @@ Partial Class ViewVawc
         Me.labelId = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.mainTabControl.SuspendLayout()
         Me.pageView.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -402,7 +403,7 @@ Partial Class ViewVawc
         Me.btnModifyVawc.Size = New System.Drawing.Size(166, 37)
         Me.btnModifyVawc.TabIndex = 34
         Me.btnModifyVawc.TabStop = False
-        Me.btnModifyVawc.Text = "  Update Complaint"
+        Me.btnModifyVawc.Text = "  Update Case"
         Me.btnModifyVawc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnModifyVawc.UseVisualStyleBackColor = False
         '
@@ -529,6 +530,7 @@ Partial Class ViewVawc
         Me.panelParent.AutoScroll = True
         Me.panelParent.BackColor = System.Drawing.Color.White
         Me.panelParent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.panelParent.Controls.Add(Me.Label9)
         Me.panelParent.Controls.Add(Me.btnSearchSubmittedBy)
         Me.panelParent.Controls.Add(Me.comboCaseStatus)
         Me.panelParent.Controls.Add(Me.Label8)
@@ -567,7 +569,7 @@ Partial Class ViewVawc
         Me.btnSearchSubmittedBy.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchSubmittedBy.ForeColor = System.Drawing.Color.White
         Me.btnSearchSubmittedBy.Image = CType(resources.GetObject("btnSearchSubmittedBy.Image"), System.Drawing.Image)
-        Me.btnSearchSubmittedBy.Location = New System.Drawing.Point(581, 384)
+        Me.btnSearchSubmittedBy.Location = New System.Drawing.Point(581, 403)
         Me.btnSearchSubmittedBy.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSearchSubmittedBy.Name = "btnSearchSubmittedBy"
         Me.btnSearchSubmittedBy.Size = New System.Drawing.Size(36, 28)
@@ -582,7 +584,7 @@ Partial Class ViewVawc
         Me.comboCaseStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboCaseStatus.FormattingEnabled = True
         Me.comboCaseStatus.Items.AddRange(New Object() {"Ongoing", "Closed", "Filed for Action"})
-        Me.comboCaseStatus.Location = New System.Drawing.Point(263, 234)
+        Me.comboCaseStatus.Location = New System.Drawing.Point(263, 253)
         Me.comboCaseStatus.Name = "comboCaseStatus"
         Me.comboCaseStatus.Size = New System.Drawing.Size(303, 28)
         Me.comboCaseStatus.TabIndex = 135
@@ -591,7 +593,7 @@ Partial Class ViewVawc
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(55, 239)
+        Me.Label8.Location = New System.Drawing.Point(55, 258)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(129, 18)
         Me.Label8.TabIndex = 133
@@ -603,8 +605,8 @@ Partial Class ViewVawc
         Me.txtRelationship.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtRelationship.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRelationship.ForeColor = System.Drawing.Color.Black
-        Me.txtRelationship.Location = New System.Drawing.Point(263, 201)
-        Me.txtRelationship.MaxLength = 100
+        Me.txtRelationship.Location = New System.Drawing.Point(263, 220)
+        Me.txtRelationship.MaxLength = 50
         Me.txtRelationship.Multiline = True
         Me.txtRelationship.Name = "txtRelationship"
         Me.txtRelationship.Size = New System.Drawing.Size(303, 27)
@@ -615,7 +617,7 @@ Partial Class ViewVawc
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(55, 206)
+        Me.Label1.Location = New System.Drawing.Point(55, 225)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(130, 18)
         Me.Label1.TabIndex = 131
@@ -625,7 +627,7 @@ Partial Class ViewVawc
         '
         Me.panelSearchParent.Controls.Add(Me.btnSearchVictim)
         Me.panelSearchParent.Controls.Add(Me.btnSearchSuspect)
-        Me.panelSearchParent.Location = New System.Drawing.Point(572, 117)
+        Me.panelSearchParent.Location = New System.Drawing.Point(572, 136)
         Me.panelSearchParent.Name = "panelSearchParent"
         Me.panelSearchParent.Size = New System.Drawing.Size(55, 100)
         Me.panelSearchParent.TabIndex = 130
@@ -674,8 +676,8 @@ Partial Class ViewVawc
         Me.txtSubmittedBy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtSubmittedBy.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSubmittedBy.ForeColor = System.Drawing.Color.Black
-        Me.txtSubmittedBy.Location = New System.Drawing.Point(263, 384)
-        Me.txtSubmittedBy.MaxLength = 100
+        Me.txtSubmittedBy.Location = New System.Drawing.Point(263, 403)
+        Me.txtSubmittedBy.MaxLength = 50
         Me.txtSubmittedBy.Multiline = True
         Me.txtSubmittedBy.Name = "txtSubmittedBy"
         Me.txtSubmittedBy.Size = New System.Drawing.Size(303, 27)
@@ -686,7 +688,7 @@ Partial Class ViewVawc
         '
         Me.datePickerSubmittedOn.CustomFormat = ""
         Me.datePickerSubmittedOn.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.datePickerSubmittedOn.Location = New System.Drawing.Point(263, 420)
+        Me.datePickerSubmittedOn.Location = New System.Drawing.Point(263, 439)
         Me.datePickerSubmittedOn.Name = "datePickerSubmittedOn"
         Me.datePickerSubmittedOn.Size = New System.Drawing.Size(303, 26)
         Me.datePickerSubmittedOn.TabIndex = 121
@@ -697,8 +699,8 @@ Partial Class ViewVawc
         Me.txtCaseDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCaseDetails.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCaseDetails.ForeColor = System.Drawing.Color.Black
-        Me.txtCaseDetails.Location = New System.Drawing.Point(263, 268)
-        Me.txtCaseDetails.MaxLength = 100
+        Me.txtCaseDetails.Location = New System.Drawing.Point(263, 287)
+        Me.txtCaseDetails.MaxLength = 150
         Me.txtCaseDetails.Multiline = True
         Me.txtCaseDetails.Name = "txtCaseDetails"
         Me.txtCaseDetails.Size = New System.Drawing.Size(303, 69)
@@ -711,8 +713,8 @@ Partial Class ViewVawc
         Me.txtSuspect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtSuspect.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSuspect.ForeColor = System.Drawing.Color.Black
-        Me.txtSuspect.Location = New System.Drawing.Point(263, 168)
-        Me.txtSuspect.MaxLength = 100
+        Me.txtSuspect.Location = New System.Drawing.Point(263, 187)
+        Me.txtSuspect.MaxLength = 50
         Me.txtSuspect.Multiline = True
         Me.txtSuspect.Name = "txtSuspect"
         Me.txtSuspect.Size = New System.Drawing.Size(303, 27)
@@ -725,8 +727,8 @@ Partial Class ViewVawc
         Me.txtVictim.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtVictim.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtVictim.ForeColor = System.Drawing.Color.Black
-        Me.txtVictim.Location = New System.Drawing.Point(263, 135)
-        Me.txtVictim.MaxLength = 100
+        Me.txtVictim.Location = New System.Drawing.Point(263, 154)
+        Me.txtVictim.MaxLength = 50
         Me.txtVictim.Multiline = True
         Me.txtVictim.Name = "txtVictim"
         Me.txtVictim.Size = New System.Drawing.Size(303, 27)
@@ -740,7 +742,7 @@ Partial Class ViewVawc
         Me.txtCaseId.Enabled = False
         Me.txtCaseId.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCaseId.ForeColor = System.Drawing.Color.Black
-        Me.txtCaseId.Location = New System.Drawing.Point(263, 69)
+        Me.txtCaseId.Location = New System.Drawing.Point(263, 88)
         Me.txtCaseId.MaxLength = 100
         Me.txtCaseId.Multiline = True
         Me.txtCaseId.Name = "txtCaseId"
@@ -754,8 +756,8 @@ Partial Class ViewVawc
         Me.txtCaseName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCaseName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCaseName.ForeColor = System.Drawing.Color.Black
-        Me.txtCaseName.Location = New System.Drawing.Point(263, 102)
-        Me.txtCaseName.MaxLength = 100
+        Me.txtCaseName.Location = New System.Drawing.Point(263, 121)
+        Me.txtCaseName.MaxLength = 20
         Me.txtCaseName.Multiline = True
         Me.txtCaseName.Name = "txtCaseName"
         Me.txtCaseName.Size = New System.Drawing.Size(303, 27)
@@ -766,7 +768,7 @@ Partial Class ViewVawc
         '
         Me.Label32.AutoSize = True
         Me.Label32.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label32.Location = New System.Drawing.Point(55, 271)
+        Me.Label32.Location = New System.Drawing.Point(55, 290)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(120, 18)
         Me.Label32.TabIndex = 114
@@ -776,7 +778,7 @@ Partial Class ViewVawc
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(55, 426)
+        Me.Label2.Location = New System.Drawing.Point(55, 445)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(132, 18)
         Me.Label2.TabIndex = 103
@@ -786,7 +788,7 @@ Partial Class ViewVawc
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(55, 391)
+        Me.Label6.Location = New System.Drawing.Point(55, 410)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(141, 18)
         Me.Label6.TabIndex = 101
@@ -796,7 +798,7 @@ Partial Class ViewVawc
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(55, 173)
+        Me.Label15.Location = New System.Drawing.Point(55, 192)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(95, 18)
         Me.Label15.TabIndex = 96
@@ -806,7 +808,7 @@ Partial Class ViewVawc
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(55, 141)
+        Me.Label18.Location = New System.Drawing.Point(55, 160)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(80, 18)
         Me.Label18.TabIndex = 95
@@ -816,7 +818,7 @@ Partial Class ViewVawc
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(55, 107)
+        Me.Label20.Location = New System.Drawing.Point(55, 126)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(123, 18)
         Me.Label20.TabIndex = 94
@@ -826,7 +828,7 @@ Partial Class ViewVawc
         '
         Me.labelId.AutoSize = True
         Me.labelId.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelId.Location = New System.Drawing.Point(55, 72)
+        Me.labelId.Location = New System.Drawing.Point(55, 91)
         Me.labelId.Name = "labelId"
         Me.labelId.Size = New System.Drawing.Size(84, 18)
         Me.labelId.TabIndex = 93
@@ -837,7 +839,7 @@ Partial Class ViewVawc
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(458, 26)
+        Me.Label7.Location = New System.Drawing.Point(465, 56)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(152, 18)
         Me.Label7.TabIndex = 92
@@ -849,6 +851,16 @@ Partial Class ViewVawc
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(10, 74)
         Me.Panel1.TabIndex = 68
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(22, 9)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(531, 16)
+        Me.Label9.TabIndex = 145
+        Me.Label9.Text = "Note: You can use the search button to search for a resident in the barangay "
         '
         'ViewVawc
         '
@@ -941,4 +953,5 @@ Partial Class ViewVawc
     Friend WithEvents Label1 As Label
     Friend WithEvents comboCaseStatus As ComboBox
     Friend WithEvents btnSearchSubmittedBy As Button
+    Friend WithEvents Label9 As Label
 End Class

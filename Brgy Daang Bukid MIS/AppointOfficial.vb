@@ -8,6 +8,7 @@ Public Class AppointOfficial
     Public mySqlConn As String = "server=localhost; user id=root; database=mis"
     Public residentId As Integer
     Public residentName As String
+    Dim limit As Integer
     Private Sub AppointOfficial_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         labelPositionWarning.Hide()
     End Sub
@@ -40,17 +41,22 @@ Public Class AppointOfficial
             MsgBox("Please select a valid position!", vbCritical, "Warning")
             Exit Sub
         End If
-        If checkPositionAvailability() = False And comboOfficialPosition.SelectedIndex <= 5 Then
-            MsgBox("Position is already taken!", vbCritical, "Warning")
-            Exit Sub
-        ElseIf checkPositionAvailability() = False And comboOfficialPosition.SelectedIndex > 5 Then
-            MsgBox("You exceed the number of Kagawad you can appoint!", vbCritical, "Warning")
-            Exit Sub
-        End If
         If checkIfOfficial() = True Then
             MsgBox("Resident already has a position!", vbCritical, "Warning")
             Exit Sub
         End If
+        If comboOfficialPosition.SelectedIndex <= 5 Then
+            If checkPositionAvailability() = False Then
+                MsgBox("Position is already taken!", vbCritical, "Warning")
+                Exit Sub
+            End If
+        Else
+            If checkKagawad() = False Then
+                MsgBox("You exceeded the number of " + comboOfficialPosition.Text + " you can appoint!", vbCritical, "Warning")
+                Exit Sub
+            End If
+        End If
+
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
         On Error Resume Next
@@ -140,12 +146,6 @@ Public Class AppointOfficial
                 mySql.Close()
                 mySql.Dispose()
                 Return True
-            ElseIf cmd.ExecuteScalar() > 2 Then
-                cmd.Dispose()
-                mySql.Close()
-                mySql.Dispose()
-                MsgBox("You exceeded the number of Kagawad you can appoint!", vbCritical, "Warning")
-                Return False
             Else
                 cmd.Dispose()
                 mySql.Close()
@@ -154,8 +154,38 @@ Public Class AppointOfficial
             End If
         End If
     End Function
+
+    Private Function checkKagawad() As Boolean
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = "SELECT count(*) FROM brgyofficials where official_position = @officialposition"
+        cmd.Parameters.AddWithValue("@officialposition", comboOfficialPosition.Text)
+        If cmd.ExecuteScalar() >= 7 Then
+            cmd.Dispose()
+            mySql.Close()
+            mySql.Dispose()
+            Return False
+        Else
+            cmd.Dispose()
+            mySql.Close()
+            mySql.Dispose()
+            Return True
+        End If
+    End Function
     Private Sub comboOfficialPosition_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboOfficialPosition.SelectedIndexChanged
-        If checkPositionAvailability() = False Then
+        If checkPositionAvailability() = False And comboOfficialPosition.SelectedIndex <= 5 Then
             labelPositionWarning.Show()
         Else
             labelPositionWarning.Hide()

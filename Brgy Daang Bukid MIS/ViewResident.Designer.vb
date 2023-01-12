@@ -101,10 +101,8 @@ Partial Class ViewResident
         Me.comboPwd = New System.Windows.Forms.ComboBox()
         Me.comboVoter = New System.Windows.Forms.ComboBox()
         Me.txtCitizenship = New System.Windows.Forms.TextBox()
-        Me.txtContactNo = New System.Windows.Forms.TextBox()
         Me.comboSex = New System.Windows.Forms.ComboBox()
         Me.comboCivilStatus = New System.Windows.Forms.ComboBox()
-        Me.txtBirthPlace = New System.Windows.Forms.TextBox()
         Me.pickerBirthDate = New System.Windows.Forms.DateTimePicker()
         Me.comboHouseholdRole = New System.Windows.Forms.ComboBox()
         Me.txtLastName = New System.Windows.Forms.TextBox()
@@ -127,6 +125,9 @@ Partial Class ViewResident
         Me.txtMiddleName = New System.Windows.Forms.TextBox()
         Me.labelHousehold = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtContactNo = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.comboBirthPlace = New System.Windows.Forms.ComboBox()
         Me.mainTabControl.SuspendLayout()
         Me.pageView.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -913,6 +914,8 @@ Partial Class ViewResident
         Me.panelParent.AutoScroll = True
         Me.panelParent.BackColor = System.Drawing.Color.White
         Me.panelParent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.panelParent.Controls.Add(Me.comboBirthPlace)
+        Me.panelParent.Controls.Add(Me.TextBox1)
         Me.panelParent.Controls.Add(Me.labelDisability)
         Me.panelParent.Controls.Add(Me.txtDisability)
         Me.panelParent.Controls.Add(Me.txtExtName)
@@ -928,7 +931,6 @@ Partial Class ViewResident
         Me.panelParent.Controls.Add(Me.txtContactNo)
         Me.panelParent.Controls.Add(Me.comboSex)
         Me.panelParent.Controls.Add(Me.comboCivilStatus)
-        Me.panelParent.Controls.Add(Me.txtBirthPlace)
         Me.panelParent.Controls.Add(Me.pickerBirthDate)
         Me.panelParent.Controls.Add(Me.comboHouseholdRole)
         Me.panelParent.Controls.Add(Me.txtLastName)
@@ -978,7 +980,7 @@ Partial Class ViewResident
         Me.txtDisability.MaxLength = 50
         Me.txtDisability.Multiline = True
         Me.txtDisability.Name = "txtDisability"
-        Me.txtDisability.Size = New System.Drawing.Size(303, 26)
+        Me.txtDisability.Size = New System.Drawing.Size(306, 26)
         Me.txtDisability.TabIndex = 101
         Me.txtDisability.Visible = False
         '
@@ -1009,6 +1011,7 @@ Partial Class ViewResident
         Me.txtAge.Size = New System.Drawing.Size(130, 27)
         Me.txtAge.TabIndex = 99
         Me.txtAge.Tag = ""
+        Me.txtAge.Text = "0"
         '
         'comboHouseholdId
         '
@@ -1043,7 +1046,7 @@ Partial Class ViewResident
         Me.txtReligion.MaxLength = 100
         Me.txtReligion.Multiline = True
         Me.txtReligion.Name = "txtReligion"
-        Me.txtReligion.Size = New System.Drawing.Size(303, 27)
+        Me.txtReligion.Size = New System.Drawing.Size(306, 27)
         Me.txtReligion.TabIndex = 91
         Me.txtReligion.Tag = ""
         '
@@ -1067,7 +1070,7 @@ Partial Class ViewResident
         Me.txtOccupation.MaxLength = 100
         Me.txtOccupation.Multiline = True
         Me.txtOccupation.Name = "txtOccupation"
-        Me.txtOccupation.Size = New System.Drawing.Size(303, 27)
+        Me.txtOccupation.Size = New System.Drawing.Size(306, 27)
         Me.txtOccupation.TabIndex = 89
         Me.txtOccupation.Tag = ""
         '
@@ -1105,23 +1108,9 @@ Partial Class ViewResident
         Me.txtCitizenship.MaxLength = 100
         Me.txtCitizenship.Multiline = True
         Me.txtCitizenship.Name = "txtCitizenship"
-        Me.txtCitizenship.Size = New System.Drawing.Size(303, 27)
+        Me.txtCitizenship.Size = New System.Drawing.Size(306, 27)
         Me.txtCitizenship.TabIndex = 86
         Me.txtCitizenship.Tag = ""
-        '
-        'txtContactNo
-        '
-        Me.txtContactNo.BackColor = System.Drawing.Color.White
-        Me.txtContactNo.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtContactNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContactNo.ForeColor = System.Drawing.Color.Black
-        Me.txtContactNo.Location = New System.Drawing.Point(271, 492)
-        Me.txtContactNo.MaxLength = 100
-        Me.txtContactNo.Multiline = True
-        Me.txtContactNo.Name = "txtContactNo"
-        Me.txtContactNo.Size = New System.Drawing.Size(303, 27)
-        Me.txtContactNo.TabIndex = 85
-        Me.txtContactNo.Tag = ""
         '
         'comboSex
         '
@@ -1147,26 +1136,13 @@ Partial Class ViewResident
         Me.comboCivilStatus.Size = New System.Drawing.Size(128, 28)
         Me.comboCivilStatus.TabIndex = 83
         '
-        'txtBirthPlace
-        '
-        Me.txtBirthPlace.BackColor = System.Drawing.Color.White
-        Me.txtBirthPlace.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtBirthPlace.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBirthPlace.ForeColor = System.Drawing.Color.Black
-        Me.txtBirthPlace.Location = New System.Drawing.Point(271, 390)
-        Me.txtBirthPlace.MaxLength = 100
-        Me.txtBirthPlace.Multiline = True
-        Me.txtBirthPlace.Name = "txtBirthPlace"
-        Me.txtBirthPlace.Size = New System.Drawing.Size(303, 27)
-        Me.txtBirthPlace.TabIndex = 82
-        '
         'pickerBirthDate
         '
         Me.pickerBirthDate.CustomFormat = ""
         Me.pickerBirthDate.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pickerBirthDate.Location = New System.Drawing.Point(271, 324)
         Me.pickerBirthDate.Name = "pickerBirthDate"
-        Me.pickerBirthDate.Size = New System.Drawing.Size(303, 26)
+        Me.pickerBirthDate.Size = New System.Drawing.Size(306, 26)
         Me.pickerBirthDate.TabIndex = 80
         '
         'comboHouseholdRole
@@ -1191,7 +1167,7 @@ Partial Class ViewResident
         Me.txtLastName.MaxLength = 100
         Me.txtLastName.Multiline = True
         Me.txtLastName.Name = "txtLastName"
-        Me.txtLastName.Size = New System.Drawing.Size(293, 27)
+        Me.txtLastName.Size = New System.Drawing.Size(304, 27)
         Me.txtLastName.TabIndex = 78
         '
         'Label4
@@ -1354,7 +1330,7 @@ Partial Class ViewResident
         Me.txtFirstName.MaxLength = 100
         Me.txtFirstName.Multiline = True
         Me.txtFirstName.Name = "txtFirstName"
-        Me.txtFirstName.Size = New System.Drawing.Size(293, 27)
+        Me.txtFirstName.Size = New System.Drawing.Size(304, 27)
         Me.txtFirstName.TabIndex = 69
         '
         'txtMiddleName
@@ -1367,7 +1343,7 @@ Partial Class ViewResident
         Me.txtMiddleName.MaxLength = 100
         Me.txtMiddleName.Multiline = True
         Me.txtMiddleName.Name = "txtMiddleName"
-        Me.txtMiddleName.Size = New System.Drawing.Size(293, 27)
+        Me.txtMiddleName.Size = New System.Drawing.Size(304, 27)
         Me.txtMiddleName.TabIndex = 77
         '
         'labelHousehold
@@ -1386,6 +1362,46 @@ Partial Class ViewResident
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(10, 23)
         Me.Panel1.TabIndex = 68
+        '
+        'txtContactNo
+        '
+        Me.txtContactNo.BackColor = System.Drawing.Color.White
+        Me.txtContactNo.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtContactNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContactNo.ForeColor = System.Drawing.Color.Black
+        Me.txtContactNo.Location = New System.Drawing.Point(271, 725)
+        Me.txtContactNo.MaxLength = 100
+        Me.txtContactNo.Multiline = True
+        Me.txtContactNo.Name = "txtContactNo"
+        Me.txtContactNo.Size = New System.Drawing.Size(303, 27)
+        Me.txtContactNo.TabIndex = 85
+        Me.txtContactNo.Tag = ""
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.White
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.ForeColor = System.Drawing.Color.Black
+        Me.TextBox1.Location = New System.Drawing.Point(274, 494)
+        Me.TextBox1.MaxLength = 100
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(303, 27)
+        Me.TextBox1.TabIndex = 103
+        '
+        'comboBirthPlace
+        '
+        Me.comboBirthPlace.AutoCompleteCustomSource.AddRange(New String() {"Batanes", "Ilocos Norte", "Apayao", "Cagayan", "Abra", "Kalinga", "Ilocos Sur", "Mountain Province", "Ifugao", "Isabela", "La Union", "Benguet", "Nueva Vizcaya", "Quirino", "Pangasinan", "Tarlac", "Nueva Ecija", "Aurora", "Zambales", "Pampanga", "Bulacan", "Bataan", "Rizal", "Cavite", "Laguna", "Batangas", "Quezon", "Camarines Norte", "Marinduque", "Camarines Sur", "Catanduanes", "Albay", "Occidental Mindoro", "Oriental Mindoro", "Romblon", "Sorsogon", "Masbate", "Northern Samar", "Samar", "Eastern Samar", "Aklan", "Capiz", "Antique", "Iloilo", "Biliran", "Guimaras", "Negros Occidental", "Cebu", "Leyte", "Southern Leyte", "Palawan", "Negros Oriental", "Bohol", "Siquijor", "Camiguin", "Dinagat Islands", "Surigao del Norte", "Zamboanga del Norte", "Zamboanga Sibugay", "Zamboanga del Sur", "Misamis Occidental", "Lanao del Norte", "Lanao del Sur", "Misamis Oriental", "Bukidnon", "Agusan del Norte", "Agusan del Sur", "Surigao del Sur", "Cotabato", "Davao del Sur", "Davao del Norte", "Davao de Oro", "Davao Oriental", "Maguindanao del Norte", "Maguindanao del Sur", "Sultan Kudarat", "South Cotabato", "Sarangani", "Davao Occidental", "Basilan", "Sulu", "Tawi-Tawi", "National Capital Region", "Zamboanga City"})
+        Me.comboBirthPlace.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.comboBirthPlace.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.comboBirthPlace.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.comboBirthPlace.FormattingEnabled = True
+        Me.comboBirthPlace.Items.AddRange(New Object() {"Batanes", "Ilocos Norte", "Apayao", "Cagayan", "Abra", "Kalinga", "Ilocos Sur", "Mountain Province", "Ifugao", "Isabela", "La Union", "Benguet", "Nueva Vizcaya", "Quirino", "Pangasinan", "Tarlac", "Nueva Ecija", "Aurora", "Zambales", "Pampanga", "Bulacan", "Bataan", "Rizal", "Cavite", "Laguna", "Batangas", "Quezon", "Camarines Norte", "Marinduque", "Camarines Sur", "Catanduanes", "Albay", "Occidental Mindoro", "Oriental Mindoro", "Romblon", "Sorsogon", "Masbate", "Northern Samar", "Samar", "Eastern Samar", "Aklan", "Capiz", "Antique", "Iloilo", "Biliran", "Guimaras", "Negros Occidental", "Cebu", "Leyte", "Southern Leyte", "Palawan", "Negros Oriental", "Bohol", "Siquijor", "Camiguin", "Dinagat Islands", "Surigao del Norte", "Zamboanga del Norte", "Zamboanga Sibugay", "Zamboanga del Sur", "Misamis Occidental", "Lanao del Norte", "Lanao del Sur", "Misamis Oriental", "Bukidnon", "Agusan del Norte", "Agusan del Sur", "Surigao del Sur", "Cotabato", "Davao del Sur", "Davao del Norte", "Davao de Oro", "Davao Oriental", "Maguindanao del Norte", "Maguindanao del Sur", "Sultan Kudarat", "South Cotabato", "Sarangani", "Davao Occidental", "Basilan", "Sulu", "Tawi-Tawi", "National Capital Region", "Zamboanga City"})
+        Me.comboBirthPlace.Location = New System.Drawing.Point(271, 390)
+        Me.comboBirthPlace.Name = "comboBirthPlace"
+        Me.comboBirthPlace.Size = New System.Drawing.Size(306, 28)
+        Me.comboBirthPlace.TabIndex = 142
         '
         'ViewResident
         '
@@ -1494,10 +1510,8 @@ Partial Class ViewResident
     Friend WithEvents comboPwd As ComboBox
     Friend WithEvents comboVoter As ComboBox
     Friend WithEvents txtCitizenship As TextBox
-    Friend WithEvents txtContactNo As TextBox
     Friend WithEvents comboSex As ComboBox
     Friend WithEvents comboCivilStatus As ComboBox
-    Friend WithEvents txtBirthPlace As TextBox
     Friend WithEvents pickerBirthDate As DateTimePicker
     Friend WithEvents comboHouseholdRole As ComboBox
     Friend WithEvents txtLastName As TextBox
@@ -1522,4 +1536,7 @@ Partial Class ViewResident
     Friend WithEvents Panel1 As Panel
     Friend WithEvents txtDisability As TextBox
     Friend WithEvents labelDisability As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtContactNo As TextBox
+    Friend WithEvents comboBirthPlace As ComboBox
 End Class

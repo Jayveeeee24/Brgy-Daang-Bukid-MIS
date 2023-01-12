@@ -134,6 +134,18 @@
     <Compile Include="ConfirmAccess.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Create Account.Designer.vb">
+      <DependentUpon>Create Account.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Create Account.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.Designer.vb">
+      <DependentUpon>ForgotPassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="NoAccount.Designer.vb">
       <DependentUpon>NoAccount.vb</DependentUpon>
     </Compile>
@@ -260,6 +272,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConfirmAccess.resx">
       <DependentUpon>ConfirmAccess.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create Account.resx">
+      <DependentUpon>Create Account.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPassword.resx">
+      <DependentUpon>ForgotPassword.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NoAccount.resx">
       <DependentUpon>NoAccount.vb</DependentUpon>

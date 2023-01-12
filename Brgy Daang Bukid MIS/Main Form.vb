@@ -69,10 +69,15 @@ Public Class Main_Form
         btnAddHousehold.Show()
         btnAddIncidents.Show()
         btnAddComplaint.Show()
+        btnArchivedResidents.Show()
+        btnUpdateBrgyOfficials.Show()
         btnAddBlotters.Show()
         btnAddVawc.Show()
         If account_id = 2 Then
             btnSystemManagement.Text = "     Account Settings"
+            btnArchivedResidents.Hide()
+            btnUpdateBrgyOfficials.Hide()
+
         Else
             btnSystemManagement.Text = "     System Management"
         End If
@@ -125,9 +130,11 @@ Public Class Main_Form
                     labelSignedIn.Text = "Logged in as: Administrator"
                     account_name = user_name
                     account_credentials = user_level
+                    account_position = user_level
                 ElseIf account_id = 2 Then
                     account_credentials = user_level
                     account_name = user_name
+                    account_position = user_level
                     labelSignedIn.Text = "Logged in as: Staff"
                 End If
             End If
@@ -369,13 +376,7 @@ Public Class Main_Form
         btnInventory.BackColor = Color.FromArgb(25, 117, 211)
 
 
-        If account_id = 2 Then
-            btnAccountSettings.PerformClick()
-            labelTitle.Text = "Account Settings"
-        Else
-            labelTitle.Text = "System Management"
-            mainTabControl.SelectedTab = pageSystemManagement
-        End If
+        mainTabControl.SelectedTab = pageSystemManagement
 
     End Sub
     Private Sub btnInventory_Click(sender As Object, e As EventArgs) Handles btnInventory.Click
@@ -476,7 +477,6 @@ Public Class Main_Form
         cmd.Parameters.AddWithValue("@yearadded", filterYearAdded)
 
         totalRowsHousehold = Convert.ToString(cmd.ExecuteScalar())
-
         totalPageHousehold = Math.Ceiling(totalRowsHousehold / 30)
         labelTotalPageHousehold.Text = totalPageHousehold
         labelTotalHousehold.Text = totalRowsHousehold
@@ -556,20 +556,23 @@ Public Class Main_Form
                         labelShownResident.Text = txtPageNoResident.Text * 20
                     End If
 
+                    If datagrid.RowCount = 0 Then
+                        labelShownResident.Text = "0"
+                    End If
                     While mySQLReader.Read
-                        Dim middle, ext As String
-                        If mySQLReader!middle_name = Nothing Then
-                            middle = ""
-                        Else
-                            middle = mySQLReader!middle_name + " "
-                        End If
+                            Dim middle, ext As String
+                            If mySQLReader!middle_name = Nothing Then
+                                middle = ""
+                            Else
+                                middle = mySQLReader!middle_name + " "
+                            End If
 
-                        datagrid.Rows.Add(New String() {mySQLReader!resident_id, (mySQLReader!first_name + " " + middle + mySQLReader!last_name + " " + mySQLReader!ext_name), mySQLReader!sex, mySQLReader!contact_no})
+                            datagrid.Rows.Add(New String() {mySQLReader!resident_id, (mySQLReader!first_name + " " + middle + mySQLReader!last_name + " " + mySQLReader!ext_name), mySQLReader!sex, mySQLReader!contact_no})
 
-                    End While
-                End If
+                        End While
+                    End If
 
-                mySQLCommand.Dispose()
+                    mySQLCommand.Dispose()
                 mySQLReader.Dispose()
 
             Case Modules.Household ''''''''''''''Household
@@ -605,6 +608,10 @@ Public Class Main_Form
                         labelShownHousehold.Text = totalRowsHousehold
                     ElseIf txtPageNoHousehold.Text < totalPageHousehold Then
                         labelShownHousehold.Text = txtPageNoHousehold.Text * 30
+                    End If
+
+                    If datagrid.RowCount = 0 Then
+                        labelShownHousehold.Text = "0"
                     End If
 
                     While mySQLReader.Read
