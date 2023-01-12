@@ -8,11 +8,16 @@ Public Class Login
     Dim isValidated As Boolean = False
     Dim userClick As Integer = 0
     Dim passClick As Integer = 0
+
+    Private visibilityImage As Image
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 
-    Private visibilityImage As Image
+    Private Function isAccountsAvailable() As Boolean
+
+    End Function
+
     Private Function GetVisibilityImage(ByVal imageName As String) As Image
         If imageName = "visible" Then
             visibilityImage = My.Resources.visi_off
@@ -89,6 +94,7 @@ Public Class Login
                 While mySQLReader.Read
                     Main_Form.account_id = mySQLReader!account_id
                     Main_Form.user_name = mySQLReader!account_name
+                    Main_Form.user_level = mySQLReader!user_level
                 End While
                 Main_Form.Show()
                 Me.Close()
@@ -96,7 +102,7 @@ Public Class Login
                 txtUsername.Clear()
                 txtPassword.Clear()
                 Me.Enabled = True
-                MsgBox("No account found!, Please try again", vbCritical, "Warning")
+                MsgBox("Incorrect login credentials!, Please try again", vbCritical, "Warning")
                 txtUsername.Select()
             End If
             mySQLCommand.Dispose()

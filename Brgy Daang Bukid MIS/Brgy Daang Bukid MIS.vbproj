@@ -104,6 +104,12 @@
     <Compile Include="Account Settings.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AppointOfficial.Designer.vb">
+      <DependentUpon>AppointOfficial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppointOfficial.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ArchivedResidents.Designer.vb">
       <DependentUpon>ArchivedResidents.vb</DependentUpon>
     </Compile>
@@ -239,6 +245,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Account Settings.resx">
       <DependentUpon>Account Settings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppointOfficial.resx">
+      <DependentUpon>AppointOfficial.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ArchivedResidents.resx">
       <DependentUpon>ArchivedResidents.vb</DependentUpon>

@@ -85,7 +85,7 @@ Public Class Search_Residents
         cmd = mySql.CreateCommand()
         cmd.CommandType = CommandType.Text
 
-        Dim address As String
+        Dim address As String = ""
         cmd.CommandText = "SELECT bldg_no, street_name from household where household_id  = @householdid"
         cmd.Parameters.AddWithValue("@householdid", householdid)
         mySQLReader = cmd.ExecuteReader
@@ -176,6 +176,10 @@ Public Class Search_Residents
                 Certificate_Setup.respondentId2 = datagridResident.Rows(e.RowIndex).Cells(0).Value
                 Certificate_Setup.txtRespondent2.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
                 Certificate_Setup.respondent2 = datagridResident.Rows(e.RowIndex).Cells(2).Value
+            ElseIf origin = "Official" Then
+                AppointOfficial.residentId = datagridResident.Rows(e.RowIndex).Cells(0).Value
+                AppointOfficial.txtOfficialName.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                AppointOfficial.residentName = datagridResident.Rows(e.RowIndex).Cells(2).Value
             End If
         End If
         Me.Close()

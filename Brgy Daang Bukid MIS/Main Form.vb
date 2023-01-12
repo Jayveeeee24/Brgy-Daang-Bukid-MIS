@@ -10,6 +10,8 @@ Public Class Main_Form
     Public account_position As String
     Public account_name As String
     Public user_name As String
+    Public user_level As String
+
 
     Public filterModule As String
     Public mySqlConn As String = "server=localhost; user id=root; database=mis"
@@ -108,7 +110,7 @@ Public Class Main_Form
             mySQLCommand = mySql.CreateCommand()
             mySQLCommand.CommandType = CommandType.Text
 
-            mySQLCommand.CommandText = "SELECT * FROM brgyofficials WHERE id = @account_id"
+            mySQLCommand.CommandText = "SELECT * FROM brgyofficials WHERE id = @account_id ORDER BY id"
             mySQLCommand.Parameters.AddWithValue("@account_id", account_id)
             mySQLReader = mySQLCommand.ExecuteReader
             If mySQLReader.HasRows Then
@@ -118,6 +120,16 @@ Public Class Main_Form
                     account_credentials = account_name + " [" + account_position + "]"
                     labelSignedIn.Text = "Logged in as: " + account_credentials
                 End While
+            Else
+                If account_id = 1 Then
+                    labelSignedIn.Text = "Logged in as: Administrator"
+                    account_name = user_name
+                    account_credentials = user_level
+                ElseIf account_id = 2 Then
+                    account_credentials = user_level
+                    account_name = user_name
+                    labelSignedIn.Text = "Logged in as: Staff"
+                End If
             End If
             mySQLCommand.Dispose()
             mySQLReader.Dispose()
@@ -127,13 +139,6 @@ Public Class Main_Form
 
     End Sub
 
-    Private Sub dataGridBrgyOfficials_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridBrgyOfficials.CellClick
-        If e.RowIndex >= 0 Then
-            ViewResident.resident_id = dataGridBrgyOfficials.Rows(e.RowIndex).Cells(0).Value
-            ViewResident.viewChoice = "Normal"
-            ViewResident.ShowDialog()
-        End If
-    End Sub
 
     '' ''''''''''''''''''''''RESIDENT UI DEFINITIONS''''''''''''''''''''''''
     Private Sub txtPageNoResident_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPageNoResident.KeyDown
@@ -1288,14 +1293,12 @@ Public Class Main_Form
     End Sub
     Private Sub btnAccountSettings_Click(sender As Object, e As EventArgs) Handles btnAccountSettings.Click
         ConfirmAccess.originForm = "Accounts"
-        ConfirmAccess.ShowDialog()
+        ConfirmAccess.Show()
     End Sub
-
     Private Sub btnUpdateBrgyOfficials_Click(sender As Object, e As EventArgs) Handles btnUpdateBrgyOfficials.Click
         ConfirmAccess.originForm = "BrgyOfficials"
-        ConfirmAccess.ShowDialog()
+        ConfirmAccess.Show()
     End Sub
-
     Private Sub btnAuditLogs_Click(sender As Object, e As EventArgs) Handles btnAuditLogs.Click
 
     End Sub
@@ -1309,7 +1312,6 @@ Public Class Main_Form
             tabMap.SelectedIndex = 1
         End If
     End Sub
-
     Private Sub btnDirham_Click(sender As Object, e As EventArgs) Handles btnDirham.Click
         ViewStreet.streetName = "Dirham, Westbay"
         ViewStreet.ShowDialog()
@@ -1342,7 +1344,6 @@ Public Class Main_Form
         ViewStreet.streetName = "Yen, Westbay"
         ViewStreet.ShowDialog()
     End Sub
-
     Private Sub btnFranc_Click(sender As Object, e As EventArgs) Handles btnFranc.Click
         ViewStreet.streetName = "Franc, Westbay"
         ViewStreet.ShowDialog()

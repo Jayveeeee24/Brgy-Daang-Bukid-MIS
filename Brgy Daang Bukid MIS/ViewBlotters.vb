@@ -149,8 +149,8 @@ Public Class ViewBlotters
                 cmd.Parameters.AddWithValue("@blotter", txtBlotter.Text)
                 cmd.Parameters.AddWithValue("@suspect", If(suspectId = 0, txtSuspect.Text, suspectId))
                 cmd.Parameters.AddWithValue("@submittedby", If(submittedById = 0, txtSubmittedBy.Text, submittedById))
-                cmd.Parameters.AddWithValue("@datefiled", datePickerSubmittedOn.Value.Date)
-                cmd.Parameters.AddWithValue("@details", txtBlotterDetails.Text)
+                cmd.Parameters.AddWithValue("@submittedon", datePickerSubmittedOn.Value.Date)
+                cmd.Parameters.AddWithValue("@blotterdetails", txtBlotterDetails.Text)
 
                 cmd.ExecuteNonQuery()
             End If

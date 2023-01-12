@@ -7,6 +7,7 @@ Public Class Account_Settings
 
     Public mySqlConn As String = "server=localhost; user id=root; database=mis"
 
+    Private visibilityImage As Image
     Private Sub Account_Settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtAccountName.Text = Main_Form.account_position
         txtUsername.Text = Main_Form.user_name
@@ -125,6 +126,35 @@ Public Class Account_Settings
     Private Sub txtUsername_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsername.KeyDown
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
+        End If
+    End Sub
+
+    Private Function GetVisibilityImage(ByVal imageName As String) As Image
+        If imageName = "visible" Then
+            visibilityImage = My.Resources.visi_off
+        Else
+            visibilityImage = My.Resources.visi
+        End If
+        Return visibilityImage
+    End Function
+
+    Private Sub btnVisibilityNewPass_Click(sender As Object, e As EventArgs) Handles btnVisibilityNewPass.Click
+        If txtPassword.PasswordChar = "*" Then
+            txtPassword.PasswordChar = ""
+            btnVisibilityNewPass.Image = GetVisibilityImage("visible")
+        Else
+            txtPassword.PasswordChar = "*"
+            btnVisibilityNewPass.Image = GetVisibilityImage("invisible")
+        End If
+    End Sub
+
+    Private Sub btnVisibilityGuest_Click(sender As Object, e As EventArgs) Handles btnVisibilityGuest.Click
+        If txtPasswordGuest.PasswordChar = "*" Then
+            txtPasswordGuest.PasswordChar = ""
+            btnVisibilityGuest.Image = GetVisibilityImage("visible")
+        Else
+            txtPasswordGuest.PasswordChar = "*"
+            btnChangePasswordGuest.Image = GetVisibilityImage("invisible")
         End If
     End Sub
 End Class

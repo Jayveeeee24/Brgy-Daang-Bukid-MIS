@@ -498,7 +498,7 @@ Partial Class ViewBlotters
         Me.txtBlotterDetails.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBlotterDetails.ForeColor = System.Drawing.Color.Black
         Me.txtBlotterDetails.Location = New System.Drawing.Point(263, 281)
-        Me.txtBlotterDetails.MaxLength = 100
+        Me.txtBlotterDetails.MaxLength = 1000
         Me.txtBlotterDetails.Multiline = True
         Me.txtBlotterDetails.Name = "txtBlotterDetails"
         Me.txtBlotterDetails.Size = New System.Drawing.Size(303, 69)

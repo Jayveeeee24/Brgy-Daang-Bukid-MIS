@@ -18,8 +18,7 @@ Public Class ConfirmAccess
             mainTabControl.SelectedIndex = 1
         End If
 
-        txtAccountName.Text = Main_Form.account_credentials
-        Me.CreateGraphics.DrawRectangle(Pens.Black, txtPassword.Left - 1, txtPassword.Top - 1, txtPassword.Width + 1, txtPassword.Height + 1)
+        txtAccountName.Text = Main_Form.user_level
     End Sub
 
 
@@ -40,11 +39,9 @@ Public Class ConfirmAccess
         Me.Enabled = False
 
         If txtPassword.Text.Trim = "" Then
-            Me.CreateGraphics.DrawRectangle(Pens.Red, txtPassword.Left - 1, txtPassword.Top - 1, txtPassword.Width + 1, txtPassword.Height + 1)
             Me.Enabled = True
+            MsgBox("Please fill out the required fields!")
             Exit Sub
-        Else
-            Me.CreateGraphics.DrawRectangle(Pens.Black, txtPassword.Left - 1, txtPassword.Top - 1, txtPassword.Width + 1, txtPassword.Height + 1)
         End If
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
@@ -72,24 +69,36 @@ Public Class ConfirmAccess
         mySQLCommand.Parameters.AddWithValue("@accountpassword", txtPassword.Text.Trim)
 
         mySQLReader = mySQLCommand.ExecuteReader
+
+        Me.Enabled = True
         If mySQLReader.HasRows Then
-            Me.Enabled = True
+
+            Me.Close()
             If originForm = "Archive" Then
                 ViewResident.archiveResident()
             ElseIf originForm = "Accounts" Then
                 Account_Settings.ShowDialog()
             ElseIf originForm = "BrgyOfficials" Then
                 UpdateBrgyOfficials.ShowDialog()
+            ElseIf originForm = "DismissBrgyOfficial" Then
+                UpdateBrgyOfficials.dismissOfficial()
             End If
-            Me.Close()
         Else
             txtPassword.Clear()
-            Me.Enabled = True
             MsgBox("Password Incorrect!, Please try again", vbCritical, "Warning")
         End If
         mySQLCommand.Dispose()
         mySQLReader.Dispose()
         mySql.Close()
         mySql.Dispose()
+    End Sub
+
+    Private Sub ConfirmAccess_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        txtPassword.Clear()
+        txtReasonForArchived.Clear()
+    End Sub
+
+    Private Sub ConfirmAccess_Leave(sender As Object, e As EventArgs) Handles MyBase.Leave
+        Me.Close()
     End Sub
 End Class

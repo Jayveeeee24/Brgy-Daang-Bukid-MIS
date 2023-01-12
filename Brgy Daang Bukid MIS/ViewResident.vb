@@ -198,7 +198,7 @@ Public Class ViewResident
     Private Sub btnArchiveResident_Click(sender As Object, e As EventArgs) Handles btnArchiveResident.Click
         ConfirmAccess.txtPassword.Clear()
         ConfirmAccess.originForm = "Archive"
-        ConfirmAccess.ShowDialog()
+        ConfirmAccess.Show()
     End Sub
 
 
