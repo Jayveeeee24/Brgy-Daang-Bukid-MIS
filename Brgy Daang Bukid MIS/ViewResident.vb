@@ -18,7 +18,6 @@ Public Class ViewResident
         contactNo, pwd, disability, voter, occupation, citizenship,
         householdRole, registeredBy, dateRegistered, reasonArchived, archivedBy, monthRegistered As String
 
-
     Private Sub ViewResident_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         mainTabControl.ItemSize = New Size(0, 1)
 
@@ -86,6 +85,9 @@ Public Class ViewResident
         cmd.Dispose()
         mySql.Close()
         mySql.Dispose()
+    End Sub
+    Private Sub btnSearchHouseholdId_Click(sender As Object, e As EventArgs) Handles btnSearchHouseholdId.Click
+
     End Sub
     Private Sub txtView_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtOtherCitizenship.KeyPress, txtOccupation.KeyPress, txtReligion.KeyPress
         '97 - 122 = Ascii codes for simple letters
