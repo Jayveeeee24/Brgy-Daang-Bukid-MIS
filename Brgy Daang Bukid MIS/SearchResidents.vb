@@ -155,6 +155,8 @@ Public Class Search_Residents
                 ViewVawc.submittedById = datagridResident.Rows(e.RowIndex).Cells(0).Value
                 ViewVawc.submittedBy = datagridResident.Rows(e.RowIndex).Cells(2).Value
                 ViewVawc.txtSubmittedBy.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
+
+
             ElseIf origin = "certificates" Then
                 Certificate_Setup.residentid = datagridResident.Rows(e.RowIndex).Cells(0).Value
                 Certificate_Setup.txtResidentName.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
@@ -176,6 +178,8 @@ Public Class Search_Residents
                 Certificate_Setup.complainantId2 = datagridResident.Rows(e.RowIndex).Cells(0).Value
                 Certificate_Setup.txtComplainant2.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
                 Certificate_Setup.complainant2 = datagridResident.Rows(e.RowIndex).Cells(2).Value
+
+
             ElseIf origin = "respondent1" Then
                 If Certificate_Setup.complainantId1 = datagridResident.Rows(e.RowIndex).Cells(0).Value Or Certificate_Setup.complainantId2 = datagridResident.Rows(e.RowIndex).Cells(0).Value Or Certificate_Setup.respondentId2 = datagridResident.Rows(e.RowIndex).Cells(0).Value Then
                     MsgBox("You cannot choose the same person for each field!", vbCritical, "Warning")

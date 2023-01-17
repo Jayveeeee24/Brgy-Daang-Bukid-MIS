@@ -152,7 +152,7 @@ Public Class ForgotPassword
             mySQLCommand.CommandType = CommandType.Text
 
 
-            mySQLCommand.CommandText = "UDPDATE accounts SET account_password= @accountpassword WHERE account_id = @accountid"
+            mySQLCommand.CommandText = "UPDATE accounts SET account_password= @accountpassword WHERE account_id = @accountid"
             mySQLCommand.Parameters.AddWithValue("@accountid", accountId)
             mySQLCommand.Parameters.AddWithValue("@accountpassword", txtNewPassword.Text.Trim)
             mySQLCommand.ExecuteNonQuery()

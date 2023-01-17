@@ -152,6 +152,12 @@
     <Compile Include="NoAccount.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SearchHousehold.Designer.vb">
+      <DependentUpon>SearchHousehold.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SearchHousehold.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SearchItems.Designer.vb">
       <DependentUpon>SearchItems.vb</DependentUpon>
     </Compile>
@@ -281,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NoAccount.resx">
       <DependentUpon>NoAccount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchHousehold.resx">
+      <DependentUpon>SearchHousehold.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchItems.resx">
       <DependentUpon>SearchItems.vb</DependentUpon>

@@ -175,6 +175,7 @@ Public Class Main_Form
         If e.RowIndex >= 0 Then
             ViewResident.resident_id = datagridResident.Rows(e.RowIndex).Cells(0).Value
             ViewResident.viewChoice = "Normal"
+            ViewResident.action = "modify"
             ViewResident.ShowDialog()
         End If
     End Sub
@@ -556,23 +557,24 @@ Public Class Main_Form
                         labelShownResident.Text = txtPageNoResident.Text * 20
                     End If
 
-                    If datagrid.RowCount = 0 Then
-                        labelShownResident.Text = "0"
-                    End If
                     While mySQLReader.Read
-                            Dim middle, ext As String
-                            If mySQLReader!middle_name = Nothing Then
-                                middle = ""
-                            Else
-                                middle = mySQLReader!middle_name + " "
-                            End If
+                        Dim middle, ext As String
+                        If mySQLReader!middle_name = Nothing Then
+                            middle = ""
+                        Else
+                            middle = mySQLReader!middle_name + " "
+                        End If
 
-                            datagrid.Rows.Add(New String() {mySQLReader!resident_id, (mySQLReader!first_name + " " + middle + mySQLReader!last_name + " " + mySQLReader!ext_name), mySQLReader!sex, mySQLReader!contact_no})
+                        datagrid.Rows.Add(New String() {mySQLReader!resident_id, (mySQLReader!first_name + " " + middle + mySQLReader!last_name + " " + mySQLReader!ext_name), mySQLReader!sex, mySQLReader!contact_no})
 
-                        End While
-                    End If
+                    End While
+                End If
 
-                    mySQLCommand.Dispose()
+                If datagrid.RowCount = 0 Then
+                    labelShownResident.Text = "0"
+                End If
+
+                mySQLCommand.Dispose()
                 mySQLReader.Dispose()
 
             Case Modules.Household ''''''''''''''Household
@@ -610,14 +612,14 @@ Public Class Main_Form
                         labelShownHousehold.Text = txtPageNoHousehold.Text * 30
                     End If
 
-                    If datagrid.RowCount = 0 Then
-                        labelShownHousehold.Text = "0"
-                    End If
 
                     While mySQLReader.Read
                         datagrid.Rows.Add(New String() {mySQLReader!household_id, mySQLReader!bldg_no, mySQLReader!street_name, "", "", ""})
-
                     End While
+                End If
+
+                If datagrid.RowCount = 0 Then
+                    labelShownHousehold.Text = "0"
                 End If
 
                 mySQLCommand.Dispose()
