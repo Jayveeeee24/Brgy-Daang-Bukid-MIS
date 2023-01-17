@@ -9,11 +9,12 @@ Public Class Search_Residents
     Public origin As String
     Private Sub Search_Residents_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         datagridResident.Rows.Clear()
-        txtSearchResidents.Text = "Search by resident id or name"
+        txtSearchResidents.Text = "Search by resident name"
+        btnSearchResidents.PerformClick()
     End Sub
     Private Sub Search_Residents_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        datagridResident.Rows.Clear()
-        origin = ""
+        Me.Controls.Clear()
+        Me.InitializeComponent()
     End Sub
     Private Sub txtSearchResidents_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchResidents.KeyDown
         If e.KeyCode = Keys.Enter Then
@@ -21,15 +22,12 @@ Public Class Search_Residents
             e.SuppressKeyPress = True
         End If
     End Sub
+    Private Sub txtSearchResidents_TextChanged(sender As Object, e As EventArgs) Handles txtSearchResidents.TextChanged
+        btnSearchResidents.PerformClick()
+    End Sub
 
     Private Sub btnSearchResidents_Click(sender As Object, e As EventArgs) Handles btnSearchResidents.Click
         datagridResident.Rows.Clear()
-        If txtSearchResidents.Text.Trim = "" Then
-            txtSearchResidents.Text = "Search by resident id or name"
-            datagridResident.Rows.Clear()
-            txtSearchResidents.Select()
-            Exit Sub
-        End If
 
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
@@ -206,10 +204,9 @@ Public Class Search_Residents
     End Sub
 
     Private Sub txtSearchResidents_Click(sender As Object, e As EventArgs) Handles txtSearchResidents.Click
-        If txtSearchResidents.Text = "Search by resident id or name" Then
+        If txtSearchResidents.Text = "Search by resident name" Then
             txtSearchResidents.Clear()
         End If
     End Sub
-
 
 End Class

@@ -22,8 +22,8 @@ Partial Class Search_Residents
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Search_Residents))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.datagridResidentParent = New System.Windows.Forms.Panel()
@@ -32,7 +32,7 @@ Partial Class Search_Residents
         Me.btnSearchResidents = New System.Windows.Forms.Button()
         Me.txtSearchResidents = New System.Windows.Forms.TextBox()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
@@ -48,7 +48,7 @@ Partial Class Search_Residents
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(616, 335)
+        Me.Panel1.Size = New System.Drawing.Size(946, 513)
         Me.Panel1.TabIndex = 0
         '
         'datagridResidentParent
@@ -57,8 +57,8 @@ Partial Class Search_Residents
         Me.datagridResidentParent.Dock = System.Windows.Forms.DockStyle.Fill
         Me.datagridResidentParent.Location = New System.Drawing.Point(0, 43)
         Me.datagridResidentParent.Name = "datagridResidentParent"
-        Me.datagridResidentParent.Padding = New System.Windows.Forms.Padding(7)
-        Me.datagridResidentParent.Size = New System.Drawing.Size(616, 292)
+        Me.datagridResidentParent.Padding = New System.Windows.Forms.Padding(5, 7, 5, 7)
+        Me.datagridResidentParent.Size = New System.Drawing.Size(946, 470)
         Me.datagridResidentParent.TabIndex = 14
         '
         'datagridResident
@@ -69,39 +69,39 @@ Partial Class Search_Residents
         Me.datagridResident.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.datagridResident.BackgroundColor = System.Drawing.SystemColors.Control
         Me.datagridResident.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(3)
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datagridResident.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(3)
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datagridResident.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.datagridResident.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.datagridResident.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn1, Me.Column1})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.Padding = New System.Windows.Forms.Padding(5)
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.datagridResident.DefaultCellStyle = DataGridViewCellStyle2
+        Me.datagridResident.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column2, Me.DataGridViewTextBoxColumn1, Me.Column1})
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.Padding = New System.Windows.Forms.Padding(5)
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.datagridResident.DefaultCellStyle = DataGridViewCellStyle4
         Me.datagridResident.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.datagridResident.Location = New System.Drawing.Point(7, 7)
+        Me.datagridResident.Location = New System.Drawing.Point(5, 7)
         Me.datagridResident.Name = "datagridResident"
         Me.datagridResident.ReadOnly = True
         Me.datagridResident.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datagridResident.Size = New System.Drawing.Size(602, 278)
+        Me.datagridResident.Size = New System.Drawing.Size(936, 456)
         Me.datagridResident.TabIndex = 13
         '
         'TableLayoutPanel19
         '
         Me.TableLayoutPanel19.ColumnCount = 2
-        Me.TableLayoutPanel19.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 93.0!))
-        Me.TableLayoutPanel19.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.0!))
+        Me.TableLayoutPanel19.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 94.94949!))
+        Me.TableLayoutPanel19.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.050505!))
         Me.TableLayoutPanel19.Controls.Add(Me.btnSearchResidents, 1, 0)
         Me.TableLayoutPanel19.Controls.Add(Me.txtSearchResidents, 0, 0)
         Me.TableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Top
@@ -111,7 +111,7 @@ Partial Class Search_Residents
         Me.TableLayoutPanel19.Padding = New System.Windows.Forms.Padding(5)
         Me.TableLayoutPanel19.RowCount = 1
         Me.TableLayoutPanel19.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel19.Size = New System.Drawing.Size(616, 43)
+        Me.TableLayoutPanel19.Size = New System.Drawing.Size(946, 43)
         Me.TableLayoutPanel19.TabIndex = 1
         '
         'btnSearchResidents
@@ -126,7 +126,7 @@ Partial Class Search_Residents
         Me.btnSearchResidents.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchResidents.ForeColor = System.Drawing.Color.White
         Me.btnSearchResidents.Image = CType(resources.GetObject("btnSearchResidents.Image"), System.Drawing.Image)
-        Me.btnSearchResidents.Location = New System.Drawing.Point(571, 8)
+        Me.btnSearchResidents.Location = New System.Drawing.Point(901, 8)
         Me.btnSearchResidents.Name = "btnSearchResidents"
         Me.btnSearchResidents.Size = New System.Drawing.Size(37, 27)
         Me.btnSearchResidents.TabIndex = 16
@@ -145,9 +145,9 @@ Partial Class Search_Residents
         Me.txtSearchResidents.MaxLength = 50
         Me.txtSearchResidents.Multiline = True
         Me.txtSearchResidents.Name = "txtSearchResidents"
-        Me.txtSearchResidents.Size = New System.Drawing.Size(557, 27)
+        Me.txtSearchResidents.Size = New System.Drawing.Size(882, 27)
         Me.txtSearchResidents.TabIndex = 12
-        Me.txtSearchResidents.Text = "Search by household id or resident name"
+        Me.txtSearchResidents.Text = "Search by resident name"
         '
         'Column3
         '
@@ -155,11 +155,11 @@ Partial Class Search_Residents
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn2
+        'Column2
         '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Household ID"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.Column2.HeaderText = "Household ID"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
         '
         'DataGridViewTextBoxColumn1
         '
@@ -177,7 +177,7 @@ Partial Class Search_Residents
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(616, 335)
+        Me.ClientSize = New System.Drawing.Size(946, 513)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -201,7 +201,7 @@ Partial Class Search_Residents
     Friend WithEvents datagridResidentParent As Panel
     Friend WithEvents datagridResident As DataGridView
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
 End Class

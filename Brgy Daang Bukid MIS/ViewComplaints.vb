@@ -302,12 +302,14 @@ Public Class ViewComplaints
         If clickableComplainant = True Then
             ViewResident.resident_id = complainantId
             ViewResident.viewChoice = "Normal"
+            ViewResident.action = "modify"
             ViewResident.ShowDialog()
         End If
     End Sub
     Private Sub labelDefendant_Click(sender As Object, e As EventArgs) Handles labelDefendant.Click
         If clickableDefendant = True Then
             ViewResident.resident_id = defendantId
+            ViewResident.action = "modify"
             ViewResident.viewChoice = "Normal"
             ViewResident.ShowDialog()
         End If

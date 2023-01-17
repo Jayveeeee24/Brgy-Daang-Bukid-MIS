@@ -87,7 +87,7 @@ Public Class ViewResident
         mySql.Dispose()
     End Sub
     Private Sub btnSearchHouseholdId_Click(sender As Object, e As EventArgs) Handles btnSearchHouseholdId.Click
-
+        SearchHousehold.ShowDialog()
     End Sub
     Private Sub txtView_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtOtherCitizenship.KeyPress, txtOccupation.KeyPress, txtReligion.KeyPress
         '97 - 122 = Ascii codes for simple letters
