@@ -88,6 +88,7 @@ Partial Class ViewHousehold
         Me.comboResidenceType = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.labelHousehold = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
         Me.mainTabControl.SuspendLayout()
         Me.pageViewHousehold.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -108,7 +109,7 @@ Partial Class ViewHousehold
         Me.mainTabControl.Location = New System.Drawing.Point(0, 0)
         Me.mainTabControl.Name = "mainTabControl"
         Me.mainTabControl.SelectedIndex = 0
-        Me.mainTabControl.Size = New System.Drawing.Size(926, 551)
+        Me.mainTabControl.Size = New System.Drawing.Size(924, 607)
         Me.mainTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.mainTabControl.TabIndex = 0
         '
@@ -119,7 +120,7 @@ Partial Class ViewHousehold
         Me.pageViewHousehold.Location = New System.Drawing.Point(4, 22)
         Me.pageViewHousehold.Name = "pageViewHousehold"
         Me.pageViewHousehold.Padding = New System.Windows.Forms.Padding(3)
-        Me.pageViewHousehold.Size = New System.Drawing.Size(918, 525)
+        Me.pageViewHousehold.Size = New System.Drawing.Size(916, 581)
         Me.pageViewHousehold.TabIndex = 0
         Me.pageViewHousehold.Text = "View Household"
         '
@@ -131,7 +132,7 @@ Partial Class ViewHousehold
         Me.Panel2.Margin = New System.Windows.Forms.Padding(5)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Padding = New System.Windows.Forms.Padding(10, 5, 10, 5)
-        Me.Panel2.Size = New System.Drawing.Size(912, 519)
+        Me.Panel2.Size = New System.Drawing.Size(910, 575)
         Me.Panel2.TabIndex = 90
         '
         'TableLayoutPanel1
@@ -148,7 +149,7 @@ Partial Class ViewHousehold
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.251473!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.30059!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.447937!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(892, 509)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(890, 565)
         Me.TableLayoutPanel1.TabIndex = 90
         '
         'Label104
@@ -157,7 +158,7 @@ Partial Class ViewHousehold
         Me.Label104.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label104.Location = New System.Drawing.Point(3, 0)
         Me.Label104.Name = "Label104"
-        Me.Label104.Size = New System.Drawing.Size(886, 42)
+        Me.Label104.Size = New System.Drawing.Size(884, 46)
         Me.Label104.TabIndex = 72
         Me.Label104.Text = "HOUSEHOLD INFORMATION"
         Me.Label104.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -196,14 +197,14 @@ Partial Class ViewHousehold
         Me.Panel1.Controls.Add(Me.labelBldgNo)
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(3, 45)
+        Me.Panel1.Location = New System.Drawing.Point(3, 49)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(886, 418)
+        Me.Panel1.Size = New System.Drawing.Size(884, 464)
         Me.Panel1.TabIndex = 0
         '
         'Panel4
         '
-        Me.Panel4.Location = New System.Drawing.Point(855, 600)
+        Me.Panel4.Location = New System.Drawing.Point(854, 603)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(10, 100)
         Me.Panel4.TabIndex = 118
@@ -212,7 +213,7 @@ Partial Class ViewHousehold
         '
         Me.labelDateAdded.AutoSize = True
         Me.labelDateAdded.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelDateAdded.Location = New System.Drawing.Point(693, 237)
+        Me.labelDateAdded.Location = New System.Drawing.Point(703, 237)
         Me.labelDateAdded.Name = "labelDateAdded"
         Me.labelDateAdded.Size = New System.Drawing.Size(138, 18)
         Me.labelDateAdded.TabIndex = 117
@@ -222,7 +223,7 @@ Partial Class ViewHousehold
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(465, 237)
+        Me.Label5.Location = New System.Drawing.Point(475, 237)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(115, 18)
         Me.Label5.TabIndex = 116
@@ -260,7 +261,7 @@ Partial Class ViewHousehold
         Me.datagridViewHousehold.Name = "datagridViewHousehold"
         Me.datagridViewHousehold.ReadOnly = True
         Me.datagridViewHousehold.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datagridViewHousehold.Size = New System.Drawing.Size(830, 352)
+        Me.datagridViewHousehold.Size = New System.Drawing.Size(829, 352)
         Me.datagridViewHousehold.TabIndex = 115
         '
         'DataGridViewTextBoxColumn1
@@ -285,7 +286,7 @@ Partial Class ViewHousehold
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(354, 293)
+        Me.Label1.Location = New System.Drawing.Point(364, 304)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(134, 18)
         Me.Label1.TabIndex = 114
@@ -335,7 +336,7 @@ Partial Class ViewHousehold
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(465, 109)
+        Me.Label2.Location = New System.Drawing.Point(475, 109)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(102, 18)
         Me.Label2.TabIndex = 92
@@ -355,7 +356,7 @@ Partial Class ViewHousehold
         '
         Me.labelHeadFirstName.AutoSize = True
         Me.labelHeadFirstName.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelHeadFirstName.Location = New System.Drawing.Point(693, 109)
+        Me.labelHeadFirstName.Location = New System.Drawing.Point(703, 109)
         Me.labelHeadFirstName.Name = "labelHeadFirstName"
         Me.labelHeadFirstName.Size = New System.Drawing.Size(54, 18)
         Me.labelHeadFirstName.TabIndex = 93
@@ -375,7 +376,7 @@ Partial Class ViewHousehold
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(465, 75)
+        Me.Label3.Location = New System.Drawing.Point(475, 75)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(145, 18)
         Me.Label3.TabIndex = 94
@@ -395,7 +396,7 @@ Partial Class ViewHousehold
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(465, 136)
+        Me.Label6.Location = New System.Drawing.Point(475, 136)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(117, 18)
         Me.Label6.TabIndex = 95
@@ -415,7 +416,7 @@ Partial Class ViewHousehold
         '
         Me.labelHeadMiddleName.AutoSize = True
         Me.labelHeadMiddleName.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelHeadMiddleName.Location = New System.Drawing.Point(693, 136)
+        Me.labelHeadMiddleName.Location = New System.Drawing.Point(703, 136)
         Me.labelHeadMiddleName.Name = "labelHeadMiddleName"
         Me.labelHeadMiddleName.Size = New System.Drawing.Size(80, 18)
         Me.labelHeadMiddleName.TabIndex = 96
@@ -435,7 +436,7 @@ Partial Class ViewHousehold
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(465, 164)
+        Me.Label8.Location = New System.Drawing.Point(475, 164)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(100, 18)
         Me.Label8.TabIndex = 97
@@ -455,7 +456,7 @@ Partial Class ViewHousehold
         '
         Me.labelHeadLastName.AutoSize = True
         Me.labelHeadLastName.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelHeadLastName.Location = New System.Drawing.Point(693, 164)
+        Me.labelHeadLastName.Location = New System.Drawing.Point(703, 164)
         Me.labelHeadLastName.Name = "labelHeadLastName"
         Me.labelHeadLastName.Size = New System.Drawing.Size(29, 18)
         Me.labelHeadLastName.TabIndex = 98
@@ -475,7 +476,7 @@ Partial Class ViewHousehold
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(465, 192)
+        Me.Label10.Location = New System.Drawing.Point(475, 192)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(141, 18)
         Me.Label10.TabIndex = 99
@@ -495,7 +496,7 @@ Partial Class ViewHousehold
         '
         Me.labelHeadExtName.AutoSize = True
         Me.labelHeadExtName.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelHeadExtName.Location = New System.Drawing.Point(693, 192)
+        Me.labelHeadExtName.Location = New System.Drawing.Point(703, 192)
         Me.labelHeadExtName.Name = "labelHeadExtName"
         Me.labelHeadExtName.Size = New System.Drawing.Size(30, 18)
         Me.labelHeadExtName.TabIndex = 100
@@ -517,9 +518,9 @@ Partial Class ViewHousehold
         Me.Label11.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.Location = New System.Drawing.Point(34, 75)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(152, 18)
+        Me.Label11.Size = New System.Drawing.Size(97, 18)
         Me.Label11.TabIndex = 101
-        Me.Label11.Text = "Building Number: "
+        Me.Label11.Text = "House No: "
         '
         'btnModifyHousehold
         '
@@ -534,10 +535,10 @@ Partial Class ViewHousehold
         Me.btnModifyHousehold.ForeColor = System.Drawing.Color.White
         Me.btnModifyHousehold.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.modify
         Me.btnModifyHousehold.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnModifyHousehold.Location = New System.Drawing.Point(738, 466)
+        Me.btnModifyHousehold.Location = New System.Drawing.Point(736, 516)
         Me.btnModifyHousehold.Margin = New System.Windows.Forms.Padding(0)
         Me.btnModifyHousehold.Name = "btnModifyHousehold"
-        Me.btnModifyHousehold.Size = New System.Drawing.Size(154, 43)
+        Me.btnModifyHousehold.Size = New System.Drawing.Size(154, 49)
         Me.btnModifyHousehold.TabIndex = 73
         Me.btnModifyHousehold.TabStop = False
         Me.btnModifyHousehold.Text = "  Modify Household"
@@ -551,7 +552,7 @@ Partial Class ViewHousehold
         Me.pageModifyHousehold.Location = New System.Drawing.Point(4, 22)
         Me.pageModifyHousehold.Name = "pageModifyHousehold"
         Me.pageModifyHousehold.Padding = New System.Windows.Forms.Padding(3)
-        Me.pageModifyHousehold.Size = New System.Drawing.Size(918, 525)
+        Me.pageModifyHousehold.Size = New System.Drawing.Size(916, 581)
         Me.pageModifyHousehold.TabIndex = 1
         Me.pageModifyHousehold.Text = "Modify Household"
         '
@@ -563,7 +564,7 @@ Partial Class ViewHousehold
         Me.Panel5.Margin = New System.Windows.Forms.Padding(5)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Padding = New System.Windows.Forms.Padding(10, 5, 10, 5)
-        Me.Panel5.Size = New System.Drawing.Size(912, 519)
+        Me.Panel5.Size = New System.Drawing.Size(910, 575)
         Me.Panel5.TabIndex = 91
         '
         'TableLayoutPanel2
@@ -581,7 +582,7 @@ Partial Class ViewHousehold
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.85827!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.267716!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(892, 509)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(890, 565)
         Me.TableLayoutPanel2.TabIndex = 90
         '
         'btnSaveHousehold
@@ -597,10 +598,10 @@ Partial Class ViewHousehold
         Me.btnSaveHousehold.ForeColor = System.Drawing.Color.White
         Me.btnSaveHousehold.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.save
         Me.btnSaveHousehold.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSaveHousehold.Location = New System.Drawing.Point(745, 466)
+        Me.btnSaveHousehold.Location = New System.Drawing.Point(743, 517)
         Me.btnSaveHousehold.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSaveHousehold.Name = "btnSaveHousehold"
-        Me.btnSaveHousehold.Size = New System.Drawing.Size(147, 43)
+        Me.btnSaveHousehold.Size = New System.Drawing.Size(147, 48)
         Me.btnSaveHousehold.TabIndex = 74
         Me.btnSaveHousehold.TabStop = False
         Me.btnSaveHousehold.Text = "  Save Household"
@@ -613,7 +614,7 @@ Partial Class ViewHousehold
         Me.Label4.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(3, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(886, 40)
+        Me.Label4.Size = New System.Drawing.Size(884, 44)
         Me.Label4.TabIndex = 72
         Me.Label4.Text = "HOUSEHOLD INFORMATION"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -623,6 +624,7 @@ Partial Class ViewHousehold
         Me.panelParent.AutoScroll = True
         Me.panelParent.BackColor = System.Drawing.Color.White
         Me.panelParent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.panelParent.Controls.Add(Me.Label22)
         Me.panelParent.Controls.Add(Me.comboElectricitySource)
         Me.panelParent.Controls.Add(Me.comboWaterSource)
         Me.panelParent.Controls.Add(Me.comboStreetName)
@@ -643,9 +645,9 @@ Partial Class ViewHousehold
         Me.panelParent.Controls.Add(Me.Label7)
         Me.panelParent.Controls.Add(Me.labelHousehold)
         Me.panelParent.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelParent.Location = New System.Drawing.Point(3, 43)
+        Me.panelParent.Location = New System.Drawing.Point(3, 47)
         Me.panelParent.Name = "panelParent"
-        Me.panelParent.Size = New System.Drawing.Size(886, 420)
+        Me.panelParent.Size = New System.Drawing.Size(884, 467)
         Me.panelParent.TabIndex = 0
         '
         'comboElectricitySource
@@ -656,7 +658,7 @@ Partial Class ViewHousehold
         Me.comboElectricitySource.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboElectricitySource.FormattingEnabled = True
         Me.comboElectricitySource.Items.AddRange(New Object() {"Meralco", "Solar Panels", "Coal Energy", "Nuclear Energy"})
-        Me.comboElectricitySource.Location = New System.Drawing.Point(303, 354)
+        Me.comboElectricitySource.Location = New System.Drawing.Point(382, 392)
         Me.comboElectricitySource.Name = "comboElectricitySource"
         Me.comboElectricitySource.Size = New System.Drawing.Size(295, 28)
         Me.comboElectricitySource.TabIndex = 142
@@ -668,8 +670,8 @@ Partial Class ViewHousehold
         Me.comboWaterSource.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.comboWaterSource.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboWaterSource.FormattingEnabled = True
-        Me.comboWaterSource.Items.AddRange(New Object() {"Maynilad", "Manila Water", "Deep Well", "Water Stations"})
-        Me.comboWaterSource.Location = New System.Drawing.Point(303, 319)
+        Me.comboWaterSource.Items.AddRange(New Object() {"Maynilad", "Manila Water", "Deep Well", "Water Station"})
+        Me.comboWaterSource.Location = New System.Drawing.Point(382, 349)
         Me.comboWaterSource.Name = "comboWaterSource"
         Me.comboWaterSource.Size = New System.Drawing.Size(295, 28)
         Me.comboWaterSource.TabIndex = 141
@@ -679,11 +681,10 @@ Partial Class ViewHousehold
         Me.comboStreetName.AutoCompleteCustomSource.AddRange(New String() {"A. Aragon", "Evangelista", "E. Gomez", "F. Gaudier", "Casimiro Ave, Westbay", "Baht, Westbay", "Dinar, Westbay", "Dirham,Westbay", "Dollar, Westbay", "Euro, Westbay", "Franc, Westbay", "Lira, Westbay", "Peso, Westbay", "Pound, Westbay", "Ringgit, Westbay", "Riyal, Westbay", "Ruble, Westbay", "Rupee, Westbay", "Shekel, Westbay", "Won, Westbay", "Yen, Westbay", "Yuan, Westbay"})
         Me.comboStreetName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
         Me.comboStreetName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.comboStreetName.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboStreetName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboStreetName.FormattingEnabled = True
         Me.comboStreetName.Items.AddRange(New Object() {"A. Aragon", "Evangelista", "E. Gomez", "F. Gaudier", "Casimiro Ave, Westbay", "Baht, Westbay", "Dinar, Westbay", "Dirham, Westbay", "Dollar, Westbay", "Euro, Westbay", "Franc, Westbay", "Lira, Westbay", "Peso, Westbay", "Pound, Westbay", "Ringgit, Westbay", "Riyal, Westbay", "Ruble, Westbay", "Rupee, Westbay", "Shekel, Westbay", "Won, Westbay", "Yen, Westbay", "Yuan, Westbay"})
-        Me.comboStreetName.Location = New System.Drawing.Point(303, 217)
+        Me.comboStreetName.Location = New System.Drawing.Point(382, 216)
         Me.comboStreetName.Name = "comboStreetName"
         Me.comboStreetName.Size = New System.Drawing.Size(295, 28)
         Me.comboStreetName.TabIndex = 140
@@ -696,9 +697,9 @@ Partial Class ViewHousehold
         Me.comboResidentId.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.comboResidentId.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboResidentId.FormattingEnabled = True
-        Me.comboResidentId.Location = New System.Drawing.Point(661, 133)
+        Me.comboResidentId.Location = New System.Drawing.Point(691, 133)
         Me.comboResidentId.Name = "comboResidentId"
-        Me.comboResidentId.Size = New System.Drawing.Size(204, 28)
+        Me.comboResidentId.Size = New System.Drawing.Size(127, 28)
         Me.comboResidentId.TabIndex = 139
         '
         'txtHouseholdId
@@ -707,7 +708,7 @@ Partial Class ViewHousehold
         Me.txtHouseholdId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtHouseholdId.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtHouseholdId.ForeColor = System.Drawing.Color.Black
-        Me.txtHouseholdId.Location = New System.Drawing.Point(303, 100)
+        Me.txtHouseholdId.Location = New System.Drawing.Point(382, 88)
         Me.txtHouseholdId.MaxLength = 100
         Me.txtHouseholdId.Multiline = True
         Me.txtHouseholdId.Name = "txtHouseholdId"
@@ -722,7 +723,7 @@ Partial Class ViewHousehold
         Me.comboHouseholdHead.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.comboHouseholdHead.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboHouseholdHead.FormattingEnabled = True
-        Me.comboHouseholdHead.Location = New System.Drawing.Point(305, 133)
+        Me.comboHouseholdHead.Location = New System.Drawing.Point(382, 130)
         Me.comboHouseholdHead.Name = "comboHouseholdHead"
         Me.comboHouseholdHead.Size = New System.Drawing.Size(295, 28)
         Me.comboHouseholdHead.TabIndex = 137
@@ -731,7 +732,7 @@ Partial Class ViewHousehold
         '
         Me.labelHouseholdHead.AutoSize = True
         Me.labelHouseholdHead.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelHouseholdHead.Location = New System.Drawing.Point(78, 137)
+        Me.labelHouseholdHead.Location = New System.Drawing.Point(79, 134)
         Me.labelHouseholdHead.Name = "labelHouseholdHead"
         Me.labelHouseholdHead.Size = New System.Drawing.Size(151, 18)
         Me.labelHouseholdHead.TabIndex = 136
@@ -739,7 +740,7 @@ Partial Class ViewHousehold
         '
         'Panel3
         '
-        Me.Panel3.Location = New System.Drawing.Point(808, 298)
+        Me.Panel3.Location = New System.Drawing.Point(856, 354)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(10, 100)
         Me.Panel3.TabIndex = 135
@@ -748,11 +749,10 @@ Partial Class ViewHousehold
         '
         Me.comboHouseType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
         Me.comboHouseType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.comboHouseType.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboHouseType.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboHouseType.FormattingEnabled = True
         Me.comboHouseType.Items.AddRange(New Object() {"Wood", "Concrete", "Bricks", "Metal"})
-        Me.comboHouseType.Location = New System.Drawing.Point(303, 285)
+        Me.comboHouseType.Location = New System.Drawing.Point(382, 303)
         Me.comboHouseType.Name = "comboHouseType"
         Me.comboHouseType.Size = New System.Drawing.Size(295, 28)
         Me.comboHouseType.TabIndex = 134
@@ -761,7 +761,7 @@ Partial Class ViewHousehold
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(76, 289)
+        Me.Label20.Location = New System.Drawing.Point(77, 307)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(126, 18)
         Me.Label20.TabIndex = 133
@@ -771,7 +771,7 @@ Partial Class ViewHousehold
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(77, 358)
+        Me.Label18.Location = New System.Drawing.Point(78, 396)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(159, 18)
         Me.Label18.TabIndex = 130
@@ -781,7 +781,7 @@ Partial Class ViewHousehold
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(77, 323)
+        Me.Label16.Location = New System.Drawing.Point(78, 353)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(130, 18)
         Me.Label16.TabIndex = 128
@@ -792,7 +792,7 @@ Partial Class ViewHousehold
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(684, 32)
+        Me.Label14.Location = New System.Drawing.Point(682, 15)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(152, 18)
         Me.Label14.TabIndex = 127
@@ -802,7 +802,7 @@ Partial Class ViewHousehold
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(76, 221)
+        Me.Label12.Location = New System.Drawing.Point(77, 220)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(135, 18)
         Me.Label12.TabIndex = 126
@@ -812,7 +812,7 @@ Partial Class ViewHousehold
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(78, 188)
+        Me.Label9.Location = New System.Drawing.Point(79, 177)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(108, 18)
         Me.Label9.TabIndex = 124
@@ -821,25 +821,24 @@ Partial Class ViewHousehold
         'txtBldgNo
         '
         Me.txtBldgNo.BackColor = System.Drawing.Color.White
-        Me.txtBldgNo.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtBldgNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtBldgNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBldgNo.ForeColor = System.Drawing.Color.Black
-        Me.txtBldgNo.Location = New System.Drawing.Point(305, 185)
+        Me.txtBldgNo.Location = New System.Drawing.Point(382, 174)
         Me.txtBldgNo.MaxLength = 100
         Me.txtBldgNo.Multiline = True
         Me.txtBldgNo.Name = "txtBldgNo"
-        Me.txtBldgNo.Size = New System.Drawing.Size(293, 27)
+        Me.txtBldgNo.Size = New System.Drawing.Size(295, 27)
         Me.txtBldgNo.TabIndex = 123
         '
         'comboResidenceType
         '
         Me.comboResidenceType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
         Me.comboResidenceType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.comboResidenceType.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboResidenceType.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboResidenceType.FormattingEnabled = True
         Me.comboResidenceType.Items.AddRange(New Object() {"Owned", "Rent", "Informal Settler", "Tenancy", "Co Owned"})
-        Me.comboResidenceType.Location = New System.Drawing.Point(303, 251)
+        Me.comboResidenceType.Location = New System.Drawing.Point(382, 259)
         Me.comboResidenceType.Name = "comboResidenceType"
         Me.comboResidenceType.Size = New System.Drawing.Size(295, 28)
         Me.comboResidenceType.TabIndex = 122
@@ -848,7 +847,7 @@ Partial Class ViewHousehold
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(76, 255)
+        Me.Label7.Location = New System.Drawing.Point(77, 263)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(158, 18)
         Me.Label7.TabIndex = 121
@@ -858,22 +857,32 @@ Partial Class ViewHousehold
         '
         Me.labelHousehold.AutoSize = True
         Me.labelHousehold.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelHousehold.Location = New System.Drawing.Point(78, 103)
+        Me.labelHousehold.Location = New System.Drawing.Point(81, 91)
         Me.labelHousehold.Name = "labelHousehold"
         Me.labelHousehold.Size = New System.Drawing.Size(138, 18)
         Me.labelHousehold.TabIndex = 119
         Me.labelHousehold.Text = "Household Id*: "
         '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(29, 15)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(438, 16)
+        Me.Label22.TabIndex = 144
+        Me.Label22.Text = "Note: You can type in other selection if it's not in the drop down"
+        '
         'ViewHousehold
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(926, 551)
+        Me.ClientSize = New System.Drawing.Size(924, 607)
         Me.Controls.Add(Me.mainTabControl)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "ViewHousehold"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Household Information"
         Me.mainTabControl.ResumeLayout(False)
         Me.pageViewHousehold.ResumeLayout(False)
@@ -954,4 +963,5 @@ Partial Class ViewHousehold
     Friend WithEvents comboStreetName As ComboBox
     Friend WithEvents comboElectricitySource As ComboBox
     Friend WithEvents comboWaterSource As ComboBox
+    Friend WithEvents Label22 As Label
 End Class

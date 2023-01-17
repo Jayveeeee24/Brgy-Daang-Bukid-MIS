@@ -5,69 +5,75 @@ Public Class ViewHousehold
     Public mySqlConn As String = "server=localhost; user id=root; database=mis"
     Public action As String
 
+    Dim isSaved As Boolean = False
     Dim added As Date
     Dim headFirstName, headMiddleName, headLastName, headExtName, residenceType, houseType, waterSource, electricitySource, bldgNo, streetName, dateAdded As String
     Dim headResidentId As Integer
 
     Private Sub ViewHousehold_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.CenterToParent()
         mainTabControl.ItemSize = New Size(0, 1)
 
         loadInitialData()
-        checkPriveledges()
     End Sub
-    Private Sub checkPriveledges()
-        Dim id = Main_Form.account_id
-
-        btnModifyHousehold.Show()
-        If id = 3 Then
-            btnModifyHousehold.Hide()
+    Private Sub ViewHousehold_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If action = "add" And isSaved = False Then
+            If txtHouseholdId.Text.Trim <> "" Or txtBldgNo.Text.Trim <> "" Or comboStreetName.Text.Trim <> "" Then
+                If mainTabControl.SelectedIndex = 1 Then
+                    If MsgBox("Your current progress will not be saved!", MsgBoxStyle.OkCancel, "Are you sure to exit?") = MsgBoxResult.Cancel Then
+                        e.Cancel = True
+                    End If
+                End If
+            End If
         End If
-
     End Sub
     Private Sub ViewHousehold_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        clearEverything()
+        Me.Controls.Clear()
+        Me.InitializeComponent()
     End Sub
+
+
 
     Private Sub txtView_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBldgNo.KeyDown, txtHouseholdId.KeyDown
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
         End If
     End Sub
+
     Private Sub btnSaveHousehold_Click(sender As Object, e As EventArgs) Handles btnSaveHousehold.Click
 
         If txtHouseholdId.Text.Trim = "" Then
-            MsgBox("Please Fill out a valid Household Id", vbCritical, "Warning")
-            panelParent.CreateGraphics.DrawRectangle(Pens.Red, txtHouseholdId.Left - 1, txtHouseholdId.Top - 1, txtHouseholdId.Width + 1, txtHouseholdId.Height + 1)
-            If checkHouseholdId(txtHouseholdId) = True And action = "add" Then
-                MsgBox("Household Id already exists!", vbCritical, "Warning")
-            End If
+            MsgBox("Please fill out a valid Household Id!", vbCritical, "Warning")
             Exit Sub
-        ElseIf txtBldgNo.Text.Trim = "" Or comboStreetName.Text.Trim = "" Or comboHouseType.Text.Trim = "" Or comboResidenceType.Text.Trim = "" Then
-            MsgBox("Please Fill out all the required fields!", vbCritical, "Warning")
-            checkTextBox(txtBldgNo)
-            checkComboBox(comboStreetName)
-
-            checkComboBox(comboResidenceType)
-            checkComboBox(comboHouseType)
-        Else
-            saveHousehold()
-            MsgBox("Household Saved!", vbInformation, "Information")
-            clearEverything()
-            Me.Close()
-            Main_Form.txtSearchHousehold.Text = "Type in your search"
-            Main_Form.btnHouseholdInfo.PerformClick()
+        End If
+        If isHouseholdIdAvailable() = False And action = "add" Then
+            MsgBox("Household Id already exists!", vbCritical, "Warning")
+            Exit Sub
+        End If
+        If txtBldgNo.Text.Trim = "" Then
+            MsgBox("Please fill out a valid house number!", vbCritical, "Warning")
+            Exit Sub
+        End If
+        If comboStreetName.Text.Trim = "" Then
+            MsgBox("Please fill out a valid street name!", vbCritical, "Warning")
+            Exit Sub
+        End If
+        If comboHouseType.Text.Trim = "" Then
+            MsgBox("Please fill out a valid house type!", vbCritical, "Warning")
+            Exit Sub
+        End If
+        If comboResidenceType.Text.Trim = "" Then
+            MsgBox("Please fill out a valid residence type!", vbCritical, "Warning")
+            Exit Sub
         End If
 
+
+        saveHousehold()
+        MsgBox("Household Saved!", vbInformation, "Information")
+        isSaved = True
+        Me.Close()
+        Main_Form.btnHouseholdInfo.PerformClick()
     End Sub
 
-    Private Sub panelParent_Paint(sender As Object, e As PaintEventArgs) Handles panelParent.Paint
-        setComboBoxColor(comboResidenceType)
-        setComboBoxColor(comboHouseType)
-
-        setTextBoxColor(txtBldgNo)
-        setComboBoxColor(comboStreetName)
-    End Sub
     Private Sub btnModifyHousehold_Click(sender As Object, e As EventArgs) Handles btnModifyHousehold.Click
         mainTabControl.SelectedIndex = 1
         action = "modify"
@@ -98,7 +104,6 @@ Public Class ViewHousehold
             labelHouseholdHead.Visible = True
         End If
     End Sub
-
     Private Sub txtHouseholdId_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtHouseholdId.KeyPress
         '97 - 122 = Ascii codes for simple letters
         '65 - 90  = Ascii codes for capital letters
@@ -110,7 +115,6 @@ Public Class ViewHousehold
             End If
         End If
     End Sub
-
     Private Sub comboHouseholdHead_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboHouseholdHead.SelectedIndexChanged
         comboResidentId.SelectedIndex = comboHouseholdHead.FindStringExact(comboHouseholdHead.Text)
     End Sub
@@ -170,10 +174,11 @@ Public Class ViewHousehold
 
         comboHouseType.SelectedIndex = comboHouseType.FindStringExact("Wood")
         comboResidenceType.SelectedIndex = comboResidenceType.FindStringExact("Owned")
+        comboWaterSource.SelectedIndex = 0
+        comboElectricitySource.SelectedIndex = 0
 
     End Sub
-
-    Private Function checkHouseholdId(txtView As TextBox) As Boolean
+    Private Function isHouseholdIdAvailable() As Boolean
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
         On Error Resume Next
@@ -186,14 +191,12 @@ Public Class ViewHousehold
         End Select
 
         Dim cmd As MySqlCommand
-        Dim mySQLReader As MySqlDataReader
         cmd = mySql.CreateCommand()
         cmd.CommandType = CommandType.Text
 
-        cmd.CommandText = "SELECT household_id from household where household_id = @householdid"
-        cmd.Parameters.Add("@householdid", txtView.Text.Trim)
-        mySQLReader = cmd.ExecuteReader
-        If mySQLReader.HasRows Then
+        cmd.CommandText = "SELECT COUNT(*) from household WHERE household_id = '" & CInt(txtHouseholdId.Text.Trim) & "'"
+
+        If cmd.ExecuteScalar = 0 Then
             Return True
         Else
             Return False
@@ -260,51 +263,8 @@ Public Class ViewHousehold
         mySql.Close()
         mySql.Dispose()
     End Sub
-    Private Sub clearEverything()
-        labelHouseholdId.Text = ""
-        labelHeadFirstName.Text = ""
-        labelHeadMiddleName.Text = ""
-        labelHeadLastName.Text = ""
-        labelHeadExtName.Text = ""
-        labelBldgNo.Text = ""
-        labelStreetName.Text = ""
-        labelResidenceType.Text = ""
-        labelHousetype.Text = ""
-        labelWaterSource.Text = ""
-        labelElectricitySource.Text = ""
-        labelDateAdded.Text = ""
-        datagridViewHousehold.Rows.Clear()
-        comboHouseholdHead.Items.Clear()
 
 
-        householdId = 0
-        headResidentId = 0
-        headFirstName = ""
-        headMiddleName = ""
-        headLastName = ""
-        headExtName = ""
-        bldgNo = ""
-        streetName = ""
-        residenceType = ""
-        houseType = ""
-        waterSource = ""
-        electricitySource = ""
-        dateAdded = ""
-
-        txtHouseholdId.Clear()
-        comboResidenceType.SelectedIndex = 0
-        comboHouseType.SelectedIndex = 0
-        txtBldgNo.Clear()
-        comboStreetName.SelectedIndex = 0
-        comboWaterSource.SelectedIndex = -1
-        comboElectricitySource.SelectedIndex = -1
-        comboHouseholdHead.Items.Clear()
-        comboResidentId.Items.Clear()
-
-        action = ""
-        Panel1.VerticalScroll.Value = 0
-
-    End Sub
     Private Sub saveHousehold()
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
@@ -414,28 +374,5 @@ Public Class ViewHousehold
         cmd.Dispose()
         mySql.Close()
         mySql.Dispose()
-    End Sub
-
-
-    '' '''''''''''''' TEXTBOX AND COMBO BOX CHECKER''''''''''''''''''''''''
-    Private Sub checkTextBox(txtView As TextBox)
-        If txtView.Text.Trim = "" Then
-            panelParent.CreateGraphics.DrawRectangle(Pens.Red, txtView.Left - 1, txtView.Top - 1, txtView.Width + 1, txtView.Height + 1)
-        Else
-            panelParent.CreateGraphics.DrawRectangle(Pens.Black, txtView.Left - 1, txtView.Top - 1, txtView.Width + 1, txtView.Height + 1)
-        End If
-    End Sub
-    Private Sub setTextBoxColor(txtView As TextBox)
-        panelParent.CreateGraphics.DrawRectangle(Pens.Black, txtView.Left - 1, txtView.Top - 1, txtView.Width + 1, txtView.Height + 1)
-    End Sub
-    Private Sub checkComboBox(comboView As ComboBox)
-        If comboView.Text.Trim = "" Or comboView.FindStringExact(comboView.Text) = -1 Then
-            panelParent.CreateGraphics.DrawRectangle(Pens.Red, comboView.Left - 1, comboView.Top - 1, comboView.Width + 1, comboView.Height + 1)
-        Else
-            panelParent.CreateGraphics.DrawRectangle(Pens.Black, comboView.Left - 1, comboView.Top - 1, comboView.Width + 1, comboView.Height + 1)
-        End If
-    End Sub
-    Private Sub setComboBoxColor(comboView As ComboBox)
-        panelParent.CreateGraphics.DrawRectangle(Pens.Black, comboView.Left - 1, comboView.Top - 1, comboView.Width + 1, comboView.Height + 1)
     End Sub
 End Class

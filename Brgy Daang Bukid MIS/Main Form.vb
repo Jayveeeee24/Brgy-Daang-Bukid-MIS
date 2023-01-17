@@ -217,6 +217,7 @@ Public Class Main_Form
     Private Sub datagridHousehold_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridHousehold.CellClick
         If e.RowIndex >= 0 Then
             ViewHousehold.householdId = datagridHousehold.Rows(e.RowIndex).Cells(0).Value
+            ViewHousehold.action = "modify"
             ViewHousehold.ShowDialog()
         End If
     End Sub

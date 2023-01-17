@@ -206,7 +206,7 @@ Public Class ViewResident
                 Exit Sub
             End If
         Else
-            If MsgBox("Save resident information for [" & txtFirstName.Text & If(txtMiddleName.Text = "", "", " " & txtMiddleName.Text) & " " & txtLastName.Text & If(txtExtName.Text = "", "", " " & txtExtName.Text) & "]?", MsgBoxStyle.YesNo, "Confirmation") = MsgBoxResult.No Then
+            If MsgBox("Wish to add resident information for [" & txtFirstName.Text & If(txtMiddleName.Text = "", "", " " & txtMiddleName.Text) & " " & txtLastName.Text & If(txtExtName.Text = "", "", " " & txtExtName.Text) & "]?", MsgBoxStyle.YesNo, "Confirmation") = MsgBoxResult.No Then
                 Exit Sub
             End If
         End If
@@ -582,7 +582,6 @@ Public Class ViewResident
         cmd = mySql.CreateCommand()
         cmd.CommandType = CommandType.Text
 
-        'cmd.CommandText = "SELECT residents.first_name, residents.middle_name, residents.last_name, residents.ext_name, residents.birthdate, household.street_name from residents INNER JOIN household on residents.household_id = household.household_id WHERE first_name = @firstname and  "
         cmd.CommandText = "SELECT COUNT(*) from residents WHERE first_name = @firstname and middle_name = @middlename and last_name = @lastname and ext_name = @extname and birthdate = @birthdate"
         cmd.Parameters.AddWithValue("@firstname", txtFirstName.Text)
         cmd.Parameters.AddWithValue("@middlename", txtMiddleName.Text)
