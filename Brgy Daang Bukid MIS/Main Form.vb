@@ -1343,8 +1343,7 @@ Public Class Main_Form
         ArchivedResidents.ShowDialog()
     End Sub
     Private Sub btnAccountSettings_Click(sender As Object, e As EventArgs) Handles btnAccountSettings.Click
-        ConfirmAccess.originForm = "Accounts"
-        ConfirmAccess.Show()
+
     End Sub
     Private Sub btnUpdateBrgyOfficials_Click(sender As Object, e As EventArgs) Handles btnUpdateBrgyOfficials.Click
         ConfirmAccess.originForm = "BrgyOfficials"
