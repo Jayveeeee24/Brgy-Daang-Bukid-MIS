@@ -35,6 +35,7 @@ Partial Class ConfirmAccess
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.labelHousehold = New System.Windows.Forms.Label()
+        Me.comboHouseholdId = New System.Windows.Forms.ComboBox()
         Me.mainTabControl.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -54,6 +55,7 @@ Partial Class ConfirmAccess
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.comboHouseholdId)
         Me.TabPage1.Controls.Add(Me.btnNext)
         Me.TabPage1.Controls.Add(Me.Label3)
         Me.TabPage1.Controls.Add(Me.txtReasonForArchived)
@@ -202,6 +204,17 @@ Partial Class ConfirmAccess
         Me.labelHousehold.TabIndex = 102
         Me.labelHousehold.Text = "Granting as*: "
         '
+        'comboHouseholdId
+        '
+        Me.comboHouseholdId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.comboHouseholdId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.comboHouseholdId.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.comboHouseholdId.FormattingEnabled = True
+        Me.comboHouseholdId.Location = New System.Drawing.Point(58, 113)
+        Me.comboHouseholdId.Name = "comboHouseholdId"
+        Me.comboHouseholdId.Size = New System.Drawing.Size(354, 28)
+        Me.comboHouseholdId.TabIndex = 108
+        '
         'ConfirmAccess
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -236,4 +249,5 @@ Partial Class ConfirmAccess
     Friend WithEvents Label2 As Label
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents labelHousehold As Label
+    Friend WithEvents comboHouseholdId As ComboBox
 End Class

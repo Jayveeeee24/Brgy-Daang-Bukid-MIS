@@ -29,7 +29,6 @@ Partial Class ViewHousehold
         Me.pageViewHousehold = New System.Windows.Forms.TabPage()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label104 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.labelDateAdded = New System.Windows.Forms.Label()
@@ -67,8 +66,8 @@ Partial Class ViewHousehold
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnSaveHousehold = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.panelParent = New System.Windows.Forms.Panel()
+        Me.Label22 = New System.Windows.Forms.Label()
         Me.comboElectricitySource = New System.Windows.Forms.ComboBox()
         Me.comboWaterSource = New System.Windows.Forms.ComboBox()
         Me.comboStreetName = New System.Windows.Forms.ComboBox()
@@ -88,7 +87,6 @@ Partial Class ViewHousehold
         Me.comboResidenceType = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.labelHousehold = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
         Me.mainTabControl.SuspendLayout()
         Me.pageViewHousehold.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -131,7 +129,7 @@ Partial Class ViewHousehold
         Me.Panel2.Location = New System.Drawing.Point(3, 3)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(5)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Padding = New System.Windows.Forms.Padding(10, 5, 10, 5)
+        Me.Panel2.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Panel2.Size = New System.Drawing.Size(910, 575)
         Me.Panel2.TabIndex = 90
         '
@@ -139,29 +137,17 @@ Partial Class ViewHousehold
         '
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.Label104, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Panel1, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.btnModifyHousehold, 0, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel1, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.btnModifyHousehold, 0, 1)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(10, 5)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(5, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 3
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.251473!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.30059!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.447937!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(890, 565)
+        Me.TableLayoutPanel1.RowCount = 2
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.21239!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.787611!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(900, 575)
         Me.TableLayoutPanel1.TabIndex = 90
-        '
-        'Label104
-        '
-        Me.Label104.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label104.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label104.Location = New System.Drawing.Point(3, 0)
-        Me.Label104.Name = "Label104"
-        Me.Label104.Size = New System.Drawing.Size(884, 46)
-        Me.Label104.TabIndex = 72
-        Me.Label104.Text = "HOUSEHOLD INFORMATION"
-        Me.Label104.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel1
         '
@@ -197,9 +183,9 @@ Partial Class ViewHousehold
         Me.Panel1.Controls.Add(Me.labelBldgNo)
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(3, 49)
+        Me.Panel1.Location = New System.Drawing.Point(3, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(884, 464)
+        Me.Panel1.Size = New System.Drawing.Size(894, 524)
         Me.Panel1.TabIndex = 0
         '
         'Panel4
@@ -535,10 +521,10 @@ Partial Class ViewHousehold
         Me.btnModifyHousehold.ForeColor = System.Drawing.Color.White
         Me.btnModifyHousehold.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.modify
         Me.btnModifyHousehold.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnModifyHousehold.Location = New System.Drawing.Point(736, 516)
+        Me.btnModifyHousehold.Location = New System.Drawing.Point(746, 530)
         Me.btnModifyHousehold.Margin = New System.Windows.Forms.Padding(0)
         Me.btnModifyHousehold.Name = "btnModifyHousehold"
-        Me.btnModifyHousehold.Size = New System.Drawing.Size(154, 49)
+        Me.btnModifyHousehold.Size = New System.Drawing.Size(154, 45)
         Me.btnModifyHousehold.TabIndex = 73
         Me.btnModifyHousehold.TabStop = False
         Me.btnModifyHousehold.Text = "  Modify Household"
@@ -563,7 +549,7 @@ Partial Class ViewHousehold
         Me.Panel5.Location = New System.Drawing.Point(3, 3)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(5)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Padding = New System.Windows.Forms.Padding(10, 5, 10, 5)
+        Me.Panel5.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Panel5.Size = New System.Drawing.Size(910, 575)
         Me.Panel5.TabIndex = 91
         '
@@ -571,18 +557,16 @@ Partial Class ViewHousehold
         '
         Me.TableLayoutPanel2.ColumnCount = 1
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.btnSaveHousehold, 0, 2)
-        Me.TableLayoutPanel2.Controls.Add(Me.Label4, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.panelParent, 0, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.btnSaveHousehold, 0, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.panelParent, 0, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(10, 5)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(5, 0)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 3
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.874015!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.85827!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.267716!))
+        Me.TableLayoutPanel2.RowCount = 2
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.0354!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.964602!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(890, 565)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(900, 575)
         Me.TableLayoutPanel2.TabIndex = 90
         '
         'btnSaveHousehold
@@ -598,26 +582,15 @@ Partial Class ViewHousehold
         Me.btnSaveHousehold.ForeColor = System.Drawing.Color.White
         Me.btnSaveHousehold.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.save
         Me.btnSaveHousehold.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSaveHousehold.Location = New System.Drawing.Point(743, 517)
+        Me.btnSaveHousehold.Location = New System.Drawing.Point(753, 529)
         Me.btnSaveHousehold.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSaveHousehold.Name = "btnSaveHousehold"
-        Me.btnSaveHousehold.Size = New System.Drawing.Size(147, 48)
+        Me.btnSaveHousehold.Size = New System.Drawing.Size(147, 46)
         Me.btnSaveHousehold.TabIndex = 74
         Me.btnSaveHousehold.TabStop = False
         Me.btnSaveHousehold.Text = "  Save Household"
         Me.btnSaveHousehold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSaveHousehold.UseVisualStyleBackColor = False
-        '
-        'Label4
-        '
-        Me.Label4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label4.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(3, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(884, 44)
-        Me.Label4.TabIndex = 72
-        Me.Label4.Text = "HOUSEHOLD INFORMATION"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'panelParent
         '
@@ -645,10 +618,20 @@ Partial Class ViewHousehold
         Me.panelParent.Controls.Add(Me.Label7)
         Me.panelParent.Controls.Add(Me.labelHousehold)
         Me.panelParent.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelParent.Location = New System.Drawing.Point(3, 47)
+        Me.panelParent.Location = New System.Drawing.Point(3, 3)
         Me.panelParent.Name = "panelParent"
-        Me.panelParent.Size = New System.Drawing.Size(884, 467)
+        Me.panelParent.Size = New System.Drawing.Size(894, 523)
         Me.panelParent.TabIndex = 0
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(29, 15)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(438, 16)
+        Me.Label22.TabIndex = 144
+        Me.Label22.Text = "Note: You can type in other selection if it's not in the drop down"
         '
         'comboElectricitySource
         '
@@ -863,16 +846,6 @@ Partial Class ViewHousehold
         Me.labelHousehold.TabIndex = 119
         Me.labelHousehold.Text = "Household Id*: "
         '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(29, 15)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(438, 16)
-        Me.Label22.TabIndex = 144
-        Me.Label22.Text = "Note: You can type in other selection if it's not in the drop down"
-        '
         'ViewHousehold
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -905,13 +878,11 @@ Partial Class ViewHousehold
     Friend WithEvents pageModifyHousehold As TabPage
     Friend WithEvents Panel2 As Panel
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents Label104 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents btnModifyHousehold As Button
     Friend WithEvents Panel5 As Panel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents Label4 As Label
     Friend WithEvents panelParent As Panel
     Friend WithEvents labelDateAdded As Label
     Friend WithEvents Label5 As Label

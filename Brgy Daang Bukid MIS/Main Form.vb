@@ -204,7 +204,7 @@ Public Class Main_Form
         checkInputNumbersOnly(e)
     End Sub
     Private Sub txtSearchHousehold_Click(sender As Object, e As EventArgs) Handles txtSearchHousehold.Click
-        If txtSearchHousehold.Text = "Type in your search" Then
+        If txtSearchHousehold.Text = "Search by household id, house no or street name" Then
             txtSearchHousehold.Clear()
         End If
     End Sub
@@ -230,7 +230,18 @@ Public Class Main_Form
         ViewHousehold.ShowDialog()
     End Sub
     Private Sub txtSearchHousehold_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSearchHousehold.KeyPress
-        checkInputNumbersOnly(e)
+        '97 - 122 = Ascii codes for simple letters
+        '65 - 90  = Ascii codes for capital letters
+        '48 - 57  = Ascii codes for numbers
+
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) >= 48 And Asc(e.KeyChar) <= 57 Then
+            ElseIf Asc(e.KeyChar) >= 65 And Asc(e.KeyChar) <= 90 Then
+            ElseIf Asc(e.KeyChar) >= 97 And Asc(e.KeyChar) <= 122 Then
+            Else
+                e.Handled = True
+            End If
+        End If
     End Sub
 
 
@@ -317,7 +328,7 @@ Public Class Main_Form
         labelTitle.Text = "Household Information"
 
         txtPageNoHousehold.Text = 1
-        txtSearchHousehold.Text = "Type in your search"
+        txtSearchHousehold.Text = "Search by household id, house no or street name"
         loadDataGrid(datagridHousehold, Modules.Household)
         Filter.clearEverythingHousehold()
 
@@ -465,7 +476,7 @@ Public Class Main_Form
 
 
         'cmd.CommandText = "Select count(*) From household WHERE CAST(household_id AS UNSIGNED) > 0 AND household_id like = @householdid "
-        cmd.CommandText = "Select count(*) From household WHERE CAST(household_id AS UNSIGNED) > 0 " & If(filterBldgNo = "", "", " AND bldg_no LIKE @bldgno ") & If(filterStreetName = "", "", " AND street_name LIKE @streetname ") & If(filterResidenceType = "", "", " AND residence_type LIKE @residencetype ") & If(filterHouseType = "", "", " AND house_type LIKE @housetype ") & If(filterWaterSource = "", "", " AND water_source LIKE @watersource ") & If(filterElectricitySource = "", "", " AND electricity_source LIKE @electricitysource ") & If(filterMonthAdded = "", "", " AND month_added = @monthadded ") & If(filterDayAdded = 0, "", " AND day_added = @dayadded ") & If(filterYearAdded = 0, "", " AND year_added = @yearadded ") & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " AND household_id LIKE '" & txtSearchHousehold.Text.Trim & "%'"))
+        cmd.CommandText = "Select count(*) From household WHERE CAST(household_id AS UNSIGNED) > 0 " & If(filterBldgNo = "", "", " AND bldg_no LIKE @bldgno ") & If(filterStreetName = "", "", " AND street_name LIKE @streetname ") & If(filterResidenceType = "", "", " AND residence_type LIKE @residencetype ") & If(filterHouseType = "", "", " AND house_type LIKE @housetype ") & If(filterWaterSource = "", "", " AND water_source LIKE @watersource ") & If(filterElectricitySource = "", "", " AND electricity_source LIKE @electricitysource ") & If(filterMonthAdded = "", "", " AND month_added = @monthadded ") & If(filterDayAdded = 0, "", " AND day_added = @dayadded ") & If(filterYearAdded = 0, "", " AND year_added = @yearadded ") & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Search by household id, house no or street name", " ", " AND (household_id LIKE '" & txtSearchHousehold.Text.Trim & "%' or bldg_no LIKE '" & txtSearchHousehold.Text.Trim & "%' or street_name LIKE '" & txtSearchHousehold.Text.Trim & "%')"))
 
         'cmd.Parameters.AddWithValue("@householdid", txtSearchHousehold.Text.Trim & "%")
         cmd.Parameters.AddWithValue("@bldgno", "%" & filterBldgNo & "%")
@@ -582,7 +593,7 @@ Public Class Main_Form
             Case Modules.Household ''''''''''''''Household
 
                 'mySQLCommand.CommandText = "Select household_id, bldg_no, street_name From household WHERE household_id > 0 " & If(filterBldgNo = "", "", " AND bldg_no LIKE @bldgno ") & If(filterStreetName = "", "", " AND street_name LIKE @streetname ") & If(filterResidenceType = "", "", " AND residence_type LIKE @residencetype ") & If(filterHouseType = "", "", " AND house_type LIKE @housetype ") & If(filterWaterSource = "", "", " AND water_source LIKE @watersource ") & If(filterElectricitySource = "", "", " AND electricity_source LIKE @electricitysource ") & If(filterMonthAdded = "", "", " AND month_added = @monthadded ") & If(filterDayAdded = 0, "", " AND day_added = @dayadded ") & If(filterYearAdded = 0, "", " AND year_added = @yearadded ") & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " AND household_id LIKE @householdID")) & " order by  CAST(household_id AS UNSIGNED) asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30)
-                mySQLCommand.CommandText = "Select household.household_id, household.bldg_no, household.street_name From household INNER JOIN  WHERE household_id > 0 " & If(filterBldgNo = "", "", " AND bldg_no LIKE @bldgno ") & If(filterStreetName = "", "", " AND street_name LIKE @streetname ") & If(filterResidenceType = "", "", " AND residence_type LIKE @residencetype ") & If(filterHouseType = "", "", " AND house_type LIKE @housetype ") & If(filterWaterSource = "", "", " AND water_source LIKE @watersource ") & If(filterElectricitySource = "", "", " AND electricity_source LIKE @electricitysource ") & If(filterMonthAdded = "", "", " AND month_added = @monthadded ") & If(filterDayAdded = 0, "", " AND day_added = @dayadded ") & If(filterYearAdded = 0, "", " AND year_added = @yearadded ") & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " AND household_id LIKE @householdID")) & " order by  CAST(household_id AS UNSIGNED) asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30)
+                mySQLCommand.CommandText = "Select household.household_id, household.bldg_no, household.street_name, residents.first_name, residents.middle_name, residents.last_name, residents.ext_name From household INNER JOIN residents on household.household_id = residents.household_id AND (residents.household_role = 'Head') WHERE household.household_id > 0 " & If(filterBldgNo = "", "", " AND household.bldg_no LIKE @bldgno ") & If(filterStreetName = "", "", " AND household.street_name LIKE @streetname ") & If(filterResidenceType = "", "", " AND household.residence_type LIKE @residencetype ") & If(filterHouseType = "", "", " AND household.house_type LIKE @housetype ") & If(filterWaterSource = "", "", " AND household.water_source LIKE @watersource ") & If(filterElectricitySource = "", "", " AND household.electricity_source LIKE @electricitysource ") & If(filterMonthAdded = "", "", " AND household.month_added = @monthadded ") & If(filterDayAdded = 0, "", " AND household.day_added = @dayadded ") & If(filterYearAdded = 0, "", " AND household.year_added = @yearadded ") & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Search by household id, house no or street name", " ", " AND (household.household_id LIKE @householdID or household.bldg_no LIKE @householdID or household.street_name LIKE @householdID) ")) & " order by  CAST(household.household_id AS UNSIGNED) asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30)
                 mySQLCommand.Parameters.AddWithValue("@householdID", txtSearchHousehold.Text & "%")
                 mySQLCommand.Parameters.AddWithValue("@bldgno", "%" & filterBldgNo & "%")
                 mySQLCommand.Parameters.AddWithValue("@streetname", "%" & filterStreetName & "%")
@@ -617,7 +628,13 @@ Public Class Main_Form
 
 
                     While mySQLReader.Read
-                        datagrid.Rows.Add(New String() {mySQLReader!household_id, mySQLReader!bldg_no, mySQLReader!street_name, "", "", ""})
+                        Dim middle, ext As String
+                        If mySQLReader!middle_name = Nothing Then
+                            middle = ""
+                        Else
+                            middle = mySQLReader!middle_name + " "
+                        End If
+                        datagrid.Rows.Add(New String() {mySQLReader!household_id, (mySQLReader!first_name + " " + middle + mySQLReader!last_name + " " + mySQLReader!ext_name), mySQLReader!bldg_no, mySQLReader!street_name, "", "", ""})
                     End While
                 End If
 
