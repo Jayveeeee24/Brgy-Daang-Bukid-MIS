@@ -184,8 +184,12 @@ Public Class Main_Form
         Filter.ShowDialog()
     End Sub
     Private Sub btnAddResident_Click(sender As Object, e As EventArgs) Handles btnAddResident.Click
-        ViewResident.action = "add"
-        ViewResident.ShowDialog()
+        If isHouseholdAvailable() = True Then
+            ViewResident.action = "add"
+            ViewResident.ShowDialog()
+        Else
+            MsgBox("Please add a household first before adding residents", vbInformation, "Information")
+        End If
     End Sub
 
 
@@ -593,7 +597,7 @@ Public Class Main_Form
             Case Modules.Household ''''''''''''''Household
 
                 'mySQLCommand.CommandText = "Select household_id, bldg_no, street_name From household WHERE household_id > 0 " & If(filterBldgNo = "", "", " AND bldg_no LIKE @bldgno ") & If(filterStreetName = "", "", " AND street_name LIKE @streetname ") & If(filterResidenceType = "", "", " AND residence_type LIKE @residencetype ") & If(filterHouseType = "", "", " AND house_type LIKE @housetype ") & If(filterWaterSource = "", "", " AND water_source LIKE @watersource ") & If(filterElectricitySource = "", "", " AND electricity_source LIKE @electricitysource ") & If(filterMonthAdded = "", "", " AND month_added = @monthadded ") & If(filterDayAdded = 0, "", " AND day_added = @dayadded ") & If(filterYearAdded = 0, "", " AND year_added = @yearadded ") & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Type in your search", " ", " AND household_id LIKE @householdID")) & " order by  CAST(household_id AS UNSIGNED) asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30)
-                mySQLCommand.CommandText = "Select household.household_id, household.bldg_no, household.street_name, residents.first_name, residents.middle_name, residents.last_name, residents.ext_name From household INNER JOIN residents on household.household_id = residents.household_id AND (residents.household_role = 'Head') WHERE household.household_id > 0 " & If(filterBldgNo = "", "", " AND household.bldg_no LIKE @bldgno ") & If(filterStreetName = "", "", " AND household.street_name LIKE @streetname ") & If(filterResidenceType = "", "", " AND household.residence_type LIKE @residencetype ") & If(filterHouseType = "", "", " AND household.house_type LIKE @housetype ") & If(filterWaterSource = "", "", " AND household.water_source LIKE @watersource ") & If(filterElectricitySource = "", "", " AND household.electricity_source LIKE @electricitysource ") & If(filterMonthAdded = "", "", " AND household.month_added = @monthadded ") & If(filterDayAdded = 0, "", " AND household.day_added = @dayadded ") & If(filterYearAdded = 0, "", " AND household.year_added = @yearadded ") & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Search by household id, house no or street name", " ", " AND (household.household_id LIKE @householdID or household.bldg_no LIKE @householdID or household.street_name LIKE @householdID) ")) & " order by  CAST(household.household_id AS UNSIGNED) asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30)
+                mySQLCommand.CommandText = "Select household.household_id, household.bldg_no, household.street_name, residents.first_name, residents.middle_name, residents.last_name, residents.ext_name From household LEFT JOIN residents on household.household_id = residents.household_id AND (residents.household_role = 'Head') WHERE household.household_id > 0 " & If(filterBldgNo = "", "", " AND household.bldg_no LIKE @bldgno ") & If(filterStreetName = "", "", " AND household.street_name LIKE @streetname ") & If(filterResidenceType = "", "", " AND household.residence_type LIKE @residencetype ") & If(filterHouseType = "", "", " AND household.house_type LIKE @housetype ") & If(filterWaterSource = "", "", " AND household.water_source LIKE @watersource ") & If(filterElectricitySource = "", "", " AND household.electricity_source LIKE @electricitysource ") & If(filterMonthAdded = "", "", " AND household.month_added = @monthadded ") & If(filterDayAdded = 0, "", " AND household.day_added = @dayadded ") & If(filterYearAdded = 0, "", " AND household.year_added = @yearadded ") & (If(txtSearchHousehold.Text.Trim = "" Or txtSearchHousehold.Text = "Search by household id, house no or street name", " ", " AND (household.household_id LIKE @householdID or household.bldg_no LIKE @householdID or household.street_name LIKE @householdID) ")) & " order by  CAST(household.household_id AS UNSIGNED) asc limit 30 OFFSET " & (((CInt(Me.txtPageNoHousehold.Text)) - 1) * 30)
                 mySQLCommand.Parameters.AddWithValue("@householdID", txtSearchHousehold.Text & "%")
                 mySQLCommand.Parameters.AddWithValue("@bldgno", "%" & filterBldgNo & "%")
                 mySQLCommand.Parameters.AddWithValue("@streetname", "%" & filterStreetName & "%")
@@ -651,6 +655,34 @@ Public Class Main_Form
 
         datagrid.ClearSelection()
     End Sub
+    Private Function isHouseholdAvailable() As Boolean
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "SELECT COUNT(*) from household"
+
+        If cmd.ExecuteScalar = 0 Then
+            Return False
+        Else
+            Return True
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+    End Function
     Private Sub enterTextPageNo(e As KeyEventArgs, txtPageNo As ToolStripTextBox, datagrid As DataGridView, modules As Modules, ByVal totalPage As Integer)
         If e.KeyCode = Keys.Enter Then
             If txtPageNo.Text.Trim = "" Then
