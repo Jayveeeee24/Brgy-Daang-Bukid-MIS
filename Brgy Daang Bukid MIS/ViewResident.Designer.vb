@@ -947,7 +947,7 @@ Partial Class ViewResident
         Me.txtContactNo.Multiline = True
         Me.txtContactNo.Name = "txtContactNo"
         Me.txtContactNo.Size = New System.Drawing.Size(306, 27)
-        Me.txtContactNo.TabIndex = 153
+        Me.txtContactNo.TabIndex = 20
         '
         'comboSex
         '
@@ -958,7 +958,7 @@ Partial Class ViewResident
         Me.comboSex.Location = New System.Drawing.Point(301, 568)
         Me.comboSex.Name = "comboSex"
         Me.comboSex.Size = New System.Drawing.Size(174, 28)
-        Me.comboSex.TabIndex = 152
+        Me.comboSex.TabIndex = 17
         '
         'comboCivilStatus
         '
@@ -969,7 +969,7 @@ Partial Class ViewResident
         Me.comboCivilStatus.Location = New System.Drawing.Point(301, 534)
         Me.comboCivilStatus.Name = "comboCivilStatus"
         Me.comboCivilStatus.Size = New System.Drawing.Size(174, 28)
-        Me.comboCivilStatus.TabIndex = 151
+        Me.comboCivilStatus.TabIndex = 15
         '
         'Label44
         '
@@ -1021,8 +1021,9 @@ Partial Class ViewResident
         Me.txtOtherCitizenship.MaxLength = 100
         Me.txtOtherCitizenship.Multiline = True
         Me.txtOtherCitizenship.Name = "txtOtherCitizenship"
+        Me.txtOtherCitizenship.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.txtOtherCitizenship.Size = New System.Drawing.Size(306, 27)
-        Me.txtOtherCitizenship.TabIndex = 146
+        Me.txtOtherCitizenship.TabIndex = 14
         '
         'comboCitizenship
         '
@@ -1036,7 +1037,7 @@ Partial Class ViewResident
         Me.comboCitizenship.Location = New System.Drawing.Point(299, 455)
         Me.comboCitizenship.Name = "comboCitizenship"
         Me.comboCitizenship.Size = New System.Drawing.Size(306, 28)
-        Me.comboCitizenship.TabIndex = 145
+        Me.comboCitizenship.TabIndex = 13
         '
         'Label2
         '
@@ -1059,7 +1060,7 @@ Partial Class ViewResident
         Me.txtDisability.Multiline = True
         Me.txtDisability.Name = "txtDisability"
         Me.txtDisability.Size = New System.Drawing.Size(308, 27)
-        Me.txtDisability.TabIndex = 143
+        Me.txtDisability.TabIndex = 25
         Me.txtDisability.Tag = ""
         '
         'comboBirthPlace
@@ -1073,7 +1074,7 @@ Partial Class ViewResident
         Me.comboBirthPlace.Location = New System.Drawing.Point(301, 391)
         Me.comboBirthPlace.Name = "comboBirthPlace"
         Me.comboBirthPlace.Size = New System.Drawing.Size(306, 28)
-        Me.comboBirthPlace.TabIndex = 142
+        Me.comboBirthPlace.TabIndex = 12
         '
         'labelDisability
         '
@@ -1096,7 +1097,7 @@ Partial Class ViewResident
         Me.txtExtName.Multiline = True
         Me.txtExtName.Name = "txtExtName"
         Me.txtExtName.Size = New System.Drawing.Size(306, 27)
-        Me.txtExtName.TabIndex = 100
+        Me.txtExtName.TabIndex = 7
         '
         'txtAge
         '
@@ -1110,7 +1111,7 @@ Partial Class ViewResident
         Me.txtAge.Multiline = True
         Me.txtAge.Name = "txtAge"
         Me.txtAge.Size = New System.Drawing.Size(174, 27)
-        Me.txtAge.TabIndex = 99
+        Me.txtAge.TabIndex = 11
         Me.txtAge.Tag = ""
         Me.txtAge.Text = "0"
         '
@@ -1123,7 +1124,7 @@ Partial Class ViewResident
         Me.comboHouseholdId.Location = New System.Drawing.Point(299, 66)
         Me.comboHouseholdId.Name = "comboHouseholdId"
         Me.comboHouseholdId.Size = New System.Drawing.Size(306, 28)
-        Me.comboHouseholdId.TabIndex = 96
+        Me.comboHouseholdId.TabIndex = 1
         '
         'Label7
         '
@@ -1147,7 +1148,7 @@ Partial Class ViewResident
         Me.txtReligion.Multiline = True
         Me.txtReligion.Name = "txtReligion"
         Me.txtReligion.Size = New System.Drawing.Size(308, 27)
-        Me.txtReligion.TabIndex = 91
+        Me.txtReligion.TabIndex = 23
         Me.txtReligion.Tag = ""
         '
         'Label1
@@ -1171,7 +1172,7 @@ Partial Class ViewResident
         Me.txtOccupation.Multiline = True
         Me.txtOccupation.Name = "txtOccupation"
         Me.txtOccupation.Size = New System.Drawing.Size(308, 27)
-        Me.txtOccupation.TabIndex = 89
+        Me.txtOccupation.TabIndex = 22
         Me.txtOccupation.Tag = ""
         '
         'comboPwd
@@ -1183,7 +1184,7 @@ Partial Class ViewResident
         Me.comboPwd.Location = New System.Drawing.Point(301, 740)
         Me.comboPwd.Name = "comboPwd"
         Me.comboPwd.Size = New System.Drawing.Size(176, 28)
-        Me.comboPwd.TabIndex = 88
+        Me.comboPwd.TabIndex = 24
         '
         'comboVoter
         '
@@ -1194,7 +1195,7 @@ Partial Class ViewResident
         Me.comboVoter.Location = New System.Drawing.Point(301, 637)
         Me.comboVoter.Name = "comboVoter"
         Me.comboVoter.Size = New System.Drawing.Size(176, 28)
-        Me.comboVoter.TabIndex = 87
+        Me.comboVoter.TabIndex = 21
         '
         'pickerBirthDate
         '
@@ -1203,7 +1204,7 @@ Partial Class ViewResident
         Me.pickerBirthDate.Location = New System.Drawing.Point(301, 323)
         Me.pickerBirthDate.Name = "pickerBirthDate"
         Me.pickerBirthDate.Size = New System.Drawing.Size(306, 26)
-        Me.pickerBirthDate.TabIndex = 80
+        Me.pickerBirthDate.TabIndex = 10
         '
         'comboHouseholdRole
         '
@@ -1214,7 +1215,7 @@ Partial Class ViewResident
         Me.comboHouseholdRole.Location = New System.Drawing.Point(299, 100)
         Me.comboHouseholdRole.Name = "comboHouseholdRole"
         Me.comboHouseholdRole.Size = New System.Drawing.Size(174, 28)
-        Me.comboHouseholdRole.TabIndex = 79
+        Me.comboHouseholdRole.TabIndex = 2
         '
         'txtLastName
         '
@@ -1227,7 +1228,7 @@ Partial Class ViewResident
         Me.txtLastName.Multiline = True
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.Size = New System.Drawing.Size(304, 27)
-        Me.txtLastName.TabIndex = 78
+        Me.txtLastName.TabIndex = 5
         '
         'Label4
         '
@@ -1360,7 +1361,7 @@ Partial Class ViewResident
         Me.txtFirstName.Multiline = True
         Me.txtFirstName.Name = "txtFirstName"
         Me.txtFirstName.Size = New System.Drawing.Size(304, 27)
-        Me.txtFirstName.TabIndex = 69
+        Me.txtFirstName.TabIndex = 3
         '
         'txtMiddleName
         '
@@ -1373,7 +1374,7 @@ Partial Class ViewResident
         Me.txtMiddleName.Multiline = True
         Me.txtMiddleName.Name = "txtMiddleName"
         Me.txtMiddleName.Size = New System.Drawing.Size(304, 27)
-        Me.txtMiddleName.TabIndex = 77
+        Me.txtMiddleName.TabIndex = 4
         '
         'labelHousehold
         '

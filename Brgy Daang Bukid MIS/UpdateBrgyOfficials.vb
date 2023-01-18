@@ -125,6 +125,7 @@ Public Class UpdateBrgyOfficials
 
         MsgBox("Official Dismissed!", vbInformation, "Information")
         loadDatagrid()
+        officialId = 0
         btnDismissOfficial.Enabled = False
         dataGridBrgyOfficials.ClearSelection()
     End Sub

@@ -1,16 +1,62 @@
-﻿
-Imports System.Data
+﻿Imports System.Data
 Imports System.Linq.Expressions
 Imports MySql.Data.MySqlClient
 Imports Mysqlx.XDevAPI.Common
 Public Class Account_Settings
 
     Public mySqlConn As String = "server=localhost; user id=root; database=mis"
+    Public accountId As Integer = 0
 
     Private visibilityImage As Image
     Private Sub Account_Settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txtAccountName.Text = Main_Form.account_position
-        txtUsername.Text = Main_Form.user_name
+        If accountId = 0 Then
+            accountId = Main_Form.account_id
+        End If
+
+        getAccountDetails(accountId)
+    End Sub
+
+    Public Sub getAccountDetails(ByVal id As Integer)
+
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+
+        Dim cmd As MySqlCommand
+        Dim mySQLReader As MySqlDataReader
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = "SELECT accounts.account_name, accounts.question, accounts.answer, brgyofficials.official_position from accounts LEFT JOIN brgyofficials on accounts.account_id = brgyofficials.id where accounts.account_id = @accountid"
+        cmd.Parameters.AddWithValue("@accountid", id)
+        mySQLReader = cmd.ExecuteReader
+
+        If mySQLReader.HasRows Then
+            While mySQLReader.Read
+                comboRecovery.SelectedIndex = comboRecovery.FindStringExact(mySQLReader!question)
+                txtAnswer.Text = mySQLReader!answer
+                txtUsername.Text = mySQLReader!account_name
+                txtAccountName.Text = mySQLReader!official_position
+
+                If accountId > 1 And txtAccountName.Text.Trim = "" Then
+                    txtAccountName.Text = "Staff"
+                ElseIf accountId = 1 And txtAccountName.Text.Trim = "" Then
+                    txtAccountName.Text = "Administrator"
+                End If
+            End While
+
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
     End Sub
 
     Private Sub txtViewKeydown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown, txtConfirmPassword.KeyDown
@@ -58,10 +104,12 @@ Public Class Account_Settings
         mySQLCommand = mySql.CreateCommand()
         mySQLCommand.CommandType = CommandType.Text
 
-        mySQLCommand.CommandText = "UPDATE accounts SET account_password = @accountpassword, account_name = @accountname WHERE account_id = @accountid"
-        mySQLCommand.Parameters.AddWithValue("@accountid", Main_Form.account_id)
+        mySQLCommand.CommandText = "UPDATE accounts SET account_password = @accountpassword, account_name = @accountname, question = @question, answer = @answer WHERE account_id = @accountid"
+        mySQLCommand.Parameters.AddWithValue("@accountid", accountId)
         mySQLCommand.Parameters.AddWithValue("@accountpassword", txtPassword.Text.Trim)
         mySQLCommand.Parameters.AddWithValue("@accountname", txtUsername.Text.Trim)
+        mySQLCommand.Parameters.AddWithValue("@question", comboRecovery.Text)
+        mySQLCommand.Parameters.AddWithValue("@answer", txtAnswer.Text.Trim)
         mySQLCommand.ExecuteNonQuery()
 
         Me.Enabled = True
@@ -80,7 +128,6 @@ Public Class Account_Settings
             e.SuppressKeyPress = True
         End If
     End Sub
-
     Private Function GetVisibilityImage(ByVal imageName As String) As Image
         If imageName = "visible" Then
             visibilityImage = My.Resources.visi_off
@@ -89,7 +136,6 @@ Public Class Account_Settings
         End If
         Return visibilityImage
     End Function
-
     Private Sub btnVisibilityNewPass_Click(sender As Object, e As EventArgs) Handles btnVisibilityNewPass.Click
         If txtPassword.PasswordChar = "*" Then
             txtPassword.PasswordChar = ""
@@ -99,7 +145,6 @@ Public Class Account_Settings
             btnVisibilityNewPass.Image = GetVisibilityImage("invisible")
         End If
     End Sub
-
     Private Sub btnVisibilityConfirm_Click(sender As Object, e As EventArgs) Handles btnVisibilityConfirm.Click
         If txtConfirmPassword.PasswordChar = "*" Then
             txtConfirmPassword.PasswordChar = ""

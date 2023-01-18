@@ -78,10 +78,15 @@ Public Class ConfirmAccess
                 ViewResident.archiveResident()
             ElseIf originForm = "Accounts" Then
                 Account_Settings.ShowDialog()
+            ElseIf originForm = "AccountManagement" Then
+                AccountManagement.ShowDialog()
             ElseIf originForm = "BrgyOfficials" Then
                 UpdateBrgyOfficials.ShowDialog()
             ElseIf originForm = "DismissBrgyOfficial" Then
                 UpdateBrgyOfficials.dismissOfficial()
+            ElseIf originForm = "RemoveAccount" Then
+                AccountManagement.removeAccount()
+
             End If
         Else
             txtPassword.Clear()
@@ -97,7 +102,7 @@ Public Class ConfirmAccess
         txtPassword.Clear()
     End Sub
 
-    Private Sub ConfirmAccess_Leave(sender As Object, e As EventArgs) Handles MyBase.Leave
+    Private Sub ConfirmAccess_Deactivate(sender As Object, e As EventArgs) Handles MyBase.Deactivate
         Me.Close()
     End Sub
 End Class

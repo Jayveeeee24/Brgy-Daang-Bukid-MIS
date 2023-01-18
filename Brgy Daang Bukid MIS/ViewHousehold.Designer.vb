@@ -644,7 +644,7 @@ Partial Class ViewHousehold
         Me.comboElectricitySource.Location = New System.Drawing.Point(382, 392)
         Me.comboElectricitySource.Name = "comboElectricitySource"
         Me.comboElectricitySource.Size = New System.Drawing.Size(295, 28)
-        Me.comboElectricitySource.TabIndex = 142
+        Me.comboElectricitySource.TabIndex = 11
         '
         'comboWaterSource
         '
@@ -657,7 +657,7 @@ Partial Class ViewHousehold
         Me.comboWaterSource.Location = New System.Drawing.Point(382, 349)
         Me.comboWaterSource.Name = "comboWaterSource"
         Me.comboWaterSource.Size = New System.Drawing.Size(295, 28)
-        Me.comboWaterSource.TabIndex = 141
+        Me.comboWaterSource.TabIndex = 10
         '
         'comboStreetName
         '
@@ -670,7 +670,7 @@ Partial Class ViewHousehold
         Me.comboStreetName.Location = New System.Drawing.Point(382, 216)
         Me.comboStreetName.Name = "comboStreetName"
         Me.comboStreetName.Size = New System.Drawing.Size(295, 28)
-        Me.comboStreetName.TabIndex = 140
+        Me.comboStreetName.TabIndex = 4
         '
         'comboResidentId
         '
@@ -696,7 +696,7 @@ Partial Class ViewHousehold
         Me.txtHouseholdId.Multiline = True
         Me.txtHouseholdId.Name = "txtHouseholdId"
         Me.txtHouseholdId.Size = New System.Drawing.Size(295, 27)
-        Me.txtHouseholdId.TabIndex = 138
+        Me.txtHouseholdId.TabIndex = 1
         '
         'comboHouseholdHead
         '
@@ -709,7 +709,7 @@ Partial Class ViewHousehold
         Me.comboHouseholdHead.Location = New System.Drawing.Point(382, 130)
         Me.comboHouseholdHead.Name = "comboHouseholdHead"
         Me.comboHouseholdHead.Size = New System.Drawing.Size(295, 28)
-        Me.comboHouseholdHead.TabIndex = 137
+        Me.comboHouseholdHead.TabIndex = 2
         '
         'labelHouseholdHead
         '
@@ -738,7 +738,7 @@ Partial Class ViewHousehold
         Me.comboHouseType.Location = New System.Drawing.Point(382, 303)
         Me.comboHouseType.Name = "comboHouseType"
         Me.comboHouseType.Size = New System.Drawing.Size(295, 28)
-        Me.comboHouseType.TabIndex = 134
+        Me.comboHouseType.TabIndex = 7
         '
         'Label20
         '
@@ -812,7 +812,7 @@ Partial Class ViewHousehold
         Me.txtBldgNo.Multiline = True
         Me.txtBldgNo.Name = "txtBldgNo"
         Me.txtBldgNo.Size = New System.Drawing.Size(295, 27)
-        Me.txtBldgNo.TabIndex = 123
+        Me.txtBldgNo.TabIndex = 3
         '
         'comboResidenceType
         '
@@ -824,7 +824,7 @@ Partial Class ViewHousehold
         Me.comboResidenceType.Location = New System.Drawing.Point(382, 259)
         Me.comboResidenceType.Name = "comboResidenceType"
         Me.comboResidenceType.Size = New System.Drawing.Size(295, 28)
-        Me.comboResidenceType.TabIndex = 122
+        Me.comboResidenceType.TabIndex = 5
         '
         'Label7
         '

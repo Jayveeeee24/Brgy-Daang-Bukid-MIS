@@ -35,6 +35,10 @@ Partial Class Account_Settings
         Me.btnVisibilityConfirm = New System.Windows.Forms.Button()
         Me.txtConfirmPassword = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtAnswer = New System.Windows.Forms.TextBox()
+        Me.comboRecovery = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'txtAccountName
@@ -42,7 +46,7 @@ Partial Class Account_Settings
         Me.txtAccountName.BackColor = System.Drawing.Color.White
         Me.txtAccountName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtAccountName.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAccountName.Location = New System.Drawing.Point(232, 74)
+        Me.txtAccountName.Location = New System.Drawing.Point(246, 63)
         Me.txtAccountName.Name = "txtAccountName"
         Me.txtAccountName.Size = New System.Drawing.Size(276, 29)
         Me.txtAccountName.TabIndex = 109
@@ -52,7 +56,7 @@ Partial Class Account_Settings
         '
         Me.labelHousehold.AutoSize = True
         Me.labelHousehold.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelHousehold.Location = New System.Drawing.Point(47, 79)
+        Me.labelHousehold.Location = New System.Drawing.Point(45, 68)
         Me.labelHousehold.Name = "labelHousehold"
         Me.labelHousehold.Size = New System.Drawing.Size(133, 18)
         Me.labelHousehold.TabIndex = 108
@@ -62,7 +66,7 @@ Partial Class Account_Settings
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(47, 184)
+        Me.Label3.Location = New System.Drawing.Point(47, 157)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(151, 18)
         Me.Label3.TabIndex = 110
@@ -74,7 +78,7 @@ Partial Class Account_Settings
         Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.ForeColor = System.Drawing.Color.Black
-        Me.txtPassword.Location = New System.Drawing.Point(232, 178)
+        Me.txtPassword.Location = New System.Drawing.Point(246, 151)
         Me.txtPassword.MaxLength = 100
         Me.txtPassword.Multiline = True
         Me.txtPassword.Name = "txtPassword"
@@ -91,7 +95,7 @@ Partial Class Account_Settings
         Me.btnVisibilityNewPass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.btnVisibilityNewPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnVisibilityNewPass.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.visi
-        Me.btnVisibilityNewPass.Location = New System.Drawing.Point(476, 180)
+        Me.btnVisibilityNewPass.Location = New System.Drawing.Point(492, 153)
         Me.btnVisibilityNewPass.Name = "btnVisibilityNewPass"
         Me.btnVisibilityNewPass.Size = New System.Drawing.Size(29, 23)
         Me.btnVisibilityNewPass.TabIndex = 112
@@ -110,13 +114,13 @@ Partial Class Account_Settings
         Me.btnChangePassword.ForeColor = System.Drawing.Color.White
         Me.btnChangePassword.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_forward_white
         Me.btnChangePassword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnChangePassword.Location = New System.Drawing.Point(206, 289)
+        Me.btnChangePassword.Location = New System.Drawing.Point(201, 375)
         Me.btnChangePassword.Margin = New System.Windows.Forms.Padding(0)
         Me.btnChangePassword.Name = "btnChangePassword"
         Me.btnChangePassword.Size = New System.Drawing.Size(158, 41)
         Me.btnChangePassword.TabIndex = 116
         Me.btnChangePassword.TabStop = False
-        Me.btnChangePassword.Text = "  Change Password"
+        Me.btnChangePassword.Text = "  Update Account"
         Me.btnChangePassword.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnChangePassword.UseVisualStyleBackColor = False
         '
@@ -134,7 +138,7 @@ Partial Class Account_Settings
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(47, 139)
+        Me.Label8.Location = New System.Drawing.Point(47, 112)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(114, 18)
         Me.Label8.TabIndex = 119
@@ -146,7 +150,7 @@ Partial Class Account_Settings
         Me.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsername.ForeColor = System.Drawing.Color.Black
-        Me.txtUsername.Location = New System.Drawing.Point(232, 136)
+        Me.txtUsername.Location = New System.Drawing.Point(246, 109)
         Me.txtUsername.MaxLength = 100
         Me.txtUsername.Multiline = True
         Me.txtUsername.Name = "txtUsername"
@@ -162,7 +166,7 @@ Partial Class Account_Settings
         Me.btnVisibilityConfirm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.btnVisibilityConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnVisibilityConfirm.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.visi
-        Me.btnVisibilityConfirm.Location = New System.Drawing.Point(476, 221)
+        Me.btnVisibilityConfirm.Location = New System.Drawing.Point(491, 193)
         Me.btnVisibilityConfirm.Name = "btnVisibilityConfirm"
         Me.btnVisibilityConfirm.Size = New System.Drawing.Size(29, 23)
         Me.btnVisibilityConfirm.TabIndex = 124
@@ -175,7 +179,7 @@ Partial Class Account_Settings
         Me.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtConfirmPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtConfirmPassword.ForeColor = System.Drawing.Color.Black
-        Me.txtConfirmPassword.Location = New System.Drawing.Point(232, 219)
+        Me.txtConfirmPassword.Location = New System.Drawing.Point(246, 192)
         Me.txtConfirmPassword.MaxLength = 100
         Me.txtConfirmPassword.Multiline = True
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
@@ -187,17 +191,66 @@ Partial Class Account_Settings
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(47, 225)
+        Me.Label1.Location = New System.Drawing.Point(47, 198)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(179, 18)
         Me.Label1.TabIndex = 122
         Me.Label1.Text = "Confirm Password*: "
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(47, 284)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(174, 18)
+        Me.Label4.TabIndex = 170
+        Me.Label4.Text = "Recovery Answer*: "
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(47, 239)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(185, 18)
+        Me.Label5.TabIndex = 169
+        Me.Label5.Text = "Recovery Question*: "
+        '
+        'txtAnswer
+        '
+        Me.txtAnswer.BackColor = System.Drawing.Color.White
+        Me.txtAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtAnswer.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAnswer.ForeColor = System.Drawing.Color.Black
+        Me.txtAnswer.Location = New System.Drawing.Point(246, 281)
+        Me.txtAnswer.MaxLength = 20
+        Me.txtAnswer.Multiline = True
+        Me.txtAnswer.Name = "txtAnswer"
+        Me.txtAnswer.Size = New System.Drawing.Size(278, 64)
+        Me.txtAnswer.TabIndex = 168
+        Me.txtAnswer.Tag = ""
+        '
+        'comboRecovery
+        '
+        Me.comboRecovery.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboRecovery.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.comboRecovery.FormattingEnabled = True
+        Me.comboRecovery.Items.AddRange(New Object() {"What was your childhood nickname?", "In what city did you meet your spouse/significant other?", "What is the name of your favorite childhood friend?", "What street did you live on in third grade?", "What was your childhood nickname?", "In what city did you meet your spouse/significant other?", "What is the name of your favorite childhood friend?", "What street did you live on in third grade?", "In what city or town did your mother and father meet?", "Where were you when you had your first kiss?"})
+        Me.comboRecovery.Location = New System.Drawing.Point(246, 235)
+        Me.comboRecovery.Name = "comboRecovery"
+        Me.comboRecovery.Size = New System.Drawing.Size(278, 28)
+        Me.comboRecovery.TabIndex = 167
+        '
         'Account_Settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(548, 349)
+        Me.ClientSize = New System.Drawing.Size(559, 436)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.txtAnswer)
+        Me.Controls.Add(Me.comboRecovery)
         Me.Controls.Add(Me.btnVisibilityConfirm)
         Me.Controls.Add(Me.txtConfirmPassword)
         Me.Controls.Add(Me.Label1)
@@ -232,4 +285,8 @@ Partial Class Account_Settings
     Friend WithEvents btnVisibilityConfirm As Button
     Friend WithEvents txtConfirmPassword As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtAnswer As TextBox
+    Friend WithEvents comboRecovery As ComboBox
 End Class

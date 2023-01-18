@@ -1343,7 +1343,8 @@ Public Class Main_Form
         ArchivedResidents.ShowDialog()
     End Sub
     Private Sub btnAccountSettings_Click(sender As Object, e As EventArgs) Handles btnAccountSettings.Click
-
+        ConfirmAccess.originForm = "AccountManagement"
+        ConfirmAccess.Show()
     End Sub
     Private Sub btnUpdateBrgyOfficials_Click(sender As Object, e As EventArgs) Handles btnUpdateBrgyOfficials.Click
         ConfirmAccess.originForm = "BrgyOfficials"
@@ -1390,6 +1391,8 @@ Public Class Main_Form
         ViewStreet.streetName = "Rupee, Westbay"
         ViewStreet.ShowDialog()
     End Sub
+
+
     Private Sub btnYen_Click(sender As Object, e As EventArgs) Handles btnYen.Click
         ViewStreet.streetName = "Yen, Westbay"
         ViewStreet.ShowDialog()

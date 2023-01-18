@@ -51,9 +51,6 @@
     <ApplicationIcon>logo_daang_bukid-legitbgremoved.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
     <Reference Include="MySql.Data, Version=8.0.31.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Compression.Base, Version=20.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.Compression.Base.20.4.0.42\lib\net46\Syncfusion.Compression.Base.dll</HintPath>
@@ -102,6 +99,12 @@
       <DependentUpon>Account Settings.vb</DependentUpon>
     </Compile>
     <Compile Include="Account Settings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountManagement.Designer.vb">
+      <DependentUpon>AccountManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AccountManagement.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AppointOfficial.Designer.vb">
@@ -264,6 +267,9 @@
     <EmbeddedResource Include="Account Settings.resx">
       <DependentUpon>Account Settings.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AccountManagement.resx">
+      <DependentUpon>AccountManagement.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppointOfficial.resx">
       <DependentUpon>AppointOfficial.vb</DependentUpon>
     </EmbeddedResource>
@@ -416,6 +422,34 @@
     <None Include="Resources\visi.png" />
     <None Include="Resources\Image1.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

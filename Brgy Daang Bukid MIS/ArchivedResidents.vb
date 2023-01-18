@@ -18,7 +18,7 @@ Public Class ArchivedResidents
     End Sub
     Private Sub txtSearchResident_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchResident.KeyDown
         If e.KeyCode = Keys.Enter Then
-
+            btnSearchResident.PerformClick()
             e.SuppressKeyPress = True
         End If
     End Sub
@@ -54,6 +54,8 @@ Public Class ArchivedResidents
 
 
         mySQLCommand.CommandText = "SELECT * from archived_residents WHERE resident_id > 0 " & (If(txtSearchResident.Text.Trim = "" Or txtSearchResident.Text = "Search by first or last name", " ", " AND (first_name LIKE @resident_name OR last_name LIKE @resident_name)")) & " order by first_name asc"
+        mySQLCommand.Parameters.AddWithValue("@resident_name", txtSearchResident.Text.Trim & "%")
+
         mySQLReader = mySQLCommand.ExecuteReader
 
 

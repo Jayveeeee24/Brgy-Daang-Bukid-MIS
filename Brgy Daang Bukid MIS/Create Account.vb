@@ -59,13 +59,46 @@ Public Class Create_Account
             Login.Show()
             Me.Close()
         Else
-            saveAccount(comboAccountFor.FindStringExact(comboAccountFor.Text) + 1, txtUsernameAdmin.Text.Trim, txtPassword.Text.Trim, txtUserLevel.Text, comboRecovery.Text, txtAnswer.Text.Trim)
-            MsgBox("Account Saved!", vbInformation, "Information")
-            Me.Close()
+            If isAccountAvailable(comboAccountFor.FindStringExact(comboAccountFor.Text) + 2) = True Then
+                saveAccount(comboAccountFor.FindStringExact(comboAccountFor.Text) + 2, txtUsernameAdmin.Text.Trim, txtPassword.Text.Trim, txtUserLevel.Text, comboRecovery.Text, txtAnswer.Text.Trim)
+                MsgBox("Account Saved!", vbInformation, "Information")
+                AccountManagement.loadDatagrid()
+                Me.Close()
+            Else
+                MsgBox("Account already exist for this position!", vbCritical, "Warning")
+                Exit Sub
+            End If
         End If
 
     End Sub
+    Private Function isAccountAvailable(ByVal id As Integer) As Boolean
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
 
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "SELECT COUNT(*) from accounts WHERE account_id = '" & id & "'"
+
+        If cmd.ExecuteScalar = 0 Then
+            Return True
+        Else
+            Return False
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+    End Function
     Private Sub saveAccount(ByVal accountid As Integer, ByVal accountname As String, ByVal accountpassword As String, ByVal userlevel As String, ByVal question As String, ByVal answer As String)
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)

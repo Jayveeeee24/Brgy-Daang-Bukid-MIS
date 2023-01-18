@@ -111,3 +111,5 @@ C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.
 C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.Create_Account.resources
 C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ForgotPassword.resources
 C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.SearchHousehold.resources
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.AccountManagement.resources
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.vbproj.ResolveComReference.cache

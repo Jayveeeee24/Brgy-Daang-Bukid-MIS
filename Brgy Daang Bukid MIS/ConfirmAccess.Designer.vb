@@ -25,6 +25,8 @@ Partial Class ConfirmAccess
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ConfirmAccess))
         Me.mainTabControl = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.comboReason = New System.Windows.Forms.ComboBox()
         Me.btnNext = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -34,8 +36,6 @@ Partial Class ConfirmAccess
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.labelHousehold = New System.Windows.Forms.Label()
-        Me.comboReason = New System.Windows.Forms.ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.mainTabControl.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -66,6 +66,30 @@ Partial Class ConfirmAccess
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "TabPage1"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(156, 123)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(151, 14)
+        Me.Label4.TabIndex = 145
+        Me.Label4.Text = "Others please type in*"
+        '
+        'comboReason
+        '
+        Me.comboReason.AutoCompleteCustomSource.AddRange(New String() {"Deceased", "Moved Residency"})
+        Me.comboReason.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.comboReason.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.comboReason.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.comboReason.FormattingEnabled = True
+        Me.comboReason.Items.AddRange(New Object() {"Deceased", "Moved Residency"})
+        Me.comboReason.Location = New System.Drawing.Point(58, 92)
+        Me.comboReason.MaxLength = 15
+        Me.comboReason.Name = "comboReason"
+        Me.comboReason.Size = New System.Drawing.Size(354, 28)
+        Me.comboReason.TabIndex = 108
         '
         'btnNext
         '
@@ -190,30 +214,6 @@ Partial Class ConfirmAccess
         Me.labelHousehold.Size = New System.Drawing.Size(124, 18)
         Me.labelHousehold.TabIndex = 102
         Me.labelHousehold.Text = "Granting as*: "
-        '
-        'comboReason
-        '
-        Me.comboReason.AutoCompleteCustomSource.AddRange(New String() {"Deceased", "Moved Residency"})
-        Me.comboReason.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.comboReason.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.comboReason.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.comboReason.FormattingEnabled = True
-        Me.comboReason.Items.AddRange(New Object() {"Deceased", "Moved Residency"})
-        Me.comboReason.Location = New System.Drawing.Point(58, 92)
-        Me.comboReason.MaxLength = 15
-        Me.comboReason.Name = "comboReason"
-        Me.comboReason.Size = New System.Drawing.Size(354, 28)
-        Me.comboReason.TabIndex = 108
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(156, 123)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(151, 14)
-        Me.Label4.TabIndex = 145
-        Me.Label4.Text = "Others please type in*"
         '
         'ConfirmAccess
         '
