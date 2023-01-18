@@ -142,7 +142,7 @@ Partial Class ArchivedResidents
         Me.txtSearchResident.Name = "txtSearchResident"
         Me.txtSearchResident.Size = New System.Drawing.Size(1001, 29)
         Me.txtSearchResident.TabIndex = 6
-        Me.txtSearchResident.Text = "Type in your search"
+        Me.txtSearchResident.Text = "Search by first or last name"
         '
         'searchResidentParent
         '

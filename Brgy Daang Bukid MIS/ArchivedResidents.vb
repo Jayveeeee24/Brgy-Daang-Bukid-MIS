@@ -12,7 +12,7 @@ Public Class ArchivedResidents
     End Sub
 
     Private Sub txtSearchResident_Click(sender As Object, e As EventArgs) Handles txtSearchResident.Click
-        If txtSearchResident.Text = "Type in your search" Then
+        If txtSearchResident.Text = "Search by first or last name" Then
             txtSearchResident.Clear()
         End If
     End Sub
@@ -53,7 +53,7 @@ Public Class ArchivedResidents
         mySQLCommand.CommandType = CommandType.Text
 
 
-        mySQLCommand.CommandText = "SELECT * from archived_residents WHERE resident_id > 0 " & (If(txtSearchResident.Text.Trim = "" Or txtSearchResident.Text = "Type in your search", " ", " AND (first_name LIKE @resident_name OR middle_name LIKE @resident_name OR last_name LIKE @resident_name)")) & " order by first_name asc"
+        mySQLCommand.CommandText = "SELECT * from archived_residents WHERE resident_id > 0 " & (If(txtSearchResident.Text.Trim = "" Or txtSearchResident.Text = "Search by first or last name", " ", " AND (first_name LIKE @resident_name OR last_name LIKE @resident_name)")) & " order by first_name asc"
         mySQLReader = mySQLCommand.ExecuteReader
 
 
