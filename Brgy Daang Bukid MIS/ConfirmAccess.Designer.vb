@@ -27,7 +27,6 @@ Partial Class ConfirmAccess
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.btnNext = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtReasonForArchived = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.txtAccountName = New System.Windows.Forms.Label()
         Me.btnConfirmAccess = New System.Windows.Forms.Button()
@@ -35,7 +34,8 @@ Partial Class ConfirmAccess
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.labelHousehold = New System.Windows.Forms.Label()
-        Me.comboHouseholdId = New System.Windows.Forms.ComboBox()
+        Me.comboReason = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.mainTabControl.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -55,10 +55,10 @@ Partial Class ConfirmAccess
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.comboHouseholdId)
+        Me.TabPage1.Controls.Add(Me.Label4)
+        Me.TabPage1.Controls.Add(Me.comboReason)
         Me.TabPage1.Controls.Add(Me.btnNext)
         Me.TabPage1.Controls.Add(Me.Label3)
-        Me.TabPage1.Controls.Add(Me.txtReasonForArchived)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -79,10 +79,10 @@ Partial Class ConfirmAccess
         Me.btnNext.ForeColor = System.Drawing.Color.White
         Me.btnNext.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_forward_white
         Me.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNext.Location = New System.Drawing.Point(175, 144)
+        Me.btnNext.Location = New System.Drawing.Point(183, 171)
         Me.btnNext.Margin = New System.Windows.Forms.Padding(0)
         Me.btnNext.Name = "btnNext"
-        Me.btnNext.Size = New System.Drawing.Size(97, 48)
+        Me.btnNext.Size = New System.Drawing.Size(93, 37)
         Me.btnNext.TabIndex = 107
         Me.btnNext.TabStop = False
         Me.btnNext.Text = "      Next"
@@ -98,19 +98,6 @@ Partial Class ConfirmAccess
         Me.Label3.Size = New System.Drawing.Size(260, 18)
         Me.Label3.TabIndex = 106
         Me.Label3.Text = "Reason for Archive (optional): "
-        '
-        'txtReasonForArchived
-        '
-        Me.txtReasonForArchived.BackColor = System.Drawing.Color.White
-        Me.txtReasonForArchived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtReasonForArchived.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtReasonForArchived.ForeColor = System.Drawing.Color.Black
-        Me.txtReasonForArchived.Location = New System.Drawing.Point(58, 88)
-        Me.txtReasonForArchived.MaxLength = 100
-        Me.txtReasonForArchived.Multiline = True
-        Me.txtReasonForArchived.Name = "txtReasonForArchived"
-        Me.txtReasonForArchived.Size = New System.Drawing.Size(354, 27)
-        Me.txtReasonForArchived.TabIndex = 105
         '
         'TabPage2
         '
@@ -204,16 +191,29 @@ Partial Class ConfirmAccess
         Me.labelHousehold.TabIndex = 102
         Me.labelHousehold.Text = "Granting as*: "
         '
-        'comboHouseholdId
+        'comboReason
         '
-        Me.comboHouseholdId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.comboHouseholdId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.comboHouseholdId.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.comboHouseholdId.FormattingEnabled = True
-        Me.comboHouseholdId.Location = New System.Drawing.Point(58, 113)
-        Me.comboHouseholdId.Name = "comboHouseholdId"
-        Me.comboHouseholdId.Size = New System.Drawing.Size(354, 28)
-        Me.comboHouseholdId.TabIndex = 108
+        Me.comboReason.AutoCompleteCustomSource.AddRange(New String() {"Deceased", "Moved Residency"})
+        Me.comboReason.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.comboReason.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.comboReason.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.comboReason.FormattingEnabled = True
+        Me.comboReason.Items.AddRange(New Object() {"Deceased", "Moved Residency"})
+        Me.comboReason.Location = New System.Drawing.Point(58, 92)
+        Me.comboReason.MaxLength = 15
+        Me.comboReason.Name = "comboReason"
+        Me.comboReason.Size = New System.Drawing.Size(354, 28)
+        Me.comboReason.TabIndex = 108
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(156, 123)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(151, 14)
+        Me.Label4.TabIndex = 145
+        Me.Label4.Text = "Others please type in*"
         '
         'ConfirmAccess
         '
@@ -241,7 +241,6 @@ Partial Class ConfirmAccess
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents btnNext As Button
     Friend WithEvents Label3 As Label
-    Friend WithEvents txtReasonForArchived As TextBox
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents txtAccountName As Label
     Friend WithEvents btnConfirmAccess As Button
@@ -249,5 +248,6 @@ Partial Class ConfirmAccess
     Friend WithEvents Label2 As Label
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents labelHousehold As Label
-    Friend WithEvents comboHouseholdId As ComboBox
+    Friend WithEvents comboReason As ComboBox
+    Friend WithEvents Label4 As Label
 End Class

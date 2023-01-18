@@ -9,6 +9,7 @@ Public Class ViewResident
     Public viewChoice As String
     Public action As String
     Public grantAccess As Boolean
+    Public reasonForArchive As String
 
     Dim isSaved As Boolean = False
     Dim firstName, middleName, lastName, extName As String
@@ -109,7 +110,7 @@ Public Class ViewResident
         End If
     End Sub
     Private Sub comboCitizenship_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboCitizenship.SelectedIndexChanged
-        txtContactNo.Clear()
+        txtOtherCitizenship.Clear()
         If comboCitizenship.SelectedIndex >= 2 Then
             txtOtherCitizenship.Enabled = True
         Else
@@ -139,6 +140,7 @@ Public Class ViewResident
         Else
             comboBirthPlace.Text = birthPlace
         End If
+
         txtContactNo.Text = contactNo
 
         comboCitizenship.SelectedIndex = If(comboCitizenship.FindStringExact(citizenship) = -1, 2, comboCitizenship.FindStringExact(citizenship))
@@ -548,7 +550,8 @@ Public Class ViewResident
         cmd.Parameters.AddWithValue("@registered_by", registeredBy)
         cmd.Parameters.AddWithValue("@datearchived", Date.Now)
         cmd.Parameters.AddWithValue("@archivedby", Main_Form.account_credentials)
-        cmd.Parameters.AddWithValue("@reasonarchived", ConfirmAccess.reasonForArchived)
+
+        cmd.Parameters.AddWithValue("@reasonarchived", reasonForArchive)
 
         cmd.ExecuteNonQuery()
 

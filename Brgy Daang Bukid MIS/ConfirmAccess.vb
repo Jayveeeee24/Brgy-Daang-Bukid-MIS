@@ -18,14 +18,13 @@ Public Class ConfirmAccess
             mainTabControl.SelectedIndex = 1
         End If
 
+        comboReason.SelectedIndex = -1
         txtAccountName.Text = Main_Form.user_level
     End Sub
 
-
-
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
         mainTabControl.SelectedIndex = 1
-        reasonForArchived = txtReasonForArchived.Text
+        reasonForArchived = comboReason.Text
     End Sub
 
     Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
@@ -75,7 +74,9 @@ Public Class ConfirmAccess
 
             Me.Close()
             If originForm = "Archive" Then
+                ViewResident.reasonForArchive = reasonForArchived
                 ViewResident.archiveResident()
+
             ElseIf originForm = "Accounts" Then
                 Account_Settings.ShowDialog()
             ElseIf originForm = "BrgyOfficials" Then
@@ -95,7 +96,6 @@ Public Class ConfirmAccess
 
     Private Sub ConfirmAccess_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         txtPassword.Clear()
-        txtReasonForArchived.Clear()
     End Sub
 
     Private Sub ConfirmAccess_Leave(sender As Object, e As EventArgs) Handles MyBase.Leave
