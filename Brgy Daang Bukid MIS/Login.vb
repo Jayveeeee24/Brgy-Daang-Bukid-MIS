@@ -1,4 +1,5 @@
-﻿Imports System.Data
+﻿Imports System.ComponentModel
+Imports System.Data
 Imports MySql.Data.MySqlClient
 Imports Mysqlx.XDevAPI.Common
 
@@ -12,6 +13,7 @@ Public Class Login
     Private visibilityImage As Image
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If isAccountAvailable() = False Then
+            Create_Account.action = "initial"
             Create_Account.Show()
             Me.Close()
         End If

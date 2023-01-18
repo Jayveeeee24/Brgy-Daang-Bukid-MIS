@@ -73,181 +73,62 @@ Public Class Main_Form
         btnUpdateBrgyOfficials.Show()
         btnAddBlotters.Show()
         btnAddVawc.Show()
-        If account_id = 2 Then
+        If user_level = "Staff" Then
             btnSystemManagement.Text = "     Account Settings"
             btnArchivedResidents.Hide()
             btnUpdateBrgyOfficials.Hide()
-
         Else
             btnSystemManagement.Text = "     System Management"
         End If
-        If account_id = 3 Then
-            btnCertificates.Hide()
-            btnSystemManagement.Hide()
-            btnInventory.Hide()
-            btnAddResident.Hide()
-            btnAddHousehold.Hide()
-            btnAddIncidents.Hide()
-            btnAddComplaint.Hide()
-            btnAddBlotters.Hide()
-            btnAddVawc.Hide()
-        End If
 
-        If account_id = 3 Then
-            labelSignedIn.Text = "Logged in as: Guest"
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+                mySql.Close()
+                mySql.Dispose()
+                Exit Sub
+        End Select
+
+        Dim mySQLCommand As MySqlCommand
+        Dim mySQLReader As MySqlDataReader
+        mySQLCommand = mySql.CreateCommand()
+        mySQLCommand.CommandType = CommandType.Text
+
+        mySQLCommand.CommandText = "SELECT * FROM brgyofficials WHERE id = @account_id ORDER BY id"
+        mySQLCommand.Parameters.AddWithValue("@account_id", account_id)
+        mySQLReader = mySQLCommand.ExecuteReader
+        If mySQLReader.HasRows Then
+            While mySQLReader.Read
+                account_name = getResidentNameById(mySQLReader!official_name)
+                account_position = mySQLReader!official_position
+                account_credentials = account_name + " [" + account_position + "]"
+                labelSignedIn.Text = "Logged in as: " + account_credentials
+            End While
         Else
-            Dim mySql As MySqlConnection
-            mySql = New MySqlConnection(mySqlConn)
-            On Error Resume Next
-            mySql.Open()
-
-            Select Case Err.Number
-                Case 0
-                Case Else
-                    MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
-                    mySql.Close()
-                    mySql.Dispose()
-                    Exit Sub
-            End Select
-
-            Dim mySQLCommand As MySqlCommand
-            Dim mySQLReader As MySqlDataReader
-            mySQLCommand = mySql.CreateCommand()
-            mySQLCommand.CommandType = CommandType.Text
-
-            mySQLCommand.CommandText = "SELECT * FROM brgyofficials WHERE id = @account_id ORDER BY id"
-            mySQLCommand.Parameters.AddWithValue("@account_id", account_id)
-            mySQLReader = mySQLCommand.ExecuteReader
-            If mySQLReader.HasRows Then
-                While mySQLReader.Read
-                    account_name = getResidentNameById(mySQLReader!official_name)
-                    account_position = mySQLReader!official_position
-                    account_credentials = account_name + " [" + account_position + "]"
-                    labelSignedIn.Text = "Logged in as: " + account_credentials
-                End While
-            Else
-                If account_id = 1 Then
-                    labelSignedIn.Text = "Logged in as: Administrator"
-                    account_name = user_name
-                    account_credentials = user_level
-                    account_position = user_level
-                ElseIf account_id = 2 Then
-                    account_credentials = user_level
-                    account_name = user_name
-                    account_position = user_level
-                    labelSignedIn.Text = "Logged in as: Staff"
-                End If
-            End If
-            mySQLCommand.Dispose()
-            mySQLReader.Dispose()
-            mySql.Close()
-            mySql.Dispose()
-        End If
-
-    End Sub
-
-
-    '' ''''''''''''''''''''''RESIDENT UI DEFINITIONS''''''''''''''''''''''''
-    Private Sub txtPageNoResident_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPageNoResident.KeyDown
-        enterTextPageNo(e, txtPageNoResident, datagridResident, Modules.Residents, totalPageResident)
-    End Sub
-    Private Sub btnBackResident_Click(sender As Object, e As EventArgs) Handles btnBackResident.Click
-        toolStripButtonBack(txtPageNoResident, datagridResident, Modules.Residents, totalPageResident)
-    End Sub
-    Private Sub btnForwardResident_Click(sender As Object, e As EventArgs) Handles btnForwardResident.Click
-        toolStripButtonForward(txtPageNoResident, datagridResident, Modules.Residents, totalPageResident)
-    End Sub
-    Private Sub txtPageNoResident_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPageNoResident.KeyPress
-        checkInputNumbersOnly(e)
-    End Sub
-    Private Sub txtSearchResident_Click(sender As Object, e As EventArgs) Handles txtSearchResident.Click
-        If txtSearchResident.Text = "Search by first or last name" Then
-            txtSearchResident.Clear()
-        End If
-    End Sub
-    Private Sub txtSearchResident_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchResident.KeyDown
-        enterTextSearch(e, datagridResident, Modules.Residents, txtPageNoResident)
-    End Sub
-    Private Sub btnSearchResident_Click(sender As Object, e As EventArgs) Handles btnSearchResident.Click
-        loadDataGrid(datagridResident, Modules.Residents)
-    End Sub
-    Private Sub datagridResident_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridResident.CellClick
-        If e.RowIndex >= 0 Then
-            ViewResident.resident_id = datagridResident.Rows(e.RowIndex).Cells(0).Value
-            ViewResident.viewChoice = "Normal"
-            ViewResident.action = "modify"
-            ViewResident.ShowDialog()
-        End If
-    End Sub
-    Private Sub btnFilterResident_Click(sender As Object, e As EventArgs) Handles btnFilterResident.Click
-        Filter.filterModule = "Resident"
-        Filter.ShowDialog()
-    End Sub
-    Private Sub btnAddResident_Click(sender As Object, e As EventArgs) Handles btnAddResident.Click
-        If isHouseholdAvailable() = True Then
-            ViewResident.action = "add"
-            ViewResident.ShowDialog()
-        Else
-            MsgBox("Please add a household first before adding residents", vbInformation, "Information")
-        End If
-    End Sub
-
-
-
-    '' ''''''''''''''''''''''HOUSEHOLD UI DEFINITIONS''''''''''''''''''''''''
-    Private Sub txtPageNoHousehold_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPageNoHousehold.KeyDown
-        enterTextPageNo(e, txtPageNoHousehold, datagridHousehold, Modules.Household, totalPageHousehold)
-    End Sub
-    Private Sub btnBackHousehold_Click(sender As Object, e As EventArgs) Handles btnBackHousehold.Click
-        toolStripButtonBack(txtPageNoHousehold, datagridHousehold, Modules.Household, totalPageHousehold)
-    End Sub
-    Private Sub btnForwardHousehold_Click(sender As Object, e As EventArgs) Handles btnForwardHousehold.Click
-        toolStripButtonForward(txtPageNoHousehold, datagridHousehold, Modules.Household, totalPageHousehold)
-    End Sub
-    Private Sub txtPageNoHousehold_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPageNoHousehold.KeyPress
-        checkInputNumbersOnly(e)
-    End Sub
-    Private Sub txtSearchHousehold_Click(sender As Object, e As EventArgs) Handles txtSearchHousehold.Click
-        If txtSearchHousehold.Text = "Search by household id, house no or street name" Then
-            txtSearchHousehold.Clear()
-        End If
-    End Sub
-    Private Sub txtSearchHousehold_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchHousehold.KeyDown
-        enterTextSearch(e, datagridHousehold, Modules.Household, txtPageNoHousehold)
-    End Sub
-    Private Sub btnSearchHousehold_Click(sender As Object, e As EventArgs) Handles btnSearchHousehold.Click
-        loadDataGrid(datagridHousehold, Modules.Household)
-    End Sub
-    Private Sub datagridHousehold_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridHousehold.CellClick
-        If e.RowIndex >= 0 Then
-            ViewHousehold.householdId = datagridHousehold.Rows(e.RowIndex).Cells(0).Value
-            ViewHousehold.action = "modify"
-            ViewHousehold.ShowDialog()
-        End If
-    End Sub
-    Private Sub btnFilterHousehold_Click(sender As Object, e As EventArgs) Handles btnFilterHousehold.Click
-        Filter.filterModule = "Household"
-        Filter.ShowDialog()
-    End Sub
-    Private Sub btnAddHousehold_Click(sender As Object, e As EventArgs) Handles btnAddHousehold.Click
-        ViewHousehold.action = "add"
-        ViewHousehold.ShowDialog()
-    End Sub
-    Private Sub txtSearchHousehold_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSearchHousehold.KeyPress
-        '97 - 122 = Ascii codes for simple letters
-        '65 - 90  = Ascii codes for capital letters
-        '48 - 57  = Ascii codes for numbers
-
-        If Asc(e.KeyChar) <> 8 Then
-            If Asc(e.KeyChar) >= 48 And Asc(e.KeyChar) <= 57 Then
-            ElseIf Asc(e.KeyChar) >= 65 And Asc(e.KeyChar) <= 90 Then
-            ElseIf Asc(e.KeyChar) >= 97 And Asc(e.KeyChar) <= 122 Then
-            Else
-                e.Handled = True
+            If account_id = 1 Then
+                labelSignedIn.Text = "Logged in as: Administrator"
+                account_name = user_name
+                account_credentials = user_level
+                account_position = user_level
+            ElseIf user_level = "Staff" Then
+                account_credentials = user_level
+                account_name = user_name
+                account_position = user_level
+                labelSignedIn.Text = "Logged in as: Staff"
             End If
         End If
-    End Sub
+        mySQLCommand.Dispose()
+        mySQLReader.Dispose()
+        mySql.Close()
+        mySql.Dispose()
 
+    End Sub
 
     ''' '''''''''''''' FOR SIDE NAVIGATION MENU
     Private Sub timerOpen_Tick(sender As Object, e As EventArgs) Handles timerOpen.Tick
@@ -392,8 +273,12 @@ Public Class Main_Form
         btnSystemManagement.BackColor = Color.FromArgb(52, 152, 219)
         btnInventory.BackColor = Color.FromArgb(25, 117, 211)
 
-
-        mainTabControl.SelectedTab = pageSystemManagement
+        If user_level = "Staff" Then
+            ConfirmAccess.originForm = "Accounts"
+            ConfirmAccess.Show()
+        Else
+            mainTabControl.SelectedTab = pageSystemManagement
+        End If
 
     End Sub
     Private Sub btnInventory_Click(sender As Object, e As EventArgs) Handles btnInventory.Click
@@ -783,6 +668,111 @@ Public Class Main_Form
         cmd.Dispose()
         mySql.Close()
         mySql.Dispose()
+    End Sub
+
+
+
+
+
+    '' ''''''''''''''''''''''RESIDENT UI DEFINITIONS''''''''''''''''''''''''
+    Private Sub txtPageNoResident_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPageNoResident.KeyDown
+        enterTextPageNo(e, txtPageNoResident, datagridResident, Modules.Residents, totalPageResident)
+    End Sub
+    Private Sub btnBackResident_Click(sender As Object, e As EventArgs) Handles btnBackResident.Click
+        toolStripButtonBack(txtPageNoResident, datagridResident, Modules.Residents, totalPageResident)
+    End Sub
+    Private Sub btnForwardResident_Click(sender As Object, e As EventArgs) Handles btnForwardResident.Click
+        toolStripButtonForward(txtPageNoResident, datagridResident, Modules.Residents, totalPageResident)
+    End Sub
+    Private Sub txtPageNoResident_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPageNoResident.KeyPress
+        checkInputNumbersOnly(e)
+    End Sub
+    Private Sub txtSearchResident_Click(sender As Object, e As EventArgs) Handles txtSearchResident.Click
+        If txtSearchResident.Text = "Search by first or last name" Then
+            txtSearchResident.Clear()
+        End If
+    End Sub
+    Private Sub txtSearchResident_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchResident.KeyDown
+        enterTextSearch(e, datagridResident, Modules.Residents, txtPageNoResident)
+    End Sub
+    Private Sub btnSearchResident_Click(sender As Object, e As EventArgs) Handles btnSearchResident.Click
+        loadDataGrid(datagridResident, Modules.Residents)
+    End Sub
+    Private Sub datagridResident_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridResident.CellClick
+        If e.RowIndex >= 0 Then
+            ViewResident.resident_id = datagridResident.Rows(e.RowIndex).Cells(0).Value
+            ViewResident.viewChoice = "Normal"
+            ViewResident.action = "modify"
+            ViewResident.ShowDialog()
+        End If
+    End Sub
+    Private Sub btnFilterResident_Click(sender As Object, e As EventArgs) Handles btnFilterResident.Click
+        Filter.filterModule = "Resident"
+        Filter.ShowDialog()
+    End Sub
+    Private Sub btnAddResident_Click(sender As Object, e As EventArgs) Handles btnAddResident.Click
+        If isHouseholdAvailable() = True Then
+            ViewResident.action = "add"
+            ViewResident.ShowDialog()
+        Else
+            MsgBox("Please add a household first before adding residents", vbInformation, "Information")
+        End If
+    End Sub
+
+
+
+    '' ''''''''''''''''''''''HOUSEHOLD UI DEFINITIONS''''''''''''''''''''''''
+    Private Sub txtPageNoHousehold_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPageNoHousehold.KeyDown
+        enterTextPageNo(e, txtPageNoHousehold, datagridHousehold, Modules.Household, totalPageHousehold)
+    End Sub
+    Private Sub btnBackHousehold_Click(sender As Object, e As EventArgs) Handles btnBackHousehold.Click
+        toolStripButtonBack(txtPageNoHousehold, datagridHousehold, Modules.Household, totalPageHousehold)
+    End Sub
+    Private Sub btnForwardHousehold_Click(sender As Object, e As EventArgs) Handles btnForwardHousehold.Click
+        toolStripButtonForward(txtPageNoHousehold, datagridHousehold, Modules.Household, totalPageHousehold)
+    End Sub
+    Private Sub txtPageNoHousehold_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPageNoHousehold.KeyPress
+        checkInputNumbersOnly(e)
+    End Sub
+    Private Sub txtSearchHousehold_Click(sender As Object, e As EventArgs) Handles txtSearchHousehold.Click
+        If txtSearchHousehold.Text = "Search by household id, house no or street name" Then
+            txtSearchHousehold.Clear()
+        End If
+    End Sub
+    Private Sub txtSearchHousehold_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchHousehold.KeyDown
+        enterTextSearch(e, datagridHousehold, Modules.Household, txtPageNoHousehold)
+    End Sub
+    Private Sub btnSearchHousehold_Click(sender As Object, e As EventArgs) Handles btnSearchHousehold.Click
+        loadDataGrid(datagridHousehold, Modules.Household)
+    End Sub
+    Private Sub datagridHousehold_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridHousehold.CellClick
+        If e.RowIndex >= 0 Then
+            ViewHousehold.householdId = datagridHousehold.Rows(e.RowIndex).Cells(0).Value
+            ViewHousehold.action = "modify"
+            ViewHousehold.ShowDialog()
+        End If
+    End Sub
+    Private Sub btnFilterHousehold_Click(sender As Object, e As EventArgs) Handles btnFilterHousehold.Click
+        Filter.filterModule = "Household"
+        Filter.ShowDialog()
+    End Sub
+    Private Sub btnAddHousehold_Click(sender As Object, e As EventArgs) Handles btnAddHousehold.Click
+        ViewHousehold.action = "add"
+        ViewHousehold.ShowDialog()
+    End Sub
+    Private Sub txtSearchHousehold_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSearchHousehold.KeyPress
+        '97 - 122 = Ascii codes for simple letters
+        '65 - 90  = Ascii codes for capital letters
+        '48 - 57  = Ascii codes for numbers
+
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) >= 48 And Asc(e.KeyChar) <= 57 Then
+            ElseIf Asc(e.KeyChar) >= 65 And Asc(e.KeyChar) <= 90 Then
+            ElseIf Asc(e.KeyChar) >= 97 And Asc(e.KeyChar) <= 122 Then
+            Else
+                e.Handled = True
+            End If
+        End If
     End Sub
 
 

@@ -27,11 +27,11 @@ Public Class ViewResident
     End Sub
 
     Private Sub checkPriveledges()
-        Dim id = Main_Form.account_id
+        Dim userlevel As String = Main_Form.user_level
 
         btnModifyResident.Show()
         btnArchiveResident.Show()
-        If id = 2 Then
+        If userlevel = "Staff" Then
             btnArchiveResident.Hide()
         ElseIf viewChoice = "Archived" Then
             btnModifyResident.Hide()

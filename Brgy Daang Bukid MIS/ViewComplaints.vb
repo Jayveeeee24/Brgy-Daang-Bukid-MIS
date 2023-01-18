@@ -25,18 +25,8 @@ Public Class ViewComplaints
         datePickerDateComplaint.CustomFormat = "MMMM d, yyyy"
 
         loadInitialData()
-        checkPriveledges()
     End Sub
 
-    Private Sub checkPriveledges()
-        Dim id = Main_Form.account_id
-
-        btnModifyComplaint.Show()
-        If id = 3 Then
-            btnModifyComplaint.Hide()
-        End If
-
-    End Sub
     Private Sub ViewComplaints_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         clearEverything()
     End Sub

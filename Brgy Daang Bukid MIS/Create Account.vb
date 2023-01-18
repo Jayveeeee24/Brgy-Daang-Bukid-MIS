@@ -4,30 +4,65 @@
 Public Class Create_Account
     Public mySqlConn As String = "server=localhost; user id=root; database=mis"
     Private visibilityImage As Image
+    Public action As String
 
 
     Private Sub Create_Account_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        comboRecoveryAdmin.SelectedIndex = 0
-        comboRecoveryStaff.SelectedIndex = 0
+        comboRecovery.SelectedIndex = 0
+        comboAccountFor.Select()
+
+        Dim official() As String = {"Barangay Captain", "Barangay Secretary", "Barangay Treasurer", "SK Chairperson"}
+        Dim i As Integer
+        If action = "initial" Then
+            txtUserLevel.Text = "Administrator"
+            For i = 0 To official.Length - 1
+                comboAccountFor.Items.Add(official(i))
+            Next i
+
+            comboAccountFor.SelectedIndex = 0
+            comboAccountFor.Enabled = False
+            labelTitle.Text = "INITIAL SETUP: ACCOUNT CREATION"
+            Me.Text = "Initial Setup: Management Information System of Barangay Daang Bukid"
+        Else
+            txtUserLevel.Text = "Staff"
+            For i = 1 To official.Length - 1
+                comboAccountFor.Items.Add(official(i))
+            Next i
+
+            comboAccountFor.SelectedIndex = 0
+            comboAccountFor.Enabled = True
+
+            labelTitle.Text = "ACCOUNT CREATION"
+            Me.Text = "CREATE AN ACCOUNT"
+        End If
     End Sub
 
-    Private Sub txtView_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsernameStaff.KeyDown, txtUsernameAdmin.KeyDown, txtPasswordStaff.KeyDown, txtPasswordAdmin.KeyDown
+    Private Sub txtView_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsernameAdmin.KeyDown, txtPassword.KeyDown, txtConfirmPassword.KeyDown
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
         End If
     End Sub
 
     Private Sub btnSaveAccounts_Click(sender As Object, e As EventArgs) Handles btnSaveAccounts.Click
-        If txtUsernameAdmin.Text.Trim = "" Or txtPasswordAdmin.Text.Trim = "" Or txtUsernameStaff.Text.Trim = "" Or txtPasswordStaff.Text.Trim = "" Or txtAnswerAdmin.Text.Trim = "" Or txtAnswerStaff.Text.Trim = "" Then
+        If txtUsernameAdmin.Text.Trim = "" Or txtPassword.Text.Trim = "" Or txtConfirmPassword.Text.Trim = "" Or txtAnswer.Text.Trim = "" Then
             MsgBox("Please fill out the required fields!", vbCritical, "Warning")
             Exit Sub
         End If
-        saveAccount(1, txtUsernameAdmin.Text.Trim, txtPasswordAdmin.Text.Trim, txtLevelAdmin.Text, comboRecoveryAdmin.Text, txtAnswerAdmin.Text.Trim)
-        saveAccount(2, txtUsernameStaff.Text.Trim, txtPasswordStaff.Text.Trim, txtLevelStaff.Text, comboRecoveryStaff.Text, txtAnswerStaff.Text.Trim)
-        saveAccount(3, "guest", "guest", "Guest", "", "")
-        MsgBox("Initial Setup finished!", vbInformation, "Information")
-        Login.Show()
-        Me.Close()
+        If txtPassword.Text.Trim <> txtConfirmPassword.Text Then
+            MsgBox("Password and confirm password must match!", vbCritical, "Warning")
+            Exit Sub
+        End If
+
+        If action = "initial" Then
+            saveAccount(1, txtUsernameAdmin.Text.Trim, txtPassword.Text.Trim, txtUserLevel.Text, comboRecovery.Text, txtAnswer.Text.Trim)
+            MsgBox("Initial Setup finished!", vbInformation, "Information")
+            Login.Show()
+            Me.Close()
+        Else
+            saveAccount(comboAccountFor.FindStringExact(comboAccountFor.Text) + 1, txtUsernameAdmin.Text.Trim, txtPassword.Text.Trim, txtUserLevel.Text, comboRecovery.Text, txtAnswer.Text.Trim)
+            MsgBox("Account Saved!", vbInformation, "Information")
+            Me.Close()
+        End If
 
     End Sub
 
@@ -61,25 +96,27 @@ Public Class Create_Account
         mySql.Dispose()
     End Sub
 
-    Private Sub btnVisibilityAdmin_Click(sender As Object, e As EventArgs) Handles btnVisibilityAdmin.Click
-        If txtPasswordAdmin.PasswordChar = "*" Then
-            txtPasswordAdmin.PasswordChar = ""
-            btnVisibilityAdmin.Image = GetVisibilityImage("visible")
+    Private Sub btnVisibilityPassword_Click(sender As Object, e As EventArgs) Handles btnVisibilityPassword.Click
+        If txtPassword.PasswordChar = "*" Then
+            txtPassword.PasswordChar = ""
+            btnVisibilityPassword.Image = GetVisibilityImage("visible")
         Else
-            txtPasswordAdmin.PasswordChar = "*"
-            btnVisibilityAdmin.Image = GetVisibilityImage("invisible")
+            txtPassword.PasswordChar = "*"
+            btnVisibilityPassword.Image = GetVisibilityImage("invisible")
         End If
     End Sub
 
-    Private Sub btnVisibilityStaff_Click(sender As Object, e As EventArgs) Handles btnVisibilityStaff.Click
-        If txtPasswordStaff.PasswordChar = "*" Then
-            txtPasswordStaff.PasswordChar = ""
-            btnVisibilityStaff.Image = GetVisibilityImage("visible")
+
+    Private Sub btnConfirmPassword_Click(sender As Object, e As EventArgs) Handles btnConfirmPassword.Click
+        If txtConfirmPassword.PasswordChar = "*" Then
+            txtConfirmPassword.PasswordChar = ""
+            btnConfirmPassword.Image = GetVisibilityImage("visible")
         Else
-            txtPasswordStaff.PasswordChar = "*"
-            btnVisibilityStaff.Image = GetVisibilityImage("invisible")
+            txtConfirmPassword.PasswordChar = "*"
+            btnConfirmPassword.Image = GetVisibilityImage("invisible")
         End If
     End Sub
+
 
     Private Function GetVisibilityImage(ByVal imageName As String) As Image
         If imageName = "visible" Then
@@ -89,5 +126,10 @@ Public Class Create_Account
         End If
         Return visibilityImage
     End Function
+
+    Private Sub Create_Account_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Controls.Clear()
+        Me.InitializeComponent()
+    End Sub
 
 End Class

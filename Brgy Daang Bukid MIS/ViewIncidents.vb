@@ -15,16 +15,6 @@ Public Class ViewIncidents
         datePickerIncidentDate.CustomFormat = "MMMM d, yyyy"
 
         loadInitialData()
-        checkPriveledges()
-    End Sub
-    Private Sub checkPriveledges()
-        Dim id = Main_Form.account_id
-
-        btnModifyIncident.Show()
-        If id = 3 Then
-            btnModifyIncident.Hide()
-        End If
-
     End Sub
     Private Sub loadInitialData()
         txtIncidentId.Select()

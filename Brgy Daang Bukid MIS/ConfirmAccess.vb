@@ -76,7 +76,6 @@ Public Class ConfirmAccess
             If originForm = "Archive" Then
                 ViewResident.reasonForArchive = reasonForArchived
                 ViewResident.archiveResident()
-
             ElseIf originForm = "Accounts" Then
                 Account_Settings.ShowDialog()
             ElseIf originForm = "BrgyOfficials" Then
