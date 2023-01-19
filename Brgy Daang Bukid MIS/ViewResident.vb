@@ -518,7 +518,7 @@ Public Class ViewResident
                 HeadChange.ShowDialog()
                 Exit Sub
             Else
-                If MsgBox("ARE YOU SURE TO ARCHIVE THIS RESIDENT? " & vbCrLf & " THERE ARE NO OTHER LEGAL AGED MEMBER TO PASS THE HOUSEHOLD HEAD! PROCEED?", MsgBoxStyle.YesNo, "PROCEED WITH CAUTION!") = MsgBoxResult.No Then
+                If MsgBox("ARE YOU SURE TO ARCHIVE THIS RESIDENT? " & vbCrLf & "THERE ARE NO OTHER LEGAL AGED MEMBER TO PASS THE HOUSEHOLD HEAD! PROCEED?", MsgBoxStyle.YesNo, "PROCEED WITH CAUTION!") = MsgBoxResult.No Then
                     Exit Sub
                 End If
             End If
@@ -639,6 +639,11 @@ Public Class ViewResident
         cmd.ExecuteNonQuery()
 
         cmd.CommandText = "DELETE FROM residents WHERE resident_id = @residentid "
+        cmd.Parameters.AddWithValue("@residentid", resident_id)
+
+        cmd.ExecuteNonQuery()
+
+        cmd.CommandText = "DELETE FROM brgyofficials WHERE official_name = @residentid "
         cmd.Parameters.AddWithValue("@residentid", resident_id)
 
         cmd.ExecuteNonQuery()

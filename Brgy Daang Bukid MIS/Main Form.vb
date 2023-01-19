@@ -1347,6 +1347,7 @@ Public Class Main_Form
         certificateResidentId = 0
         certificateResidentAddress = ""
         certificateResidentName = ""
+        txtCertificateAddress.Text = ""
         txtCertificateResident.Clear()
         txtCertificatePurpose.Clear()
         txtCertificateYears.Clear()
@@ -1440,9 +1441,10 @@ Public Class Main_Form
             MsgBox("Please select a valid resident!", vbCritical, "Warning")
             Exit Sub
         End If
+
         Dim document As WordDocument = Nothing
         If certificateAction = "residency" Then
-            If CInt(If(txtCertificateYears.Text = "", 0, txtCertificateYears.Text)) > 120 Then
+            If CInt(If(txtCertificateYears.Text = "", 0, txtCertificateYears.Text)) > 120 Or isAgeValid() = False Then
                 MsgBox("Please fill a valid year of residency!", vbCritical, "Warning")
                 Exit Sub
             End If
@@ -1639,6 +1641,45 @@ Public Class Main_Form
         mySql.Close()
         mySql.Dispose()
         Return captainId
+    End Function
+
+    Private Function isAgeValid() As Boolean
+
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        Dim mySQLReader As MySqlDataReader
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        Dim dbAge As Integer = 0
+        cmd.CommandText = "SELECT age from residents where resident_id = @searchvalue"
+        cmd.Parameters.AddWithValue("@searchvalue", certificateResidentId)
+        mySQLReader = cmd.ExecuteReader
+        If mySQLReader.HasRows Then
+            While mySQLReader.Read
+                dbAge = mySQLReader!age
+            End While
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+
+        If CInt(If(txtCertificateYears.Text = "", 0, txtCertificateYears.Text)) > dbAge Then
+            Return False
+        Else
+            Return True
+        End If
     End Function
     Public Sub openingWordDocument(ByVal filePath As String)
         Dim oWord As Application

@@ -125,12 +125,6 @@
     <Compile Include="CertificateChooseAction.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CertificateSetup.Designer.vb">
-      <DependentUpon>CertificateSetup.vb</DependentUpon>
-    </Compile>
-    <Compile Include="CertificateSetup.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="ConfirmAccess.Designer.vb">
       <DependentUpon>ConfirmAccess.vb</DependentUpon>
     </Compile>
@@ -284,9 +278,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CertificateChooseAction.resx">
       <DependentUpon>CertificateChooseAction.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CertificateSetup.resx">
-      <DependentUpon>CertificateSetup.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConfirmAccess.resx">
       <DependentUpon>ConfirmAccess.vb</DependentUpon>
