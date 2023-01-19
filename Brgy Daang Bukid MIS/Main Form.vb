@@ -1315,19 +1315,19 @@ Public Class Main_Form
     End Sub
 
     '' '''''''''''''''''''''''''CERTIFICATES METHODS '''''''''''''''''''''''''''''''''''''''''
-    Private Sub pictureboxResidency_Click(sender As Object, e As EventArgs) Handles pictureboxResidency.Click
+    Private Sub pictureboxResidency_Click(sender As Object, e As EventArgs)
         Certificate_Setup.action = "residency"
         Certificate_Setup.ShowDialog()
     End Sub
-    Private Sub pictureboxClearamce_Click(sender As Object, e As EventArgs) Handles pictureboxClearamce.Click
+    Private Sub pictureboxClearamce_Click(sender As Object, e As EventArgs)
         Certificate_Setup.action = "clearance"
         Certificate_Setup.ShowDialog()
     End Sub
-    Private Sub pictureboxIndigency_Click(sender As Object, e As EventArgs) Handles pictureboxIndigency.Click
+    Private Sub pictureboxIndigency_Click(sender As Object, e As EventArgs)
         Certificate_Setup.action = "indigency"
         Certificate_Setup.ShowDialog()
     End Sub
-    Private Sub pictureboxSummons_Click(sender As Object, e As EventArgs) Handles pictureboxSummons.Click
+    Private Sub pictureboxSummons_Click(sender As Object, e As EventArgs)
         Certificate_Setup.action = "summon"
         Certificate_Setup.ShowDialog()
     End Sub

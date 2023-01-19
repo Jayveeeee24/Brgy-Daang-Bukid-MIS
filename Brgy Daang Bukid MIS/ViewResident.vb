@@ -1,4 +1,6 @@
 ﻿Imports System.Linq.Expressions
+Imports System.Runtime.Remoting.Messaging
+Imports Microsoft.Office.Interop.Word
 Imports MySql.Data.MySqlClient
 Imports Mysqlx.XDevAPI.Common
 
@@ -203,12 +205,19 @@ Public Class ViewResident
             Exit Sub
         End If
 
-        If (isResidentDuplicate() = True) Then
-            If MsgBox("RESIDENT INFORMATION FOR [" & txtFirstName.Text & If(txtMiddleName.Text = "", "", " " & txtMiddleName.Text) & " " & txtLastName.Text & If(txtExtName.Text = "", "", " " & txtExtName.Text) & "] WITH BIRTHDATE [" & pickerBirthDate.Value.Date.ToString("MMMM d, yyyy") & "] ALREADY EXISTS, PROCEED?", MsgBoxStyle.YesNo, "PROCEED WITH CAUTION!") = MsgBoxResult.No Then
+
+        If action = "add" Then
+            If (isResidentDuplicate() = True) Then
+                MsgBox("RESIDENT INFORMATION FOR [" & txtFirstName.Text & If(txtMiddleName.Text = "", "", " " & txtMiddleName.Text) & " " & txtLastName.Text & If(txtExtName.Text = "", "", " " & txtExtName.Text) & "] WITH BIRTHDATE [" & pickerBirthDate.Value.Date.ToString("MMMM d, yyyy") & "] ALREADY EXISTS]", vbCritical, "WARNING: DUPLICATE DATA")
                 Exit Sub
+            Else
+                If MsgBox("Wish to add resident information for [" & txtFirstName.Text & If(txtMiddleName.Text = "", "", " " & txtMiddleName.Text) & " " & txtLastName.Text & If(txtExtName.Text = "", "", " " & txtExtName.Text) & "]?", MsgBoxStyle.YesNo, "Confirmation") = MsgBoxResult.No Then
+                    Exit Sub
+                End If
             End If
         Else
-            If MsgBox("Wish to add resident information for [" & txtFirstName.Text & If(txtMiddleName.Text = "", "", " " & txtMiddleName.Text) & " " & txtLastName.Text & If(txtExtName.Text = "", "", " " & txtExtName.Text) & "]?", MsgBoxStyle.YesNo, "Confirmation") = MsgBoxResult.No Then
+            If (isResidentDuplicate(resident_id) = True) Then
+                MsgBox("RESIDENT INFORMATION FOR [" & txtFirstName.Text & If(txtMiddleName.Text = "", "", " " & txtMiddleName.Text) & " " & txtLastName.Text & If(txtExtName.Text = "", "", " " & txtExtName.Text) & "] WITH BIRTHDATE [" & pickerBirthDate.Value.Date.ToString("MMMM d, yyyy") & "] ALREADY EXISTS]", vbCritical, "WARNING: DUPLICATE DATA")
                 Exit Sub
             End If
         End If
@@ -502,6 +511,80 @@ Public Class ViewResident
         mySql.Close()
         mySql.Dispose()
     End Sub
+    Public Sub checkIfHead()
+        If isResidentHead() = True Then
+            If isThereOtherMembers() = True Then
+                HeadChange.householdId = householdId
+                HeadChange.ShowDialog()
+                Exit Sub
+            Else
+                If MsgBox("ARE YOU SURE TO ARCHIVE THIS RESIDENT? " & vbCrLf & " THERE ARE NO OTHER LEGAL AGED MEMBER TO PASS THE HOUSEHOLD HEAD! PROCEED?", MsgBoxStyle.YesNo, "PROCEED WITH CAUTION!") = MsgBoxResult.No Then
+                    Exit Sub
+                End If
+            End If
+        End If
+        archiveResident()
+    End Sub
+    Private Function isThereOtherMembers() As Boolean
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "SELECT COUNT(*) from residents WHERE household_id = @householdid and household_role = 'Member' and age > 20"
+        cmd.Parameters.AddWithValue("@householdid", householdId)
+
+        If cmd.ExecuteScalar = 0 Then
+            Return False
+        Else
+            Return True
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+    End Function
+    Private Function isResidentHead() As Boolean
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "SELECT COUNT(*) from residents WHERE resident_id = @residentid and household_role = 'Head'"
+        cmd.Parameters.AddWithValue("@residentid", resident_id)
+
+        If cmd.ExecuteScalar = 0 Then
+            Return False
+        Else
+            Return True
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+
+    End Function
+
     Public Sub archiveResident()
 
         ConfirmAccess.originForm = ""
@@ -587,6 +670,41 @@ Public Class ViewResident
 
         cmd.CommandText = "SELECT COUNT(*) from residents WHERE first_name = @firstname and middle_name = @middlename and last_name = @lastname and ext_name = @extname and birthdate = @birthdate"
         cmd.Parameters.AddWithValue("@firstname", txtFirstName.Text)
+        cmd.Parameters.AddWithValue("@middlename", txtMiddleName.Text)
+        cmd.Parameters.AddWithValue("@lastname", txtLastName.Text)
+        cmd.Parameters.AddWithValue("@extname", txtExtName.Text)
+        cmd.Parameters.AddWithValue("@birthdate", pickerBirthDate.Value.Date)
+
+        If cmd.ExecuteScalar = 0 Then
+            Return False
+        Else
+            Return True
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+
+    End Function
+    Private Function isResidentDuplicate(ByVal id As Integer) As Boolean
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "SELECT COUNT(*) from residents WHERE resident_id <> @residentid and first_name = @firstname and middle_name = @middlename and last_name = @lastname and ext_name = @extname and birthdate = @birthdate"
+        cmd.Parameters.AddWithValue("@firstname", txtFirstName.Text)
+        cmd.Parameters.AddWithValue("@residentid", resident_id)
         cmd.Parameters.AddWithValue("@middlename", txtMiddleName.Text)
         cmd.Parameters.AddWithValue("@lastname", txtLastName.Text)
         cmd.Parameters.AddWithValue("@extname", txtExtName.Text)

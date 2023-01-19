@@ -7,6 +7,7 @@ Public Class ConfirmAccess
 
     Public originForm As String
     Public reasonForArchived As String
+    Dim deactivate As Boolean = True
     Public mySqlConn As String = "server=localhost; user id=root; database=mis"
 
     Private Sub ConfirmAccess_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -39,7 +40,9 @@ Public Class ConfirmAccess
 
         If txtPassword.Text.Trim = "" Then
             Me.Enabled = True
+            deactivate = False
             MsgBox("Please fill out the required fields!")
+            deactivate = True
             Exit Sub
         End If
         Dim mySql As MySqlConnection
@@ -50,7 +53,10 @@ Public Class ConfirmAccess
         Select Case Err.Number
             Case 0
             Case Else
+                deactivate = False
                 MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+                deactivate = True
+
                 Me.Enabled = True
                 txtPassword.Clear()
                 mySql.Close()
@@ -75,7 +81,7 @@ Public Class ConfirmAccess
             Me.Close()
             If originForm = "Archive" Then
                 ViewResident.reasonForArchive = reasonForArchived
-                ViewResident.archiveResident()
+                ViewResident.checkIfHead()
             ElseIf originForm = "Accounts" Then
                 Account_Settings.ShowDialog()
             ElseIf originForm = "AccountManagement" Then
@@ -91,7 +97,11 @@ Public Class ConfirmAccess
             End If
         Else
             txtPassword.Clear()
+
+            deactivate = False
             MsgBox("Password Incorrect!, Please try again", vbCritical, "Warning")
+            deactivate = True
+
         End If
         mySQLCommand.Dispose()
         mySQLReader.Dispose()
@@ -104,6 +114,8 @@ Public Class ConfirmAccess
     End Sub
 
     Private Sub ConfirmAccess_Deactivate(sender As Object, e As EventArgs) Handles MyBase.Deactivate
-        Me.Close()
+        If deactivate = True Then
+            Me.Close()
+        End If
     End Sub
 End Class

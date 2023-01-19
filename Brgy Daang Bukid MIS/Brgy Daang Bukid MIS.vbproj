@@ -149,6 +149,12 @@
     <Compile Include="ForgotPassword.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="HeadChange.Designer.vb">
+      <DependentUpon>HeadChange.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HeadChange.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="NoAccount.Designer.vb">
       <DependentUpon>NoAccount.vb</DependentUpon>
     </Compile>
@@ -290,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ForgotPassword.resx">
       <DependentUpon>ForgotPassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeadChange.resx">
+      <DependentUpon>HeadChange.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NoAccount.resx">
       <DependentUpon>NoAccount.vb</DependentUpon>
