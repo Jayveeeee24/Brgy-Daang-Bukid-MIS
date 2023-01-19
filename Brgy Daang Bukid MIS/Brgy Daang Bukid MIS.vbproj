@@ -361,6 +361,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_daang_bukid-legitbgremoved.ico" />
+    <None Include="Resources\brgy map edited with labels1.png" />
+    <None Include="Resources\brgy map edited with labels.png" />
+    <None Include="Resources\map whole edited.png" />
     <None Include="Resources\brgy map westbay.png" />
     <None Include="Resources\brgy map proper.png" />
     <None Include="Resources\openfile.png" />

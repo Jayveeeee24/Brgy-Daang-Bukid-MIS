@@ -57,7 +57,22 @@ Public Class Main_Form
         EnableDoubleBuffered(datagridBlotters)
         EnableDoubleBuffered(datagridVawc)
 
-
+        labelAragon1.BackColor = System.Drawing.Color.Transparent
+        labelAragon2.BackColor = System.Drawing.Color.Transparent
+        labelPound.BackColor = System.Drawing.Color.Transparent
+        labelRiyal.BackColor = System.Drawing.Color.Transparent
+        labelDinar.BackColor = System.Drawing.Color.Transparent
+        labelDirham.BackColor = System.Drawing.Color.Transparent
+        labelYen.BackColor = System.Drawing.Color.Transparent
+        labelRupee.BackColor = System.Drawing.Color.Transparent
+        labelDollar.BackColor = System.Drawing.Color.Transparent
+        labelFranc.BackColor = System.Drawing.Color.Transparent
+        labelWon.BackColor = System.Drawing.Color.Transparent
+        labelPeso.BackColor = System.Drawing.Color.Transparent
+        labelLira.BackColor = System.Drawing.Color.Transparent
+        labelYuan.BackColor = System.Drawing.Color.Transparent
+        labelRinggit.BackColor = System.Drawing.Color.Transparent
+        labelRuble.BackColor = System.Drawing.Color.Transparent
 
     End Sub
     Private Sub getAccountDetails()
@@ -255,13 +270,10 @@ Public Class Main_Form
         btnBrgyMap.BackColor = Color.FromArgb(52, 152, 219)
         btnSystemManagement.BackColor = Color.FromArgb(25, 117, 211)
         btnInventory.BackColor = Color.FromArgb(25, 117, 211)
-        tabMap.ItemSize = New Size(0, 1)
 
         mainTabControl.SelectedTab = pageMap
         labelTitle.Text = "Barangay Map"
         timerOpen.Start()
-        comboChooseMap.SelectedIndex = 0
-        tabMap.SelectedIndex = 0
     End Sub
     Private Sub btnSystemManagement_Click(sender As Object, e As EventArgs) Handles btnSystemManagement.Click
         btnDashboard.BackColor = Color.FromArgb(25, 117, 211)
@@ -1356,100 +1368,96 @@ Public Class Main_Form
 
 
     '' '''''''''''''''''''''''''MAPS METHODS''''''''''''''''''''''''''''''''''''''''
-    Private Sub comboChooseMap_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboChooseMap.SelectedIndexChanged
-        If comboChooseMap.SelectedIndex = 0 Then
-            tabMap.SelectedIndex = 0
-        Else
-            tabMap.SelectedIndex = 1
-        End If
+    Private Sub comboChooseStreet_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboChooseStreet.SelectedIndexChanged
+
     End Sub
-    Private Sub btnDirham_Click(sender As Object, e As EventArgs) Handles btnDirham.Click
+    Private Sub btnDirham_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "Dirham, Westbay"
         ViewStreet.ShowDialog()
     End Sub
-    Private Sub btnPound_Click(sender As Object, e As EventArgs) Handles btnPound.Click
+    Private Sub btnPound_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "Pound, Westbay"
         ViewStreet.ShowDialog()
     End Sub
-    Private Sub btnRiyal_Click(sender As Object, e As EventArgs) Handles btnRiyal.Click
+    Private Sub btnRiyal_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "Riyal, Westbay"
         ViewStreet.ShowDialog()
     End Sub
-    Private Sub btnDinar_Click(sender As Object, e As EventArgs) Handles btnDinar.Click
+    Private Sub btnDinar_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "Dinar, Westbay"
         ViewStreet.ShowDialog()
     End Sub
-    Private Sub btnEuro_Click(sender As Object, e As EventArgs) Handles btnEuro.Click
+    Private Sub btnEuro_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "Euro, Westbay"
         ViewStreet.ShowDialog()
     End Sub
-    Private Sub btnDollar_Click(sender As Object, e As EventArgs) Handles btnDollar.Click
+    Private Sub btnDollar_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "Dollar, Westbay"
         ViewStreet.ShowDialog()
     End Sub
-    Private Sub btnRupee_Click(sender As Object, e As EventArgs) Handles btnRupee.Click
+    Private Sub btnRupee_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "Rupee, Westbay"
         ViewStreet.ShowDialog()
     End Sub
 
 
-    Private Sub btnYen_Click(sender As Object, e As EventArgs) Handles btnYen.Click
+    Private Sub btnYen_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "Yen, Westbay"
         ViewStreet.ShowDialog()
     End Sub
-    Private Sub btnFranc_Click(sender As Object, e As EventArgs) Handles btnFranc.Click
+    Private Sub btnFranc_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "Franc, Westbay"
         ViewStreet.ShowDialog()
     End Sub
-    Private Sub btnShekel_Click(sender As Object, e As EventArgs) Handles btnShekel.Click
+    Private Sub btnShekel_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "Shekel, Westbay"
         ViewStreet.ShowDialog()
     End Sub
-    Private Sub btnCasimiroAve_Click(sender As Object, e As EventArgs) Handles btnCasimiroAve.Click
+    Private Sub btnCasimiroAve_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "Casmiro Ave, Westbay"
         ViewStreet.ShowDialog()
     End Sub
-    Private Sub btnWon_Click(sender As Object, e As EventArgs) Handles btnWon.Click
+    Private Sub btnWon_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "Won, Westbay"
         ViewStreet.ShowDialog()
     End Sub
-    Private Sub btnPeso_Click(sender As Object, e As EventArgs) Handles btnPeso.Click
+    Private Sub btnPeso_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "Peso, Westbay"
         ViewStreet.ShowDialog()
     End Sub
-    Private Sub btnLira_Click(sender As Object, e As EventArgs) Handles btnLira.Click
+    Private Sub btnLira_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "Lira, Westbay"
         ViewStreet.ShowDialog()
     End Sub
-    Private Sub btnBaht_Click(sender As Object, e As EventArgs) Handles btnBaht.Click
+    Private Sub btnBaht_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "Baht, Westbay"
         ViewStreet.ShowDialog()
     End Sub
-    Private Sub btnYuan_Click(sender As Object, e As EventArgs) Handles btnYuan.Click
+    Private Sub btnYuan_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "Yuan, Westbay"
         ViewStreet.ShowDialog()
     End Sub
-    Private Sub btnRinggit_Click(sender As Object, e As EventArgs) Handles btnRinggit.Click
+    Private Sub btnRinggit_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "Ringgit, Westbay"
         ViewStreet.ShowDialog()
     End Sub
-    Private Sub btnRuble_Click(sender As Object, e As EventArgs) Handles btnRuble.Click
+    Private Sub btnRuble_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "Ruble, Westbay"
         ViewStreet.ShowDialog()
     End Sub
-    Private Sub btnEGomez_Click(sender As Object, e As EventArgs) Handles btnEGomez.Click
+    Private Sub btnEGomez_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "E. Gomez"
         ViewStreet.ShowDialog()
     End Sub
-    Private Sub btnFGaudier_Click(sender As Object, e As EventArgs) Handles btnFGaudier.Click
+    Private Sub btnFGaudier_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "F. Gaudier"
         ViewStreet.ShowDialog()
     End Sub
-    Private Sub btnAAragon_Click(sender As Object, e As EventArgs) Handles btnAAragon.Click
+    Private Sub btnAAragon_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "A. Aragon"
         ViewStreet.ShowDialog()
     End Sub
-    Private Sub btnEvangelista_Click(sender As Object, e As EventArgs) Handles btnEvangelista.Click
+    Private Sub btnEvangelista_Click(sender As Object, e As EventArgs)
         ViewStreet.streetName = "Evangelista"
         ViewStreet.ShowDialog()
     End Sub
