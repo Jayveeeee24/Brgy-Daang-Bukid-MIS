@@ -7,30 +7,14 @@ Public Class ViewStreet
 
     Private Sub ViewStreet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         labelStreetName.Select()
-        Panel1.VerticalScroll.Value = 0
         loadInitialData()
     End Sub
 
     Private Sub ViewStreet_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        clearEverything()
+        Me.Controls.Clear()
+        Me.InitializeComponent()
     End Sub
 
-    Private Sub clearEverything()
-        datagridHoseholds.Rows.Clear()
-        labelStreetName.Text = ""
-        labelNoHousehold.Text = ""
-        labelResidents.Text = ""
-        labelMale.Text = ""
-        labelFemale.Text = ""
-        labelSeniors.Text = ""
-        labelRegisteredVoters.Text = ""
-        labelUnemployed.Text = ""
-        labelPwd.Text = ""
-        comboTemp.Items.Clear()
-
-        Panel1.VerticalScroll.Value = 0
-        total = 0
-    End Sub
     Private Sub loadInitialData()
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
@@ -48,7 +32,7 @@ Public Class ViewStreet
         cmd = mySql.CreateCommand()
         cmd.CommandType = CommandType.Text
         cmd.CommandText = "SELECT household_id, bldg_no FROM household where street_name LIKE @streetname"
-        cmd.Parameters.AddWithValue("@streetname", "%" & streetName & "%")
+        cmd.Parameters.AddWithValue("@streetname", streetName & "%")
         mySQLReader = cmd.ExecuteReader
         If mySQLReader.HasRows Then
             While mySQLReader.Read
@@ -60,6 +44,9 @@ Public Class ViewStreet
         mySql.Close()
         mySql.Dispose()
         getStatistic()
+
+        labelStreetName.Text = streetName
+        labelNoHousehold.Text = comboTemp.Items.Count
 
     End Sub
 
@@ -99,13 +86,13 @@ Public Class ViewStreet
         cmd.Parameters.AddWithValue("@householdid", comboTemp.Text)
 
         Dim temp As Integer = cmd.ExecuteScalar()
-        total = temp + total
+        total = total + temp
 
         cmd.Dispose()
         mySql.Close()
         mySql.Dispose()
 
-        If loopCount < comboTemp.Items.Count Then
+        If loopCount < comboTemp.Items.Count - 1 Then
             getIndividualStatistic(loopCount + 1, action)
         End If
 
@@ -113,8 +100,8 @@ Public Class ViewStreet
 
     Private Sub getStatistic()
 
-        labelStreetName.Text = streetName
-        labelNoHousehold.Text = comboTemp.Items.Count
+
+        total = 0
 
         getIndividualStatistic(0, "Female")
         labelFemale.Text = total

@@ -45,7 +45,8 @@ Public Class SearchHousehold
         cmd = mySql.CreateCommand()
         cmd.CommandType = CommandType.Text
 
-        cmd.CommandText = "SELECT household.household_id, household.bldg_no, household.street_name, residents.first_name, residents.middle_name, residents.last_name, residents.ext_name from household INNER JOIN residents on household.household_id = residents.household_id where residents.household_role = 'Head' and (household.household_id LIKE @searchvalue or household.bldg_no like @searchvalue or household.street_name like @searchvalue) order by household_id asc limit 10"
+        cmd.CommandText = "SELECT household.household_id, household.bldg_no, household.street_name, residents.first_name, residents.middle_name, residents.last_name, residents.ext_name from household LEFT JOIN residents on household.household_id = residents.household_id AND (residents.household_role = 'Head') where household.household_id LIKE @searchvalue or household.bldg_no like @searchvalue or household.street_name like @searchvalue order by household.household_id asc limit 10"
+
         cmd.Parameters.AddWithValue("@searchvalue", txtSearchHousehold.Text.Trim & "%")
         mySQLReader = cmd.ExecuteReader
         If mySQLReader.HasRows Then
@@ -56,7 +57,7 @@ Public Class SearchHousehold
                 Else
                     middle = mySQLReader!middle_name + " "
                 End If
-                datagridHousehold.Rows.Add(New String() {mySQLReader!household_id, mySQLReader!first_name + " " + middle + mySQLReader!last_name + If(mySQLReader!ext_name = "", "", " " + mySQLReader!ext_name), mySQLReader!bldg_no, mySQLReader!street_name})
+                datagridHousehold.Rows.Add(New String() {mySQLReader!household_id, (mySQLReader!first_name + " " + middle + mySQLReader!last_name + " " + mySQLReader!ext_name), mySQLReader!bldg_no, mySQLReader!street_name})
             End While
         End If
         datagridHousehold.ClearSelection()
