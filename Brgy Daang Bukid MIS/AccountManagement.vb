@@ -108,6 +108,11 @@ Public Class AccountManagement
     End Sub
 
     Private Sub btnUpdateAccount_Click(sender As Object, e As EventArgs) Handles btnUpdateAccount.Click
+        ConfirmAccess.originForm = "UpdateAccount"
+        ConfirmAccess.Show()
+    End Sub
+
+    Public Sub updateAccount()
         Account_Settings.accountId = accountId
         Account_Settings.getAccountDetails(accountId)
         Account_Settings.ShowDialog()
@@ -121,7 +126,7 @@ Public Class AccountManagement
     End Sub
 
     Private Sub btnRemoveAccount_Click(sender As Object, e As EventArgs) Handles btnRemoveAccount.Click
-        If MsgBox("Are you sure to dismiss this official?", MsgBoxStyle.YesNo, "Confirmation") = MsgBoxResult.Yes Then
+        If MsgBox("Are you sure to remove this account?", MsgBoxStyle.YesNo, "Confirmation") = MsgBoxResult.Yes Then
             ConfirmAccess.originForm = "RemoveAccount"
             ConfirmAccess.Show()
         End If

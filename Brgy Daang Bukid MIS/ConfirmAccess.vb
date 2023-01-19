@@ -86,7 +86,8 @@ Public Class ConfirmAccess
                 UpdateBrgyOfficials.dismissOfficial()
             ElseIf originForm = "RemoveAccount" Then
                 AccountManagement.removeAccount()
-
+            ElseIf originForm = "UpdateAccount" Then
+                AccountManagement.updateAccount()
             End If
         Else
             txtPassword.Clear()

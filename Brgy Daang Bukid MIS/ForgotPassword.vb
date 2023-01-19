@@ -132,8 +132,6 @@ Public Class ForgotPassword
             MsgBox("Password didn't match, Please try again!", vbCritical, "Warning")
         ElseIf txtNewPassword.Text.Trim = oldPass Then
             MsgBox("It is the same as the old password, Please try again", vbCritical, "Warning")
-            txtNewPassword.Clear()
-            txtConfirmPassword.Clear()
         Else
             Dim mySql As MySqlConnection
             mySql = New MySqlConnection(mySqlConn)
@@ -164,6 +162,9 @@ Public Class ForgotPassword
             Login.Show()
             Me.Close()
         End If
+        txtNewPassword.Clear()
+        txtConfirmPassword.Clear()
+        txtNewPassword.Select()
     End Sub
 
     Private Sub ForgotPassword_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
