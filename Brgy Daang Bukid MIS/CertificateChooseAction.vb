@@ -12,16 +12,16 @@ Imports Microsoft.Office.Interop.Word
 Public Class CertificateChooseAction
 
     Private Sub CertificateChooseAction_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        labelFileName.Text = "File Name: " & Certificate_Setup.fileName
+        labelFileName.Text = "File Name: " & Main_Form.fileName
     End Sub
 
     Private Sub btnOpenFile_Click(sender As Object, e As EventArgs) Handles btnOpenFile.Click
-        Certificate_Setup.openingWordDocument(Certificate_Setup.filePath)
+        Main_Form.openingWordDocument(Main_Form.filePath)
         Me.Close()
     End Sub
 
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
-        Certificate_Setup.convertDocToImage(Certificate_Setup.filePath)
+        Main_Form.convertDocToImage(Main_Form.filePath)
     End Sub
 
 End Class

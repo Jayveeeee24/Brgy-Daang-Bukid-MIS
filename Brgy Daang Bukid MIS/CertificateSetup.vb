@@ -96,7 +96,7 @@ Public Class Certificate_Setup
             MsgBox("Please select a valid resident!", vbCritical, "Warning")
             Exit Sub
         End If
-        Dim document As WordDocument
+        Dim document As WordDocument = Nothing
         If action = "residency" Then
             If CInt(If(txtYearsResidency.Text = "", 0, txtYearsResidency.Text)) > 120 Then
                 MsgBox("Please fill a valid year of residency!", vbCritical, "Warning")
