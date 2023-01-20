@@ -93,6 +93,7 @@ Public Class ViewIncidents
 
         txtIncidentName.Enabled = True
         comboIncidentTime.SelectedIndex = 12
+        btnSearchIncidentReportedBy.Show()
 
 
     End Sub
@@ -107,6 +108,8 @@ Public Class ViewIncidents
         datePickerIncidentDate.Enabled = False
         comboIncidentTime.Enabled = False
         txtIncidentReportedBy.Enabled = False
+        btnSearchIncidentReportedBy.Hide()
+
 
         txtIncidentId.Text = labelIncidentId.Text
         txtIncidentName.Text = labelIncidentName.Text

@@ -475,7 +475,7 @@ Partial Class ViewIncidents
         Me.txtIncidentReportedBy.Multiline = True
         Me.txtIncidentReportedBy.Name = "txtIncidentReportedBy"
         Me.txtIncidentReportedBy.Size = New System.Drawing.Size(293, 27)
-        Me.txtIncidentReportedBy.TabIndex = 113
+        Me.txtIncidentReportedBy.TabIndex = 5
         '
         'Label4
         '
@@ -496,7 +496,7 @@ Partial Class ViewIncidents
         Me.comboIncidentTime.Location = New System.Drawing.Point(293, 210)
         Me.comboIncidentTime.Name = "comboIncidentTime"
         Me.comboIncidentTime.Size = New System.Drawing.Size(293, 28)
-        Me.comboIncidentTime.TabIndex = 111
+        Me.comboIncidentTime.TabIndex = 4
         '
         'datePickerIncidentDate
         '
@@ -505,7 +505,7 @@ Partial Class ViewIncidents
         Me.datePickerIncidentDate.Location = New System.Drawing.Point(293, 179)
         Me.datePickerIncidentDate.Name = "datePickerIncidentDate"
         Me.datePickerIncidentDate.Size = New System.Drawing.Size(293, 26)
-        Me.datePickerIncidentDate.TabIndex = 110
+        Me.datePickerIncidentDate.TabIndex = 3
         '
         'txtIncidentDetails
         '
@@ -518,7 +518,7 @@ Partial Class ViewIncidents
         Me.txtIncidentDetails.Multiline = True
         Me.txtIncidentDetails.Name = "txtIncidentDetails"
         Me.txtIncidentDetails.Size = New System.Drawing.Size(293, 120)
-        Me.txtIncidentDetails.TabIndex = 109
+        Me.txtIncidentDetails.TabIndex = 7
         '
         'txtIncidentName
         '
@@ -531,7 +531,7 @@ Partial Class ViewIncidents
         Me.txtIncidentName.Multiline = True
         Me.txtIncidentName.Name = "txtIncidentName"
         Me.txtIncidentName.Size = New System.Drawing.Size(293, 27)
-        Me.txtIncidentName.TabIndex = 106
+        Me.txtIncidentName.TabIndex = 2
         '
         'Label1
         '
@@ -606,7 +606,7 @@ Partial Class ViewIncidents
         Me.txtIncidentId.Multiline = True
         Me.txtIncidentId.Name = "txtIncidentId"
         Me.txtIncidentId.Size = New System.Drawing.Size(293, 27)
-        Me.txtIncidentId.TabIndex = 69
+        Me.txtIncidentId.TabIndex = 1
         '
         'ViewIncidents
         '
