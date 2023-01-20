@@ -101,7 +101,11 @@ Public Class Search_Residents
 
     Private Sub datagridResident_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridResident.CellClick
         If e.RowIndex >= 0 Then
-            If origin = "complainant" Then
+            If origin = "incident" Then
+                ViewIncidents.reportedById = datagridResident.Rows(e.RowIndex).Cells(0).Value
+                ViewIncidents.reportedByName = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                ViewIncidents.txtIncidentReportedBy.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
+            ElseIf origin = "complainant" Then
                 If ViewComplaints.defendantId = datagridResident.Rows(e.RowIndex).Cells(0).Value Then
                     MsgBox("Complainant and Defendant cannot be the same!", vbCritical, "Warning")
                     Exit Sub

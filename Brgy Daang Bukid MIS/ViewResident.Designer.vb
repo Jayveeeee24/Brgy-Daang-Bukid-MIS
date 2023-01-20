@@ -127,6 +127,7 @@ Partial Class ViewResident
         Me.txtMiddleName = New System.Windows.Forms.TextBox()
         Me.labelHousehold = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.mainTabControl.SuspendLayout()
         Me.pageView.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -869,6 +870,7 @@ Partial Class ViewResident
         Me.panelParent.AutoScroll = True
         Me.panelParent.BackColor = System.Drawing.Color.White
         Me.panelParent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.panelParent.Controls.Add(Me.Label10)
         Me.panelParent.Controls.Add(Me.btnSearchHouseholdId)
         Me.panelParent.Controls.Add(Me.txtContactNo)
         Me.panelParent.Controls.Add(Me.comboSex)
@@ -927,7 +929,7 @@ Partial Class ViewResident
         Me.btnSearchHouseholdId.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchHouseholdId.ForeColor = System.Drawing.Color.White
         Me.btnSearchHouseholdId.Image = CType(resources.GetObject("btnSearchHouseholdId.Image"), System.Drawing.Image)
-        Me.btnSearchHouseholdId.Location = New System.Drawing.Point(609, 66)
+        Me.btnSearchHouseholdId.Location = New System.Drawing.Point(609, 102)
         Me.btnSearchHouseholdId.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSearchHouseholdId.Name = "btnSearchHouseholdId"
         Me.btnSearchHouseholdId.Size = New System.Drawing.Size(36, 28)
@@ -942,7 +944,7 @@ Partial Class ViewResident
         Me.txtContactNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtContactNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContactNo.ForeColor = System.Drawing.Color.Black
-        Me.txtContactNo.Location = New System.Drawing.Point(301, 604)
+        Me.txtContactNo.Location = New System.Drawing.Point(302, 640)
         Me.txtContactNo.MaxLength = 100
         Me.txtContactNo.Multiline = True
         Me.txtContactNo.Name = "txtContactNo"
@@ -955,7 +957,7 @@ Partial Class ViewResident
         Me.comboSex.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboSex.FormattingEnabled = True
         Me.comboSex.Items.AddRange(New Object() {"Male", "Female"})
-        Me.comboSex.Location = New System.Drawing.Point(301, 568)
+        Me.comboSex.Location = New System.Drawing.Point(302, 604)
         Me.comboSex.Name = "comboSex"
         Me.comboSex.Size = New System.Drawing.Size(174, 28)
         Me.comboSex.TabIndex = 17
@@ -966,7 +968,7 @@ Partial Class ViewResident
         Me.comboCivilStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboCivilStatus.FormattingEnabled = True
         Me.comboCivilStatus.Items.AddRange(New Object() {"Single", "Married", "Divorced", "Separated", "Widowed"})
-        Me.comboCivilStatus.Location = New System.Drawing.Point(301, 534)
+        Me.comboCivilStatus.Location = New System.Drawing.Point(302, 570)
         Me.comboCivilStatus.Name = "comboCivilStatus"
         Me.comboCivilStatus.Size = New System.Drawing.Size(174, 28)
         Me.comboCivilStatus.TabIndex = 15
@@ -975,7 +977,7 @@ Partial Class ViewResident
         '
         Me.Label44.AutoSize = True
         Me.Label44.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.Location = New System.Drawing.Point(31, 607)
+        Me.Label44.Location = New System.Drawing.Point(32, 643)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(120, 18)
         Me.Label44.TabIndex = 150
@@ -985,7 +987,7 @@ Partial Class ViewResident
         '
         Me.Label46.AutoSize = True
         Me.Label46.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label46.Location = New System.Drawing.Point(34, 572)
+        Me.Label46.Location = New System.Drawing.Point(35, 608)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(61, 18)
         Me.Label46.TabIndex = 149
@@ -995,7 +997,7 @@ Partial Class ViewResident
         '
         Me.Label48.AutoSize = True
         Me.Label48.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label48.Location = New System.Drawing.Point(34, 538)
+        Me.Label48.Location = New System.Drawing.Point(35, 574)
         Me.Label48.Name = "Label48"
         Me.Label48.Size = New System.Drawing.Size(106, 18)
         Me.Label48.TabIndex = 148
@@ -1005,7 +1007,7 @@ Partial Class ViewResident
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(31, 492)
+        Me.Label8.Location = New System.Drawing.Point(32, 528)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(223, 14)
         Me.Label8.TabIndex = 147
@@ -1017,7 +1019,7 @@ Partial Class ViewResident
         Me.txtOtherCitizenship.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtOtherCitizenship.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtOtherCitizenship.ForeColor = System.Drawing.Color.Black
-        Me.txtOtherCitizenship.Location = New System.Drawing.Point(299, 489)
+        Me.txtOtherCitizenship.Location = New System.Drawing.Point(300, 525)
         Me.txtOtherCitizenship.MaxLength = 100
         Me.txtOtherCitizenship.Multiline = True
         Me.txtOtherCitizenship.Name = "txtOtherCitizenship"
@@ -1034,7 +1036,7 @@ Partial Class ViewResident
         Me.comboCitizenship.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboCitizenship.FormattingEnabled = True
         Me.comboCitizenship.Items.AddRange(New Object() {"Natural born Filipino", "Naturalized Filipino", "Other"})
-        Me.comboCitizenship.Location = New System.Drawing.Point(299, 455)
+        Me.comboCitizenship.Location = New System.Drawing.Point(300, 491)
         Me.comboCitizenship.Name = "comboCitizenship"
         Me.comboCitizenship.Size = New System.Drawing.Size(306, 28)
         Me.comboCitizenship.TabIndex = 13
@@ -1043,7 +1045,7 @@ Partial Class ViewResident
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(309, 422)
+        Me.Label2.Location = New System.Drawing.Point(310, 458)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(151, 14)
         Me.Label2.TabIndex = 144
@@ -1055,7 +1057,7 @@ Partial Class ViewResident
         Me.txtDisability.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDisability.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDisability.ForeColor = System.Drawing.Color.Black
-        Me.txtDisability.Location = New System.Drawing.Point(301, 774)
+        Me.txtDisability.Location = New System.Drawing.Point(302, 810)
         Me.txtDisability.MaxLength = 100
         Me.txtDisability.Multiline = True
         Me.txtDisability.Name = "txtDisability"
@@ -1071,7 +1073,7 @@ Partial Class ViewResident
         Me.comboBirthPlace.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboBirthPlace.FormattingEnabled = True
         Me.comboBirthPlace.Items.AddRange(New Object() {"Batanes", "Ilocos Norte", "Apayao", "Cagayan", "Abra", "Kalinga", "Ilocos Sur", "Mountain Province", "Ifugao", "Isabela", "La Union", "Benguet", "Nueva Vizcaya", "Quirino", "Pangasinan", "Tarlac", "Nueva Ecija", "Aurora", "Zambales", "Pampanga", "Bulacan", "Bataan", "Rizal", "Cavite", "Laguna", "Batangas", "Quezon", "Camarines Norte", "Marinduque", "Camarines Sur", "Catanduanes", "Albay", "Occidental Mindoro", "Oriental Mindoro", "Romblon", "Sorsogon", "Masbate", "Northern Samar", "Samar", "Eastern Samar", "Aklan", "Capiz", "Antique", "Iloilo", "Biliran", "Guimaras", "Negros Occidental", "Cebu", "Leyte", "Southern Leyte", "Palawan", "Negros Oriental", "Bohol", "Siquijor", "Camiguin", "Dinagat Islands", "Surigao del Norte", "Zamboanga del Norte", "Zamboanga Sibugay", "Zamboanga del Sur", "Misamis Occidental", "Lanao del Norte", "Lanao del Sur", "Misamis Oriental", "Bukidnon", "Agusan del Norte", "Agusan del Sur", "Surigao del Sur", "Cotabato", "Davao del Sur", "Davao del Norte", "Davao de Oro", "Davao Oriental", "Maguindanao del Norte", "Maguindanao del Sur", "Sultan Kudarat", "South Cotabato", "Sarangani", "Davao Occidental", "Basilan", "Sulu", "Tawi-Tawi", "National Capital Region", "Zamboanga City"})
-        Me.comboBirthPlace.Location = New System.Drawing.Point(301, 391)
+        Me.comboBirthPlace.Location = New System.Drawing.Point(302, 427)
         Me.comboBirthPlace.Name = "comboBirthPlace"
         Me.comboBirthPlace.Size = New System.Drawing.Size(306, 28)
         Me.comboBirthPlace.TabIndex = 12
@@ -1080,7 +1082,7 @@ Partial Class ViewResident
         '
         Me.labelDisability.AutoSize = True
         Me.labelDisability.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelDisability.Location = New System.Drawing.Point(36, 777)
+        Me.labelDisability.Location = New System.Drawing.Point(37, 813)
         Me.labelDisability.Name = "labelDisability"
         Me.labelDisability.Size = New System.Drawing.Size(88, 18)
         Me.labelDisability.TabIndex = 102
@@ -1092,7 +1094,7 @@ Partial Class ViewResident
         Me.txtExtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtExtName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtExtName.ForeColor = System.Drawing.Color.Black
-        Me.txtExtName.Location = New System.Drawing.Point(301, 262)
+        Me.txtExtName.Location = New System.Drawing.Point(302, 298)
         Me.txtExtName.MaxLength = 11
         Me.txtExtName.Multiline = True
         Me.txtExtName.Name = "txtExtName"
@@ -1106,7 +1108,7 @@ Partial Class ViewResident
         Me.txtAge.Enabled = False
         Me.txtAge.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAge.ForeColor = System.Drawing.Color.Black
-        Me.txtAge.Location = New System.Drawing.Point(301, 358)
+        Me.txtAge.Location = New System.Drawing.Point(302, 394)
         Me.txtAge.MaxLength = 150
         Me.txtAge.Multiline = True
         Me.txtAge.Name = "txtAge"
@@ -1121,7 +1123,7 @@ Partial Class ViewResident
         Me.comboHouseholdId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.comboHouseholdId.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboHouseholdId.FormattingEnabled = True
-        Me.comboHouseholdId.Location = New System.Drawing.Point(299, 66)
+        Me.comboHouseholdId.Location = New System.Drawing.Point(300, 102)
         Me.comboHouseholdId.Name = "comboHouseholdId"
         Me.comboHouseholdId.Size = New System.Drawing.Size(306, 28)
         Me.comboHouseholdId.TabIndex = 1
@@ -1131,7 +1133,7 @@ Partial Class ViewResident
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(493, 16)
+        Me.Label7.Location = New System.Drawing.Point(480, 58)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(152, 18)
         Me.Label7.TabIndex = 92
@@ -1143,7 +1145,7 @@ Partial Class ViewResident
         Me.txtReligion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtReligion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtReligion.ForeColor = System.Drawing.Color.Black
-        Me.txtReligion.Location = New System.Drawing.Point(301, 707)
+        Me.txtReligion.Location = New System.Drawing.Point(302, 743)
         Me.txtReligion.MaxLength = 100
         Me.txtReligion.Multiline = True
         Me.txtReligion.Name = "txtReligion"
@@ -1155,7 +1157,7 @@ Partial Class ViewResident
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(36, 707)
+        Me.Label1.Location = New System.Drawing.Point(37, 743)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(78, 18)
         Me.Label1.TabIndex = 90
@@ -1167,7 +1169,7 @@ Partial Class ViewResident
         Me.txtOccupation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtOccupation.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtOccupation.ForeColor = System.Drawing.Color.Black
-        Me.txtOccupation.Location = New System.Drawing.Point(301, 674)
+        Me.txtOccupation.Location = New System.Drawing.Point(302, 710)
         Me.txtOccupation.MaxLength = 100
         Me.txtOccupation.Multiline = True
         Me.txtOccupation.Name = "txtOccupation"
@@ -1181,7 +1183,7 @@ Partial Class ViewResident
         Me.comboPwd.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboPwd.FormattingEnabled = True
         Me.comboPwd.Items.AddRange(New Object() {"Yes", "No"})
-        Me.comboPwd.Location = New System.Drawing.Point(301, 740)
+        Me.comboPwd.Location = New System.Drawing.Point(302, 776)
         Me.comboPwd.Name = "comboPwd"
         Me.comboPwd.Size = New System.Drawing.Size(176, 28)
         Me.comboPwd.TabIndex = 24
@@ -1192,7 +1194,7 @@ Partial Class ViewResident
         Me.comboVoter.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboVoter.FormattingEnabled = True
         Me.comboVoter.Items.AddRange(New Object() {"Yes", "No"})
-        Me.comboVoter.Location = New System.Drawing.Point(301, 637)
+        Me.comboVoter.Location = New System.Drawing.Point(302, 673)
         Me.comboVoter.Name = "comboVoter"
         Me.comboVoter.Size = New System.Drawing.Size(176, 28)
         Me.comboVoter.TabIndex = 21
@@ -1201,7 +1203,7 @@ Partial Class ViewResident
         '
         Me.pickerBirthDate.CustomFormat = ""
         Me.pickerBirthDate.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pickerBirthDate.Location = New System.Drawing.Point(301, 323)
+        Me.pickerBirthDate.Location = New System.Drawing.Point(302, 359)
         Me.pickerBirthDate.Name = "pickerBirthDate"
         Me.pickerBirthDate.Size = New System.Drawing.Size(306, 26)
         Me.pickerBirthDate.TabIndex = 10
@@ -1212,7 +1214,7 @@ Partial Class ViewResident
         Me.comboHouseholdRole.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboHouseholdRole.FormattingEnabled = True
         Me.comboHouseholdRole.Items.AddRange(New Object() {"Head", "Member"})
-        Me.comboHouseholdRole.Location = New System.Drawing.Point(299, 100)
+        Me.comboHouseholdRole.Location = New System.Drawing.Point(300, 136)
         Me.comboHouseholdRole.Name = "comboHouseholdRole"
         Me.comboHouseholdRole.Size = New System.Drawing.Size(174, 28)
         Me.comboHouseholdRole.TabIndex = 2
@@ -1223,7 +1225,7 @@ Partial Class ViewResident
         Me.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtLastName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLastName.ForeColor = System.Drawing.Color.Black
-        Me.txtLastName.Location = New System.Drawing.Point(301, 229)
+        Me.txtLastName.Location = New System.Drawing.Point(302, 265)
         Me.txtLastName.MaxLength = 100
         Me.txtLastName.Multiline = True
         Me.txtLastName.Name = "txtLastName"
@@ -1234,7 +1236,7 @@ Partial Class ViewResident
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(36, 232)
+        Me.Label4.Location = New System.Drawing.Point(37, 268)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(119, 18)
         Me.Label4.TabIndex = 73
@@ -1244,7 +1246,7 @@ Partial Class ViewResident
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(35, 199)
+        Me.Label5.Location = New System.Drawing.Point(36, 235)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(124, 18)
         Me.Label5.TabIndex = 72
@@ -1254,7 +1256,7 @@ Partial Class ViewResident
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(37, 166)
+        Me.Label6.Location = New System.Drawing.Point(38, 202)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(120, 18)
         Me.Label6.TabIndex = 71
@@ -1264,7 +1266,7 @@ Partial Class ViewResident
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(37, 104)
+        Me.Label18.Location = New System.Drawing.Point(38, 140)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(151, 18)
         Me.Label18.TabIndex = 67
@@ -1274,7 +1276,7 @@ Partial Class ViewResident
         '
         Me.Label35.AutoSize = True
         Me.Label35.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label35.Location = New System.Drawing.Point(36, 674)
+        Me.Label35.Location = New System.Drawing.Point(37, 710)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(104, 18)
         Me.Label35.TabIndex = 65
@@ -1284,7 +1286,7 @@ Partial Class ViewResident
         '
         Me.Label38.AutoSize = True
         Me.Label38.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label38.Location = New System.Drawing.Point(39, 744)
+        Me.Label38.Location = New System.Drawing.Point(40, 780)
         Me.Label38.Name = "Label38"
         Me.Label38.Size = New System.Drawing.Size(53, 18)
         Me.Label38.TabIndex = 63
@@ -1294,7 +1296,7 @@ Partial Class ViewResident
         '
         Me.Label40.AutoSize = True
         Me.Label40.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label40.Location = New System.Drawing.Point(34, 641)
+        Me.Label40.Location = New System.Drawing.Point(35, 677)
         Me.Label40.Name = "Label40"
         Me.Label40.Size = New System.Drawing.Size(169, 18)
         Me.Label40.TabIndex = 61
@@ -1304,7 +1306,7 @@ Partial Class ViewResident
         '
         Me.Label42.AutoSize = True
         Me.Label42.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label42.Location = New System.Drawing.Point(32, 459)
+        Me.Label42.Location = New System.Drawing.Point(33, 495)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(118, 18)
         Me.Label42.TabIndex = 59
@@ -1314,7 +1316,7 @@ Partial Class ViewResident
         '
         Me.Label50.AutoSize = True
         Me.Label50.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label50.Location = New System.Drawing.Point(34, 392)
+        Me.Label50.Location = New System.Drawing.Point(35, 428)
         Me.Label50.Name = "Label50"
         Me.Label50.Size = New System.Drawing.Size(138, 18)
         Me.Label50.TabIndex = 51
@@ -1324,7 +1326,7 @@ Partial Class ViewResident
         '
         Me.Label52.AutoSize = True
         Me.Label52.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label52.Location = New System.Drawing.Point(34, 361)
+        Me.Label52.Location = New System.Drawing.Point(35, 397)
         Me.Label52.Name = "Label52"
         Me.Label52.Size = New System.Drawing.Size(46, 18)
         Me.Label52.TabIndex = 49
@@ -1334,7 +1336,7 @@ Partial Class ViewResident
         '
         Me.Label55.AutoSize = True
         Me.Label55.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label55.Location = New System.Drawing.Point(34, 331)
+        Me.Label55.Location = New System.Drawing.Point(35, 367)
         Me.Label55.Name = "Label55"
         Me.Label55.Size = New System.Drawing.Size(134, 18)
         Me.Label55.TabIndex = 44
@@ -1344,7 +1346,7 @@ Partial Class ViewResident
         '
         Me.Label60.AutoSize = True
         Me.Label60.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label60.Location = New System.Drawing.Point(36, 266)
+        Me.Label60.Location = New System.Drawing.Point(37, 302)
         Me.Label60.Name = "Label60"
         Me.Label60.Size = New System.Drawing.Size(152, 18)
         Me.Label60.TabIndex = 39
@@ -1356,7 +1358,7 @@ Partial Class ViewResident
         Me.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtFirstName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFirstName.ForeColor = System.Drawing.Color.Black
-        Me.txtFirstName.Location = New System.Drawing.Point(301, 163)
+        Me.txtFirstName.Location = New System.Drawing.Point(302, 199)
         Me.txtFirstName.MaxLength = 100
         Me.txtFirstName.Multiline = True
         Me.txtFirstName.Name = "txtFirstName"
@@ -1369,7 +1371,7 @@ Partial Class ViewResident
         Me.txtMiddleName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtMiddleName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMiddleName.ForeColor = System.Drawing.Color.Black
-        Me.txtMiddleName.Location = New System.Drawing.Point(301, 196)
+        Me.txtMiddleName.Location = New System.Drawing.Point(302, 232)
         Me.txtMiddleName.MaxLength = 100
         Me.txtMiddleName.Multiline = True
         Me.txtMiddleName.Name = "txtMiddleName"
@@ -1380,7 +1382,7 @@ Partial Class ViewResident
         '
         Me.labelHousehold.AutoSize = True
         Me.labelHousehold.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelHousehold.Location = New System.Drawing.Point(37, 70)
+        Me.labelHousehold.Location = New System.Drawing.Point(38, 106)
         Me.labelHousehold.Name = "labelHousehold"
         Me.labelHousehold.Size = New System.Drawing.Size(138, 18)
         Me.labelHousehold.TabIndex = 93
@@ -1388,10 +1390,20 @@ Partial Class ViewResident
         '
         'Panel1
         '
-        Me.Panel1.Location = New System.Drawing.Point(640, 792)
+        Me.Panel1.Location = New System.Drawing.Point(640, 822)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(10, 23)
         Me.Panel1.TabIndex = 68
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(31, 16)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(425, 16)
+        Me.Label10.TabIndex = 155
+        Me.Label10.Text = "Note: You can search for household id using the search button"
         '
         'ViewResident
         '
@@ -1526,4 +1538,5 @@ Partial Class ViewResident
     Friend WithEvents comboCitizenship As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btnSearchHouseholdId As Button
+    Friend WithEvents Label10 As Label
 End Class

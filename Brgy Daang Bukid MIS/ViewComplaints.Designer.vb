@@ -70,6 +70,7 @@ Partial Class ViewComplaints
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Label64 = New System.Windows.Forms.Label()
         Me.panelParent = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.panelSearchParent = New System.Windows.Forms.Panel()
         Me.btnSearchComplainant = New System.Windows.Forms.Button()
         Me.btnSearchDefendant = New System.Windows.Forms.Button()
@@ -99,7 +100,6 @@ Partial Class ViewComplaints
         Me.labelId = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.mainTabControl.SuspendLayout()
         Me.pageView.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -694,6 +694,16 @@ Partial Class ViewComplaints
         Me.panelParent.Size = New System.Drawing.Size(663, 413)
         Me.panelParent.TabIndex = 38
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(12, 10)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(512, 16)
+        Me.Label1.TabIndex = 144
+        Me.Label1.Text = "Note: You can search for residents in the barangay using the search button"
+        '
         'panelSearchParent
         '
         Me.panelSearchParent.Controls.Add(Me.btnSearchComplainant)
@@ -1035,16 +1045,6 @@ Partial Class ViewComplaints
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(10, 74)
         Me.Panel1.TabIndex = 68
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 10)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(531, 16)
-        Me.Label1.TabIndex = 144
-        Me.Label1.Text = "Note: You can use the search button to search for a resident in the barangay "
         '
         'ViewComplaints
         '

@@ -28,6 +28,10 @@ Partial Class ViewIncidents
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.labelIncidentReportedOn = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.labelIncidentReportedBy = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.labelIncidentDetails = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.labelIncidentTime = New System.Windows.Forms.Label()
@@ -40,16 +44,16 @@ Partial Class ViewIncidents
         Me.Label103 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnModifyIncident = New System.Windows.Forms.Button()
-        Me.Panel16 = New System.Windows.Forms.Panel()
-        Me.Label104 = New System.Windows.Forms.Label()
         Me.pageAddModify = New System.Windows.Forms.TabPage()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnSaveIncident = New System.Windows.Forms.Button()
-        Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.Label64 = New System.Windows.Forms.Label()
         Me.panelParent = New System.Windows.Forms.Panel()
+        Me.btnSearchIncidentReportedBy = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtIncidentReportedBy = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.comboIncidentTime = New System.Windows.Forms.ComboBox()
         Me.datePickerIncidentDate = New System.Windows.Forms.DateTimePicker()
         Me.txtIncidentDetails = New System.Windows.Forms.TextBox()
@@ -61,19 +65,16 @@ Partial Class ViewIncidents
         Me.labelId = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtIncidentId = New System.Windows.Forms.TextBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.mainTabControl.SuspendLayout()
         Me.pageView.SuspendLayout()
         Me.Panel11.SuspendLayout()
         Me.TableLayoutPanel5.SuspendLayout()
         Me.Panel12.SuspendLayout()
         Me.TableLayoutPanel6.SuspendLayout()
-        Me.Panel16.SuspendLayout()
         Me.pageAddModify.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
-        Me.Panel10.SuspendLayout()
         Me.panelParent.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -115,16 +116,15 @@ Partial Class ViewIncidents
         '
         Me.TableLayoutPanel5.ColumnCount = 1
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel5.Controls.Add(Me.Panel12, 0, 1)
-        Me.TableLayoutPanel5.Controls.Add(Me.TableLayoutPanel6, 0, 2)
-        Me.TableLayoutPanel5.Controls.Add(Me.Panel16, 0, 0)
+        Me.TableLayoutPanel5.Controls.Add(Me.Panel12, 0, 0)
+        Me.TableLayoutPanel5.Controls.Add(Me.TableLayoutPanel6, 0, 1)
         Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel5.Location = New System.Drawing.Point(10, 5)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
-        Me.TableLayoutPanel5.RowCount = 3
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.487085!))
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.36531!))
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.1476!))
+        Me.TableLayoutPanel5.RowCount = 2
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.48544!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.514564!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel5.Size = New System.Drawing.Size(675, 515)
         Me.TableLayoutPanel5.TabIndex = 39
         '
@@ -133,6 +133,10 @@ Partial Class ViewIncidents
         Me.Panel12.AutoScroll = True
         Me.Panel12.BackColor = System.Drawing.Color.White
         Me.Panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel12.Controls.Add(Me.labelIncidentReportedOn)
+        Me.Panel12.Controls.Add(Me.Label10)
+        Me.Panel12.Controls.Add(Me.labelIncidentReportedBy)
+        Me.Panel12.Controls.Add(Me.Label5)
         Me.Panel12.Controls.Add(Me.labelIncidentDetails)
         Me.Panel12.Controls.Add(Me.Label3)
         Me.Panel12.Controls.Add(Me.labelIncidentTime)
@@ -145,17 +149,58 @@ Partial Class ViewIncidents
         Me.Panel12.Controls.Add(Me.Label103)
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel12.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel12.Location = New System.Drawing.Point(3, 46)
+        Me.Panel12.Location = New System.Drawing.Point(3, 3)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(669, 413)
+        Me.Panel12.Size = New System.Drawing.Size(669, 460)
         Me.Panel12.TabIndex = 38
+        '
+        'labelIncidentReportedOn
+        '
+        Me.labelIncidentReportedOn.AutoSize = True
+        Me.labelIncidentReportedOn.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelIncidentReportedOn.Location = New System.Drawing.Point(301, 283)
+        Me.labelIncidentReportedOn.Name = "labelIncidentReportedOn"
+        Me.labelIncidentReportedOn.Size = New System.Drawing.Size(25, 18)
+        Me.labelIncidentReportedOn.TabIndex = 83
+        Me.labelIncidentReportedOn.Text = "Jr."
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(73, 283)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(123, 18)
+        Me.Label10.TabIndex = 82
+        Me.Label10.Text = "Reported On: "
+        '
+        'labelIncidentReportedBy
+        '
+        Me.labelIncidentReportedBy.AutoSize = True
+        Me.labelIncidentReportedBy.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.labelIncidentReportedBy.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelIncidentReportedBy.Location = New System.Drawing.Point(301, 238)
+        Me.labelIncidentReportedBy.Name = "labelIncidentReportedBy"
+        Me.labelIncidentReportedBy.Size = New System.Drawing.Size(25, 18)
+        Me.labelIncidentReportedBy.TabIndex = 81
+        Me.labelIncidentReportedBy.Text = "Jr."
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(73, 238)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(121, 18)
+        Me.Label5.TabIndex = 80
+        Me.Label5.Text = "Reported By: "
         '
         'labelIncidentDetails
         '
         Me.labelIncidentDetails.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIncidentDetails.Location = New System.Drawing.Point(284, 238)
+        Me.labelIncidentDetails.Location = New System.Drawing.Point(301, 326)
         Me.labelIncidentDetails.Name = "labelIncidentDetails"
-        Me.labelIncidentDetails.Size = New System.Drawing.Size(293, 120)
+        Me.labelIncidentDetails.Size = New System.Drawing.Size(306, 97)
         Me.labelIncidentDetails.TabIndex = 79
         Me.labelIncidentDetails.Text = "Pekeng Steet."
         '
@@ -163,7 +208,7 @@ Partial Class ViewIncidents
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(56, 238)
+        Me.Label3.Location = New System.Drawing.Point(73, 326)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(147, 18)
         Me.Label3.TabIndex = 78
@@ -173,7 +218,7 @@ Partial Class ViewIncidents
         '
         Me.labelIncidentTime.AutoSize = True
         Me.labelIncidentTime.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIncidentTime.Location = New System.Drawing.Point(284, 197)
+        Me.labelIncidentTime.Location = New System.Drawing.Point(301, 195)
         Me.labelIncidentTime.Name = "labelIncidentTime"
         Me.labelIncidentTime.Size = New System.Drawing.Size(25, 18)
         Me.labelIncidentTime.TabIndex = 43
@@ -183,7 +228,7 @@ Partial Class ViewIncidents
         '
         Me.labelIncidentDate.AutoSize = True
         Me.labelIncidentDate.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIncidentDate.Location = New System.Drawing.Point(284, 154)
+        Me.labelIncidentDate.Location = New System.Drawing.Point(301, 152)
         Me.labelIncidentDate.Name = "labelIncidentDate"
         Me.labelIncidentDate.Size = New System.Drawing.Size(137, 18)
         Me.labelIncidentDate.TabIndex = 42
@@ -193,7 +238,7 @@ Partial Class ViewIncidents
         '
         Me.labelIncidentName.AutoSize = True
         Me.labelIncidentName.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIncidentName.Location = New System.Drawing.Point(284, 116)
+        Me.labelIncidentName.Location = New System.Drawing.Point(301, 114)
         Me.labelIncidentName.Name = "labelIncidentName"
         Me.labelIncidentName.Size = New System.Drawing.Size(215, 18)
         Me.labelIncidentName.TabIndex = 41
@@ -203,7 +248,7 @@ Partial Class ViewIncidents
         '
         Me.labelIncidentId.AutoSize = True
         Me.labelIncidentId.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIncidentId.Location = New System.Drawing.Point(284, 75)
+        Me.labelIncidentId.Location = New System.Drawing.Point(301, 73)
         Me.labelIncidentId.Name = "labelIncidentId"
         Me.labelIncidentId.Size = New System.Drawing.Size(54, 18)
         Me.labelIncidentId.TabIndex = 40
@@ -213,7 +258,7 @@ Partial Class ViewIncidents
         '
         Me.Label100.AutoSize = True
         Me.Label100.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label100.Location = New System.Drawing.Point(56, 197)
+        Me.Label100.Location = New System.Drawing.Point(73, 195)
         Me.Label100.Name = "Label100"
         Me.Label100.Size = New System.Drawing.Size(59, 18)
         Me.Label100.TabIndex = 39
@@ -223,7 +268,7 @@ Partial Class ViewIncidents
         '
         Me.Label101.AutoSize = True
         Me.Label101.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label101.Location = New System.Drawing.Point(56, 154)
+        Me.Label101.Location = New System.Drawing.Point(73, 152)
         Me.Label101.Name = "Label101"
         Me.Label101.Size = New System.Drawing.Size(58, 18)
         Me.Label101.TabIndex = 38
@@ -233,7 +278,7 @@ Partial Class ViewIncidents
         '
         Me.Label102.AutoSize = True
         Me.Label102.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label102.Location = New System.Drawing.Point(56, 116)
+        Me.Label102.Location = New System.Drawing.Point(73, 114)
         Me.Label102.Name = "Label102"
         Me.Label102.Size = New System.Drawing.Size(139, 18)
         Me.Label102.TabIndex = 37
@@ -243,7 +288,7 @@ Partial Class ViewIncidents
         '
         Me.Label103.AutoSize = True
         Me.Label103.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label103.Location = New System.Drawing.Point(56, 75)
+        Me.Label103.Location = New System.Drawing.Point(73, 73)
         Me.Label103.Name = "Label103"
         Me.Label103.Size = New System.Drawing.Size(111, 18)
         Me.Label103.TabIndex = 36
@@ -257,12 +302,11 @@ Partial Class ViewIncidents
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.571!))
         Me.TableLayoutPanel6.Controls.Add(Me.btnModifyIncident, 2, 0)
         Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel6.Location = New System.Drawing.Point(3, 465)
+        Me.TableLayoutPanel6.Location = New System.Drawing.Point(3, 469)
         Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
-        Me.TableLayoutPanel6.Padding = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.TableLayoutPanel6.RowCount = 1
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(669, 47)
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(669, 43)
         Me.TableLayoutPanel6.TabIndex = 37
         '
         'btnModifyIncident
@@ -278,35 +322,15 @@ Partial Class ViewIncidents
         Me.btnModifyIncident.ForeColor = System.Drawing.Color.White
         Me.btnModifyIncident.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.modify
         Me.btnModifyIncident.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnModifyIncident.Location = New System.Drawing.Point(517, 10)
+        Me.btnModifyIncident.Location = New System.Drawing.Point(517, 0)
         Me.btnModifyIncident.Margin = New System.Windows.Forms.Padding(0)
         Me.btnModifyIncident.Name = "btnModifyIncident"
-        Me.btnModifyIncident.Size = New System.Drawing.Size(152, 37)
+        Me.btnModifyIncident.Size = New System.Drawing.Size(152, 43)
         Me.btnModifyIncident.TabIndex = 34
         Me.btnModifyIncident.TabStop = False
         Me.btnModifyIncident.Text = "  Update Incident"
         Me.btnModifyIncident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnModifyIncident.UseVisualStyleBackColor = False
-        '
-        'Panel16
-        '
-        Me.Panel16.Controls.Add(Me.Label104)
-        Me.Panel16.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel16.Location = New System.Drawing.Point(3, 3)
-        Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(669, 37)
-        Me.Panel16.TabIndex = 78
-        '
-        'Label104
-        '
-        Me.Label104.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label104.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label104.Location = New System.Drawing.Point(0, 0)
-        Me.Label104.Name = "Label104"
-        Me.Label104.Size = New System.Drawing.Size(669, 37)
-        Me.Label104.TabIndex = 71
-        Me.Label104.Text = "INCIDENT REPORT"
-        Me.Label104.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pageAddModify
         '
@@ -334,16 +358,15 @@ Partial Class ViewIncidents
         '
         Me.TableLayoutPanel3.ColumnCount = 1
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel4, 0, 2)
-        Me.TableLayoutPanel3.Controls.Add(Me.Panel10, 0, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.panelParent, 0, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel4, 0, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.panelParent, 0, 0)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(10, 5)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        Me.TableLayoutPanel3.RowCount = 3
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.487085!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.36531!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.1476!))
+        Me.TableLayoutPanel3.RowCount = 2
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.91129!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.08871!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(675, 515)
         Me.TableLayoutPanel3.TabIndex = 39
         '
@@ -355,12 +378,12 @@ Partial Class ViewIncidents
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.61742!))
         Me.TableLayoutPanel4.Controls.Add(Me.btnSaveIncident, 2, 0)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 465)
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 460)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.Padding = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.TableLayoutPanel4.RowCount = 1
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(669, 47)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(669, 52)
         Me.TableLayoutPanel4.TabIndex = 37
         '
         'btnSaveIncident
@@ -379,38 +402,22 @@ Partial Class ViewIncidents
         Me.btnSaveIncident.Location = New System.Drawing.Point(523, 10)
         Me.btnSaveIncident.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSaveIncident.Name = "btnSaveIncident"
-        Me.btnSaveIncident.Size = New System.Drawing.Size(146, 37)
+        Me.btnSaveIncident.Size = New System.Drawing.Size(146, 42)
         Me.btnSaveIncident.TabIndex = 34
         Me.btnSaveIncident.TabStop = False
         Me.btnSaveIncident.Text = "  Save Incident"
         Me.btnSaveIncident.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSaveIncident.UseVisualStyleBackColor = False
         '
-        'Panel10
-        '
-        Me.Panel10.Controls.Add(Me.Label64)
-        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel10.Location = New System.Drawing.Point(3, 3)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(669, 37)
-        Me.Panel10.TabIndex = 78
-        '
-        'Label64
-        '
-        Me.Label64.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label64.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label64.Location = New System.Drawing.Point(0, 0)
-        Me.Label64.Name = "Label64"
-        Me.Label64.Size = New System.Drawing.Size(669, 37)
-        Me.Label64.TabIndex = 71
-        Me.Label64.Text = "INCIDENT REPORT"
-        Me.Label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'panelParent
         '
         Me.panelParent.AutoScroll = True
         Me.panelParent.BackColor = System.Drawing.Color.White
         Me.panelParent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.panelParent.Controls.Add(Me.btnSearchIncidentReportedBy)
+        Me.panelParent.Controls.Add(Me.Label6)
+        Me.panelParent.Controls.Add(Me.txtIncidentReportedBy)
+        Me.panelParent.Controls.Add(Me.Label4)
         Me.panelParent.Controls.Add(Me.comboIncidentTime)
         Me.panelParent.Controls.Add(Me.datePickerIncidentDate)
         Me.panelParent.Controls.Add(Me.txtIncidentDetails)
@@ -422,12 +429,63 @@ Partial Class ViewIncidents
         Me.panelParent.Controls.Add(Me.labelId)
         Me.panelParent.Controls.Add(Me.Label7)
         Me.panelParent.Controls.Add(Me.txtIncidentId)
-        Me.panelParent.Controls.Add(Me.Panel1)
         Me.panelParent.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelParent.Location = New System.Drawing.Point(3, 46)
+        Me.panelParent.Location = New System.Drawing.Point(3, 3)
         Me.panelParent.Name = "panelParent"
-        Me.panelParent.Size = New System.Drawing.Size(669, 413)
+        Me.panelParent.Size = New System.Drawing.Size(669, 451)
         Me.panelParent.TabIndex = 38
+        '
+        'btnSearchIncidentReportedBy
+        '
+        Me.btnSearchIncidentReportedBy.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.btnSearchIncidentReportedBy.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSearchIncidentReportedBy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchIncidentReportedBy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchIncidentReportedBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchIncidentReportedBy.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchIncidentReportedBy.ForeColor = System.Drawing.Color.White
+        Me.btnSearchIncidentReportedBy.Image = CType(resources.GetObject("btnSearchIncidentReportedBy.Image"), System.Drawing.Image)
+        Me.btnSearchIncidentReportedBy.Location = New System.Drawing.Point(589, 245)
+        Me.btnSearchIncidentReportedBy.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnSearchIncidentReportedBy.Name = "btnSearchIncidentReportedBy"
+        Me.btnSearchIncidentReportedBy.Size = New System.Drawing.Size(36, 27)
+        Me.btnSearchIncidentReportedBy.TabIndex = 166
+        Me.btnSearchIncidentReportedBy.TabStop = False
+        Me.btnSearchIncidentReportedBy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSearchIncidentReportedBy.UseVisualStyleBackColor = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(38, 23)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(512, 16)
+        Me.Label6.TabIndex = 156
+        Me.Label6.Text = "Note: You can search for residents in the barangay using the search button"
+        '
+        'txtIncidentReportedBy
+        '
+        Me.txtIncidentReportedBy.BackColor = System.Drawing.Color.White
+        Me.txtIncidentReportedBy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtIncidentReportedBy.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIncidentReportedBy.ForeColor = System.Drawing.Color.Black
+        Me.txtIncidentReportedBy.Location = New System.Drawing.Point(293, 245)
+        Me.txtIncidentReportedBy.MaxLength = 20
+        Me.txtIncidentReportedBy.Multiline = True
+        Me.txtIncidentReportedBy.Name = "txtIncidentReportedBy"
+        Me.txtIncidentReportedBy.Size = New System.Drawing.Size(293, 27)
+        Me.txtIncidentReportedBy.TabIndex = 113
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(75, 248)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(132, 18)
+        Me.Label4.TabIndex = 112
+        Me.Label4.Text = "Reported By*: "
         '
         'comboIncidentTime
         '
@@ -435,7 +493,7 @@ Partial Class ViewIncidents
         Me.comboIncidentTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboIncidentTime.FormattingEnabled = True
         Me.comboIncidentTime.Items.AddRange(New Object() {"1:00 AM", "2:00 AM", "3:00 AM", "4:00 AM", "5:00 AM", "6:00 AM", "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM", "8:00 PM", "9:00 PM", "10:00 PM", "11:00 PM", "12:00 AM"})
-        Me.comboIncidentTime.Location = New System.Drawing.Point(270, 181)
+        Me.comboIncidentTime.Location = New System.Drawing.Point(293, 210)
         Me.comboIncidentTime.Name = "comboIncidentTime"
         Me.comboIncidentTime.Size = New System.Drawing.Size(293, 28)
         Me.comboIncidentTime.TabIndex = 111
@@ -444,7 +502,7 @@ Partial Class ViewIncidents
         '
         Me.datePickerIncidentDate.CustomFormat = ""
         Me.datePickerIncidentDate.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.datePickerIncidentDate.Location = New System.Drawing.Point(270, 150)
+        Me.datePickerIncidentDate.Location = New System.Drawing.Point(293, 179)
         Me.datePickerIncidentDate.Name = "datePickerIncidentDate"
         Me.datePickerIncidentDate.Size = New System.Drawing.Size(293, 26)
         Me.datePickerIncidentDate.TabIndex = 110
@@ -455,7 +513,7 @@ Partial Class ViewIncidents
         Me.txtIncidentDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtIncidentDetails.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIncidentDetails.ForeColor = System.Drawing.Color.Black
-        Me.txtIncidentDetails.Location = New System.Drawing.Point(270, 244)
+        Me.txtIncidentDetails.Location = New System.Drawing.Point(293, 305)
         Me.txtIncidentDetails.MaxLength = 150
         Me.txtIncidentDetails.Multiline = True
         Me.txtIncidentDetails.Name = "txtIncidentDetails"
@@ -468,7 +526,7 @@ Partial Class ViewIncidents
         Me.txtIncidentName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtIncidentName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIncidentName.ForeColor = System.Drawing.Color.Black
-        Me.txtIncidentName.Location = New System.Drawing.Point(270, 116)
+        Me.txtIncidentName.Location = New System.Drawing.Point(293, 145)
         Me.txtIncidentName.MaxLength = 20
         Me.txtIncidentName.Multiline = True
         Me.txtIncidentName.Name = "txtIncidentName"
@@ -479,7 +537,7 @@ Partial Class ViewIncidents
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(51, 244)
+        Me.Label1.Location = New System.Drawing.Point(75, 308)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(147, 18)
         Me.Label1.TabIndex = 105
@@ -489,7 +547,7 @@ Partial Class ViewIncidents
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(52, 185)
+        Me.Label2.Location = New System.Drawing.Point(75, 214)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(70, 18)
         Me.Label2.TabIndex = 104
@@ -499,7 +557,7 @@ Partial Class ViewIncidents
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(52, 152)
+        Me.Label8.Location = New System.Drawing.Point(75, 181)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(69, 18)
         Me.Label8.TabIndex = 103
@@ -509,7 +567,7 @@ Partial Class ViewIncidents
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(52, 119)
+        Me.Label9.Location = New System.Drawing.Point(75, 148)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(150, 18)
         Me.Label9.TabIndex = 102
@@ -519,7 +577,7 @@ Partial Class ViewIncidents
         '
         Me.labelId.AutoSize = True
         Me.labelId.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelId.Location = New System.Drawing.Point(52, 86)
+        Me.labelId.Location = New System.Drawing.Point(75, 115)
         Me.labelId.Name = "labelId"
         Me.labelId.Size = New System.Drawing.Size(122, 18)
         Me.labelId.TabIndex = 101
@@ -530,7 +588,7 @@ Partial Class ViewIncidents
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(458, 26)
+        Me.Label7.Location = New System.Drawing.Point(488, 69)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(152, 18)
         Me.Label7.TabIndex = 92
@@ -543,19 +601,12 @@ Partial Class ViewIncidents
         Me.txtIncidentId.Enabled = False
         Me.txtIncidentId.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIncidentId.ForeColor = System.Drawing.Color.Black
-        Me.txtIncidentId.Location = New System.Drawing.Point(270, 83)
+        Me.txtIncidentId.Location = New System.Drawing.Point(293, 112)
         Me.txtIncidentId.MaxLength = 100
         Me.txtIncidentId.Multiline = True
         Me.txtIncidentId.Name = "txtIncidentId"
         Me.txtIncidentId.Size = New System.Drawing.Size(293, 27)
         Me.txtIncidentId.TabIndex = 69
-        '
-        'Panel1
-        '
-        Me.Panel1.Location = New System.Drawing.Point(600, 376)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(10, 23)
-        Me.Panel1.TabIndex = 68
         '
         'ViewIncidents
         '
@@ -568,7 +619,7 @@ Partial Class ViewIncidents
         Me.MaximizeBox = False
         Me.Name = "ViewIncidents"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "Incident Information"
+        Me.Text = "Incident Report Information"
         Me.mainTabControl.ResumeLayout(False)
         Me.pageView.ResumeLayout(False)
         Me.Panel11.ResumeLayout(False)
@@ -576,12 +627,10 @@ Partial Class ViewIncidents
         Me.Panel12.ResumeLayout(False)
         Me.Panel12.PerformLayout()
         Me.TableLayoutPanel6.ResumeLayout(False)
-        Me.Panel16.ResumeLayout(False)
         Me.pageAddModify.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel4.ResumeLayout(False)
-        Me.Panel10.ResumeLayout(False)
         Me.panelParent.ResumeLayout(False)
         Me.panelParent.PerformLayout()
         Me.ResumeLayout(False)
@@ -605,19 +654,14 @@ Partial Class ViewIncidents
     Friend WithEvents Label103 As Label
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
     Friend WithEvents btnModifyIncident As Button
-    Friend WithEvents Panel16 As Panel
-    Friend WithEvents Label104 As Label
     Friend WithEvents pageAddModify As TabPage
     Friend WithEvents Panel5 As Panel
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents btnSaveIncident As Button
-    Friend WithEvents Panel10 As Panel
-    Friend WithEvents Label64 As Label
     Friend WithEvents panelParent As Panel
     Friend WithEvents Label7 As Label
     Friend WithEvents txtIncidentId As TextBox
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents txtIncidentDetails As TextBox
     Friend WithEvents txtIncidentName As TextBox
     Friend WithEvents Label1 As Label
@@ -627,4 +671,12 @@ Partial Class ViewIncidents
     Friend WithEvents labelId As Label
     Friend WithEvents datePickerIncidentDate As DateTimePicker
     Friend WithEvents comboIncidentTime As ComboBox
+    Friend WithEvents labelIncidentReportedOn As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents labelIncidentReportedBy As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtIncidentReportedBy As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents btnSearchIncidentReportedBy As Button
 End Class

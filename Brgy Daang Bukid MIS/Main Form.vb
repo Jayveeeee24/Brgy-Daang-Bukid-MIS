@@ -959,6 +959,7 @@ Public Class Main_Form
     End Sub
     Private Sub btnAddIncidents_Click(sender As Object, e As EventArgs) Handles btnAddIncidents.Click
         ViewIncidents.action = "add"
+        ViewIncidents.reportedById = 0
         ViewIncidents.ShowDialog()
     End Sub
 
@@ -1441,15 +1442,19 @@ Public Class Main_Form
             MsgBox("Please select a valid resident!", vbCritical, "Warning")
             Exit Sub
         End If
+        If txtCertificatePurpose.Text.Trim = "" Then
+            MsgBox("Please provide a valid purpose!", vbCritical, "Warning")
+            Exit Sub
+        End If
 
         Dim document As WordDocument = Nothing
         If certificateAction = "residency" Then
-            If CInt(If(txtCertificateYears.Text = "", 0, txtCertificateYears.Text)) > 120 Or isAgeValid() = False Then
+            If isAgeValid() = False Then
                 MsgBox("Please fill a valid year of residency!", vbCritical, "Warning")
                 Exit Sub
             End If
-            If txtCertificateYears.Text.Trim = "" Or txtCertificatePurpose.Text.Trim = "" Then
-                MsgBox("Please fill out the required fields!", vbCritical, "Warning")
+            If txtCertificateYears.Text.Trim = "" Then
+                MsgBox("Please fill out a valid year of residency!", vbCritical, "Warning")
                 Exit Sub
             End If
 
@@ -1487,7 +1492,6 @@ Public Class Main_Form
         document.Save(filePath)
         document.Close()
         CertificateChooseAction.ShowDialog()
-        Me.Close()
     End Sub
     Private Sub btnCreateSummon_Click(sender As Object, e As EventArgs) Handles btnCreateSummon.Click
         If txtCaseNo.Text.Trim = "" Then
@@ -1535,7 +1539,6 @@ Public Class Main_Form
         document.Save(filePath)
         document.Close()
         CertificateChooseAction.ShowDialog()
-        Me.Close()
     End Sub
 
 
@@ -1688,7 +1691,6 @@ Public Class Main_Form
         oWord.Visible = True
         oDoc = oWord.Documents.Add(filePath)
         clearCertificates()
-
     End Sub
     Public Sub convertDocToImage(ByVal filePath As String)
         'Loads an existing Word document into DocIO instance
