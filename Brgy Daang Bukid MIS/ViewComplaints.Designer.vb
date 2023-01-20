@@ -260,7 +260,7 @@ Partial Class ViewComplaints
         '
         Me.labelDefendantContactNo.AutoSize = True
         Me.labelDefendantContactNo.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelDefendantContactNo.Location = New System.Drawing.Point(310, 297)
+        Me.labelDefendantContactNo.Location = New System.Drawing.Point(333, 304)
         Me.labelDefendantContactNo.Name = "labelDefendantContactNo"
         Me.labelDefendantContactNo.Size = New System.Drawing.Size(0, 18)
         Me.labelDefendantContactNo.TabIndex = 73
@@ -269,7 +269,7 @@ Partial Class ViewComplaints
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(82, 297)
+        Me.Label8.Location = New System.Drawing.Point(123, 304)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(109, 18)
         Me.Label8.TabIndex = 72
@@ -279,7 +279,7 @@ Partial Class ViewComplaints
         '
         Me.labelDefendantAddress.AutoSize = True
         Me.labelDefendantAddress.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelDefendantAddress.Location = New System.Drawing.Point(310, 269)
+        Me.labelDefendantAddress.Location = New System.Drawing.Point(333, 276)
         Me.labelDefendantAddress.Name = "labelDefendantAddress"
         Me.labelDefendantAddress.Size = New System.Drawing.Size(0, 18)
         Me.labelDefendantAddress.TabIndex = 71
@@ -288,7 +288,7 @@ Partial Class ViewComplaints
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(82, 269)
+        Me.Label3.Location = New System.Drawing.Point(123, 276)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(86, 18)
         Me.Label3.TabIndex = 70
@@ -298,7 +298,7 @@ Partial Class ViewComplaints
         '
         Me.labelComplainantContactNo.AutoSize = True
         Me.labelComplainantContactNo.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelComplainantContactNo.Location = New System.Drawing.Point(310, 212)
+        Me.labelComplainantContactNo.Location = New System.Drawing.Point(333, 219)
         Me.labelComplainantContactNo.Name = "labelComplainantContactNo"
         Me.labelComplainantContactNo.Size = New System.Drawing.Size(0, 18)
         Me.labelComplainantContactNo.TabIndex = 69
@@ -307,7 +307,7 @@ Partial Class ViewComplaints
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(82, 212)
+        Me.Label6.Location = New System.Drawing.Point(123, 219)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(109, 18)
         Me.Label6.TabIndex = 68
@@ -317,7 +317,7 @@ Partial Class ViewComplaints
         '
         Me.labelComplainantAddress.AutoSize = True
         Me.labelComplainantAddress.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelComplainantAddress.Location = New System.Drawing.Point(310, 183)
+        Me.labelComplainantAddress.Location = New System.Drawing.Point(333, 190)
         Me.labelComplainantAddress.Name = "labelComplainantAddress"
         Me.labelComplainantAddress.Size = New System.Drawing.Size(0, 18)
         Me.labelComplainantAddress.TabIndex = 67
@@ -326,7 +326,7 @@ Partial Class ViewComplaints
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(82, 183)
+        Me.Label2.Location = New System.Drawing.Point(123, 190)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(86, 18)
         Me.Label2.TabIndex = 66
@@ -336,7 +336,7 @@ Partial Class ViewComplaints
         '
         Me.labelDetails.AutoSize = True
         Me.labelDetails.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelDetails.Location = New System.Drawing.Point(323, 403)
+        Me.labelDetails.Location = New System.Drawing.Point(333, 402)
         Me.labelDetails.Name = "labelDetails"
         Me.labelDetails.Size = New System.Drawing.Size(0, 18)
         Me.labelDetails.TabIndex = 65
@@ -345,7 +345,7 @@ Partial Class ViewComplaints
         '
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(95, 403)
+        Me.Label29.Location = New System.Drawing.Point(123, 402)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(75, 18)
         Me.Label29.TabIndex = 64
@@ -355,7 +355,7 @@ Partial Class ViewComplaints
         '
         Me.labelDateFiled.AutoSize = True
         Me.labelDateFiled.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelDateFiled.Location = New System.Drawing.Point(323, 365)
+        Me.labelDateFiled.Location = New System.Drawing.Point(331, 374)
         Me.labelDateFiled.Name = "labelDateFiled"
         Me.labelDateFiled.Size = New System.Drawing.Size(0, 18)
         Me.labelDateFiled.TabIndex = 63
@@ -364,7 +364,7 @@ Partial Class ViewComplaints
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(95, 365)
+        Me.Label24.Location = New System.Drawing.Point(121, 374)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(101, 18)
         Me.Label24.TabIndex = 62
@@ -374,7 +374,7 @@ Partial Class ViewComplaints
         '
         Me.labelThirdResult.AutoSize = True
         Me.labelThirdResult.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelThirdResult.Location = New System.Drawing.Point(310, 780)
+        Me.labelThirdResult.Location = New System.Drawing.Point(333, 712)
         Me.labelThirdResult.Name = "labelThirdResult"
         Me.labelThirdResult.Size = New System.Drawing.Size(0, 18)
         Me.labelThirdResult.TabIndex = 61
@@ -383,7 +383,7 @@ Partial Class ViewComplaints
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(82, 780)
+        Me.Label19.Location = New System.Drawing.Point(123, 712)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(65, 18)
         Me.Label19.TabIndex = 60
@@ -393,7 +393,7 @@ Partial Class ViewComplaints
         '
         Me.labelThirdDate.AutoSize = True
         Me.labelThirdDate.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelThirdDate.Location = New System.Drawing.Point(310, 748)
+        Me.labelThirdDate.Location = New System.Drawing.Point(333, 680)
         Me.labelThirdDate.Name = "labelThirdDate"
         Me.labelThirdDate.Size = New System.Drawing.Size(0, 18)
         Me.labelThirdDate.TabIndex = 59
@@ -402,7 +402,7 @@ Partial Class ViewComplaints
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(82, 748)
+        Me.Label21.Location = New System.Drawing.Point(123, 680)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(55, 18)
         Me.Label21.TabIndex = 58
@@ -412,7 +412,7 @@ Partial Class ViewComplaints
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(82, 716)
+        Me.Label22.Location = New System.Drawing.Point(123, 648)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(156, 18)
         Me.Label22.TabIndex = 57
@@ -422,7 +422,7 @@ Partial Class ViewComplaints
         '
         Me.labelSecondResult.AutoSize = True
         Me.labelSecondResult.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelSecondResult.Location = New System.Drawing.Point(310, 682)
+        Me.labelSecondResult.Location = New System.Drawing.Point(333, 614)
         Me.labelSecondResult.Name = "labelSecondResult"
         Me.labelSecondResult.Size = New System.Drawing.Size(0, 18)
         Me.labelSecondResult.TabIndex = 55
@@ -431,7 +431,7 @@ Partial Class ViewComplaints
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(82, 682)
+        Me.Label14.Location = New System.Drawing.Point(123, 614)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(65, 18)
         Me.Label14.TabIndex = 54
@@ -441,7 +441,7 @@ Partial Class ViewComplaints
         '
         Me.labelSecondDate.AutoSize = True
         Me.labelSecondDate.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelSecondDate.Location = New System.Drawing.Point(310, 650)
+        Me.labelSecondDate.Location = New System.Drawing.Point(333, 582)
         Me.labelSecondDate.Name = "labelSecondDate"
         Me.labelSecondDate.Size = New System.Drawing.Size(0, 18)
         Me.labelSecondDate.TabIndex = 53
@@ -450,7 +450,7 @@ Partial Class ViewComplaints
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(82, 650)
+        Me.Label16.Location = New System.Drawing.Point(123, 582)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(55, 18)
         Me.Label16.TabIndex = 52
@@ -460,7 +460,7 @@ Partial Class ViewComplaints
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(82, 618)
+        Me.Label17.Location = New System.Drawing.Point(123, 550)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(171, 18)
         Me.Label17.TabIndex = 51
@@ -470,7 +470,7 @@ Partial Class ViewComplaints
         '
         Me.labelFirstResult.AutoSize = True
         Me.labelFirstResult.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelFirstResult.Location = New System.Drawing.Point(310, 581)
+        Me.labelFirstResult.Location = New System.Drawing.Point(333, 513)
         Me.labelFirstResult.Name = "labelFirstResult"
         Me.labelFirstResult.Size = New System.Drawing.Size(0, 18)
         Me.labelFirstResult.TabIndex = 50
@@ -479,7 +479,7 @@ Partial Class ViewComplaints
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(82, 581)
+        Me.Label12.Location = New System.Drawing.Point(123, 513)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(65, 18)
         Me.Label12.TabIndex = 49
@@ -489,7 +489,7 @@ Partial Class ViewComplaints
         '
         Me.labelFirstDate.AutoSize = True
         Me.labelFirstDate.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelFirstDate.Location = New System.Drawing.Point(310, 549)
+        Me.labelFirstDate.Location = New System.Drawing.Point(333, 481)
         Me.labelFirstDate.Name = "labelFirstDate"
         Me.labelFirstDate.Size = New System.Drawing.Size(0, 18)
         Me.labelFirstDate.TabIndex = 48
@@ -498,7 +498,7 @@ Partial Class ViewComplaints
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(82, 549)
+        Me.Label10.Location = New System.Drawing.Point(123, 481)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(55, 18)
         Me.Label10.TabIndex = 47
@@ -508,7 +508,7 @@ Partial Class ViewComplaints
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(82, 517)
+        Me.Label5.Location = New System.Drawing.Point(123, 449)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(153, 18)
         Me.Label5.TabIndex = 46
@@ -518,7 +518,7 @@ Partial Class ViewComplaints
         '
         Me.labelStatus.AutoSize = True
         Me.labelStatus.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelStatus.Location = New System.Drawing.Point(323, 330)
+        Me.labelStatus.Location = New System.Drawing.Point(333, 346)
         Me.labelStatus.Name = "labelStatus"
         Me.labelStatus.Size = New System.Drawing.Size(0, 18)
         Me.labelStatus.TabIndex = 45
@@ -527,7 +527,7 @@ Partial Class ViewComplaints
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(95, 330)
+        Me.Label4.Location = New System.Drawing.Point(123, 346)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(73, 18)
         Me.Label4.TabIndex = 44
@@ -535,27 +535,29 @@ Partial Class ViewComplaints
         '
         'labelDefendant
         '
+        Me.labelDefendant.AutoSize = True
         Me.labelDefendant.Cursor = System.Windows.Forms.Cursors.Hand
         Me.labelDefendant.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelDefendant.Location = New System.Drawing.Point(310, 240)
+        Me.labelDefendant.Location = New System.Drawing.Point(333, 247)
         Me.labelDefendant.Name = "labelDefendant"
-        Me.labelDefendant.Size = New System.Drawing.Size(319, 18)
+        Me.labelDefendant.Size = New System.Drawing.Size(0, 18)
         Me.labelDefendant.TabIndex = 43
         '
         'labelComplainant
         '
+        Me.labelComplainant.AutoSize = True
         Me.labelComplainant.Cursor = System.Windows.Forms.Cursors.Hand
         Me.labelComplainant.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelComplainant.Location = New System.Drawing.Point(310, 153)
+        Me.labelComplainant.Location = New System.Drawing.Point(333, 160)
         Me.labelComplainant.Name = "labelComplainant"
-        Me.labelComplainant.Size = New System.Drawing.Size(319, 18)
+        Me.labelComplainant.Size = New System.Drawing.Size(0, 18)
         Me.labelComplainant.TabIndex = 42
         '
         'labelComplaint
         '
         Me.labelComplaint.AutoSize = True
         Me.labelComplaint.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelComplaint.Location = New System.Drawing.Point(310, 93)
+        Me.labelComplaint.Location = New System.Drawing.Point(333, 100)
         Me.labelComplaint.Name = "labelComplaint"
         Me.labelComplaint.Size = New System.Drawing.Size(0, 18)
         Me.labelComplaint.TabIndex = 41
@@ -564,7 +566,7 @@ Partial Class ViewComplaints
         '
         Me.labelComplaintId.AutoSize = True
         Me.labelComplaintId.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelComplaintId.Location = New System.Drawing.Point(310, 58)
+        Me.labelComplaintId.Location = New System.Drawing.Point(333, 65)
         Me.labelComplaintId.Name = "labelComplaintId"
         Me.labelComplaintId.Size = New System.Drawing.Size(0, 18)
         Me.labelComplaintId.TabIndex = 40
@@ -573,7 +575,7 @@ Partial Class ViewComplaints
         '
         Me.Label100.AutoSize = True
         Me.Label100.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label100.Location = New System.Drawing.Point(82, 240)
+        Me.Label100.Location = New System.Drawing.Point(123, 247)
         Me.Label100.Name = "Label100"
         Me.Label100.Size = New System.Drawing.Size(117, 18)
         Me.Label100.TabIndex = 39
@@ -583,7 +585,7 @@ Partial Class ViewComplaints
         '
         Me.Label101.AutoSize = True
         Me.Label101.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label101.Location = New System.Drawing.Point(82, 153)
+        Me.Label101.Location = New System.Drawing.Point(123, 160)
         Me.Label101.Name = "Label101"
         Me.Label101.Size = New System.Drawing.Size(121, 18)
         Me.Label101.TabIndex = 38
@@ -593,7 +595,7 @@ Partial Class ViewComplaints
         '
         Me.Label102.AutoSize = True
         Me.Label102.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label102.Location = New System.Drawing.Point(82, 93)
+        Me.Label102.Location = New System.Drawing.Point(123, 100)
         Me.Label102.Name = "Label102"
         Me.Label102.Size = New System.Drawing.Size(101, 18)
         Me.Label102.TabIndex = 37
@@ -603,7 +605,7 @@ Partial Class ViewComplaints
         '
         Me.Label103.AutoSize = True
         Me.Label103.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label103.Location = New System.Drawing.Point(82, 58)
+        Me.Label103.Location = New System.Drawing.Point(123, 65)
         Me.Label103.Name = "Label103"
         Me.Label103.Size = New System.Drawing.Size(126, 18)
         Me.Label103.TabIndex = 36
@@ -611,7 +613,7 @@ Partial Class ViewComplaints
         '
         'Panel2
         '
-        Me.Panel2.Location = New System.Drawing.Point(603, 727)
+        Me.Panel2.Location = New System.Drawing.Point(598, 671)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(10, 100)
         Me.Panel2.TabIndex = 56
@@ -1430,7 +1432,7 @@ Partial Class ViewComplaints
         Me.MaximizeBox = False
         Me.Name = "ViewComplaints"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Complaint Report Information"
+        Me.Text = "ny"
         Me.mainTabControl.ResumeLayout(False)
         Me.pageView.ResumeLayout(False)
         Me.Panel11.ResumeLayout(False)
