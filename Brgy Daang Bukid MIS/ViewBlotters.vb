@@ -198,14 +198,14 @@ Public Class ViewBlotters
 
     End Sub
 
-    Private Sub labelSuspect_Click(sender As Object, e As EventArgs) Handles labelSuspect.Click
+    Private Sub labelSuspect_Click(sender As Object, e As EventArgs)
         If clickableSuspect = True Then
             ViewResident.resident_id = suspectId
             ViewResident.viewChoice = "Normal"
             ViewResident.ShowDialog()
         End If
     End Sub
-    Private Sub labelSubmittedBy_Click(sender As Object, e As EventArgs) Handles labelSubmittedBy.Click
+    Private Sub labelSubmittedBy_Click(sender As Object, e As EventArgs)
         If clickableSubmittedBy = True Then
             ViewResident.resident_id = submittedById
             ViewResident.viewChoice = "Normal"

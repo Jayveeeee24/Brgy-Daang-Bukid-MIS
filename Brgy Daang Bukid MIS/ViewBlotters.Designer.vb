@@ -26,23 +26,6 @@ Partial Class ViewBlotters
         Me.mainTabControl = New System.Windows.Forms.TabControl()
         Me.pageView = New System.Windows.Forms.TabPage()
         Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.labelBlotterDetails = New System.Windows.Forms.Label()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.labelSubmittedOn = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.labelSubmittedBy = New System.Windows.Forms.Label()
-        Me.labelSuspect = New System.Windows.Forms.Label()
-        Me.labelBlotter = New System.Windows.Forms.Label()
-        Me.labelBlotterId = New System.Windows.Forms.Label()
-        Me.Label100 = New System.Windows.Forms.Label()
-        Me.Label101 = New System.Windows.Forms.Label()
-        Me.Label102 = New System.Windows.Forms.Label()
-        Me.Label103 = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Panel16 = New System.Windows.Forms.Panel()
-        Me.Label104 = New System.Windows.Forms.Label()
         Me.pageAddModify = New System.Windows.Forms.TabPage()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
@@ -51,6 +34,7 @@ Partial Class ViewBlotters
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Label64 = New System.Windows.Forms.Label()
         Me.panelParent = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.panelSearchParent = New System.Windows.Forms.Panel()
         Me.btnSearchSuspect = New System.Windows.Forms.Button()
         Me.btnSearchSubmittedBy = New System.Windows.Forms.Button()
@@ -67,13 +51,22 @@ Partial Class ViewBlotters
         Me.Label20 = New System.Windows.Forms.Label()
         Me.labelId = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.labelBlotterDetails = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.labelSubmittedOn = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.labelSubmittedBy = New System.Windows.Forms.Label()
+        Me.labelSuspect = New System.Windows.Forms.Label()
+        Me.labelBlotter = New System.Windows.Forms.Label()
+        Me.labelBlotterId = New System.Windows.Forms.Label()
+        Me.Label100 = New System.Windows.Forms.Label()
+        Me.Label101 = New System.Windows.Forms.Label()
+        Me.Label102 = New System.Windows.Forms.Label()
+        Me.Label103 = New System.Windows.Forms.Label()
         Me.mainTabControl.SuspendLayout()
         Me.pageView.SuspendLayout()
         Me.Panel11.SuspendLayout()
-        Me.TableLayoutPanel5.SuspendLayout()
-        Me.Panel12.SuspendLayout()
-        Me.Panel16.SuspendLayout()
         Me.pageAddModify.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -81,6 +74,7 @@ Partial Class ViewBlotters
         Me.Panel10.SuspendLayout()
         Me.panelParent.SuspendLayout()
         Me.panelSearchParent.SuspendLayout()
+        Me.Panel12.SuspendLayout()
         Me.SuspendLayout()
         '
         'mainTabControl
@@ -108,7 +102,7 @@ Partial Class ViewBlotters
         '
         'Panel11
         '
-        Me.Panel11.Controls.Add(Me.TableLayoutPanel5)
+        Me.Panel11.Controls.Add(Me.Panel12)
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel11.Location = New System.Drawing.Point(0, 0)
         Me.Panel11.Margin = New System.Windows.Forms.Padding(5)
@@ -116,202 +110,6 @@ Partial Class ViewBlotters
         Me.Panel11.Padding = New System.Windows.Forms.Padding(10, 5, 10, 5)
         Me.Panel11.Size = New System.Drawing.Size(689, 525)
         Me.Panel11.TabIndex = 2
-        '
-        'TableLayoutPanel5
-        '
-        Me.TableLayoutPanel5.ColumnCount = 1
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel5.Controls.Add(Me.Panel12, 0, 1)
-        Me.TableLayoutPanel5.Controls.Add(Me.TableLayoutPanel6, 0, 2)
-        Me.TableLayoutPanel5.Controls.Add(Me.Panel16, 0, 0)
-        Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel5.Location = New System.Drawing.Point(10, 5)
-        Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
-        Me.TableLayoutPanel5.RowCount = 3
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.487085!))
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.36531!))
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.1476!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(669, 515)
-        Me.TableLayoutPanel5.TabIndex = 39
-        '
-        'Panel12
-        '
-        Me.Panel12.AutoScroll = True
-        Me.Panel12.BackColor = System.Drawing.Color.White
-        Me.Panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel12.Controls.Add(Me.labelBlotterDetails)
-        Me.Panel12.Controls.Add(Me.Label24)
-        Me.Panel12.Controls.Add(Me.labelSubmittedOn)
-        Me.Panel12.Controls.Add(Me.Label4)
-        Me.Panel12.Controls.Add(Me.labelSubmittedBy)
-        Me.Panel12.Controls.Add(Me.labelSuspect)
-        Me.Panel12.Controls.Add(Me.labelBlotter)
-        Me.Panel12.Controls.Add(Me.labelBlotterId)
-        Me.Panel12.Controls.Add(Me.Label100)
-        Me.Panel12.Controls.Add(Me.Label101)
-        Me.Panel12.Controls.Add(Me.Label102)
-        Me.Panel12.Controls.Add(Me.Label103)
-        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel12.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel12.Location = New System.Drawing.Point(3, 46)
-        Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(663, 413)
-        Me.Panel12.TabIndex = 38
-        '
-        'labelBlotterDetails
-        '
-        Me.labelBlotterDetails.AutoSize = True
-        Me.labelBlotterDetails.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelBlotterDetails.Location = New System.Drawing.Point(292, 275)
-        Me.labelBlotterDetails.Name = "labelBlotterDetails"
-        Me.labelBlotterDetails.Size = New System.Drawing.Size(25, 18)
-        Me.labelBlotterDetails.TabIndex = 63
-        Me.labelBlotterDetails.Text = "Jr."
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(64, 275)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(75, 18)
-        Me.Label24.TabIndex = 62
-        Me.Label24.Text = "Details: "
-        '
-        'labelSubmittedOn
-        '
-        Me.labelSubmittedOn.AutoSize = True
-        Me.labelSubmittedOn.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelSubmittedOn.Location = New System.Drawing.Point(292, 234)
-        Me.labelSubmittedOn.Name = "labelSubmittedOn"
-        Me.labelSubmittedOn.Size = New System.Drawing.Size(25, 18)
-        Me.labelSubmittedOn.TabIndex = 45
-        Me.labelSubmittedOn.Text = "Jr."
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(64, 234)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(129, 18)
-        Me.Label4.TabIndex = 44
-        Me.Label4.Text = "Submitted on: "
-        '
-        'labelSubmittedBy
-        '
-        Me.labelSubmittedBy.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.labelSubmittedBy.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelSubmittedBy.Location = New System.Drawing.Point(292, 194)
-        Me.labelSubmittedBy.Name = "labelSubmittedBy"
-        Me.labelSubmittedBy.Size = New System.Drawing.Size(313, 18)
-        Me.labelSubmittedBy.TabIndex = 43
-        Me.labelSubmittedBy.Text = "Jr."
-        '
-        'labelSuspect
-        '
-        Me.labelSuspect.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.labelSuspect.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelSuspect.Location = New System.Drawing.Point(292, 154)
-        Me.labelSuspect.Name = "labelSuspect"
-        Me.labelSuspect.Size = New System.Drawing.Size(313, 18)
-        Me.labelSuspect.TabIndex = 42
-        Me.labelSuspect.Text = "Kamusta ka na "
-        '
-        'labelBlotter
-        '
-        Me.labelBlotter.AutoSize = True
-        Me.labelBlotter.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelBlotter.Location = New System.Drawing.Point(292, 116)
-        Me.labelBlotter.Name = "labelBlotter"
-        Me.labelBlotter.Size = New System.Drawing.Size(116, 18)
-        Me.labelBlotter.TabIndex = 41
-        Me.labelBlotter.Text = "KOMPLAINT"
-        '
-        'labelBlotterId
-        '
-        Me.labelBlotterId.AutoSize = True
-        Me.labelBlotterId.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelBlotterId.Location = New System.Drawing.Point(292, 78)
-        Me.labelBlotterId.Name = "labelBlotterId"
-        Me.labelBlotterId.Size = New System.Drawing.Size(54, 18)
-        Me.labelBlotterId.TabIndex = 40
-        Me.labelBlotterId.Text = "Jopay"
-        '
-        'Label100
-        '
-        Me.Label100.AutoSize = True
-        Me.Label100.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label100.Location = New System.Drawing.Point(64, 194)
-        Me.Label100.Name = "Label100"
-        Me.Label100.Size = New System.Drawing.Size(129, 18)
-        Me.Label100.TabIndex = 39
-        Me.Label100.Text = "Submitted by: "
-        '
-        'Label101
-        '
-        Me.Label101.AutoSize = True
-        Me.Label101.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label101.Location = New System.Drawing.Point(64, 154)
-        Me.Label101.Name = "Label101"
-        Me.Label101.Size = New System.Drawing.Size(84, 18)
-        Me.Label101.TabIndex = 38
-        Me.Label101.Text = "Suspect: "
-        '
-        'Label102
-        '
-        Me.Label102.AutoSize = True
-        Me.Label102.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label102.Location = New System.Drawing.Point(64, 116)
-        Me.Label102.Name = "Label102"
-        Me.Label102.Size = New System.Drawing.Size(123, 18)
-        Me.Label102.TabIndex = 37
-        Me.Label102.Text = "Blottered for: "
-        '
-        'Label103
-        '
-        Me.Label103.AutoSize = True
-        Me.Label103.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label103.Location = New System.Drawing.Point(64, 78)
-        Me.Label103.Name = "Label103"
-        Me.Label103.Size = New System.Drawing.Size(100, 18)
-        Me.Label103.TabIndex = 36
-        Me.Label103.Text = "Blotter ID: "
-        '
-        'TableLayoutPanel6
-        '
-        Me.TableLayoutPanel6.ColumnCount = 3
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.0!))
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.18703!))
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.88688!))
-        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel6.Location = New System.Drawing.Point(3, 465)
-        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
-        Me.TableLayoutPanel6.Padding = New System.Windows.Forms.Padding(0, 10, 0, 0)
-        Me.TableLayoutPanel6.RowCount = 1
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(663, 47)
-        Me.TableLayoutPanel6.TabIndex = 37
-        '
-        'Panel16
-        '
-        Me.Panel16.Controls.Add(Me.Label104)
-        Me.Panel16.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel16.Location = New System.Drawing.Point(3, 3)
-        Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(663, 37)
-        Me.Panel16.TabIndex = 78
-        '
-        'Label104
-        '
-        Me.Label104.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label104.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label104.Location = New System.Drawing.Point(0, 0)
-        Me.Label104.Name = "Label104"
-        Me.Label104.Size = New System.Drawing.Size(663, 37)
-        Me.Label104.TabIndex = 71
-        Me.Label104.Text = "BLOTTER REPORT"
-        Me.Label104.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pageAddModify
         '
@@ -436,6 +234,16 @@ Partial Class ViewBlotters
         Me.panelParent.Name = "panelParent"
         Me.panelParent.Size = New System.Drawing.Size(663, 413)
         Me.panelParent.TabIndex = 38
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(33, 12)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(531, 16)
+        Me.Label1.TabIndex = 145
+        Me.Label1.Text = "Note: You can use the search button to search for a resident in the barangay "
         '
         'panelSearchParent
         '
@@ -635,15 +443,149 @@ Partial Class ViewBlotters
         Me.Label7.TabIndex = 92
         Me.Label7.Text = "Note: * Required "
         '
-        'Label1
+        'Panel12
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(33, 12)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(531, 16)
-        Me.Label1.TabIndex = 145
-        Me.Label1.Text = "Note: You can use the search button to search for a resident in the barangay "
+        Me.Panel12.AutoScroll = True
+        Me.Panel12.BackColor = System.Drawing.Color.White
+        Me.Panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel12.Controls.Add(Me.labelBlotterDetails)
+        Me.Panel12.Controls.Add(Me.Label24)
+        Me.Panel12.Controls.Add(Me.labelSubmittedOn)
+        Me.Panel12.Controls.Add(Me.Label4)
+        Me.Panel12.Controls.Add(Me.labelSubmittedBy)
+        Me.Panel12.Controls.Add(Me.labelSuspect)
+        Me.Panel12.Controls.Add(Me.labelBlotter)
+        Me.Panel12.Controls.Add(Me.labelBlotterId)
+        Me.Panel12.Controls.Add(Me.Label100)
+        Me.Panel12.Controls.Add(Me.Label101)
+        Me.Panel12.Controls.Add(Me.Label102)
+        Me.Panel12.Controls.Add(Me.Label103)
+        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel12.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel12.Location = New System.Drawing.Point(10, 5)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(669, 515)
+        Me.Panel12.TabIndex = 39
+        '
+        'labelBlotterDetails
+        '
+        Me.labelBlotterDetails.AutoSize = True
+        Me.labelBlotterDetails.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelBlotterDetails.Location = New System.Drawing.Point(304, 265)
+        Me.labelBlotterDetails.Name = "labelBlotterDetails"
+        Me.labelBlotterDetails.Size = New System.Drawing.Size(25, 18)
+        Me.labelBlotterDetails.TabIndex = 63
+        Me.labelBlotterDetails.Text = "Jr."
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Location = New System.Drawing.Point(76, 265)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(75, 18)
+        Me.Label24.TabIndex = 62
+        Me.Label24.Text = "Details: "
+        '
+        'labelSubmittedOn
+        '
+        Me.labelSubmittedOn.AutoSize = True
+        Me.labelSubmittedOn.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelSubmittedOn.Location = New System.Drawing.Point(304, 224)
+        Me.labelSubmittedOn.Name = "labelSubmittedOn"
+        Me.labelSubmittedOn.Size = New System.Drawing.Size(25, 18)
+        Me.labelSubmittedOn.TabIndex = 45
+        Me.labelSubmittedOn.Text = "Jr."
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(76, 224)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(129, 18)
+        Me.Label4.TabIndex = 44
+        Me.Label4.Text = "Submitted on: "
+        '
+        'labelSubmittedBy
+        '
+        Me.labelSubmittedBy.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.labelSubmittedBy.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelSubmittedBy.Location = New System.Drawing.Point(304, 184)
+        Me.labelSubmittedBy.Name = "labelSubmittedBy"
+        Me.labelSubmittedBy.Size = New System.Drawing.Size(313, 18)
+        Me.labelSubmittedBy.TabIndex = 43
+        Me.labelSubmittedBy.Text = "Jr."
+        '
+        'labelSuspect
+        '
+        Me.labelSuspect.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.labelSuspect.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelSuspect.Location = New System.Drawing.Point(304, 144)
+        Me.labelSuspect.Name = "labelSuspect"
+        Me.labelSuspect.Size = New System.Drawing.Size(313, 18)
+        Me.labelSuspect.TabIndex = 42
+        Me.labelSuspect.Text = "Kamusta ka na "
+        '
+        'labelBlotter
+        '
+        Me.labelBlotter.AutoSize = True
+        Me.labelBlotter.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelBlotter.Location = New System.Drawing.Point(304, 106)
+        Me.labelBlotter.Name = "labelBlotter"
+        Me.labelBlotter.Size = New System.Drawing.Size(116, 18)
+        Me.labelBlotter.TabIndex = 41
+        Me.labelBlotter.Text = "KOMPLAINT"
+        '
+        'labelBlotterId
+        '
+        Me.labelBlotterId.AutoSize = True
+        Me.labelBlotterId.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelBlotterId.Location = New System.Drawing.Point(304, 68)
+        Me.labelBlotterId.Name = "labelBlotterId"
+        Me.labelBlotterId.Size = New System.Drawing.Size(54, 18)
+        Me.labelBlotterId.TabIndex = 40
+        Me.labelBlotterId.Text = "Jopay"
+        '
+        'Label100
+        '
+        Me.Label100.AutoSize = True
+        Me.Label100.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label100.Location = New System.Drawing.Point(76, 184)
+        Me.Label100.Name = "Label100"
+        Me.Label100.Size = New System.Drawing.Size(129, 18)
+        Me.Label100.TabIndex = 39
+        Me.Label100.Text = "Submitted by: "
+        '
+        'Label101
+        '
+        Me.Label101.AutoSize = True
+        Me.Label101.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label101.Location = New System.Drawing.Point(76, 144)
+        Me.Label101.Name = "Label101"
+        Me.Label101.Size = New System.Drawing.Size(84, 18)
+        Me.Label101.TabIndex = 38
+        Me.Label101.Text = "Suspect: "
+        '
+        'Label102
+        '
+        Me.Label102.AutoSize = True
+        Me.Label102.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label102.Location = New System.Drawing.Point(76, 106)
+        Me.Label102.Name = "Label102"
+        Me.Label102.Size = New System.Drawing.Size(123, 18)
+        Me.Label102.TabIndex = 37
+        Me.Label102.Text = "Blottered for: "
+        '
+        'Label103
+        '
+        Me.Label103.AutoSize = True
+        Me.Label103.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label103.Location = New System.Drawing.Point(76, 68)
+        Me.Label103.Name = "Label103"
+        Me.Label103.Size = New System.Drawing.Size(100, 18)
+        Me.Label103.TabIndex = 36
+        Me.Label103.Text = "Blotter ID: "
         '
         'ViewBlotters
         '
@@ -660,10 +602,6 @@ Partial Class ViewBlotters
         Me.mainTabControl.ResumeLayout(False)
         Me.pageView.ResumeLayout(False)
         Me.Panel11.ResumeLayout(False)
-        Me.TableLayoutPanel5.ResumeLayout(False)
-        Me.Panel12.ResumeLayout(False)
-        Me.Panel12.PerformLayout()
-        Me.Panel16.ResumeLayout(False)
         Me.pageAddModify.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
@@ -672,6 +610,8 @@ Partial Class ViewBlotters
         Me.panelParent.ResumeLayout(False)
         Me.panelParent.PerformLayout()
         Me.panelSearchParent.ResumeLayout(False)
+        Me.Panel12.ResumeLayout(False)
+        Me.Panel12.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -679,23 +619,6 @@ Partial Class ViewBlotters
     Friend WithEvents mainTabControl As TabControl
     Friend WithEvents pageView As TabPage
     Friend WithEvents Panel11 As Panel
-    Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
-    Friend WithEvents Panel12 As Panel
-    Friend WithEvents labelBlotterDetails As Label
-    Friend WithEvents Label24 As Label
-    Friend WithEvents labelSubmittedOn As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents labelSubmittedBy As Label
-    Friend WithEvents labelSuspect As Label
-    Friend WithEvents labelBlotter As Label
-    Friend WithEvents labelBlotterId As Label
-    Friend WithEvents Label100 As Label
-    Friend WithEvents Label101 As Label
-    Friend WithEvents Label102 As Label
-    Friend WithEvents Label103 As Label
-    Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
-    Friend WithEvents Panel16 As Panel
-    Friend WithEvents Label104 As Label
     Friend WithEvents pageAddModify As TabPage
     Friend WithEvents Panel5 As Panel
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
@@ -721,4 +644,17 @@ Partial Class ViewBlotters
     Friend WithEvents labelId As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents labelBlotterDetails As Label
+    Friend WithEvents Label24 As Label
+    Friend WithEvents labelSubmittedOn As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents labelSubmittedBy As Label
+    Friend WithEvents labelSuspect As Label
+    Friend WithEvents labelBlotter As Label
+    Friend WithEvents labelBlotterId As Label
+    Friend WithEvents Label100 As Label
+    Friend WithEvents Label101 As Label
+    Friend WithEvents Label102 As Label
+    Friend WithEvents Label103 As Label
 End Class
