@@ -1341,6 +1341,10 @@ Public Class Main_Form
         ViewInventory.action = "stock"
         ViewInventory.ShowDialog()
     End Sub
+    Private Sub btnBorrowOrReturn_Click(sender As Object, e As EventArgs) Handles btnBorrowOrReturn.Click
+
+    End Sub
+
 
     '' '''''''''''''''''''''''''CERTIFICATES METHODS '''''''''''''''''''''''''''''''''''''''''
     Private Sub clearCertificates()

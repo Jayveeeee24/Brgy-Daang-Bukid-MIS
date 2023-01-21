@@ -7,25 +7,27 @@ Public Class ViewInventory
 
     Public action As String
     Public itemId As Integer
+    Dim itemReason As String
+    Dim isSaved As Boolean = False
 
     Private Sub ViewInventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToParent()
         mainTabControl.ItemSize = New Size(0, 1)
-        clearEverything()
 
         loadInitialData()
     End Sub
     Private Sub ViewInventory_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        clearEverything()
+        Me.Controls.Clear()
+        Me.InitializeComponent()
     End Sub
     Private Sub ViewInventory_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If action = "add" Then
-            If txtItemName.Text.Trim <> "" Or txtItemStock.Text.Trim <> "" Or txtRemarks.Text.Trim <> "" Then
+        If action = "add" And isSaved = False Then
+            If txtItemName.Text.Trim <> "" Or txtRemarks.Text.Trim <> "" Or txtItemColor.Text.Trim <> "" Or txtItemSerial.Text.Trim <> "" Then
                 If MsgBox("Your current progress will not be saved!", MsgBoxStyle.OkCancel, "Are you sure to exit?") = MsgBoxResult.Cancel Then
                     e.Cancel = True
                 End If
             End If
-        ElseIf action = "stock" Then
+        ElseIf action = "stock" And isSaved = False Then
             If txtStockItemName.Text.Trim <> "" Or txtQuantity.Text.Trim <> "" Or txtReason.Text.Trim <> "" Or txtTransactionBy.Text.Trim <> "" Then
                 If MsgBox("Your current progress will not be saved!", MsgBoxStyle.OkCancel, "Are you sure to exit?") = MsgBoxResult.Cancel Then
                     e.Cancel = True
@@ -73,7 +75,14 @@ Public Class ViewInventory
                 While mySQLReader.Read
                     labelItemId.Text = itemId
                     labelItemName.Text = mySQLReader!item_name
-                    labelItemStatus.Text = mySQLReader!item_status
+                    labelItemStatus.Text = If(mySQLReader!item_status = "Unavailable", mySQLReader!item_status + " (" + mySQLReader!item_reason + ")")
+                    itemReason = mySQLReader!item_reason
+                    labelItemColor.Text = If(mySQLReader!item_color = "", "N/A", mySQLReader!item_color)
+                    labelItemSerial.Text = If(mySQLReader!serial_no = "", "N/A", mySQLReader!serial_no)
+                    labelItemBorrowed.Text = mySQLReader!item_borrowed
+                    labeItemUnusable.Text = mySQLReader!item_unusable
+                    labelItemStock.Text = mySQLReader!item_stock
+
                     labelItemStock.Text = If(mySQLReader!item_stock = "", 0, mySQLReader!item_stock)
                     labelAddedBy.Text = mySQLReader!added_by
                     Dim date1 As Date = mySQLReader!added_on
@@ -87,40 +96,15 @@ Public Class ViewInventory
             mySql.Close()
             mySql.Dispose()
         End If
-        comboItemStatus.SelectedIndex = 0
+        comboItemStatus.SelectedIndex = 1
         comboItemStatus.Enabled = False
         txtItemName.Enabled = True
+        comboReason.Enabled = False
         getItemHistory()
 
 
     End Sub
-    Private Sub clearEverything()
-        txtItemId.Clear()
-        txtItemName.Clear()
-        comboItemStatus.SelectedIndex = 0
-        txtItemStock.Clear()
-        txtRemarks.Clear()
 
-
-        comboTransactionType.SelectedIndex = 0
-        txtStockItemName.Clear()
-        txtQuantity.Clear()
-        txtTransactionBy.Clear()
-        txtReason.Clear()
-
-
-        labelItemId.Text = ""
-        labelItemName.Text = ""
-        labelItemStock.Text = ""
-        labelRemarks.Text = ""
-        labelAddedBy.Text = ""
-        labelAddedOn.Text = ""
-
-        Panel12.VerticalScroll.Value = 0
-        panel123.VerticalScroll.Value = 0
-        Panel3.VerticalScroll.Value = 0
-
-    End Sub
 
     Private Sub getItemHistory()
 
@@ -168,70 +152,79 @@ Public Class ViewInventory
 
         comboItemStatus.Enabled = True
         comboItemStatus.SelectedIndex = comboItemStatus.FindStringExact(labelItemStatus.Text)
-
+        comboReason.SelectedIndex = comboReason.FindStringExact(itemReason)
         txtItemId.Text = labelItemId.Text
         txtItemName.Text = labelItemName.Text
-        txtItemStock.Text = labelItemStock.Text
+        txtItemColor.Text = If(labelItemColor.Text = "N/A", "", labelItemColor.Text)
+        txtItemSerial.Text = If(labelItemSerial.Text = "N/A", "", labelItemSerial.Text)
         txtRemarks.Text = labelRemarks.Text
     End Sub
 
     Private Sub btnSaveItem_Click(sender As Object, e As EventArgs) Handles btnSaveItem.Click
-        If txtItemName.Text.Trim = "" Or txtItemStock.Text.Trim = "" Then
-            MsgBox("Please Fill out the required fields!", vbCritical, "Warning")
+        If txtItemName.Text.Trim = "" Then
+            MsgBox("Please fill out a valid item name!", vbCritical, "Warning")
             Exit Sub
-        Else
-            Dim mySql As MySqlConnection
-            mySql = New MySqlConnection(mySqlConn)
-            On Error Resume Next
-            mySql.Open()
-
-            Select Case Err.Number
-                Case 0
-                Case Else
-                    MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
-            End Select
-
-            Dim cmd As MySqlCommand
-            cmd = mySql.CreateCommand()
-            cmd.CommandType = CommandType.Text
-
-            If action = "modify" Then
-                cmd.CommandText = "UPDATE item_list SET item_name = @itemname, item_status = @itemstatus, remarks = @remarks where item_id = @itemid"
-                cmd.Parameters.AddWithValue("@itemid", itemId)
-                cmd.Parameters.AddWithValue("@itemname", txtItemName.Text)
-                cmd.Parameters.AddWithValue("@itemstatus", comboItemStatus.Text)
-                cmd.Parameters.AddWithValue("@remarks", txtRemarks.Text)
-
-                cmd.ExecuteNonQuery()
-            ElseIf action = "add" Then
-                cmd.CommandText = "INSERT INTO item_list (item_name, item_status, item_stock, added_by, added_on, remarks) values (@itemname, @itemstatus, @itemstock, @addedby, @addedon, @remarks)"
-                cmd.Parameters.AddWithValue("@itemname", txtItemName.Text)
-                cmd.Parameters.AddWithValue("@itemstatus", comboItemStatus.Text)
-                cmd.Parameters.AddWithValue("@itemstock", txtItemStock.Text)
-                cmd.Parameters.AddWithValue("@addedby", Main_Form.account_credentials)
-                cmd.Parameters.AddWithValue("@addedon", Date.Now)
-                cmd.Parameters.AddWithValue("@remarks", txtRemarks.Text)
-
-                cmd.ExecuteNonQuery()
-            End If
-
-            cmd.Dispose()
-            mySql.Close()
-            mySql.Dispose()
-
-            MsgBox("Item Saved!", vbInformation, "Information")
-            clearEverything()
-            Me.Close()
-            Main_Form.txtSearchInventory.Text = "Search by Item Name or ID"
-            Main_Form.btnInventory.PerformClick()
         End If
+        If comboItemStatus.SelectedIndex = 0 And comboReason.SelectedIndex = -1 Then
+            MsgBox("Please fill out a valid reason for unavailability!", vbCritical, "Warning")
+            Exit Sub
+        End If
+
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        If action = "modify" Then
+            cmd.CommandText = "UPDATE item_list SET item_name = @itemname, item_status = @itemstatus, item_reason = @itemreason, remarks = @remarks where item_id = @itemid"
+            cmd.Parameters.AddWithValue("@itemid", itemId)
+            cmd.Parameters.AddWithValue("@itemname", txtItemName.Text)
+            cmd.Parameters.AddWithValue("@itemreason", comboReason.Text)
+            cmd.Parameters.AddWithValue("@itemstatus", comboItemStatus.Text)
+            cmd.Parameters.AddWithValue("@remarks", txtRemarks.Text)
+
+            cmd.ExecuteNonQuery()
+        ElseIf action = "add" Then
+            cmd.CommandText = "INSERT INTO item_list (item_name, item_status, item_stock, item_reason, item_color, item_borrowed, item_unusable, serial_no, added_by, added_on, remarks) values (@itemname, @itemstatus, 0, @itemreason, 0, 0, @itemcolor, @itemserial, @addedby, @addedon, @remarks)"
+            cmd.Parameters.AddWithValue("@itemname", txtItemName.Text)
+            cmd.Parameters.AddWithValue("@itemstatus", comboItemStatus.Text)
+            cmd.Parameters.AddWithValue("@itemreason", comboReason.Text)
+            cmd.Parameters.AddWithValue("@itemcolor", txtItemColor.Text)
+            cmd.Parameters.AddWithValue("@itemserial", txtItemSerial.Text)
+
+            cmd.Parameters.AddWithValue("@addedby", Main_Form.account_credentials)
+            cmd.Parameters.AddWithValue("@addedon", Date.Now)
+            cmd.Parameters.AddWithValue("@remarks", txtRemarks.Text)
+
+            cmd.ExecuteNonQuery()
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+
+        MsgBox("Item Saved!", vbInformation, "Information")
+        isSaved = True
+        Me.Close()
+        Main_Form.txtSearchInventory.Text = "Search by Item Name or ID"
+        Main_Form.btnInventory.PerformClick()
     End Sub
-    Private Sub txtView_KeyDown(sender As Object, e As KeyEventArgs) Handles txtItemStock.KeyDown, txtItemName.KeyDown, txtStockItemName.KeyDown, txtQuantity.KeyDown, txtTransactionBy.KeyDown
+    Private Sub txtView_KeyDown(sender As Object, e As KeyEventArgs) Handles txtItemName.KeyDown, txtStockItemName.KeyDown, txtQuantity.KeyDown, txtTransactionBy.KeyDown
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
         End If
     End Sub
-    Private Sub txtViewNumbers_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtItemStock.KeyPress, txtQuantity.KeyPress
+    Private Sub txtViewNumbers_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtQuantity.KeyPress
         checkInputNumbersOnly(e)
     End Sub
     Private Sub txtStockItemName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtStockItemName.KeyPress
@@ -322,7 +315,7 @@ Public Class ViewInventory
             updateStock(status, newStocks)
 
             MsgBox("Stock Updated!", vbInformation, "Information")
-            clearEverything()
+            isSaved = True
             Me.Close()
             Main_Form.txtSearchInventory.Text = "Search by Item Name or ID"
             Main_Form.btnInventory.PerformClick()
@@ -390,4 +383,12 @@ Public Class ViewInventory
 
         Return remainingStocks
     End Function
+
+    Private Sub comboItemStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboItemStatus.SelectedIndexChanged
+        If comboItemStatus.SelectedIndex = 0 Then
+            comboReason.Enabled = True
+        Else
+            comboReason.Enabled = False
+        End If
+    End Sub
 End Class
