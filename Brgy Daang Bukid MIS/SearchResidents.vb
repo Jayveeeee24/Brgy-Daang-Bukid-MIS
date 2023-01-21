@@ -198,7 +198,8 @@ Public Class Search_Residents
                 Main_Form.txtRespondent2.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
                 Main_Form.certificateRespondent2 = datagridResident.Rows(e.RowIndex).Cells(2).Value
 
-
+            ElseIf origin = "transactBy" Then
+                ViewInventory.txtTransactionBy.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
             ElseIf origin = "Official" Then
                 AppointOfficial.residentId = datagridResident.Rows(e.RowIndex).Cells(0).Value
                 AppointOfficial.txtOfficialName.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value

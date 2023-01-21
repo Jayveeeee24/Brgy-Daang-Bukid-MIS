@@ -23,8 +23,8 @@ Partial Class SearchItems
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SearchItems))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanel19 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnSearchItems = New System.Windows.Forms.Button()
         Me.txtSearchitems = New System.Windows.Forms.TextBox()
@@ -32,6 +32,7 @@ Partial Class SearchItems
         Me.datagridItems = New System.Windows.Forms.DataGridView()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TableLayoutPanel19.SuspendLayout()
         Me.datagridResidentParent.SuspendLayout()
@@ -52,7 +53,7 @@ Partial Class SearchItems
         Me.TableLayoutPanel19.Padding = New System.Windows.Forms.Padding(5)
         Me.TableLayoutPanel19.RowCount = 1
         Me.TableLayoutPanel19.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel19.Size = New System.Drawing.Size(616, 43)
+        Me.TableLayoutPanel19.Size = New System.Drawing.Size(946, 43)
         Me.TableLayoutPanel19.TabIndex = 2
         '
         'btnSearchItems
@@ -67,7 +68,7 @@ Partial Class SearchItems
         Me.btnSearchItems.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchItems.ForeColor = System.Drawing.Color.White
         Me.btnSearchItems.Image = CType(resources.GetObject("btnSearchItems.Image"), System.Drawing.Image)
-        Me.btnSearchItems.Location = New System.Drawing.Point(571, 8)
+        Me.btnSearchItems.Location = New System.Drawing.Point(901, 8)
         Me.btnSearchItems.Name = "btnSearchItems"
         Me.btnSearchItems.Size = New System.Drawing.Size(37, 27)
         Me.btnSearchItems.TabIndex = 16
@@ -86,7 +87,7 @@ Partial Class SearchItems
         Me.txtSearchitems.MaxLength = 50
         Me.txtSearchitems.Multiline = True
         Me.txtSearchitems.Name = "txtSearchitems"
-        Me.txtSearchitems.Size = New System.Drawing.Size(557, 27)
+        Me.txtSearchitems.Size = New System.Drawing.Size(864, 27)
         Me.txtSearchitems.TabIndex = 12
         Me.txtSearchitems.Text = "Search by item name"
         '
@@ -97,7 +98,7 @@ Partial Class SearchItems
         Me.datagridResidentParent.Location = New System.Drawing.Point(0, 43)
         Me.datagridResidentParent.Name = "datagridResidentParent"
         Me.datagridResidentParent.Padding = New System.Windows.Forms.Padding(7)
-        Me.datagridResidentParent.Size = New System.Drawing.Size(616, 292)
+        Me.datagridResidentParent.Size = New System.Drawing.Size(946, 470)
         Me.datagridResidentParent.TabIndex = 15
         '
         'datagridItems
@@ -108,32 +109,32 @@ Partial Class SearchItems
         Me.datagridItems.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.datagridItems.BackgroundColor = System.Drawing.SystemColors.Control
         Me.datagridItems.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(3)
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datagridItems.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(3)
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datagridItems.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.datagridItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.datagridItems.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn1})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.Padding = New System.Windows.Forms.Padding(5)
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.datagridItems.DefaultCellStyle = DataGridViewCellStyle2
+        Me.datagridItems.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.DataGridViewTextBoxColumn2, Me.Column1, Me.DataGridViewTextBoxColumn1})
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.Padding = New System.Windows.Forms.Padding(5)
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.datagridItems.DefaultCellStyle = DataGridViewCellStyle4
         Me.datagridItems.Dock = System.Windows.Forms.DockStyle.Fill
         Me.datagridItems.Location = New System.Drawing.Point(7, 7)
         Me.datagridItems.Name = "datagridItems"
         Me.datagridItems.ReadOnly = True
         Me.datagridItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datagridItems.Size = New System.Drawing.Size(602, 278)
+        Me.datagridItems.Size = New System.Drawing.Size(932, 456)
         Me.datagridItems.TabIndex = 13
         '
         'Column3
@@ -148,6 +149,12 @@ Partial Class SearchItems
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
         '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Item Stock"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        '
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.HeaderText = "Item Status"
@@ -158,7 +165,7 @@ Partial Class SearchItems
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(616, 335)
+        Me.ClientSize = New System.Drawing.Size(946, 513)
         Me.Controls.Add(Me.datagridResidentParent)
         Me.Controls.Add(Me.TableLayoutPanel19)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -182,5 +189,6 @@ Partial Class SearchItems
     Friend WithEvents datagridItems As DataGridView
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
 End Class

@@ -1342,7 +1342,8 @@ Public Class Main_Form
         ViewInventory.ShowDialog()
     End Sub
     Private Sub btnBorrowOrReturn_Click(sender As Object, e As EventArgs) Handles btnBorrowOrReturn.Click
-
+        ViewInventory.action = "borrowReturn"
+        ViewInventory.ShowDialog()
     End Sub
 
 

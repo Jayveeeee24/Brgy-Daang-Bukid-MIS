@@ -760,7 +760,7 @@ Partial Class ViewComplaints
         Me.dateThirdHearing.Location = New System.Drawing.Point(275, 306)
         Me.dateThirdHearing.Name = "dateThirdHearing"
         Me.dateThirdHearing.Size = New System.Drawing.Size(303, 26)
-        Me.dateThirdHearing.TabIndex = 139
+        Me.dateThirdHearing.TabIndex = 25
         '
         'Label50
         '
@@ -779,7 +779,7 @@ Partial Class ViewComplaints
         Me.dateSecondHearing.Location = New System.Drawing.Point(275, 195)
         Me.dateSecondHearing.Name = "dateSecondHearing"
         Me.dateSecondHearing.Size = New System.Drawing.Size(303, 26)
-        Me.dateSecondHearing.TabIndex = 137
+        Me.dateSecondHearing.TabIndex = 23
         '
         'Label49
         '
@@ -799,7 +799,7 @@ Partial Class ViewComplaints
         Me.dateFirstHearing.Location = New System.Drawing.Point(272, 75)
         Me.dateFirstHearing.Name = "dateFirstHearing"
         Me.dateFirstHearing.Size = New System.Drawing.Size(303, 26)
-        Me.dateFirstHearing.TabIndex = 135
+        Me.dateFirstHearing.TabIndex = 21
         '
         'comboFirstResult
         '
@@ -811,7 +811,7 @@ Partial Class ViewComplaints
         Me.comboFirstResult.Location = New System.Drawing.Point(272, 41)
         Me.comboFirstResult.Name = "comboFirstResult"
         Me.comboFirstResult.Size = New System.Drawing.Size(303, 28)
-        Me.comboFirstResult.TabIndex = 131
+        Me.comboFirstResult.TabIndex = 20
         '
         'Label23
         '
@@ -833,7 +833,7 @@ Partial Class ViewComplaints
         Me.comboThirdResult.Location = New System.Drawing.Point(275, 272)
         Me.comboThirdResult.Name = "comboThirdResult"
         Me.comboThirdResult.Size = New System.Drawing.Size(303, 28)
-        Me.comboThirdResult.TabIndex = 133
+        Me.comboThirdResult.TabIndex = 24
         '
         'Label26
         '
@@ -851,11 +851,12 @@ Partial Class ViewComplaints
         Me.comboSecondResult.Enabled = False
         Me.comboSecondResult.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboSecondResult.FormattingEnabled = True
+        Me.comboSecondResult.ItemHeight = 20
         Me.comboSecondResult.Items.AddRange(New Object() {"Unsettled", "Settled"})
         Me.comboSecondResult.Location = New System.Drawing.Point(275, 161)
         Me.comboSecondResult.Name = "comboSecondResult"
         Me.comboSecondResult.Size = New System.Drawing.Size(303, 28)
-        Me.comboSecondResult.TabIndex = 132
+        Me.comboSecondResult.TabIndex = 22
         '
         'Label34
         '
@@ -918,7 +919,7 @@ Partial Class ViewComplaints
         Me.txtDetails.Multiline = True
         Me.txtDetails.Name = "txtDetails"
         Me.txtDetails.Size = New System.Drawing.Size(303, 69)
-        Me.txtDetails.TabIndex = 119
+        Me.txtDetails.TabIndex = 17
         Me.txtDetails.Tag = ""
         '
         'Label38
@@ -948,7 +949,7 @@ Partial Class ViewComplaints
         Me.datePickerDateComplaint.Location = New System.Drawing.Point(262, 4)
         Me.datePickerDateComplaint.Name = "datePickerDateComplaint"
         Me.datePickerDateComplaint.Size = New System.Drawing.Size(303, 26)
-        Me.datePickerDateComplaint.TabIndex = 121
+        Me.datePickerDateComplaint.TabIndex = 15
         '
         'Label39
         '
@@ -992,7 +993,7 @@ Partial Class ViewComplaints
         Me.txtStatus.Multiline = True
         Me.txtStatus.Name = "txtStatus"
         Me.txtStatus.Size = New System.Drawing.Size(303, 27)
-        Me.txtStatus.TabIndex = 125
+        Me.txtStatus.TabIndex = 14
         Me.txtStatus.Tag = ""
         '
         'panelDefendantDetails
@@ -1018,7 +1019,7 @@ Partial Class ViewComplaints
         Me.txtDefendantAddress.Multiline = True
         Me.txtDefendantAddress.Name = "txtDefendantAddress"
         Me.txtDefendantAddress.Size = New System.Drawing.Size(303, 27)
-        Me.txtDefendantAddress.TabIndex = 146
+        Me.txtDefendantAddress.TabIndex = 12
         Me.txtDefendantAddress.Tag = ""
         '
         'Label46
@@ -1052,7 +1053,7 @@ Partial Class ViewComplaints
         Me.txtDefendantContactNo.Multiline = True
         Me.txtDefendantContactNo.Name = "txtDefendantContactNo"
         Me.txtDefendantContactNo.Size = New System.Drawing.Size(303, 27)
-        Me.txtDefendantContactNo.TabIndex = 148
+        Me.txtDefendantContactNo.TabIndex = 13
         Me.txtDefendantContactNo.Tag = ""
         '
         'panelDefendantRadio
@@ -1084,7 +1085,7 @@ Partial Class ViewComplaints
         Me.radioDefendantResident.Location = New System.Drawing.Point(305, 6)
         Me.radioDefendantResident.Name = "radioDefendantResident"
         Me.radioDefendantResident.Size = New System.Drawing.Size(87, 20)
-        Me.radioDefendantResident.TabIndex = 0
+        Me.radioDefendantResident.TabIndex = 11
         Me.radioDefendantResident.TabStop = True
         Me.radioDefendantResident.Text = "Resident"
         Me.radioDefendantResident.UseVisualStyleBackColor = True
@@ -1140,7 +1141,7 @@ Partial Class ViewComplaints
         Me.txtDefendant.Multiline = True
         Me.txtDefendant.Name = "txtDefendant"
         Me.txtDefendant.Size = New System.Drawing.Size(303, 27)
-        Me.txtDefendant.TabIndex = 117
+        Me.txtDefendant.TabIndex = 10
         Me.txtDefendant.Tag = ""
         '
         'panelComplainantDetails
@@ -1166,7 +1167,7 @@ Partial Class ViewComplaints
         Me.txtComplainantAddress.Multiline = True
         Me.txtComplainantAddress.Name = "txtComplainantAddress"
         Me.txtComplainantAddress.Size = New System.Drawing.Size(303, 27)
-        Me.txtComplainantAddress.TabIndex = 146
+        Me.txtComplainantAddress.TabIndex = 5
         Me.txtComplainantAddress.Tag = ""
         '
         'Label11
@@ -1200,7 +1201,7 @@ Partial Class ViewComplaints
         Me.txtComplainantContactNo.Multiline = True
         Me.txtComplainantContactNo.Name = "txtComplainantContactNo"
         Me.txtComplainantContactNo.Size = New System.Drawing.Size(303, 27)
-        Me.txtComplainantContactNo.TabIndex = 148
+        Me.txtComplainantContactNo.TabIndex = 7
         Me.txtComplainantContactNo.Tag = ""
         '
         'panelComplainantRadio
@@ -1232,7 +1233,7 @@ Partial Class ViewComplaints
         Me.radioComplainantResident.Location = New System.Drawing.Point(305, 6)
         Me.radioComplainantResident.Name = "radioComplainantResident"
         Me.radioComplainantResident.Size = New System.Drawing.Size(87, 20)
-        Me.radioComplainantResident.TabIndex = 0
+        Me.radioComplainantResident.TabIndex = 4
         Me.radioComplainantResident.TabStop = True
         Me.radioComplainantResident.Text = "Resident"
         Me.radioComplainantResident.UseVisualStyleBackColor = True
@@ -1288,7 +1289,7 @@ Partial Class ViewComplaints
         Me.txtComplainant.Multiline = True
         Me.txtComplainant.Name = "txtComplainant"
         Me.txtComplainant.Size = New System.Drawing.Size(303, 27)
-        Me.txtComplainant.TabIndex = 117
+        Me.txtComplainant.TabIndex = 3
         Me.txtComplainant.Tag = ""
         '
         'Panel9
@@ -1322,7 +1323,7 @@ Partial Class ViewComplaints
         Me.txtComplaint.Multiline = True
         Me.txtComplaint.Name = "txtComplaint"
         Me.txtComplaint.Size = New System.Drawing.Size(303, 27)
-        Me.txtComplaint.TabIndex = 115
+        Me.txtComplaint.TabIndex = 2
         Me.txtComplaint.Tag = ""
         '
         'panelComplaintId
@@ -1347,7 +1348,7 @@ Partial Class ViewComplaints
         Me.txtComplaintId.Multiline = True
         Me.txtComplaintId.Name = "txtComplaintId"
         Me.txtComplaintId.Size = New System.Drawing.Size(303, 27)
-        Me.txtComplaintId.TabIndex = 116
+        Me.txtComplaintId.TabIndex = 1
         Me.txtComplaintId.Tag = ""
         '
         'labelId

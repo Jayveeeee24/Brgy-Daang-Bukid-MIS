@@ -402,7 +402,7 @@ Partial Class ViewBlotters
         Me.txtBlotterDetails.Multiline = True
         Me.txtBlotterDetails.Name = "txtBlotterDetails"
         Me.txtBlotterDetails.Size = New System.Drawing.Size(303, 79)
-        Me.txtBlotterDetails.TabIndex = 120
+        Me.txtBlotterDetails.TabIndex = 12
         Me.txtBlotterDetails.Tag = ""
         '
         'Label38
@@ -432,7 +432,7 @@ Partial Class ViewBlotters
         Me.datePickerSubmittedOn.Location = New System.Drawing.Point(262, 4)
         Me.datePickerSubmittedOn.Name = "datePickerSubmittedOn"
         Me.datePickerSubmittedOn.Size = New System.Drawing.Size(303, 26)
-        Me.datePickerSubmittedOn.TabIndex = 122
+        Me.datePickerSubmittedOn.TabIndex = 11
         '
         'Label39
         '
@@ -485,7 +485,7 @@ Partial Class ViewBlotters
         Me.txtSubmittedBy.Multiline = True
         Me.txtSubmittedBy.Name = "txtSubmittedBy"
         Me.txtSubmittedBy.Size = New System.Drawing.Size(303, 27)
-        Me.txtSubmittedBy.TabIndex = 119
+        Me.txtSubmittedBy.TabIndex = 10
         Me.txtSubmittedBy.Tag = ""
         '
         'Label40
@@ -521,7 +521,7 @@ Partial Class ViewBlotters
         Me.txtSuspectAddress.Multiline = True
         Me.txtSuspectAddress.Name = "txtSuspectAddress"
         Me.txtSuspectAddress.Size = New System.Drawing.Size(303, 27)
-        Me.txtSuspectAddress.TabIndex = 146
+        Me.txtSuspectAddress.TabIndex = 5
         Me.txtSuspectAddress.Tag = ""
         '
         'Label11
@@ -555,7 +555,7 @@ Partial Class ViewBlotters
         Me.txtSuspectContactNo.Multiline = True
         Me.txtSuspectContactNo.Name = "txtSuspectContactNo"
         Me.txtSuspectContactNo.Size = New System.Drawing.Size(303, 27)
-        Me.txtSuspectContactNo.TabIndex = 148
+        Me.txtSuspectContactNo.TabIndex = 7
         Me.txtSuspectContactNo.Tag = ""
         '
         'panelSuspectRadio
@@ -587,7 +587,7 @@ Partial Class ViewBlotters
         Me.radioSuspectResident.Location = New System.Drawing.Point(305, 6)
         Me.radioSuspectResident.Name = "radioSuspectResident"
         Me.radioSuspectResident.Size = New System.Drawing.Size(87, 20)
-        Me.radioSuspectResident.TabIndex = 0
+        Me.radioSuspectResident.TabIndex = 4
         Me.radioSuspectResident.TabStop = True
         Me.radioSuspectResident.Text = "Resident"
         Me.radioSuspectResident.UseVisualStyleBackColor = True
@@ -633,7 +633,7 @@ Partial Class ViewBlotters
         Me.txtSuspect.Multiline = True
         Me.txtSuspect.Name = "txtSuspect"
         Me.txtSuspect.Size = New System.Drawing.Size(303, 27)
-        Me.txtSuspect.TabIndex = 129
+        Me.txtSuspect.TabIndex = 3
         Me.txtSuspect.Tag = ""
         '
         'Label42
@@ -667,7 +667,7 @@ Partial Class ViewBlotters
         Me.comboBlotteredFor.Location = New System.Drawing.Point(262, 3)
         Me.comboBlotteredFor.Name = "comboBlotteredFor"
         Me.comboBlotteredFor.Size = New System.Drawing.Size(303, 28)
-        Me.comboBlotteredFor.TabIndex = 95
+        Me.comboBlotteredFor.TabIndex = 2
         '
         'Label43
         '
@@ -701,7 +701,7 @@ Partial Class ViewBlotters
         Me.txtBlotterId.Multiline = True
         Me.txtBlotterId.Name = "txtBlotterId"
         Me.txtBlotterId.Size = New System.Drawing.Size(303, 27)
-        Me.txtBlotterId.TabIndex = 117
+        Me.txtBlotterId.TabIndex = 1
         Me.txtBlotterId.Tag = ""
         '
         'labelId

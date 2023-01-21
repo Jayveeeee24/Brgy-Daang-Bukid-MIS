@@ -117,6 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnSearchTransactionBy.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAQBJREFUSEvt
+        lD0OAVEYRaehlyi0NqBkA1iUxaBSYQd2oNFYgZ8VKETkOTfvFiRMvpmoxElOJu6b+z3mofhTm5TSGNd4
+        xpuvKxz7lnowoIlzLGOGTVeq4bK44AS72PBVr5WLqStxKOmxCA0ZOH5BudfF0HEMCnrmYuLoLVrPt6Wl
+        oxgUdJCi6+gtWs+3pZOjGBSuuVd+gFrPt6WroxgUqn6Co6MYFKqewcJRDAqj3At9i+7YdxyHUvR3cMC2
+        a3Eo6QCnmvABvXMNFzusvomgOMQlnlD/RUdcYB/bqOGi/iZlMLSFW+0Ae+x46Xsw9Hc2eT6TjePvwmBt
+        ssGeoz8RiuIBlETmngHpyLIAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnSearchItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAQBJREFUSEvt
+        lD0OAVEYRaehlyi0NqBkA1iUxaBSYQd2oNFYgZ8VKETkOTfvFiRMvpmoxElOJu6b+z3mofhTm5TSGNd4
+        xpuvKxz7lnowoIlzLGOGTVeq4bK44AS72PBVr5WLqStxKOmxCA0ZOH5BudfF0HEMCnrmYuLoLVrPt6Wl
+        oxgUdJCi6+gtWs+3pZOjGBSuuVd+gFrPt6WroxgUqn6Co6MYFKqewcJRDAqj3At9i+7YdxyHUvR3cMC2
+        a3Eo6QCnmvABvXMNFzusvomgOMQlnlD/RUdcYB/bqOGi/iZlMLSFW+0Ae+x46Xsw9Hc2eT6TjePvwmBt
+        ssGeoz8RiuIBlETmngHpyLIAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="Column14.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -135,17 +156,6 @@
   <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnSearchItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAQBJREFUSEvt
-        lD0OAVEYRaehlyi0NqBkA1iUxaBSYQd2oNFYgZ8VKETkOTfvFiRMvpmoxElOJu6b+z3mofhTm5TSGNd4
-        xpuvKxz7lnowoIlzLGOGTVeq4bK44AS72PBVr5WLqStxKOmxCA0ZOH5BudfF0HEMCnrmYuLoLVrPt6Wl
-        oxgUdJCi6+gtWs+3pZOjGBSuuVd+gFrPt6WroxgUqn6Co6MYFKqewcJRDAqj3At9i+7YdxyHUvR3cMC2
-        a3Eo6QCnmvABvXMNFzusvomgOMQlnlD/RUdcYB/bqOGi/iZlMLSFW+0Ae+x46Xsw9Hc2eT6TjePvwmBt
-        ssGeoz8RiuIBlETmngHpyLIAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAGBgAAAEAIACICQAAFgAAACgAAAAYAAAAMAAAAAEAIAAAAAAAAAkAAAAAAAAAAAAAAAAAAAAA

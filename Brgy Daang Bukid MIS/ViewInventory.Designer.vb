@@ -22,8 +22,8 @@ Partial Class ViewInventory
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ViewInventory))
         Me.mainTabControl = New System.Windows.Forms.TabControl()
         Me.pageView = New System.Windows.Forms.TabPage()
@@ -33,12 +33,6 @@ Partial Class ViewInventory
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.dataGridItemHistory = New System.Windows.Forms.DataGridView()
-        Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.labelRemarks = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.labelAddedOn = New System.Windows.Forms.Label()
@@ -75,8 +69,6 @@ Partial Class ViewInventory
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnUpdateStock = New System.Windows.Forms.Button()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btnSearchItem = New System.Windows.Forms.Button()
         Me.txtQuantity = New System.Windows.Forms.TextBox()
@@ -105,6 +97,17 @@ Partial Class ViewInventory
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtItemSerial = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.comboItemState = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnSearchTransactionBy = New System.Windows.Forms.Button()
+        Me.dateReturn = New System.Windows.Forms.DateTimePicker()
+        Me.labelReturnDate = New System.Windows.Forms.Label()
         Me.mainTabControl.SuspendLayout()
         Me.pageView.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -120,7 +123,6 @@ Partial Class ViewInventory
         Me.pageInOut.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -237,26 +239,26 @@ Partial Class ViewInventory
         Me.dataGridItemHistory.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dataGridItemHistory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dataGridItemHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle15.Padding = New System.Windows.Forms.Padding(3)
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dataGridItemHistory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.Padding = New System.Windows.Forms.Padding(3)
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dataGridItemHistory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dataGridItemHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dataGridItemHistory.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column14, Me.Column1, Me.Column2, Me.Column4, Me.Column3, Me.Column5})
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle16.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle16.Padding = New System.Windows.Forms.Padding(7)
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
-        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dataGridItemHistory.DefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.Padding = New System.Windows.Forms.Padding(7)
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridItemHistory.DefaultCellStyle = DataGridViewCellStyle6
         Me.dataGridItemHistory.Location = New System.Drawing.Point(26, 343)
         Me.dataGridItemHistory.MultiSelect = False
         Me.dataGridItemHistory.Name = "dataGridItemHistory"
@@ -264,49 +266,6 @@ Partial Class ViewInventory
         Me.dataGridItemHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dataGridItemHistory.Size = New System.Drawing.Size(859, 306)
         Me.dataGridItemHistory.TabIndex = 70
-        '
-        'Column14
-        '
-        Me.Column14.HeaderText = "ID"
-        Me.Column14.Name = "Column14"
-        Me.Column14.ReadOnly = True
-        Me.Column14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Transaction"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Quantity"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Transact by"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Date"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Reason"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
         '
         'labelRemarks
         '
@@ -721,16 +680,15 @@ Partial Class ViewInventory
         '
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.Panel2, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Panel3, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel3, 0, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(10, 5)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 3
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.487085!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.36531!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.1476!))
+        Me.TableLayoutPanel1.RowCount = 2
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.87379!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.126214!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(927, 515)
         Me.TableLayoutPanel1.TabIndex = 40
         '
@@ -742,12 +700,11 @@ Partial Class ViewInventory
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.87514!))
         Me.TableLayoutPanel2.Controls.Add(Me.btnUpdateStock, 2, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 465)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 471)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.Padding = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.TableLayoutPanel2.RowCount = 1
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(921, 47)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(921, 41)
         Me.TableLayoutPanel2.TabIndex = 37
         '
         'btnUpdateStock
@@ -763,41 +720,26 @@ Partial Class ViewInventory
         Me.btnUpdateStock.ForeColor = System.Drawing.Color.White
         Me.btnUpdateStock.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.save
         Me.btnUpdateStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnUpdateStock.Location = New System.Drawing.Point(783, 10)
+        Me.btnUpdateStock.Location = New System.Drawing.Point(783, 0)
         Me.btnUpdateStock.Margin = New System.Windows.Forms.Padding(0)
         Me.btnUpdateStock.Name = "btnUpdateStock"
-        Me.btnUpdateStock.Size = New System.Drawing.Size(138, 37)
+        Me.btnUpdateStock.Size = New System.Drawing.Size(138, 41)
         Me.btnUpdateStock.TabIndex = 34
         Me.btnUpdateStock.TabStop = False
         Me.btnUpdateStock.Text = "  Update Stock"
         Me.btnUpdateStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnUpdateStock.UseVisualStyleBackColor = False
         '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(3, 3)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(921, 37)
-        Me.Panel2.TabIndex = 78
-        '
-        'Label1
-        '
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label1.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(0, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(921, 37)
-        Me.Label1.TabIndex = 71
-        Me.Label1.Text = "STOCK INFORMATION"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'Panel3
         '
         Me.Panel3.AutoScroll = True
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.labelReturnDate)
+        Me.Panel3.Controls.Add(Me.dateReturn)
+        Me.Panel3.Controls.Add(Me.btnSearchTransactionBy)
+        Me.Panel3.Controls.Add(Me.comboItemState)
+        Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Controls.Add(Me.btnSearchItem)
         Me.Panel3.Controls.Add(Me.txtQuantity)
         Me.Panel3.Controls.Add(Me.Label12)
@@ -812,9 +754,9 @@ Partial Class ViewInventory
         Me.Panel3.Controls.Add(Me.Label11)
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(3, 46)
+        Me.Panel3.Location = New System.Drawing.Point(3, 3)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(921, 413)
+        Me.Panel3.Size = New System.Drawing.Size(921, 462)
         Me.Panel3.TabIndex = 38
         '
         'btnSearchItem
@@ -842,19 +784,19 @@ Partial Class ViewInventory
         Me.txtQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtQuantity.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtQuantity.ForeColor = System.Drawing.Color.Black
-        Me.txtQuantity.Location = New System.Drawing.Point(319, 169)
+        Me.txtQuantity.Location = New System.Drawing.Point(319, 212)
         Me.txtQuantity.MaxLength = 100
         Me.txtQuantity.Multiline = True
         Me.txtQuantity.Name = "txtQuantity"
         Me.txtQuantity.Size = New System.Drawing.Size(303, 27)
-        Me.txtQuantity.TabIndex = 139
+        Me.txtQuantity.TabIndex = 4
         Me.txtQuantity.Tag = ""
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(113, 172)
+        Me.Label12.Location = New System.Drawing.Point(113, 215)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(101, 18)
         Me.Label12.TabIndex = 138
@@ -865,11 +807,10 @@ Partial Class ViewInventory
         Me.comboTransactionType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboTransactionType.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboTransactionType.FormattingEnabled = True
-        Me.comboTransactionType.Items.AddRange(New Object() {"Stock In", "Stock Out"})
         Me.comboTransactionType.Location = New System.Drawing.Point(319, 125)
         Me.comboTransactionType.Name = "comboTransactionType"
         Me.comboTransactionType.Size = New System.Drawing.Size(303, 28)
-        Me.comboTransactionType.TabIndex = 137
+        Me.comboTransactionType.TabIndex = 2
         '
         'Label9
         '
@@ -887,12 +828,12 @@ Partial Class ViewInventory
         Me.txtReason.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtReason.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtReason.ForeColor = System.Drawing.Color.Black
-        Me.txtReason.Location = New System.Drawing.Point(319, 260)
+        Me.txtReason.Location = New System.Drawing.Point(321, 340)
         Me.txtReason.MaxLength = 100
         Me.txtReason.Multiline = True
         Me.txtReason.Name = "txtReason"
         Me.txtReason.Size = New System.Drawing.Size(303, 88)
-        Me.txtReason.TabIndex = 119
+        Me.txtReason.TabIndex = 7
         Me.txtReason.Tag = ""
         '
         'txtTransactionBy
@@ -901,12 +842,12 @@ Partial Class ViewInventory
         Me.txtTransactionBy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTransactionBy.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTransactionBy.ForeColor = System.Drawing.Color.Black
-        Me.txtTransactionBy.Location = New System.Drawing.Point(319, 213)
+        Me.txtTransactionBy.Location = New System.Drawing.Point(319, 256)
         Me.txtTransactionBy.MaxLength = 100
         Me.txtTransactionBy.Multiline = True
         Me.txtTransactionBy.Name = "txtTransactionBy"
         Me.txtTransactionBy.Size = New System.Drawing.Size(303, 27)
-        Me.txtTransactionBy.TabIndex = 118
+        Me.txtTransactionBy.TabIndex = 5
         Me.txtTransactionBy.Tag = ""
         '
         'txtStockItemName
@@ -920,14 +861,14 @@ Partial Class ViewInventory
         Me.txtStockItemName.Multiline = True
         Me.txtStockItemName.Name = "txtStockItemName"
         Me.txtStockItemName.Size = New System.Drawing.Size(303, 27)
-        Me.txtStockItemName.TabIndex = 116
+        Me.txtStockItemName.TabIndex = 1
         Me.txtStockItemName.Tag = ""
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(111, 263)
+        Me.Label2.Location = New System.Drawing.Point(113, 340)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(80, 18)
         Me.Label2.TabIndex = 114
@@ -937,7 +878,7 @@ Partial Class ViewInventory
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(113, 218)
+        Me.Label6.Location = New System.Drawing.Point(113, 261)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(139, 18)
         Me.Label6.TabIndex = 96
@@ -966,7 +907,7 @@ Partial Class ViewInventory
         '
         'Panel4
         '
-        Me.Panel4.Location = New System.Drawing.Point(631, 420)
+        Me.Panel4.Location = New System.Drawing.Point(820, 260)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(10, 74)
         Me.Panel4.TabIndex = 68
@@ -1125,6 +1066,106 @@ Partial Class ViewInventory
         Me.Label15.TabIndex = 142
         Me.Label15.Text = "Item Serial: "
         '
+        'comboItemState
+        '
+        Me.comboItemState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboItemState.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.comboItemState.FormattingEnabled = True
+        Me.comboItemState.Location = New System.Drawing.Point(319, 168)
+        Me.comboItemState.Name = "comboItemState"
+        Me.comboItemState.Size = New System.Drawing.Size(303, 28)
+        Me.comboItemState.TabIndex = 3
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(113, 172)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(121, 18)
+        Me.Label1.TabIndex = 143
+        Me.Label1.Text = "Item State*: "
+        '
+        'Column14
+        '
+        Me.Column14.HeaderText = "ID"
+        Me.Column14.Name = "Column14"
+        Me.Column14.ReadOnly = True
+        Me.Column14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Transaction"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Quantity"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Transact by"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Date"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Reason"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        '
+        'btnSearchTransactionBy
+        '
+        Me.btnSearchTransactionBy.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.btnSearchTransactionBy.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSearchTransactionBy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchTransactionBy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchTransactionBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchTransactionBy.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchTransactionBy.ForeColor = System.Drawing.Color.White
+        Me.btnSearchTransactionBy.Image = CType(resources.GetObject("btnSearchTransactionBy.Image"), System.Drawing.Image)
+        Me.btnSearchTransactionBy.Location = New System.Drawing.Point(639, 256)
+        Me.btnSearchTransactionBy.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnSearchTransactionBy.Name = "btnSearchTransactionBy"
+        Me.btnSearchTransactionBy.Size = New System.Drawing.Size(36, 27)
+        Me.btnSearchTransactionBy.TabIndex = 144
+        Me.btnSearchTransactionBy.TabStop = False
+        Me.btnSearchTransactionBy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSearchTransactionBy.UseVisualStyleBackColor = False
+        '
+        'dateReturn
+        '
+        Me.dateReturn.CustomFormat = ""
+        Me.dateReturn.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dateReturn.Location = New System.Drawing.Point(319, 298)
+        Me.dateReturn.Name = "dateReturn"
+        Me.dateReturn.Size = New System.Drawing.Size(303, 26)
+        Me.dateReturn.TabIndex = 145
+        Me.dateReturn.Visible = False
+        '
+        'labelReturnDate
+        '
+        Me.labelReturnDate.AutoSize = True
+        Me.labelReturnDate.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelReturnDate.Location = New System.Drawing.Point(113, 304)
+        Me.labelReturnDate.Name = "labelReturnDate"
+        Me.labelReturnDate.Size = New System.Drawing.Size(130, 18)
+        Me.labelReturnDate.TabIndex = 146
+        Me.labelReturnDate.Text = "Return Date*: "
+        Me.labelReturnDate.Visible = False
+        '
         'ViewInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1154,7 +1195,6 @@ Partial Class ViewInventory
         Me.pageInOut.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
@@ -1200,12 +1240,9 @@ Partial Class ViewInventory
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents btnUpdateStock As Button
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label1 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents txtQuantity As TextBox
     Friend WithEvents Label12 As Label
-    Friend WithEvents comboTransactionType As ComboBox
     Friend WithEvents Label9 As Label
     Friend WithEvents txtReason As TextBox
     Friend WithEvents txtTransactionBy As TextBox
@@ -1218,12 +1255,6 @@ Partial Class ViewInventory
     Friend WithEvents btnSearchItem As Button
     Friend WithEvents dataGridItemHistory As DataGridView
     Friend WithEvents Panel6 As Panel
-    Friend WithEvents Column14 As DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents txtItemId As TextBox
     Friend WithEvents labelId As Label
     Friend WithEvents Label13 As Label
@@ -1241,4 +1272,16 @@ Partial Class ViewInventory
     Friend WithEvents Label8 As Label
     Friend WithEvents comboReason As ComboBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents comboItemState As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents comboTransactionType As ComboBox
+    Friend WithEvents Column14 As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents btnSearchTransactionBy As Button
+    Friend WithEvents labelReturnDate As Label
+    Friend WithEvents dateReturn As DateTimePicker
 End Class

@@ -9,6 +9,7 @@ Public Class SearchItems
     Private Sub SearchItems_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         datagridItems.Rows.Clear()
         txtSearchitems.Text = "Search by item name"
+        btnSearchItems.PerformClick()
     End Sub
     Private Sub SearchItems_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         datagridItems.Rows.Clear()
@@ -28,12 +29,7 @@ Public Class SearchItems
 
     Private Sub btnSearchItems_Click(sender As Object, e As EventArgs) Handles btnSearchItems.Click
         datagridItems.Rows.Clear()
-        If txtSearchitems.Text.Trim = "" Then
-            txtSearchitems.Text = "Search by item name"
-            datagridItems.Rows.Clear()
-            txtSearchitems.Select()
-            Exit Sub
-        End If
+
 
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
@@ -51,12 +47,12 @@ Public Class SearchItems
         cmd = mySql.CreateCommand()
         cmd.CommandType = CommandType.Text
 
-        cmd.CommandText = "SELECT item_id, item_name, item_status from item_list where item_name LIKE @searchvalue order by item_name asc limit 10"
+        cmd.CommandText = "SELECT item_id, item_name, item_status, item_stock from item_list where item_name LIKE @searchvalue order by item_name asc limit 10"
         cmd.Parameters.AddWithValue("@searchvalue", txtSearchitems.Text.Trim & "%")
         mySQLReader = cmd.ExecuteReader
         If mySQLReader.HasRows Then
             While mySQLReader.Read
-                datagridItems.Rows.Add(New String() {mySQLReader!item_id, mySQLReader!item_name, mySQLReader!item_status})
+                datagridItems.Rows.Add(New String() {mySQLReader!item_id, mySQLReader!item_name, mySQLReader!item_stock, mySQLReader!item_status})
             End While
         End If
         datagridItems.ClearSelection()
@@ -72,5 +68,9 @@ Public Class SearchItems
             ViewInventory.txtStockItemName.Text = datagridItems.Rows(e.RowIndex).Cells(1).Value
             Me.Close()
         End If
+    End Sub
+
+    Private Sub txtSearchitems_TextChanged(sender As Object, e As EventArgs) Handles txtSearchitems.TextChanged
+        btnSearchItems.PerformClick()
     End Sub
 End Class
