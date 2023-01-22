@@ -199,6 +199,7 @@ Public Class Main_Form
         countRows()
         loadDataGrid(dataGridBrgyOfficials, Modules.BrgyOfficials)
         statisticChecker()
+        loadDashboardInventory()
 
     End Sub
     Private Sub btnResidentInfo_Click(sender As Object, e As EventArgs) Handles btnResidentInfo.Click
@@ -319,6 +320,7 @@ Public Class Main_Form
         txtSearchInventory.Text = "Search by Item Name or ID"
         loadDataGridInventory()
         countReports(Modules.Inventory)
+
     End Sub
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         Dim ans As Integer = MsgBox("Are you sure you want to log out?", MsgBoxStyle.YesNo, "Attention!")
@@ -696,6 +698,80 @@ Public Class Main_Form
 
 
 
+    Private Sub datagridInventoryDues_Click(sender As Object, e As EventArgs) Handles datagridInventoryDues.Click
+        btnInventory.PerformClick()
+        btnReturn.PerformClick()
+    End Sub
+    Private Sub datagridInventoryDues_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridInventoryDues.CellClick
+        datagridInventoryDues.ClearSelection()
+    End Sub
+    Private Sub loadDashboardInventory()
+        datagridInventoryDues.Rows.Clear()
+
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        Dim mySQLReader As MySqlDataReader
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "SELECT * from item_borrowed order by return_date desc"
+        mySQLReader = cmd.ExecuteReader
+        If mySQLReader.HasRows Then
+            While mySQLReader.Read
+                Dim date2 As Date = mySQLReader!return_date
+                datagridInventoryDues.Rows.Add(New String() {getItemNameById(mySQLReader!item_id), mySQLReader!quantity, date2.ToString("MMMM d, yyyy")})
+            End While
+        End If
+        datagridInventoryDues.ClearSelection()
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+    End Sub
+    Private Function getItemNameById(ByVal id As Integer) As String
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim itemName As String = ""
+        Dim cmd As MySqlCommand
+        Dim mySQLReader As MySqlDataReader
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "SELECT item_name from item_list where item_id = @itemid"
+        cmd.Parameters.AddWithValue("@itemid", id)
+        mySQLReader = cmd.ExecuteReader
+
+        If mySQLReader.HasRows Then
+            While mySQLReader.Read
+                itemName = mySQLReader!item_name
+            End While
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+
+        Return itemName
+    End Function
     '' ''''''''''''''''''''''RESIDENT UI DEFINITIONS''''''''''''''''''''''''
     Private Sub txtPageNoResident_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPageNoResident.KeyDown
         enterTextPageNo(e, txtPageNoResident, datagridResident, Modules.Residents, totalPageResident)
@@ -1428,7 +1504,6 @@ Public Class Main_Form
         pictureCertificates.Image = My.Resources.INDIGENCY_page_0001
 
     End Sub
-
     Private Sub btnSummon_Click(sender As Object, e As EventArgs) Handles btnSummon.Click
         clearCertificates()
 
