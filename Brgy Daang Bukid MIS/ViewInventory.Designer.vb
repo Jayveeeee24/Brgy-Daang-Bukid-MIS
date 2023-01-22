@@ -22,17 +22,31 @@ Partial Class ViewInventory
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ViewInventory))
         Me.mainTabControl = New System.Windows.Forms.TabControl()
         Me.pageView = New System.Windows.Forms.TabPage()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.labeItemUnusable = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.labelItemBorrowed = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.labelItemSerial = New System.Windows.Forms.Label()
+        Me.labelItemColor = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.dataGridItemHistory = New System.Windows.Forms.DataGridView()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.labelRemarks = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.labelAddedOn = New System.Windows.Forms.Label()
@@ -55,6 +69,12 @@ Partial Class ViewInventory
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnSaveItem = New System.Windows.Forms.Button()
         Me.panel123 = New System.Windows.Forms.Panel()
+        Me.txtItemSerial = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.txtItemColor = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.comboReason = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.txtItemId = New System.Windows.Forms.TextBox()
         Me.labelId = New System.Windows.Forms.Label()
         Me.comboItemStatus = New System.Windows.Forms.ComboBox()
@@ -70,6 +90,11 @@ Partial Class ViewInventory
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnUpdateStock = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.labelReturnDate = New System.Windows.Forms.Label()
+        Me.dateReturn = New System.Windows.Forms.DateTimePicker()
+        Me.btnSearchTransactionBy = New System.Windows.Forms.Button()
+        Me.comboItemState = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.btnSearchItem = New System.Windows.Forms.Button()
         Me.txtQuantity = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -83,31 +108,6 @@ Partial Class ViewInventory
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.labelItemSerial = New System.Windows.Forms.Label()
-        Me.labelItemColor = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.labelItemBorrowed = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.labeItemUnusable = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.comboReason = New System.Windows.Forms.ComboBox()
-        Me.txtItemColor = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtItemSerial = New System.Windows.Forms.TextBox()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.comboItemState = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnSearchTransactionBy = New System.Windows.Forms.Button()
-        Me.dateReturn = New System.Windows.Forms.DateTimePicker()
-        Me.labelReturnDate = New System.Windows.Forms.Label()
         Me.mainTabControl.SuspendLayout()
         Me.pageView.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -214,6 +214,90 @@ Partial Class ViewInventory
         Me.Panel12.Size = New System.Drawing.Size(921, 459)
         Me.Panel12.TabIndex = 38
         '
+        'labeItemUnusable
+        '
+        Me.labeItemUnusable.AutoSize = True
+        Me.labeItemUnusable.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.labeItemUnusable.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labeItemUnusable.Location = New System.Drawing.Point(700, 197)
+        Me.labeItemUnusable.Name = "labeItemUnusable"
+        Me.labeItemUnusable.Size = New System.Drawing.Size(18, 18)
+        Me.labeItemUnusable.TabIndex = 123
+        Me.labeItemUnusable.Text = "0"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(529, 197)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(94, 18)
+        Me.Label22.TabIndex = 122
+        Me.Label22.Text = "Unusable: "
+        '
+        'labelItemBorrowed
+        '
+        Me.labelItemBorrowed.AutoSize = True
+        Me.labelItemBorrowed.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.labelItemBorrowed.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelItemBorrowed.Location = New System.Drawing.Point(700, 160)
+        Me.labelItemBorrowed.Name = "labelItemBorrowed"
+        Me.labelItemBorrowed.Size = New System.Drawing.Size(18, 18)
+        Me.labelItemBorrowed.TabIndex = 121
+        Me.labelItemBorrowed.Text = "0"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(529, 160)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(98, 18)
+        Me.Label19.TabIndex = 120
+        Me.Label19.Text = "Borrowed: "
+        '
+        'labelItemSerial
+        '
+        Me.labelItemSerial.AutoSize = True
+        Me.labelItemSerial.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.labelItemSerial.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelItemSerial.Location = New System.Drawing.Point(231, 159)
+        Me.labelItemSerial.Name = "labelItemSerial"
+        Me.labelItemSerial.Size = New System.Drawing.Size(25, 18)
+        Me.labelItemSerial.TabIndex = 119
+        Me.labelItemSerial.Text = "Jr."
+        '
+        'labelItemColor
+        '
+        Me.labelItemColor.AutoSize = True
+        Me.labelItemColor.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.labelItemColor.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelItemColor.Location = New System.Drawing.Point(231, 125)
+        Me.labelItemColor.Name = "labelItemColor"
+        Me.labelItemColor.Size = New System.Drawing.Size(137, 18)
+        Me.labelItemColor.TabIndex = 118
+        Me.labelItemColor.Text = "Kamusta ka na "
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(60, 159)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(135, 18)
+        Me.Label14.TabIndex = 117
+        Me.Label14.Text = "Serial Number: "
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(60, 125)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(107, 18)
+        Me.Label16.TabIndex = 116
+        Me.Label16.Text = "Item Color: "
+        '
         'Label13
         '
         Me.Label13.AutoSize = True
@@ -239,26 +323,26 @@ Partial Class ViewInventory
         Me.dataGridItemHistory.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dataGridItemHistory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dataGridItemHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.Padding = New System.Windows.Forms.Padding(3)
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dataGridItemHistory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(3)
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dataGridItemHistory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dataGridItemHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dataGridItemHistory.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column14, Me.Column1, Me.Column2, Me.Column4, Me.Column3, Me.Column5})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.Padding = New System.Windows.Forms.Padding(7)
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dataGridItemHistory.DefaultCellStyle = DataGridViewCellStyle6
+        Me.dataGridItemHistory.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column6, Me.Column1, Me.Column2, Me.Column4, Me.Column3, Me.Column5})
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.Padding = New System.Windows.Forms.Padding(7)
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridItemHistory.DefaultCellStyle = DataGridViewCellStyle2
         Me.dataGridItemHistory.Location = New System.Drawing.Point(26, 343)
         Me.dataGridItemHistory.MultiSelect = False
         Me.dataGridItemHistory.Name = "dataGridItemHistory"
@@ -266,6 +350,45 @@ Partial Class ViewInventory
         Me.dataGridItemHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dataGridItemHistory.Size = New System.Drawing.Size(859, 306)
         Me.dataGridItemHistory.TabIndex = 70
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "Item Name"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Transaction"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Quantity"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Transact by"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Date"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Reason"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
         '
         'labelRemarks
         '
@@ -551,6 +674,76 @@ Partial Class ViewInventory
         Me.panel123.Size = New System.Drawing.Size(921, 460)
         Me.panel123.TabIndex = 38
         '
+        'txtItemSerial
+        '
+        Me.txtItemSerial.BackColor = System.Drawing.Color.White
+        Me.txtItemSerial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtItemSerial.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtItemSerial.ForeColor = System.Drawing.Color.Black
+        Me.txtItemSerial.Location = New System.Drawing.Point(366, 186)
+        Me.txtItemSerial.MaxLength = 100
+        Me.txtItemSerial.Multiline = True
+        Me.txtItemSerial.Name = "txtItemSerial"
+        Me.txtItemSerial.Size = New System.Drawing.Size(303, 27)
+        Me.txtItemSerial.TabIndex = 4
+        Me.txtItemSerial.Tag = ""
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(131, 191)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(111, 18)
+        Me.Label15.TabIndex = 142
+        Me.Label15.Text = "Item Serial: "
+        '
+        'txtItemColor
+        '
+        Me.txtItemColor.BackColor = System.Drawing.Color.White
+        Me.txtItemColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtItemColor.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtItemColor.ForeColor = System.Drawing.Color.Black
+        Me.txtItemColor.Location = New System.Drawing.Point(366, 147)
+        Me.txtItemColor.MaxLength = 100
+        Me.txtItemColor.Multiline = True
+        Me.txtItemColor.Name = "txtItemColor"
+        Me.txtItemColor.Size = New System.Drawing.Size(303, 27)
+        Me.txtItemColor.TabIndex = 3
+        Me.txtItemColor.Tag = ""
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(131, 152)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(107, 18)
+        Me.Label8.TabIndex = 140
+        Me.Label8.Text = "Item Color: "
+        '
+        'comboReason
+        '
+        Me.comboReason.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboReason.Enabled = False
+        Me.comboReason.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.comboReason.FormattingEnabled = True
+        Me.comboReason.Items.AddRange(New Object() {"Defective", "Damaged", "Lost", "Replaced"})
+        Me.comboReason.Location = New System.Drawing.Point(366, 264)
+        Me.comboReason.Name = "comboReason"
+        Me.comboReason.Size = New System.Drawing.Size(303, 28)
+        Me.comboReason.TabIndex = 7
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(131, 268)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(91, 18)
+        Me.Label4.TabIndex = 138
+        Me.Label4.Text = "Reason*: "
+        '
         'txtItemId
         '
         Me.txtItemId.BackColor = System.Drawing.Color.White
@@ -759,6 +952,66 @@ Partial Class ViewInventory
         Me.Panel3.Size = New System.Drawing.Size(921, 462)
         Me.Panel3.TabIndex = 38
         '
+        'labelReturnDate
+        '
+        Me.labelReturnDate.AutoSize = True
+        Me.labelReturnDate.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelReturnDate.Location = New System.Drawing.Point(113, 304)
+        Me.labelReturnDate.Name = "labelReturnDate"
+        Me.labelReturnDate.Size = New System.Drawing.Size(130, 18)
+        Me.labelReturnDate.TabIndex = 146
+        Me.labelReturnDate.Text = "Return Date*: "
+        Me.labelReturnDate.Visible = False
+        '
+        'dateReturn
+        '
+        Me.dateReturn.CustomFormat = ""
+        Me.dateReturn.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dateReturn.Location = New System.Drawing.Point(319, 298)
+        Me.dateReturn.Name = "dateReturn"
+        Me.dateReturn.Size = New System.Drawing.Size(303, 26)
+        Me.dateReturn.TabIndex = 145
+        Me.dateReturn.Visible = False
+        '
+        'btnSearchTransactionBy
+        '
+        Me.btnSearchTransactionBy.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.btnSearchTransactionBy.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSearchTransactionBy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchTransactionBy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSearchTransactionBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchTransactionBy.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchTransactionBy.ForeColor = System.Drawing.Color.White
+        Me.btnSearchTransactionBy.Image = CType(resources.GetObject("btnSearchTransactionBy.Image"), System.Drawing.Image)
+        Me.btnSearchTransactionBy.Location = New System.Drawing.Point(639, 256)
+        Me.btnSearchTransactionBy.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnSearchTransactionBy.Name = "btnSearchTransactionBy"
+        Me.btnSearchTransactionBy.Size = New System.Drawing.Size(36, 27)
+        Me.btnSearchTransactionBy.TabIndex = 144
+        Me.btnSearchTransactionBy.TabStop = False
+        Me.btnSearchTransactionBy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSearchTransactionBy.UseVisualStyleBackColor = False
+        '
+        'comboItemState
+        '
+        Me.comboItemState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboItemState.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.comboItemState.FormattingEnabled = True
+        Me.comboItemState.Location = New System.Drawing.Point(319, 168)
+        Me.comboItemState.Name = "comboItemState"
+        Me.comboItemState.Size = New System.Drawing.Size(303, 28)
+        Me.comboItemState.TabIndex = 3
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(113, 172)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(121, 18)
+        Me.Label1.TabIndex = 143
+        Me.Label1.Text = "Item State*: "
+        '
         'btnSearchItem
         '
         Me.btnSearchItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
@@ -785,7 +1038,7 @@ Partial Class ViewInventory
         Me.txtQuantity.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtQuantity.ForeColor = System.Drawing.Color.Black
         Me.txtQuantity.Location = New System.Drawing.Point(319, 212)
-        Me.txtQuantity.MaxLength = 100
+        Me.txtQuantity.MaxLength = 100000000
         Me.txtQuantity.Multiline = True
         Me.txtQuantity.Name = "txtQuantity"
         Me.txtQuantity.Size = New System.Drawing.Size(303, 27)
@@ -880,9 +1133,9 @@ Partial Class ViewInventory
         Me.Label6.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(113, 261)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(139, 18)
+        Me.Label6.Size = New System.Drawing.Size(150, 18)
         Me.Label6.TabIndex = 96
-        Me.Label6.Text = "Transaction by: "
+        Me.Label6.Text = "Transaction by*: "
         '
         'Label10
         '
@@ -911,260 +1164,6 @@ Partial Class ViewInventory
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(10, 74)
         Me.Panel4.TabIndex = 68
-        '
-        'labelItemSerial
-        '
-        Me.labelItemSerial.AutoSize = True
-        Me.labelItemSerial.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.labelItemSerial.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelItemSerial.Location = New System.Drawing.Point(231, 159)
-        Me.labelItemSerial.Name = "labelItemSerial"
-        Me.labelItemSerial.Size = New System.Drawing.Size(25, 18)
-        Me.labelItemSerial.TabIndex = 119
-        Me.labelItemSerial.Text = "Jr."
-        '
-        'labelItemColor
-        '
-        Me.labelItemColor.AutoSize = True
-        Me.labelItemColor.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.labelItemColor.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelItemColor.Location = New System.Drawing.Point(231, 125)
-        Me.labelItemColor.Name = "labelItemColor"
-        Me.labelItemColor.Size = New System.Drawing.Size(137, 18)
-        Me.labelItemColor.TabIndex = 118
-        Me.labelItemColor.Text = "Kamusta ka na "
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(60, 159)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(135, 18)
-        Me.Label14.TabIndex = 117
-        Me.Label14.Text = "Serial Number: "
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(60, 125)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(107, 18)
-        Me.Label16.TabIndex = 116
-        Me.Label16.Text = "Item Color: "
-        '
-        'labelItemBorrowed
-        '
-        Me.labelItemBorrowed.AutoSize = True
-        Me.labelItemBorrowed.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.labelItemBorrowed.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelItemBorrowed.Location = New System.Drawing.Point(700, 160)
-        Me.labelItemBorrowed.Name = "labelItemBorrowed"
-        Me.labelItemBorrowed.Size = New System.Drawing.Size(18, 18)
-        Me.labelItemBorrowed.TabIndex = 121
-        Me.labelItemBorrowed.Text = "0"
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(529, 160)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(98, 18)
-        Me.Label19.TabIndex = 120
-        Me.Label19.Text = "Borrowed: "
-        '
-        'labeItemUnusable
-        '
-        Me.labeItemUnusable.AutoSize = True
-        Me.labeItemUnusable.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.labeItemUnusable.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labeItemUnusable.Location = New System.Drawing.Point(700, 197)
-        Me.labeItemUnusable.Name = "labeItemUnusable"
-        Me.labeItemUnusable.Size = New System.Drawing.Size(18, 18)
-        Me.labeItemUnusable.TabIndex = 123
-        Me.labeItemUnusable.Text = "0"
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(529, 197)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(94, 18)
-        Me.Label22.TabIndex = 122
-        Me.Label22.Text = "Unusable: "
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(131, 268)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(91, 18)
-        Me.Label4.TabIndex = 138
-        Me.Label4.Text = "Reason*: "
-        '
-        'comboReason
-        '
-        Me.comboReason.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.comboReason.Enabled = False
-        Me.comboReason.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.comboReason.FormattingEnabled = True
-        Me.comboReason.Items.AddRange(New Object() {"Defective", "Damaged", "Lost", "Replaced"})
-        Me.comboReason.Location = New System.Drawing.Point(366, 264)
-        Me.comboReason.Name = "comboReason"
-        Me.comboReason.Size = New System.Drawing.Size(303, 28)
-        Me.comboReason.TabIndex = 7
-        '
-        'txtItemColor
-        '
-        Me.txtItemColor.BackColor = System.Drawing.Color.White
-        Me.txtItemColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtItemColor.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtItemColor.ForeColor = System.Drawing.Color.Black
-        Me.txtItemColor.Location = New System.Drawing.Point(366, 147)
-        Me.txtItemColor.MaxLength = 100
-        Me.txtItemColor.Multiline = True
-        Me.txtItemColor.Name = "txtItemColor"
-        Me.txtItemColor.Size = New System.Drawing.Size(303, 27)
-        Me.txtItemColor.TabIndex = 3
-        Me.txtItemColor.Tag = ""
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(131, 152)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(107, 18)
-        Me.Label8.TabIndex = 140
-        Me.Label8.Text = "Item Color: "
-        '
-        'txtItemSerial
-        '
-        Me.txtItemSerial.BackColor = System.Drawing.Color.White
-        Me.txtItemSerial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtItemSerial.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtItemSerial.ForeColor = System.Drawing.Color.Black
-        Me.txtItemSerial.Location = New System.Drawing.Point(366, 186)
-        Me.txtItemSerial.MaxLength = 100
-        Me.txtItemSerial.Multiline = True
-        Me.txtItemSerial.Name = "txtItemSerial"
-        Me.txtItemSerial.Size = New System.Drawing.Size(303, 27)
-        Me.txtItemSerial.TabIndex = 4
-        Me.txtItemSerial.Tag = ""
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(131, 191)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(111, 18)
-        Me.Label15.TabIndex = 142
-        Me.Label15.Text = "Item Serial: "
-        '
-        'comboItemState
-        '
-        Me.comboItemState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.comboItemState.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.comboItemState.FormattingEnabled = True
-        Me.comboItemState.Location = New System.Drawing.Point(319, 168)
-        Me.comboItemState.Name = "comboItemState"
-        Me.comboItemState.Size = New System.Drawing.Size(303, 28)
-        Me.comboItemState.TabIndex = 3
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(113, 172)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(121, 18)
-        Me.Label1.TabIndex = 143
-        Me.Label1.Text = "Item State*: "
-        '
-        'Column14
-        '
-        Me.Column14.HeaderText = "ID"
-        Me.Column14.Name = "Column14"
-        Me.Column14.ReadOnly = True
-        Me.Column14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Transaction"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Quantity"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Transact by"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Date"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Reason"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        '
-        'btnSearchTransactionBy
-        '
-        Me.btnSearchTransactionBy.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
-        Me.btnSearchTransactionBy.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnSearchTransactionBy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchTransactionBy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSearchTransactionBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearchTransactionBy.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearchTransactionBy.ForeColor = System.Drawing.Color.White
-        Me.btnSearchTransactionBy.Image = CType(resources.GetObject("btnSearchTransactionBy.Image"), System.Drawing.Image)
-        Me.btnSearchTransactionBy.Location = New System.Drawing.Point(639, 256)
-        Me.btnSearchTransactionBy.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnSearchTransactionBy.Name = "btnSearchTransactionBy"
-        Me.btnSearchTransactionBy.Size = New System.Drawing.Size(36, 27)
-        Me.btnSearchTransactionBy.TabIndex = 144
-        Me.btnSearchTransactionBy.TabStop = False
-        Me.btnSearchTransactionBy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSearchTransactionBy.UseVisualStyleBackColor = False
-        '
-        'dateReturn
-        '
-        Me.dateReturn.CustomFormat = ""
-        Me.dateReturn.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dateReturn.Location = New System.Drawing.Point(319, 298)
-        Me.dateReturn.Name = "dateReturn"
-        Me.dateReturn.Size = New System.Drawing.Size(303, 26)
-        Me.dateReturn.TabIndex = 145
-        Me.dateReturn.Visible = False
-        '
-        'labelReturnDate
-        '
-        Me.labelReturnDate.AutoSize = True
-        Me.labelReturnDate.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelReturnDate.Location = New System.Drawing.Point(113, 304)
-        Me.labelReturnDate.Name = "labelReturnDate"
-        Me.labelReturnDate.Size = New System.Drawing.Size(130, 18)
-        Me.labelReturnDate.TabIndex = 146
-        Me.labelReturnDate.Text = "Return Date*: "
-        Me.labelReturnDate.Visible = False
         '
         'ViewInventory
         '
@@ -1275,13 +1274,13 @@ Partial Class ViewInventory
     Friend WithEvents comboItemState As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents comboTransactionType As ComboBox
-    Friend WithEvents Column14 As DataGridViewTextBoxColumn
+    Friend WithEvents btnSearchTransactionBy As Button
+    Friend WithEvents labelReturnDate As Label
+    Friend WithEvents dateReturn As DateTimePicker
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents btnSearchTransactionBy As Button
-    Friend WithEvents labelReturnDate As Label
-    Friend WithEvents dateReturn As DateTimePicker
 End Class

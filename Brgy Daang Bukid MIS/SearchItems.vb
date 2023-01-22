@@ -6,6 +6,7 @@ Imports Mysqlx.XDevAPI.Common
 Public Class SearchItems
 
     Public mySqlConn As String = "server=localhost; user id=root; database=mis"
+    Public action As String
     Private Sub SearchItems_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         datagridItems.Rows.Clear()
         txtSearchitems.Text = "Search by item name"
@@ -46,8 +47,11 @@ Public Class SearchItems
         Dim mySQLReader As MySqlDataReader
         cmd = mySql.CreateCommand()
         cmd.CommandType = CommandType.Text
-
-        cmd.CommandText = "SELECT item_id, item_name, item_status, item_stock from item_list where item_name LIKE @searchvalue order by item_name asc limit 10"
+        If action = "borrow" Or action = "Stock Out" Then
+            cmd.CommandText = "SELECT item_id, item_name, item_status, item_stock from item_list where item_stock <> 0 AND item_name LIKE @searchvalue order by item_name asc limit 10"
+        Else
+            cmd.CommandText = "SELECT item_id, item_name, item_status, item_stock from item_list where item_name LIKE @searchvalue order by item_name asc limit 10"
+        End If
         cmd.Parameters.AddWithValue("@searchvalue", txtSearchitems.Text.Trim & "%")
         mySQLReader = cmd.ExecuteReader
         If mySQLReader.HasRows Then

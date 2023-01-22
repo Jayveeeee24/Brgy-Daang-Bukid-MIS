@@ -155,6 +155,18 @@
     <Compile Include="NoAccount.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ProceedReturn.Designer.vb">
+      <DependentUpon>ProceedReturn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProceedReturn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturnItem.Designer.vb">
+      <DependentUpon>ReturnItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReturnItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SearchHousehold.Designer.vb">
       <DependentUpon>SearchHousehold.vb</DependentUpon>
     </Compile>
@@ -294,6 +306,12 @@
     <EmbeddedResource Include="NoAccount.resx">
       <DependentUpon>NoAccount.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProceedReturn.resx">
+      <DependentUpon>ProceedReturn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReturnItem.resx">
+      <DependentUpon>ReturnItem.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SearchHousehold.resx">
       <DependentUpon>SearchHousehold.vb</DependentUpon>
     </EmbeddedResource>
@@ -361,6 +379,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo_daang_bukid-legitbgremoved.ico" />
+    <None Include="Resources\arrow back white.png" />
     <None Include="Resources\brgy map edited with labels final.png" />
     <None Include="Resources\brgy map edited with labels1.png" />
     <None Include="Resources\brgy map edited with labels.png" />

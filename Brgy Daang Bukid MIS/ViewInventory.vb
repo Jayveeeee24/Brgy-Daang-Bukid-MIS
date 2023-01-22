@@ -1,5 +1,6 @@
 ﻿Imports System.Globalization
 Imports System.Runtime.InteropServices
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports Microsoft.SqlServer.Server
 Imports MySql.Data.MySqlClient
 
@@ -21,6 +22,7 @@ Public Class ViewInventory
     Private Sub ViewInventory_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Controls.Clear()
         Me.InitializeComponent()
+        Main_Form.btnInventory.PerformClick()
     End Sub
     Private Sub ViewInventory_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If action = "add" And isSaved = False Then
@@ -29,7 +31,7 @@ Public Class ViewInventory
                     e.Cancel = True
                 End If
             End If
-        ElseIf (action = "stock" And isSaved = False) Or (action = "borrowReturn" And isSaved = False) Then
+        ElseIf (action = "stock" And isSaved = False) Or (action = "borrow" And isSaved = False) Then
             If txtStockItemName.Text.Trim <> "" Or txtQuantity.Text.Trim <> "" Or txtReason.Text.Trim <> "" Or txtTransactionBy.Text.Trim <> "" Then
                 If MsgBox("Your current progress will not be saved!", MsgBoxStyle.OkCancel, "Are you sure to exit?") = MsgBoxResult.Cancel Then
                     e.Cancel = True
@@ -60,13 +62,13 @@ Public Class ViewInventory
 
             comboTransactionType.SelectedIndex = 0
 
-        ElseIf action = "borrowReturn" Then
+        ElseIf action = "borrow" Then
             itemId = 0
             mainTabControl.SelectedIndex = 2
             comboTransactionType.Items.Add("Borrow")
-            comboTransactionType.Items.Add("Return")
 
             comboTransactionType.SelectedIndex = 0
+            comboTransactionType.Enabled = False
             labelReturnDate.Visible = True
             dateReturn.Visible = True
         End If
@@ -95,7 +97,7 @@ Public Class ViewInventory
                 While mySQLReader.Read
                     labelItemId.Text = itemId
                     labelItemName.Text = mySQLReader!item_name
-                    labelItemStatus.Text = If(mySQLReader!item_status = "Unavailable", mySQLReader!item_status + " (" + mySQLReader!item_reason + ")", mySQLReader!item_status)
+                    labelItemStatus.Text = If(mySQLReader!item_status = "Unavailable" And mySQLReader!item_reason <> "", mySQLReader!item_status + " (" + mySQLReader!item_reason + ")", mySQLReader!item_status)
                     itemReason = mySQLReader!item_reason
                     itemStatus = mySQLReader!item_status
                     labelItemColor.Text = If(mySQLReader!item_color = "", "N/A", mySQLReader!item_color)
@@ -182,7 +184,7 @@ Public Class ViewInventory
 
             cmd.ExecuteNonQuery()
         ElseIf action = "add" Then
-            cmd.CommandText = "INSERT INTO item_list (item_name, item_status, item_stock, item_reason, item_color, item_borrowed, item_unusable, serial_no, added_by, added_on, remarks) values (@itemname, @itemstatus, 0, @itemreason, 0, 0, @itemcolor, @itemserial, @addedby, @addedon, @remarks)"
+            cmd.CommandText = "INSERT INTO item_list (item_name, item_status, item_stock, item_reason, item_color, item_borrowed, item_unusable, serial_no, added_by, added_on, remarks) values (@itemname, @itemstatus, 0, @itemreason, @itemcolor, 0, 0,  @itemserial, @addedby, @addedon, @remarks)"
             cmd.Parameters.AddWithValue("@itemname", txtItemName.Text)
             cmd.Parameters.AddWithValue("@itemstatus", comboItemStatus.Text)
             cmd.Parameters.AddWithValue("@itemreason", comboReason.Text)
@@ -207,17 +209,20 @@ Public Class ViewInventory
         Main_Form.btnInventory.PerformClick()
     End Sub
     Private Sub btnUpdateStock_Click(sender As Object, e As EventArgs) Handles btnUpdateStock.Click
+        If itemId = 0 Or txtStockItemName.Text.Trim = "" Then
+            MsgBox("Please select a valid item!", vbCritical, "Warning")
+            Exit Sub
+        End If
+        If txtQuantity.Text.Trim = "" Or txtQuantity.Text = "0" Then
+            MsgBox("Please provide a valid quantity!", vbCritical, "Warning")
+            Exit Sub
+        End If
+        If txtTransactionBy.Text.Trim = "" Then
+            MsgBox("Please provide a provide a valid person transacted!", vbCritical, "Warning")
+            Exit Sub
+        End If
+
         If action = "stock" Then
-            If itemId = 0 Or txtStockItemName.Text.Trim = "" Then
-                MsgBox("Please select a valid item!", vbCritical, "Warning")
-                Exit Sub
-            End If
-
-            If txtQuantity.Text.Trim = "" Or txtQuantity.Text = "0" Then
-                MsgBox("Please provide a valid quantity!", vbCritical, "Warning")
-                Exit Sub
-            End If
-
 
             Dim newStocks As Integer
             Dim status As String
@@ -226,7 +231,7 @@ Public Class ViewInventory
                 newStocks = remainingStocks + CInt(txtQuantity.Text)
             Else
                 If remainingStocks < CInt(txtQuantity.Text) Then
-                    MsgBox("Please input a valid quantity!", vbCritical, "Warning")
+                    MsgBox("You can't stock out items more than the remaining stocks!", vbCritical, "Warning")
                     Exit Sub
                 End If
                 newStocks = remainingStocks - CInt(txtQuantity.Text)
@@ -269,40 +274,26 @@ Public Class ViewInventory
 
             updateStock(status, newStocks)
 
-
-        ElseIf action = "borrowReturn" Then
-
-            If itemId = 0 Or txtStockItemName.Text.Trim = "" Then
-                MsgBox("Please select a valid item!", vbCritical, "Warning")
-                Exit Sub
-            End If
-            If isItemUnavailable() = True And comboTransactionType.Text = "Borrow" Then
+        ElseIf action = "borrow" Then
+            If isItemUnavailable() = True Then
                 MsgBox("You cannot borrow items that are unavailable!", vbCritical, "Warning")
                 Exit Sub
             End If
-            If txtQuantity.Text.Trim = "" Or txtQuantity.Text = "0" Then
-                MsgBox("Please provide a valid quantity!", vbCritical, "Warning")
+            If dateReturn.Value.Date < Date.Now.Date Then
+                MsgBox("Please provide a valid return date!", vbCritical, "Warning")
                 Exit Sub
             End If
-            If comboTransactionType.Text = "Return" And CInt(txtQuantity.Text) > getItemNumbers("borrowed") Then
-                MsgBox("You cannot return items more than what is borrowed!" + vbCrLf + "Items borrowed: " + getItemNumbers("borrowed").ToString, vbCritical, "Warning")
-                Exit Sub
-            End If
-
 
             Dim newStocks As Integer
             Dim status As String
             Dim remainingStocks As Integer = getStockItems()
-            If comboTransactionType.Text = "Borrow" Then
-                newStocks = remainingStocks - CInt(txtQuantity.Text)
-
-                If remainingStocks < CInt(txtQuantity.Text) Then
-                    MsgBox("Please input a valid quantity!", vbCritical, "Warning")
-                    Exit Sub
-                End If
-            ElseIf comboTransactionType.Text = "Return" And comboItemState.SelectedIndex = 0 Then
-                newStocks = remainingStocks + CInt(txtQuantity.Text)
+            newStocks = remainingStocks - CInt(txtQuantity.Text)
+            If remainingStocks < CInt(txtQuantity.Text) Then
+                MsgBox("You can't borrow items more than the remaining stocks!", vbCritical, "Warning")
+                Exit Sub
             End If
+
+
             If newStocks = 0 Then
                 status = "Unavailable"
             Else
@@ -326,7 +317,7 @@ Public Class ViewInventory
 
             cmd.CommandText = "INSERT INTO item_history (item_id, transaction_type, item_state,  quantity, transaction_by, date, reason) values (@itemid, @transactiontype, @itemstate, @quantity, @transactionby, @date, @reason)"
             cmd.Parameters.AddWithValue("@itemid", itemId)
-            cmd.Parameters.AddWithValue("@transactiontype", If(comboTransactionType.SelectedIndex = 0, "Borrowed", "Returned"))
+            cmd.Parameters.AddWithValue("@transactiontype", comboTransactionType.Text & "ed")
             cmd.Parameters.AddWithValue("@itemstate", comboItemState.Text)
             cmd.Parameters.AddWithValue("@quantity", txtQuantity.Text)
             cmd.Parameters.AddWithValue("@transactionby", txtTransactionBy.Text)
@@ -340,6 +331,8 @@ Public Class ViewInventory
             mySql.Dispose()
 
             updateStock(status, newStocks)
+            updateBorrowedItems()
+
         End If
         MsgBox("Stock Updated!", vbInformation, "Information")
         isSaved = True
@@ -362,6 +355,8 @@ Public Class ViewInventory
     End Sub
 
     Private Sub btnSearchItem_Click(sender As Object, e As EventArgs) Handles btnSearchItem.Click
+        Dim newAction As String = If(action = "stock", comboTransactionType.Text, action)
+        SearchItems.action = newAction
         SearchItems.ShowDialog()
     End Sub
     Private Sub btnSearchTransactionBy_Click(sender As Object, e As EventArgs) Handles btnSearchTransactionBy.Click
@@ -391,22 +386,13 @@ Public Class ViewInventory
             comboItemState.Items.Add("Good")
             comboItemState.Enabled = False
         Else
-            If action = "borrowReturn" Then
-                comboItemState.Items.Add("Good")
-            End If
             comboItemState.Items.Add("Damaged")
             comboItemState.Items.Add("Defective")
             comboItemState.Items.Add("Lost")
             comboItemState.Enabled = True
-
         End If
         comboItemState.SelectedIndex = 0
 
-        If comboTransactionType.Text = "Borrow" Then
-            labelReturnDate.Text = "Return Date*: "
-        ElseIf comboTransactionType.Text = "Return" Then
-            labelReturnDate.Text = "Date Returned*: "
-        End If
     End Sub
 
 
@@ -438,7 +424,8 @@ Public Class ViewInventory
 
         If mySQLReader.HasRows Then
             While mySQLReader.Read
-                dataGridItemHistory.Rows.Add(New String() {mySQLReader!id, If(mySQLReader!item_state <> "Good", mySQLReader!transaction_type + "(" + mySQLReader!item_state + ")", mySQLReader!transaction_type), mySQLReader!quantity, mySQLReader!transaction_by, mySQLReader!date, mySQLReader!reason})
+                Dim date1 As Date = mySQLReader!date
+                dataGridItemHistory.Rows.Add(New String() {getItemNameById(mySQLReader!id), If(mySQLReader!item_state <> "Good", mySQLReader!transaction_type + "(" + mySQLReader!item_state + ")", mySQLReader!transaction_type), mySQLReader!quantity, mySQLReader!transaction_by, date1.ToString("MMMM d, yyyy"), mySQLReader!reason})
             End While
         End If
         dataGridItemHistory.ClearSelection()
@@ -447,6 +434,40 @@ Public Class ViewInventory
         mySql.Close()
         mySql.Dispose()
     End Sub
+    Private Function getItemNameById(ByVal id As Integer) As String
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim itemName As String = ""
+        Dim cmd As MySqlCommand
+        Dim mySQLReader As MySqlDataReader
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "SELECT item_name from item_list where item_id = @itemid"
+        cmd.Parameters.AddWithValue("@itemid", itemId)
+        mySQLReader = cmd.ExecuteReader
+
+        If mySQLReader.HasRows Then
+            While mySQLReader.Read
+                itemName = mySQLReader!item_name
+            End While
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+
+        Return itemName
+    End Function
     Private Sub checkInputNumbersOnly(e As KeyPressEventArgs)
         '97 - 122 = Ascii codes for simple letters
         '65 - 90  = Ascii codes for capital letters
@@ -491,14 +512,42 @@ Public Class ViewInventory
         cmd.Parameters.AddWithValue("@itemid", itemId)
         cmd.Parameters.AddWithValue("@itemstock", stock)
         cmd.Parameters.AddWithValue("@itemstatus", status)
-        cmd.Parameters.AddWithValue("@itemunusable", If((comboTransactionType.Text = "Return" And comboItemState.SelectedIndex > 0) Or comboTransactionType.Text = "Stock Out", getItemNumbers("unusable") + CInt(txtQuantity.Text), getItemNumbers("unusable")))
+        cmd.Parameters.AddWithValue("@itemunusable", If(comboTransactionType.Text = "Stock Out", getItemNumbers("unusable") + CInt(txtQuantity.Text), getItemNumbers("unusable")))
         If comboTransactionType.Text = "Borrow" Then
             cmd.Parameters.AddWithValue("@itemborrowed", If(comboTransactionType.SelectedIndex = 0, getItemNumbers("borrowed") + CInt(txtQuantity.Text), getItemNumbers("borrowed")))
-        ElseIf comboTransactionType.Text = "Return" Then
-            cmd.Parameters.AddWithValue("@itemborrowed", getItemNumbers("borrowed") - CInt(txtQuantity.Text))
         Else
             cmd.Parameters.AddWithValue("@itemborrowed", getItemNumbers("borrowed"))
         End If
+
+        cmd.ExecuteNonQuery()
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+    End Sub
+    Private Sub updateBorrowedItems()
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = "INSERT INTO item_borrowed (item_id, quantity, borrowed_date, return_date, borrowed_by, reason) values (@itemid, @quantity, @borroweddate, @returndate, @borrowedby, @reason)"
+
+        cmd.Parameters.AddWithValue("@itemid", itemId)
+        cmd.Parameters.AddWithValue("@quantity", CInt(txtQuantity.Text))
+        cmd.Parameters.AddWithValue("@borroweddate", Date.Now.Date)
+        cmd.Parameters.AddWithValue("@returndate", dateReturn.Value.Date)
+        cmd.Parameters.AddWithValue("@borrowedby", txtTransactionBy.Text)
+        cmd.Parameters.AddWithValue("@reason", txtReason.Text)
 
         cmd.ExecuteNonQuery()
 

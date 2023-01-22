@@ -109,6 +109,10 @@ Public Class Create_Account
             Case 0
             Case Else
                 MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+                If action = "initital" Then
+                    Application.Exit()
+                End If
+                Exit Sub
         End Select
 
         Dim cmd As MySqlCommand

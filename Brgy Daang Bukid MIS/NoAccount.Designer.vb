@@ -37,8 +37,8 @@ Partial Class NoAccount
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(437, 56)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "     Unfortunately, only 3 accounts are allowed in the system (Administrator, Sta" &
-    "ff and Guest) . If you are a Barangay Official, ask for the account details."
+        Me.Label1.Text = "     Unfortunately, only Barangay OFficials has an account and only Barangay Capt" &
+    "ain can create accounts for other barangay officials."
         '
         'Label2
         '
@@ -47,13 +47,13 @@ Partial Class NoAccount
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(440, 53)
         Me.Label2.TabIndex = 2
-        Me.Label2.Text = "If you are not a Barangay Official,  you can ask the management for the guest acc" &
-    "ount that is strictly limited to searching and viewing"
+        Me.Label2.Text = "If you are a Barangay Official,  you can ask the management to create an account " &
+    "for you."
         '
         'Label3
         '
         Me.Label3.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(351, 333)
+        Me.Label3.Location = New System.Drawing.Point(351, 317)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(137, 21)
         Me.Label3.TabIndex = 3
@@ -73,7 +73,7 @@ Partial Class NoAccount
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(500, 363)
+        Me.ClientSize = New System.Drawing.Size(500, 349)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)

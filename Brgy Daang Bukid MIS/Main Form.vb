@@ -1341,11 +1341,13 @@ Public Class Main_Form
         ViewInventory.action = "stock"
         ViewInventory.ShowDialog()
     End Sub
-    Private Sub btnBorrowOrReturn_Click(sender As Object, e As EventArgs) Handles btnBorrowOrReturn.Click
-        ViewInventory.action = "borrowReturn"
+    Private Sub btnBorrow_Click(sender As Object, e As EventArgs) Handles btnBorrow.Click
+        ViewInventory.action = "borrow"
         ViewInventory.ShowDialog()
     End Sub
-
+    Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
+        ReturnItem.ShowDialog()
+    End Sub
 
     '' '''''''''''''''''''''''''CERTIFICATES METHODS '''''''''''''''''''''''''''''''''''''''''
     Private Sub clearCertificates()
@@ -1426,6 +1428,7 @@ Public Class Main_Form
         pictureCertificates.Image = My.Resources.INDIGENCY_page_0001
 
     End Sub
+
     Private Sub btnSummon_Click(sender As Object, e As EventArgs) Handles btnSummon.Click
         clearCertificates()
 
