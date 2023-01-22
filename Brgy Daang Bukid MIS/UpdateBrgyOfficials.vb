@@ -9,6 +9,11 @@ Public Class UpdateBrgyOfficials
 
     Private Sub UpdateBrgyOfficials_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadDatagrid()
+        If isBrgyOfficialsAvailable() = False Then
+            btnElectOfficials.Enabled = True
+        Else
+            btnElectOfficials.Enabled = False
+        End If
     End Sub
 
     Public Sub loadDatagrid()
@@ -132,7 +137,8 @@ Public Class UpdateBrgyOfficials
 
 
     Private Sub UpdateBrgyOfficials_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        officialId = 0
+        Me.Controls.Clear()
+        Me.InitializeComponent()
     End Sub
 
     Private Sub dataGridBrgyOfficials_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridBrgyOfficials.CellClick
@@ -141,4 +147,34 @@ Public Class UpdateBrgyOfficials
             officialId = dataGridBrgyOfficials.Rows(e.RowIndex).Cells(0).Value
         End If
     End Sub
+
+    Private Sub btnElectOfficials_Click(sender As Object, e As EventArgs) Handles btnElectOfficials.Click
+        ElectOfficials.ShowDialog()
+    End Sub
+
+    Private Function isBrgyOfficialsAvailable() As Boolean
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = "SELECT count(*) FROM brgyofficials"
+        If cmd.ExecuteScalar() = 0 Then
+            Return False
+        Else
+            Return True
+        End If
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+    End Function
 End Class

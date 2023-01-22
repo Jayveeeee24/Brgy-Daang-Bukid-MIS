@@ -34,6 +34,7 @@ Partial Class UpdateBrgyOfficials
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnAppointOfficial = New System.Windows.Forms.Button()
         Me.btnDismissOfficial = New System.Windows.Forms.Button()
+        Me.btnElectOfficials = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataGridBrgyOfficials, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -143,7 +144,7 @@ Partial Class UpdateBrgyOfficials
         Me.btnAppointOfficial.ForeColor = System.Drawing.Color.White
         Me.btnAppointOfficial.Image = CType(resources.GetObject("btnAppointOfficial.Image"), System.Drawing.Image)
         Me.btnAppointOfficial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAppointOfficial.Location = New System.Drawing.Point(16, 129)
+        Me.btnAppointOfficial.Location = New System.Drawing.Point(175, 129)
         Me.btnAppointOfficial.Margin = New System.Windows.Forms.Padding(7, 3, 5, 3)
         Me.btnAppointOfficial.Name = "btnAppointOfficial"
         Me.btnAppointOfficial.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
@@ -168,7 +169,7 @@ Partial Class UpdateBrgyOfficials
         Me.btnDismissOfficial.ForeColor = System.Drawing.Color.White
         Me.btnDismissOfficial.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.arrow_forward_white
         Me.btnDismissOfficial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDismissOfficial.Location = New System.Drawing.Point(177, 129)
+        Me.btnDismissOfficial.Location = New System.Drawing.Point(336, 129)
         Me.btnDismissOfficial.Margin = New System.Windows.Forms.Padding(0)
         Me.btnDismissOfficial.Name = "btnDismissOfficial"
         Me.btnDismissOfficial.Size = New System.Drawing.Size(146, 41)
@@ -178,11 +179,36 @@ Partial Class UpdateBrgyOfficials
         Me.btnDismissOfficial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnDismissOfficial.UseVisualStyleBackColor = False
         '
+        'btnElectOfficials
+        '
+        Me.btnElectOfficials.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(185, Byte), Integer))
+        Me.btnElectOfficials.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.btnElectOfficials.FlatAppearance.BorderSize = 0
+        Me.btnElectOfficials.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnElectOfficials.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnElectOfficials.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnElectOfficials.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.btnElectOfficials.ForeColor = System.Drawing.Color.White
+        Me.btnElectOfficials.Image = CType(resources.GetObject("btnElectOfficials.Image"), System.Drawing.Image)
+        Me.btnElectOfficials.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnElectOfficials.Location = New System.Drawing.Point(17, 129)
+        Me.btnElectOfficials.Margin = New System.Windows.Forms.Padding(7, 3, 5, 3)
+        Me.btnElectOfficials.Name = "btnElectOfficials"
+        Me.btnElectOfficials.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.btnElectOfficials.Size = New System.Drawing.Size(146, 41)
+        Me.btnElectOfficials.TabIndex = 108
+        Me.btnElectOfficials.TabStop = False
+        Me.btnElectOfficials.Text = "  Elect Officials"
+        Me.btnElectOfficials.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnElectOfficials.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnElectOfficials.UseVisualStyleBackColor = False
+        '
         'UpdateBrgyOfficials
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(935, 515)
+        Me.Controls.Add(Me.btnElectOfficials)
         Me.Controls.Add(Me.btnDismissOfficial)
         Me.Controls.Add(Me.btnAppointOfficial)
         Me.Controls.Add(Me.dataGridBrgyOfficials)
@@ -210,4 +236,5 @@ Partial Class UpdateBrgyOfficials
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents btnAppointOfficial As Button
     Friend WithEvents btnDismissOfficial As Button
+    Friend WithEvents btnElectOfficials As Button
 End Class

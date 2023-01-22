@@ -17,6 +17,11 @@ Public Class ViewInventory
         Me.CenterToParent()
         mainTabControl.ItemSize = New Size(0, 1)
 
+        If action = "borrow" Then
+            btnUpdateStock.Text = "  Borrow Item"
+        Else
+            btnUpdateStock.Text = "  Update Stock"
+        End If
         loadInitialData()
     End Sub
     Private Sub ViewInventory_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
@@ -274,6 +279,7 @@ Public Class ViewInventory
 
             updateStock(status, newStocks)
 
+            MsgBox("Stock Updated!", vbInformation, "Information")
         ElseIf action = "borrow" Then
             If isItemUnavailable() = True Then
                 MsgBox("You cannot borrow items that are unavailable!", vbCritical, "Warning")
@@ -333,8 +339,8 @@ Public Class ViewInventory
             updateStock(status, newStocks)
             updateBorrowedItems()
 
+            MsgBox("Item Borrowed!", vbInformation, "Information")
         End If
-        MsgBox("Stock Updated!", vbInformation, "Information")
         isSaved = True
         Me.Close()
         Main_Form.txtSearchInventory.Text = "Search by Item Name or ID"

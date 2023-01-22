@@ -44,7 +44,6 @@ Public Class Login
         cmd.Dispose()
         mySql.Close()
         mySql.Dispose()
-        MsgBox("hatdog")
     End Function
 
 

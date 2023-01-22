@@ -137,6 +137,12 @@
     <Compile Include="Create Account.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ElectOfficials.Designer.vb">
+      <DependentUpon>ElectOfficials.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ElectOfficials.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ForgotPassword.Designer.vb">
       <DependentUpon>ForgotPassword.vb</DependentUpon>
     </Compile>
@@ -296,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Create Account.resx">
       <DependentUpon>Create Account.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElectOfficials.resx">
+      <DependentUpon>ElectOfficials.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ForgotPassword.resx">
       <DependentUpon>ForgotPassword.vb</DependentUpon>

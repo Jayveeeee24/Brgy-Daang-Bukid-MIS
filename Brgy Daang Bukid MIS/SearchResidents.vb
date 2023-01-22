@@ -204,10 +204,154 @@ Public Class Search_Residents
                 AppointOfficial.residentId = datagridResident.Rows(e.RowIndex).Cells(0).Value
                 AppointOfficial.txtOfficialName.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
                 AppointOfficial.residentName = datagridResident.Rows(e.RowIndex).Cells(2).Value
+
+
+
+            ElseIf origin = "captain" Then
+                If datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad1 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad2 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad3 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad4 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad5 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad6 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad7 Then
+                    MsgBox("You already picked this resident!", vbCritical, "Warning")
+                    Exit Sub
+                End If
+                If isOfficial(datagridResident.Rows(e.RowIndex).Cells(0).Value) = False Then
+                    ElectOfficials.brgyCaptainId = datagridResident.Rows(e.RowIndex).Cells(0).Value
+                    ElectOfficials.brgyCaptain = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                    ElectOfficials.txtBarangayCaptain.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                Else
+                    MsgBox("This resident already has a position!", vbCritical, "Warning")
+                    Exit Sub
+                End If
+
+
+            ElseIf origin = "kagawad1" Then
+                If datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.brgyCaptain Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad2 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad3 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad4 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad5 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad6 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad7 Then
+                    MsgBox("You already picked this resident!", vbCritical, "Warning")
+                    Exit Sub
+                End If
+                If isOfficial(datagridResident.Rows(e.RowIndex).Cells(0).Value) = False Then
+                    ElectOfficials.kagawadId1 = datagridResident.Rows(e.RowIndex).Cells(0).Value
+                    ElectOfficials.kagawad1 = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                    ElectOfficials.txtKagawad1.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                Else
+                    MsgBox("This resident already has a position!", vbCritical, "Warning")
+                    Exit Sub
+                End If
+            ElseIf origin = "kagawad2" Then
+                If datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.brgyCaptain Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad1 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad3 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad4 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad5 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad6 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad7 Then
+                    MsgBox("You already picked this resident!", vbCritical, "Warning")
+                    Exit Sub
+                End If
+                If isOfficial(datagridResident.Rows(e.RowIndex).Cells(0).Value) = False Then
+                    ElectOfficials.kagawadId2 = datagridResident.Rows(e.RowIndex).Cells(0).Value
+                    ElectOfficials.kagawad2 = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                    ElectOfficials.txtKagawad2.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                Else
+                    MsgBox("This resident already has a position!", vbCritical, "Warning")
+                    Exit Sub
+                End If
+            ElseIf origin = "kagawad3" Then
+                If datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.brgyCaptain Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad1 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad2 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad4 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad5 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad6 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad7 Then
+                    MsgBox("You already picked this resident!", vbCritical, "Warning")
+                    Exit Sub
+                End If
+                If isOfficial(datagridResident.Rows(e.RowIndex).Cells(0).Value) = False Then
+                    ElectOfficials.kagawadId3 = datagridResident.Rows(e.RowIndex).Cells(0).Value
+                    ElectOfficials.kagawad3 = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                    ElectOfficials.txtKagawad3.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                Else
+                    MsgBox("This resident already has a position!", vbCritical, "Warning")
+                    Exit Sub
+                End If
+            ElseIf origin = "kagawad4" Then
+                If datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.brgyCaptain Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad1 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad2 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad3 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad5 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad6 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad7 Then
+                    MsgBox("You already picked this resident!", vbCritical, "Warning")
+                    Exit Sub
+                End If
+                If isOfficial(datagridResident.Rows(e.RowIndex).Cells(0).Value) = False Then
+                    ElectOfficials.kagawadId4 = datagridResident.Rows(e.RowIndex).Cells(0).Value
+                    ElectOfficials.kagawad4 = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                    ElectOfficials.txtKagawad4.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                Else
+                    MsgBox("This resident already has a position!", vbCritical, "Warning")
+                    Exit Sub
+                End If
+            ElseIf origin = "kagawad5" Then
+                If datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.brgyCaptain Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad1 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad2 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad3 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad4 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad6 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad7 Then
+                    MsgBox("You already picked this resident!", vbCritical, "Warning")
+                    Exit Sub
+                End If
+                If isOfficial(datagridResident.Rows(e.RowIndex).Cells(0).Value) = False Then
+                    ElectOfficials.kagawadId5 = datagridResident.Rows(e.RowIndex).Cells(0).Value
+                    ElectOfficials.kagawad5 = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                    ElectOfficials.txtKagawad5.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                Else
+                    MsgBox("This resident already has a position!", vbCritical, "Warning")
+                    Exit Sub
+                End If
+            ElseIf origin = "kagawad6" Then
+                If datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.brgyCaptain Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad1 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad2 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad3 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad4 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad5 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad7 Then
+                    MsgBox("You already picked this resident!", vbCritical, "Warning")
+                    Exit Sub
+                End If
+
+                If isOfficial(datagridResident.Rows(e.RowIndex).Cells(0).Value) = False Then
+                    ElectOfficials.kagawadId6 = datagridResident.Rows(e.RowIndex).Cells(0).Value
+                    ElectOfficials.kagawad6 = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                    ElectOfficials.txtKagawad6.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                Else
+                    MsgBox("This resident already has a position!", vbCritical, "Warning")
+                    Exit Sub
+                End If
+            ElseIf origin = "kagawad7" Then
+                If datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.brgyCaptain Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad1 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad2 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad3 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad4 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad5 Or datagridResident.Rows(e.RowIndex).Cells(2).Value = ElectOfficials.kagawad6 Then
+                    MsgBox("You already picked this resident!", vbCritical, "Warning")
+                    Exit Sub
+                End If
+                If isOfficial(datagridResident.Rows(e.RowIndex).Cells(0).Value) = False Then
+                    ElectOfficials.kagawadId7 = datagridResident.Rows(e.RowIndex).Cells(0).Value
+                    ElectOfficials.kagawad7 = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                    ElectOfficials.txtKagawad7.Text = datagridResident.Rows(e.RowIndex).Cells(2).Value
+                Else
+                    MsgBox("This resident already has a position!", vbCritical, "Warning")
+                    Exit Sub
+                End If
+
+
             End If
+
+
         End If
         Me.Close()
     End Sub
+
+    Private Function isOfficial(ByVal residentId As Integer) As Boolean
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = "SELECT count(*) FROM brgyofficials where official_name = @officialname"
+        cmd.Parameters.AddWithValue("@officialname", residentId)
+        If cmd.ExecuteScalar() = 0 Then
+            cmd.Dispose()
+            mySql.Close()
+            mySql.Dispose()
+            Return False
+        Else
+            cmd.Dispose()
+            mySql.Close()
+            mySql.Dispose()
+            Return True
+        End If
+    End Function
 
     Private Sub txtSearchResidents_Click(sender As Object, e As EventArgs) Handles txtSearchResidents.Click
         If txtSearchResidents.Text = "Search by resident name" Then
