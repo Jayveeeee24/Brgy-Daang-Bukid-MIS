@@ -113,11 +113,6 @@ Public Class ProceedReturn
         cmd = mySql.CreateCommand()
         cmd.CommandType = CommandType.Text
         Dim newQuantity = quantity - Val(txtQuantity.Text)
-        MsgBox(id.ToString)
-
-        MsgBox(newQuantity.ToString)
-        MsgBox(quantity)
-        MsgBox(txtQuantity.Text)
 
         If newQuantity = 0 Then
             cmd.CommandText = "DELETE FROM item_borrowed where id = @id"

@@ -728,8 +728,7 @@ Public Class Main_Form
         mySQLReader = cmd.ExecuteReader
         If mySQLReader.HasRows Then
             While mySQLReader.Read
-                Dim date2 As Date = mySQLReader!return_date
-                datagridInventoryDues.Rows.Add(New String() {getItemNameById(mySQLReader!item_id), mySQLReader!quantity, date2.ToString("MMMM d, yyyy")})
+                datagridInventoryDues.Rows.Add(New String() {getItemNameById(mySQLReader!item_id), mySQLReader!quantity, mySQLReader!return_date})
             End While
         End If
         datagridInventoryDues.ClearSelection()
