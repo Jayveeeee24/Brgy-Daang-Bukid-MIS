@@ -6,7 +6,7 @@ Imports MySql.Data.MySqlClient
 
 Public Class ArchivedResidents
 
-    Public mySqlConn As String = "server=localhost; user id=root; database=mis"
+    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
     Private Sub ArchivedResidents_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadDatagrid()
     End Sub

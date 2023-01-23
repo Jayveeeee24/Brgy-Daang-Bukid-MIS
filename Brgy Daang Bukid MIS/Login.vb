@@ -5,7 +5,7 @@ Imports Mysqlx.XDevAPI.Common
 
 Public Class Login
 
-    Public mySqlConn As String = "server=localhost; user id=root; database=mis"
+    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
     Dim isValidated As Boolean = False
     Dim userClick As Integer = 0
     Dim passClick As Integer = 0

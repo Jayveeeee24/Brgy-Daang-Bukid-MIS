@@ -151,11 +151,11 @@ Partial Class ConfirmAccess
         '
         'btnConfirmAccess
         '
-        Me.btnConfirmAccess.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.btnConfirmAccess.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
         Me.btnConfirmAccess.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.btnConfirmAccess.FlatAppearance.BorderSize = 0
-        Me.btnConfirmAccess.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.btnConfirmAccess.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.btnConfirmAccess.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.btnConfirmAccess.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
         Me.btnConfirmAccess.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnConfirmAccess.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConfirmAccess.ForeColor = System.Drawing.Color.White
@@ -164,7 +164,7 @@ Partial Class ConfirmAccess
         Me.btnConfirmAccess.Location = New System.Drawing.Point(152, 167)
         Me.btnConfirmAccess.Margin = New System.Windows.Forms.Padding(0)
         Me.btnConfirmAccess.Name = "btnConfirmAccess"
-        Me.btnConfirmAccess.Size = New System.Drawing.Size(146, 41)
+        Me.btnConfirmAccess.Size = New System.Drawing.Size(146, 36)
         Me.btnConfirmAccess.TabIndex = 106
         Me.btnConfirmAccess.TabStop = False
         Me.btnConfirmAccess.Text = "  Confirm Access"

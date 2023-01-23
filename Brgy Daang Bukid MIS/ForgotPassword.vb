@@ -2,7 +2,7 @@
 
 Public Class ForgotPassword
 
-    Public mySqlConn As String = "server=localhost; user id=root; database=mis"
+    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
     Dim accountId As Integer
     Private visibilityImage As Image
     Dim oldPass As String

@@ -2,7 +2,7 @@
 
 Public Class ViewHousehold
     Public householdId As Integer
-    Public mySqlConn As String = "server=localhost; user id=root; database=mis"
+    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
     Public action As String
 
     Dim isSaved As Boolean = False
@@ -49,7 +49,7 @@ Public Class ViewHousehold
             MsgBox("Household Id already exists!", vbCritical, "Warning")
             Exit Sub
         End If
-        If checkAge(comboResidentId.SelectedIndex) = True Then
+        If checkAge(comboResidentId.SelectedIndex) = True And action = "modify" Then
             MsgBox("Resident is not applicable to be a head!", vbCritical, "Warning")
             Exit Sub
         End If

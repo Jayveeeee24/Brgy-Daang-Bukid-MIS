@@ -2,7 +2,7 @@
 
 
 Public Class Create_Account
-    Public mySqlConn As String = "server=localhost; user id=root; database=mis"
+    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
     Private visibilityImage As Image
     Public action As String
 

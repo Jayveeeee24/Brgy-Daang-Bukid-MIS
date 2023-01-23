@@ -342,10 +342,12 @@ Partial Class Main_Form
         Me.btnSearchInventory = New System.Windows.Forms.Button()
         Me.txtSearchInventory = New System.Windows.Forms.TextBox()
         Me.pageSystemManagement = New System.Windows.Forms.TabPage()
-        Me.btnAuditLogs = New System.Windows.Forms.Button()
+        Me.TableLayoutPanel31 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnMyAccount = New System.Windows.Forms.Button()
+        Me.btnAccountSettings = New System.Windows.Forms.Button()
         Me.btnUpdateBrgyOfficials = New System.Windows.Forms.Button()
         Me.btnArchivedResidents = New System.Windows.Forms.Button()
-        Me.btnAccountSettings = New System.Windows.Forms.Button()
+        Me.btnAuditLogs = New System.Windows.Forms.Button()
         Me.panelTop.SuspendLayout()
         CType(Me.splitContainerMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainerMain.Panel1.SuspendLayout()
@@ -467,6 +469,7 @@ Partial Class Main_Form
         Me.TableLayoutPanel25.SuspendLayout()
         Me.TableLayoutPanel24.SuspendLayout()
         Me.pageSystemManagement.SuspendLayout()
+        Me.TableLayoutPanel31.SuspendLayout()
         Me.SuspendLayout()
         '
         'panelTop
@@ -1232,9 +1235,9 @@ Partial Class Main_Form
         Me.Label15.ForeColor = System.Drawing.Color.White
         Me.Label15.Location = New System.Drawing.Point(10, 10)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(107, 18)
+        Me.Label15.Size = New System.Drawing.Size(93, 18)
         Me.Label15.TabIndex = 1
-        Me.Label15.Text = "Total PWD's"
+        Me.Label15.Text = "Total PWD"
         '
         'Panel6
         '
@@ -4607,10 +4610,7 @@ Partial Class Main_Form
         'pageSystemManagement
         '
         Me.pageSystemManagement.BackColor = System.Drawing.SystemColors.Control
-        Me.pageSystemManagement.Controls.Add(Me.btnAuditLogs)
-        Me.pageSystemManagement.Controls.Add(Me.btnUpdateBrgyOfficials)
-        Me.pageSystemManagement.Controls.Add(Me.btnArchivedResidents)
-        Me.pageSystemManagement.Controls.Add(Me.btnAccountSettings)
+        Me.pageSystemManagement.Controls.Add(Me.TableLayoutPanel31)
         Me.pageSystemManagement.Location = New System.Drawing.Point(4, 21)
         Me.pageSystemManagement.Name = "pageSystemManagement"
         Me.pageSystemManagement.Padding = New System.Windows.Forms.Padding(3)
@@ -4618,31 +4618,78 @@ Partial Class Main_Form
         Me.pageSystemManagement.TabIndex = 6
         Me.pageSystemManagement.Text = "Management"
         '
-        'btnAuditLogs
+        'TableLayoutPanel31
         '
-        Me.btnAuditLogs.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnAuditLogs.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnAuditLogs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnAuditLogs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnAuditLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAuditLogs.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAuditLogs.ForeColor = System.Drawing.Color.White
-        Me.btnAuditLogs.Image = CType(resources.GetObject("btnAuditLogs.Image"), System.Drawing.Image)
-        Me.btnAuditLogs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAuditLogs.Location = New System.Drawing.Point(816, 24)
-        Me.btnAuditLogs.Name = "btnAuditLogs"
-        Me.btnAuditLogs.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
-        Me.btnAuditLogs.Size = New System.Drawing.Size(237, 53)
-        Me.btnAuditLogs.TabIndex = 5
-        Me.btnAuditLogs.TabStop = False
-        Me.btnAuditLogs.Text = "     Audit Logs"
-        Me.btnAuditLogs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnAuditLogs.UseVisualStyleBackColor = False
-        Me.btnAuditLogs.Visible = False
+        Me.TableLayoutPanel31.ColumnCount = 4
+        Me.TableLayoutPanel31.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel31.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel31.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel31.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel31.Controls.Add(Me.btnMyAccount, 0, 0)
+        Me.TableLayoutPanel31.Controls.Add(Me.btnAuditLogs, 0, 1)
+        Me.TableLayoutPanel31.Controls.Add(Me.btnAccountSettings, 1, 0)
+        Me.TableLayoutPanel31.Controls.Add(Me.btnUpdateBrgyOfficials, 3, 0)
+        Me.TableLayoutPanel31.Controls.Add(Me.btnArchivedResidents, 2, 0)
+        Me.TableLayoutPanel31.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TableLayoutPanel31.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel31.Name = "TableLayoutPanel31"
+        Me.TableLayoutPanel31.Padding = New System.Windows.Forms.Padding(7)
+        Me.TableLayoutPanel31.RowCount = 2
+        Me.TableLayoutPanel31.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel31.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel31.Size = New System.Drawing.Size(1103, 139)
+        Me.TableLayoutPanel31.TabIndex = 7
+        '
+        'btnMyAccount
+        '
+        Me.btnMyAccount.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnMyAccount.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnMyAccount.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnMyAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnMyAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnMyAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMyAccount.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMyAccount.ForeColor = System.Drawing.Color.White
+        Me.btnMyAccount.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.my_profile1
+        Me.btnMyAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnMyAccount.Location = New System.Drawing.Point(10, 10)
+        Me.btnMyAccount.Name = "btnMyAccount"
+        Me.btnMyAccount.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
+        Me.btnMyAccount.Size = New System.Drawing.Size(266, 56)
+        Me.btnMyAccount.TabIndex = 6
+        Me.btnMyAccount.TabStop = False
+        Me.btnMyAccount.Text = "     My Account Profile"
+        Me.btnMyAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnMyAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnMyAccount.UseVisualStyleBackColor = False
+        '
+        'btnAccountSettings
+        '
+        Me.btnAccountSettings.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnAccountSettings.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnAccountSettings.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnAccountSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnAccountSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnAccountSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAccountSettings.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAccountSettings.ForeColor = System.Drawing.Color.White
+        Me.btnAccountSettings.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.account_management
+        Me.btnAccountSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAccountSettings.Location = New System.Drawing.Point(282, 10)
+        Me.btnAccountSettings.Name = "btnAccountSettings"
+        Me.btnAccountSettings.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
+        Me.btnAccountSettings.Size = New System.Drawing.Size(266, 56)
+        Me.btnAccountSettings.TabIndex = 2
+        Me.btnAccountSettings.TabStop = False
+        Me.btnAccountSettings.Text = "     Account Management"
+        Me.btnAccountSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAccountSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAccountSettings.UseVisualStyleBackColor = False
         '
         'btnUpdateBrgyOfficials
         '
         Me.btnUpdateBrgyOfficials.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnUpdateBrgyOfficials.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnUpdateBrgyOfficials.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.btnUpdateBrgyOfficials.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.btnUpdateBrgyOfficials.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
@@ -4651,10 +4698,10 @@ Partial Class Main_Form
         Me.btnUpdateBrgyOfficials.ForeColor = System.Drawing.Color.White
         Me.btnUpdateBrgyOfficials.Image = CType(resources.GetObject("btnUpdateBrgyOfficials.Image"), System.Drawing.Image)
         Me.btnUpdateBrgyOfficials.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnUpdateBrgyOfficials.Location = New System.Drawing.Point(557, 24)
+        Me.btnUpdateBrgyOfficials.Location = New System.Drawing.Point(826, 10)
         Me.btnUpdateBrgyOfficials.Name = "btnUpdateBrgyOfficials"
         Me.btnUpdateBrgyOfficials.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
-        Me.btnUpdateBrgyOfficials.Size = New System.Drawing.Size(237, 53)
+        Me.btnUpdateBrgyOfficials.Size = New System.Drawing.Size(267, 56)
         Me.btnUpdateBrgyOfficials.TabIndex = 4
         Me.btnUpdateBrgyOfficials.TabStop = False
         Me.btnUpdateBrgyOfficials.Text = "     Update Brgy. Officials"
@@ -4664,6 +4711,7 @@ Partial Class Main_Form
         'btnArchivedResidents
         '
         Me.btnArchivedResidents.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnArchivedResidents.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnArchivedResidents.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.btnArchivedResidents.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.btnArchivedResidents.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
@@ -4672,37 +4720,38 @@ Partial Class Main_Form
         Me.btnArchivedResidents.ForeColor = System.Drawing.Color.White
         Me.btnArchivedResidents.Image = CType(resources.GetObject("btnArchivedResidents.Image"), System.Drawing.Image)
         Me.btnArchivedResidents.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnArchivedResidents.Location = New System.Drawing.Point(299, 24)
+        Me.btnArchivedResidents.Location = New System.Drawing.Point(554, 10)
         Me.btnArchivedResidents.Name = "btnArchivedResidents"
         Me.btnArchivedResidents.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
-        Me.btnArchivedResidents.Size = New System.Drawing.Size(237, 53)
+        Me.btnArchivedResidents.Size = New System.Drawing.Size(266, 56)
         Me.btnArchivedResidents.TabIndex = 3
         Me.btnArchivedResidents.TabStop = False
         Me.btnArchivedResidents.Text = "     Archived Residents"
         Me.btnArchivedResidents.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnArchivedResidents.UseVisualStyleBackColor = False
         '
-        'btnAccountSettings
+        'btnAuditLogs
         '
-        Me.btnAccountSettings.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnAccountSettings.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnAccountSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnAccountSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnAccountSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAccountSettings.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAccountSettings.ForeColor = System.Drawing.Color.White
-        Me.btnAccountSettings.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.account_management
-        Me.btnAccountSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAccountSettings.Location = New System.Drawing.Point(41, 24)
-        Me.btnAccountSettings.Name = "btnAccountSettings"
-        Me.btnAccountSettings.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
-        Me.btnAccountSettings.Size = New System.Drawing.Size(237, 53)
-        Me.btnAccountSettings.TabIndex = 2
-        Me.btnAccountSettings.TabStop = False
-        Me.btnAccountSettings.Text = "     Account Management"
-        Me.btnAccountSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAccountSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnAccountSettings.UseVisualStyleBackColor = False
+        Me.btnAuditLogs.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnAuditLogs.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnAuditLogs.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnAuditLogs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnAuditLogs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnAuditLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAuditLogs.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAuditLogs.ForeColor = System.Drawing.Color.White
+        Me.btnAuditLogs.Image = CType(resources.GetObject("btnAuditLogs.Image"), System.Drawing.Image)
+        Me.btnAuditLogs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAuditLogs.Location = New System.Drawing.Point(10, 72)
+        Me.btnAuditLogs.Name = "btnAuditLogs"
+        Me.btnAuditLogs.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
+        Me.btnAuditLogs.Size = New System.Drawing.Size(266, 57)
+        Me.btnAuditLogs.TabIndex = 5
+        Me.btnAuditLogs.TabStop = False
+        Me.btnAuditLogs.Text = "     Audit Logs"
+        Me.btnAuditLogs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAuditLogs.UseVisualStyleBackColor = False
+        Me.btnAuditLogs.Visible = False
         '
         'Main_Form
         '
@@ -4863,6 +4912,7 @@ Partial Class Main_Form
         Me.TableLayoutPanel24.ResumeLayout(False)
         Me.TableLayoutPanel24.PerformLayout()
         Me.pageSystemManagement.ResumeLayout(False)
+        Me.TableLayoutPanel31.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -5170,4 +5220,6 @@ Partial Class Main_Form
     Friend WithEvents DataGridViewTextBoxColumn22 As DataGridViewTextBoxColumn
     Friend WithEvents Column17 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn23 As DataGridViewTextBoxColumn
+    Friend WithEvents btnMyAccount As Button
+    Friend WithEvents TableLayoutPanel31 As TableLayoutPanel
 End Class

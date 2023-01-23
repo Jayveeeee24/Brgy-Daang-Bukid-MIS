@@ -36,7 +36,7 @@ Public Class Main_Form
     '' ''''''''''''''''''''''''''''''''
 
     Public filterModule As String
-    Public mySqlConn As String = "server=localhost; user id=root; database=mis"
+    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
     Dim totalRowsResident As Integer
     Dim totalPageResident As Integer
 
@@ -1488,6 +1488,10 @@ Public Class Main_Form
         pictureCertificates.Image = My.Resources.Clearance_page_0001
 
     End Sub
+    Private Sub btnMyAccount_Click(sender As Object, e As EventArgs) Handles btnMyAccount.Click
+
+    End Sub
+
     Private Sub btnIndigency_Click(sender As Object, e As EventArgs) Handles btnIndigency.Click
         clearCertificates()
 
@@ -1518,7 +1522,6 @@ Public Class Main_Form
         comboTime.SelectedIndex = 12
 
     End Sub
-
     Private Sub btnCreateCertificate_Click(sender As Object, e As EventArgs) Handles btnCreateCertificate.Click
         If certificateResidentId = 0 Then
             MsgBox("Please select a valid resident!", vbCritical, "Warning")
@@ -1622,8 +1625,6 @@ Public Class Main_Form
         document.Close()
         CertificateChooseAction.ShowDialog()
     End Sub
-
-
     Private Sub txtView_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCertificatePurpose.KeyDown, txtCertificateResident.KeyDown, txtRespondent2.KeyDown, txtRespondent1.KeyDown, txtComplainant2.KeyDown, txtComplainant1.KeyDown, txtCaseNo.KeyDown
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
@@ -1855,9 +1856,6 @@ Public Class Main_Form
     Private Sub btnUpdateBrgyOfficials_Click(sender As Object, e As EventArgs) Handles btnUpdateBrgyOfficials.Click
         ConfirmAccess.originForm = "BrgyOfficials"
         ConfirmAccess.Show()
-    End Sub
-    Private Sub btnAuditLogs_Click(sender As Object, e As EventArgs) Handles btnAuditLogs.Click
-
     End Sub
 
 

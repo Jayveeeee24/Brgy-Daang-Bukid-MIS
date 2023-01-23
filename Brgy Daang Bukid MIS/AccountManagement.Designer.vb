@@ -104,10 +104,10 @@ Partial Class AccountManagement
         '
         'btnAddAccount
         '
-        Me.btnAddAccount.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.btnAddAccount.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.btnAddAccount.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.btnAddAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.btnAddAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.btnAddAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
+        Me.btnAddAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
         Me.btnAddAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddAccount.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddAccount.ForeColor = System.Drawing.Color.White
@@ -179,7 +179,7 @@ Partial Class AccountManagement
         Me.MaximizeBox = False
         Me.Name = "AccountManagement"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Account Management"
+        Me.Text = "zxs"
         CType(Me.datagridViewAccounts, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

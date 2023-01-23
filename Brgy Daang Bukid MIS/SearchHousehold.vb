@@ -6,7 +6,7 @@ Imports Mysqlx.XDevAPI.Common
 
 Public Class SearchHousehold
 
-    Public mySqlConn As String = "server=localhost; user id=root; database=mis"
+    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
     Private Sub SearchHousehold_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         datagridHousehold.Rows.Clear()
         txtSearchHousehold.Text = "Search by household id, house no or street name"

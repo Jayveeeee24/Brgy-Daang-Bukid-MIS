@@ -3,7 +3,7 @@ Imports MySql.Data.MySqlClient
 
 Public Class UpdateBrgyOfficials
 
-    Public mySqlConn As String = "server=localhost; user id=root; database=mis"
+    Public mySqlConn As String = "server=192.168.1.6; user id=root; database=mis"
     Public officialId As Integer
     Public residentId As Integer
 

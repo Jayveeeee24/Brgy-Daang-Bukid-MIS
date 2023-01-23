@@ -5,7 +5,7 @@ Imports Mysqlx.XDevAPI.Common
 
 Public Class AccountManagement
 
-    Public mySqlConn As String = "server=localhost; user id=root; database=mis"
+    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
     Public accountId As Integer
 
     Private Sub AccountManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load

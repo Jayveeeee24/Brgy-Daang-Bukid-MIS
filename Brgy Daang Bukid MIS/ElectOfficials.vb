@@ -3,7 +3,7 @@
 Imports MySql.Data.MySqlClient
 
 Public Class ElectOfficials
-    Public mySqlConn As String = "server=localhost; user id=root; database=mis"
+    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
     Public brgyCaptainId, kagawadId1, kagawadId2, kagawadId3, kagawadId4, kagawadId5, kagawadId6, kagawadId7 As Integer
     Public brgyCaptain, kagawad1, kagawad2, kagawad3, kagawad4, kagawad5, kagawad6, kagawad7 As String
 

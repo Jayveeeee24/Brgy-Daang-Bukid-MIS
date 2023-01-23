@@ -391,7 +391,7 @@ Partial Class ElectOfficials
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(554, 622)
+        Me.ClientSize = New System.Drawing.Size(675, 630)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnAppointOfficial)
         Me.Controls.Add(Me.Label3)

@@ -5,7 +5,7 @@ Imports Microsoft.SqlServer.Server
 Imports MySql.Data.MySqlClient
 
 Public Class ProceedReturn
-    Public mySqlConn As String = "server=localhost; user id=root; database=mis"
+    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
     Public id As Integer
     Public itemId As Integer
     Public quantity As Integer
