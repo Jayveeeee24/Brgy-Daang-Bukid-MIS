@@ -1433,7 +1433,7 @@ Partial Class ViewComplaints
         Me.MaximizeBox = False
         Me.Name = "ViewComplaints"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "ny"
+        Me.Text = "Complaint Report Information"
         Me.mainTabControl.ResumeLayout(False)
         Me.pageView.ResumeLayout(False)
         Me.Panel11.ResumeLayout(False)

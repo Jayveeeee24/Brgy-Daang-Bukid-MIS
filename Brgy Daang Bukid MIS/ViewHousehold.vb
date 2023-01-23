@@ -49,6 +49,10 @@ Public Class ViewHousehold
             MsgBox("Household Id already exists!", vbCritical, "Warning")
             Exit Sub
         End If
+        If checkAge(comboResidentId.SelectedIndex) = True Then
+            MsgBox("Resident is not applicable to be a head!", vbCritical, "Warning")
+            Exit Sub
+        End If
         If txtBldgNo.Text.Trim = "" Then
             MsgBox("Please fill out a valid house number!", vbCritical, "Warning")
             Exit Sub
@@ -95,7 +99,9 @@ Public Class ViewHousehold
         Else
             comboElectricitySource.Text = electricitySource
         End If
-        comboHouseholdHead.SelectedIndex = comboHouseholdHead.FindStringExact(headFirstName + " " + If(headMiddleName = Nothing Or headMiddleName = "N/A", "", headMiddleName + " ") + headLastName + If(headExtName = Nothing Or headExtName = "N/A", "", headExtName))
+
+        comboHouseholdHead.SelectedIndex = 0
+        'comboHouseholdHead.SelectedIndex = comboHouseholdHead.FindStringExact(headFirstName + " " + If(headMiddleName = Nothing Or headMiddleName = "N/A", "", headMiddleName + " ") + headLastName + If(headExtName = Nothing Or headExtName = "N/A", "", headExtName))
         If comboHouseholdHead.Items.Count = 0 Then
             comboHouseholdHead.Visible = False
             labelHouseholdHead.Visible = False
@@ -206,6 +212,36 @@ Public Class ViewHousehold
         mySql.Close()
         mySql.Dispose()
     End Function
+
+    Private Function checkAge(ByVal id As Integer) As Boolean
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "SELECT COUNT(*) from residents WHERE resident_id = @residentid and age < 20"
+        cmd.Parameters.AddWithValue("@residentid", id)
+
+        If cmd.ExecuteScalar = 0 Then
+            Return True
+        Else
+            Return False
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+    End Function
     Private Sub getHouseholdMembers()
 
         Dim mySql As MySqlConnection
@@ -252,7 +288,6 @@ Public Class ViewHousehold
         labelWaterSource.Text = If(waterSource = "", "No Data", waterSource)
         labelElectricitySource.Text = If(electricitySource = "", "No Data", electricitySource)
         labelDateAdded.Text = dateAdded
-
         labelHeadFirstName.Text = If(headFirstName = "", "No Data", headFirstName)
         labelHeadMiddleName.Text = If(headMiddleName = "", "No Data", headMiddleName)
         labelHeadLastName.Text = If(headLastName = "", "No Data", headLastName)

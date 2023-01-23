@@ -170,10 +170,13 @@ Public Class ViewComplaints
         panelDefendantRadio.Show()
 
         btnModifyComplaint.Enabled = False
+
         If labelStatus.Text = "Settled" Then
+            btnModifyComplaint.Enabled = False
             btnModifyComplaint.Text = "  Settled"
-        ElseIf labelStatus.Text = "Filed For Action" Then
+        ElseIf labelStatus.Text = "Filed for Action" Then
             btnModifyComplaint.Text = "  Filed For Action"
+            btnModifyComplaint.Enabled = False
         Else
             btnModifyComplaint.Text = "  Update Complaint"
             btnModifyComplaint.Enabled = True
@@ -361,6 +364,8 @@ Public Class ViewComplaints
             dateSecondHearing.Enabled = True
             dateThirdHearing.Enabled = False
         ElseIf comboSecondResult.Text <> "" And comboThirdResult.Text = "" Then
+            comboSecondResult.Enabled = False
+            dateSecondHearing.Enabled = False
 
             comboThirdResult.Enabled = True
             dateThirdHearing.Enabled = True
@@ -396,37 +401,61 @@ Public Class ViewComplaints
             MsgBox("Please provide address and contact no for respondent!", vbCritical, "Warning")
             Exit Sub
         End If
+        If comboFirstResult.SelectedIndex >= 0 And dateFirstHearing.Value.Date > Date.Now.Date Then
+            MsgBox("Please provide a valid date for first hearing!", vbCritical, "Warning")
+            Exit Sub
+        End If
+        If comboSecondResult.SelectedIndex >= 0 And dateSecondHearing.Value.Date > Date.Now.Date Then
+            MsgBox("Please provide a valid date for second hearing!", vbCritical, "Warning")
+            Exit Sub
+        End If
+        If comboThirdResult.SelectedIndex >= 0 And dateThirdHearing.Value.Date > Date.Now.Date Then
+            MsgBox("Please provide a valid date for third hearing!", vbCritical, "Warning")
+            Exit Sub
+        End If
+        If dateSecondHearing.Value.Date < dateFirstHearing.Value.Date Then
+            MsgBox("You can't set second hearing date less than first hearing date!", vbCritical, "Warning")
+            Exit Sub
+        End If
+        If dateThirdHearing.Value.Date < dateSecondHearing.Value.Date Then
+            MsgBox("You can't set third hearing date less than second hearing date!", vbCritical, "Warning")
+            Exit Sub
+        End If
+        If dateFirstHearing.Value.Date < datePickerDateComplaint.Value.Date Or dateSecondHearing.Value.Date < datePickerDateComplaint.Value.Date Or dateThirdHearing.Value.Date < datePickerDateComplaint.Value.Date Then
+            MsgBox("You can't set hearing dates less than the date filed!", vbCritical, "Warning")
+            Exit Sub
+        End If
 
         If action = "modify" Then
-            Dim dt1 As Date
-            If labelFirstDate.Text.Trim <> "" Then
-                dt1 = Date.ParseExact(labelFirstDate.Text, "MMMM d, yyyy", CultureInfo.InvariantCulture)
-            End If
-            Dim dt2 As Date
-            If labelSecondDate.Text.Trim <> "" Then
-                dt2 = Date.ParseExact(labelSecondDate.Text, "MMMM d, yyyy", CultureInfo.InvariantCulture)
-            End If
-            Dim dt3 As Date
-            If labelThirdDate.Text.Trim <> "" Then
-                dt3 = Date.ParseExact(labelThirdDate.Text, "MMMM d, yyyy", CultureInfo.InvariantCulture)
-            End If
+                Dim dt1 As Date
+                If labelFirstDate.Text.Trim <> "" Then
+                    dt1 = Date.ParseExact(labelFirstDate.Text, "MMMM d, yyyy", CultureInfo.InvariantCulture)
+                End If
+                Dim dt2 As Date
+                If labelSecondDate.Text.Trim <> "" Then
+                    dt2 = Date.ParseExact(labelSecondDate.Text, "MMMM d, yyyy", CultureInfo.InvariantCulture)
+                End If
+                Dim dt3 As Date
+                If labelThirdDate.Text.Trim <> "" Then
+                    dt3 = Date.ParseExact(labelThirdDate.Text, "MMMM d, yyyy", CultureInfo.InvariantCulture)
+                End If
 
-            If dateFirstHearing.Value.Date < Date.Now.Date And dateFirstHearing.Value <> dt1 Then
-                MsgBox("Please select a valid hearing date!", vbCritical, "Warning")
-                Exit Sub
-            End If
-            If dateSecondHearing.Value.Date < Date.Now.Date And dateSecondHearing.Value <> dt2 Then
-                MsgBox("Please select a valid hearing date!", vbCritical, "Warning")
-                Exit Sub
-            End If
-            If dateThirdHearing.Value.Date < Date.Now.Date And dateThirdHearing.Value <> dt3 Then
-                MsgBox("Please select a valid hearing date!", vbCritical, "Warning")
-                Exit Sub
-            End If
+            'If dateFirstHearing.Value.Date < Date.Now.Date And dateFirstHearing.Value <> dt1 Then
+            '    MsgBox("Please select a valid hearing date!", vbCritical, "Warning")
+            '    Exit Sub
+            'End If
+            'If dateSecondHearing.Value.Date < Date.Now.Date And dateSecondHearing.Value <> dt2 Then
+            '    MsgBox("Please select a valid hearing date!", vbCritical, "Warning")
+            '    Exit Sub
+            'End If
+            'If dateThirdHearing.Value.Date < Date.Now.Date And dateThirdHearing.Value <> dt3 Then
+            '    MsgBox("Please select a valid hearing date!", vbCritical, "Warning")
+            '    Exit Sub
+            'End If
         End If
 
 
-        Dim mySql As MySqlConnection
+            Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
         On Error Resume Next
         mySql.Open()
