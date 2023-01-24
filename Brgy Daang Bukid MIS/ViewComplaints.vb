@@ -6,7 +6,7 @@ Imports Syncfusion.Windows.Forms.Tools
 
 Public Class ViewComplaints
 
-    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
+    Public mySqlConn As String = My.Resources.constring
     Public action As String
     Public complaintId As Integer
 

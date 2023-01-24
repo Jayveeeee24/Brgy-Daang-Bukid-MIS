@@ -344,10 +344,10 @@ Partial Class Main_Form
         Me.pageSystemManagement = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel31 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnMyAccount = New System.Windows.Forms.Button()
+        Me.btnSystemVariables = New System.Windows.Forms.Button()
         Me.btnAccountSettings = New System.Windows.Forms.Button()
         Me.btnUpdateBrgyOfficials = New System.Windows.Forms.Button()
         Me.btnArchivedResidents = New System.Windows.Forms.Button()
-        Me.btnAuditLogs = New System.Windows.Forms.Button()
         Me.panelTop.SuspendLayout()
         CType(Me.splitContainerMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainerMain.Panel1.SuspendLayout()
@@ -1856,6 +1856,7 @@ Partial Class Main_Form
         'btnAddResident
         '
         Me.btnAddResident.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.btnAddResident.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnAddResident.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.btnAddResident.FlatAppearance.BorderSize = 0
         Me.btnAddResident.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
@@ -1869,7 +1870,7 @@ Partial Class Main_Form
         Me.btnAddResident.Margin = New System.Windows.Forms.Padding(7, 3, 5, 3)
         Me.btnAddResident.Name = "btnAddResident"
         Me.btnAddResident.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.btnAddResident.Size = New System.Drawing.Size(102, 35)
+        Me.btnAddResident.Size = New System.Drawing.Size(110, 35)
         Me.btnAddResident.TabIndex = 8
         Me.btnAddResident.TabStop = False
         Me.btnAddResident.Text = "  Add New"
@@ -2135,6 +2136,7 @@ Partial Class Main_Form
         'btnAddHousehold
         '
         Me.btnAddHousehold.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.btnAddHousehold.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnAddHousehold.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.btnAddHousehold.FlatAppearance.BorderSize = 0
         Me.btnAddHousehold.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(113, Byte), Integer))
@@ -2148,7 +2150,7 @@ Partial Class Main_Form
         Me.btnAddHousehold.Margin = New System.Windows.Forms.Padding(7, 3, 5, 3)
         Me.btnAddHousehold.Name = "btnAddHousehold"
         Me.btnAddHousehold.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.btnAddHousehold.Size = New System.Drawing.Size(102, 35)
+        Me.btnAddHousehold.Size = New System.Drawing.Size(110, 35)
         Me.btnAddHousehold.TabIndex = 8
         Me.btnAddHousehold.TabStop = False
         Me.btnAddHousehold.Text = "  Add New"
@@ -4626,7 +4628,7 @@ Partial Class Main_Form
         Me.TableLayoutPanel31.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel31.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel31.Controls.Add(Me.btnMyAccount, 0, 0)
-        Me.TableLayoutPanel31.Controls.Add(Me.btnAuditLogs, 0, 1)
+        Me.TableLayoutPanel31.Controls.Add(Me.btnSystemVariables, 0, 1)
         Me.TableLayoutPanel31.Controls.Add(Me.btnAccountSettings, 1, 0)
         Me.TableLayoutPanel31.Controls.Add(Me.btnUpdateBrgyOfficials, 3, 0)
         Me.TableLayoutPanel31.Controls.Add(Me.btnArchivedResidents, 2, 0)
@@ -4662,6 +4664,29 @@ Partial Class Main_Form
         Me.btnMyAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnMyAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnMyAccount.UseVisualStyleBackColor = False
+        '
+        'btnSystemVariables
+        '
+        Me.btnSystemVariables.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSystemVariables.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnSystemVariables.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSystemVariables.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSystemVariables.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSystemVariables.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSystemVariables.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSystemVariables.ForeColor = System.Drawing.Color.White
+        Me.btnSystemVariables.Image = CType(resources.GetObject("btnSystemVariables.Image"), System.Drawing.Image)
+        Me.btnSystemVariables.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSystemVariables.Location = New System.Drawing.Point(10, 72)
+        Me.btnSystemVariables.Name = "btnSystemVariables"
+        Me.btnSystemVariables.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
+        Me.btnSystemVariables.Size = New System.Drawing.Size(266, 57)
+        Me.btnSystemVariables.TabIndex = 5
+        Me.btnSystemVariables.TabStop = False
+        Me.btnSystemVariables.Text = "     System Variables"
+        Me.btnSystemVariables.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSystemVariables.UseVisualStyleBackColor = False
+        Me.btnSystemVariables.Visible = False
         '
         'btnAccountSettings
         '
@@ -4729,29 +4754,6 @@ Partial Class Main_Form
         Me.btnArchivedResidents.Text = "     Archived Residents"
         Me.btnArchivedResidents.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnArchivedResidents.UseVisualStyleBackColor = False
-        '
-        'btnAuditLogs
-        '
-        Me.btnAuditLogs.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnAuditLogs.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnAuditLogs.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btnAuditLogs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnAuditLogs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnAuditLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAuditLogs.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAuditLogs.ForeColor = System.Drawing.Color.White
-        Me.btnAuditLogs.Image = CType(resources.GetObject("btnAuditLogs.Image"), System.Drawing.Image)
-        Me.btnAuditLogs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAuditLogs.Location = New System.Drawing.Point(10, 72)
-        Me.btnAuditLogs.Name = "btnAuditLogs"
-        Me.btnAuditLogs.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
-        Me.btnAuditLogs.Size = New System.Drawing.Size(266, 57)
-        Me.btnAuditLogs.TabIndex = 5
-        Me.btnAuditLogs.TabStop = False
-        Me.btnAuditLogs.Text = "     Audit Logs"
-        Me.btnAuditLogs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnAuditLogs.UseVisualStyleBackColor = False
-        Me.btnAuditLogs.Visible = False
         '
         'Main_Form
         '
@@ -5117,7 +5119,7 @@ Partial Class Main_Form
     Friend WithEvents TableLayoutPanel24 As TableLayoutPanel
     Friend WithEvents btnSearchInventory As Button
     Friend WithEvents txtSearchInventory As TextBox
-    Friend WithEvents btnAuditLogs As Button
+    Friend WithEvents btnSystemVariables As Button
     Friend WithEvents btnUpdateBrgyOfficials As Button
     Friend WithEvents btnArchivedResidents As Button
     Friend WithEvents btnAccountSettings As Button

@@ -5,7 +5,7 @@ Imports Microsoft.SqlServer.Server
 Imports MySql.Data.MySqlClient
 
 Public Class ReturnItem
-    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
+    Public mySqlConn As String = My.Resources.constring
 
     Private Sub ReturnItem_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 

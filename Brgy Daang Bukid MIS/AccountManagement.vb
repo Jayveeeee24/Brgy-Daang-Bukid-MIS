@@ -5,7 +5,7 @@ Imports Mysqlx.XDevAPI.Common
 
 Public Class AccountManagement
 
-    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
+    Public mySqlConn As String = My.Resources.constring
     Public accountId As Integer
 
     Private Sub AccountManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -39,11 +39,14 @@ Public Class AccountManagement
 
         If mySQLReader.HasRows Then
             While mySQLReader.Read
-                Dim officialName As String = " "
-                officialName = getResidentNameById(mySQLReader!official_name)
-                Dim officialPosition As String = " "
-                officialPosition = mySQLReader!official_position
-                datagridViewAccounts.Rows.Add(New String() {mySQLReader!account_id, mySQLReader!user_level, mySQLReader!account_name, officialName, officialPosition})
+                If mySQLReader!account_id <> 1 Then
+                    Dim officialName As String = " "
+                    officialName = getResidentNameById(mySQLReader!official_name)
+                    Dim officialPosition As String = " "
+                    officialPosition = mySQLReader!official_position
+
+                    datagridViewAccounts.Rows.Add(New String() {mySQLReader!account_id, mySQLReader!user_level, mySQLReader!account_name, officialName, officialPosition})
+                End If
             End While
 
         End If
@@ -107,23 +110,23 @@ Public Class AccountManagement
         End If
     End Sub
 
-    Private Sub btnUpdateAccount_Click(sender As Object, e As EventArgs) Handles btnUpdateAccount.Click
-        ConfirmAccess.originForm = "UpdateAccount"
-        ConfirmAccess.Show()
-    End Sub
+    'Private Sub btnUpdateAccount_Click(sender As Object, e As EventArgs) Handles btnUpdateAccount.Click
+    '    ConfirmAccess.originForm = "UpdateAccount"
+    '    ConfirmAccess.Show()
+    'End Sub
 
-    Public Sub updateAccount()
-        Account_Settings.accountId = accountId
-        Account_Settings.getAccountDetails(accountId)
-        Account_Settings.ShowDialog()
+    'Public Sub updateAccount()
+    '    Account_Settings.accountId = accountId
+    '    Account_Settings.getAccountDetails(accountId)
+    '    Account_Settings.ShowDialog()
 
 
-        loadDatagrid()
-        accountId = 0
-        btnUpdateAccount.Enabled = False
-        btnRemoveAccount.Enabled = False
-        datagridViewAccounts.ClearSelection()
-    End Sub
+    '    loadDatagrid()
+    '    accountId = 0
+    '    btnUpdateAccount.Enabled = False
+    '    btnRemoveAccount.Enabled = False
+    '    datagridViewAccounts.ClearSelection()
+    'End Sub
 
     Private Sub btnRemoveAccount_Click(sender As Object, e As EventArgs) Handles btnRemoveAccount.Click
         If MsgBox("Are you sure to remove this account?", MsgBoxStyle.YesNo, "Confirmation") = MsgBoxResult.Yes Then

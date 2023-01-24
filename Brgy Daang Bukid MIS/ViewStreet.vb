@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class ViewStreet
-    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
+    Public mySqlConn As String = My.Resources.constring
     Public streetName As String
     Dim total As Integer = 0
 

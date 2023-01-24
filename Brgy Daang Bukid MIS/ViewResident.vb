@@ -6,7 +6,7 @@ Imports Mysqlx.XDevAPI.Common
 
 Public Class ViewResident
 
-    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
+    Public mySqlConn As String = My.Resources.constring
     Public resident_id As Integer
     Public viewChoice As String
     Public action As String

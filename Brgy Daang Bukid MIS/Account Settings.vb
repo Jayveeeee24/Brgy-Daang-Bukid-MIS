@@ -4,7 +4,7 @@ Imports MySql.Data.MySqlClient
 Imports Mysqlx.XDevAPI.Common
 Public Class Account_Settings
 
-    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
+    Public mySqlConn As String = My.Resources.constring
     Public accountId As Integer = 0
 
     Private visibilityImage As Image

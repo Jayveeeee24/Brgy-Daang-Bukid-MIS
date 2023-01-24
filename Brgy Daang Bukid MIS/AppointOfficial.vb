@@ -5,7 +5,7 @@ Imports MySql.Data.MySqlClient
 
 Public Class AppointOfficial
 
-    Public mySqlConn As String = "server=192.168.1.6; user id=root; database=mis"
+    Public mySqlConn As String = My.Resources.constring
     Public residentId As Integer
     Public residentName As String
     Dim limit As Integer

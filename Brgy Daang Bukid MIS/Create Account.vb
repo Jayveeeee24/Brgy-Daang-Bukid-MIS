@@ -2,9 +2,10 @@
 
 
 Public Class Create_Account
-    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
+    Public mySqlConn As String = My.Resources.constring
     Private visibilityImage As Image
     Public action As String
+    Dim isSaved As Boolean = False
 
 
     Private Sub Create_Account_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -13,17 +14,26 @@ Public Class Create_Account
 
         Dim official() As String = {"Barangay Captain", "Barangay Secretary", "Barangay Treasurer", "SK Chairperson"}
         Dim i As Integer
-        If action = "initial" Then
-            txtUserLevel.Text = "Administrator"
+        If action = "UpdateUserAccount" Then
+            getAccountDetails(Main_Form.account_id)
+
+            If Main_Form.account_id = 1 Then
+                txtUserLevel.Text = "Administrator"
+            Else
+                txtUserLevel.Text = "Staff"
+            End If
             For i = 0 To official.Length - 1
                 comboAccountFor.Items.Add(official(i))
             Next i
 
-            comboAccountFor.SelectedIndex = 0
+            comboAccountFor.SelectedIndex = Main_Form.account_id - 1
             comboAccountFor.Enabled = False
-            labelTitle.Text = "INITIAL SETUP: ACCOUNT CREATION"
-            Me.Text = "Initial Setup: Management Information System of Barangay Daang Bukid"
+            txtUsernameAdmin.Enabled = False
+            labelTitle.Text = "UPDATE YOUR ACCOUNT DETAILS"
+            Me.Text = "First Time Login: Management Information System of Barangay Daang Bukid"
+
         Else
+            isSaved = True
             txtUserLevel.Text = "Staff"
             For i = 1 To official.Length - 1
                 comboAccountFor.Items.Add(official(i))
@@ -35,6 +45,40 @@ Public Class Create_Account
             labelTitle.Text = "ACCOUNT CREATION"
             Me.Text = "CREATE AN ACCOUNT"
         End If
+    End Sub
+    Public Sub getAccountDetails(ByVal id As Integer)
+
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+
+        Dim cmd As MySqlCommand
+        Dim mySQLReader As MySqlDataReader
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = "SELECT accounts.account_name, accounts.question, accounts.answer, brgyofficials.official_position from accounts LEFT JOIN brgyofficials on accounts.account_id = brgyofficials.id where accounts.account_id = @accountid"
+        cmd.Parameters.AddWithValue("@accountid", id)
+        mySQLReader = cmd.ExecuteReader
+
+        If mySQLReader.HasRows Then
+            While mySQLReader.Read
+                comboRecovery.SelectedIndex = 0
+                txtUsernameAdmin.Text = mySQLReader!account_name
+            End While
+
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
     End Sub
 
     Private Sub txtView_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsernameAdmin.KeyDown, txtPassword.KeyDown, txtConfirmPassword.KeyDown
@@ -53,11 +97,12 @@ Public Class Create_Account
             Exit Sub
         End If
 
-        If action = "initial" Then
-            saveAccount(1, txtUsernameAdmin.Text.Trim, txtPassword.Text.Trim, txtUserLevel.Text, comboRecovery.Text, txtAnswer.Text.Trim)
-            MsgBox("Initial Setup finished!", vbInformation, "Information")
-            Login.Show()
+        If action = "UpdateUserAccount" Then
+            updateAccount(Main_Form.account_id, txtPassword.Text.Trim, comboRecovery.Text, txtAnswer.Text.Trim)
+
+            isSaved = True
             Me.Close()
+            isSaved = False
         Else
             If isAccountAvailable(comboAccountFor.FindStringExact(comboAccountFor.Text) + 2) = True Then
                 saveAccount(comboAccountFor.FindStringExact(comboAccountFor.Text) + 2, txtUsernameAdmin.Text.Trim, txtPassword.Text.Trim, txtUserLevel.Text, comboRecovery.Text, txtAnswer.Text.Trim)
@@ -99,6 +144,33 @@ Public Class Create_Account
         mySql.Close()
         mySql.Dispose()
     End Function
+    Private Sub updateAccount(ByVal accountid As Integer, ByVal accountpassword As String, ByVal question As String, ByVal answer As String)
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+                Exit Sub
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = "UPDATE accounts SET account_password = @accountpassword, question = @question, answer = @answer, first_login = 'No' WHERE account_id = @accountid"
+        cmd.Parameters.AddWithValue("@accountid", accountid)
+        cmd.Parameters.AddWithValue("@accountpassword", accountpassword)
+        cmd.Parameters.AddWithValue("@question", question)
+        cmd.Parameters.AddWithValue("@answer", answer)
+
+        cmd.ExecuteNonQuery()
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+    End Sub
     Private Sub saveAccount(ByVal accountid As Integer, ByVal accountname As String, ByVal accountpassword As String, ByVal userlevel As String, ByVal question As String, ByVal answer As String)
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
@@ -109,9 +181,6 @@ Public Class Create_Account
             Case 0
             Case Else
                 MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
-                If action = "initital" Then
-                    Application.Exit()
-                End If
                 Exit Sub
         End Select
 
@@ -131,6 +200,7 @@ Public Class Create_Account
         cmd.Dispose()
         mySql.Close()
         mySql.Dispose()
+
     End Sub
 
     Private Sub btnVisibilityPassword_Click(sender As Object, e As EventArgs) Handles btnVisibilityPassword.Click
@@ -169,4 +239,9 @@ Public Class Create_Account
         Me.InitializeComponent()
     End Sub
 
+    Private Sub Create_Account_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If isSaved = False Then
+            e.Cancel = True
+        End If
+    End Sub
 End Class

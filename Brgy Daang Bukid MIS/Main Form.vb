@@ -36,7 +36,7 @@ Public Class Main_Form
     '' ''''''''''''''''''''''''''''''''
 
     Public filterModule As String
-    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
+    Public mySqlConn As String = My.Resources.constring
     Dim totalRowsResident As Integer
     Dim totalPageResident As Integer
 
@@ -54,7 +54,7 @@ Public Class Main_Form
 
 
     Enum Modules
-        BrgyOfficials
+        brgyofficials
         Residents
         Household
         Report
@@ -69,7 +69,6 @@ Public Class Main_Form
     Private Sub Main_Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         mainTabControl.ItemSize = New Size(0, 1)
         btnDashboard.PerformClick()
-        getAccountDetails()
 
         EnableDoubleBuffered(dataGridBrgyOfficials)
         EnableDoubleBuffered(datagridResident)
@@ -80,6 +79,34 @@ Public Class Main_Form
         EnableDoubleBuffered(datagridVawc)
 
     End Sub
+
+    Private Function isFirstTImeLogin()
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = "SELECT count(*) FROM accounts where account_id = @accountid and first_login = 'Yes'"
+        cmd.Parameters.AddWithValue("@accountid", account_id)
+
+        If cmd.ExecuteScalar() = 0 Then
+            Return False
+        Else
+            Return True
+        End If
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+    End Function
     Private Sub getAccountDetails()
 
         btnCertificates.Show()
@@ -193,11 +220,17 @@ Public Class Main_Form
         btnSystemManagement.BackColor = Color.FromArgb(25, 117, 211)
         btnInventory.BackColor = Color.FromArgb(25, 117, 211)
 
+        getAccountDetails()
+        If isFirstTImeLogin() = True Then
+            Create_Account.action = "UpdateUserAccount"
+            Create_Account.ShowDialog()
+        End If
+
         mainTabControl.SelectedTab = pageDashboard
         labelTitle.Text = "Dashboard"
 
         countRows()
-        loadDataGrid(dataGridBrgyOfficials, Modules.BrgyOfficials)
+        loadDataGrid(dataGridBrgyOfficials, Modules.brgyofficials)
         statisticChecker()
         loadDashboardInventory()
 
@@ -433,9 +466,9 @@ Public Class Main_Form
         mySQLCommand.CommandType = CommandType.Text
 
         Select Case moduleSelected
-            Case Modules.BrgyOfficials ''''''''''''''Barangay Officials
+            Case Modules.brgyofficials ''''''''''''''Barangay Officials
 
-                mySQLCommand.CommandText = "SELECT brgyOfficials.official_position, brgyOfficials.official_name, residents.contact_no FROM brgyOfficials INNER JOIN residents on brgyOfficials.official_name = residents.resident_id"
+                mySQLCommand.CommandText = "SELECT brgyofficials.official_position, brgyofficials.official_name, residents.contact_no FROM brgyofficials INNER JOIN residents on brgyofficials.official_name = residents.resident_id"
                 mySQLReader = mySQLCommand.ExecuteReader
                 If mySQLReader.HasRows Then
                     While mySQLReader.Read
@@ -693,11 +726,6 @@ Public Class Main_Form
         mySql.Close()
         mySql.Dispose()
     End Sub
-
-
-
-
-
     Private Sub datagridInventoryDues_Click(sender As Object, e As EventArgs) Handles datagridInventoryDues.Click
         btnInventory.PerformClick()
         btnReturn.PerformClick()
@@ -771,6 +799,9 @@ Public Class Main_Form
 
         Return itemName
     End Function
+
+
+
     '' ''''''''''''''''''''''RESIDENT UI DEFINITIONS''''''''''''''''''''''''
     Private Sub txtPageNoResident_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPageNoResident.KeyDown
         enterTextPageNo(e, txtPageNoResident, datagridResident, Modules.Residents, totalPageResident)
@@ -1456,7 +1487,6 @@ Public Class Main_Form
             System.IO.Directory.Delete(s, True)
         End If
     End Sub
-
     Private Sub btnResidency_Click(sender As Object, e As EventArgs) Handles btnResidency.Click
         clearCertificates()
 
@@ -1488,10 +1518,6 @@ Public Class Main_Form
         pictureCertificates.Image = My.Resources.Clearance_page_0001
 
     End Sub
-    Private Sub btnMyAccount_Click(sender As Object, e As EventArgs) Handles btnMyAccount.Click
-
-    End Sub
-
     Private Sub btnIndigency_Click(sender As Object, e As EventArgs) Handles btnIndigency.Click
         clearCertificates()
 
@@ -1582,13 +1608,13 @@ Public Class Main_Form
         If txtCaseNo.Text.Trim = "" Then
             MsgBox("Please fill a valid case no!", vbCritical, "Warning")
             Exit Sub
-        ElseIf certificatecomplainantId1 = 0 Or certificaterespondentId1 = 0 Then
+        ElseIf certificateComplainantId1 = 0 Or certificateRespondentId1 = 0 Then
             MsgBox("Please select a valid main complainant and respondent!", vbCritical, "Warning")
             Exit Sub
-        ElseIf certificatecomplainantId2 = 0 And txtComplainant2.Text.Trim <> "" Then
+        ElseIf certificateComplainantId2 = 0 And txtComplainant2.Text.Trim <> "" Then
             MsgBox("Please select a valid second complainant!", vbCritical, "Warning")
             Exit Sub
-        ElseIf certificaterespondentId2 = 0 And txtRespondent2.Text.Trim <> "" Then
+        ElseIf certificateRespondentId2 = 0 And txtRespondent2.Text.Trim <> "" Then
             MsgBox("Please select a valid second respondent!", vbCritical, "Warning")
             Exit Sub
         ElseIf datePickerSummon.Value < Date.Now.Date Then
@@ -1728,7 +1754,6 @@ Public Class Main_Form
         mySql.Dispose()
         Return captainId
     End Function
-
     Private Function isAgeValid() As Boolean
 
         Dim mySql As MySqlConnection
@@ -1853,11 +1878,18 @@ Public Class Main_Form
         ConfirmAccess.originForm = "AccountManagement"
         ConfirmAccess.Show()
     End Sub
-    Private Sub btnUpdateBrgyOfficials_Click(sender As Object, e As EventArgs) Handles btnUpdateBrgyOfficials.Click
+    Private Sub btnMyAccount_Click(sender As Object, e As EventArgs) Handles btnMyAccount.Click
+        ConfirmAccess.originForm = "Accounts"
+        ConfirmAccess.Show()
+    End Sub
+    Private Sub btnUpdatebrgyofficials_Click(sender As Object, e As EventArgs) Handles btnUpdateBrgyOfficials.Click
         ConfirmAccess.originForm = "BrgyOfficials"
         ConfirmAccess.Show()
     End Sub
-
+    Private Sub btnSystemVariables_Click(sender As Object, e As EventArgs) Handles btnSystemVariables.Click
+        ConfirmAccess.originForm = "SystemVariables"
+        ConfirmAccess.Show()
+    End Sub
 
     '' '''''''''''''''''''''''''MAPS METHODS''''''''''''''''''''''''''''''''''''''''
     Private Sub comboChooseStreet_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboChooseStreet.SelectedIndexChanged

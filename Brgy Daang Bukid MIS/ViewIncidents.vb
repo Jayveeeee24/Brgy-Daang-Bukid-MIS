@@ -2,7 +2,7 @@
 Imports MySql.Data.MySqlClient
 
 Public Class ViewIncidents
-    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
+    Public mySqlConn As String = My.Resources.constring
     Public action As String
     Public incidentId As Integer = 0
     Public reportedById As Integer = 0

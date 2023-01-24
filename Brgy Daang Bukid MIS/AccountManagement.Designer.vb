@@ -32,8 +32,8 @@ Partial Class AccountManagement
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnAddAccount = New System.Windows.Forms.Button()
-        Me.btnUpdateAccount = New System.Windows.Forms.Button()
         Me.btnRemoveAccount = New System.Windows.Forms.Button()
+        Me.btnUpdateAccount = New System.Windows.Forms.Button()
         CType(Me.datagridViewAccounts, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -65,11 +65,11 @@ Partial Class AccountManagement
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.datagridViewAccounts.DefaultCellStyle = DataGridViewCellStyle2
-        Me.datagridViewAccounts.Location = New System.Drawing.Point(12, 63)
+        Me.datagridViewAccounts.Location = New System.Drawing.Point(12, 76)
         Me.datagridViewAccounts.Name = "datagridViewAccounts"
         Me.datagridViewAccounts.ReadOnly = True
         Me.datagridViewAccounts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datagridViewAccounts.Size = New System.Drawing.Size(802, 318)
+        Me.datagridViewAccounts.Size = New System.Drawing.Size(902, 430)
         Me.datagridViewAccounts.TabIndex = 116
         '
         'DataGridViewTextBoxColumn1
@@ -112,7 +112,7 @@ Partial Class AccountManagement
         Me.btnAddAccount.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddAccount.ForeColor = System.Drawing.Color.White
         Me.btnAddAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAddAccount.Location = New System.Drawing.Point(12, 24)
+        Me.btnAddAccount.Location = New System.Drawing.Point(13, 40)
         Me.btnAddAccount.Margin = New System.Windows.Forms.Padding(7, 3, 5, 3)
         Me.btnAddAccount.Name = "btnAddAccount"
         Me.btnAddAccount.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
@@ -122,6 +122,26 @@ Partial Class AccountManagement
         Me.btnAddAccount.Text = "ADD NEW ACCOUNT"
         Me.btnAddAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAddAccount.UseVisualStyleBackColor = False
+        '
+        'btnRemoveAccount
+        '
+        Me.btnRemoveAccount.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.btnRemoveAccount.Enabled = False
+        Me.btnRemoveAccount.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.btnRemoveAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.btnRemoveAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.btnRemoveAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRemoveAccount.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.btnRemoveAccount.ForeColor = System.Drawing.Color.White
+        Me.btnRemoveAccount.Location = New System.Drawing.Point(194, 40)
+        Me.btnRemoveAccount.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnRemoveAccount.Name = "btnRemoveAccount"
+        Me.btnRemoveAccount.Size = New System.Drawing.Size(171, 33)
+        Me.btnRemoveAccount.TabIndex = 119
+        Me.btnRemoveAccount.TabStop = False
+        Me.btnRemoveAccount.Text = "REMOVE ACCOUNT"
+        Me.btnRemoveAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnRemoveAccount.UseVisualStyleBackColor = False
         '
         'btnUpdateAccount
         '
@@ -134,7 +154,7 @@ Partial Class AccountManagement
         Me.btnUpdateAccount.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnUpdateAccount.ForeColor = System.Drawing.Color.White
         Me.btnUpdateAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnUpdateAccount.Location = New System.Drawing.Point(188, 24)
+        Me.btnUpdateAccount.Location = New System.Drawing.Point(561, 24)
         Me.btnUpdateAccount.Margin = New System.Windows.Forms.Padding(7, 3, 5, 3)
         Me.btnUpdateAccount.Name = "btnUpdateAccount"
         Me.btnUpdateAccount.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
@@ -144,32 +164,13 @@ Partial Class AccountManagement
         Me.btnUpdateAccount.Text = "UPDATE ACCOUNT"
         Me.btnUpdateAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnUpdateAccount.UseVisualStyleBackColor = False
-        '
-        'btnRemoveAccount
-        '
-        Me.btnRemoveAccount.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.btnRemoveAccount.Enabled = False
-        Me.btnRemoveAccount.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.btnRemoveAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
-        Me.btnRemoveAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
-        Me.btnRemoveAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRemoveAccount.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.btnRemoveAccount.ForeColor = System.Drawing.Color.White
-        Me.btnRemoveAccount.Location = New System.Drawing.Point(366, 24)
-        Me.btnRemoveAccount.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnRemoveAccount.Name = "btnRemoveAccount"
-        Me.btnRemoveAccount.Size = New System.Drawing.Size(171, 33)
-        Me.btnRemoveAccount.TabIndex = 119
-        Me.btnRemoveAccount.TabStop = False
-        Me.btnRemoveAccount.Text = "REMOVE ACCOUNT"
-        Me.btnRemoveAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnRemoveAccount.UseVisualStyleBackColor = False
+        Me.btnUpdateAccount.Visible = False
         '
         'AccountManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(826, 392)
+        Me.ClientSize = New System.Drawing.Size(926, 518)
         Me.Controls.Add(Me.btnRemoveAccount)
         Me.Controls.Add(Me.btnUpdateAccount)
         Me.Controls.Add(Me.btnAddAccount)
@@ -179,7 +180,7 @@ Partial Class AccountManagement
         Me.MaximizeBox = False
         Me.Name = "AccountManagement"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "zxs"
+        Me.Text = "Account Management"
         CType(Me.datagridViewAccounts, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -192,6 +193,6 @@ Partial Class AccountManagement
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents btnAddAccount As Button
-    Friend WithEvents btnUpdateAccount As Button
     Friend WithEvents btnRemoveAccount As Button
+    Friend WithEvents btnUpdateAccount As Button
 End Class

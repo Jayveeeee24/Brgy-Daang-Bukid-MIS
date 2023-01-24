@@ -191,6 +191,12 @@
     <Compile Include="SearchResidents.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SystemVariables.Designer.vb">
+      <DependentUpon>SystemVariables.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SystemVariables.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UpdateBrgyOfficials.Designer.vb">
       <DependentUpon>UpdateBrgyOfficials.vb</DependentUpon>
     </Compile>
@@ -329,6 +335,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SearchResidents.resx">
       <DependentUpon>SearchResidents.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemVariables.resx">
+      <DependentUpon>SystemVariables.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateBrgyOfficials.resx">
       <DependentUpon>UpdateBrgyOfficials.vb</DependentUpon>

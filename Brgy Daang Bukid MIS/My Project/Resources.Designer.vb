@@ -191,6 +191,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to server=localhost; user id=root;database=mis.
+        '''</summary>
+        Friend ReadOnly Property constring() As String
+            Get
+                Return ResourceManager.GetString("constring", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to server=192.168.1.2; user id=user; password=qwer; database=mis.
+        '''</summary>
+        Friend ReadOnly Property constringForRouter() As String
+            Get
+                Return ResourceManager.GetString("constringForRouter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to server=192.168.1.6; user id=user; password=qwer; database=mis.
+        '''</summary>
+        Friend ReadOnly Property conStringHome() As String
+            Get
+                Return ResourceManager.GetString("conStringHome", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to server=localhost; user id=root;database=mis.
+        '''</summary>
+        Friend ReadOnly Property conStringLocalHost() As String
+            Get
+                Return ResourceManager.GetString("conStringLocalHost", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property dashboard() As System.Drawing.Bitmap
@@ -317,6 +353,15 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("map whole edited", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to server=192.168.254.113; user id=user; password=qwer; database=mis.
+        '''</summary>
+        Friend ReadOnly Property meann() As String
+            Get
+                Return ResourceManager.GetString("meann", resourceCulture)
             End Get
         End Property
         

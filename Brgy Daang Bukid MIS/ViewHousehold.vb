@@ -2,7 +2,7 @@
 
 Public Class ViewHousehold
     Public householdId As Integer
-    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
+    Public mySqlConn As String = My.Resources.constring
     Public action As String
 
     Dim isSaved As Boolean = False
@@ -50,7 +50,7 @@ Public Class ViewHousehold
             Exit Sub
         End If
         If checkAge(comboResidentId.SelectedIndex) = True And action = "modify" Then
-            MsgBox("Resident is not applicable to be a head!", vbCritical, "Warning")
+            MsgBox("Resident's age is not applicable to be a head!", vbCritical, "Warning")
             Exit Sub
         End If
         If txtBldgNo.Text.Trim = "" Then
@@ -100,12 +100,12 @@ Public Class ViewHousehold
             comboElectricitySource.Text = electricitySource
         End If
 
-        comboHouseholdHead.SelectedIndex = 0
         'comboHouseholdHead.SelectedIndex = comboHouseholdHead.FindStringExact(headFirstName + " " + If(headMiddleName = Nothing Or headMiddleName = "N/A", "", headMiddleName + " ") + headLastName + If(headExtName = Nothing Or headExtName = "N/A", "", headExtName))
         If comboHouseholdHead.Items.Count = 0 Then
             comboHouseholdHead.Visible = False
             labelHouseholdHead.Visible = False
         Else
+            comboHouseholdHead.SelectedIndex = 0
             comboHouseholdHead.Visible = True
             labelHouseholdHead.Visible = True
         End If

@@ -3,7 +3,7 @@ Imports MySql.Data.MySqlClient
 
 Public Class UpdateBrgyOfficials
 
-    Public mySqlConn As String = "server=192.168.1.6; user id=root; database=mis"
+    Public mySqlConn As String = My.Resources.constring
     Public officialId As Integer
     Public residentId As Integer
 
@@ -35,7 +35,7 @@ Public Class UpdateBrgyOfficials
         mySQLCommand.CommandType = CommandType.Text
 
 
-        mySQLCommand.CommandText = "SELECT id, official_position, official_name FROM brgyOfficials ORDER BY id ASC"
+        mySQLCommand.CommandText = "SELECT id, official_position, official_name FROM brgyofficials ORDER BY id ASC"
         mySQLReader = mySQLCommand.ExecuteReader
         If mySQLReader.HasRows Then
             While mySQLReader.Read

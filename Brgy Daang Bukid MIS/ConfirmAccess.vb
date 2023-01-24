@@ -8,7 +8,7 @@ Public Class ConfirmAccess
     Public originForm As String
     Public reasonForArchived As String
     Dim allowDeactivate As Boolean = True
-    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
+    Public mySqlConn As String = My.Resources.constring
 
     Private Sub ConfirmAccess_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToParent()
@@ -92,8 +92,10 @@ Public Class ConfirmAccess
                 UpdateBrgyOfficials.dismissOfficial()
             ElseIf originForm = "RemoveAccount" Then
                 AccountManagement.removeAccount()
-            ElseIf originForm = "UpdateAccount" Then
-                AccountManagement.updateAccount()
+            ElseIf originForm = "SystemVariables" Then
+                SystemVariables.ShowDialog()
+                'ElseIf originForm = "UpdateAccount" Then
+                '    AccountManagement.updateAccount()
             End If
         Else
             txtPassword.Clear()

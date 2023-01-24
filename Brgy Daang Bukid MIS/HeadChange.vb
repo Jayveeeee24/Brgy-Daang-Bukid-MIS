@@ -6,7 +6,7 @@ Imports Mysqlx.XDevAPI.Common
 Public Class HeadChange
 
     Public householdId As Integer
-    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
+    Public mySqlConn As String = My.Resources.constring
     Dim newHeadResidentId As Integer
     Private Sub HeadChange_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         labelHouseholdId.Text = householdId

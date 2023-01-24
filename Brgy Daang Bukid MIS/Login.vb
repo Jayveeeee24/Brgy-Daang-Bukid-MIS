@@ -5,7 +5,7 @@ Imports Mysqlx.XDevAPI.Common
 
 Public Class Login
 
-    Public mySqlConn As String = "server=192.168.1.2; user id=user; password=qwer; database=mis"
+    Public mySqlConn As String = My.Resources.constring
     Dim isValidated As Boolean = False
     Dim userClick As Integer = 0
     Dim passClick As Integer = 0
@@ -13,13 +13,34 @@ Public Class Login
     Private visibilityImage As Image
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If isAccountAvailable() = False Then
-            Create_Account.action = "initial"
-            Create_Account.Show()
-            Me.Close()
+
         End If
     End Sub
 
+    Private Sub createAccountForAdmin()
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
 
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+                Exit Sub
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "INSERT INTO accounts (account_id, account_name, account_password, user_level, first_login) VALUES (1, 'admin', 'admin', 'Administrator', 'Yes')"
+
+        cmd.ExecuteNonQuery()
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+    End Sub
     Private Function isAccountAvailable() As Boolean
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
