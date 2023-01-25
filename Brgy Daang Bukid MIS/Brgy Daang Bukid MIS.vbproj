@@ -107,6 +107,12 @@
     <Compile Include="AccountManagement.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AddVariable.Designer.vb">
+      <DependentUpon>AddVariable.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddVariable.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AppointOfficial.Designer.vb">
       <DependentUpon>AppointOfficial.vb</DependentUpon>
     </Compile>
@@ -294,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AccountManagement.resx">
       <DependentUpon>AccountManagement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddVariable.resx">
+      <DependentUpon>AddVariable.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppointOfficial.resx">
       <DependentUpon>AppointOfficial.vb</DependentUpon>
