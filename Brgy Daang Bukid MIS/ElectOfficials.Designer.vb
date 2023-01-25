@@ -54,7 +54,7 @@ Partial Class ElectOfficials
         Me.txtBarangayCaptain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtBarangayCaptain.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBarangayCaptain.ForeColor = System.Drawing.Color.Black
-        Me.txtBarangayCaptain.Location = New System.Drawing.Point(84, 140)
+        Me.txtBarangayCaptain.Location = New System.Drawing.Point(117, 142)
         Me.txtBarangayCaptain.MaxLength = 100
         Me.txtBarangayCaptain.Multiline = True
         Me.txtBarangayCaptain.Name = "txtBarangayCaptain"
@@ -82,7 +82,7 @@ Partial Class ElectOfficials
         Me.btnSearchCaptain.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchCaptain.ForeColor = System.Drawing.Color.White
         Me.btnSearchCaptain.Image = CType(resources.GetObject("btnSearchCaptain.Image"), System.Drawing.Image)
-        Me.btnSearchCaptain.Location = New System.Drawing.Point(487, 140)
+        Me.btnSearchCaptain.Location = New System.Drawing.Point(520, 142)
         Me.btnSearchCaptain.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSearchCaptain.Name = "btnSearchCaptain"
         Me.btnSearchCaptain.Size = New System.Drawing.Size(36, 27)
@@ -101,7 +101,7 @@ Partial Class ElectOfficials
         Me.btnSearchKagawad1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchKagawad1.ForeColor = System.Drawing.Color.White
         Me.btnSearchKagawad1.Image = CType(resources.GetObject("btnSearchKagawad1.Image"), System.Drawing.Image)
-        Me.btnSearchKagawad1.Location = New System.Drawing.Point(487, 220)
+        Me.btnSearchKagawad1.Location = New System.Drawing.Point(520, 224)
         Me.btnSearchKagawad1.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSearchKagawad1.Name = "btnSearchKagawad1"
         Me.btnSearchKagawad1.Size = New System.Drawing.Size(36, 27)
@@ -116,7 +116,7 @@ Partial Class ElectOfficials
         Me.txtKagawad1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtKagawad1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtKagawad1.ForeColor = System.Drawing.Color.Black
-        Me.txtKagawad1.Location = New System.Drawing.Point(84, 220)
+        Me.txtKagawad1.Location = New System.Drawing.Point(117, 224)
         Me.txtKagawad1.MaxLength = 100
         Me.txtKagawad1.Multiline = True
         Me.txtKagawad1.Name = "txtKagawad1"
@@ -144,7 +144,7 @@ Partial Class ElectOfficials
         Me.btnSearchKagawad3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchKagawad3.ForeColor = System.Drawing.Color.White
         Me.btnSearchKagawad3.Image = CType(resources.GetObject("btnSearchKagawad3.Image"), System.Drawing.Image)
-        Me.btnSearchKagawad3.Location = New System.Drawing.Point(487, 316)
+        Me.btnSearchKagawad3.Location = New System.Drawing.Point(520, 320)
         Me.btnSearchKagawad3.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSearchKagawad3.Name = "btnSearchKagawad3"
         Me.btnSearchKagawad3.Size = New System.Drawing.Size(36, 27)
@@ -159,7 +159,7 @@ Partial Class ElectOfficials
         Me.txtKagawad3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtKagawad3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtKagawad3.ForeColor = System.Drawing.Color.Black
-        Me.txtKagawad3.Location = New System.Drawing.Point(84, 316)
+        Me.txtKagawad3.Location = New System.Drawing.Point(117, 320)
         Me.txtKagawad3.MaxLength = 100
         Me.txtKagawad3.Multiline = True
         Me.txtKagawad3.Name = "txtKagawad3"
@@ -177,7 +177,7 @@ Partial Class ElectOfficials
         Me.btnSearchKagawad2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchKagawad2.ForeColor = System.Drawing.Color.White
         Me.btnSearchKagawad2.Image = CType(resources.GetObject("btnSearchKagawad2.Image"), System.Drawing.Image)
-        Me.btnSearchKagawad2.Location = New System.Drawing.Point(487, 269)
+        Me.btnSearchKagawad2.Location = New System.Drawing.Point(520, 273)
         Me.btnSearchKagawad2.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSearchKagawad2.Name = "btnSearchKagawad2"
         Me.btnSearchKagawad2.Size = New System.Drawing.Size(36, 27)
@@ -192,7 +192,7 @@ Partial Class ElectOfficials
         Me.txtKagawad2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtKagawad2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtKagawad2.ForeColor = System.Drawing.Color.Black
-        Me.txtKagawad2.Location = New System.Drawing.Point(84, 269)
+        Me.txtKagawad2.Location = New System.Drawing.Point(117, 273)
         Me.txtKagawad2.MaxLength = 100
         Me.txtKagawad2.Multiline = True
         Me.txtKagawad2.Name = "txtKagawad2"
@@ -210,7 +210,7 @@ Partial Class ElectOfficials
         Me.btnSearchKagawad4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchKagawad4.ForeColor = System.Drawing.Color.White
         Me.btnSearchKagawad4.Image = CType(resources.GetObject("btnSearchKagawad4.Image"), System.Drawing.Image)
-        Me.btnSearchKagawad4.Location = New System.Drawing.Point(487, 360)
+        Me.btnSearchKagawad4.Location = New System.Drawing.Point(520, 364)
         Me.btnSearchKagawad4.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSearchKagawad4.Name = "btnSearchKagawad4"
         Me.btnSearchKagawad4.Size = New System.Drawing.Size(36, 27)
@@ -225,7 +225,7 @@ Partial Class ElectOfficials
         Me.txtKagawad4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtKagawad4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtKagawad4.ForeColor = System.Drawing.Color.Black
-        Me.txtKagawad4.Location = New System.Drawing.Point(84, 360)
+        Me.txtKagawad4.Location = New System.Drawing.Point(117, 364)
         Me.txtKagawad4.MaxLength = 100
         Me.txtKagawad4.Multiline = True
         Me.txtKagawad4.Name = "txtKagawad4"
@@ -243,7 +243,7 @@ Partial Class ElectOfficials
         Me.btnSearchKagawad5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchKagawad5.ForeColor = System.Drawing.Color.White
         Me.btnSearchKagawad5.Image = CType(resources.GetObject("btnSearchKagawad5.Image"), System.Drawing.Image)
-        Me.btnSearchKagawad5.Location = New System.Drawing.Point(487, 410)
+        Me.btnSearchKagawad5.Location = New System.Drawing.Point(520, 414)
         Me.btnSearchKagawad5.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSearchKagawad5.Name = "btnSearchKagawad5"
         Me.btnSearchKagawad5.Size = New System.Drawing.Size(36, 27)
@@ -258,7 +258,7 @@ Partial Class ElectOfficials
         Me.txtKagawad5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtKagawad5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtKagawad5.ForeColor = System.Drawing.Color.Black
-        Me.txtKagawad5.Location = New System.Drawing.Point(84, 410)
+        Me.txtKagawad5.Location = New System.Drawing.Point(117, 414)
         Me.txtKagawad5.MaxLength = 100
         Me.txtKagawad5.Multiline = True
         Me.txtKagawad5.Name = "txtKagawad5"
@@ -276,7 +276,7 @@ Partial Class ElectOfficials
         Me.btnSearchKagawad6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchKagawad6.ForeColor = System.Drawing.Color.White
         Me.btnSearchKagawad6.Image = CType(resources.GetObject("btnSearchKagawad6.Image"), System.Drawing.Image)
-        Me.btnSearchKagawad6.Location = New System.Drawing.Point(487, 459)
+        Me.btnSearchKagawad6.Location = New System.Drawing.Point(520, 463)
         Me.btnSearchKagawad6.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSearchKagawad6.Name = "btnSearchKagawad6"
         Me.btnSearchKagawad6.Size = New System.Drawing.Size(36, 27)
@@ -291,7 +291,7 @@ Partial Class ElectOfficials
         Me.txtKagawad6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtKagawad6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtKagawad6.ForeColor = System.Drawing.Color.Black
-        Me.txtKagawad6.Location = New System.Drawing.Point(84, 459)
+        Me.txtKagawad6.Location = New System.Drawing.Point(117, 463)
         Me.txtKagawad6.MaxLength = 100
         Me.txtKagawad6.Multiline = True
         Me.txtKagawad6.Name = "txtKagawad6"
@@ -309,7 +309,7 @@ Partial Class ElectOfficials
         Me.btnSearchKagawad7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchKagawad7.ForeColor = System.Drawing.Color.White
         Me.btnSearchKagawad7.Image = CType(resources.GetObject("btnSearchKagawad7.Image"), System.Drawing.Image)
-        Me.btnSearchKagawad7.Location = New System.Drawing.Point(487, 510)
+        Me.btnSearchKagawad7.Location = New System.Drawing.Point(520, 514)
         Me.btnSearchKagawad7.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSearchKagawad7.Name = "btnSearchKagawad7"
         Me.btnSearchKagawad7.Size = New System.Drawing.Size(36, 27)
@@ -324,7 +324,7 @@ Partial Class ElectOfficials
         Me.txtKagawad7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtKagawad7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtKagawad7.ForeColor = System.Drawing.Color.Black
-        Me.txtKagawad7.Location = New System.Drawing.Point(84, 510)
+        Me.txtKagawad7.Location = New System.Drawing.Point(117, 514)
         Me.txtKagawad7.MaxLength = 100
         Me.txtKagawad7.Multiline = True
         Me.txtKagawad7.Name = "txtKagawad7"
@@ -365,7 +365,7 @@ Partial Class ElectOfficials
         Me.btnAppointOfficial.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAppointOfficial.ForeColor = System.Drawing.Color.White
         Me.btnAppointOfficial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAppointOfficial.Location = New System.Drawing.Point(390, 576)
+        Me.btnAppointOfficial.Location = New System.Drawing.Point(211, 574)
         Me.btnAppointOfficial.Margin = New System.Windows.Forms.Padding(0)
         Me.btnAppointOfficial.Name = "btnAppointOfficial"
         Me.btnAppointOfficial.Size = New System.Drawing.Size(144, 37)
@@ -391,7 +391,7 @@ Partial Class ElectOfficials
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(675, 630)
+        Me.ClientSize = New System.Drawing.Size(596, 630)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnAppointOfficial)
         Me.Controls.Add(Me.Label3)

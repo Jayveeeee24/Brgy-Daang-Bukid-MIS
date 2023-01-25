@@ -12,9 +12,13 @@ Public Class ProceedReturn
     Public dateBorrowed As String
 
     Private Sub ProceedReturn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        getSystemVariable(comboItemState, "Return Item State")
         comboItemState.SelectedIndex = 0
     End Sub
     Private Sub ProceedReturn_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        ReturnItem.btnReturnItem.Enabled = False
+        ReturnItem.datagridBorrowed.ClearSelection()
+
         Me.Controls.Clear()
         Me.InitializeComponent()
     End Sub

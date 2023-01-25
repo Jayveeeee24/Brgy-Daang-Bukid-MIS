@@ -191,7 +191,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to server=localhost; user id=root;database=mis.
+        '''  Looks up a localized string similar to server=192.168.1.6; user id=user; password=qwer; database=mis.
         '''</summary>
         Friend ReadOnly Property constring() As String
             Get
@@ -302,6 +302,16 @@ Namespace My.Resources
         Friend ReadOnly Property inventory() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("inventory", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property item_data_management() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("item data management", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

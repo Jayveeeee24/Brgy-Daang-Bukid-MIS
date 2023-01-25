@@ -21,6 +21,7 @@ Public Class ViewBlotters
 
         datePickerSubmittedOn.Format = DateTimePickerFormat.Custom
         datePickerSubmittedOn.CustomFormat = "MMMM d, yyyy"
+        getSystemVariable(comboBlotteredFor, "Blottered for")
 
         loadInitialData()
     End Sub

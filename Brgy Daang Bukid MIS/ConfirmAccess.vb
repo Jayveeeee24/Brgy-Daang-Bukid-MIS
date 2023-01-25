@@ -18,7 +18,7 @@ Public Class ConfirmAccess
         Else
             mainTabControl.SelectedIndex = 1
         End If
-
+        getSystemVariable(comboReason, "Reason For Archive")
         comboReason.SelectedIndex = -1
         txtAccountName.Text = Main_Form.user_level
     End Sub

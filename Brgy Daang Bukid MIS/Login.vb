@@ -13,10 +13,9 @@ Public Class Login
     Private visibilityImage As Image
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If isAccountAvailable() = False Then
-
+            createAccountForAdmin()
         End If
     End Sub
-
     Private Sub createAccountForAdmin()
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
@@ -34,7 +33,7 @@ Public Class Login
         cmd = mySql.CreateCommand()
         cmd.CommandType = CommandType.Text
 
-        cmd.CommandText = "INSERT INTO accounts (account_id, account_name, account_password, user_level, first_login) VALUES (1, 'admin', 'admin', 'Administrator', 'Yes')"
+        cmd.CommandText = "INSERT INTO accounts (account_id, account_name, account_password, user_level, question, answer, first_login) VALUES (1, 'admin', 'admin', 'Administrator', 'What was your childhood nickname?', 'admin', 'No')"
 
         cmd.ExecuteNonQuery()
         cmd.Dispose()
@@ -112,7 +111,7 @@ Public Class Login
                 txtUsername.Clear()
                 txtPassword.Clear()
                 txtUsername.Select()
-                Return
+                Exit Sub
         End Select
 
         If Len(txtUsername.Text.Trim) = 0 Or Len(txtPassword.Text.Trim) = 0 Then

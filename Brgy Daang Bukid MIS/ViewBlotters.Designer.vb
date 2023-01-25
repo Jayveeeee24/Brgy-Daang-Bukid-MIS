@@ -663,7 +663,6 @@ Partial Class ViewBlotters
         Me.comboBlotteredFor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.comboBlotteredFor.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboBlotteredFor.FormattingEnabled = True
-        Me.comboBlotteredFor.Items.AddRange(New Object() {"Destruction of property", "Violence or injury", "Theft or larceny", "Extortion or Scam", "Threatening"})
         Me.comboBlotteredFor.Location = New System.Drawing.Point(262, 3)
         Me.comboBlotteredFor.Name = "comboBlotteredFor"
         Me.comboBlotteredFor.Size = New System.Drawing.Size(303, 28)

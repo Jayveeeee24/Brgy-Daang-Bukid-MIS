@@ -85,6 +85,7 @@ Partial Class ViewResident
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnSaveResident = New System.Windows.Forms.Button()
         Me.panelParent = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.btnSearchHouseholdId = New System.Windows.Forms.Button()
         Me.txtContactNo = New System.Windows.Forms.TextBox()
         Me.comboSex = New System.Windows.Forms.ComboBox()
@@ -103,7 +104,6 @@ Partial Class ViewResident
         Me.txtAge = New System.Windows.Forms.TextBox()
         Me.comboHouseholdId = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtReligion = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtOccupation = New System.Windows.Forms.TextBox()
         Me.comboPwd = New System.Windows.Forms.ComboBox()
@@ -127,7 +127,7 @@ Partial Class ViewResident
         Me.txtMiddleName = New System.Windows.Forms.TextBox()
         Me.labelHousehold = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.comboReligion = New System.Windows.Forms.ComboBox()
         Me.mainTabControl.SuspendLayout()
         Me.pageView.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -870,6 +870,7 @@ Partial Class ViewResident
         Me.panelParent.AutoScroll = True
         Me.panelParent.BackColor = System.Drawing.Color.White
         Me.panelParent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.panelParent.Controls.Add(Me.comboReligion)
         Me.panelParent.Controls.Add(Me.Label10)
         Me.panelParent.Controls.Add(Me.btnSearchHouseholdId)
         Me.panelParent.Controls.Add(Me.txtContactNo)
@@ -889,7 +890,6 @@ Partial Class ViewResident
         Me.panelParent.Controls.Add(Me.txtAge)
         Me.panelParent.Controls.Add(Me.comboHouseholdId)
         Me.panelParent.Controls.Add(Me.Label7)
-        Me.panelParent.Controls.Add(Me.txtReligion)
         Me.panelParent.Controls.Add(Me.Label1)
         Me.panelParent.Controls.Add(Me.txtOccupation)
         Me.panelParent.Controls.Add(Me.comboPwd)
@@ -918,6 +918,16 @@ Partial Class ViewResident
         Me.panelParent.Name = "panelParent"
         Me.panelParent.Size = New System.Drawing.Size(672, 633)
         Me.panelParent.TabIndex = 38
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(31, 16)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(425, 16)
+        Me.Label10.TabIndex = 155
+        Me.Label10.Text = "Note: You can search for household id using the search button"
         '
         'btnSearchHouseholdId
         '
@@ -967,7 +977,6 @@ Partial Class ViewResident
         Me.comboCivilStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboCivilStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboCivilStatus.FormattingEnabled = True
-        Me.comboCivilStatus.Items.AddRange(New Object() {"Single", "Married", "Divorced", "Separated", "Widowed"})
         Me.comboCivilStatus.Location = New System.Drawing.Point(302, 570)
         Me.comboCivilStatus.Name = "comboCivilStatus"
         Me.comboCivilStatus.Size = New System.Drawing.Size(174, 28)
@@ -1009,9 +1018,9 @@ Partial Class ViewResident
         Me.Label8.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(32, 528)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(223, 14)
+        Me.Label8.Size = New System.Drawing.Size(227, 14)
         Me.Label8.TabIndex = 147
-        Me.Label8.Text = "Other citizenship, please specify*:"
+        Me.Label8.Text = "If dual citizenship, please specify*:"
         '
         'txtOtherCitizenship
         '
@@ -1035,7 +1044,6 @@ Partial Class ViewResident
         Me.comboCitizenship.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboCitizenship.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboCitizenship.FormattingEnabled = True
-        Me.comboCitizenship.Items.AddRange(New Object() {"Natural born Filipino", "Naturalized Filipino", "Other"})
         Me.comboCitizenship.Location = New System.Drawing.Point(300, 491)
         Me.comboCitizenship.Name = "comboCitizenship"
         Me.comboCitizenship.Size = New System.Drawing.Size(306, 28)
@@ -1072,7 +1080,6 @@ Partial Class ViewResident
         Me.comboBirthPlace.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.comboBirthPlace.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboBirthPlace.FormattingEnabled = True
-        Me.comboBirthPlace.Items.AddRange(New Object() {"Batanes", "Ilocos Norte", "Apayao", "Cagayan", "Abra", "Kalinga", "Ilocos Sur", "Mountain Province", "Ifugao", "Isabela", "La Union", "Benguet", "Nueva Vizcaya", "Quirino", "Pangasinan", "Tarlac", "Nueva Ecija", "Aurora", "Zambales", "Pampanga", "Bulacan", "Bataan", "Rizal", "Cavite", "Laguna", "Batangas", "Quezon", "Camarines Norte", "Marinduque", "Camarines Sur", "Catanduanes", "Albay", "Occidental Mindoro", "Oriental Mindoro", "Romblon", "Sorsogon", "Masbate", "Northern Samar", "Samar", "Eastern Samar", "Aklan", "Capiz", "Antique", "Iloilo", "Biliran", "Guimaras", "Negros Occidental", "Cebu", "Leyte", "Southern Leyte", "Palawan", "Negros Oriental", "Bohol", "Siquijor", "Camiguin", "Dinagat Islands", "Surigao del Norte", "Zamboanga del Norte", "Zamboanga Sibugay", "Zamboanga del Sur", "Misamis Occidental", "Lanao del Norte", "Lanao del Sur", "Misamis Oriental", "Bukidnon", "Agusan del Norte", "Agusan del Sur", "Surigao del Sur", "Cotabato", "Davao del Sur", "Davao del Norte", "Davao de Oro", "Davao Oriental", "Maguindanao del Norte", "Maguindanao del Sur", "Sultan Kudarat", "South Cotabato", "Sarangani", "Davao Occidental", "Basilan", "Sulu", "Tawi-Tawi", "National Capital Region", "Zamboanga City"})
         Me.comboBirthPlace.Location = New System.Drawing.Point(302, 427)
         Me.comboBirthPlace.Name = "comboBirthPlace"
         Me.comboBirthPlace.Size = New System.Drawing.Size(306, 28)
@@ -1138,20 +1145,6 @@ Partial Class ViewResident
         Me.Label7.Size = New System.Drawing.Size(152, 18)
         Me.Label7.TabIndex = 92
         Me.Label7.Text = "Note: * Required "
-        '
-        'txtReligion
-        '
-        Me.txtReligion.BackColor = System.Drawing.Color.White
-        Me.txtReligion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtReligion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtReligion.ForeColor = System.Drawing.Color.Black
-        Me.txtReligion.Location = New System.Drawing.Point(302, 743)
-        Me.txtReligion.MaxLength = 100
-        Me.txtReligion.Multiline = True
-        Me.txtReligion.Name = "txtReligion"
-        Me.txtReligion.Size = New System.Drawing.Size(308, 27)
-        Me.txtReligion.TabIndex = 23
-        Me.txtReligion.Tag = ""
         '
         'Label1
         '
@@ -1395,15 +1388,15 @@ Partial Class ViewResident
         Me.Panel1.Size = New System.Drawing.Size(10, 23)
         Me.Panel1.TabIndex = 68
         '
-        'Label10
+        'comboReligion
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(31, 16)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(425, 16)
-        Me.Label10.TabIndex = 155
-        Me.Label10.Text = "Note: You can search for household id using the search button"
+        Me.comboReligion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboReligion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.comboReligion.FormattingEnabled = True
+        Me.comboReligion.Location = New System.Drawing.Point(302, 742)
+        Me.comboReligion.Name = "comboReligion"
+        Me.comboReligion.Size = New System.Drawing.Size(308, 28)
+        Me.comboReligion.TabIndex = 156
         '
         'ViewResident
         '
@@ -1500,7 +1493,6 @@ Partial Class ViewResident
     Friend WithEvents txtAge As TextBox
     Friend WithEvents comboHouseholdId As ComboBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents txtReligion As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txtOccupation As TextBox
     Friend WithEvents comboPwd As ComboBox
@@ -1539,4 +1531,5 @@ Partial Class ViewResident
     Friend WithEvents Label2 As Label
     Friend WithEvents btnSearchHouseholdId As Button
     Friend WithEvents Label10 As Label
+    Friend WithEvents comboReligion As ComboBox
 End Class

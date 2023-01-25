@@ -24,6 +24,11 @@ Public Class ViewResident
     Private Sub ViewResident_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         mainTabControl.ItemSize = New Size(0, 1)
 
+        getSystemVariable(comboBirthPlace, "Birthplace")
+        getSystemVariable(comboCitizenship, "Citizenship")
+        getSystemVariable(comboCivilStatus, "Civil Status")
+        getSystemVariable(comboReligion, "Religion")
+
         checkPriveledges()
         loadInitialData()
     End Sub
@@ -43,7 +48,7 @@ Public Class ViewResident
     End Sub
     Private Sub ViewResident_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If action = "add" And isSaved = False Then
-            If comboHouseholdId.Text.Trim <> "" Or txtFirstName.Text.Trim <> "" Or txtLastName.Text.Trim <> "" Or comboBirthPlace.Text.Trim <> "" Or txtContactNo.Text.Trim <> "" Or txtDisability.Text.Trim <> "" Or comboBirthPlace.Text.Trim <> "" Or txtOccupation.Text.Trim <> "" Or txtReligion.Text.Trim <> "" Then
+            If comboHouseholdId.Text.Trim <> "" Or txtFirstName.Text.Trim <> "" Or txtLastName.Text.Trim <> "" Or comboBirthPlace.Text.Trim <> "" Or txtContactNo.Text.Trim <> "" Or txtDisability.Text.Trim <> "" Or comboBirthPlace.Text.Trim <> "" Or txtOccupation.Text.Trim <> "" Or comboReligion.Text.Trim <> "" Then
                 If mainTabControl.SelectedIndex = 1 Then
                     If MsgBox("Your current progress will not be saved!", MsgBoxStyle.OkCancel, "Are you sure to exit?") = MsgBoxResult.Cancel Then
                         e.Cancel = True
@@ -92,7 +97,7 @@ Public Class ViewResident
     Private Sub btnSearchHouseholdId_Click(sender As Object, e As EventArgs) Handles btnSearchHouseholdId.Click
         SearchHousehold.ShowDialog()
     End Sub
-    Private Sub txtView_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtOtherCitizenship.KeyPress, txtOccupation.KeyPress, txtReligion.KeyPress
+    Private Sub txtView_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtOtherCitizenship.KeyPress, txtOccupation.KeyPress
         '97 - 122 = Ascii codes for simple letters
         '65 - 90  = Ascii codes for capital letters
         '48 - 57  = Ascii codes for numbers
@@ -113,7 +118,7 @@ Public Class ViewResident
     End Sub
     Private Sub comboCitizenship_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboCitizenship.SelectedIndexChanged
         txtOtherCitizenship.Clear()
-        If comboCitizenship.SelectedIndex >= 2 Then
+        If comboCitizenship.Text = "Dual Citizenship" Then
             txtOtherCitizenship.Enabled = True
         Else
             txtOtherCitizenship.Enabled = False
@@ -153,7 +158,7 @@ Public Class ViewResident
 
         txtDisability.Text = disability
         txtOccupation.Text = occupation
-        txtReligion.Text = religion
+        comboReligion.SelectedIndex = comboReligion.FindStringExact(religion)
 
         pickerBirthDate.Value = birthDate
 
@@ -228,7 +233,7 @@ Public Class ViewResident
         Me.Close()
         Main_Form.btnResidentInfo.PerformClick()
     End Sub
-    Private Sub txtViewKeydown(sender As Object, e As KeyEventArgs) Handles txtReligion.KeyDown, txtOccupation.KeyDown, txtMiddleName.KeyDown, txtLastName.KeyDown, txtFirstName.KeyDown, txtExtName.KeyDown, txtOtherCitizenship.KeyDown
+    Private Sub txtViewKeydown(sender As Object, e As KeyEventArgs) Handles txtOccupation.KeyDown, txtMiddleName.KeyDown, txtLastName.KeyDown, txtFirstName.KeyDown, txtExtName.KeyDown, txtOtherCitizenship.KeyDown
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
         End If
@@ -353,6 +358,7 @@ Public Class ViewResident
         End If
 
         comboCitizenship.SelectedIndex = 0
+        comboReligion.SelectedIndex = 0
         comboCivilStatus.SelectedIndex = comboCivilStatus.FindStringExact("Single")
         comboSex.SelectedIndex = comboSex.FindStringExact("Male")
         comboVoter.SelectedIndex = comboVoter.FindStringExact("No")
@@ -444,7 +450,7 @@ Public Class ViewResident
         cmd.CommandType = CommandType.Text
 
         If action = "modify" Then
-            cmd.CommandText = "UPDATE residents SET household_id = @householdid" & If(txtFirstName.Text = firstName, "", ", first_name = @firstname") & If(txtMiddleName.Text = middleName, "", ", middle_name = @middlename") & If(txtLastName.Text = lastName, "", ", last_name = @lastname") & If(txtExtName.Text = extName, "", ", ext_name = @extname") & If(birthDate.ToString("MMMM dd, yyyy") = pickerBirthDate.Value.ToString("MMMM dd, yyyy"), "", ", birthdate = @birthdate") & If(txtAge.Text = age, "", ", age = @age") & If(comboBirthPlace.Text.Trim = birthPlace, "", ", birthplace = @birthplace") & If(comboCivilStatus.Text = civilStatus, "", ", civil_status = @civilstatus ") & If(comboCitizenship.Text = citizenship Or txtOtherCitizenship.Text = citizenship, "", ", citizenship = @citizenship") & If(comboSex.Text = sex, "", ", sex = @sex") & If(txtReligion.Text = religion, "", ", religion = @religion") & If(txtContactNo.Text = contactNo, "", ", contact_no = @contactno ") & If(comboPwd.Text = pwd, "", ", is_pwd = @pwd") & If(txtDisability.Text = disability, "", ", disability = @disability") & If(comboVoter.Text = voter, "", ", is_voter = @voter") & If(txtOccupation.Text = occupation, "", ", occupation = @occupation") & If(comboHouseholdRole.Text = householdRole, "", ", household_role = @householdrole") & " WHERE resident_id = @residentid"
+            cmd.CommandText = "UPDATE residents SET household_id = @householdid" & If(txtFirstName.Text = firstName, "", ", first_name = @firstname") & If(txtMiddleName.Text = middleName, "", ", middle_name = @middlename") & If(txtLastName.Text = lastName, "", ", last_name = @lastname") & If(txtExtName.Text = extName, "", ", ext_name = @extname") & If(birthDate.ToString("MMMM dd, yyyy") = pickerBirthDate.Value.ToString("MMMM dd, yyyy"), "", ", birthdate = @birthdate") & If(txtAge.Text = age, "", ", age = @age") & If(comboBirthPlace.Text.Trim = birthPlace, "", ", birthplace = @birthplace") & If(comboCivilStatus.Text = civilStatus, "", ", civil_status = @civilstatus ") & If(comboCitizenship.Text = citizenship Or txtOtherCitizenship.Text = citizenship, "", ", citizenship = @citizenship") & If(comboSex.Text = sex, "", ", sex = @sex") & If(comboReligion.Text = religion, "", ", religion = @religion") & If(txtContactNo.Text = contactNo, "", ", contact_no = @contactno ") & If(comboPwd.Text = pwd, "", ", is_pwd = @pwd") & If(txtDisability.Text = disability, "", ", disability = @disability") & If(comboVoter.Text = voter, "", ", is_voter = @voter") & If(txtOccupation.Text = occupation, "", ", occupation = @occupation") & If(comboHouseholdRole.Text = householdRole, "", ", household_role = @householdrole") & " WHERE resident_id = @residentid"
 
             cmd.Parameters.AddWithValue("@householdid", comboHouseholdId.Text)
             cmd.Parameters.AddWithValue("@firstname", txtFirstName.Text)
@@ -458,7 +464,7 @@ Public Class ViewResident
             cmd.Parameters.AddWithValue("@civilstatus", comboCivilStatus.Text)
             cmd.Parameters.AddWithValue("@citizenship", If(comboCitizenship.SelectedIndex = 2, txtOtherCitizenship.Text, comboCitizenship.Text))
             cmd.Parameters.AddWithValue("@sex", comboSex.Text)
-            cmd.Parameters.AddWithValue("@religion", txtReligion.Text)
+            cmd.Parameters.AddWithValue("@religion", comboReligion.Text)
             cmd.Parameters.AddWithValue("@contactno", txtContactNo.Text)
             cmd.Parameters.AddWithValue("@pwd", comboPwd.Text)
             cmd.Parameters.AddWithValue("@disability", txtDisability.Text)
@@ -483,7 +489,7 @@ Public Class ViewResident
             cmd.Parameters.AddWithValue("@civilstatus", comboCivilStatus.Text)
             cmd.Parameters.AddWithValue("@citizenship", If(comboCitizenship.SelectedIndex = 2, txtOtherCitizenship.Text, comboCitizenship.Text))
             cmd.Parameters.AddWithValue("@sex", comboSex.Text)
-            cmd.Parameters.AddWithValue("@religion", txtReligion.Text)
+            cmd.Parameters.AddWithValue("@religion", comboReligion.Text)
             cmd.Parameters.AddWithValue("@contactno", txtContactNo.Text)
             cmd.Parameters.AddWithValue("@pwd", comboPwd.Text)
             cmd.Parameters.AddWithValue("@disability", txtDisability.Text)

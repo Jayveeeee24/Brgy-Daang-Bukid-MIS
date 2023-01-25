@@ -10,6 +10,8 @@ Public Class Filter
         mainTabControl.ItemSize = New Size(0, 1)
         mainTabControl.SelectedIndex = 0
 
+
+
         If filterModule = "Household" Then
             mainTabControl.SelectedIndex = 1
         End If
@@ -54,6 +56,7 @@ Public Class Filter
         mySql.Close()
         mySql.Dispose()
 
+
         comboHouseholdId.SelectedIndex = If(comboHouseholdId.FindStringExact(Main_Form.filterHouseholdId) = 0 Or comboHouseholdId.FindStringExact(Main_Form.filterHouseholdId) = -1, 0, comboHouseholdId.FindStringExact(Main_Form.filterHouseholdId))
         comboSex.SelectedIndex = If(Main_Form.filterSex = "", 0, comboSex.FindStringExact(Main_Form.filterSex))
         comboCivilStatus.SelectedIndex = If(Main_Form.filterCivilStatus = "", 0, comboCivilStatus.FindStringExact(Main_Form.filterCivilStatus))
@@ -70,7 +73,11 @@ Public Class Filter
     Public Sub clearEverythingResident()
 
         comboSex.SelectedIndex = 0
+        comboCivilStatus.Items.Clear()
+        comboCivilStatus.Items.Add("Any")
+        getSystemVariable(comboCivilStatus, "Civil Status")
         comboCivilStatus.SelectedIndex = 0
+
         comboPwd.SelectedIndex = 0
         comboHouseholdRole.SelectedIndex = 0
         comboMonthRegistered.SelectedIndex = 0
@@ -99,10 +106,10 @@ Public Class Filter
 
     '' ''''''''''''''household '''''''''''''''''''''''''''''''
     Private Sub setUpInitialHouseholdData()
-        txtBldgNo.Text = Main_Form.filterBldgNo
-        txtStreetName.Text = Main_Form.filterStreetName
-        txtWaterSource.Text = Main_Form.filterWaterSource
-        txtElectricitySource.Text = Main_Form.filterElectricitySource
+        txtBldgNo.Text = Main_Form.filterBldgNo '
+        comboStreetName.SelectedIndex = If(comboStreetName.FindStringExact(Main_Form.filterStreetName) <= 0, 0, comboStreetName.FindStringExact(Main_Form.filterStreetName))
+        comboWaterSource.SelectedIndex = If(comboWaterSource.FindStringExact(Main_Form.filterWaterSource) <= 0, 0, comboWaterSource.FindStringExact(Main_Form.filterWaterSource))
+        comboElectricitySource.SelectedIndex = If(comboElectricitySource.FindStringExact(Main_Form.filterElectricitySource) <= 0, 0, comboElectricitySource.FindStringExact(Main_Form.filterElectricitySource))
         txtDayAdded.Text = If(Main_Form.filterDayAdded = 0, "", Main_Form.filterDayAdded)
         txtYearAdded.Text = If(Main_Form.filterYearAdded = 0, "", Main_Form.filterYearAdded)
 
@@ -111,14 +118,32 @@ Public Class Filter
         comboMonthAdded.SelectedIndex = If(comboMonthAdded.FindStringExact(Main_Form.filterMonthAdded) <= 0, 0, comboMonthAdded.FindStringExact(Main_Form.filterMonthAdded))
     End Sub
     Public Sub clearEverythingHousehold()
-        comboResidenceType.SelectedIndex = 0
-        comboHouseType.SelectedIndex = 0
         comboMonthAdded.SelectedIndex = 0
 
         txtBldgNo.Text = ""
-        txtStreetName.Text = ""
-        txtWaterSource.Text = ""
-        txtElectricitySource.Text = ""
+        comboResidenceType.Items.Clear()
+        comboHouseType.Items.Clear()
+        comboStreetName.Items.Clear()
+        comboWaterSource.Items.Clear()
+        comboElectricitySource.Items.Clear()
+
+        comboStreetName.Items.Add("Any")
+        getSystemVariable(comboStreetName, "Street Name")
+        comboWaterSource.Items.Add("Any")
+        getSystemVariable(comboWaterSource, "Water Source")
+        comboElectricitySource.Items.Add("Any")
+        getSystemVariable(comboElectricitySource, "Electricity Source")
+        comboResidenceType.Items.Add("Any")
+        getSystemVariable(comboResidenceType, "Residence Type")
+        comboHouseType.Items.Add("Any")
+        getSystemVariable(comboHouseType, "House Type")
+
+        comboResidenceType.SelectedIndex = 0
+        comboHouseType.SelectedIndex = 0
+        comboStreetName.SelectedIndex = 0
+        comboWaterSource.SelectedIndex = 0
+        comboElectricitySource.SelectedIndex = 0
+
         txtDayAdded.Text = ""
         txtYearAdded.Text = ""
 
@@ -134,7 +159,7 @@ Public Class Filter
 
     End Sub
 
-    Private Sub txtViewKeyDown(sender As Object, e As KeyEventArgs) Handles txtYearRegistered.KeyDown, txtDayRegistered.KeyDown, txtAgeMin.KeyDown, txtAgeMax.KeyDown, txtBldgNo.KeyDown, txtWaterSource.KeyDown, txtElectricitySource.KeyDown
+    Private Sub txtViewKeyDown(sender As Object, e As KeyEventArgs) Handles txtYearRegistered.KeyDown, txtDayRegistered.KeyDown, txtAgeMin.KeyDown, txtAgeMax.KeyDown, txtBldgNo.KeyDown
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
         End If
@@ -211,11 +236,11 @@ Public Class Filter
     Private Sub btnApplyFilterHousehold_Click(sender As Object, e As EventArgs) Handles btnApplyFilterHousehold.Click
 
         Main_Form.filterBldgNo = txtBldgNo.Text
-        Main_Form.filterStreetName = txtStreetName.Text
+        Main_Form.filterStreetName = If(comboStreetName.Text.Trim = "Any", "", comboStreetName.Text)
         Main_Form.filterResidenceType = If(comboResidenceType.Text.Trim = "Any", "", comboResidenceType.Text)
         Main_Form.filterHouseType = If(comboHouseType.Text.Trim = "Any", "", comboHouseType.Text)
-        Main_Form.filterWaterSource = txtWaterSource.Text
-        Main_Form.filterElectricitySource = txtElectricitySource.Text
+        Main_Form.filterWaterSource = If(comboWaterSource.Text.Trim = "Any", "", comboWaterSource.Text)
+        Main_Form.filterElectricitySource = If(comboElectricitySource.Text.Trim = "Any", "", comboElectricitySource.Text)
         Main_Form.filterMonthAdded = If(comboMonthAdded.Text.Trim = "Any", "", comboMonthAdded.Text)
         Main_Form.filterDayAdded = If(txtDayAdded.Text.Trim = "", 0, Int(txtDayAdded.Text))
         Main_Form.filterYearAdded = If(txtYearAdded.Text.Trim = "", 0, Int(txtYearAdded.Text))

@@ -13,6 +13,13 @@ Public Class ViewHousehold
     Private Sub ViewHousehold_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         mainTabControl.ItemSize = New Size(0, 1)
 
+        getSystemVariable(comboStreetName, "Street Name")
+        getSystemVariable(comboResidenceType, "Residence Type")
+        getSystemVariable(comboHouseType, "House Type")
+        getSystemVariable(comboWaterSource, "Water Source")
+        getSystemVariable(comboElectricitySource, "Electricity Source")
+
+
         loadInitialData()
     End Sub
     Private Sub ViewHousehold_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

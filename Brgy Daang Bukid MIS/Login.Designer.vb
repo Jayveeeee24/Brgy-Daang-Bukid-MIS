@@ -25,6 +25,7 @@ Partial Class Login
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.panelLogo = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtUsername = New System.Windows.Forms.TextBox()
@@ -34,7 +35,6 @@ Partial Class Login
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnVisibility = New System.Windows.Forms.Button()
         Me.btnLogin = New System.Windows.Forms.Button()
-        Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.labelForgotPassword = New System.Windows.Forms.Label()
         Me.panelLogo.SuspendLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,6 +59,18 @@ Partial Class Login
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Management Information System for Brgy Daang Bukid"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'picLogo
+        '
+        Me.picLogo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picLogo.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.logo_daang_bukid_legitbgremoved
+        Me.picLogo.Location = New System.Drawing.Point(86, 70)
+        Me.picLogo.Name = "picLogo"
+        Me.picLogo.Size = New System.Drawing.Size(174, 179)
+        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picLogo.TabIndex = 0
+        Me.picLogo.TabStop = False
         '
         'Label1
         '
@@ -172,18 +184,6 @@ Partial Class Login
         Me.btnLogin.Size = New System.Drawing.Size(66, 45)
         Me.btnLogin.TabIndex = 8
         Me.btnLogin.UseVisualStyleBackColor = False
-        '
-        'picLogo
-        '
-        Me.picLogo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.picLogo.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.logo_daang_bukid_legitbgremoved
-        Me.picLogo.Location = New System.Drawing.Point(86, 70)
-        Me.picLogo.Name = "picLogo"
-        Me.picLogo.Size = New System.Drawing.Size(174, 179)
-        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picLogo.TabIndex = 0
-        Me.picLogo.TabStop = False
         '
         'labelForgotPassword
         '

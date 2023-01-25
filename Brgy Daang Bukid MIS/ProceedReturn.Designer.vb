@@ -65,7 +65,6 @@ Partial Class ProceedReturn
         Me.comboItemState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboItemState.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboItemState.FormattingEnabled = True
-        Me.comboItemState.Items.AddRange(New Object() {"Good", "Damaged", "Defective"})
         Me.comboItemState.Location = New System.Drawing.Point(258, 159)
         Me.comboItemState.Name = "comboItemState"
         Me.comboItemState.Size = New System.Drawing.Size(303, 28)

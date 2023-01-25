@@ -640,7 +640,6 @@ Partial Class ViewHousehold
         Me.comboElectricitySource.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.comboElectricitySource.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboElectricitySource.FormattingEnabled = True
-        Me.comboElectricitySource.Items.AddRange(New Object() {"Meralco", "Solar Panels", "Coal Energy", "Nuclear Energy"})
         Me.comboElectricitySource.Location = New System.Drawing.Point(382, 392)
         Me.comboElectricitySource.Name = "comboElectricitySource"
         Me.comboElectricitySource.Size = New System.Drawing.Size(295, 28)
@@ -653,7 +652,6 @@ Partial Class ViewHousehold
         Me.comboWaterSource.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.comboWaterSource.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboWaterSource.FormattingEnabled = True
-        Me.comboWaterSource.Items.AddRange(New Object() {"Maynilad", "Manila Water", "Deep Well", "Water Station"})
         Me.comboWaterSource.Location = New System.Drawing.Point(382, 349)
         Me.comboWaterSource.Name = "comboWaterSource"
         Me.comboWaterSource.Size = New System.Drawing.Size(295, 28)
@@ -666,7 +664,6 @@ Partial Class ViewHousehold
         Me.comboStreetName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.comboStreetName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboStreetName.FormattingEnabled = True
-        Me.comboStreetName.Items.AddRange(New Object() {"A. Aragon", "Evangelista", "E. Gomez", "F. Gaudier", "Casimiro Ave, Westbay", "Baht, Westbay", "Dinar, Westbay", "Dirham, Westbay", "Dollar, Westbay", "Euro, Westbay", "Franc, Westbay", "Lira, Westbay", "Peso, Westbay", "Pound, Westbay", "Ringgit, Westbay", "Riyal, Westbay", "Ruble, Westbay", "Rupee, Westbay", "Shekel, Westbay", "Won, Westbay", "Yen, Westbay", "Yuan, Westbay"})
         Me.comboStreetName.Location = New System.Drawing.Point(382, 216)
         Me.comboStreetName.Name = "comboStreetName"
         Me.comboStreetName.Size = New System.Drawing.Size(295, 28)
@@ -734,7 +731,6 @@ Partial Class ViewHousehold
         Me.comboHouseType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.comboHouseType.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboHouseType.FormattingEnabled = True
-        Me.comboHouseType.Items.AddRange(New Object() {"Wood", "Concrete", "Bricks", "Metal"})
         Me.comboHouseType.Location = New System.Drawing.Point(382, 303)
         Me.comboHouseType.Name = "comboHouseType"
         Me.comboHouseType.Size = New System.Drawing.Size(295, 28)
@@ -820,7 +816,6 @@ Partial Class ViewHousehold
         Me.comboResidenceType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.comboResidenceType.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboResidenceType.FormattingEnabled = True
-        Me.comboResidenceType.Items.AddRange(New Object() {"Owned", "Rent", "Informal Settler", "Tenancy", "Co Owned"})
         Me.comboResidenceType.Location = New System.Drawing.Point(382, 259)
         Me.comboResidenceType.Name = "comboResidenceType"
         Me.comboResidenceType.Size = New System.Drawing.Size(295, 28)

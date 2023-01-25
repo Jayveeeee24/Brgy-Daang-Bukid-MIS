@@ -5,7 +5,7 @@ Imports Microsoft.SqlServer.Server
 Imports MySql.Data.MySqlClient
 
 Public Class ViewInventory
-    Public mySqlConn As String = "server=localhost; user id=root; database=mis"
+    Public mySqlConn As String = My.Resources.constring
 
     Public action As String
     Public itemId As Integer
@@ -22,6 +22,9 @@ Public Class ViewInventory
         Else
             btnUpdateStock.Text = "  Update Stock"
         End If
+
+        getSystemVariable(comboReason, "Stock Out Reason")
+
         loadInitialData()
     End Sub
     Private Sub ViewInventory_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed

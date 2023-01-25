@@ -124,8 +124,8 @@
   <data name="pwd 40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pwd 40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="clear" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="conStringLocalHost" xml:space="preserve">
+    <value>server=localhost; user id=root;database=mis</value>
   </data>
   <data name="dashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,17 +136,18 @@
   <data name="household" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\household.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="constring" xml:space="preserve">
+    <value>server=192.168.1.6; user id=user; password=qwer; database=mis</value>
+    <comment>password=qwer;</comment>
+  </data>
   <data name="INDIGENCY_page-0001" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\INDIGENCY_page-0001.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="male 40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\male 40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arrow_forward" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrow_forward.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="brgyoff" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\brgyoff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="conStringHome" xml:space="preserve">
+    <value>server=192.168.1.6; user id=user; password=qwer; database=mis</value>
   </data>
   <data name="female 40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\female 40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,8 +158,11 @@
   <data name="account management" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\account management.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="my profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\my profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="meann" xml:space="preserve">
+    <value>server=192.168.254.113; user id=user; password=qwer; database=mis</value>
+  </data>
+  <data name="constringForRouter" xml:space="preserve">
+    <value>server=192.168.1.2; user id=user; password=qwer; database=mis</value>
   </data>
   <data name="residents" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\residents.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,6 +182,9 @@
   <data name="resident 40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\resident 40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logo_daang_bukid_legitbgremoved" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo_daang_bukid-legitbgremoved.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Residency_page-0001" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Residency_page-0001.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -193,11 +200,20 @@
   <data name="visi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\visi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="out" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="certificate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\certificate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo_daang_bukid_legitbgremoved" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo_daang_bukid-legitbgremoved.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="brgyoff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brgyoff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="employment 40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\employment 40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clearance_page-0001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clearance_page-0001.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="senior 40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\senior 40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,8 +227,8 @@
   <data name="in" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\in.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="employment 40" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\employment 40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrow_forward" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow_forward.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="filter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,14 +251,17 @@
   <data name="brgy map edited with labels final" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brgy map edited with labels final.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Clearance_page-0001" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Clearance_page-0001.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="my profile1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\my profile1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="my profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\my profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="senior 401" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\senior 401.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="out" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="clear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="arrow back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,23 +272,7 @@
   <data name="map" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\map.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="my profile1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\my profile1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="constringForRouter" xml:space="preserve">
-    <value>server=192.168.1.2; user id=user; password=qwer; database=mis</value>
-  </data>
-  <data name="conStringLocalHost" xml:space="preserve">
-    <value>server=localhost; user id=root;database=mis</value>
-  </data>
-  <data name="constring" xml:space="preserve">
-    <value>server=localhost; user id=root;database=mis</value>
-    <comment>password=qwer;</comment>
-  </data>
-  <data name="meann" xml:space="preserve">
-    <value>server=192.168.254.113; user id=user; password=qwer; database=mis</value>
-  </data>
-  <data name="conStringHome" xml:space="preserve">
-    <value>server=192.168.1.6; user id=user; password=qwer; database=mis</value>
+  <data name="item data management" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\item data management.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -1,5 +1,7 @@
 ﻿Imports System.Data
 Imports System.Linq.Expressions
+Imports System.Security
+Imports System.Security.Permissions
 Imports MySql.Data.MySqlClient
 Imports Mysqlx.XDevAPI.Common
 Public Class Account_Settings
@@ -13,7 +15,9 @@ Public Class Account_Settings
             accountId = Main_Form.account_id
         End If
 
+        getSystemVariable(comboRecovery, "Recovery Question")
         getAccountDetails(accountId)
+
     End Sub
 
     Public Sub getAccountDetails(ByVal id As Integer)
@@ -70,6 +74,36 @@ Public Class Account_Settings
         Me.Controls.Clear()
         Me.InitializeComponent()
     End Sub
+    Private Function isUserNameAvailable(ByVal username As String, ByVal accountid As Integer) As Boolean
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "SELECT COUNT(*) from accounts WHERE account_name = @username and account_id <> @accountid"
+        cmd.Parameters.AddWithValue("@username", username)
+        cmd.Parameters.AddWithValue("@accountid", accountid)
+
+        If cmd.ExecuteScalar = 0 Then
+            Return True
+        Else
+            Return False
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+    End Function
 
     Private Sub btnChangePassword_Click(sender As Object, e As EventArgs) Handles btnChangePassword.Click
         Me.Enabled = False
@@ -81,6 +115,11 @@ Public Class Account_Settings
         End If
         If txtPassword.Text.Trim <> txtConfirmPassword.Text.Trim Then
             MsgBox("Both passwords must match!", vbCritical, "Warning")
+            Me.Enabled = True
+            Exit Sub
+        End If
+        If isUserNameAvailable(txtUsername.Text.Trim, accountId) = False Then
+            MsgBox("Username is already used by another user!", vbCritical, "Warning")
             Me.Enabled = True
             Exit Sub
         End If

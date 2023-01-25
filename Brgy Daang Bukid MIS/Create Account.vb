@@ -9,7 +9,9 @@ Public Class Create_Account
 
 
     Private Sub Create_Account_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        comboRecovery.SelectedIndex = 0
+        getSystemVariable(comboRecovery, "Recovery Question")
+
+        comboRecovery.SelectedIndex = -1
         comboAccountFor.Select()
 
         Dim official() As String = {"Barangay Captain", "Barangay Secretary", "Barangay Treasurer", "SK Chairperson"}
@@ -70,7 +72,6 @@ Public Class Create_Account
 
         If mySQLReader.HasRows Then
             While mySQLReader.Read
-                comboRecovery.SelectedIndex = 0
                 txtUsernameAdmin.Text = mySQLReader!account_name
             End While
 
@@ -104,6 +105,10 @@ Public Class Create_Account
             Me.Close()
             isSaved = False
         Else
+            If isUserNameAvailable(txtUsernameAdmin.Text.Trim) = False Then
+                MsgBox("Username is already used by another user!", vbCritical, "Warning")
+                Exit Sub
+            End If
             If isAccountAvailable(comboAccountFor.FindStringExact(comboAccountFor.Text) + 2) = True Then
                 saveAccount(comboAccountFor.FindStringExact(comboAccountFor.Text) + 2, txtUsernameAdmin.Text.Trim, txtPassword.Text.Trim, txtUserLevel.Text, comboRecovery.Text, txtAnswer.Text.Trim)
                 MsgBox("Account Saved!", vbInformation, "Information")
@@ -116,6 +121,35 @@ Public Class Create_Account
         End If
 
     End Sub
+    Private Function isUserNameAvailable(ByVal username As String) As Boolean
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "SELECT COUNT(*) from accounts WHERE account_name = @username"
+        cmd.Parameters.AddWithValue("@username", username)
+
+        If cmd.ExecuteScalar = 0 Then
+            Return True
+        Else
+            Return False
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+    End Function
     Private Function isAccountAvailable(ByVal id As Integer) As Boolean
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
@@ -188,13 +222,14 @@ Public Class Create_Account
         cmd = mySql.CreateCommand()
         cmd.CommandType = CommandType.Text
 
-        cmd.CommandText = "INSERT INTO accounts (account_id, account_name, account_password, user_level, question, answer) VALUES (@accountid, @accountname, @accountpassword, @userlevel, @question, @answer)"
+        cmd.CommandText = "INSERT INTO accounts (account_id, account_name, account_password, user_level, question, answer, first_login) VALUES (@accountid, @accountname, @accountpassword, @userlevel, @question, @answer, @firstlogin)"
         cmd.Parameters.AddWithValue("@accountid", accountid)
         cmd.Parameters.AddWithValue("@accountname", accountname)
         cmd.Parameters.AddWithValue("@accountpassword", accountpassword)
         cmd.Parameters.AddWithValue("@userlevel", userlevel)
         cmd.Parameters.AddWithValue("@question", question)
         cmd.Parameters.AddWithValue("@answer", answer)
+        cmd.Parameters.AddWithValue("@firstlogin", "Yes")
 
         cmd.ExecuteNonQuery()
         cmd.Dispose()
@@ -240,7 +275,7 @@ Public Class Create_Account
     End Sub
 
     Private Sub Create_Account_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If isSaved = False Then
+        If isSaved = False And action = "UpdateUserAccount" Then
             e.Cancel = True
         End If
     End Sub

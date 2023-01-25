@@ -28,12 +28,6 @@ Partial Class ReturnItem
         Me.TableLayoutPanel15 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel22 = New System.Windows.Forms.Panel()
         Me.datagridBorrowed = New System.Windows.Forms.DataGridView()
-        Me.labelTotalBorrowed = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel16 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnSearchBorrowedItem = New System.Windows.Forms.Button()
-        Me.txtSearchBorrowedItems = New System.Windows.Forms.TextBox()
-        Me.TableLayoutPanel17 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnReturnItem = New System.Windows.Forms.Button()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -42,6 +36,12 @@ Partial Class ReturnItem
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.labelTotalBorrowed = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel16 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnSearchBorrowedItem = New System.Windows.Forms.Button()
+        Me.txtSearchBorrowedItems = New System.Windows.Forms.TextBox()
+        Me.TableLayoutPanel17 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnReturnItem = New System.Windows.Forms.Button()
         Me.TableLayoutPanel15.SuspendLayout()
         Me.Panel22.SuspendLayout()
         CType(Me.datagridBorrowed, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,6 +115,54 @@ Partial Class ReturnItem
         Me.datagridBorrowed.Size = New System.Drawing.Size(1007, 422)
         Me.datagridBorrowed.TabIndex = 13
         '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.HeaderText = "ID"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Item ID"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Item Name"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.ReadOnly = True
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Quantity"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Borrowed Date"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Return Date"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.ReadOnly = True
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "Borrowed By"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Reason"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        '
         'labelTotalBorrowed
         '
         Me.labelTotalBorrowed.Dock = System.Windows.Forms.DockStyle.Top
@@ -125,7 +173,7 @@ Partial Class ReturnItem
         Me.labelTotalBorrowed.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.labelTotalBorrowed.Size = New System.Drawing.Size(1007, 34)
         Me.labelTotalBorrowed.TabIndex = 14
-        Me.labelTotalBorrowed.Text = "Total Complaints: "
+        Me.labelTotalBorrowed.Text = "Total Unreturned Items: "
         Me.labelTotalBorrowed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'TableLayoutPanel16
@@ -224,54 +272,6 @@ Partial Class ReturnItem
         Me.btnReturnItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnReturnItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnReturnItem.UseVisualStyleBackColor = False
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.HeaderText = "ID"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Item ID"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Item Name"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.ReadOnly = True
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Quantity"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Borrowed Date"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Return Date"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        Me.DataGridViewTextBoxColumn10.ReadOnly = True
-        '
-        'Column8
-        '
-        Me.Column8.HeaderText = "Borrowed By"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Reason"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
         '
         'ReturnItem
         '

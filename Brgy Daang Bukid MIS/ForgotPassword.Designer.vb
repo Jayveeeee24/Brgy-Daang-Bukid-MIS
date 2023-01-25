@@ -174,7 +174,7 @@ Partial Class ForgotPassword
         Me.pageRecovery.Location = New System.Drawing.Point(4, 22)
         Me.pageRecovery.Name = "pageRecovery"
         Me.pageRecovery.Padding = New System.Windows.Forms.Padding(3)
-        Me.pageRecovery.Size = New System.Drawing.Size(315, 189)
+        Me.pageRecovery.Size = New System.Drawing.Size(315, 192)
         Me.pageRecovery.TabIndex = 1
         Me.pageRecovery.Text = "Recovery"
         '
@@ -249,7 +249,7 @@ Partial Class ForgotPassword
         Me.pageNewPassword.Controls.Add(Me.txtNewPassword)
         Me.pageNewPassword.Location = New System.Drawing.Point(4, 22)
         Me.pageNewPassword.Name = "pageNewPassword"
-        Me.pageNewPassword.Size = New System.Drawing.Size(315, 189)
+        Me.pageNewPassword.Size = New System.Drawing.Size(315, 192)
         Me.pageNewPassword.TabIndex = 2
         Me.pageNewPassword.Text = "NewPassword"
         '

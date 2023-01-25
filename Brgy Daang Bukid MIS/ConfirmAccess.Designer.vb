@@ -84,7 +84,6 @@ Partial Class ConfirmAccess
         Me.comboReason.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.comboReason.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboReason.FormattingEnabled = True
-        Me.comboReason.Items.AddRange(New Object() {"Deceased", "Moved Residency"})
         Me.comboReason.Location = New System.Drawing.Point(58, 92)
         Me.comboReason.MaxLength = 15
         Me.comboReason.Name = "comboReason"

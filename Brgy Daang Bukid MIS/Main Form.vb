@@ -219,6 +219,7 @@ Public Class Main_Form
         btnBrgyMap.BackColor = Color.FromArgb(25, 117, 211)
         btnSystemManagement.BackColor = Color.FromArgb(25, 117, 211)
         btnInventory.BackColor = Color.FromArgb(25, 117, 211)
+        btnItemDataManagement.BackColor = Color.FromArgb(25, 117, 211)
 
         getAccountDetails()
         If isFirstTImeLogin() = True Then
@@ -244,6 +245,7 @@ Public Class Main_Form
         btnBrgyMap.BackColor = Color.FromArgb(25, 117, 211)
         btnSystemManagement.BackColor = Color.FromArgb(25, 117, 211)
         btnInventory.BackColor = Color.FromArgb(25, 117, 211)
+        btnItemDataManagement.BackColor = Color.FromArgb(25, 117, 211)
 
         mainTabControl.SelectedTab = pageResident
         labelTitle.Text = "Resident's Information"
@@ -262,6 +264,7 @@ Public Class Main_Form
         btnBrgyMap.BackColor = Color.FromArgb(25, 117, 211)
         btnSystemManagement.BackColor = Color.FromArgb(25, 117, 211)
         btnInventory.BackColor = Color.FromArgb(25, 117, 211)
+        btnItemDataManagement.BackColor = Color.FromArgb(25, 117, 211)
 
         mainTabControl.SelectedTab = pageHousehold
         labelTitle.Text = "Household Information"
@@ -281,6 +284,7 @@ Public Class Main_Form
         btnBrgyMap.BackColor = Color.FromArgb(25, 117, 211)
         btnSystemManagement.BackColor = Color.FromArgb(25, 117, 211)
         btnInventory.BackColor = Color.FromArgb(25, 117, 211)
+        btnItemDataManagement.BackColor = Color.FromArgb(25, 117, 211)
 
         mainTabControl.SelectedTab = pageReports
         reportTabControl.ItemSize = New Size(0, 1)
@@ -298,8 +302,13 @@ Public Class Main_Form
         btnBrgyMap.BackColor = Color.FromArgb(25, 117, 211)
         btnSystemManagement.BackColor = Color.FromArgb(25, 117, 211)
         btnInventory.BackColor = Color.FromArgb(25, 117, 211)
+        btnItemDataManagement.BackColor = Color.FromArgb(25, 117, 211)
 
         mainTabControl.SelectedTab = pageCertificates
+        comboPurpose.Items.Clear()
+        getSystemVariable(comboPurpose, "Certificate Purpose")
+        comboPurpose.SelectedIndex = -1
+
         labelTitle.Text = "Certificates"
         certificateTabControl.ItemSize = New Size(0, 1)
         certificateAction = "residency"
@@ -314,6 +323,7 @@ Public Class Main_Form
         btnBrgyMap.BackColor = Color.FromArgb(52, 152, 219)
         btnSystemManagement.BackColor = Color.FromArgb(25, 117, 211)
         btnInventory.BackColor = Color.FromArgb(25, 117, 211)
+        btnItemDataManagement.BackColor = Color.FromArgb(25, 117, 211)
 
         mainTabControl.SelectedTab = pageMap
         labelTitle.Text = "Barangay Map"
@@ -328,6 +338,7 @@ Public Class Main_Form
         btnBrgyMap.BackColor = Color.FromArgb(25, 117, 211)
         btnSystemManagement.BackColor = Color.FromArgb(52, 152, 219)
         btnInventory.BackColor = Color.FromArgb(25, 117, 211)
+        btnItemDataManagement.BackColor = Color.FromArgb(25, 117, 211)
 
         If user_level = "Staff" Then
             ConfirmAccess.originForm = "Accounts"
@@ -346,6 +357,7 @@ Public Class Main_Form
         btnBrgyMap.BackColor = Color.FromArgb(25, 117, 211)
         btnSystemManagement.BackColor = Color.FromArgb(25, 117, 211)
         btnInventory.BackColor = Color.FromArgb(52, 152, 219)
+        btnItemDataManagement.BackColor = Color.FromArgb(25, 117, 211)
 
         mainTabControl.SelectedTab = pageInventory
         labelTitle.Text = "Inventory Management"
@@ -354,6 +366,20 @@ Public Class Main_Form
         loadDataGridInventory()
         countReports(Modules.Inventory)
 
+    End Sub
+    Private Sub btnItemDataManagement_Click(sender As Object, e As EventArgs) Handles btnItemDataManagement.Click
+        btnDashboard.BackColor = Color.FromArgb(25, 117, 211)
+        btnResidentInfo.BackColor = Color.FromArgb(25, 117, 211)
+        btnHouseholdInfo.BackColor = Color.FromArgb(25, 117, 211)
+        btnReports.BackColor = Color.FromArgb(25, 117, 211)
+        btnCertificates.BackColor = Color.FromArgb(25, 117, 211)
+        btnBrgyMap.BackColor = Color.FromArgb(25, 117, 211)
+        btnSystemManagement.BackColor = Color.FromArgb(25, 117, 211)
+        btnInventory.BackColor = Color.FromArgb(25, 117, 211)
+        btnItemDataManagement.BackColor = Color.FromArgb(52, 152, 219)
+
+        mainTabControl.SelectedTab = pageItemManagement
+        labelTitle.Text = "Item Data Management"
     End Sub
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         Dim ans As Integer = MsgBox("Are you sure you want to log out?", MsgBoxStyle.YesNo, "Attention!")
@@ -1463,7 +1489,11 @@ Public Class Main_Form
         certificateResidentName = ""
         txtCertificateAddress.Text = ""
         txtCertificateResident.Clear()
-        txtCertificatePurpose.Clear()
+
+        comboPurpose.Items.Clear()
+        getSystemVariable(comboPurpose, "Certificate Purpose")
+        comboPurpose.SelectedIndex = -1
+
         txtCertificateYears.Clear()
         txtComplainant1.Clear()
         txtComplainant2.Clear()
@@ -1553,7 +1583,7 @@ Public Class Main_Form
             MsgBox("Please select a valid resident!", vbCritical, "Warning")
             Exit Sub
         End If
-        If txtCertificatePurpose.Text.Trim = "" Then
+        If comboPurpose.Text.Trim = "" Then
             MsgBox("Please provide a valid purpose!", vbCritical, "Warning")
             Exit Sub
         End If
@@ -1588,7 +1618,7 @@ Public Class Main_Form
 
         document.Replace("[FULL NAME]", certificateResidentName.ToString, False, True)
         document.Replace("[ADDRESS]", certificateResidentAddress.ToString, False, True)
-        document.Replace("[PURPOSE]", txtCertificatePurpose.Text, False, True)
+        document.Replace("[PURPOSE]", comboPurpose.Text, False, True)
         document.Replace("[DAY]", Date.Now.Day.ToString, False, True)
         document.Replace("[MONTH, YEAR]", monthNames(month - 1) & ", " & Date.Now.Year.ToString, False, True)
 
@@ -1651,7 +1681,7 @@ Public Class Main_Form
         document.Close()
         CertificateChooseAction.ShowDialog()
     End Sub
-    Private Sub txtView_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCertificatePurpose.KeyDown, txtCertificateResident.KeyDown, txtRespondent2.KeyDown, txtRespondent1.KeyDown, txtComplainant2.KeyDown, txtComplainant1.KeyDown, txtCaseNo.KeyDown
+    Private Sub txtView_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCertificateResident.KeyDown, txtRespondent2.KeyDown, txtRespondent1.KeyDown, txtComplainant2.KeyDown, txtComplainant1.KeyDown, txtCaseNo.KeyDown
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
         End If
