@@ -13,6 +13,9 @@ Public Class SystemVariables
         Me.InitializeComponent()
     End Sub
     Private Sub comboSystemVariables_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboSystemVariables.SelectedIndexChanged
+        txtSearchVariable.Text = "Search by variable name"
+        btnModifyVariable.Enabled = False
+        btnDeleteVariable.Enabled = False
         loadDatagrid()
     End Sub
     Public Sub loadDatagrid()
@@ -35,9 +38,9 @@ Public Class SystemVariables
         mySQLCommand = mySql.CreateCommand()
         mySQLCommand.CommandType = CommandType.Text
 
-        mySQLCommand.CommandText = "SELECT id, variable_name FROM system_variables WHERE variable_type=@type " & If(txtSearchVariable.Text.Trim = "" Or txtSearchVariable.Text.Trim = "Search by variable name", "", " AND variable_name = @variablename")
+        mySQLCommand.CommandText = "SELECT id, variable_name FROM system_variables WHERE variable_type=@type " & If(txtSearchVariable.Text.Trim = "" Or txtSearchVariable.Text.Trim = "Search by variable name", "", " AND variable_name LIKE @variablename")
         mySQLCommand.Parameters.AddWithValue("@type", comboSystemVariables.Text)
-        mySQLCommand.Parameters.AddWithValue("@variablename", txtSearchVariable.Text.Trim)
+        mySQLCommand.Parameters.AddWithValue("@variablename", txtSearchVariable.Text.Trim & "%")
 
 
         mySQLReader = mySQLCommand.ExecuteReader
@@ -68,6 +71,8 @@ Public Class SystemVariables
         AddVariable.action = "add"
         AddVariable.labelAddVariableCategory.Text = comboSystemVariables.Text
         AddVariable.ShowDialog()
+        variableId = 0
+        variableName = ""
     End Sub
 
     Private Sub btnModifyVariable_Click(sender As Object, e As EventArgs) Handles btnModifyVariable.Click
@@ -77,6 +82,8 @@ Public Class SystemVariables
         AddVariable.labelModifyVariableCategory.Text = comboSystemVariables.Text
 
         AddVariable.ShowDialog()
+        variableId = 0
+        variableName = ""
     End Sub
 
     Private Sub btnDeleteVariable_Click(sender As Object, e As EventArgs) Handles btnDeleteVariable.Click
@@ -110,9 +117,10 @@ Public Class SystemVariables
         mySql.Close()
         mySql.Dispose()
 
-        MsgBox("Official Dismissed!", vbInformation, "Information")
+        MsgBox("Variable: " & variableName & " has been deleted", vbInformation, "Information")
         loadDatagrid()
         variableId = 0
+        variableName = ""
         btnDeleteVariable.Enabled = False
         btnModifyVariable.Enabled = False
         datagridViewSystemVariables.ClearSelection()
@@ -124,6 +132,12 @@ Public Class SystemVariables
             btnDeleteVariable.Enabled = True
             variableId = datagridViewSystemVariables.Rows(e.RowIndex).Cells(0).Value
             variableName = datagridViewSystemVariables.Rows(e.RowIndex).Cells(1).Value
+        End If
+    End Sub
+
+    Private Sub txtSearchVariable_Click(sender As Object, e As EventArgs) Handles txtSearchVariable.Click
+        If txtSearchVariable.Text.Trim = "Search by variable name" Then
+            txtSearchVariable.Clear()
         End If
     End Sub
 End Class

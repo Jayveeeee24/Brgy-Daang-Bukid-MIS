@@ -93,7 +93,7 @@ Public Class AddVariable
         cmd.CommandType = CommandType.Text
 
         cmd.CommandText = "UPDATE system_variables SET variable_name = @variablename WHERE id = @id"
-        cmd.Parameters.AddWithValue("@variablename", txtAddVariableName.Text.Trim)
+        cmd.Parameters.AddWithValue("@variablename", txtModifyVariableName.Text.Trim)
         cmd.Parameters.AddWithValue("@id", variableId)
 
         cmd.ExecuteNonQuery()

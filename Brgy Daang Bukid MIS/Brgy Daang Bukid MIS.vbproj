@@ -161,6 +161,12 @@
     <Compile Include="HeadChange.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ItemDataInformation.Designer.vb">
+      <DependentUpon>ItemDataInformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ItemDataInformation.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="NoAccount.Designer.vb">
       <DependentUpon>NoAccount.vb</DependentUpon>
     </Compile>
@@ -327,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HeadChange.resx">
       <DependentUpon>HeadChange.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemDataInformation.resx">
+      <DependentUpon>ItemDataInformation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NoAccount.resx">
       <DependentUpon>NoAccount.vb</DependentUpon>

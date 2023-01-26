@@ -23,23 +23,17 @@ Public Class ViewInventory
             btnUpdateStock.Text = "  Update Stock"
         End If
 
-        getSystemVariable(comboReason, "Stock Out Reason")
+        getSystemVariable(comboItemState, "Return Item State")
 
         loadInitialData()
     End Sub
     Private Sub ViewInventory_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Controls.Clear()
         Me.InitializeComponent()
-        Main_Form.btnInventory.PerformClick()
+        Main_Form.btnItemDataManagement.PerformClick()
     End Sub
     Private Sub ViewInventory_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If action = "add" And isSaved = False Then
-            If txtItemName.Text.Trim <> "" Or txtRemarks.Text.Trim <> "" Or txtItemColor.Text.Trim <> "" Or txtItemSerial.Text.Trim <> "" Then
-                If MsgBox("Your current progress will not be saved!", MsgBoxStyle.OkCancel, "Are you sure to exit?") = MsgBoxResult.Cancel Then
-                    e.Cancel = True
-                End If
-            End If
-        ElseIf (action = "stock" And isSaved = False) Or (action = "borrow" And isSaved = False) Then
+        If (action = "stock" And isSaved = False) Or (action = "borrow" And isSaved = False) Then
             If txtStockItemName.Text.Trim <> "" Or txtQuantity.Text.Trim <> "" Or txtReason.Text.Trim <> "" Or txtTransactionBy.Text.Trim <> "" Then
                 If MsgBox("Your current progress will not be saved!", MsgBoxStyle.OkCancel, "Are you sure to exit?") = MsgBoxResult.Cancel Then
                     e.Cancel = True
@@ -50,16 +44,8 @@ Public Class ViewInventory
 
 
     Private Sub loadInitialData()
-        txtItemName.Select()
         mainTabControl.SelectedIndex = 0
 
-        If action = "add" Then
-            mainTabControl.SelectedIndex = 1
-            txtItemId.Hide()
-            labelId.Hide()
-            comboItemStatus.SelectedIndex = 1
-            comboItemStatus.Enabled = False
-        End If
 
 
         If action = "stock" Then
@@ -127,94 +113,8 @@ Public Class ViewInventory
             mySql.Close()
             mySql.Dispose()
         End If
-        txtItemName.Enabled = True
-        txtItemColor.Enabled = True
-        txtItemSerial.Enabled = True
-        comboReason.Enabled = False
         getItemHistory()
 
-    End Sub
-
-    Private Sub btnModifyItem_Click(sender As Object, e As EventArgs) Handles btnModifyItem.Click
-        mainTabControl.SelectedIndex = 1
-        action = "modify"
-
-        txtItemId.Show()
-        labelId.Show()
-
-        txtItemName.Enabled = False
-
-        txtItemColor.Enabled = False
-        txtItemSerial.Enabled = False
-
-        comboItemStatus.Enabled = True
-        comboItemStatus.SelectedIndex = comboItemStatus.FindStringExact(itemStatus)
-        comboReason.SelectedIndex = comboReason.FindStringExact(itemReason)
-        txtItemId.Text = labelItemId.Text
-        txtItemName.Text = labelItemName.Text
-        txtItemColor.Text = If(labelItemColor.Text = "N/A", "", labelItemColor.Text)
-        txtItemSerial.Text = If(labelItemSerial.Text = "N/A", "", labelItemSerial.Text)
-        txtRemarks.Text = labelRemarks.Text
-    End Sub
-    Private Sub btnSaveItem_Click(sender As Object, e As EventArgs) Handles btnSaveItem.Click
-        If txtItemName.Text.Trim = "" Then
-            MsgBox("Please fill out a valid item name!", vbCritical, "Warning")
-            Exit Sub
-        End If
-        If comboItemStatus.SelectedIndex = 0 And comboReason.SelectedIndex = -1 Then
-            MsgBox("Please fill out a valid reason for unavailability!", vbCritical, "Warning")
-            Exit Sub
-        End If
-
-        Dim mySql As MySqlConnection
-        mySql = New MySqlConnection(mySqlConn)
-        On Error Resume Next
-        mySql.Open()
-
-        Select Case Err.Number
-            Case 0
-            Case Else
-                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
-        End Select
-
-        Dim cmd As MySqlCommand
-        cmd = mySql.CreateCommand()
-        cmd.CommandType = CommandType.Text
-
-        If action = "modify" Then
-            cmd.CommandText = "UPDATE item_list SET item_name = @itemname, item_stock= @itemstock, item_status = @itemstatus, item_reason = @itemreason, remarks = @remarks where item_id = @itemid"
-            cmd.Parameters.AddWithValue("@itemid", itemId)
-            cmd.Parameters.AddWithValue("@itemname", txtItemName.Text)
-            cmd.Parameters.AddWithValue("@itemreason", comboReason.Text)
-            cmd.Parameters.AddWithValue("@itemstatus", comboItemStatus.Text)
-            cmd.Parameters.AddWithValue("@itemstock", If(comboItemStatus.Text = "Unavailable", 0, getStockItems()))
-            cmd.Parameters.AddWithValue("@remarks", txtRemarks.Text)
-
-            cmd.ExecuteNonQuery()
-        ElseIf action = "add" Then
-            cmd.CommandText = "INSERT INTO item_list (item_name, item_status, item_stock, item_reason, item_color, item_borrowed, item_unusable, serial_no, added_by, added_on, remarks) values (@itemname, @itemstatus, 0, @itemreason, @itemcolor, 0, 0,  @itemserial, @addedby, @addedon, @remarks)"
-            cmd.Parameters.AddWithValue("@itemname", txtItemName.Text)
-            cmd.Parameters.AddWithValue("@itemstatus", comboItemStatus.Text)
-            cmd.Parameters.AddWithValue("@itemreason", comboReason.Text)
-            cmd.Parameters.AddWithValue("@itemcolor", txtItemColor.Text)
-            cmd.Parameters.AddWithValue("@itemserial", txtItemSerial.Text)
-
-            cmd.Parameters.AddWithValue("@addedby", Main_Form.account_credentials)
-            cmd.Parameters.AddWithValue("@addedon", Date.Now)
-            cmd.Parameters.AddWithValue("@remarks", txtRemarks.Text)
-
-            cmd.ExecuteNonQuery()
-        End If
-
-        cmd.Dispose()
-        mySql.Close()
-        mySql.Dispose()
-
-        MsgBox("Item Saved!", vbInformation, "Information")
-        isSaved = True
-        Me.Close()
-        Main_Form.txtSearchInventory.Text = "Search by Item Name or ID"
-        Main_Form.btnInventory.PerformClick()
     End Sub
     Private Sub btnUpdateStock_Click(sender As Object, e As EventArgs) Handles btnUpdateStock.Click
         If itemId = 0 Or txtStockItemName.Text.Trim = "" Then
@@ -351,7 +251,7 @@ Public Class ViewInventory
     End Sub
 
 
-    Private Sub txtView_KeyDown(sender As Object, e As KeyEventArgs) Handles txtItemName.KeyDown, txtStockItemName.KeyDown, txtQuantity.KeyDown, txtTransactionBy.KeyDown
+    Private Sub txtView_KeyDown(sender As Object, e As KeyEventArgs) Handles txtStockItemName.KeyDown, txtQuantity.KeyDown, txtTransactionBy.KeyDown
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
         End If
@@ -359,10 +259,6 @@ Public Class ViewInventory
     Private Sub txtViewNumbers_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtQuantity.KeyPress
         checkInputNumbersOnly(e)
     End Sub
-    Private Sub txtStockItemName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtStockItemName.KeyPress
-        checkInputCharactersOnly(e)
-    End Sub
-
     Private Sub btnSearchItem_Click(sender As Object, e As EventArgs) Handles btnSearchItem.Click
         Dim newAction As String = If(action = "stock", comboTransactionType.Text, action)
         SearchItems.action = newAction
@@ -373,31 +269,11 @@ Public Class ViewInventory
         Search_Residents.ShowDialog()
     End Sub
 
-    Private Sub comboItemStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboItemStatus.SelectedIndexChanged
-        comboReason.Items.Clear()
-        If comboItemStatus.SelectedIndex = 0 Then
-            comboReason.Enabled = True
 
-            comboReason.Items.Add("Damaged")
-            comboReason.Items.Add("Defective")
-            comboReason.Items.Add("Lost")
-            comboReason.Items.Add("Replaced")
-        Else
-            comboReason.Enabled = False
-
-        End If
-        comboReason.SelectedIndex = -1
-    End Sub
     Private Sub comboTransactionType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboTransactionType.SelectedIndexChanged
-        comboItemState.Items.Clear()
-
         If comboTransactionType.SelectedIndex = 0 Then
-            comboItemState.Items.Add("Good")
             comboItemState.Enabled = False
         Else
-            comboItemState.Items.Add("Damaged")
-            comboItemState.Items.Add("Defective")
-            comboItemState.Items.Add("Lost")
             comboItemState.Enabled = True
         End If
         comboItemState.SelectedIndex = 0
@@ -488,18 +364,7 @@ Public Class ViewInventory
             End If
         End If
     End Sub
-    Private Sub checkInputCharactersOnly(e As KeyPressEventArgs)
-        '97 - 122 = Ascii codes for simple letters
-        '65 - 90  = Ascii codes for capital letters
-        '48 - 57  = Ascii codes for numbers
 
-        If Asc(e.KeyChar) <> 8 Then
-            If Asc(e.KeyChar) >= 48 And Asc(e.KeyChar) <= 57 Then
-                e.Handled = True
-            End If
-        End If
-
-    End Sub
     Private Sub updateStock(ByVal status As String, ByVal stock As Integer)
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)

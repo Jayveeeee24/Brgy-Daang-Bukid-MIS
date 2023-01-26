@@ -96,6 +96,8 @@ Public Class ConfirmAccess
                 SystemVariables.ShowDialog()
             ElseIf originForm = "DeleteVariable" Then
                 SystemVariables.deleteVariable()
+            ElseIf originForm = "DeleteItemData" Then
+                Main_Form.deleteItem()
                 'ElseIf originForm = "UpdateAccount" Then
                 '    AccountManagement.updateAccount()
             End If

@@ -17,6 +17,7 @@ Public Class Main_Form
     Public account_name As String
     Public user_name As String
     Public user_level As String
+    Dim itemId As Integer
 
     '' '''''''''''for certificates''''''
     Public certificateAction As String
@@ -31,7 +32,6 @@ Public Class Main_Form
     Dim endPageIndex As Integer
     Public fileName As String = ""
     Public filePath As String = ""
-
 
     '' ''''''''''''''''''''''''''''''''
 
@@ -64,6 +64,7 @@ Public Class Main_Form
         Blotters
         Vawc
         Inventory
+        ItemData
     End Enum
 
     Private Sub Main_Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -363,7 +364,7 @@ Public Class Main_Form
         labelTitle.Text = "Inventory Management"
 
         txtSearchInventory.Text = "Search by Item Name or ID"
-        loadDataGridInventory()
+        loadDataGridInventory(Modules.Inventory, datagridInventory)
         countReports(Modules.Inventory)
 
     End Sub
@@ -379,7 +380,13 @@ Public Class Main_Form
         btnItemDataManagement.BackColor = Color.FromArgb(52, 152, 219)
 
         mainTabControl.SelectedTab = pageItemManagement
+        txtSearchItemData.Text = "Search by Item Name or ID"
         labelTitle.Text = "Item Data Management"
+        loadDataGridInventory(Modules.ItemData, datagridItemData)
+        countReports(Modules.Inventory)
+
+        btnModifyItem.Enabled = False
+        btnDeleteItem.Enabled = False
     End Sub
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         Dim ans As Integer = MsgBox("Are you sure you want to log out?", MsgBoxStyle.YesNo, "Attention!")
@@ -965,6 +972,7 @@ Public Class Main_Form
         ElseIf reportModule = Modules.Inventory Then
             cmd.CommandText = "Select count(*) from item_list"
             labelTotalItems.Text = "Total Items: " & Convert.ToString(cmd.ExecuteScalar)
+            labelTotalItemData.Text = "Total Items: " & Convert.ToString(cmd.ExecuteScalar)
         End If
 
         cmd.Dispose()
@@ -1247,9 +1255,6 @@ Public Class Main_Form
     End Sub
 
 
-
-
-
     '' ''''''''''''''''''''''''''''''BLOTTERS METHODS'''''''''''''''''''''''''''''
     Private Sub loadDataGridBlotters(ByVal filtersApplied As Boolean)
         datagridBlotters.Rows.Clear()
@@ -1409,8 +1414,8 @@ Public Class Main_Form
 
 
     '' '''''''''''''''''''''''''''''INVENTORY METHODS ''''''''''''''''''''''''''''''
-    Private Sub loadDataGridInventory()
-        datagridInventory.Rows.Clear()
+    Private Sub loadDataGridInventory(ByVal modules As Modules, datagrid As DataGridView)
+        datagrid.Rows.Clear()
 
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
@@ -1428,21 +1433,34 @@ Public Class Main_Form
         cmd = mySql.CreateCommand()
         cmd.CommandType = CommandType.Text
 
-        cmd.CommandText = "SELECT item_id, item_name, item_status, item_stock, added_on from item_list where item_id > 0 " & If(txtSearchInventory.Text.Trim = "" Or txtSearchInventory.Text = "Search by Item Name or ID", "", " AND (item_id LIKE @searchvalue or item_name LIKE @searchvalue) ") & " ORDER BY added_on DESC "
-        cmd.Parameters.AddWithValue("@searchvalue", txtSearchInventory.Text.Trim & "%")
+        If modules = Modules.Inventory Then
+            cmd.CommandText = "SELECT item_id, item_name, item_status, item_stock, item_borrowed, item_unusable from item_list where item_id > 0 " & If(txtSearchInventory.Text.Trim = "" Or txtSearchInventory.Text = "Search by Item Name or ID", "", " AND (item_id LIKE @searchvalue or item_name LIKE @searchvalue) ") & " ORDER BY added_on DESC "
+            cmd.Parameters.AddWithValue("@searchvalue", txtSearchInventory.Text.Trim & "%")
 
-        mySQLReader = cmd.ExecuteReader
-        If mySQLReader.HasRows Then
-            While mySQLReader.Read
-                Dim date1 As Date = mySQLReader!added_on
-                datagridInventory.Rows.Add(New String() {mySQLReader!item_id, mySQLReader!item_name, mySQLReader!item_status, mySQLReader!item_stock, date1.ToString("MMMM d, yyyy")})
-            End While
+            mySQLReader = cmd.ExecuteReader
+            If mySQLReader.HasRows Then
+                While mySQLReader.Read
+                    datagrid.Rows.Add(New String() {mySQLReader!item_id, mySQLReader!item_name, mySQLReader!item_status, mySQLReader!item_stock, mySQLReader!item_borrowed, mySQLReader!item_unusable})
+                End While
+            End If
+        ElseIf modules = Modules.ItemData Then
+            cmd.CommandText = "SELECT item_id, item_name, item_color, serial_no, added_on, added_by, remarks from item_list where item_id > 0 " & If(txtSearchItemData.Text.Trim = "" Or txtSearchItemData.Text = "Search by Item Name or ID", "", " AND (item_id LIKE @searchvalue or item_name LIKE @searchvalue) ") & " ORDER BY added_on DESC "
+            cmd.Parameters.AddWithValue("@searchvalue", txtSearchItemData.Text.Trim & "%")
+
+            mySQLReader = cmd.ExecuteReader
+            If mySQLReader.HasRows Then
+                While mySQLReader.Read
+                    Dim date1 As Date = mySQLReader!added_on
+                    datagrid.Rows.Add(New String() {mySQLReader!item_id, mySQLReader!item_name, mySQLReader!item_color, mySQLReader!serial_no, date1.ToString("MMMM d, yyyy"), mySQLReader!added_by, mySQLReader!remarks})
+                End While
+            End If
         End If
-        datagridInventory.ClearSelection()
 
-        cmd.Dispose()
-        mySql.Close()
-        mySql.Dispose()
+        datagrid.ClearSelection()
+
+            cmd.Dispose()
+            mySql.Close()
+            mySql.Dispose()
     End Sub
     Private Sub txtSearchInventory_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchInventory.KeyDown
         If e.KeyCode = Keys.Enter Then
@@ -1456,18 +1474,7 @@ Public Class Main_Form
         End If
     End Sub
     Private Sub btnSearchInventory_Click(sender As Object, e As EventArgs) Handles btnSearchInventory.Click
-        loadDataGridInventory()
-    End Sub
-    Private Sub datagridInventory_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridInventory.CellClick
-        If e.RowIndex >= 0 Then
-            ViewInventory.itemId = datagridInventory.Rows(e.RowIndex).Cells(0).Value
-            ViewInventory.action = "modify"
-            ViewInventory.ShowDialog()
-        End If
-    End Sub
-    Private Sub btnAddInventory_Click(sender As Object, e As EventArgs) Handles btnAddInventory.Click
-        ViewInventory.action = "add"
-        ViewInventory.ShowDialog()
+        loadDataGridInventory(Modules.Inventory, datagridInventory)
     End Sub
     Private Sub btnUpdateStock_Click(sender As Object, e As EventArgs) Handles btnUpdateStock.Click
         ViewInventory.action = "stock"
@@ -1480,6 +1487,87 @@ Public Class Main_Form
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
         ReturnItem.ShowDialog()
     End Sub
+
+
+    '' ''''''''''''''''''''''''ITEM DATA MANAGEMENT METHODS''''''''''''''''''''''''''''''''''''''''''''''
+    Private Sub txtSearchItemData_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchItemData.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnSearchItemData.PerformClick()
+            e.SuppressKeyPress = True
+        End If
+    End Sub
+    Private Sub txtSearchItemData_Click(sender As Object, e As EventArgs) Handles txtSearchItemData.Click
+        If txtSearchItemData.Text.Trim = "Search by Item Name or ID" Then
+            txtSearchItemData.Clear()
+        End If
+    End Sub
+    Private Sub btnSearchItemData_Click(sender As Object, e As EventArgs) Handles btnSearchItemData.Click
+        loadDataGridInventory(Modules.ItemData, datagridItemData)
+    End Sub
+    Private Sub datagridItemData_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridItemData.CellClick
+        If e.RowIndex >= 0 Then
+            btnModifyItem.Enabled = True
+            btnDeleteItem.Enabled = True
+            ItemDataInformation.itemId = datagridItemData.Rows(e.RowIndex).Cells(0).Value
+            itemId = datagridItemData.Rows(e.RowIndex).Cells(0).Value
+        End If
+    End Sub
+    Private Sub datagridItemData_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridItemData.CellDoubleClick
+        If e.RowIndex >= 0 Then
+            ViewInventory.itemId = datagridItemData.Rows(e.RowIndex).Cells(0).Value
+            ViewInventory.action = "view"
+            ViewInventory.ShowDialog()
+        End If
+    End Sub
+    Private Sub btnAddItem_Click(sender As Object, e As EventArgs) Handles btnAddItem.Click
+        ItemDataInformation.action = "add"
+        ItemDataInformation.ShowDialog()
+        itemId = 0
+    End Sub
+    Private Sub btnModifyItem_Click(sender As Object, e As EventArgs) Handles btnModifyItem.Click
+        ItemDataInformation.action = "modify"
+        ItemDataInformation.ShowDialog()
+        itemId = 0
+    End Sub
+    Private Sub btnDeleteItem_Click(sender As Object, e As EventArgs) Handles btnDeleteItem.Click
+        ConfirmAccess.originForm = "DeleteItemData"
+        ConfirmAccess.Show()
+    End Sub
+    Public Sub deleteItem()
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "DELETE FROM item_list WHERE item_id = @id"
+        cmd.Parameters.AddWithValue("@id", itemId)
+
+        cmd.ExecuteNonQuery()
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+
+        MsgBox("Item Deleted!", vbInformation, "Information")
+        loadDataGridInventory(Modules.ItemData, datagridItemData)
+        itemId = 0
+        btnModifyItem.Enabled = False
+        btnDeleteItem.Enabled = False
+        btnItemDataManagement.PerformClick()
+    End Sub
+
+
+
 
     '' '''''''''''''''''''''''''CERTIFICATES METHODS '''''''''''''''''''''''''''''''''''''''''
     Private Sub clearCertificates()

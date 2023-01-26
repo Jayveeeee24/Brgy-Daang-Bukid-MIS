@@ -19,7 +19,7 @@ Public Class ViewResident
     Dim age, householdId, dayRegistered, yearRegistered As Integer
     Dim birthPlace, civilStatus, sex, religion,
         contactNo, pwd, disability, voter, occupation, citizenship,
-        householdRole, registeredBy, dateRegistered, reasonArchived, archivedBy, monthRegistered As String
+        householdRole, registeredBy, dateRegistered, reasonArchived, archivedBy, monthRegistered, otherCitizenship As String
 
     Private Sub ViewResident_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         mainTabControl.ItemSize = New Size(0, 1)
@@ -48,7 +48,7 @@ Public Class ViewResident
     End Sub
     Private Sub ViewResident_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If action = "add" And isSaved = False Then
-            If comboHouseholdId.Text.Trim <> "" Or txtFirstName.Text.Trim <> "" Or txtLastName.Text.Trim <> "" Or comboBirthPlace.Text.Trim <> "" Or txtContactNo.Text.Trim <> "" Or txtDisability.Text.Trim <> "" Or comboBirthPlace.Text.Trim <> "" Or txtOccupation.Text.Trim <> "" Or comboReligion.Text.Trim <> "" Then
+            If comboHouseholdId.Text.Trim <> "" Or txtFirstName.Text.Trim <> "" Or txtLastName.Text.Trim <> "" Or comboBirthPlace.Text.Trim <> "" Or txtContactNo.Text.Trim <> "" Or txtDisability.Text.Trim <> "" Or comboBirthPlace.Text.Trim <> "" Or txtOccupation.Text.Trim <> "" Then
                 If mainTabControl.SelectedIndex = 1 Then
                     If MsgBox("Your current progress will not be saved!", MsgBoxStyle.OkCancel, "Are you sure to exit?") = MsgBoxResult.Cancel Then
                         e.Cancel = True
@@ -150,7 +150,8 @@ Public Class ViewResident
 
         txtContactNo.Text = contactNo
 
-        comboCitizenship.SelectedIndex = If(comboCitizenship.FindStringExact(citizenship) = -1, 2, comboCitizenship.FindStringExact(citizenship))
+        comboCitizenship.SelectedIndex = comboCitizenship.FindStringExact(citizenship)
+        txtOtherCitizenship.Text = otherCitizenship
         If comboCitizenship.SelectedIndex >= 2 Then
             txtOtherCitizenship.Enabled = True
             txtOtherCitizenship.Text = citizenship
@@ -306,6 +307,7 @@ Public Class ViewResident
                     birthPlace = mySQLReader!birthplace
                     civilStatus = mySQLReader!civil_status
                     citizenship = mySQLReader!citizenship
+                    otherCitizenship = mySQLReader!other_citizenship
                     sex = mySQLReader!sex
                     religion = mySQLReader!religion
                     contactNo = mySQLReader!contact_no
@@ -339,6 +341,7 @@ Public Class ViewResident
             labelSeniorCitizen.Text = If(age >= 60, "Yes", "No")
             labelBirthPlace.Text = birthPlace
             labelCivilStatus.Text = civilStatus
+            labelCitizenship.Text = If(otherCitizenship = "", citizenship, citizenship & "(" & otherCitizenship & ")")
             labelSex.Text = sex
             labelReligion.Text = religion
             labelContactNo.Text = contactNo

@@ -118,3 +118,4 @@ C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.
 C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ElectOfficials.resources
 C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.SystemVariables.resources
 C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.AddVariable.resources
+C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ItemDataInformation.resources
