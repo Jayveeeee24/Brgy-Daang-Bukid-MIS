@@ -182,9 +182,9 @@ Partial Class ItemDataInformation
         Me.Label32.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label32.Location = New System.Drawing.Point(36, 421)
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(93, 18)
+        Me.Label32.Size = New System.Drawing.Size(110, 18)
         Me.Label32.TabIndex = 153
-        Me.Label32.Text = "Remarks: "
+        Me.Label32.Text = "Description: "
         '
         'labelStatus
         '

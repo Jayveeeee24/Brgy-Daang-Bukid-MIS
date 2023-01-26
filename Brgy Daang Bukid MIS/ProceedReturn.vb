@@ -47,7 +47,8 @@ Public Class ProceedReturn
                     itemId = mySQLReader!item_id
                     txtItemName.Text = getItemNameById(mySQLReader!item_id)
                     quantity = mySQLReader!quantity
-                    dateBorrowed = mySQLReader!borrowed_date
+                    Dim date1 As Date = mySQLReader!borrowed_date
+                    dateBorrowed = date1.ToString("MMMM d, yyyy")
                     txtTransactionBy.Text = mySQLReader!borrowed_by
                     txtReason.Text = mySQLReader!reason
                 End While
@@ -178,6 +179,13 @@ Public Class ProceedReturn
         ReturnItem.btnSearchBorrowedItem.PerformClick()
         ReturnItem.btnReturnItem.Enabled = False
         ReturnItem.datagridBorrowed.ClearSelection()
+
+        Main_Form.loadDashboardInventory(Main_Form.datagridInventoryDues, "dues")
+        Main_Form.loadDashboardInventory(Main_Form.datagridInventoryOverdues, "overdues")
+
+
+
+
 
     End Sub
 

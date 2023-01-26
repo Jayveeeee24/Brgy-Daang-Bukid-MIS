@@ -776,7 +776,7 @@ Public Class Main_Form
             ProceedReturn.ShowDialog()
         End If
     End Sub
-    Private Sub loadDashboardInventory(datagrid As DataGridView, ByVal origin As String)
+    Public Sub loadDashboardInventory(datagrid As DataGridView, ByVal origin As String)
         datagrid.Rows.Clear()
 
         Dim mySql As MySqlConnection

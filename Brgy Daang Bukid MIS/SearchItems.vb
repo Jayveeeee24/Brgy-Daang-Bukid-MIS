@@ -68,8 +68,8 @@ Public Class SearchItems
 
     Private Sub datagridItems_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridItems.CellClick
         If e.RowIndex >= 0 Then
-            ViewInventory.itemId = datagridItems.Rows(e.RowIndex).Cells(0).Value
-            ViewInventory.txtStockItemName.Text = datagridItems.Rows(e.RowIndex).Cells(1).Value
+            'ViewInventory.itemId = datagridItems.Rows(e.RowIndex).Cells(0).Value
+            'ViewInventory.txtStockItemName.Text = datagridItems.Rows(e.RowIndex).Cells(1).Value
             Me.Close()
         End If
     End Sub

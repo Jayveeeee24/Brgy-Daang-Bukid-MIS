@@ -48,7 +48,6 @@ Partial Class ProceedReturn
         Me.labelReturnDate.Size = New System.Drawing.Size(150, 18)
         Me.labelReturnDate.TabIndex = 163
         Me.labelReturnDate.Text = "Date Returned*: "
-        Me.labelReturnDate.Visible = False
         '
         'dateReturned
         '
@@ -58,7 +57,6 @@ Partial Class ProceedReturn
         Me.dateReturned.Name = "dateReturned"
         Me.dateReturned.Size = New System.Drawing.Size(303, 26)
         Me.dateReturned.TabIndex = 162
-        Me.dateReturned.Visible = False
         '
         'comboItemState
         '
