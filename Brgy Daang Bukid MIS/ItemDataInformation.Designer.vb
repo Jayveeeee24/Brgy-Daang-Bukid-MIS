@@ -257,7 +257,6 @@ Partial Class ItemDataInformation
         Me.datePickerAdded.Name = "datePickerAdded"
         Me.datePickerAdded.Size = New System.Drawing.Size(303, 26)
         Me.datePickerAdded.TabIndex = 159
-        Me.datePickerAdded.Visible = False
         '
         'ItemDataInformation
         '

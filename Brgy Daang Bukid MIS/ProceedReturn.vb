@@ -10,18 +10,100 @@ Public Class ProceedReturn
     Public itemId As Integer
     Public quantity As Integer
     Public dateBorrowed As String
+    Public action As String
 
     Private Sub ProceedReturn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         getSystemVariable(comboItemState, "Return Item State")
+
+        dateReturned.Format = DateTimePickerFormat.Custom
+        dateReturned.CustomFormat = "MMMM d, yyyy"
+
+
         comboItemState.SelectedIndex = 0
+
+
+        If action = "dashboard" Then
+            Dim mySql As MySqlConnection
+            mySql = New MySqlConnection(mySqlConn)
+            On Error Resume Next
+            mySql.Open()
+
+            Select Case Err.Number
+                Case 0
+                Case Else
+                    MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+            End Select
+
+            Dim cmd As MySqlCommand
+            Dim mySQLReader As MySqlDataReader
+            cmd = mySql.CreateCommand()
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = "SELECT * from item_borrowed where id = @id"
+            cmd.Parameters.AddWithValue("@id", id)
+            mySQLReader = cmd.ExecuteReader
+
+            If mySQLReader.HasRows Then
+                While mySQLReader.Read
+                    itemId = mySQLReader!item_id
+                    txtItemName.Text = getItemNameById(mySQLReader!item_id)
+                    quantity = mySQLReader!quantity
+                    dateBorrowed = mySQLReader!borrowed_date
+                    txtTransactionBy.Text = mySQLReader!borrowed_by
+                    txtReason.Text = mySQLReader!reason
+                End While
+            End If
+
+            cmd.Dispose()
+            mySql.Close()
+            mySql.Dispose()
+        End If
     End Sub
+
     Private Sub ProceedReturn_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         ReturnItem.btnReturnItem.Enabled = False
         ReturnItem.datagridBorrowed.ClearSelection()
+        Main_Form.datagridInventoryDues.ClearSelection()
+        Main_Form.datagridInventoryOverdues.ClearSelection()
+
+        action = ""
 
         Me.Controls.Clear()
         Me.InitializeComponent()
     End Sub
+    Private Function getItemNameById(ByVal id As Integer) As String
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim itemName As String = ""
+        Dim cmd As MySqlCommand
+        Dim mySQLReader As MySqlDataReader
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "SELECT item_name from item_list where item_id = @itemid"
+        cmd.Parameters.AddWithValue("@itemid", id)
+        mySQLReader = cmd.ExecuteReader
+
+        If mySQLReader.HasRows Then
+            While mySQLReader.Read
+                itemName = mySQLReader!item_name
+            End While
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+
+        Return itemName
+    End Function
 
     Private Sub txtItemName_KeyDown(sender As Object, e As KeyEventArgs) Handles txtTransactionBy.KeyDown, txtQuantity.KeyDown, txtItemName.KeyDown
         If e.KeyCode = Keys.Enter Then

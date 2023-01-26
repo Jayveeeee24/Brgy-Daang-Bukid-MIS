@@ -234,7 +234,8 @@ Public Class Main_Form
         countRows()
         loadDataGrid(dataGridBrgyOfficials, Modules.brgyofficials)
         statisticChecker()
-        loadDashboardInventory()
+        loadDashboardInventory(datagridInventoryDues, "dues")
+        loadDashboardInventory(datagridInventoryOverdues, "overdues")
 
     End Sub
     Private Sub btnResidentInfo_Click(sender As Object, e As EventArgs) Handles btnResidentInfo.Click
@@ -366,7 +367,9 @@ Public Class Main_Form
         txtSearchInventory.Text = "Search by Item Name or ID"
         loadDataGridInventory(Modules.Inventory, datagridInventory)
         countReports(Modules.Inventory)
-
+        btnStockIn.Enabled = False
+        btnStockOut.Enabled = False
+        btnBorrow.Enabled = False
     End Sub
     Private Sub btnItemDataManagement_Click(sender As Object, e As EventArgs) Handles btnItemDataManagement.Click
         btnDashboard.BackColor = Color.FromArgb(25, 117, 211)
@@ -759,15 +762,22 @@ Public Class Main_Form
         mySql.Close()
         mySql.Dispose()
     End Sub
-    Private Sub datagridInventoryDues_Click(sender As Object, e As EventArgs) Handles datagridInventoryDues.Click
-        btnInventory.PerformClick()
-        btnReturn.PerformClick()
-    End Sub
     Private Sub datagridInventoryDues_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridInventoryDues.CellClick
-        datagridInventoryDues.ClearSelection()
+        If e.RowIndex >= 0 Then
+            ProceedReturn.id = datagridInventoryDues.Rows(e.RowIndex).Cells(0).Value
+            ProceedReturn.action = "dashboard"
+            ProceedReturn.ShowDialog()
+        End If
     End Sub
-    Private Sub loadDashboardInventory()
-        datagridInventoryDues.Rows.Clear()
+    Private Sub datagridInventoryOverdues_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridInventoryOverdues.CellClick
+        If e.RowIndex >= 0 Then
+            ProceedReturn.id = datagridInventoryOverdues.Rows(e.RowIndex).Cells(0).Value
+            ProceedReturn.action = "dashboard"
+            ProceedReturn.ShowDialog()
+        End If
+    End Sub
+    Private Sub loadDashboardInventory(datagrid As DataGridView, ByVal origin As String)
+        datagrid.Rows.Clear()
 
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
@@ -785,14 +795,30 @@ Public Class Main_Form
         cmd = mySql.CreateCommand()
         cmd.CommandType = CommandType.Text
 
-        cmd.CommandText = "SELECT * from item_borrowed order by return_date desc"
-        mySQLReader = cmd.ExecuteReader
-        If mySQLReader.HasRows Then
-            While mySQLReader.Read
-                datagridInventoryDues.Rows.Add(New String() {getItemNameById(mySQLReader!item_id), mySQLReader!quantity, mySQLReader!return_date})
-            End While
+        If origin = "dues" Then
+            cmd.CommandText = "SELECT * from item_borrowed where return_date >= @date order by return_date desc"
+            cmd.Parameters.AddWithValue("@date", Date.Now.Date)
+
+            mySQLReader = cmd.ExecuteReader
+            If mySQLReader.HasRows Then
+                While mySQLReader.Read
+                    datagrid.Rows.Add(New String() {mySQLReader!id, getItemNameById(mySQLReader!item_id), mySQLReader!quantity, mySQLReader!return_date})
+                End While
+            End If
+        ElseIf origin = "overdues" Then
+            cmd.CommandText = "SELECT * from item_borrowed where @date > return_date order by return_date desc"
+            cmd.Parameters.AddWithValue("@date", Date.Now.Date)
+
+            mySQLReader = cmd.ExecuteReader
+            If mySQLReader.HasRows Then
+                While mySQLReader.Read
+                    datagrid.Rows.Add(New String() {mySQLReader!id, getItemNameById(mySQLReader!item_id), mySQLReader!quantity, mySQLReader!return_date})
+                End While
+            End If
         End If
-        datagridInventoryDues.ClearSelection()
+
+
+        datagrid.ClearSelection()
 
         cmd.Dispose()
         mySql.Close()
@@ -1476,16 +1502,33 @@ Public Class Main_Form
     Private Sub btnSearchInventory_Click(sender As Object, e As EventArgs) Handles btnSearchInventory.Click
         loadDataGridInventory(Modules.Inventory, datagridInventory)
     End Sub
-    Private Sub btnUpdateStock_Click(sender As Object, e As EventArgs) Handles btnUpdateStock.Click
-        ViewInventory.action = "stock"
-        ViewInventory.ShowDialog()
-    End Sub
     Private Sub btnBorrow_Click(sender As Object, e As EventArgs) Handles btnBorrow.Click
-        ViewInventory.action = "borrow"
-        ViewInventory.ShowDialog()
+        ItemBorrow.ShowDialog()
     End Sub
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
         ReturnItem.ShowDialog()
+    End Sub
+    Private Sub btnStockIn_Click(sender As Object, e As EventArgs) Handles btnStockIn.Click
+        ItemStockInformation.action = "Stock In"
+        ItemStockInformation.ShowDialog()
+    End Sub
+    Private Sub btnStockOut_Click(sender As Object, e As EventArgs) Handles btnStockOut.Click
+        ItemStockInformation.action = "Stock Out"
+        ItemStockInformation.ShowDialog()
+    End Sub
+    Private Sub datagridInventory_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridInventory.CellClick
+        If e.RowIndex >= 0 Then
+            ItemStockInformation.itemId = datagridInventory.Rows(e.RowIndex).Cells(0).Value
+            itemId = datagridInventory.Rows(e.RowIndex).Cells(0).Value
+
+            btnStockIn.Enabled = True
+
+            If datagridInventory.Rows(e.RowIndex).Cells(3).Value <> 0 Then
+                ItemBorrow.itemId = datagridInventory.Rows(e.RowIndex).Cells(0).Value
+                btnStockOut.Enabled = True
+                btnBorrow.Enabled = True
+            End If
+        End If
     End Sub
 
 
@@ -1557,6 +1600,7 @@ Public Class Main_Form
         cmd.Dispose()
         mySql.Close()
         mySql.Dispose()
+        deleteBorrowed()
 
         MsgBox("Item Deleted!", vbInformation, "Information")
         loadDataGridInventory(Modules.ItemData, datagridItemData)
@@ -1564,6 +1608,31 @@ Public Class Main_Form
         btnModifyItem.Enabled = False
         btnDeleteItem.Enabled = False
         btnItemDataManagement.PerformClick()
+    End Sub
+    Private Sub deleteBorrowed()
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "DELETE FROM item_borrowed WHERE item_id = @id"
+        cmd.Parameters.AddWithValue("@id", itemId)
+
+        cmd.ExecuteNonQuery()
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
     End Sub
 
 

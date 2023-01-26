@@ -54,7 +54,31 @@ Public Class ReturnItem
         cmd.Dispose()
         mySql.Close()
         mySql.Dispose()
+        countBorrowedItems()
 
+    End Sub
+    Private Sub countBorrowedItems()
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = "Select count(*) from incidents"
+        labelTotalBorrowed.Text = "Total Unreturned Items: " & Convert.ToString(cmd.ExecuteScalar)
+
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
     End Sub
     Private Sub txtSearchBorrowedItems_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchBorrowedItems.KeyDown
         If e.KeyCode = Keys.Enter Then

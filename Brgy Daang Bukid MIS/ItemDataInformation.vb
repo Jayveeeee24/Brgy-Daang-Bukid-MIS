@@ -5,8 +5,6 @@ Public Class ItemDataInformation
 
     Public action As String
     Public itemId As Integer
-    Dim itemReason As String
-    Dim itemStatus As String
     Dim isSaved As Boolean = False
     Private Sub ItemDataInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         getSystemVariable(comboReason, "Stock Out Reason")
@@ -78,8 +76,7 @@ Public Class ItemDataInformation
                     txtItemName.Text = mySQLReader!item_name
                     comboItemStatus.SelectedIndex = comboItemStatus.FindStringExact(mySQLReader!item_status)
                     comboReason.SelectedIndex = If(mySQLReader!item_reason <> "", comboReason.FindStringExact(mySQLReader!item_reason), -1)
-                    itemReason = mySQLReader!item_reason
-                    itemStatus = mySQLReader!item_status
+
 
                     txtItemColor.Text = mySQLReader!item_color
                     txtItemSerial.Text = mySQLReader!serial_no
@@ -95,6 +92,8 @@ Public Class ItemDataInformation
             mySql.Dispose()
         End If
 
+        datePickerAdded.Format = DateTimePickerFormat.Custom
+        datePickerAdded.CustomFormat = "MMMM d, yyyy"
     End Sub
     Private Sub btnSaveItem_Click(sender As Object, e As EventArgs) Handles btnSaveItem.Click
         If txtItemName.Text.Trim = "" Then
@@ -103,6 +102,10 @@ Public Class ItemDataInformation
         End If
         If (comboItemStatus.SelectedIndex = 0 And comboReason.SelectedIndex = -1) And action = "modify" Then
             MsgBox("Please fill out a valid reason for unavailability!", vbCritical, "Warning")
+            Exit Sub
+        End If
+        If comboItemStatus.SelectedIndex = 1 And getStockItems() = 0 Then
+            MsgBox("You cannot make it available if it has no stocks, Add stock first!", vbCritical, "Warning")
             Exit Sub
         End If
         If datePickerAdded.Value.Date > Date.Now.Date Then
@@ -163,12 +166,11 @@ Public Class ItemDataInformation
 
     Private Sub comboItemStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboItemStatus.SelectedIndexChanged
         If comboItemStatus.SelectedIndex = 0 Then
-            If comboItemStatus.SelectedIndex = 0 Then
-                comboReason.Enabled = True
-            Else
-                comboReason.Enabled = False
-            End If
+            comboReason.SelectedIndex = 0
+            comboReason.Enabled = True
+        Else
             comboReason.SelectedIndex = -1
+            comboReason.Enabled = False
         End If
     End Sub
     Private Sub txtView_KeyDown(sender As Object, e As KeyEventArgs) Handles txtItemSerial.KeyDown, txtItemName.KeyDown, txtItemColor.KeyDown
