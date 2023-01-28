@@ -24,4 +24,19 @@ Public Class CertificateChooseAction
         Main_Form.convertDocToImage(Main_Form.filePath)
     End Sub
 
+    Private Sub CertificateChooseAction_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Controls.Clear()
+        Me.InitializeComponent()
+        Main_Form.txtCertificateResident.Clear()
+        Main_Form.txtCertificateAddress.Text = ""
+        Main_Form.txtCertificateYears.Clear()
+        Main_Form.txtCaseNo.Clear()
+        Main_Form.txtComplainant1.Clear()
+        Main_Form.txtComplainant2.Clear()
+        Main_Form.txtRespondent1.Clear()
+        Main_Form.txtRespondent2.Clear()
+        Main_Form.datePickerSummon.Value = Date.Now
+        Main_Form.comboTime.SelectedIndex = 12
+
+    End Sub
 End Class

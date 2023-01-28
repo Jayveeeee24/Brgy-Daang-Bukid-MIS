@@ -282,7 +282,7 @@ Public Class ItemBorrow
 
         cmd.Parameters.AddWithValue("@itemid", itemId)
         cmd.Parameters.AddWithValue("@quantity", CInt(txtQuantity.Text))
-        cmd.Parameters.AddWithValue("@borroweddate", datePickerBorrowed)
+        cmd.Parameters.AddWithValue("@borroweddate", datePickerBorrowed.Value.Date)
         cmd.Parameters.AddWithValue("@returndate", dateReturn.Value.Date)
         cmd.Parameters.AddWithValue("@borrowedby", txtTransactionBy.Text)
         cmd.Parameters.AddWithValue("@reason", txtReason.Text)

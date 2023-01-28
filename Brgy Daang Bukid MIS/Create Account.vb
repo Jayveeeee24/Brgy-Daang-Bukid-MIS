@@ -103,7 +103,6 @@ Public Class Create_Account
 
             isSaved = True
             Me.Close()
-            isSaved = False
         Else
             If isUserNameAvailable(txtUsernameAdmin.Text.Trim) = False Then
                 MsgBox("Username is already used by another user!", vbCritical, "Warning")
