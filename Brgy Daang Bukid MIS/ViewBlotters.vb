@@ -277,14 +277,18 @@ Public Class ViewBlotters
             MsgBox("Please provide a valid submitted date!", vbCritical, "Warning")
             Exit Sub
         End If
-        If suspectId = 0 And submittedById = 0 Then
-            MsgBox("There must be at least one resident residing in the barangay!", vbCritical, "Warning")
-            Exit Sub
+        If action = "add" Then
+            If suspectId = 0 And submittedById = 0 Then
+                MsgBox("There must be at least one resident residing in the barangay!", vbCritical, "Warning")
+                Exit Sub
+            End If
+
+            If suspectId = 0 And (txtSuspectAddress.Text.Trim = "" Or txtSuspectContactNo.Text = "") Then
+                MsgBox("Please provide address and contact no for suspect!", vbCritical, "Warning")
+                Exit Sub
+            End If
         End If
-        If suspectId = 0 And (txtSuspectAddress.Text.Trim = "" Or txtSuspectContactNo.Text = "") Then
-            MsgBox("Please provide address and contact no for suspect!", vbCritical, "Warning")
-            Exit Sub
-        End If
+
 
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)

@@ -27,6 +27,8 @@ Public Class Login
             Case 0
             Case Else
                 MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+                Application.Exit()
+                End
                 Exit Sub
         End Select
 
@@ -51,6 +53,8 @@ Public Class Login
             Case 0
             Case Else
                 MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+                Application.Exit()
+                End
                 Exit Sub
         End Select
 
@@ -75,6 +79,8 @@ Public Class Login
             Case 0
             Case Else
                 MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+                Application.Exit()
+                End
         End Select
 
         Dim cmd As MySqlCommand

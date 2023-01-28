@@ -389,18 +389,22 @@ Public Class ViewComplaints
             MsgBox("Please provide a valid date of filing!", vbCritical, "Warning")
             Exit Sub
         End If
-        If complainantId = 0 And defendantId = 0 Then
-            MsgBox("There must be at least one resident residing in the barangay!", vbCritical, "Warning")
-            Exit Sub
+
+        If action = "add" Then
+            If complainantId = 0 And defendantId = 0 Then
+                MsgBox("There must be at least one resident residing in the barangay!", vbCritical, "Warning")
+                Exit Sub
+            End If
+            If complainantId = 0 And (txtComplainantAddress.Text.Trim = "" Or txtComplainantContactNo.Text = "") Then
+                MsgBox("Please provide address and contact no for complainant!", vbCritical, "Warning")
+                Exit Sub
+            End If
+            If defendantId = 0 And (txtDefendantAddress.Text.Trim = "" Or txtDefendantContactNo.Text = "") Then
+                MsgBox("Please provide address and contact no for respondent!", vbCritical, "Warning")
+                Exit Sub
+            End If
         End If
-        If complainantId = 0 And (txtComplainantAddress.Text.Trim = "" Or txtComplainantContactNo.Text = "") Then
-            MsgBox("Please provide address and contact no for complainant!", vbCritical, "Warning")
-            Exit Sub
-        End If
-        If defendantId = 0 And (txtDefendantAddress.Text.Trim = "" Or txtDefendantContactNo.Text = "") Then
-            MsgBox("Please provide address and contact no for respondent!", vbCritical, "Warning")
-            Exit Sub
-        End If
+
         If comboFirstResult.SelectedIndex >= 0 And dateFirstHearing.Value.Date > Date.Now.Date Then
             MsgBox("Please provide a valid date for first hearing!", vbCritical, "Warning")
             Exit Sub
