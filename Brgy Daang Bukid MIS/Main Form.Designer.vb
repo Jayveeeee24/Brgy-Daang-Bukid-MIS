@@ -71,16 +71,20 @@ Partial Class Main_Form
         Me.TableLayoutPanel27 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel33 = New System.Windows.Forms.Panel()
         Me.dataGridBrgyOfficials = New System.Windows.Forms.DataGridView()
-        Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel28 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel35 = New System.Windows.Forms.Panel()
         Me.datagridInventoryOverdues = New System.Windows.Forms.DataGridView()
+        Me.Column22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.datagridInventoryDues = New System.Windows.Forms.DataGridView()
+        Me.Column21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Panel34 = New System.Windows.Forms.Panel()
         Me.Label22 = New System.Windows.Forms.Label()
@@ -371,14 +375,9 @@ Partial Class Main_Form
         Me.btnAccountSettings = New System.Windows.Forms.Button()
         Me.btnUpdateBrgyOfficials = New System.Windows.Forms.Button()
         Me.btnArchivedResidents = New System.Windows.Forms.Button()
-        Me.Column21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.panelTop.SuspendLayout()
         CType(Me.splitContainerMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.splitContainerMain.Panel1.SuspendLayout()
@@ -889,8 +888,8 @@ Partial Class Main_Form
         '
         Me.TableLayoutPanel27.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
         Me.TableLayoutPanel27.ColumnCount = 2
-        Me.TableLayoutPanel27.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.3412!))
-        Me.TableLayoutPanel27.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.6588!))
+        Me.TableLayoutPanel27.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.80036!))
+        Me.TableLayoutPanel27.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.19964!))
         Me.TableLayoutPanel27.Controls.Add(Me.Panel33, 0, 0)
         Me.TableLayoutPanel27.Controls.Add(Me.TableLayoutPanel28, 1, 0)
         Me.TableLayoutPanel27.Dock = System.Windows.Forms.DockStyle.Fill
@@ -911,7 +910,7 @@ Partial Class Main_Form
         Me.Panel33.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel33.Name = "Panel33"
         Me.Panel33.Padding = New System.Windows.Forms.Padding(8, 3, 8, 3)
-        Me.Panel33.Size = New System.Drawing.Size(685, 520)
+        Me.Panel33.Size = New System.Drawing.Size(657, 520)
         Me.Panel33.TabIndex = 0
         '
         'dataGridBrgyOfficials
@@ -932,7 +931,7 @@ Partial Class Main_Form
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dataGridBrgyOfficials.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dataGridBrgyOfficials.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dataGridBrgyOfficials.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column14, Me.Column1, Me.Column2, Me.Column4})
+        Me.dataGridBrgyOfficials.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column4})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -948,36 +947,8 @@ Partial Class Main_Form
         Me.dataGridBrgyOfficials.Name = "dataGridBrgyOfficials"
         Me.dataGridBrgyOfficials.ReadOnly = True
         Me.dataGridBrgyOfficials.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataGridBrgyOfficials.Size = New System.Drawing.Size(669, 470)
+        Me.dataGridBrgyOfficials.Size = New System.Drawing.Size(641, 470)
         Me.dataGridBrgyOfficials.TabIndex = 5
-        '
-        'Column14
-        '
-        Me.Column14.HeaderText = "ID"
-        Me.Column14.Name = "Column14"
-        Me.Column14.ReadOnly = True
-        Me.Column14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Name"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Position"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Contact Number"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
         'Label1
         '
@@ -999,13 +970,13 @@ Partial Class Main_Form
         Me.TableLayoutPanel28.Controls.Add(Me.Panel35, 0, 1)
         Me.TableLayoutPanel28.Controls.Add(Me.Panel34, 0, 0)
         Me.TableLayoutPanel28.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel28.Location = New System.Drawing.Point(687, 1)
+        Me.TableLayoutPanel28.Location = New System.Drawing.Point(659, 1)
         Me.TableLayoutPanel28.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel28.Name = "TableLayoutPanel28"
         Me.TableLayoutPanel28.RowCount = 2
         Me.TableLayoutPanel28.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.42308!))
         Me.TableLayoutPanel28.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.57692!))
-        Me.TableLayoutPanel28.Size = New System.Drawing.Size(415, 520)
+        Me.TableLayoutPanel28.Size = New System.Drawing.Size(443, 520)
         Me.TableLayoutPanel28.TabIndex = 1
         '
         'Panel35
@@ -1019,7 +990,7 @@ Partial Class Main_Form
         Me.Panel35.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel35.Name = "Panel35"
         Me.Panel35.Padding = New System.Windows.Forms.Padding(8, 3, 8, 3)
-        Me.Panel35.Size = New System.Drawing.Size(415, 419)
+        Me.Panel35.Size = New System.Drawing.Size(443, 419)
         Me.Panel35.TabIndex = 7
         '
         'datagridInventoryOverdues
@@ -1056,8 +1027,36 @@ Partial Class Main_Form
         Me.datagridInventoryOverdues.Name = "datagridInventoryOverdues"
         Me.datagridInventoryOverdues.ReadOnly = True
         Me.datagridInventoryOverdues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datagridInventoryOverdues.Size = New System.Drawing.Size(399, 167)
+        Me.datagridInventoryOverdues.Size = New System.Drawing.Size(427, 167)
         Me.datagridInventoryOverdues.TabIndex = 9
+        '
+        'Column22
+        '
+        Me.Column22.HeaderText = "ID"
+        Me.Column22.Name = "Column22"
+        Me.Column22.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn21
+        '
+        Me.DataGridViewTextBoxColumn21.HeaderText = "Item Name"
+        Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
+        Me.DataGridViewTextBoxColumn21.ReadOnly = True
+        Me.DataGridViewTextBoxColumn21.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewTextBoxColumn21.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'DataGridViewTextBoxColumn24
+        '
+        Me.DataGridViewTextBoxColumn24.HeaderText = "Quantity"
+        Me.DataGridViewTextBoxColumn24.Name = "DataGridViewTextBoxColumn24"
+        Me.DataGridViewTextBoxColumn24.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn25
+        '
+        Me.DataGridViewTextBoxColumn25.HeaderText = "Due Date"
+        Me.DataGridViewTextBoxColumn25.Name = "DataGridViewTextBoxColumn25"
+        Me.DataGridViewTextBoxColumn25.ReadOnly = True
+        Me.DataGridViewTextBoxColumn25.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewTextBoxColumn25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
         'Label34
         '
@@ -1106,8 +1105,36 @@ Partial Class Main_Form
         Me.datagridInventoryDues.Name = "datagridInventoryDues"
         Me.datagridInventoryDues.ReadOnly = True
         Me.datagridInventoryDues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datagridInventoryDues.Size = New System.Drawing.Size(399, 167)
+        Me.datagridInventoryDues.Size = New System.Drawing.Size(427, 167)
         Me.datagridInventoryDues.TabIndex = 7
+        '
+        'Column21
+        '
+        Me.Column21.HeaderText = "ID"
+        Me.Column21.Name = "Column21"
+        Me.Column21.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn22
+        '
+        Me.DataGridViewTextBoxColumn22.HeaderText = "Item Name"
+        Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
+        Me.DataGridViewTextBoxColumn22.ReadOnly = True
+        Me.DataGridViewTextBoxColumn22.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewTextBoxColumn22.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'Column17
+        '
+        Me.Column17.HeaderText = "Quantity"
+        Me.Column17.Name = "Column17"
+        Me.Column17.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn23
+        '
+        Me.DataGridViewTextBoxColumn23.HeaderText = "Due Date"
+        Me.DataGridViewTextBoxColumn23.Name = "DataGridViewTextBoxColumn23"
+        Me.DataGridViewTextBoxColumn23.ReadOnly = True
+        Me.DataGridViewTextBoxColumn23.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewTextBoxColumn23.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
         'Label24
         '
@@ -1131,7 +1158,7 @@ Partial Class Main_Form
         Me.Panel34.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel34.Name = "Panel34"
         Me.Panel34.Padding = New System.Windows.Forms.Padding(8, 3, 8, 3)
-        Me.Panel34.Size = New System.Drawing.Size(415, 101)
+        Me.Panel34.Size = New System.Drawing.Size(443, 101)
         Me.Panel34.TabIndex = 6
         '
         'Label22
@@ -1142,7 +1169,7 @@ Partial Class Main_Form
         Me.Label22.Margin = New System.Windows.Forms.Padding(0)
         Me.Label22.Name = "Label22"
         Me.Label22.Padding = New System.Windows.Forms.Padding(5, 10, 5, 10)
-        Me.Label22.Size = New System.Drawing.Size(399, 59)
+        Me.Label22.Size = New System.Drawing.Size(427, 59)
         Me.Label22.TabIndex = 7
         Me.Label22.Text = "Address: F Gaudier St. Brgy Daang Bukid, Bacoor Cavite"
         '
@@ -5094,61 +5121,26 @@ Partial Class Main_Form
         Me.btnArchivedResidents.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnArchivedResidents.UseVisualStyleBackColor = False
         '
-        'Column21
+        'Column1
         '
-        Me.Column21.HeaderText = "ID"
-        Me.Column21.Name = "Column21"
-        Me.Column21.ReadOnly = True
+        Me.Column1.HeaderText = "Name"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
-        'DataGridViewTextBoxColumn22
+        'Column2
         '
-        Me.DataGridViewTextBoxColumn22.HeaderText = "Item Name"
-        Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
-        Me.DataGridViewTextBoxColumn22.ReadOnly = True
-        Me.DataGridViewTextBoxColumn22.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewTextBoxColumn22.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.Column2.HeaderText = "Position"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
-        'Column17
+        'Column4
         '
-        Me.Column17.HeaderText = "Quantity"
-        Me.Column17.Name = "Column17"
-        Me.Column17.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn23
-        '
-        Me.DataGridViewTextBoxColumn23.HeaderText = "Due Date"
-        Me.DataGridViewTextBoxColumn23.Name = "DataGridViewTextBoxColumn23"
-        Me.DataGridViewTextBoxColumn23.ReadOnly = True
-        Me.DataGridViewTextBoxColumn23.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewTextBoxColumn23.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Column22
-        '
-        Me.Column22.HeaderText = "ID"
-        Me.Column22.Name = "Column22"
-        Me.Column22.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn21
-        '
-        Me.DataGridViewTextBoxColumn21.HeaderText = "Item Name"
-        Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
-        Me.DataGridViewTextBoxColumn21.ReadOnly = True
-        Me.DataGridViewTextBoxColumn21.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewTextBoxColumn21.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'DataGridViewTextBoxColumn24
-        '
-        Me.DataGridViewTextBoxColumn24.HeaderText = "Quantity"
-        Me.DataGridViewTextBoxColumn24.Name = "DataGridViewTextBoxColumn24"
-        Me.DataGridViewTextBoxColumn24.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn25
-        '
-        Me.DataGridViewTextBoxColumn25.HeaderText = "Due Date"
-        Me.DataGridViewTextBoxColumn25.Name = "DataGridViewTextBoxColumn25"
-        Me.DataGridViewTextBoxColumn25.ReadOnly = True
-        Me.DataGridViewTextBoxColumn25.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewTextBoxColumn25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.Column4.HeaderText = "Contact Number"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
         'Main_Form
         '
@@ -5615,10 +5607,6 @@ Partial Class Main_Form
     Friend WithEvents datagridInventoryOverdues As DataGridView
     Friend WithEvents Label34 As Label
     Friend WithEvents pageItemManagement As TabPage
-    Friend WithEvents Column14 As DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents comboPurpose As ComboBox
     Friend WithEvents TableLayoutPanel34 As TableLayoutPanel
     Friend WithEvents btnAddItem As Button
@@ -5653,4 +5641,7 @@ Partial Class Main_Form
     Friend WithEvents DataGridViewTextBoxColumn22 As DataGridViewTextBoxColumn
     Friend WithEvents Column17 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn23 As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
 End Class

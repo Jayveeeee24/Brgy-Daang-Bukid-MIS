@@ -657,6 +657,99 @@ Public Class ViewResident
 
         cmd.ExecuteNonQuery()
 
+        ''''''''''''''''''''' UPDATING BLOTTERS ''''''''''''''''''''
+        cmd.CommandText = "UPDATE blotters SET suspect = @name, suspect_address = @address, suspect_contactno = @contactno WHERE suspect = @id"
+        cmd.Parameters.AddWithValue("@id", resident_id)
+        Dim middle As String = ""
+        If middleName = Nothing Or middleName = "" Then
+            middle = ""
+        Else
+            middle = middleName + " "
+        End If
+        cmd.Parameters.AddWithValue("@name", firstName + " " + middle + lastName + If(extName = "", "", " " + extName))
+        cmd.Parameters.AddWithValue("@address", getAddressByHouseholdId(householdId))
+        cmd.Parameters.AddWithValue("@contactno", contactNo)
+
+        cmd.ExecuteNonQuery()
+
+        cmd.CommandText = "UPDATE blotters SET submmited_by = @name WHERE submmited_by = @id"
+        cmd.Parameters.AddWithValue("@id", resident_id)
+        Dim middle4 As String = ""
+        If middleName = Nothing Or middleName = "" Then
+            middle4 = ""
+        Else
+            middle4 = middleName + " "
+        End If
+        cmd.Parameters.AddWithValue("@name", firstName + " " + middle4 + lastName + If(extName = "", "", " " + extName))
+
+        cmd.ExecuteNonQuery()
+
+        '''' ''''''''''''''''''UPDATING COMPLAINTS ''''''''''''''''''''''''''
+        cmd.CommandText = "UPDATE complaints SET complainant = @name, complainant_address = @address, complainant_contactno = @contactno WHERE complainant = @id"
+        cmd.Parameters.AddWithValue("@id", resident_id)
+        Dim middle2 As String = ""
+        If middleName = Nothing Or middleName = "" Then
+            middle2 = ""
+        Else
+            middle = middleName + " "
+        End If
+        cmd.Parameters.AddWithValue("@name", firstName + " " + middle2 + lastName + If(extName = "", "", " " + extName))
+        cmd.Parameters.AddWithValue("@address", getAddressByHouseholdId(householdId))
+        cmd.Parameters.AddWithValue("@contactno", contactNo)
+
+        cmd.ExecuteNonQuery()
+
+        cmd.CommandText = "UPDATE complaints SET defendant = @name, defendant_address = @address, defendat_contactno = @contactno WHERE defendant = @id"
+        cmd.Parameters.AddWithValue("@id", resident_id)
+        Dim middle3 As String = ""
+        If middleName = Nothing Or middleName = "" Then
+            middle3 = ""
+        Else
+            middle = middleName + " "
+        End If
+        cmd.Parameters.AddWithValue("@name", firstName + " " + middle3 + lastName + If(extName = "", "", " " + extName))
+        cmd.Parameters.AddWithValue("@address", getAddressByHouseholdId(householdId))
+        cmd.Parameters.AddWithValue("@contactno", contactNo)
+
+        cmd.ExecuteNonQuery()
+
+        '''' ''''''''''''''''''UPDATING VAWC ''''''''''''''''''''''''''
+        cmd.CommandText = "UPDATE vawc SET victim = @name WHERE victim = @id"
+        cmd.Parameters.AddWithValue("@id", resident_id)
+        Dim middle5 As String = ""
+        If middleName = Nothing Or middleName = "" Then
+            middle5 = ""
+        Else
+            middle5 = middleName + " "
+        End If
+        cmd.Parameters.AddWithValue("@name", firstName + " " + middle5 + lastName + If(extName = "", "", " " + extName))
+
+        cmd.ExecuteNonQuery()
+
+        cmd.CommandText = "UPDATE vawc SET suspect = @name WHERE suspect = @id"
+        cmd.Parameters.AddWithValue("@id", resident_id)
+        Dim middle7 As String = ""
+        If middleName = Nothing Or middleName = "" Then
+            middle7 = ""
+        Else
+            middle7 = middleName + " "
+        End If
+        cmd.Parameters.AddWithValue("@name", firstName + " " + middle7 + lastName + If(extName = "", "", " " + extName))
+
+        cmd.ExecuteNonQuery()
+
+        cmd.CommandText = "UPDATE vawc SET submitted_by = @name WHERE submitted_by = @id"
+        cmd.Parameters.AddWithValue("@id", resident_id)
+        Dim middle10 As String = ""
+        If middleName = Nothing Or middleName = "" Then
+            middle10 = ""
+        Else
+            middle10 = middleName + " "
+        End If
+        cmd.Parameters.AddWithValue("@name", firstName + " " + middle10 + lastName + If(extName = "", "", " " + extName))
+
+        cmd.ExecuteNonQuery()
+
         cmd.Dispose()
         mySql.Close()
         mySql.Dispose()
@@ -666,6 +759,39 @@ Public Class ViewResident
         Main_Form.btnResidentInfo.PerformClick()
 
     End Sub
+    Private Function getAddressByHouseholdId(ByVal householdid As Integer) As String
+
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        Dim mySQLReader As MySqlDataReader
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        Dim address As String = ""
+        cmd.CommandText = "SELECT bldg_no, street_name from household where household_id  = @householdid"
+        cmd.Parameters.AddWithValue("@householdid", householdid)
+        mySQLReader = cmd.ExecuteReader
+        If mySQLReader.HasRows Then
+            While mySQLReader.Read
+                address = mySQLReader!bldg_no + " " + mySQLReader!street_name
+            End While
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+        Return address
+    End Function
     Private Function isResidentDuplicate() As Boolean
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)

@@ -49,16 +49,13 @@ Partial Class ViewVawc
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnModifyVawc = New System.Windows.Forms.Button()
-        Me.Panel16 = New System.Windows.Forms.Panel()
-        Me.Label104 = New System.Windows.Forms.Label()
         Me.pageAddModify = New System.Windows.Forms.TabPage()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnSaveVawc = New System.Windows.Forms.Button()
-        Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.Label64 = New System.Windows.Forms.Label()
         Me.panelParent = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.btnSearchSubmittedBy = New System.Windows.Forms.Button()
         Me.comboCaseStatus = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -83,19 +80,16 @@ Partial Class ViewVawc
         Me.labelId = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.mainTabControl.SuspendLayout()
         Me.pageView.SuspendLayout()
         Me.Panel11.SuspendLayout()
         Me.TableLayoutPanel5.SuspendLayout()
         Me.Panel12.SuspendLayout()
         Me.TableLayoutPanel6.SuspendLayout()
-        Me.Panel16.SuspendLayout()
         Me.pageAddModify.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
-        Me.Panel10.SuspendLayout()
         Me.panelParent.SuspendLayout()
         Me.panelSearchParent.SuspendLayout()
         Me.SuspendLayout()
@@ -138,16 +132,15 @@ Partial Class ViewVawc
         '
         Me.TableLayoutPanel5.ColumnCount = 1
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel5.Controls.Add(Me.Panel12, 0, 1)
-        Me.TableLayoutPanel5.Controls.Add(Me.TableLayoutPanel6, 0, 2)
-        Me.TableLayoutPanel5.Controls.Add(Me.Panel16, 0, 0)
+        Me.TableLayoutPanel5.Controls.Add(Me.Panel12, 0, 0)
+        Me.TableLayoutPanel5.Controls.Add(Me.TableLayoutPanel6, 0, 1)
         Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel5.Location = New System.Drawing.Point(10, 5)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
-        Me.TableLayoutPanel5.RowCount = 3
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.487085!))
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.36531!))
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.1476!))
+        Me.TableLayoutPanel5.RowCount = 2
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.67961!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.320389!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel5.Size = New System.Drawing.Size(669, 515)
         Me.TableLayoutPanel5.TabIndex = 39
         '
@@ -177,9 +170,9 @@ Partial Class ViewVawc
         Me.Panel12.Controls.Add(Me.Panel2)
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel12.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel12.Location = New System.Drawing.Point(3, 46)
+        Me.Panel12.Location = New System.Drawing.Point(3, 3)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(663, 413)
+        Me.Panel12.Size = New System.Drawing.Size(663, 461)
         Me.Panel12.TabIndex = 38
         '
         'labelCaseDetails
@@ -363,7 +356,7 @@ Partial Class ViewVawc
         '
         'Panel2
         '
-        Me.Panel2.Location = New System.Drawing.Point(619, 410)
+        Me.Panel2.Location = New System.Drawing.Point(606, 395)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(10, 61)
         Me.Panel2.TabIndex = 56
@@ -376,12 +369,11 @@ Partial Class ViewVawc
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.88688!))
         Me.TableLayoutPanel6.Controls.Add(Me.btnModifyVawc, 2, 0)
         Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel6.Location = New System.Drawing.Point(3, 465)
+        Me.TableLayoutPanel6.Location = New System.Drawing.Point(3, 470)
         Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
-        Me.TableLayoutPanel6.Padding = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.TableLayoutPanel6.RowCount = 1
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(663, 47)
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(663, 42)
         Me.TableLayoutPanel6.TabIndex = 37
         '
         'btnModifyVawc
@@ -397,35 +389,15 @@ Partial Class ViewVawc
         Me.btnModifyVawc.ForeColor = System.Drawing.Color.White
         Me.btnModifyVawc.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.modify
         Me.btnModifyVawc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnModifyVawc.Location = New System.Drawing.Point(497, 10)
+        Me.btnModifyVawc.Location = New System.Drawing.Point(497, 0)
         Me.btnModifyVawc.Margin = New System.Windows.Forms.Padding(0)
         Me.btnModifyVawc.Name = "btnModifyVawc"
-        Me.btnModifyVawc.Size = New System.Drawing.Size(166, 37)
+        Me.btnModifyVawc.Size = New System.Drawing.Size(166, 42)
         Me.btnModifyVawc.TabIndex = 34
         Me.btnModifyVawc.TabStop = False
         Me.btnModifyVawc.Text = "  Update Case"
         Me.btnModifyVawc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnModifyVawc.UseVisualStyleBackColor = False
-        '
-        'Panel16
-        '
-        Me.Panel16.Controls.Add(Me.Label104)
-        Me.Panel16.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel16.Location = New System.Drawing.Point(3, 3)
-        Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(663, 37)
-        Me.Panel16.TabIndex = 78
-        '
-        'Label104
-        '
-        Me.Label104.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label104.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label104.Location = New System.Drawing.Point(0, 0)
-        Me.Label104.Name = "Label104"
-        Me.Label104.Size = New System.Drawing.Size(663, 37)
-        Me.Label104.TabIndex = 71
-        Me.Label104.Text = "VAWC CASE REPORT"
-        Me.Label104.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pageAddModify
         '
@@ -453,16 +425,15 @@ Partial Class ViewVawc
         '
         Me.TableLayoutPanel3.ColumnCount = 1
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel4, 0, 2)
-        Me.TableLayoutPanel3.Controls.Add(Me.Panel10, 0, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.panelParent, 0, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel4, 0, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.panelParent, 0, 0)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(10, 5)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        Me.TableLayoutPanel3.RowCount = 3
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.487085!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.36531!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.1476!))
+        Me.TableLayoutPanel3.RowCount = 2
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.67961!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.320389!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(669, 515)
         Me.TableLayoutPanel3.TabIndex = 39
         '
@@ -474,12 +445,11 @@ Partial Class ViewVawc
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.61742!))
         Me.TableLayoutPanel4.Controls.Add(Me.btnSaveVawc, 2, 0)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 465)
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 470)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
-        Me.TableLayoutPanel4.Padding = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.TableLayoutPanel4.RowCount = 1
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(663, 47)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(663, 42)
         Me.TableLayoutPanel4.TabIndex = 37
         '
         'btnSaveVawc
@@ -495,35 +465,15 @@ Partial Class ViewVawc
         Me.btnSaveVawc.ForeColor = System.Drawing.Color.White
         Me.btnSaveVawc.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.save
         Me.btnSaveVawc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSaveVawc.Location = New System.Drawing.Point(519, 10)
+        Me.btnSaveVawc.Location = New System.Drawing.Point(519, 0)
         Me.btnSaveVawc.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSaveVawc.Name = "btnSaveVawc"
-        Me.btnSaveVawc.Size = New System.Drawing.Size(144, 37)
+        Me.btnSaveVawc.Size = New System.Drawing.Size(144, 42)
         Me.btnSaveVawc.TabIndex = 34
         Me.btnSaveVawc.TabStop = False
         Me.btnSaveVawc.Text = "  Save Case"
         Me.btnSaveVawc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSaveVawc.UseVisualStyleBackColor = False
-        '
-        'Panel10
-        '
-        Me.Panel10.Controls.Add(Me.Label64)
-        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel10.Location = New System.Drawing.Point(3, 3)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(663, 37)
-        Me.Panel10.TabIndex = 78
-        '
-        'Label64
-        '
-        Me.Label64.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label64.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label64.Location = New System.Drawing.Point(0, 0)
-        Me.Label64.Name = "Label64"
-        Me.Label64.Size = New System.Drawing.Size(663, 37)
-        Me.Label64.TabIndex = 71
-        Me.Label64.Text = "VAWC CASE REPORT"
-        Me.Label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'panelParent
         '
@@ -554,10 +504,20 @@ Partial Class ViewVawc
         Me.panelParent.Controls.Add(Me.Label7)
         Me.panelParent.Controls.Add(Me.Panel1)
         Me.panelParent.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelParent.Location = New System.Drawing.Point(3, 46)
+        Me.panelParent.Location = New System.Drawing.Point(3, 3)
         Me.panelParent.Name = "panelParent"
-        Me.panelParent.Size = New System.Drawing.Size(663, 413)
+        Me.panelParent.Size = New System.Drawing.Size(663, 461)
         Me.panelParent.TabIndex = 38
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(22, 9)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(531, 16)
+        Me.Label9.TabIndex = 145
+        Me.Label9.Text = "Note: You can use the search button to search for a resident in the barangay "
         '
         'btnSearchSubmittedBy
         '
@@ -852,16 +812,6 @@ Partial Class ViewVawc
         Me.Panel1.Size = New System.Drawing.Size(10, 74)
         Me.Panel1.TabIndex = 68
         '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(22, 9)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(531, 16)
-        Me.Label9.TabIndex = 145
-        Me.Label9.Text = "Note: You can use the search button to search for a resident in the barangay "
-        '
         'ViewVawc
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -880,12 +830,10 @@ Partial Class ViewVawc
         Me.Panel12.ResumeLayout(False)
         Me.Panel12.PerformLayout()
         Me.TableLayoutPanel6.ResumeLayout(False)
-        Me.Panel16.ResumeLayout(False)
         Me.pageAddModify.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel4.ResumeLayout(False)
-        Me.Panel10.ResumeLayout(False)
         Me.panelParent.ResumeLayout(False)
         Me.panelParent.PerformLayout()
         Me.panelSearchParent.ResumeLayout(False)
@@ -915,15 +863,11 @@ Partial Class ViewVawc
     Friend WithEvents Panel2 As Panel
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
     Friend WithEvents btnModifyVawc As Button
-    Friend WithEvents Panel16 As Panel
-    Friend WithEvents Label104 As Label
     Friend WithEvents pageAddModify As TabPage
     Friend WithEvents Panel5 As Panel
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents btnSaveVawc As Button
-    Friend WithEvents Panel10 As Panel
-    Friend WithEvents Label64 As Label
     Friend WithEvents panelParent As Panel
     Friend WithEvents panelSearchParent As Panel
     Friend WithEvents btnSearchVictim As Button
