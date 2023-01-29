@@ -275,6 +275,7 @@ Public Class Create_Account
 
     Private Sub Create_Account_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If isSaved = False And action = "UpdateUserAccount" Then
+            MsgBox("YOU MUST UPDATE YOUR LOGIN CREDENTIALS ON FIRST LOGIN", vbInformation, "FIRST TIME LOGIN")
             e.Cancel = True
         End If
     End Sub
