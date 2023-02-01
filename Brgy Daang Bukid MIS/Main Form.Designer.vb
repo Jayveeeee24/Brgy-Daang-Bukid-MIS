@@ -582,8 +582,8 @@ Partial Class Main_Form
         'splitContainerMain.Panel1
         '
         Me.splitContainerMain.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
-        Me.splitContainerMain.Panel1.Controls.Add(Me.btnItemDataManagement)
         Me.splitContainerMain.Panel1.Controls.Add(Me.btnInventory)
+        Me.splitContainerMain.Panel1.Controls.Add(Me.btnItemDataManagement)
         Me.splitContainerMain.Panel1.Controls.Add(Me.btnSystemManagement)
         Me.splitContainerMain.Panel1.Controls.Add(Me.btnLogout)
         Me.splitContainerMain.Panel1.Controls.Add(Me.btnBrgyMap)
@@ -613,7 +613,7 @@ Partial Class Main_Form
         Me.btnItemDataManagement.ForeColor = System.Drawing.Color.White
         Me.btnItemDataManagement.Image = Global.Brgy_Daang_Bukid_MIS.My.Resources.Resources.item_data_management
         Me.btnItemDataManagement.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnItemDataManagement.Location = New System.Drawing.Point(0, 525)
+        Me.btnItemDataManagement.Location = New System.Drawing.Point(0, 485)
         Me.btnItemDataManagement.Name = "btnItemDataManagement"
         Me.btnItemDataManagement.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnItemDataManagement.Size = New System.Drawing.Size(249, 40)
@@ -635,7 +635,7 @@ Partial Class Main_Form
         Me.btnInventory.ForeColor = System.Drawing.Color.White
         Me.btnInventory.Image = CType(resources.GetObject("btnInventory.Image"), System.Drawing.Image)
         Me.btnInventory.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnInventory.Location = New System.Drawing.Point(0, 485)
+        Me.btnInventory.Location = New System.Drawing.Point(0, 525)
         Me.btnInventory.Name = "btnInventory"
         Me.btnInventory.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnInventory.Size = New System.Drawing.Size(249, 40)

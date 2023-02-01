@@ -62,6 +62,10 @@ Public Class ViewResident
         Me.InitializeComponent()
     End Sub
 
+    Private Sub txtDisability_TextChanged(sender As Object, e As EventArgs) Handles txtDisability.TextChanged
+
+    End Sub
+
     '' '''''''''''SYSTEM CALLS''''''''''''''''''''''
     Private Sub comboHouseholdId_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboHouseholdId.SelectedIndexChanged
         Dim mySql As MySqlConnection
@@ -132,6 +136,12 @@ Public Class ViewResident
         Dim diff As Integer = If(Int(timeSpan.Days / 365) = -1, 0, Int(timeSpan.Days / 365))
 
         txtAge.Text = Str(diff)
+        If diff <= 15 Then
+            comboVoter.SelectedIndex = comboVoter.FindStringExact("No")
+            comboVoter.Enabled = False
+        Else
+            comboVoter.Enabled = True
+        End If
     End Sub
     Private Sub btnModifyResident_Click(sender As Object, e As EventArgs) Handles btnModifyResident.Click
         mainTabControl.SelectedTab = pageAddModify

@@ -85,6 +85,7 @@ Partial Class ViewResident
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnSaveResident = New System.Windows.Forms.Button()
         Me.panelParent = New System.Windows.Forms.Panel()
+        Me.comboReligion = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.btnSearchHouseholdId = New System.Windows.Forms.Button()
         Me.txtContactNo = New System.Windows.Forms.TextBox()
@@ -127,7 +128,6 @@ Partial Class ViewResident
         Me.txtMiddleName = New System.Windows.Forms.TextBox()
         Me.labelHousehold = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.comboReligion = New System.Windows.Forms.ComboBox()
         Me.mainTabControl.SuspendLayout()
         Me.pageView.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -919,6 +919,16 @@ Partial Class ViewResident
         Me.panelParent.Size = New System.Drawing.Size(672, 633)
         Me.panelParent.TabIndex = 38
         '
+        'comboReligion
+        '
+        Me.comboReligion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboReligion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.comboReligion.FormattingEnabled = True
+        Me.comboReligion.Location = New System.Drawing.Point(302, 742)
+        Me.comboReligion.Name = "comboReligion"
+        Me.comboReligion.Size = New System.Drawing.Size(308, 28)
+        Me.comboReligion.TabIndex = 156
+        '
         'Label10
         '
         Me.Label10.AutoSize = True
@@ -1387,16 +1397,6 @@ Partial Class ViewResident
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(10, 23)
         Me.Panel1.TabIndex = 68
-        '
-        'comboReligion
-        '
-        Me.comboReligion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.comboReligion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.comboReligion.FormattingEnabled = True
-        Me.comboReligion.Location = New System.Drawing.Point(302, 742)
-        Me.comboReligion.Name = "comboReligion"
-        Me.comboReligion.Size = New System.Drawing.Size(308, 28)
-        Me.comboReligion.TabIndex = 156
         '
         'ViewResident
         '
