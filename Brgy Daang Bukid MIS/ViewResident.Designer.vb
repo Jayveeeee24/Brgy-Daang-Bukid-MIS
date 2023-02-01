@@ -98,7 +98,6 @@ Partial Class ViewResident
         Me.txtOtherCitizenship = New System.Windows.Forms.TextBox()
         Me.comboCitizenship = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtDisability = New System.Windows.Forms.TextBox()
         Me.comboBirthPlace = New System.Windows.Forms.ComboBox()
         Me.labelDisability = New System.Windows.Forms.Label()
         Me.txtExtName = New System.Windows.Forms.TextBox()
@@ -128,6 +127,7 @@ Partial Class ViewResident
         Me.txtMiddleName = New System.Windows.Forms.TextBox()
         Me.labelHousehold = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.comboDisability = New System.Windows.Forms.ComboBox()
         Me.mainTabControl.SuspendLayout()
         Me.pageView.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -870,6 +870,7 @@ Partial Class ViewResident
         Me.panelParent.AutoScroll = True
         Me.panelParent.BackColor = System.Drawing.Color.White
         Me.panelParent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.panelParent.Controls.Add(Me.comboDisability)
         Me.panelParent.Controls.Add(Me.comboReligion)
         Me.panelParent.Controls.Add(Me.Label10)
         Me.panelParent.Controls.Add(Me.btnSearchHouseholdId)
@@ -883,7 +884,6 @@ Partial Class ViewResident
         Me.panelParent.Controls.Add(Me.txtOtherCitizenship)
         Me.panelParent.Controls.Add(Me.comboCitizenship)
         Me.panelParent.Controls.Add(Me.Label2)
-        Me.panelParent.Controls.Add(Me.txtDisability)
         Me.panelParent.Controls.Add(Me.comboBirthPlace)
         Me.panelParent.Controls.Add(Me.labelDisability)
         Me.panelParent.Controls.Add(Me.txtExtName)
@@ -1068,20 +1068,6 @@ Partial Class ViewResident
         Me.Label2.Size = New System.Drawing.Size(151, 14)
         Me.Label2.TabIndex = 144
         Me.Label2.Text = "Others please type in*"
-        '
-        'txtDisability
-        '
-        Me.txtDisability.BackColor = System.Drawing.SystemColors.Window
-        Me.txtDisability.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtDisability.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDisability.ForeColor = System.Drawing.Color.Black
-        Me.txtDisability.Location = New System.Drawing.Point(302, 810)
-        Me.txtDisability.MaxLength = 100
-        Me.txtDisability.Multiline = True
-        Me.txtDisability.Name = "txtDisability"
-        Me.txtDisability.Size = New System.Drawing.Size(308, 27)
-        Me.txtDisability.TabIndex = 25
-        Me.txtDisability.Tag = ""
         '
         'comboBirthPlace
         '
@@ -1393,10 +1379,21 @@ Partial Class ViewResident
         '
         'Panel1
         '
-        Me.Panel1.Location = New System.Drawing.Point(640, 822)
+        Me.Panel1.Location = New System.Drawing.Point(640, 829)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(10, 23)
         Me.Panel1.TabIndex = 68
+        '
+        'comboDisability
+        '
+        Me.comboDisability.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboDisability.Enabled = False
+        Me.comboDisability.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.comboDisability.FormattingEnabled = True
+        Me.comboDisability.Location = New System.Drawing.Point(300, 809)
+        Me.comboDisability.Name = "comboDisability"
+        Me.comboDisability.Size = New System.Drawing.Size(308, 28)
+        Me.comboDisability.TabIndex = 157
         '
         'ViewResident
         '
@@ -1518,7 +1515,6 @@ Partial Class ViewResident
     Friend WithEvents Panel1 As Panel
     Friend WithEvents labelDisability As Label
     Friend WithEvents comboBirthPlace As ComboBox
-    Friend WithEvents txtDisability As TextBox
     Friend WithEvents txtContactNo As TextBox
     Friend WithEvents comboSex As ComboBox
     Friend WithEvents comboCivilStatus As ComboBox
@@ -1532,4 +1528,5 @@ Partial Class ViewResident
     Friend WithEvents btnSearchHouseholdId As Button
     Friend WithEvents Label10 As Label
     Friend WithEvents comboReligion As ComboBox
+    Friend WithEvents comboDisability As ComboBox
 End Class

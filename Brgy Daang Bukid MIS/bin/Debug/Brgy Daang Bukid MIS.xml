@@ -89,7 +89,7 @@ Brgy Daang Bukid MIS
 </member>
 <member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.constring">
 <summary>
-  Looks up a localized string similar to server=192.168.1.2; user id=user; password=qwer; database=mis.
+  Looks up a localized string similar to server=localhost; user id=root;database=mis.
 </summary>
 </member>
 <member name="P:Brgy_Daang_Bukid_MIS.My.Resources.Resources.constringForRouter">
