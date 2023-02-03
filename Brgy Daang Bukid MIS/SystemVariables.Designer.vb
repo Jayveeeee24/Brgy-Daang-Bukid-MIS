@@ -90,7 +90,7 @@ Partial Class SystemVariables
         Me.comboSystemVariables.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboSystemVariables.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboSystemVariables.FormattingEnabled = True
-        Me.comboSystemVariables.Items.AddRange(New Object() {"Birthplace", "Citizenship", "Civil Status", "Religion", "Street Name", "Residence Type", "House Type", "Water Source", "Electricity Source", "Recovery Question", "Reason For Archive", "Return Item State", "Certificate Purpose", "Blottered for", "Stock Out Reason"})
+        Me.comboSystemVariables.Items.AddRange(New Object() {"Birthplace", "Citizenship", "Civil Status", "Religion", "Disability", "Street Name", "Residence Type", "House Type", "Water Source", "Electricity Source", "Recovery Question", "Reason For Archive", "Return Item State", "Certificate Purpose", "Blottered for", "Stock Out Reason"})
         Me.comboSystemVariables.Location = New System.Drawing.Point(664, 58)
         Me.comboSystemVariables.Name = "comboSystemVariables"
         Me.comboSystemVariables.Size = New System.Drawing.Size(276, 28)
