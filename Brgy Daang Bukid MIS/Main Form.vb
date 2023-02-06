@@ -18,6 +18,7 @@ Public Class Main_Form
     Public user_name As String
     Public user_level As String
     Dim itemId As Integer
+    Dim itemName As String
 
     '' '''''''''''for certificates''''''
     Public certificateAction As String
@@ -80,6 +81,10 @@ Public Class Main_Form
         EnableDoubleBuffered(datagridVawc)
 
     End Sub
+    Private Sub Main_Form_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        addLog(user_name & " [" & user_level & "]", "Logged Out")
+    End Sub
+
 
     Private Function isFirstTImeLogin()
         Dim mySql As MySqlConnection
@@ -1553,6 +1558,7 @@ Public Class Main_Form
             btnDeleteItem.Enabled = True
             ItemDataInformation.itemId = datagridItemData.Rows(e.RowIndex).Cells(0).Value
             itemId = datagridItemData.Rows(e.RowIndex).Cells(0).Value
+            itemName = datagridItemData.Rows(e.RowIndex).Cells(1).Value
         End If
     End Sub
     Private Sub datagridItemData_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridItemData.CellDoubleClick
@@ -1566,11 +1572,13 @@ Public Class Main_Form
         ItemDataInformation.action = "add"
         ItemDataInformation.ShowDialog()
         itemId = 0
+        itemName = ""
     End Sub
     Private Sub btnModifyItem_Click(sender As Object, e As EventArgs) Handles btnModifyItem.Click
         ItemDataInformation.action = "modify"
         ItemDataInformation.ShowDialog()
         itemId = 0
+        itemName = ""
     End Sub
     Private Sub btnDeleteItem_Click(sender As Object, e As EventArgs) Handles btnDeleteItem.Click
         ConfirmAccess.originForm = "DeleteItemData"
@@ -1602,9 +1610,11 @@ Public Class Main_Form
         mySql.Dispose()
         deleteBorrowed()
 
+        addLog(user_name & " [" & user_level & "]", "Delete Item Data [" & itemName & "]")
         MsgBox("Item Deleted!", vbInformation, "Information")
         loadDataGridInventory(Modules.ItemData, datagridItemData)
         itemId = 0
+        itemName = ""
         btnModifyItem.Enabled = False
         btnDeleteItem.Enabled = False
         btnItemDataManagement.PerformClick()
@@ -1790,6 +1800,9 @@ Public Class Main_Form
         document.Save(filePath)
         document.Close()
         CertificateChooseAction.ShowDialog()
+        addLog(user_name & " [" & user_level & "]", "Issued " & certificateAction & " for [" & certificateResidentName & "]")
+
+
     End Sub
     Private Sub btnCreateSummon_Click(sender As Object, e As EventArgs) Handles btnCreateSummon.Click
         If txtCaseNo.Text.Trim = "" Then
@@ -1837,6 +1850,8 @@ Public Class Main_Form
         document.Save(filePath)
         document.Close()
         CertificateChooseAction.ShowDialog()
+        addLog(user_name & " [" & user_level & "]", "Issued Certificate of Summon for Case No [" & txtCaseNo.Text.Trim & "] on DATE [" & datePickerSummon.Value.ToString("MMMM d, yyyy") & "] TIME [" & comboTime.Text & "]")
+
     End Sub
     Private Sub txtView_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCertificateResident.KeyDown, txtRespondent2.KeyDown, txtRespondent1.KeyDown, txtComplainant2.KeyDown, txtComplainant1.KeyDown, txtCaseNo.KeyDown
         If e.KeyCode = Keys.Enter Then
@@ -2077,6 +2092,10 @@ Public Class Main_Form
         ConfirmAccess.originForm = "SystemVariables"
         ConfirmAccess.Show()
     End Sub
+    Private Sub btnAuditHistory_Click(sender As Object, e As EventArgs) Handles btnAuditHistory.Click
+        AuditHistory.ShowDialog()
+    End Sub
+
 
     '' '''''''''''''''''''''''''MAPS METHODS''''''''''''''''''''''''''''''''''''''''
     Private Sub comboChooseStreet_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboChooseStreet.SelectedIndexChanged

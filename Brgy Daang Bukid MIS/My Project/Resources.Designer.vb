@@ -191,7 +191,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to server=192.168.1.2; user id=user; password=qwer; database=mis.
+        '''  Looks up a localized string similar to server=localhost; user id=root;database=mis.
         '''</summary>
         Friend ReadOnly Property constring() As String
             Get

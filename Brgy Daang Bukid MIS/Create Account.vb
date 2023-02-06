@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
+Imports MySql.Data.MySqlClient
 
 
 Public Class Create_Account
@@ -19,6 +20,7 @@ Public Class Create_Account
         If action = "UpdateUserAccount" Then
             getAccountDetails(Main_Form.account_id)
 
+            isSaved = False
             If Main_Form.account_id = 1 Then
                 txtUserLevel.Text = "Administrator"
             Else
@@ -100,6 +102,7 @@ Public Class Create_Account
 
         If action = "UpdateUserAccount" Then
             updateAccount(Main_Form.account_id, txtPassword.Text.Trim, comboRecovery.Text, txtAnswer.Text.Trim)
+            addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Account Updated [" & Main_Form.user_name & "][" & comboAccountFor.Text & "]")
 
             isSaved = True
             Me.Close()
@@ -110,6 +113,8 @@ Public Class Create_Account
             End If
             If isAccountAvailable(comboAccountFor.FindStringExact(comboAccountFor.Text) + 2) = True Then
                 saveAccount(comboAccountFor.FindStringExact(comboAccountFor.Text) + 2, txtUsernameAdmin.Text.Trim, txtPassword.Text.Trim, txtUserLevel.Text, comboRecovery.Text, txtAnswer.Text.Trim)
+                addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Account Added for [" & comboAccountFor.Text & "]")
+
                 MsgBox("Account Saved!", vbInformation, "Information")
                 AccountManagement.loadDatagrid()
                 Me.Close()
@@ -271,6 +276,7 @@ Public Class Create_Account
     Private Sub Create_Account_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Controls.Clear()
         Me.InitializeComponent()
+        isSaved = False
     End Sub
 
     Private Sub Create_Account_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

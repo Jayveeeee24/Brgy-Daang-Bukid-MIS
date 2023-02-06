@@ -5,6 +5,7 @@ Public Class AddVariable
     Public mySqlConn As String = My.Resources.constring
     Public variableId As Integer = 0
     Public action As String
+    Public variableName As String
 
     Private Sub AddVariable_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         mainTabControl.ItemSize = New Size(0, 1)
@@ -19,6 +20,7 @@ Public Class AddVariable
         Me.Controls.Clear()
         Me.InitializeComponent()
         variableId = 0
+        variableName = ""
     End Sub
     Private Sub txtView_KeyDown(sender As Object, e As KeyEventArgs) Handles txtAddVariableName.KeyDown, txtModifyVariableName.KeyDown
         If e.KeyCode = Keys.Enter Then
@@ -57,7 +59,9 @@ Public Class AddVariable
         cmd.Dispose()
         mySql.Close()
         mySql.Dispose()
+        addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Variable Added [" & txtAddVariableName.Text & "] to category: " & labelAddVariableCategory.Text)
         MsgBox("Variable: " & txtAddVariableName.Text.Trim & " has been added to " & labelAddVariableCategory.Text & " category!", vbInformation, "Information")
+
         Me.Close()
 
         SystemVariables.loadDatagrid()
@@ -100,6 +104,7 @@ Public Class AddVariable
         cmd.Dispose()
         mySql.Close()
         mySql.Dispose()
+        addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Variable Update [" & variableName & "] to [" & txtModifyVariableName.Text & "]")
         MsgBox("Variable: " & txtAddVariableName.Text.Trim & " has been updated!", vbInformation, "Information")
         Me.Close()
 

@@ -323,6 +323,7 @@ Public Class ViewBlotters
         mySql.Close()
         mySql.Dispose()
 
+        addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Added blotter case [" & comboBlotteredFor.Text & "] for [" & txtSuspect.Text & "]")
         MsgBox("Blotter Filed!", vbInformation, "Information")
         isSaved = True
         Me.Close()

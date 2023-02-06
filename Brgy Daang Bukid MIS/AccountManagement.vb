@@ -7,6 +7,7 @@ Public Class AccountManagement
 
     Public mySqlConn As String = My.Resources.constring
     Public accountId As Integer
+    Dim userName As String
 
     Private Sub AccountManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadDatagrid()
@@ -98,35 +99,13 @@ Public Class AccountManagement
 
     Private Sub datagridViewAccounts_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridViewAccounts.CellClick
         If e.RowIndex >= 0 Then
-            If e.RowIndex = 0 Then
-                btnUpdateAccount.Enabled = True
-                btnRemoveAccount.Enabled = False
-            Else
-                btnUpdateAccount.Enabled = True
-                btnRemoveAccount.Enabled = True
-            End If
+            btnRemoveAccount.Enabled = True
             accountId = datagridViewAccounts.Rows(e.RowIndex).Cells(0).Value
+            userName = datagridViewAccounts.Rows(e.RowIndex).Cells(2).Value
 
         End If
     End Sub
 
-    'Private Sub btnUpdateAccount_Click(sender As Object, e As EventArgs) Handles btnUpdateAccount.Click
-    '    ConfirmAccess.originForm = "UpdateAccount"
-    '    ConfirmAccess.Show()
-    'End Sub
-
-    'Public Sub updateAccount()
-    '    Account_Settings.accountId = accountId
-    '    Account_Settings.getAccountDetails(accountId)
-    '    Account_Settings.ShowDialog()
-
-
-    '    loadDatagrid()
-    '    accountId = 0
-    '    btnUpdateAccount.Enabled = False
-    '    btnRemoveAccount.Enabled = False
-    '    datagridViewAccounts.ClearSelection()
-    'End Sub
 
     Private Sub btnRemoveAccount_Click(sender As Object, e As EventArgs) Handles btnRemoveAccount.Click
         If MsgBox("Are you sure to remove this account?", MsgBoxStyle.YesNo, "Confirmation") = MsgBoxResult.Yes Then
@@ -160,11 +139,13 @@ Public Class AccountManagement
         mySql.Close()
         mySql.Dispose()
 
+        addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Removed Account [" & userName & "]")
         MsgBox("Account Removed!", vbInformation, "Information")
         loadDatagrid()
+
         accountId = 0
+        userName = ""
         btnRemoveAccount.Enabled = False
-        btnUpdateAccount.Enabled = False
         datagridViewAccounts.ClearSelection()
     End Sub
 

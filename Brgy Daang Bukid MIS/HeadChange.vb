@@ -8,6 +8,7 @@ Public Class HeadChange
     Public householdId As Integer
     Public mySqlConn As String = My.Resources.constring
     Dim newHeadResidentId As Integer
+    Dim oldHeadName As String
     Private Sub HeadChange_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         labelHouseholdId.Text = householdId
 
@@ -38,7 +39,37 @@ Public Class HeadChange
                 labelBirthdate.Text = temp.ToString("MMMM d, yyyy")
             End While
         End If
+        getHouseholdHead()
 
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+    End Sub
+    Public Sub getHouseholdHead()
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        Dim mySQLReader As MySqlDataReader
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = "SELECT first_name, middle_name, last_name, ext_name FROM residents WHERE household_id = @householdid AND household_role = 'Head'"
+        cmd.Parameters.AddWithValue("@householdid", householdId)
+        mySQLReader = cmd.ExecuteReader
+
+        If mySQLReader.HasRows Then
+            While mySQLReader.Read
+                oldHeadName = mySQLReader!first_name + If(mySQLReader!middle_name = "", "", " " + mySQLReader!middle_name) + " " + mySQLReader!last_name + If(mySQLReader!ext_name = "", "", " " + mySQLReader!ext_name)
+            End While
+        End If
 
         cmd.Dispose()
         mySql.Close()
@@ -48,6 +79,7 @@ Public Class HeadChange
     Private Sub HeadChange_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Controls.Clear()
         Me.InitializeComponent()
+        oldHeadName = ""
     End Sub
 
     Private Sub btnProceed_Click(sender As Object, e As EventArgs) Handles btnProceed.Click
@@ -68,11 +100,14 @@ Public Class HeadChange
         cmd.CommandText = "UPDATE residents SET household_role = 'Head' WHERE resident_id = @residentid"
         cmd.Parameters.AddWithValue("@residentid", newHeadResidentId)
 
+
         cmd.ExecuteNonQuery()
 
         cmd.Dispose()
         mySql.Close()
         mySql.Dispose()
+        addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Household [" & householdId.ToString & "] head change from [" & oldHeadName & "] to [" & labelName.Text & "]")
+
 
         Me.Close()
         ViewResident.archiveResident()

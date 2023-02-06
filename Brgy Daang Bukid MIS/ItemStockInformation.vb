@@ -219,7 +219,6 @@ Public Class ItemStockInformation
         cmd.CommandType = CommandType.Text
 
         cmd.CommandText = "UPDATE item_list SET item_stock = @itemstock, item_status = @itemstatus, item_unusable = @itemunusable where item_id = @itemid"
-
         cmd.Parameters.AddWithValue("@itemid", itemId)
         cmd.Parameters.AddWithValue("@itemstock", stock)
         cmd.Parameters.AddWithValue("@itemstatus", status)
@@ -230,6 +229,9 @@ Public Class ItemStockInformation
         cmd.Dispose()
         mySql.Close()
         mySql.Dispose()
+
+        addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", txtTransactionType.Text & " [" & txtStockItemName.Text & "] Quantity [" & txtQuantity.Text & "]")
+
     End Sub
     Private Function getItemNumbers(ByVal field As String) As Integer
         Dim mySql As MySqlConnection

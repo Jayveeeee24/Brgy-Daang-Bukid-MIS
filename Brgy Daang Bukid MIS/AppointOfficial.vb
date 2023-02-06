@@ -87,6 +87,7 @@ Public Class AppointOfficial
         cmd.Dispose()
         mySql.Close()
         mySql.Dispose()
+        addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "[" + txtOfficialName.Text + "] appointed as [" + comboOfficialPosition.Text + "]")
         MsgBox("Resident " + txtOfficialName.Text + " is now appointed as " + comboOfficialPosition.Text, vbInformation, "Information")
         Me.Close()
         UpdateBrgyOfficials.loadDatagrid()

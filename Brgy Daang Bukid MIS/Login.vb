@@ -170,6 +170,8 @@ Public Class Login
                     Main_Form.user_name = mySQLReader!account_name
                     Main_Form.user_level = mySQLReader!user_level
                 End While
+
+                addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Logged In")
                 Main_Form.Show()
                 Me.Close()
             Else

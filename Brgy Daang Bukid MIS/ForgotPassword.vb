@@ -158,6 +158,7 @@ Public Class ForgotPassword
             mySQLCommand.Dispose()
             mySql.Close()
             mySql.Dispose()
+            addLog(txtUsername.Text, "Forgot Password Recovery")
             MsgBox("Password has been updated!", vbInformation, "Information")
             Login.Show()
             Me.Close()

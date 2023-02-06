@@ -96,6 +96,7 @@ Public Class ElectOfficials
         cmd.Dispose()
         mySql.Close()
         mySql.Dispose()
+        addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Officials Elected [" & brgyCaptain & "][" & kagawad1 & "][" & kagawad2 & "][" & kagawad3 & "][" & kagawad4 & "][" & kagawad5 & "][" & kagawad6 & "][" & kagawad7 & "]")
         MsgBox("Officials Elected!")
         Me.Close()
         UpdateBrgyOfficials.btnElectOfficials.Enabled = False

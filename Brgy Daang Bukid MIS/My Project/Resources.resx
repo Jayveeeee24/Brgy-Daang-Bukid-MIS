@@ -137,7 +137,7 @@
     <value>..\Resources\household.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="constring" xml:space="preserve">
-    <value>server=192.168.1.2; user id=user; password=qwer; database=mis</value>
+    <value>server=localhost; user id=root;database=mis</value>
     <comment>password=qwer;</comment>
   </data>
   <data name="INDIGENCY_page-0001" type="System.Resources.ResXFileRef, System.Windows.Forms">

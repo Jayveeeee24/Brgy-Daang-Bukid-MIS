@@ -204,6 +204,7 @@ Public Class ViewIncidents
             cmd.Parameters.AddWithValue("@incidentdetails", txtIncidentDetails.Text.Trim)
 
             cmd.ExecuteNonQuery()
+            addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Updated Incident [" & txtIncidentName.Text & "]")
         ElseIf action = "add" Then
             cmd.CommandText = "INSERT INTO incidents (incident_name, incident_details, incident_date, incident_time, reported_by, reported_on) values (@incidentname, @incidentdetails, @incidentdate, @incidenttime, @reportedby, @reportedon)"
             cmd.Parameters.AddWithValue("@incidentname", txtIncidentName.Text.Trim)
@@ -216,6 +217,7 @@ Public Class ViewIncidents
 
 
             cmd.ExecuteNonQuery()
+            addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Filed Incident [" & txtIncidentName.Text & "]")
         End If
 
 

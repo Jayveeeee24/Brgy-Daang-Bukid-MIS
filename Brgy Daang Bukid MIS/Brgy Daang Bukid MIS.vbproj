@@ -125,6 +125,13 @@
     <Compile Include="ArchivedResidents.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AuditHistory.Designer.vb">
+      <DependentUpon>AuditHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AuditHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuditTrail.vb" />
     <Compile Include="CertificateChooseAction.Designer.vb">
       <DependentUpon>CertificateChooseAction.vb</DependentUpon>
     </Compile>
@@ -327,6 +334,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ArchivedResidents.resx">
       <DependentUpon>ArchivedResidents.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AuditHistory.resx">
+      <DependentUpon>AuditHistory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CertificateChooseAction.resx">
       <DependentUpon>CertificateChooseAction.vb</DependentUpon>

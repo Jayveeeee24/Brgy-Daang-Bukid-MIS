@@ -253,7 +253,7 @@ Partial Class ItemBorrow
         Me.MaximizeBox = False
         Me.Name = "ItemBorrow"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "ItemBorrow"
+        Me.Text = "Item Borrow"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

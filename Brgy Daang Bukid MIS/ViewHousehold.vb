@@ -56,7 +56,8 @@ Public Class ViewHousehold
             MsgBox("Household Id already exists!", vbCritical, "Warning")
             Exit Sub
         End If
-        If checkAge(comboResidentId.SelectedIndex) = True And action = "modify" Then
+
+        If checkAge(CInt(comboResidentId.Text)) = False And action = "modify" Then
             MsgBox("Resident's age is not applicable to be a head!", vbCritical, "Warning")
             Exit Sub
         End If
@@ -236,7 +237,7 @@ Public Class ViewHousehold
         cmd = mySql.CreateCommand()
         cmd.CommandType = CommandType.Text
 
-        cmd.CommandText = "SELECT COUNT(*) from residents WHERE resident_id = @residentid and age < 20"
+        cmd.CommandText = "SELECT COUNT(*) from residents WHERE resident_id = @residentid and age <= 20"
         cmd.Parameters.AddWithValue("@residentid", id)
 
         If cmd.ExecuteScalar = 0 Then
@@ -335,6 +336,8 @@ Public Class ViewHousehold
 
             cmd.ExecuteNonQuery()
 
+            addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Updated Household Information for [" & txtHouseholdId.Text & "]")
+
             setHouseholdHead()
             setHouseholdMember()
         ElseIf action = "add" Then
@@ -359,6 +362,9 @@ Public Class ViewHousehold
             cmd.Parameters.AddWithValue("@year", yearNow)
             cmd.Parameters.AddWithValue("@addedby", Main_Form.account_credentials)
             cmd.ExecuteNonQuery()
+
+            addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Added Household Information for [" & txtHouseholdId.Text & "]")
+
         End If
 
 
@@ -390,7 +396,42 @@ Public Class ViewHousehold
         cmd.Dispose()
         mySql.Close()
         mySql.Dispose()
+        addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "[" & getResidentNameById(CInt(comboResidentId.Text)) & "] set as household head")
     End Sub
+    Private Function getResidentNameById(ByVal id As Integer) As String
+
+        Dim mySql As MySqlConnection
+        mySql = New MySqlConnection(mySqlConn)
+        On Error Resume Next
+        mySql.Open()
+
+        Select Case Err.Number
+            Case 0
+            Case Else
+                MsgBox("Cannot connect to the Database!", vbExclamation, "Database Error")
+        End Select
+
+        Dim cmd As MySqlCommand
+        Dim mySQLReader As MySqlDataReader
+        cmd = mySql.CreateCommand()
+        cmd.CommandType = CommandType.Text
+
+        cmd.CommandText = "SELECT first_name, middle_name, last_name, ext_name from residents WHERE resident_id = @residentid "
+        cmd.Parameters.AddWithValue("@residentid", id)
+
+        Dim name As String = ""
+        mySQLReader = cmd.ExecuteReader
+        If mySQLReader.HasRows Then
+            While mySQLReader.Read
+                name = mySQLReader!first_name + If(mySQLReader!middle_name = "", "", " " + mySQLReader!middle_name) + " " + mySQLReader!last_name + " " + mySQLReader!ext_name
+            End While
+        End If
+
+        cmd.Dispose()
+        mySql.Close()
+        mySql.Dispose()
+        Return name
+    End Function
     Private Sub setHouseholdMember()
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
@@ -416,5 +457,7 @@ Public Class ViewHousehold
         cmd.Dispose()
         mySql.Close()
         mySql.Dispose()
+        addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "[" & getResidentNameById(CInt(headResidentId)) & "] removed as household head")
+
     End Sub
 End Class

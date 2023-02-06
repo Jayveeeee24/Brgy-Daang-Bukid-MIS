@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class AccountManagement
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class AccountManagement
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -33,7 +33,6 @@ Partial Class AccountManagement
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnAddAccount = New System.Windows.Forms.Button()
         Me.btnRemoveAccount = New System.Windows.Forms.Button()
-        Me.btnUpdateAccount = New System.Windows.Forms.Button()
         CType(Me.datagridViewAccounts, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -143,36 +142,12 @@ Partial Class AccountManagement
         Me.btnRemoveAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnRemoveAccount.UseVisualStyleBackColor = False
         '
-        'btnUpdateAccount
-        '
-        Me.btnUpdateAccount.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnUpdateAccount.Enabled = False
-        Me.btnUpdateAccount.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.btnUpdateAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
-        Me.btnUpdateAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(211, Byte), Integer))
-        Me.btnUpdateAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUpdateAccount.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.btnUpdateAccount.ForeColor = System.Drawing.Color.White
-        Me.btnUpdateAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnUpdateAccount.Location = New System.Drawing.Point(561, 24)
-        Me.btnUpdateAccount.Margin = New System.Windows.Forms.Padding(7, 3, 5, 3)
-        Me.btnUpdateAccount.Name = "btnUpdateAccount"
-        Me.btnUpdateAccount.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.btnUpdateAccount.Size = New System.Drawing.Size(164, 33)
-        Me.btnUpdateAccount.TabIndex = 118
-        Me.btnUpdateAccount.TabStop = False
-        Me.btnUpdateAccount.Text = "UPDATE ACCOUNT"
-        Me.btnUpdateAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnUpdateAccount.UseVisualStyleBackColor = False
-        Me.btnUpdateAccount.Visible = False
-        '
         'AccountManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(926, 518)
         Me.Controls.Add(Me.btnRemoveAccount)
-        Me.Controls.Add(Me.btnUpdateAccount)
         Me.Controls.Add(Me.btnAddAccount)
         Me.Controls.Add(Me.datagridViewAccounts)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -194,5 +169,4 @@ Partial Class AccountManagement
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents btnAddAccount As Button
     Friend WithEvents btnRemoveAccount As Button
-    Friend WithEvents btnUpdateAccount As Button
 End Class

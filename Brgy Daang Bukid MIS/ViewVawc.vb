@@ -226,6 +226,9 @@ Public Class ViewVawc
         ElseIf datePickerSubmittedOn.Value > Date.Now Then
             MsgBox("Please Fill out valid date filed!", vbCritical, "Warning")
             Exit Sub
+        ElseIf (victimId = 0 And suspectid = 0) And action = "add" Then
+            MsgBox("There must be atleast one resident between victim or suspect!", vbCritical, "Warning")
+            Exit Sub
         Else
             Dim mySql As MySqlConnection
             mySql = New MySqlConnection(mySqlConn)
@@ -249,6 +252,8 @@ Public Class ViewVawc
                 cmd.Parameters.AddWithValue("@casestatus", comboCaseStatus.Text)
 
                 cmd.ExecuteNonQuery()
+
+                addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Updated Vawc Case [" & caseId.ToString & "][" & txtCaseName.Text & "]")
             ElseIf action = "add" Then
                 cmd.CommandText = "INSERT INTO vawc (case_name, victim, suspect, relationship, case_status, submitted_by, submitted_on, case_details) values (@casename, @victim, @suspect, @relationship, @casestatus, @submittedby, @submittedon, @casedetails)"
                 cmd.Parameters.AddWithValue("@casename", txtCaseName.Text)
@@ -261,6 +266,8 @@ Public Class ViewVawc
                 cmd.Parameters.AddWithValue("@relationship", txtRelationship.Text)
 
                 cmd.ExecuteNonQuery()
+
+                addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Added Vawc Case [" & txtCaseName.Text & "] Victim [" & txtVictim.Text & "] Suspect [" & txtSuspect.Text & "]")
             End If
 
             cmd.Dispose()

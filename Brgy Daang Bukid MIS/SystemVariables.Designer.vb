@@ -67,6 +67,7 @@ Partial Class SystemVariables
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.datagridViewSystemVariables.DefaultCellStyle = DataGridViewCellStyle2
         Me.datagridViewSystemVariables.Location = New System.Drawing.Point(12, 92)
+        Me.datagridViewSystemVariables.MultiSelect = False
         Me.datagridViewSystemVariables.Name = "datagridViewSystemVariables"
         Me.datagridViewSystemVariables.ReadOnly = True
         Me.datagridViewSystemVariables.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect

@@ -6,6 +6,8 @@ Public Class UpdateBrgyOfficials
     Public mySqlConn As String = My.Resources.constring
     Public officialId As Integer
     Public residentId As Integer
+    Dim officialName As String
+    Dim officialPosition As String
 
     Private Sub UpdateBrgyOfficials_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadDatagrid()
@@ -127,6 +129,7 @@ Public Class UpdateBrgyOfficials
         cmd.Dispose()
         mySql.Close()
         mySql.Dispose()
+        addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Official Dismissed [" & officialName & "] as [" & officialPosition & "]")
 
         MsgBox("Official Dismissed!", vbInformation, "Information")
         loadDatagrid()
@@ -145,6 +148,8 @@ Public Class UpdateBrgyOfficials
         If e.RowIndex >= 0 Then
             btnDismissOfficial.Enabled = True
             officialId = dataGridBrgyOfficials.Rows(e.RowIndex).Cells(0).Value
+            officialName = dataGridBrgyOfficials.Rows(e.RowIndex).Cells(1).Value
+            officialPosition = dataGridBrgyOfficials.Rows(e.RowIndex).Cells(2).Value
         End If
     End Sub
 

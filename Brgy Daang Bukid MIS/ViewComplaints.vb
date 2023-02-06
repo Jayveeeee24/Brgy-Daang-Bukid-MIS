@@ -440,26 +440,13 @@ Public Class ViewComplaints
                     dt2 = Date.ParseExact(labelSecondDate.Text, "MMMM d, yyyy", CultureInfo.InvariantCulture)
                 End If
                 Dim dt3 As Date
-                If labelThirdDate.Text.Trim <> "" Then
-                    dt3 = Date.ParseExact(labelThirdDate.Text, "MMMM d, yyyy", CultureInfo.InvariantCulture)
-                End If
-
-            'If dateFirstHearing.Value.Date < Date.Now.Date And dateFirstHearing.Value <> dt1 Then
-            '    MsgBox("Please select a valid hearing date!", vbCritical, "Warning")
-            '    Exit Sub
-            'End If
-            'If dateSecondHearing.Value.Date < Date.Now.Date And dateSecondHearing.Value <> dt2 Then
-            '    MsgBox("Please select a valid hearing date!", vbCritical, "Warning")
-            '    Exit Sub
-            'End If
-            'If dateThirdHearing.Value.Date < Date.Now.Date And dateThirdHearing.Value <> dt3 Then
-            '    MsgBox("Please select a valid hearing date!", vbCritical, "Warning")
-            '    Exit Sub
-            'End If
+            If labelThirdDate.Text.Trim <> "" Then
+                dt3 = Date.ParseExact(labelThirdDate.Text, "MMMM d, yyyy", CultureInfo.InvariantCulture)
+            End If
         End If
 
 
-            Dim mySql As MySqlConnection
+        Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
         On Error Resume Next
         mySql.Open()
@@ -497,6 +484,8 @@ Public Class ViewComplaints
             cmd.Parameters.AddWithValue("@thirddate", dateThirdHearing.Value.Date)
 
             cmd.ExecuteNonQuery()
+
+            addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Updated Complaint [" & complaintId.ToString & "][" & txtComplaint.Text & "] for [" & txtComplainant.Text & "] against [" & txtDefendant.Text & "]")
         ElseIf action = "add" Then
             cmd.CommandText = "INSERT INTO complaints (complaint, complainant, complainant_address, complainant_contactno, defendant, defendant_address, defendat_contactno, complaint_status, date_filed, details) values (@complaint, @complainant, @complainantaddress, @complainantcontactno, @defendant, @defendantaddress, @defendantcontactno, 'Ongoing', @datefiled, @details)"
             cmd.Parameters.AddWithValue("@complaint", txtComplaint.Text)
@@ -513,6 +502,8 @@ Public Class ViewComplaints
             cmd.Parameters.AddWithValue("@details", txtDetails.Text)
 
             cmd.ExecuteNonQuery()
+
+            addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Filed Complaint [" & txtComplaint.Text & "] for [" & txtComplainant.Text & "] against [" & txtDefendant.Text & "]")
         End If
         cmd.Dispose()
         mySql.Close()

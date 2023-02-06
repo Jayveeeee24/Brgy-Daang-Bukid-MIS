@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
+Imports MySql.Data.MySqlClient
 
 Public Class ItemBorrow
     Public mySqlConn As String = My.Resources.constring
@@ -219,10 +220,10 @@ Public Class ItemBorrow
 
 
         cmd.ExecuteNonQuery()
-
         cmd.Dispose()
         mySql.Close()
         mySql.Dispose()
+
     End Sub
     Private Function getItemNumbers(ByVal field As String) As Integer
         Dim mySql As MySqlConnection
@@ -292,6 +293,8 @@ Public Class ItemBorrow
         cmd.Dispose()
         mySql.Close()
         mySql.Dispose()
+
+        addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Lend item [" & txtStockItemName.Text & "] quantity [" & txtQuantity.Text & "] to [" & txtTransactionBy.Text & "]")
     End Sub
 
 

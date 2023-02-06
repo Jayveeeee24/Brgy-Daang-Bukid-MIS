@@ -79,6 +79,7 @@ Public Class SystemVariables
         AddVariable.action = "modify"
         AddVariable.variableId = variableId
         AddVariable.txtModifyVariableName.Text = variableName
+        AddVariable.variableName = variableName
         AddVariable.labelModifyVariableCategory.Text = comboSystemVariables.Text
 
         AddVariable.ShowDialog()
@@ -117,6 +118,7 @@ Public Class SystemVariables
         mySql.Close()
         mySql.Dispose()
 
+        addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Variable Removed [" & variableName & "]")
         MsgBox("Variable: " & variableName & " has been deleted", vbInformation, "Information")
         loadDatagrid()
         variableId = 0

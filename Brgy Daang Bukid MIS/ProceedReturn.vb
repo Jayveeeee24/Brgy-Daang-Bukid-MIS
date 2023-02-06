@@ -172,6 +172,7 @@ Public Class ProceedReturn
         cmd.Dispose()
         mySql.Close()
         mySql.Dispose()
+        addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Return Item [" & txtItemName.Text & "] quantity [" & txtQuantity.Text & "] to [" & txtTransactionBy.Text & "]")
 
         MsgBox("item Returned!", vbInformation, "Information")
         Me.Close()
@@ -182,10 +183,6 @@ Public Class ProceedReturn
 
         Main_Form.loadDashboardInventory(Main_Form.datagridInventoryDues, "dues")
         Main_Form.loadDashboardInventory(Main_Form.datagridInventoryOverdues, "overdues")
-
-
-
-
 
     End Sub
 

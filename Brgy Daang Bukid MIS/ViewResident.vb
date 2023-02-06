@@ -63,9 +63,6 @@ Public Class ViewResident
         Me.InitializeComponent()
     End Sub
 
-    Private Sub txtDisability_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
 
     '' '''''''''''SYSTEM CALLS''''''''''''''''''''''
     Private Sub comboHouseholdId_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboHouseholdId.SelectedIndexChanged
@@ -488,6 +485,7 @@ Public Class ViewResident
             cmd.Parameters.AddWithValue("@residentid", resident_id)
 
             cmd.ExecuteNonQuery()
+            addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Modified Resident [" & resident_id.ToString & "][" & txtFirstName.Text & If(txtMiddleName.Text = "", "", " " & txtMiddleName.Text) & " " & txtLastName.Text & If(txtExtName.Text = "", "", " " & txtExtName.Text) & "]")
 
         ElseIf action = "add" Then
             cmd.CommandText = "INSERT INTO residents (household_id, first_name, middle_name, last_name, ext_name, birthdate, age, birthplace, civil_status, citizenship, sex, religion, contact_no, is_pwd, disability, is_voter, occupation, household_role, month_registered, day_registered, year_registered, registered_by) VALUES (@householdid, @firstname, @middlename, @lastname, @extname, @birthdate, @age, @birthplace, @civilstatus, @citizenship, @sex, @religion, @contactno, @pwd, @disability, @voter, @occupation, @householdrole, @month, @day, @year, @registered_by)"
@@ -524,6 +522,8 @@ Public Class ViewResident
             cmd.Parameters.AddWithValue("@registered_by", Main_Form.account_credentials)
 
             cmd.ExecuteNonQuery()
+            addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Added Resident [" & txtFirstName.Text & If(txtMiddleName.Text = "", "", " " & txtMiddleName.Text) & " " & txtLastName.Text & If(txtExtName.Text = "", "", " " & txtExtName.Text) & "] WITH BIRTHDATE [" & pickerBirthDate.Value.Date.ToString("MMMM d, yyyy") & "]")
+
         End If
 
 

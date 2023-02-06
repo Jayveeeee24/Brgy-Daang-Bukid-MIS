@@ -75,6 +75,7 @@ Public Class ItemDataInformation
                     txtItemId.Text = itemId
                     txtItemName.Text = mySQLReader!item_name
                     comboItemStatus.SelectedIndex = comboItemStatus.FindStringExact(mySQLReader!item_status)
+
                     comboReason.SelectedIndex = If(mySQLReader!item_reason <> "", comboReason.FindStringExact(mySQLReader!item_reason), -1)
 
 
@@ -90,6 +91,11 @@ Public Class ItemDataInformation
             cmd.Dispose()
             mySql.Close()
             mySql.Dispose()
+
+            If comboItemStatus.SelectedIndex = 1 Then
+                comboReason.SelectedIndex = -1
+            End If
+
         End If
 
         datePickerAdded.Format = DateTimePickerFormat.Custom
@@ -108,10 +114,16 @@ Public Class ItemDataInformation
             MsgBox("You cannot make it available if it has no stocks, Add stock first!", vbCritical, "Warning")
             Exit Sub
         End If
+        If action = "modify" And (comboItemStatus.SelectedIndex = 1 And getStockItems() = 0) Then
+            MsgBox("You can't make this item available without any available stocks!", vbCritical, "Warning")
+            Exit Sub
+        End If
         If datePickerAdded.Value.Date > Date.Now.Date Then
             MsgBox("Please fill out a valid date of adding item!", vbCritical, "Warning")
             Exit Sub
         End If
+
+
 
         Dim mySql As MySqlConnection
         mySql = New MySqlConnection(mySqlConn)
@@ -137,6 +149,8 @@ Public Class ItemDataInformation
             cmd.Parameters.AddWithValue("@remarks", txtRemarks.Text)
 
             cmd.ExecuteNonQuery()
+
+            addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Modified Item Data [" & txtItemName.Text & "]")
         ElseIf action = "add" Then
             cmd.CommandText = "INSERT INTO item_list (item_name, item_status, item_stock, item_reason, item_color, item_borrowed, item_unusable, serial_no, added_by, added_on, remarks) values (@itemname, @itemstatus, 0, @itemreason, @itemcolor, 0, 0,  @itemserial, @addedby, @addedon, @remarks)"
             cmd.Parameters.AddWithValue("@itemname", txtItemName.Text)
@@ -150,6 +164,8 @@ Public Class ItemDataInformation
             cmd.Parameters.AddWithValue("@remarks", txtRemarks.Text)
 
             cmd.ExecuteNonQuery()
+
+            addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Add Item Data [" & txtItemName.Text & "]")
         End If
 
         cmd.Dispose()
