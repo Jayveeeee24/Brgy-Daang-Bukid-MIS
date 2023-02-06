@@ -66,6 +66,17 @@ CREATE TABLE `archived_residents` (
   KEY `household_id` (`household_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+/*Table structure for table `audit_history` */
+
+DROP TABLE IF EXISTS `audit_history`;
+
+CREATE TABLE `audit_history` (
+  `date` date DEFAULT NULL,
+  `time` datetime DEFAULT NULL,
+  `account_name` varchar(100) DEFAULT NULL,
+  `transaction` varchar(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 /*Table structure for table `blotters` */
 
 DROP TABLE IF EXISTS `blotters`;
@@ -80,7 +91,7 @@ CREATE TABLE `blotters` (
   `submitted_on` date DEFAULT NULL,
   `blotter_details` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`blotter_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=302315 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=302319 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Table structure for table `brgyofficials` */
 
@@ -116,7 +127,7 @@ CREATE TABLE `complaints` (
   `third_date` date DEFAULT NULL,
   `third_result` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`complaint_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=202328 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=202330 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Table structure for table `household` */
 
@@ -150,7 +161,7 @@ CREATE TABLE `incidents` (
   `reported_by` varchar(50) DEFAULT NULL,
   `reported_on` datetime DEFAULT NULL,
   PRIMARY KEY (`incident_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=102329 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=102330 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Table structure for table `item_borrowed` */
 
@@ -165,7 +176,7 @@ CREATE TABLE `item_borrowed` (
   `borrowed_by` varchar(100) DEFAULT NULL,
   `reason` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Table structure for table `item_history` */
 
@@ -181,7 +192,7 @@ CREATE TABLE `item_history` (
   `date` date DEFAULT NULL,
   `reason` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Table structure for table `item_list` */
 
@@ -201,7 +212,7 @@ CREATE TABLE `item_list` (
   `added_on` date DEFAULT NULL,
   `remarks` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`item_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Table structure for table `residents` */
 
@@ -234,7 +245,7 @@ CREATE TABLE `residents` (
   `registered_by` varchar(100) NOT NULL,
   PRIMARY KEY (`resident_id`),
   KEY `household_id` (`household_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1178 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1188 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Table structure for table `system_variables` */
 
@@ -245,18 +256,7 @@ CREATE TABLE `system_variables` (
   `variable_name` varchar(350) DEFAULT NULL,
   `variable_type` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=196 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-/*Table structure for table `transaction_history` */
-
-DROP TABLE IF EXISTS `transaction_history`;
-
-CREATE TABLE `transaction_history` (
-  `date` date DEFAULT NULL,
-  `time` time DEFAULT NULL,
-  `account_name` varchar(100) DEFAULT NULL,
-  `transaction` varchar(250) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=201 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Table structure for table `vawc` */
 
@@ -273,7 +273,7 @@ CREATE TABLE `vawc` (
   `submitted_on` date DEFAULT NULL,
   `case_details` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`case_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=402309 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=402311 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
