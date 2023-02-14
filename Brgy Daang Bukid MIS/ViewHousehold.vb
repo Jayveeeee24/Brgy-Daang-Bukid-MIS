@@ -56,11 +56,13 @@ Public Class ViewHousehold
             MsgBox("Household Id already exists!", vbCritical, "Warning")
             Exit Sub
         End If
-
-        If checkAge(CInt(comboResidentId.Text)) = False And action = "modify" Then
-            MsgBox("Resident's age is not applicable to be a head!", vbCritical, "Warning")
-            Exit Sub
+        If action = "modify" Then
+            If checkAge(CInt(comboResidentId.Text)) = False Then
+                MsgBox("Resident's age is not applicable to be a head!", vbCritical, "Warning")
+                Exit Sub
+            End If
         End If
+
         If txtBldgNo.Text.Trim = "" Then
             MsgBox("Please fill out a valid house number!", vbCritical, "Warning")
             Exit Sub
@@ -339,7 +341,10 @@ Public Class ViewHousehold
             addLog(Main_Form.user_name & " [" & Main_Form.user_level & "]", "Updated Household Information for [" & txtHouseholdId.Text & "]")
 
             setHouseholdHead()
-            setHouseholdMember()
+
+            If headResidentId.ToString <> comboResidentId.Text Then
+                setHouseholdMember()
+            End If
         ElseIf action = "add" Then
             cmd.CommandText = "INSERT INTO household (household_id, bldg_no, street_name, residence_type, house_type, water_source, electricity_source, month_added, day_added, year_added, added_by) values (@householdid, @bldgno, @streetname, @residencetype, @housetype, @watersource, @electricitysource, @month, @day, @year, @addedby)"
             cmd.Parameters.AddWithValue("@householdid", txtHouseholdId.Text.Trim)
@@ -450,6 +455,7 @@ Public Class ViewHousehold
 
 
         cmd.CommandText = "UPDATE residents SET household_role = 'Member' where resident_id = @residentid"
+
         cmd.Parameters.AddWithValue("@residentid", headResidentId)
 
         cmd.ExecuteNonQuery()
