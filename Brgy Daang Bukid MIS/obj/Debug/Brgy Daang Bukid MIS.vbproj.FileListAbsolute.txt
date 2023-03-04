@@ -122,3 +122,47 @@ C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.
 C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ItemStockInformation.resources
 C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ItemBorrow.resources
 C:\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.AuditHistory.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\Syncfusion.Compression.Base.dll
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\Syncfusion.Core.WinForms.dll
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\Syncfusion.DocIO.Base.dll
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\Syncfusion.Licensing.dll
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\Syncfusion.OfficeChart.Base.dll
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\Syncfusion.Shared.Base.dll
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\Syncfusion.Compression.Base.xml
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\Syncfusion.Core.WinForms.xml
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\Syncfusion.DocIO.Base.xml
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\Syncfusion.OfficeChart.Base.xml
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\bin\Debug\Syncfusion.Shared.Base.xml
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy Daang Bukid MIS.vbproj.ResolveComReference.cache
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.Account_Settings.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.AccountManagement.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.AddVariable.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.AppointOfficial.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ArchivedResidents.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.AuditHistory.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.CertificateChooseAction.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ConfirmAccess.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.Create_Account.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ElectOfficials.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ForgotPassword.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.HeadChange.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ItemBorrow.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ItemDataInformation.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ItemStockInformation.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.NoAccount.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ProceedReturn.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ReturnItem.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.SearchHousehold.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.SearchItems.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.Search_Residents.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.SystemVariables.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.UpdateBrgyOfficials.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ViewBlotters.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ViewComplaints.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ViewHousehold.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ViewIncidents.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ViewInventory.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ViewResident.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.Filter.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ViewStreet.resources
+D:\Programming\Visual Basic\MIS\Brgy-Daang-Bukid-MIS\Brgy Daang Bukid MIS\obj\Debug\Brgy_Daang_Bukid_MIS.ViewVawc.resources
