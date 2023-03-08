@@ -348,9 +348,11 @@ Public Class Main_Form
         btnItemDataManagement.BackColor = Color.FromArgb(25, 117, 211)
 
         If user_level = "Staff" Then
+            labelTitle.Text = "Account Settings"
             ConfirmAccess.originForm = "Accounts"
             ConfirmAccess.Show()
         Else
+            labelTitle.Text = "System Management"
             mainTabControl.SelectedTab = pageSystemManagement
         End If
 
