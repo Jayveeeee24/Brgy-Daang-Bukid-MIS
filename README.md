@@ -4,7 +4,7 @@
 
 <h1 align="center">Barangay Daang Bukid Management Information System</h1>
 
-***This repository contain an Management Information System for Barangay Daang Bukid as one of my freelance project. It aims to transfer the barangay's process from traditional to digital and make it more accessible and maintainable.***
+***This repository contain a Management Information System for Barangay Daang Bukid as one of my freelance project. It aims to transfer the barangay's process from traditional to digital and make it more accessible and maintainable.***
 
 ## Project Setup
 Latest release 1.1
