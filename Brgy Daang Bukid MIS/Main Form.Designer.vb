@@ -55,13 +55,13 @@ Partial Class Main_Form
         Me.splitContainerMain = New System.Windows.Forms.SplitContainer()
         Me.btnInventory = New System.Windows.Forms.Button()
         Me.btnItemDataManagement = New System.Windows.Forms.Button()
-        Me.btnSystemManagement = New System.Windows.Forms.Button()
-        Me.btnLogout = New System.Windows.Forms.Button()
         Me.btnBrgyMap = New System.Windows.Forms.Button()
         Me.btnCertificates = New System.Windows.Forms.Button()
         Me.btnReports = New System.Windows.Forms.Button()
-        Me.btnHouseholdInfo = New System.Windows.Forms.Button()
         Me.btnResidentInfo = New System.Windows.Forms.Button()
+        Me.btnHouseholdInfo = New System.Windows.Forms.Button()
+        Me.btnSystemManagement = New System.Windows.Forms.Button()
+        Me.btnLogout = New System.Windows.Forms.Button()
         Me.btnDashboard = New System.Windows.Forms.Button()
         Me.panelLogo = New System.Windows.Forms.Panel()
         Me.picLogo = New System.Windows.Forms.PictureBox()
@@ -647,48 +647,6 @@ Partial Class Main_Form
         Me.btnItemDataManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnItemDataManagement.UseVisualStyleBackColor = True
         '
-        'btnSystemManagement
-        '
-        Me.btnSystemManagement.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.btnSystemManagement.FlatAppearance.BorderSize = 0
-        Me.btnSystemManagement.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSystemManagement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnSystemManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSystemManagement.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSystemManagement.ForeColor = System.Drawing.Color.White
-        Me.btnSystemManagement.Image = CType(resources.GetObject("btnSystemManagement.Image"), System.Drawing.Image)
-        Me.btnSystemManagement.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnSystemManagement.Location = New System.Drawing.Point(0, 627)
-        Me.btnSystemManagement.Name = "btnSystemManagement"
-        Me.btnSystemManagement.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
-        Me.btnSystemManagement.Size = New System.Drawing.Size(249, 40)
-        Me.btnSystemManagement.TabIndex = 8
-        Me.btnSystemManagement.Text = "     System Management"
-        Me.btnSystemManagement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSystemManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSystemManagement.UseVisualStyleBackColor = True
-        '
-        'btnLogout
-        '
-        Me.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.btnLogout.FlatAppearance.BorderSize = 0
-        Me.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLogout.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogout.ForeColor = System.Drawing.Color.White
-        Me.btnLogout.Image = CType(resources.GetObject("btnLogout.Image"), System.Drawing.Image)
-        Me.btnLogout.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnLogout.Location = New System.Drawing.Point(0, 667)
-        Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
-        Me.btnLogout.Size = New System.Drawing.Size(249, 40)
-        Me.btnLogout.TabIndex = 7
-        Me.btnLogout.Text = "     Log out"
-        Me.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnLogout.UseVisualStyleBackColor = True
-        '
         'btnBrgyMap
         '
         Me.btnBrgyMap.Dock = System.Windows.Forms.DockStyle.Top
@@ -755,6 +713,28 @@ Partial Class Main_Form
         Me.btnReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnReports.UseVisualStyleBackColor = True
         '
+        'btnResidentInfo
+        '
+        Me.btnResidentInfo.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnResidentInfo.FlatAppearance.BorderSize = 0
+        Me.btnResidentInfo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnResidentInfo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnResidentInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnResidentInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnResidentInfo.ForeColor = System.Drawing.Color.White
+        Me.btnResidentInfo.Image = CType(resources.GetObject("btnResidentInfo.Image"), System.Drawing.Image)
+        Me.btnResidentInfo.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnResidentInfo.Location = New System.Drawing.Point(0, 325)
+        Me.btnResidentInfo.Name = "btnResidentInfo"
+        Me.btnResidentInfo.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
+        Me.btnResidentInfo.Size = New System.Drawing.Size(249, 40)
+        Me.btnResidentInfo.TabIndex = 2
+        Me.btnResidentInfo.TabStop = False
+        Me.btnResidentInfo.Text = "     Resident's Information"
+        Me.btnResidentInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnResidentInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnResidentInfo.UseVisualStyleBackColor = True
+        '
         'btnHouseholdInfo
         '
         Me.btnHouseholdInfo.Dock = System.Windows.Forms.DockStyle.Top
@@ -777,27 +757,47 @@ Partial Class Main_Form
         Me.btnHouseholdInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnHouseholdInfo.UseVisualStyleBackColor = True
         '
-        'btnResidentInfo
+        'btnSystemManagement
         '
-        Me.btnResidentInfo.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnResidentInfo.FlatAppearance.BorderSize = 0
-        Me.btnResidentInfo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnResidentInfo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.btnResidentInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnResidentInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnResidentInfo.ForeColor = System.Drawing.Color.White
-        Me.btnResidentInfo.Image = CType(resources.GetObject("btnResidentInfo.Image"), System.Drawing.Image)
-        Me.btnResidentInfo.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnResidentInfo.Location = New System.Drawing.Point(0, 325)
-        Me.btnResidentInfo.Name = "btnResidentInfo"
-        Me.btnResidentInfo.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
-        Me.btnResidentInfo.Size = New System.Drawing.Size(249, 40)
-        Me.btnResidentInfo.TabIndex = 2
-        Me.btnResidentInfo.TabStop = False
-        Me.btnResidentInfo.Text = "     Resident's Information"
-        Me.btnResidentInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnResidentInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnResidentInfo.UseVisualStyleBackColor = True
+        Me.btnSystemManagement.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.btnSystemManagement.FlatAppearance.BorderSize = 0
+        Me.btnSystemManagement.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSystemManagement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnSystemManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSystemManagement.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSystemManagement.ForeColor = System.Drawing.Color.White
+        Me.btnSystemManagement.Image = CType(resources.GetObject("btnSystemManagement.Image"), System.Drawing.Image)
+        Me.btnSystemManagement.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnSystemManagement.Location = New System.Drawing.Point(0, 627)
+        Me.btnSystemManagement.Name = "btnSystemManagement"
+        Me.btnSystemManagement.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
+        Me.btnSystemManagement.Size = New System.Drawing.Size(249, 40)
+        Me.btnSystemManagement.TabIndex = 8
+        Me.btnSystemManagement.Text = "     System Management"
+        Me.btnSystemManagement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSystemManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSystemManagement.UseVisualStyleBackColor = True
+        '
+        'btnLogout
+        '
+        Me.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.btnLogout.FlatAppearance.BorderSize = 0
+        Me.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogout.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogout.ForeColor = System.Drawing.Color.White
+        Me.btnLogout.Image = CType(resources.GetObject("btnLogout.Image"), System.Drawing.Image)
+        Me.btnLogout.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnLogout.Location = New System.Drawing.Point(0, 667)
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
+        Me.btnLogout.Size = New System.Drawing.Size(249, 40)
+        Me.btnLogout.TabIndex = 7
+        Me.btnLogout.Text = "     Log out"
+        Me.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnLogout.UseVisualStyleBackColor = True
         '
         'btnDashboard
         '
