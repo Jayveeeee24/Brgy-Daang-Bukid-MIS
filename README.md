@@ -21,6 +21,7 @@ Latest release 1.2
 4. Barangay Map
 5. Item Data Management and Inventory Management
 6. System Management [Account Settings, Account Management, Archived, Barangay Official Management, System Variables and Audit History Log]
+7. Network based, server ip can be configured.
 
 ## Languages and Tools Used
 1. Visual Basic Net
@@ -32,6 +33,8 @@ Latest release 1.2
 1. Download the project files by downloading zip or by git clone using bash
 2. Use Visual Studio preferably 2022
 3. .Net version used: 4.8.
+4. Use the sql file and import into any Sql program [SQLyog or Xampp]
+5. Ip can be configured in the string settings in Visual Studio
 
 
 
