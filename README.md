@@ -34,7 +34,9 @@ Latest release 1.2
 2. Use Visual Studio preferably 2022
 3. .Net version used: 4.8.
 4. Use the sql file and import into any Sql program [SQLyog or Xampp]
-5. Ip can be configured in the string settings in Visual Studio
+5. Ip address can be configured in the string settings in Visual Studio
+6. Make sure to have a Microsoft Office installed [preferably Office 2016]
+7. Install Microsoft.Office.Interop.Word in Nuget Packages by right click the project > Manage Nuget Package.
 
 
 

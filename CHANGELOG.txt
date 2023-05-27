@@ -1,0 +1,91 @@
+## This lists all the versions and **Debug Notes**
+
+12/28/22 - version 1.1.18
+* done with all the features for view resident [archive function] 
+* added a new form for archiving resident and access confirmation
+* fixed issues in filter form that clears and removes the 'any' option of household id
+* revised the main form class to include the results for loaddatagrid and countrows when using the filter
+
+12/26/22 - version 1.1.17
+* implemented the filter for residents in Filter class and in the main form class [added the query in main form]
+* added the statistics checker for the dashboard panel
+* revised view resident class to include a checker for household id to disable the household role if there is already a head in the database for that particular household
+* added the implementation in view resident to actual save and close the form 
+
+12/25/22 - version 1.1.16
+* fully implemented the add and update resident including error trapping, bugs and ui design
+* revised the label in mainform to include the name of account holder
+
+12/24/22 - version 1.1.15
+* revised the retrieving of information in viewResident to include with the modification
+* added a button router for main form to viewresidents and add residents
+* added a household view form
+* revise view resident class to include default values for modify tab
+* added unfinished implementation of saving resident [update/modify]
+
+12/21/22 - version 1.1.14
+* added the id number for the resident in datagridview
+* updated query for residents information to include only 20 data
+* created a form filter and revised the layout of search bar in the main form to include filter function
+* created a new form viewResident for the viewing/adding/modifying of resident information and added a cell click in mainform
+* revised the tab page for modifying resident and for viewing [ui]
+* added the retrieving information in viewResident [database and value assigning]
+
+
+12/19/22 - version 1.1.13
+* resetted the page no to 1 when using the search function in [Resident/Household]
+* revised countrows method to update count when searching an item on both Resident/Household
+* fixed ui for toolstrip when collapsing the side navigation when using table layout as parent
+
+12/19/22 - version 1.1.12
+* refactored the codebase in main form for easy readability [added features in functions such as buttons, labels, countRows, loadDataGrid]
+* implemented the datagridview for residents
+* implemented the search function on both residents and household module
+
+
+12/17/22 - version 1.1.11
+* moved the implementation of loading datagrid of household from main load to household side button
+* added the total household[dashboard] fetching in database
+* removed the tab selector dynamically in main load
+
+12/16/22 - version 1.1.10v2
+* reimplement the limit query for sql in datagrid
+* added a toolstrip for paging
+* done pagination for household datagrid
+
+12/15/22 - version 1.1.9
+* blocked off the sql injection attack in login by parameterizing the command string
+* added and modified the page ui for household page [buttons, search bar, toolbox and datagrid view] 
+* fed the data for previous household data from excel to sql
+
+12/15/22 - version 1.1.8
+* created the datagrid for the brgy officials and modified its ui
+* fed data in mysql for initial brgy officials
+* modified the ui for the resident window [buttons, search bar, datagrid, etc.]
+
+12/14/22 - version 1.1.7
+* fixed the issues of case sensitive login
+* improved ui of analytics ui
+* added clicked behaviors for side navigation items
+* added log out function
+* added signed in details
+* added the brgy official label and datagrid
+* updated the tab control for pages
+
+12/13/22 - version 1.12.13v2
+* created the side navigation ui
+* linked the actual navigation and initial items
+* fixed responsiveness of the main content
+* added all the icons for the side navigation
+* added the analytics ui for the resident, household, female, etc.
+* fixed the side navigation icons not resizing when the navigation is minimized
+* added a show password button in the login
+
+12/12/22 - version 1.12.12
+* Finished the login feature with error trapping and validation
+* Unfinished information form for when "I don't have an account" link is clicked
+* added new form [main form] and linked it for log in.
+
+
+
+

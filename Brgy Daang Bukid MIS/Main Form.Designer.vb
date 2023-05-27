@@ -1049,7 +1049,7 @@ Partial Class Main_Form
         Me.datagridInventoryOverdues.Name = "datagridInventoryOverdues"
         Me.datagridInventoryOverdues.ReadOnly = True
         Me.datagridInventoryOverdues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datagridInventoryOverdues.Size = New System.Drawing.Size(427, 167)
+        Me.datagridInventoryOverdues.Size = New System.Drawing.Size(427, 170)
         Me.datagridInventoryOverdues.TabIndex = 9
         '
         'Column22
