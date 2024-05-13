@@ -36,7 +36,8 @@ Latest release 1.2
 4. Use the sql file and import into any Sql program [SQLyog or Xampp]
 5. Ip address can be configured in the string settings in Visual Studio
 6. Make sure to have a Microsoft Office installed [preferably Office 2016]
-7. Install Microsoft.Office.Interop.Word in Nuget Packages by right click the project > Manage Nuget Package.
+7. Install Microsoft.Office.Interop.Word in Nuget Packages by right click the project > Manage Nuget Package. If it doesn't work Add a Reference > COM > Microsoft Word Object Library 
+   
 
 
 
